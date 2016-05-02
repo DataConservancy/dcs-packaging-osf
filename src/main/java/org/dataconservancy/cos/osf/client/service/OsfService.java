@@ -17,6 +17,7 @@
 package org.dataconservancy.cos.osf.client.service;
 
 import org.dataconservancy.cos.osf.client.model.Node;
+import org.dataconservancy.cos.osf.client.model.NodeFile;
 import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Header;
@@ -34,9 +35,6 @@ public interface OsfService {
 
     @GET("nodes/")
     Call<List<Node>> nodeList();
-
-    @GET("nodes/")
-    Call<List<Node>> nodeList(@Query("page") int page);
 
     @GET("nodes/")
     Call<List<Node>> nodeList(@QueryMap Map<String, String> params);
