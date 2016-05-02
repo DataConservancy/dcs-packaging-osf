@@ -38,6 +38,10 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 public class Node {
 
 
+    @Relationship(value = "files", resolve = true, relType = RelType.RELATED)
+    private List<StorageProvider> files;
+
+    private Links links;
 
     private String category;
 
@@ -169,5 +173,21 @@ public class Node {
 
     public void setCollection(boolean collection) {
         isCollection = collection;
+    }
+
+    public Links getLinks() {
+        return links;
+    }
+
+    public void setLinks(Links links) {
+        this.links = links;
+    }
+
+    public List<StorageProvider> getFiles() {
+        return files;
+    }
+
+    public void setFiles(List<StorageProvider> files) {
+        this.files = files;
     }
 }

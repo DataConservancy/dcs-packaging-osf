@@ -83,7 +83,7 @@ public class TestClient {
         OsfService osfSvc = retrofit.create(OsfService.class);
 
         HashMap<String, String> params = new HashMap<>();
-        params.put("filter[public]", "true");
+//        params.put("filter[public]", "true");
         Call<List<Node>> listCall = osfSvc.nodeList();
         assertNotNull(listCall);
         Response<List<Node>> res = listCall.execute();
@@ -103,12 +103,17 @@ public class TestClient {
 
         nodes.stream().forEach(n -> {
             System.out.println("Node: id " + n.getId() + " category " + n.getCategory() + " title " + n.getTitle() + " public " + n.isPublic() + " root " + n.getRoot());
+            System.out.println("Links: " + n.getLinks());
         });
 
-        Node rawData = osfSvc.node("v8x57").execute().body();
 
-        assertNotNull(rawData);
-        assertEquals("v8x57", rawData.getId());
+        String nodeWithFilesId = "356n8";
+        Node withFiles = osfSvc.node(nodeWithFilesId).execute().body();
+        assertNotNull(withFiles);
+        assertNotNull(withFiles.getFiles());
+
+        withFiles.getFiles().stream().forEach(provider -> System.err.println("Provider: " + provider.getProvider()));
+
 
     }
 }
