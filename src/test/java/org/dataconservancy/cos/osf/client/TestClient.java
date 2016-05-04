@@ -23,6 +23,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.model.Node;
+import org.dataconservancy.cos.osf.client.model.NodeFile;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
 import org.junit.Test;
@@ -58,7 +59,7 @@ public class TestClient {
 //        client.interceptors().add(new LoggingInterceptor());
         client.interceptors().add(new AuthInterceptor(auth));
 
-        ResourceConverter converter = new ResourceConverter(objectMapper, Node.class);
+        ResourceConverter converter = new ResourceConverter(objectMapper, Node.class, NodeFile.class);
         converter.setGlobalResolver(relUrl -> {
             System.err.println("Resolving " + relUrl);
             com.squareup.okhttp.Call req = client.newCall(new Request.Builder().url(relUrl).build());
@@ -107,12 +108,16 @@ public class TestClient {
         });
 
 
-        String nodeWithFilesId = "356n8";
+        String nodeWithFilesId = "v8x57";
         Node withFiles = osfSvc.node(nodeWithFilesId).execute().body();
         assertNotNull(withFiles);
         assertNotNull(withFiles.getFiles());
 
-        withFiles.getFiles().stream().forEach(provider -> System.err.println("Provider: " + provider.getProvider()));
+        withFiles.getFiles().stream().forEach(provider -> System.err.println("Provider (" + provider.getNode() + "): " + provider.getProvider() + " path: " + provider.getPath()));
+
+        NodeFile osfStorageProvider = withFiles.getFiles().get(0);
+
+
 
 
     }

@@ -45,4 +45,5 @@ public interface OsfService {
     @GET("nodes/{id}/")
     Call<Node> node(@Path("id") String id);
 
+    Call<List<NodeFile>> listFiles(@Path(""))
 }

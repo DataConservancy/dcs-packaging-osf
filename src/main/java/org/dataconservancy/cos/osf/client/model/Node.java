@@ -39,7 +39,7 @@ public class Node {
 
 
     @Relationship(value = "files", resolve = true, relType = RelType.RELATED)
-    private List<StorageProvider> files;
+    private List<NodeFile> files;
 
     private Links links;
 
@@ -183,11 +183,11 @@ public class Node {
         this.links = links;
     }
 
-    public List<StorageProvider> getFiles() {
+    public List<NodeFile> getFiles() {
         return files;
     }
 
-    public void setFiles(List<StorageProvider> files) {
+    public void setFiles(List<NodeFile> files) {
         this.files = files;
     }
 }
