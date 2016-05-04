@@ -15,6 +15,8 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
+import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Type;
 import org.joda.time.DateTime;
 
 import java.util.Set;
@@ -22,6 +24,7 @@ import java.util.Set;
 /**
  * Created by esm on 5/2/16.
  */
+@Type("files")
 public class NodeFile {
 
     private String kind;
@@ -40,8 +43,74 @@ public class NodeFile {
 
     private long size;
 
+    @Id
     private String id;
+
+    private String node;
 
     private Set<Checksum> hashes;
 
+    public String getKind() {
+        return kind;
+    }
+
+    public void setKind(String kind) {
+        this.kind = kind;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMaterialized_path() {
+        return materialized_path;
+    }
+
+    public void setMaterialized_path(String materialized_path) {
+        this.materialized_path = materialized_path;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public long getSize() {
+        return size;
+    }
+
+    public void setSize(long size) {
+        this.size = size;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNode() {
+        return node;
+    }
+
+    public void setNode(String node) {
+        this.node = node;
+    }
 }
