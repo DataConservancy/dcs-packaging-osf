@@ -16,39 +16,40 @@
 
 package org.dataconservancy.cos.osf.client;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.commons.io.IOUtils;
+import org.dataconservancy.cos.osf.client.model.File;
+import org.dataconservancy.cos.osf.client.model.Node;
+import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.junit.Test;
+
+import retrofit.Call;
+import retrofit.Response;
+import retrofit.Retrofit;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jasminb.jsonapi.ResourceConverter;
 import com.github.jasminb.jsonapi.retrofit.JSONAPIConverterFactory;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
-import org.apache.commons.io.IOUtils;
-import org.dataconservancy.cos.osf.client.model.Node;
-import org.dataconservancy.cos.osf.client.model.NodeFile;
-import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
-import org.junit.Test;
-import retrofit.Call;
-import retrofit.Response;
-import retrofit.Retrofit;
-
-import java.io.IOException;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by esm on 4/25/16.
+ * @author esm
  */
 public class TestClient {
 
     @Test
     public void testFoo() throws Exception {
 
-        final String auth = "Basic ZW1ldHNnZXJAZ21haWwuY29tOmZvb2JhcmJheg==";
+        final String auth = "";
+//      final String auth = "Basic ZW1ldHNnZXJAZ21haWwuY29tOmZvb2JhcmJheg==";
 
         // Create object mapper
         ObjectMapper objectMapper = new ObjectMapper();
@@ -56,10 +57,10 @@ public class TestClient {
         // Set serialisation/deserialisation options if needed (property naming strategy, etc...)
 
         OkHttpClient client = new OkHttpClient();
-//        client.interceptors().add(new LoggingInterceptor());
-        client.interceptors().add(new AuthInterceptor(auth));
+//      client.interceptors().add(new LoggingInterceptor());
+//      client.interceptors().add(new AuthInterceptor(auth));
 
-        ResourceConverter converter = new ResourceConverter(objectMapper, Node.class, NodeFile.class);
+        ResourceConverter converter = new ResourceConverter(objectMapper, Node.class, File.class);
         converter.setGlobalResolver(relUrl -> {
             System.err.println("Resolving " + relUrl);
             com.squareup.okhttp.Call req = client.newCall(new Request.Builder().url(relUrl).build());
@@ -72,7 +73,6 @@ public class TestClient {
             }
         });
         JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
-
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -89,7 +89,7 @@ public class TestClient {
         assertNotNull(listCall);
         Response<List<Node>> res = listCall.execute();
         assertNotNull(res);
-
+        
         List<Node> nodes = null;
         if (!res.isSuccess()) {
             assertNotNull(res.errorBody());
@@ -103,22 +103,22 @@ public class TestClient {
         assertNotNull(nodes);
 
         nodes.stream().forEach(n -> {
-            System.out.println("Node: id " + n.getId() + " category " + n.getCategory() + " title " + n.getTitle() + " public " + n.isPublic() + " root " + n.getRoot());
+            System.out.println("Node: id " + n.getId() + " category " + n.getCategory() + " title " + n.getTitle() + " public " + n.isPublic() ); //+ " root " + n.getRoot()
             System.out.println("Links: " + n.getLinks());
         });
 
 
-        String nodeWithFilesId = "v8x57";
+        String nodeWithFilesId = "fu8zc";
         Node withFiles = osfSvc.node(nodeWithFilesId).execute().body();
         assertNotNull(withFiles);
         assertNotNull(withFiles.getFiles());
 
         withFiles.getFiles().stream().forEach(provider -> System.err.println("Provider (" + provider.getNode() + "): " + provider.getProvider() + " path: " + provider.getPath()));
 
-        NodeFile osfStorageProvider = withFiles.getFiles().get(0);
-
-
-
+        File osfStorageProvider = withFiles.getFiles().get(0);
+        File osfStorage = osfStorageProvider.getFiles().get(0);
+        File file = osfStorage.getFiles().get(0);
+        
 
     }
 }

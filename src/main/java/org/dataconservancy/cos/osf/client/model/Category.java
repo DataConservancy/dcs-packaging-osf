@@ -22,28 +22,36 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /** 
  * List of categories that can apply to an OSF node
  * @author khanson
- * @author esm
  */
-public enum Permission {
-    READ("read"),
-    WRITE("write"),
-    ADMIN("admin");
+public enum Category {
+	PROJECT("project"),
+	HYPOTHESIS("hypothesis"),
+	METHODS_AND_MEASURES("methods and measures"),
+	PROCEDURE("procedure"),
+	INSTRUMENTATION("instrumentation"),
+	DATA("data"),
+	ANALYSIS("analysis"),
+	COMMUNICATION("communication"),
+	SOFTWARE("software"),
+	OTHER("other");    
 
     private final String value;
-    private Permission(String value) { this.value = value; }
+    private Category(String value) { this.value = value; }
     
     @JsonValue 
     public String value() { return value; }
 
     @JsonCreator
-	public static Permission forValue(String value) {
+	public static Category forValue(String value) {
         if (value != null) {
-            for (Permission permission : Permission.values()) {
-                if (value.equals(permission.value())) {
-                    return permission;
+            for (Category category : Category.values()) {
+                if (value.equals(category.value())) {
+                    return category;
                 }
             }
         }
         return null;
     }
+    
+    
 }
