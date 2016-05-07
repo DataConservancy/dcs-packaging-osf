@@ -24,5 +24,6 @@ import org.joda.time.format.DateTimeFormatter;
 public class JodaSupport {
 
     public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+    public static final DateTimeFormatter DATE_TIME_FORMATTER_Z = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
 }

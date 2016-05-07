@@ -16,66 +16,100 @@
 
 package org.dataconservancy.cos.osf.client.model;
 
-import com.github.jasminb.jsonapi.JSONAPISpecConstants;
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
+
+import java.util.List;
+
+import org.joda.time.DateTime;
+
 import com.github.jasminb.jsonapi.RelType;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
-import org.dataconservancy.cos.osf.client.support.JodaSupport;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
-import java.util.List;
-
-import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
 
 /**
+ * POJO representation of OSF Node in OSF API V2
  * Created by esm on 4/25/16.
+ * Updated: khanson 2016-05-06: added comments
+ * @author esm
+ * @author khanson
  */
 @Type("nodes")
 public class Node {
 
+	/**List of nodes that are children of this node.*/
+	@Relationship(value = "children", resolve = true, relType = RelType.RELATED)
+	private List<Node> children;	
 
+	/**List of users who are contributors to this node. */
+	//@Relationship(value = "contributors", resolve = true, relType = RelType.RELATED)
+	//private List<Contributor> contributors;
+
+	/**If this node is a child node of another node, the parent's canonical endpoint will 
+	 * be available in the /parent/links/related/href key. Otherwise, it will be null.*/
+    //@Relationship(value = "parent", resolve = true, relType = RelType.RELATED)
+    //private Node parent;
+
+	/**Root node if you walk up the tree of projects/components.*/
+    //@Relationship(value = "root", resolve = true, relType = RelType.RELATED)
+    //private Node root;
+	
+	/**List of top-level folders (actually cloud-storage providers) associated with this node.
+	 * This is the starting point for accessing the actual files stored within this node.*/
     @Relationship(value = "files", resolve = true, relType = RelType.RELATED)
-    private List<NodeFile> files;
+    private List<File> files;
 
+    /**If this node was forked from another node, the canonical endpoint of the node that was 
+     * forked from will be available in the /forked_from/links/related/href key. Otherwise, it will be null.*/
+    //@Relationship(value = "forked_from", resolve = true, relType = RelType.RELATED)
+    //private Node forked_from;
+        
+    /**Pagination links**/
     private Links links;
 
-    private String category;
-
+    /**Node category, must be one of the allowed values.*/
+    private Category category;
+    
+    /**description of the node*/
     private String description;
 
+    /**title of project or component*/
     private String title;
 
+    /**list of tags that describe the node*/
     private List<String> tags;
 
+    /**node id*/
     @Id
     private String id;
 
-    @Relationship(value = "root", resolve = true, relType = RelType.RELATED)
-    private Node root;
-
+    /**List of strings representing the permissions for the current user on this node*/
     private List<Permission> current_user_permissions;
 
+    /**timestamp that the node was created*/
     private DateTime date_created;
 
+    /**timestamp when the node was last updated*/
     private DateTime date_modified;
 
-    private boolean isFork;
+    /**is this node a fork of another node?*/
+    private Boolean isFork;
 
-    private boolean isPublic;
+    /**as this node been made publicly-visible?*/
+    private Boolean isPublic;
 
-    private boolean isRegistration;
+    /**has this project been registered?*/
+    private Boolean isRegistration;
 
-    private boolean isCollection;
-
-    public String getCategory() {
+    /**is project a collection?*/
+    private Boolean isCollection;
+   
+    
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
@@ -110,16 +144,24 @@ public class Node {
     public void setId(String id) {
         this.id = id;
     }
+    
+	public List<Node> getChildren() {
+		return children;
+	}
 
-    public Node getRoot() {
-        return root;
-    }
+	public void setChildren(List<Node> children) {
+		this.children = children;
+	}
+/*
+    public List<Contributor> getContributors() {
+		return contributors;
+	}
 
-    public void setRoot(Node root) {
-        this.root = root;
-    }
+	public void setContributors(List<Contributor> contributors) {
+		this.contributors = contributors;
+	}*/
 
-    public List<Permission> getCurrent_user_permissions() {
+	public List<Permission> getCurrent_user_permissions() {
         return current_user_permissions;
     }
 
@@ -128,50 +170,66 @@ public class Node {
     }
 
     public String getDate_created() {
-        return date_created.toString(DATE_TIME_FORMATTER);
+    	if (this.date_created!=null) {
+    		return this.date_created.toString(DATE_TIME_FORMATTER);
+    	} else {
+    		return null;
+    	}
     }
 
     public void setDate_created(String date_created) {
-        this.date_created = DATE_TIME_FORMATTER.parseDateTime(date_created);
+    	if (date_created!=null){
+    		this.date_created = DATE_TIME_FORMATTER.parseDateTime(date_created);
+    	} else {
+    		this.date_created = null;
+    	}
     }
 
     public String getDate_modified() {
-        return this.date_modified.toString(DATE_TIME_FORMATTER);
+    	if (this.date_modified!=null) {
+    		return this.date_modified.toString(DATE_TIME_FORMATTER);
+    	} else {
+    		return null;
+    	}
     }
 
     public void setDate_modified(String date_modified) {
-        this.date_modified = DATE_TIME_FORMATTER.parseDateTime(date_modified);
+    	if (date_modified!=null){
+    		this.date_modified = DATE_TIME_FORMATTER.parseDateTime(date_modified);
+    	} else {
+    		date_modified=null;
+    	}
     }
 
-    public boolean isFork() {
+    public Boolean isFork() {
         return isFork;
     }
 
-    public void setFork(boolean fork) {
+    public void setFork(Boolean fork) {
         isFork = fork;
     }
 
-    public boolean isPublic() {
+    public Boolean isPublic() {
         return isPublic;
     }
 
-    public void setPublic(boolean aPublic) {
+    public void setPublic(Boolean aPublic) {
         isPublic = aPublic;
     }
 
-    public boolean isRegistration() {
+    public Boolean isRegistration() {
         return isRegistration;
     }
 
-    public void setRegistration(boolean registration) {
+    public void setRegistration(Boolean registration) {
         isRegistration = registration;
     }
 
-    public boolean isCollection() {
+    public Boolean isCollection() {
         return isCollection;
     }
 
-    public void setCollection(boolean collection) {
+    public void setCollection(Boolean collection) {
         isCollection = collection;
     }
 
@@ -183,11 +241,11 @@ public class Node {
         this.links = links;
     }
 
-    public List<NodeFile> getFiles() {
+    public List<File> getFiles() {
         return files;
     }
 
-    public void setFiles(List<NodeFile> files) {
+    public void setFiles(List<File> files) {
         this.files = files;
     }
 }
