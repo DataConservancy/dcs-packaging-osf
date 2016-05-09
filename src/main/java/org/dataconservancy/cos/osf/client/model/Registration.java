@@ -20,6 +20,7 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 
 import org.joda.time.DateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.github.jasminb.jsonapi.annotations.Type;
 
 /**
@@ -27,7 +28,8 @@ import com.github.jasminb.jsonapi.annotations.Type;
  * @author khanson
  */
 @Type("registrations")
-public class Registration extends Node {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Registration extends Node  {
 
 	/**Is this registered node visible on the user dashboard?**/
 	private Boolean isDashboard;
@@ -59,8 +61,6 @@ public class Registration extends Node {
 	/**registration template used*/
 	private String registration_supplement;
 		
-	public Registration(){}
-
 	public Boolean isDashboard() {
 		return isDashboard;
 	}
@@ -102,7 +102,7 @@ public class Registration extends Node {
 	}
 
 	public void setEmbargo_end_date(String embargo_end_date) {
-    	if (date_registered!=null){
+    	if (embargo_end_date!=null){
     		this.embargo_end_date = DATE_TIME_FORMATTER.parseDateTime(embargo_end_date);
     	} else {
     		this.embargo_end_date = null;

@@ -15,7 +15,11 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Link;
 import com.github.jasminb.jsonapi.annotations.Type;
 /**
  * File versions model for OSF
@@ -34,8 +38,13 @@ public class FileVersion {
 	/**MIME content-type for the file. May be null if unavailable.*/
 	private String content_type;
 
+    
+	/**Gets other links found in data.links:{} section of JSON**/
+	@Link 
+	Map<String, ?> links;       
+	
 	/** pagination links for multiple records*/
-	private Links links;
+	private Links pageLinks;
 
 	public String getId() {
 		return id;
@@ -61,11 +70,20 @@ public class FileVersion {
 		this.content_type = content_type;
 	}
 
-	public Links getLinks() {
+	public Links getPageLinks() {
+		return pageLinks;
+	}
+
+    @JsonProperty("links")
+	public void setPageLinks(Links links) {
+		this.pageLinks = links;
+	}
+
+	public Map<String, ?> getLinks() {
 		return links;
 	}
 
-	public void setLinks(Links links) {
+	public void setLinks(Map<String, ?> links) {
 		this.links = links;
 	}
 	

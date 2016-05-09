@@ -19,12 +19,16 @@ package org.dataconservancy.cos.osf.client.model;
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
 
 import java.util.List;
+import java.util.Map;
 
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.RelType;
+import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Link;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 
@@ -40,19 +44,26 @@ public class User {
     @Id
     private String id;
     
-    /**Nodes associated with the user*/
-    //@Relationship(value = "nodes", resolve = true, relType = RelType.RELATED)
-    //private List<Node> nodes;
+    /**Link to list of nodes associated with the User*/
+    @Relationship(value = "nodes", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String nodes;
     
     /**Institutions associated with the User*/
-    @Relationship(value = "institutions", resolve = true, relType = RelType.RELATED)
+    @Relationship(value = "institutions", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<Institution> institutions;
     
-    /**Registrations associated with the User*/
-    //@Relationship(value = "registrations", resolve = true, relType = RelType.RELATED)
-    //private List<Registration> registrations;
-        
-    /** full name of the user; used for display*/
+    /**Link to list of registrations associated with the User*/
+    @Relationship(value = "registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String registrations;
+    
+    /**Gets other links found in data.links:{} section of JSON**/
+    @Link 
+    Map<String, ?> links;    
+    
+    /**pagination links, applies when list is returned**/
+    private Links pageLinks;
+
+	/** full name of the user; used for display*/
     private String full_name;
     
     /** given name of the user; for bibliographic citations*/
@@ -299,6 +310,46 @@ public class User {
 	public void setLocale(String locale) {
 		this.locale = locale;
 	}
-	
+
+	public String getNodes() {
+		return nodes;
+	}
+
+	public void setNodes(String nodes) {
+		this.nodes = nodes;
+	}
+
+	public List<Institution> getInstitutions() {
+		return institutions;
+	}
+
+	public void setInstitutions(List<Institution> institutions) {
+		this.institutions = institutions;
+	}
+
+    public String getRegistrations() {
+		return registrations;
+	}
+
+	public void setRegistrations(String registrations) {
+		this.registrations = registrations;
+	}
+
+	public Map<String, ?> getLinks() {
+		return links;
+	}
+
+	public void setLinks(Map<String, ?> links) {
+		this.links = links;
+	}
+
+	public Links getPageLinks() {
+		return pageLinks;
+	}
+
+    @JsonProperty("links")
+	public void setPageLinks(Links pageLinks) {
+		this.pageLinks = pageLinks;
+	}
     
 }

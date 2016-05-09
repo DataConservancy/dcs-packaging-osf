@@ -16,19 +16,23 @@
 
 package org.dataconservancy.cos.osf.client.model;
 
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Link;
 import com.github.jasminb.jsonapi.annotations.Type;
 
 /**
- * OSF Contributor model 
+ * Contributor model for OSF
  * @author khanson
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Type("contributors")
 public class Contributor {
 
-	/** contributor ID - this corresponds to User*/
+	/** contributor ID - this corresponds to User ID*/
     @Id
     private String id;
     
@@ -37,8 +41,16 @@ public class Contributor {
     
     /**User permission level. Must be "read", "write", or "admin". Default is "write".*/
     private Permission permission;
+    	    
+	/**Gets other links found in data.links:{} section of JSON**/
+	@Link 
+	Map<String, ?> links;        
+	
+	/**pagination links, applies when list is returned**/
+	private Links pageLinks;
     
-    //TODO: the user is embedded in the JSON, or we can use the ID to retrieve it. Comenting out for now.
+    //TODO: the user is embedded in the JSON and won't work as is.  We can use the ID to retrieve it since contribId=userId. 
+    //Commenting out for now.
     //User user;
 
 	public String getId() {
@@ -63,6 +75,23 @@ public class Contributor {
 
 	public void setPermission(Permission permission) {
 		this.permission = permission;
+	}
+
+	public Map<String, ?> getLinks() {
+		return links;
+	}
+
+	public void setLinks(Map<String, ?> links) {
+		this.links = links;
+	}
+
+	public Links getPageLinks() {
+		return pageLinks;
+	}
+
+	@JsonProperty("links")
+	public void setPageLinks(Links pageLinks) {
+		this.pageLinks = pageLinks;
 	}
 
 	

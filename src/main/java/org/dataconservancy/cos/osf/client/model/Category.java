@@ -36,10 +36,14 @@ public enum Category {
 	OTHER("other");    
 
     private final String value;
-    private Category(String value) { this.value = value; }
+    private Category(String value) { 
+    	this.value = value; 
+    	}
     
     @JsonValue 
-    public String value() { return value; }
+    public String value() { 
+    	return value; 
+    	}
 
     @JsonCreator
 	public static Category forValue(String value) {
