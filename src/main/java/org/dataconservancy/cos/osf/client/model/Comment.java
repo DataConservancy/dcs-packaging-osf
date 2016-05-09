@@ -17,9 +17,13 @@ package org.dataconservancy.cos.osf.client.model;
 
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
 
+import java.util.Map;
+
 import org.joda.time.DateTime;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Link;
 import com.github.jasminb.jsonapi.annotations.Type;
 /**
  * Comment model for OSF
@@ -56,9 +60,13 @@ public class Comment {
 
 	/**can the current user edit this comment?*/
 	private Boolean can_edit;
-	
+
+	/**Gets other links found in data.links:{} section of JSON**/
+	@Link 
+	Map<String, ?> links;     
+
 	/** pagination links for multiple records*/
-	private Links links;
+    private Links pageLinks;
 
 	public String getId() {
 		return id;
@@ -148,11 +156,20 @@ public class Comment {
 		this.can_edit = can_edit;
 	}
 
-	public Links getLinks() {
+	public Links getPageLinks() {
+		return pageLinks;
+	}
+
+    @JsonProperty("links")
+	public void setPageLinks(Links pageLinks) {
+		this.pageLinks = pageLinks;
+	}
+
+	public Map<String, ?> getLinks() {
 		return links;
 	}
 
-	public void setLinks(Links links) {
+	public void setLinks(Map<String, ?> links) {
 		this.links = links;
 	}
 

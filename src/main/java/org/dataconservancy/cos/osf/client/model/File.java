@@ -15,16 +15,20 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_Z;
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.RelType;
+import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Link;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 
@@ -43,17 +47,24 @@ public class File {
     private String id;
     
     /**list of files down next level of file tree*/
-    @Relationship(value = "files", resolve = true, relType = RelType.RELATED)
+    @Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<File> files;
 
-    /**list of comments associated with file*/
-    //@Relationship(value = "comments", resolve = true, relType = RelType.RELATED)
-    //private List<Comment> comments;
-
-    /**list of versions associated with file*/
-    @Relationship(value = "versions", resolve = true, relType = RelType.RELATED)
+	/**list of versions associated with file*/
+    @Relationship(value = "versions", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<FileVersion> versions;
+
+    /**list of comments associated with file*/
+    @Relationship(value = "comments", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    private List<Comment> comments;
         
+    /**Gets other links found in data.links:{} section of JSON**/
+    @Link 
+    Map<String, ?> links;        
+    
+    /**pagination links, applies when list is returned**/
+    private Links pageLinks;
+    
     /**name of the file or folder; used for display*/
     private String name;    
         
@@ -119,7 +130,7 @@ public class File {
 
     public String getDate_created() {
     	if (this.date_created!=null) {
-    		return this.date_created.toString(DATE_TIME_FORMATTER_Z);
+    		return this.date_created.toString(DATE_TIME_FORMATTER_ALT);
     	} else {
     		return null;
     	}
@@ -127,7 +138,7 @@ public class File {
 
     public void setDate_created(String date_created) {
     	if (date_created!=null){
-    		this.date_created = DATE_TIME_FORMATTER_Z.parseDateTime(date_created);
+    		this.date_created = DATE_TIME_FORMATTER_ALT.parseDateTime(date_created);
     	} else {
     		this.date_created = null;
     	}
@@ -135,7 +146,7 @@ public class File {
 
     public String getDate_modified() {
     	if (this.date_modified!=null) {
-    		return this.date_modified.toString(DATE_TIME_FORMATTER_Z);
+    		return this.date_modified.toString(DATE_TIME_FORMATTER_ALT);
     	} else {
     		return null;
     	}
@@ -143,7 +154,7 @@ public class File {
 
     public void setDate_modified(String date_modified) {
     	if (date_modified!=null){
-    		this.date_modified = DATE_TIME_FORMATTER_Z.parseDateTime(date_modified);
+    		this.date_modified = DATE_TIME_FORMATTER_ALT.parseDateTime(date_modified);
     	} else {
     		date_modified=null;
     	}
@@ -195,6 +206,40 @@ public class File {
 
 	public void setHashes(Set<Checksum> hashes) {
 		this.hashes = hashes;
+	}	
+
+    public List<Comment> getComments() {
+		return comments;
 	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+	public List<FileVersion> getVersions() {
+		return versions;
+	}
+
+	public void setVersions(List<FileVersion> versions) {
+		this.versions = versions;
+	}
+
+	public Map<String, ?> getLinks() {
+		return links;
+	}
+
+	public void setLinks(Map<String, ?> links) {
+		this.links = links;
+	}
+
+	public Links getPageLinks() {
+		return pageLinks;
+	}
+
+    @JsonProperty("links")
+	public void setPageLinks(Links pageLinks) {
+		this.pageLinks = pageLinks;
+	}
+
     
 }

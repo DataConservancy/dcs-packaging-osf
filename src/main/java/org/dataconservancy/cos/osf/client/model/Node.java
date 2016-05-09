@@ -19,11 +19,16 @@ package org.dataconservancy.cos.osf.client.model;
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
 
 import java.util.List;
+import java.util.Map;
 
 import org.joda.time.DateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.RelType;
+import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Link;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 
@@ -35,37 +40,59 @@ import com.github.jasminb.jsonapi.annotations.Type;
  * @author khanson
  */
 @Type("nodes")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Node {
 
 	/**List of nodes that are children of this node.*/
-	@Relationship(value = "children", resolve = true, relType = RelType.RELATED)
+	@Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
 	private List<Node> children;	
 
 	/**List of users who are contributors to this node. */
-	//@Relationship(value = "contributors", resolve = true, relType = RelType.RELATED)
-	//private List<Contributor> contributors;
-
-	/**If this node is a child node of another node, the parent's canonical endpoint will 
-	 * be available in the /parent/links/related/href key. Otherwise, it will be null.*/
-    //@Relationship(value = "parent", resolve = true, relType = RelType.RELATED)
-    //private Node parent;
-
-	/**Root node if you walk up the tree of projects/components.*/
-    //@Relationship(value = "root", resolve = true, relType = RelType.RELATED)
-    //private Node root;
+	@Relationship(value = "contributors", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+	private List<Contributor> contributors;
 	
 	/**List of top-level folders (actually cloud-storage providers) associated with this node.
 	 * This is the starting point for accessing the actual files stored within this node.*/
-    @Relationship(value = "files", resolve = true, relType = RelType.RELATED)
+    @Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<File> files;
+    
+    /**Link to primary institution for node.
+     * TODO: doesn't appear to work yet - commenting out to prevent error*/
+    //@Relationship(value = "primary_institution", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    //private Institution primary_institution;     
+    
+	/**Root node if you walk up the tree of projects/components.*/
+    @Relationship(value = "root", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String root;
+    
+	/**If this node is a child node of another node, the parent's canonical endpoint will 
+	 * be available in the /parent/links/related/href key. Otherwise, it will be null.*/
+    @Relationship(value = "parent", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String parent;
+    
+	/**Link to list of registrations related to the current node*/
+    @Relationship(value = "registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String registrations;
 
     /**If this node was forked from another node, the canonical endpoint of the node that was 
      * forked from will be available in the /forked_from/links/related/href key. Otherwise, it will be null.*/
-    //@Relationship(value = "forked_from", resolve = true, relType = RelType.RELATED)
-    //private Node forked_from;
-        
-    /**Pagination links**/
-    private Links links;
+    @Relationship(value = "forked_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String forked_from;   
+    
+    /**Link to list of links to other Nodes.*/
+    @Relationship(value = "node_links", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String node_links;    
+    
+    /**Link to list of logs for Node.*/
+    @Relationship(value = "logs", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String logs;       
+    
+    /**Gets other links found in data.links:{} section of JSON**/
+    @Link 
+    Map<String, ?> links;        
+    
+    /**pagination links, applies when list is returned**/
+    private Links pageLinks;
 
     /**Node category, must be one of the allowed values.*/
     private Category category;
@@ -233,14 +260,6 @@ public class Node {
         isCollection = collection;
     }
 
-    public Links getLinks() {
-        return links;
-    }
-
-    public void setLinks(Links links) {
-        this.links = links;
-    }
-
     public List<File> getFiles() {
         return files;
     }
@@ -248,4 +267,86 @@ public class Node {
     public void setFiles(List<File> files) {
         this.files = files;
     }
+    
+
+	public List<Contributor> getContributors() {
+		return contributors;
+	}
+
+	public void setContributors(List<Contributor> contributors) {
+		this.contributors = contributors;
+	}
+
+	public String getRoot() {
+		return root;
+	}
+
+	public void setRoot(String root) {
+		this.root = root;
+	}
+
+	public String getParent() {
+		return parent;
+	}
+
+	public void setParent(String parent) {
+		this.parent = parent;
+	}
+
+	public String getForked_from() {
+		return forked_from;
+	}
+
+	public void setForked_from(String forked_from) {
+		this.forked_from = forked_from;
+	}
+
+	public String getRegistrations() {
+		return registrations;
+	}
+
+	public void setRegistrations(String registrations) {
+		this.registrations = registrations;
+	}
+
+	public String getNode_links() {
+		return node_links;
+	}
+
+	public void setNode_links(String node_links) {
+		this.node_links = node_links;
+	}
+
+	public String getLogs() {
+		return logs;
+	}
+
+	public void setLogs(String logs) {
+		this.logs = logs;
+	}
+
+	public Map<String, ?> getLinks() {
+		return links;
+	}
+
+	public void setLinks(Map<String, ?> links) {
+		this.links = links;
+	}	
+
+    public Links getPageLinks() {
+        return pageLinks;
+    }
+
+    @JsonProperty("links")
+    public void setPageLinks(Links pageLinks) {
+        this.pageLinks = pageLinks;
+    }
+
+	/*public Institution getPrimary_institution() {
+		return primary_institution;
+	}
+
+	public void setPrimary_institution(Institution primary_institution) {
+		this.primary_institution = primary_institution;
+	}*/
 }
