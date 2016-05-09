@@ -25,11 +25,11 @@
   <description>Client for the Center for Open Science Open Science Framework</description>
   <version>1.0.0-SNAPSHOT</version>
 
-  <parent>
+  <!-- <parent>
     <groupId>org.dataconservancy</groupId>
     <artifactId>project-pom</artifactId>
     <version>8</version>
-  </parent>
+  </parent> -->
 
   <!-- Modules  =================================================== -->
 
