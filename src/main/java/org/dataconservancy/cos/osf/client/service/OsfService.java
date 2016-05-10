@@ -16,20 +16,23 @@
 
 package org.dataconservancy.cos.osf.client.service;
 
+import java.util.List;
+import java.util.Map;
+
 import org.dataconservancy.cos.osf.client.model.Node;
-import org.dataconservancy.cos.osf.client.model.NodeFile;
+import org.dataconservancy.cos.osf.client.model.Registration;
+import org.dataconservancy.cos.osf.client.model.User;
+
 import retrofit.Call;
 import retrofit.http.GET;
-import retrofit.http.Header;
 import retrofit.http.Path;
 import retrofit.http.Query;
 import retrofit.http.QueryMap;
 
-import java.util.List;
-import java.util.Map;
-
 /**
  * Created by esm on 4/25/16.
+ * @author esm
+ * @author khanson
  */
 public interface OsfService {
 
@@ -45,5 +48,29 @@ public interface OsfService {
     @GET("nodes/{id}/")
     Call<Node> node(@Path("id") String id);
 
-    Call<List<NodeFile>> listFiles(@Path(""))
+    @GET("registrations/")
+    Call<List<Registration>> registrationList();
+
+    @GET("registrations/")
+    Call<List<Registration>> registrationList(@QueryMap Map<String, String> params);
+
+    @GET("registrations/")
+    Call<List<Registration>> registrationList(@Query("page") int page, @QueryMap Map<String, String> params);
+
+    @GET("registrations/{id}/")
+    Call<Registration> registration(@Path("id") String id);
+
+    @GET("users/")
+    Call<List<User>> userList();
+
+    @GET("users/")
+    Call<List<User>> userList(@QueryMap Map<String, String> params);
+
+    @GET("users/")
+    Call<List<User>> userList(@Query("page") int page, @QueryMap Map<String, String> params);
+
+    @GET("users/{id}/")
+    Call<User> user(@Path("id") String id);
+       
+    //Call<List<NodeFile>> listFiles(@Path(""))
 }

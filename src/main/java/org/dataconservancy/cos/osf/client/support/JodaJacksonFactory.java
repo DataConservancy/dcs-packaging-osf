@@ -33,6 +33,6 @@ public class JodaJacksonFactory {
     @JsonCreator
     public static DateTime createDateModified(@JsonProperty("date_modified") String dateCreated) {
         return DateTime.parse(dateCreated);
-    }
+    }    
 
 }
