@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.model.Contributor;
@@ -155,9 +156,6 @@ public class TestClient {
 
     	// Create object mapper
         ObjectMapper objectMapper = new ObjectMapper();
-
-        // Set serialisation/deserialisation options if needed (property naming strategy, etc...)
-
         OkHttpClient client = new OkHttpClient();
 
         ResourceConverter converter = new ResourceConverter(objectMapper, Registration.class, File.class, 
@@ -210,8 +208,14 @@ public class TestClient {
         Registration testreg = osfSvc.registration(registrationId).execute().body();
         assertNotNull(testreg);
         assertNotNull(testreg.getChildren());
-       testreg.getChildren().stream().forEach(child -> System.err.println("ChildReg (" + child.getId() + "): DateCreated: " + child.getDate_created() 
+       
+        testreg.getChildren().stream().forEach(child -> System.err.println("ChildReg (" + child.getId() + "): DateCreated: " + child.getDate_created() 
         										+ " root: " + child.getRoot() + " title:" + child.getTitle()));
+
+        Map<String,?> links = testreg.getLinks();
+        
+        assertNotNull(links);
+        assertTrue(links.size()>0);
                
     }
 
