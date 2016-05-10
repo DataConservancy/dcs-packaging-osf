@@ -21,6 +21,7 @@ import java.util.Map;
 
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
+import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
 
 import retrofit.Call;
@@ -59,7 +60,16 @@ public interface OsfService {
 
     @GET("registrations/{id}/")
     Call<Registration> registration(@Path("id") String id);
+    
+    @GET("registrations/")
+    Call<List<RegistrationId>> registrationIdList();
 
+    @GET("registrations/")
+    Call<List<RegistrationId>> registrationIdList(@QueryMap Map<String, String> params);
+
+    @GET("registrations/")
+    Call<List<RegistrationId>> registrationIdList(@Query("page") int page, @QueryMap Map<String, String> params);
+    
     @GET("users/")
     Call<List<User>> userList();
 
