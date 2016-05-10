@@ -21,11 +21,15 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.IOUtils;
+import org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService;
+import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
+import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.FileVersion;
@@ -33,6 +37,9 @@ import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
+import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
+import org.junit.Before;
 import org.junit.Test;
 
 import retrofit.Call;
@@ -52,11 +59,22 @@ import com.squareup.okhttp.Request;
  */
 public class TestClient {
 
+    private OsfClientConfiguration config;
+
+    private URI baseUrl;
+
+    @Before
+    public void setUp() throws Exception {
+        JacksonOsfConfigurationService configSvc = new JacksonOsfConfigurationService("osf-client-test.json");
+        assertNotNull(configSvc);
+        config = configSvc.getConfiguration();
+        assertNotNull(config);
+        baseUrl = config.getBaseUri();
+        assertNotNull(baseUrl);
+    }
+
     @Test
     public void testNodeApi() throws Exception {
-
-//      final String auth = "";
-//      final String auth = "Basic ZW1ldHNnZXJAZ21haWwuY29tOmZvb2JhcmJheg==";
 
         // Create object mapper
         ObjectMapper objectMapper = new ObjectMapper();
@@ -64,8 +82,8 @@ public class TestClient {
         // Set serialisation/deserialisation options if needed (property naming strategy, etc...)
 
         OkHttpClient client = new OkHttpClient();
-//      client.interceptors().add(new LoggingInterceptor());
-//      client.interceptors().add(new AuthInterceptor(auth));
+        client.interceptors().add(new LoggingInterceptor());
+        client.interceptors().add(new AuthInterceptor(config.getAuthHeader()));
 
         ResourceConverter converter = new ResourceConverter(objectMapper, Node.class, File.class, 
         													FileVersion.class, Contributor.class, User.class);
@@ -84,7 +102,7 @@ public class TestClient {
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.99.100:8000/v2/")
+                .baseUrl(baseUrl.toString())
                 .addConverterFactory(converterFactory)
                 .client(client)
                 .build();
