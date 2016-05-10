@@ -37,5 +37,4 @@ Run the `TestClient` from Maven or from within the IDE.
 ### Dependencies
 
 * [Custom build](https://github.com/emetsger/jsonapi-converter/tree/develop-wip) of the [JSON API Converter](https://github.com/jasminb/jsonapi-converter)
-
-** You'll need to checkout the custom branch https://github.com/emetsger/jsonapi-converter/tree/develop-wip and run `mvn install`
+  * You'll need to checkout the custom branch https://github.com/emetsger/jsonapi-converter/tree/develop-wip and run `mvn install`
