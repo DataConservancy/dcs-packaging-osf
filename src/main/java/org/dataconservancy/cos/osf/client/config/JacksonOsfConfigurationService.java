@@ -50,21 +50,80 @@ public class JacksonOsfConfigurationService implements OsfConfigurationService {
 
     private final ObjectMapper mapper;
 
+    /**
+     * A new configuration service using the {@link #DEFAULT_CONFIGURATION_RESOURCE} and a default instance of a
+     * Jackson {@code ObjectMapper}.
+     *
+     * @throws IllegalArgumentException if the default configuration resource is not found on the classpath
+     */
     public JacksonOsfConfigurationService() {
         this.configurationResource = DEFAULT_CONFIGURATION_RESOURCE;
         this.mapper = new ObjectMapper();
+
+        try {
+            getConfiguration();
+        } catch (Exception e) {
+            throw new IllegalArgumentException(e.getMessage(), e);
+        }
+
     }
 
+    /**
+     * A new configuration service using the supplied {@code configurationResource} and a default instance of a
+     * Jackson {@code ObjectMapper}.
+     *
+     * @param configurationResource a classpath resource containing the OSF client configuration
+     * @throws IllegalArgumentException if the default configuration resource is not found on the classpath, or any
+     *                                  construction parameters are empty or {@code null}.
+     */
     public JacksonOsfConfigurationService(String configurationResource) {
+        if (configurationResource == null || configurationResource.trim().length() == 0) {
+            throw new IllegalArgumentException("Configuration resource must not be empty or null.");
+        }
         this.configurationResource = configurationResource;
         this.mapper = new ObjectMapper();
+
+        try {
+            getConfiguration();
+        } catch (Exception e) {
+            throw new IllegalArgumentException(e.getMessage(), e);
+        }
     }
 
+    /**
+     * A new configuration service using the supplied {@code configurationResource} and the supplied Jackson
+     * {@code ObjectMapper}.
+     *
+     * @param configurationResource a classpath resource containing the OSF client configuration
+     * @param mapper                a configured Jackson {@code ObjectMapper}, used to deserialize the OSF client
+     *                              configuration
+     * @throws IllegalArgumentException if the default configuration resource is not found on the classpath, or any
+     *                                  construction parameters are empty or {@code null}.
+     */
     public JacksonOsfConfigurationService(String configurationResource, ObjectMapper mapper) {
+        if (configurationResource == null || configurationResource.trim().length() == 0) {
+            throw new IllegalArgumentException("Configuration resource must not be empty or null.");
+        }
+        if (mapper == null) {
+            throw new IllegalArgumentException("Jackson ObjectMapper must not be empty or null.");
+        }
         this.configurationResource = configurationResource;
         this.mapper = mapper;
+
+        try {
+            getConfiguration();
+        } catch (Exception e) {
+            throw new IllegalArgumentException(e.getMessage(), e);
+        }
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * @return {@inheritDoc}
+     * @throws RuntimeException if the configuration resource cannot be found on the classpath, or if there is trouble
+     *                          reading the resource.
+     */
     public OsfClientConfiguration getConfiguration() {
         URL configUrl = this.getClass().getResource(configurationResource);
 
