@@ -29,12 +29,12 @@ import java.util.Map;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
-import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.FileVersion;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
+import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
@@ -65,7 +65,7 @@ public class TestClient {
 
     @Before
     public void setUp() throws Exception {
-        JacksonOsfConfigurationService configSvc = new JacksonOsfConfigurationService("osf-client-test.json");
+        JacksonOsfConfigurationService configSvc = new JacksonOsfConfigurationService("osf-client-jacksontest.json");
         assertNotNull(configSvc);
         config = configSvc.getConfiguration();
         assertNotNull(config);
@@ -99,7 +99,6 @@ public class TestClient {
             }
         });
         JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
-
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl.toString())
@@ -192,7 +191,7 @@ public class TestClient {
         JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.99.100:8000/v2/")
+                .baseUrl(baseUrl.toString())
                 .addConverterFactory(converterFactory)
                 .client(client)
                 .build();
@@ -236,5 +235,50 @@ public class TestClient {
         assertTrue(links.size()>0);
                
     }
+    
+
+    @Test
+    public void testRegistrationIdList() throws Exception {
+
+    	// Create object mapper
+        ObjectMapper objectMapper = new ObjectMapper();
+        OkHttpClient client = new OkHttpClient();
+
+        ResourceConverter converter = new ResourceConverter(objectMapper, RegistrationId.class);
+
+        JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(baseUrl.toString())
+                .addConverterFactory(converterFactory)
+                .client(client)
+                .build();
+
+        OsfService osfSvc = retrofit.create(OsfService.class);
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("filter[public]", "true");
+        Call<List<RegistrationId>> listCall = osfSvc.registrationIdList(params);
+        assertNotNull(listCall);
+        Response<List<RegistrationId>> res = listCall.execute();
+        assertNotNull(res);
+        
+        List<RegistrationId> registrations = null;
+        if (!res.isSuccess()) {
+            assertNotNull(res.errorBody());
+            System.err.println(res.errorBody().string());
+        } else {
+        	registrations = res.body();
+        }
+
+        assertNotNull(registrations);
+        assertTrue (registrations.size()>0);
+
+        registrations.stream().forEach(n -> {
+            System.out.println("Registrations: id " + n.getId());
+        });
+                         
+    }
+    
 
 }
