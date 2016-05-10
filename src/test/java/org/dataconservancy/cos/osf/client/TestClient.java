@@ -22,10 +22,13 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.github.jasminb.jsonapi.annotations.Type;
+import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
@@ -37,6 +40,7 @@ import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.service.RetrofitOsfServiceFactory;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
 import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
 import org.junit.Before;
@@ -59,54 +63,70 @@ import com.squareup.okhttp.Request;
  */
 public class TestClient {
 
+    /**
+     * Encapsulation of the OSF client configuration, including the base url of the API and authentication
+     * parameters.  Configured by the classpath resource {@code osf-client-test.json}.
+     */
     private OsfClientConfiguration config;
 
+    /**
+     * The base URL of the v2 API, especially useful for relativizing URLs
+     */
     private URI baseUrl;
+
+    /**
+     * Provides instances of the OsfService, or any Retrofit-compatible interface.
+     */
+    private RetrofitOsfServiceFactory osfServiceFactory;
 
     @Before
     public void setUp() throws Exception {
-        JacksonOsfConfigurationService configSvc = new JacksonOsfConfigurationService("osf-client-jacksontest.json");
+
+        // Configure the configuration service.
+        JacksonOsfConfigurationService configSvc = new JacksonOsfConfigurationService("osf-client-test.json");
         assertNotNull(configSvc);
+
+        // The base URL of the v2 api
         config = configSvc.getConfiguration();
         assertNotNull(config);
         baseUrl = config.getBaseUri();
         assertNotNull(baseUrl);
+
+        // Wiring for the RetrofitOsfService Factory
+
+        // ... the OK HTTP client used by Retrofit to make calls
+        OkHttpClient client = new OkHttpClient();
+        client.interceptors().add(new AuthInterceptor(config.getAuthHeader()));
+
+        // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
+        List<Class<?>> domainClasses = new ArrayList<>();
+
+        new FastClasspathScanner("org.dataconservancy.cos.osf.client.model")
+                .matchClassesWithAnnotation(Type.class, domainClasses::add)
+                .scan();
+
+        ResourceConverter resourceConverter = new ResourceConverter(new ObjectMapper(),
+                domainClasses.toArray(new Class[]{}));
+
+        resourceConverter.setGlobalResolver(relUrl -> {
+            com.squareup.okhttp.Call req = client.newCall(new Request.Builder().url(relUrl).build());
+            try {
+                return req.execute().body().bytes();
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage(), e);
+            }
+        });
+
+        JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(resourceConverter);
+
+        // The RetrofitOsfServiceFactory itself
+        osfServiceFactory = new RetrofitOsfServiceFactory(configSvc, client, converterFactory);
     }
 
     @Test
     public void testNodeApi() throws Exception {
 
-        // Create object mapper
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        // Set serialisation/deserialisation options if needed (property naming strategy, etc...)
-
-        OkHttpClient client = new OkHttpClient();
-        client.interceptors().add(new LoggingInterceptor());
-        client.interceptors().add(new AuthInterceptor(config.getAuthHeader()));
-
-        ResourceConverter converter = new ResourceConverter(objectMapper, Node.class, File.class, 
-        													FileVersion.class, Contributor.class, User.class);
-        converter.setGlobalResolver(relUrl -> {
-            System.err.println("Resolving " + relUrl);
-            com.squareup.okhttp.Call req = client.newCall(new Request.Builder().url(relUrl).build());
-            try {
-                byte[] bytes = req.execute().body().bytes();
-                System.err.println(IOUtils.toString(bytes, "UTF-8"));
-                return bytes;
-            } catch (IOException e) {
-                throw new RuntimeException(e.getMessage(), e);
-            }
-        });
-        JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl.toString())
-                .addConverterFactory(converterFactory)
-                .client(client)
-                .build();
-
-        OsfService osfSvc = retrofit.create(OsfService.class);
+        OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
 
         //HashMap<String, String> params = new HashMap<>();
 //        params.put("filter[public]", "true");
@@ -114,7 +134,7 @@ public class TestClient {
         assertNotNull(listCall);
         Response<List<Node>> res = listCall.execute();
         assertNotNull(res);
-        
+
         List<Node> nodes = null;
         if (!res.isSuccess()) {
             assertNotNull(res.errorBody());
@@ -128,7 +148,7 @@ public class TestClient {
         assertNotNull(nodes);
 
         nodes.stream().forEach(n -> {
-            System.out.println("Node: id " + n.getId() + " category " + n.getCategory() + "; title " + n.getTitle() + "; public " + n.isPublic() + "; Rootpath: "  + n.getRoot());
+            System.out.println("Node: id " + n.getId() + " category " + n.getCategory() + "; title " + n.getTitle() + "; public " + n.isPublic() + "; Rootpath: " + n.getRoot());
             System.out.println("Links: " + n.getPageLinks());
         });
 
@@ -145,22 +165,22 @@ public class TestClient {
 
         assertNotNull(osfStorage);
         assertNotNull(osfStorage.getFiles());
-        osfStorage.getFiles().stream().forEach(file -> System.err.println("File (" + file.getName() + "): " + file.getProvider() 
-        												+ " path: " + file.getPath()));
+        osfStorage.getFiles().stream().forEach(file -> System.err.println("File (" + file.getName() + "): " + file.getProvider()
+                + " path: " + file.getPath()));
 
         List<Contributor> contributors = withFiles.getContributors();
-        
+
         assertNotNull(contributors);
-        assertTrue(contributors.size()>0);
-        
-        contributors.stream().forEach(contrib ->System.err.println("Contributor - " + contrib.getId() ));
-       
+        assertTrue(contributors.size() > 0);
+
+        contributors.stream().forEach(contrib -> System.err.println("Contributor - " + contrib.getId()));
+
         //users
         Call<List<User>> userListCall = osfSvc.userList();
         assertNotNull(userListCall);
         Response<List<User>> usr = userListCall.execute();
         assertNotNull(usr);
-              
+
         String userId = "km4wh"; //temp test id
         User testUser = osfSvc.user(userId).execute().body();
         assertNotNull(testUser);
