@@ -24,6 +24,7 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService;
+import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
 import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
 
@@ -37,7 +38,8 @@ import java.util.List;
  * the boilerplate for tests (and they are the only implementations available).
  * <p>
  * Importantly, this factory exposes the {@link OkHttpClient#interceptors() interceptors} that are used by the HTTP
- * client.  This allows a test class to configure an interceptor and add it to the chain.
+ * client.  This allows a test class to configure an interceptor and add it to the chain.  By default, this factory
+ * configures an instance of {@link AuthInterceptor} on the client.
  * </p>
  * <p>
  * Sample usage:
@@ -45,7 +47,7 @@ import java.util.List;
  * // create an instance of the factory, referencing a configuration for the client formatted as JSON
  * TestingOsfServiceFactory factory = new TestingOsfServiceFactory("osf-client-local.json");
  *
- * // configure any interceptors on the client
+ * // configure any interceptors on the client (e.g. to mutate HTTP headers)
  * factory.interceptors().add((chain) -> chain.proceed(
  *   chain.request().newBuilder().addHeader(X_RESPONSE_RESOURCE, "project-node-only-ref-rels.json").build()
  * ));
@@ -62,6 +64,8 @@ public class TestingOsfServiceFactory {
 
     private final OkHttpClient httpClient;
 
+    private final OsfConfigurationService osfConfigurationService;
+
     /**
      * Creates a new RetrofitOsfServiceFactory with default implementations for the required collaborators.  Not
      * recommended for production.
@@ -70,14 +74,13 @@ public class TestingOsfServiceFactory {
      */
     public TestingOsfServiceFactory(String jsonConfigurationResource) {
         // Configure the configuration service.
-        JacksonOsfConfigurationService osfConfigSvc = new JacksonOsfConfigurationService(jsonConfigurationResource);
+       osfConfigurationService = new JacksonOsfConfigurationService(jsonConfigurationResource);
 
         // Wiring for the RetrofitOsfService Factory
 
         // ... the OK HTTP client used by Retrofit to make calls
         httpClient = new OkHttpClient();
-        httpClient.interceptors().add(new AuthInterceptor(osfConfigSvc.getConfiguration().getAuthHeader()));
-        httpClient.interceptors().add(new LoggingInterceptor());
+        httpClient.interceptors().add(new AuthInterceptor(osfConfigurationService.getConfiguration().getAuthHeader()));
 
         // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
         List<Class<?>> domainClasses = new ArrayList<>();
@@ -100,7 +103,7 @@ public class TestingOsfServiceFactory {
 
         JSONAPIConverterFactory jsonApiConverterFactory = new JSONAPIConverterFactory(resourceConverter);
 
-        factory = new RetrofitOsfServiceFactory(osfConfigSvc, httpClient, jsonApiConverterFactory);
+        factory = new RetrofitOsfServiceFactory(osfConfigurationService, httpClient, jsonApiConverterFactory);
     }
 
     /**
@@ -111,6 +114,15 @@ public class TestingOsfServiceFactory {
      */
     public List<Interceptor> interceptors() {
         return httpClient.interceptors();
+    }
+
+    /**
+     * Expose the {@link OsfConfigurationService} used by this factory.
+     *
+     * @return the configuration service
+     */
+    public OsfConfigurationService getConfigurationService() {
+        return osfConfigurationService;
     }
 
     /**
