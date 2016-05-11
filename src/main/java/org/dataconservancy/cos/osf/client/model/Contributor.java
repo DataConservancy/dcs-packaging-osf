@@ -49,7 +49,10 @@ public class Contributor {
 	/**pagination links, applies when list is returned**/
 	private Links pageLinks;
     
-    //TODO: the user is embedded in the JSON and won't work as is.  We can use the ID to retrieve it since contribId=userId. 
+    //TODO: the user is embedded in the JSON and won't work as is.  We can use the ID to retrieve it since contribId=userId.
+	//TODO: this has been brought to the attention of Brian Geiger (bgeiger@cos.io), logged on the public OSF v2 API,
+	//TODO: and created a GitHub issue https://github.com/CenterForOpenScience/osf.io/issues/5590 which has been rolled
+	//TODO: into CoS' internal Jira
     //Commenting out for now.
     //User user;
 
