@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/v8x57/files/osfstorage/5731e69ecfa27c0047716290/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "info": "http://localhost:8000/v2/files/5731e69ecfa27c0047716290/",
+        "new_folder": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5731e69ecfa27c0047716290/?kind=folder",
+        "self": "http://localhost:8000/v2/files/5731e69ecfa27c0047716290/",
+        "move": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5731e69ecfa27c0047716290/",
+        "upload": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5731e69ecfa27c0047716290/",
+        "delete": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5731e69ecfa27c0047716290/"
+      },
+      "attributes": {
+        "extra": {
+          "hashes": {
+            "sha256": null,
+            "md5": null
+          }
+        },
+        "kind": "folder",
+        "name": "moo",
+        "last_touched": null,
+        "materialized_path": "/moo/",
+        "date_modified": null,
+        "date_created": null,
+        "provider": "osfstorage",
+        "path": "/5731e69ecfa27c0047716290/",
+        "checkout": null,
+        "size": null
+      },
+      "type": "files",
+      "id": "5731e69ecfa27c0047716290"
+    },
+    {
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/v8x57/comments/?filter[target]=hyrem",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/5716311dcfa27c0045ec7cab/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "info": "http://localhost:8000/v2/files/5716311dcfa27c0045ec7cab/",
+        "self": "http://localhost:8000/v2/files/5716311dcfa27c0045ec7cab/",
+        "move": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5716311dcfa27c0045ec7cab",
+        "upload": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5716311dcfa27c0045ec7cab",
+        "download": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5716311dcfa27c0045ec7cab",
+        "delete": "http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5716311dcfa27c0045ec7cab"
+      },
+      "attributes": {
+        "extra": {
+          "hashes": {
+            "sha256": "39e810498a96517091cac7f59abb3a57d115f3c8b8b1e22648426dfe66bf9cd7",
+            "md5": "19d61973a43bf1550aef3241b5543076"
+          }
+        },
+        "kind": "file",
+        "name": "porsche.jpg",
+        "last_touched": null,
+        "materialized_path": "/porsche.jpg",
+        "date_modified": "2016-04-19T13:22:38.089Z",
+        "date_created": "2016-04-19T13:22:38.089Z",
+        "provider": "osfstorage",
+        "path": "/5716311dcfa27c0045ec7cab",
+        "checkout": null,
+        "size": 16064286
+      },
+      "type": "files",
+      "id": "5716311dcfa27c0045ec7cab"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "prev": null,
+    "next": null,
+    "meta": {
+      "total": 2,
+      "per_page": 10
+    }
+  }
+}
