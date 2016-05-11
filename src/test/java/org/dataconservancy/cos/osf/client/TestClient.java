@@ -41,6 +41,7 @@ import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.client.service.RetrofitOsfServiceFactory;
+import org.dataconservancy.cos.osf.client.service.TestingOsfServiceFactory;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
 import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
 import org.junit.Before;
@@ -77,50 +78,18 @@ public class TestClient {
     /**
      * Provides instances of the OsfService, or any Retrofit-compatible interface.
      */
-    private RetrofitOsfServiceFactory osfServiceFactory;
+    private TestingOsfServiceFactory osfServiceFactory;
 
     @Before
     public void setUp() throws Exception {
 
-        // Configure the configuration service.
-        JacksonOsfConfigurationService configSvc = new JacksonOsfConfigurationService("osf-client-test.json");
-        assertNotNull(configSvc);
+        osfServiceFactory = new TestingOsfServiceFactory("osf-client-test.json");
 
         // The base URL of the v2 api
-        config = configSvc.getConfiguration();
+        config = osfServiceFactory.getConfigurationService().getConfiguration();
         assertNotNull(config);
         baseUrl = config.getBaseUri();
         assertNotNull(baseUrl);
-
-        // Wiring for the RetrofitOsfService Factory
-
-        // ... the OK HTTP client used by Retrofit to make calls
-        OkHttpClient client = new OkHttpClient();
-        client.interceptors().add(new AuthInterceptor(config.getAuthHeader()));
-
-        // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
-        List<Class<?>> domainClasses = new ArrayList<>();
-
-        new FastClasspathScanner("org.dataconservancy.cos.osf.client.model")
-                .matchClassesWithAnnotation(Type.class, domainClasses::add)
-                .scan();
-
-        ResourceConverter resourceConverter = new ResourceConverter(new ObjectMapper(),
-                domainClasses.toArray(new Class[]{}));
-
-        resourceConverter.setGlobalResolver(relUrl -> {
-            com.squareup.okhttp.Call req = client.newCall(new Request.Builder().url(relUrl).build());
-            try {
-                return req.execute().body().bytes();
-            } catch (IOException e) {
-                throw new RuntimeException(e.getMessage(), e);
-            }
-        });
-
-        JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(resourceConverter);
-
-        // The RetrofitOsfServiceFactory itself
-        osfServiceFactory = new RetrofitOsfServiceFactory(configSvc, client, converterFactory);
     }
 
     @Test
