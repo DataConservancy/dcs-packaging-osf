@@ -28,13 +28,14 @@ import java.net.URL;
 import static org.dataconservancy.cos.osf.client.model.NodeTest.X_RESPONSE_RESOURCE;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockserver.model.HttpResponse.response;
-import static org.mockserver.model.HttpStatusCode.BAD_REQUEST_400;
-import static org.mockserver.model.HttpStatusCode.NOT_FOUND_404;
 import static org.mockserver.model.HttpStatusCode.OK_200;
 
 /**
- * Created by esm on 5/11/16.
+ * Resolves and returns the content identified by the classpath resource contained in the
+ * {@link NodeTest#X_RESPONSE_RESOURCE} header.  If the resource cannot be resolved, an {@code AssertionError} is
+ * thrown.  If the {@code X_RESPONSE_RESOURCE} header is missing, an assertion error is also thrown.
  */
 public class NodeResponseCallback implements ExpectationCallback {
 
@@ -42,9 +43,10 @@ public class NodeResponseCallback implements ExpectationCallback {
 
     @Override
     public HttpResponse handle(HttpRequest req) {
+
         if (!req.containsHeader(X_RESPONSE_RESOURCE)) {
-            return response()
-                    .withStatusCode(BAD_REQUEST_400.code());
+            fail("Use of the " + NodeResponseCallback.class.getName() + " class requires the use of the " +
+                    X_RESPONSE_RESOURCE + " HTTP header, but this header was not found in the request.");
         }
 
         String resource = req.getFirstHeader(X_RESPONSE_RESOURCE);
