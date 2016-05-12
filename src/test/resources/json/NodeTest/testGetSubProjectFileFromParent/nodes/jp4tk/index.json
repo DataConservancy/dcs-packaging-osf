@@ -1,0 +1,45 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/jp4tk/files/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/jp4tk/children/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/jp4tk/",
+      "html": "http://localhost:5000/jp4tk/"
+    },
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "description": "",
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-05-12T12:49:51.697000",
+      "title": "Project with sub-project containing a file",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-05-12T12:49:51.697000",
+      "public": false,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "jp4tk"
+  }
+}

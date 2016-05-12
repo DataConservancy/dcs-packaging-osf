@@ -16,7 +16,9 @@
 package org.dataconservancy.cos.osf.client.model;
 
 import com.github.jasminb.jsonapi.ResolutionStrategy;
+import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.junit.Before;
 import org.junit.Rule;
@@ -26,10 +28,13 @@ import org.mockserver.client.server.MockServerClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -146,18 +151,7 @@ public class NodeTest extends AbstractMockServerTest {
     @Test
     public void testGetNodeObjectResolution() throws Exception {
 
-        factory.interceptors().add((chain) -> {
-            Request req = chain.request();
-            LOG.debug("HTTP request: {}", req.urlString());
-
-            // Resolve the request URI to a path on the filesystem.
-            Path resourcePath = resolveResponseResource(testName, getConfiguration().getBaseUri(), req.uri());
-            LOG.debug("Response resource: {}", resourcePath.toString());
-
-            req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath.toString()).build();
-
-            return chain.proceed(req);
-        });
+        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri()));
 
         Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
         assertNotNull(n);
@@ -185,9 +179,59 @@ public class NodeTest extends AbstractMockServerTest {
         assertFilesContainsName("moo", storageProvider.getFiles());
         assertFilesContainsName("porsche.jpg", storageProvider.getFiles());
 
+        // TODO store files in a Map keyed by name?
+
+        File f = getFile("porsche.jpg", storageProvider.getFiles());
+        assertNotNull(f.getLinks());
+        assertEquals("http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5716311dcfa27c0045ec7cab", f.getLinks().get("download"));
+
+
+
         // TODO remainder of file hierarchy.
     }
 
+    /**
+     * Tests a structure with a top-level project containing a sub-project, which contains a file.
+     * Retrieving the top-level project will recursively retrieve the sub-project's file.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testGetSubProjectFileFromParent() throws Exception {
+        String topLevel = "jp4tk";
+        String sub = "pd24n";
+        String fileName = "porsche.jpg";
+
+        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri()));
+
+        Node topNode = factory.getOsfService(OsfService.class).node(topLevel).execute().body();
+        assertNotNull(topNode);
+
+        // the top node has only one file, the osfstorage provider.
+        assertEquals(1, topNode.getFiles().size());
+        assertEquals("osfstorage", topNode.getFiles().get(0).getName());
+        assertEquals("osfstorage", topNode.getFiles().get(0).getProvider());
+        assertEquals("/", topNode.getFiles().get(0).getPath());
+
+        // the osfstorage provider contains no files or directories
+        assertEquals(0, topNode.getFiles().get(0).getFiles().size());
+
+        // There's one child
+        assertEquals(1, topNode.getChildren().size());
+        Node subNode = topNode.getChildren().get(0);
+        assertNotNull(subNode);
+        assertEquals(sub, subNode.getId());
+
+        // It has one storage provider
+        assertEquals(1, subNode.getFiles().size());
+        assertEquals("osfstorage", subNode.getFiles().get(0).getName());
+        assertEquals("osfstorage", subNode.getFiles().get(0).getProvider());
+        assertEquals("/", subNode.getFiles().get(0).getPath());
+
+        // the osfstorage provider contains one file
+        assertEquals(1, subNode.getFiles().get(0).getFiles().size());
+        assertEquals(fileName, subNode.getFiles().get(0).getFiles().get(0).getName());
+    }
     private static URI relativize(URI baseUri, URI requestUri) {
         URI result = baseUri.relativize(requestUri);
         LOG.trace("Relativizing {} against {}: {}", baseUri, requestUri, result);
@@ -242,4 +286,97 @@ public class NodeTest extends AbstractMockServerTest {
 
         fail("Expected file named '" + name + "' was not found.");
     }
+
+    private File getFile(String name, Collection<File> files) {
+        for (File f : files) {
+            if (f.getName().equals(name)) {
+                return f;
+            }
+        }
+
+        fail("Expected file named '" + name + "' was not found.");
+        return null;
+    }
+
+    private class BasicInterceptor implements Interceptor {
+
+        private final URI baseUri;
+
+        private final TestName testName;
+
+        private ResponseResolver resolver;
+
+
+        /**
+         * Responsible for resolving the JSON response resource for OSF v2 API calls that are recursive.
+         * <p>
+         * For example, the {@link ResolutionStrategy} for {@code Node} {@link Node#contributors contributors} says
+         * that when a {@code Node} is retrieved using the {@link OsfService}, the "contributors" relationship should be
+         * recursively retrieved in the same API call, and deserialized into a {@code List} of {@code Contributor}
+         * objects.  Once the {@code Node} is retrieved, the caller can iterate over the {@code Contributor} objects
+         * without issuing subsequent calls to {@link OsfService}.  This behavior is governed by the
+         * {@code ResolutionStrategy} annotations on the model classes.
+         * </p>
+         * <p>
+         * This interceptor will map a response based on attributes of the request (and test name).  This insures that
+         * {@link OsfService} API calls which are recursive will result in proper responses.
+         * </p>
+         */
+        private BasicInterceptor(TestName testName, URI baseUri) {
+            this.baseUri = baseUri;
+            this.testName = testName;
+
+            resolver = (name, base, req) -> {
+                // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
+                URI relativizedRequestUri = baseUri.relativize(req);
+                Path requestPath = Paths.get(relativizedRequestUri.getPath());
+
+                // /json/NodeTest/testGetNodeObjectResolution/
+                Path fsBase = Paths.get(resourceBase(testName));
+
+                // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
+                return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+            };
+        }
+
+        private BasicInterceptor(TestName testName, URI baseUri, ResponseResolver resolver) {
+            this.testName = testName;
+            this.baseUri = baseUri;
+            this.resolver = resolver;
+        }
+
+        @Override
+        public Response intercept(Chain chain) throws IOException {
+            Request req = chain.request();
+            LOG.debug("HTTP request: {}", req.urlString());
+
+            // Resolve the request URI to a path on the filesystem.
+            Path resourcePath = resolver.resolve(testName, baseUri, req.uri());
+            LOG.debug("Response resource: {}", resourcePath.toString());
+
+            req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath.toString()).build();
+
+            return chain.proceed(req);
+        }
+    }
+
+    /**
+     * Responsible for resolving the JSON response for OSF v2 API calls.
+     */
+    @FunctionalInterface
+    private interface ResponseResolver {
+
+        /**
+         * Resolves a JSON response document based on properties of the OSF API, the HTTP request, and the test being
+         * executed.  This method should return a classpath resource containing the JSON for the HTTP response body.
+         *
+         * @param testName contains metadata about the current test method.
+         * @param baseUri the baseUri of the OSF V2 API
+         * @param requestUri the full request URI
+         * @return a Path that identifies a classpath resource containing the JSON response document
+         */
+        Path resolve(TestName testName, URI baseUri, URI requestUri);
+
+    }
+
 }
