@@ -19,6 +19,7 @@ package org.dataconservancy.cos.osf.client.service;
 import java.util.List;
 import java.util.Map;
 
+import com.github.jasminb.jsonapi.ResourceList;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
@@ -39,6 +40,9 @@ public interface OsfService {
 
     @GET("nodes/")
     Call<List<Node>> nodeList();
+
+    @GET("nodes/")
+    Call<ResourceList<Node>> paginatedNodeList();
 
     @GET("nodes/")
     Call<List<Node>> nodeList(@QueryMap Map<String, String> params);
