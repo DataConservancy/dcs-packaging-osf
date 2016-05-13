@@ -16,6 +16,7 @@
 package org.dataconservancy.cos.osf.client.model;
 
 import com.github.jasminb.jsonapi.ResolutionStrategy;
+import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -232,6 +233,47 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(1, subNode.getFiles().get(0).getFiles().size());
         assertEquals(fileName, subNode.getFiles().get(0).getFiles().get(0).getName());
     }
+
+    @Test
+    public void testNodeListPagination() throws Exception {
+        AtomicInteger requestCount = new AtomicInteger(0);
+        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri(),
+                (name, baseUri, reqUri) -> {
+                    // /json/NodeTest/testNodeListPagination/
+                    Path fsBase = Paths.get(resourceBase(testName));
+
+                    requestCount.incrementAndGet();
+
+                    // First request will be the first page of nodes
+                    if (requestCount.get() == 1) {
+                        return Paths.get(fsBase.toString(), "index-01.json");
+                    }
+
+                    // Subsequent requests without a query path are requests for resolving relationships
+                    if (requestCount.get() > 1 && (reqUri.getQuery() == null || reqUri.getQuery().trim().equals(""))) {
+                        // the request is for a relationship, which for this test we don't care about.
+                        // just return a valid, but empty, json response.
+
+                        // /json/NodeTest/testNodeListPagination/empty-response.json
+                        return Paths.get(fsBase.toString(), "empty-response.json");
+                    }
+
+                    // Subsequent requests that carry a query path will be for the next page
+                    return Paths.get(fsBase.toString(), "index-02.json");
+        }));
+
+        OsfService osfService = factory.getOsfService(OsfService.class);
+        ResourceList<Node> pageOne = osfService.paginatedNodeList().execute().body();
+        assertNotNull(pageOne);
+        assertEquals(10, pageOne.size());
+        Node n1 = pageOne.get(0);
+        assertNotNull(n1);
+        assertNull(pageOne.getFirst());
+        assertNull(pageOne.getPrevious());
+        assertEquals(baseUri + "nodes/?page=2", pageOne.getLast());
+        assertEquals(baseUri + "nodes/?page=2", pageOne.getNext());
+    }
+
     private static URI relativize(URI baseUri, URI requestUri) {
         URI result = baseUri.relativize(requestUri);
         LOG.trace("Relativizing {} against {}: {}", baseUri, requestUri, result);
