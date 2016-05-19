@@ -18,9 +18,14 @@ package org.dataconservancy.cos.osf.client.model;
 
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
 
+import java.util.List;
+
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.github.jasminb.jsonapi.RelType;
+import com.github.jasminb.jsonapi.ResolutionStrategy;
+import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 
 /**
@@ -29,13 +34,17 @@ import com.github.jasminb.jsonapi.annotations.Type;
  */
 @Type("registrations")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Registration extends Node  {
+public class Registration extends NodeBase  {
+
+	/**List of nodes that are children of this node.*/
+	@Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+	protected List<Registration> children;
 
 	/**Is this registered node visible on the user dashboard?**/
 	private Boolean isDashboard;
 	
-	/**Has this registration been retracted?**/
-	private Boolean isRetracted;
+	/**Has this registration been withdrawn?**/
+	private Boolean isWithdrawn;
 
 	/**	Timestamp that the registration was created */
 	private DateTime date_registered;
@@ -43,11 +52,11 @@ public class Registration extends Node  {
 	/** When the embargo on this registration will be lifted (if applicable) */
 	private DateTime embargo_end_date;
 	
-	/**Reasons for retracting the registration*/
-	private String retraction_justification;
+	/**Reasons for withdrawing the registration*/
+	private String withdrawal_justification;
 
-	/** Is this registration pending retraction?*/
-	private Boolean isPending_retraction;
+	/** Is this registration pending withdrawal?*/
+	private Boolean isPending_withdrawal;
 	
 	/**Is this registration pending approval?*/
 	private Boolean isPending_registration_approval; 
@@ -60,7 +69,19 @@ public class Registration extends Node  {
 	
 	/**registration template used*/
 	private String registration_supplement;
-		
+	
+	/**Node registered from who are contributors to this node. */
+	@Relationship(value = "registered_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	private String registered_from;
+	
+	public List<Registration> getChildren() {
+		return children;
+	}	
+	
+	public void setChildren(List<Registration> children) {
+		this.children = children;
+	}
+	
 	public Boolean isDashboard() {
 		return isDashboard;
 	}
@@ -69,12 +90,12 @@ public class Registration extends Node  {
 		this.isDashboard = isDashboard;
 	}
 
-	public Boolean isRetracted() {
-		return isRetracted;
+	public Boolean isWithdrawn() {
+		return isWithdrawn;
 	}
 
-	public void setRetracted(Boolean isRetracted) {
-		this.isRetracted = isRetracted;
+	public void setWithdrawn(Boolean isWithdrawn) {
+		this.isWithdrawn = isWithdrawn;
 	}
 	
 	public String getDate_registered() {
@@ -109,20 +130,20 @@ public class Registration extends Node  {
     	}
 	}
 
-	public String getRetraction_justification() {
-		return retraction_justification;
+	public String getWithdrawal_justification() {
+		return withdrawal_justification;
 	}
 
-	public void setRetraction_justification(String retraction_justification) {
-		this.retraction_justification = retraction_justification;
+	public void setWithdrawal_justification(String withdrawal_justification) {
+		this.withdrawal_justification = withdrawal_justification;
 	}
 
-	public Boolean isPending_retraction() {
-		return isPending_retraction;
+	public Boolean isPending_withdrawal() {
+		return isPending_withdrawal;
 	}
 
-	public void setPending_retraction(Boolean isPending_retraction) {
-		this.isPending_retraction = isPending_retraction;
+	public void setPending_withdrawal(Boolean isPending_withdrawal) {
+		this.isPending_withdrawal = isPending_withdrawal;
 	}
 
 	public Boolean isPending_registration_approval() {
@@ -156,6 +177,14 @@ public class Registration extends Node  {
 
 	public void setRegistration_supplement(String registration_supplement) {
 		this.registration_supplement = registration_supplement;
+	}
+
+	public String getRegistered_from() {
+		return registered_from;
+	}
+
+	public void setRegistered_from(String registered_from) {
+		this.registered_from = registered_from;
 	}
 
 	
