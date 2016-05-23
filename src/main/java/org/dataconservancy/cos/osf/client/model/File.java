@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.RelType;
 import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Id;
-import com.github.jasminb.jsonapi.annotations.Link;
+import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 
@@ -59,11 +59,11 @@ public class File {
     private List<Comment> comments;
         
     /**Gets other links found in data.links:{} section of JSON**/
-    @Link 
+    @Links
     Map<String, ?> links;        
     
     /**pagination links, applies when list is returned**/
-    private Links pageLinks;
+    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
     
     /**name of the file or folder; used for display*/
     private String name;    
@@ -232,12 +232,12 @@ public class File {
 		this.links = links;
 	}
 
-	public Links getPageLinks() {
+	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
 		return pageLinks;
 	}
 
     @JsonProperty("links")
-	public void setPageLinks(Links pageLinks) {
+	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
 		this.pageLinks = pageLinks;
 	}
 

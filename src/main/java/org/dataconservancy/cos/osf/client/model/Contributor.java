@@ -21,7 +21,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
-import com.github.jasminb.jsonapi.annotations.Link;
+import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
 
 /**
@@ -43,11 +43,11 @@ public class Contributor {
     private Permission permission;
     	    
 	/**Gets other links found in data.links:{} section of JSON**/
-	@Link 
+	@Links
 	Map<String, ?> links;        
 	
 	/**pagination links, applies when list is returned**/
-	private Links pageLinks;
+	private org.dataconservancy.cos.osf.client.model.Links pageLinks;
     
     //TODO: the user is embedded in the JSON and won't work as is.  We can use the ID to retrieve it since contribId=userId.
 	//TODO: this has been brought to the attention of Brian Geiger (bgeiger@cos.io), logged on the public OSF v2 API,
@@ -88,12 +88,12 @@ public class Contributor {
 		this.links = links;
 	}
 
-	public Links getPageLinks() {
+	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
 		return pageLinks;
 	}
 
 	@JsonProperty("links")
-	public void setPageLinks(Links pageLinks) {
+	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
 		this.pageLinks = pageLinks;
 	}
 
