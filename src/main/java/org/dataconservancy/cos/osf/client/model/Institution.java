@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
-import com.github.jasminb.jsonapi.annotations.Link;
+import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
 /**
  * Institution model for OSF
@@ -25,11 +25,11 @@ public class Institution {
 	private String logo_path;
 
     /**Gets other links found in data.links:{} section of JSON**/
-	@Link 
+	@Links
 	Map<String, ?> links;       
 		
     /**pagination links, applies when list is returned**/
-    private Links pageLinks;
+    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
 	
 	public String getId() {
 		return id;
@@ -55,12 +55,12 @@ public class Institution {
 		this.logo_path = logo_path;
 	}
 
-	public Links getPageLinks() {
+	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
 		return pageLinks;
 	}
 
     @JsonProperty("links")
-	public void setPageLinks(Links pageLinks) {
+	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
 		this.pageLinks = pageLinks;
 	}
 
