@@ -30,6 +30,7 @@ import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.Query;
 import retrofit.http.QueryMap;
+import retrofit.http.Url;
 
 /**
  * Created by esm on 4/25/16.
@@ -43,6 +44,9 @@ public interface OsfService {
 
     @GET("nodes/")
     Call<ResourceList<Node>> paginatedNodeList();
+
+    @GET
+    Call<ResourceList<Node>> paginatedNodeList(@Url String url);
 
     @GET("nodes/")
     Call<List<Node>> nodeList(@QueryMap Map<String, String> params);
