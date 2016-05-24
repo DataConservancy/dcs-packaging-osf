@@ -32,8 +32,8 @@ public abstract class BaseConfigurationService {
      * @return the URL of the resolved resource
      * @throws RuntimeException if the classpath resource cannot be resolved
      */
-    URL getConfigurationResource(String configurationResource) {
-        URL configUrl = this.getClass().getResource(configurationResource);
+    public static URL getConfigurationResource(String configurationResource) {
+        URL configUrl = BaseConfigurationService.class.getResource(configurationResource);
 
         if (configUrl == null) {
             throw new RuntimeException(
