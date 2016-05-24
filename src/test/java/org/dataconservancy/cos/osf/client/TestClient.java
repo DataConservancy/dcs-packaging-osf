@@ -179,6 +179,17 @@ public class TestClient {
     }
 
     @Test
+    public void testDownload() throws Exception {
+        String binaryUrl = "http://192.168.99.100:7777/v1/resources/ts6h8/providers/osfstorage/57435501d3a5520045b18098";
+        OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
+
+        byte[] content = IOUtils.toByteArray(osfSvc.stream(binaryUrl).execute().body().byteStream());
+
+        assertNotNull(content);
+        assertEquals(1514, content.length);
+    }
+
+    @Test
     public void testRegistrationApi() throws Exception {
 
     	// Create object mapper
