@@ -11,6 +11,8 @@ If we envision DC as providing curation services to data in OSF, package import/
 
 Data Conservancy develops an RDF-based OSF data model, which could be leveraged for future use cases.  OSF would be able to include preservation and curation events in the OSF UI activity feeds.
 
+![Overview of the OSF packaging proposal][overview-img]
+
 ## Key Business Concepts 
 
 * OSF is intended to be a part of a researcher's’ workflow
@@ -49,3 +51,4 @@ Import/export of packages from OSF could be a building block of several kinds of
 [dc-packaging-spec]: http://dataconservancy.github.io/dc-packaging-spec/dc-packaging-spec-1.0.html "Data Conservancy Packaging Specification"
 [dc-ptg]: https://github.com/DataConservancy/dcs-packaging-tool "Data Conservancy Package Tool GUI"
 [dc-pis]: https://github.com/DataConservancy/dcs-package-ingest "Data Conservancy Package Ingest Tool"
+[overview-img]: https://github.com/DataConservancy/osf-packaging/blob/master/src/site/resources/images/osf-package-ingest.png "OSF Packaging Overview"
