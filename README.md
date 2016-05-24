@@ -32,7 +32,15 @@ Run the `TestClient` from Maven or from within the IDE.
       "authHeader": "Basic ZW138fTnZXJAZ21haWwu98wIOmZvb2JuU43heg==",
       "scheme": "http"
     }
-  }
+  },
+  "wb": {
+    "v1": {
+      "host": "192.168.99.100",
+      "port": "7777",
+      "basePath": "/v1/",
+      "scheme": "http"
+    }
+  },
 }
 ```
 
