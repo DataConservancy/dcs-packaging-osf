@@ -15,9 +15,18 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import org.junit.Rule;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.io.IOUtils;
+import org.dataconservancy.cos.osf.client.config.BaseConfigurationService;
+import org.dataconservancy.cos.osf.client.config.DefaultOsfJacksonConfigurer;
+import org.dataconservancy.cos.osf.client.config.DefaultWbJacksonConfigurer;
+import org.dataconservancy.cos.osf.client.config.JacksonConfigurer;
+import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
+import org.dataconservancy.cos.osf.client.config.WbClientConfiguration;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.mockserver.client.server.MockServerClient;
-import org.mockserver.junit.MockServerRule;
+import org.mockserver.integration.ClientAndServer;
 
 /**
  * Test fixture providing a {@link MockServerClient} used to configure HTTP expectations.
@@ -31,11 +40,48 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
     protected static final String X_RESPONSE_RESOURCE = "X-Response-Resource";
 
     /**
-     * Starts a mock HTTP server on the port specified by the OSF client configuration
+     * Set by {@link #startMockServer()}.
      */
-    @Rule
-    public MockServerRule mockServerRule = new MockServerRule(this, false, factory.getConfigurationService()
-                                                                                    .getConfiguration()
-                                                                                        .getPort());
+    static MockServerClient mockServer;
 
+    /**
+     * Set by {@link #startMockServer()}.
+     */
+    static MockServerClient wbMockServer;
+
+    /**
+     * Starts mock HTTP servers on the port specified by the OSF client configuration and the Waterbutler client configuration
+     */
+    @BeforeClass
+    public static void startMockServer() throws Exception {
+        final ObjectMapper mapper = new ObjectMapper();
+
+        JacksonConfigurer<OsfClientConfiguration> osfConfigurer = new DefaultOsfJacksonConfigurer<>();
+        JacksonConfigurer<WbClientConfiguration> wbConfigurer = new DefaultWbJacksonConfigurer<>();
+
+        mockServer = ClientAndServer.startClientAndServer(
+                osfConfigurer.configure(
+                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("osf-client-local.json"), "UTF-8")),
+                        mapper,
+                        OsfClientConfiguration.class
+                ).getPort()
+        );
+
+        wbMockServer = ClientAndServer.startClientAndServer(
+                wbConfigurer.configure(
+                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("osf-client-local.json"), "UTF-8")),
+                        mapper,
+                        WbClientConfiguration.class
+                ).getPort()
+        );
+    }
+
+    /**
+     * Stops mock HTTP servers
+     */
+    @AfterClass
+    public static void stopMockServer() throws Exception {
+        mockServer.stop();
+        wbMockServer.stop();
+    }
 }
