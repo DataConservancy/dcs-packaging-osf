@@ -24,7 +24,9 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService;
+import org.dataconservancy.cos.osf.client.config.JacksonWbConfigurationService;
 import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
+import org.dataconservancy.cos.osf.client.config.WbConfigurationService;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
 import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
 
@@ -66,6 +68,8 @@ public class TestingOsfServiceFactory {
 
     private final OsfConfigurationService osfConfigurationService;
 
+    private final WbConfigurationService wbConfigurationService;
+
     /**
      * Creates a new RetrofitOsfServiceFactory with default implementations for the required collaborators.  Not
      * recommended for production.
@@ -74,7 +78,8 @@ public class TestingOsfServiceFactory {
      */
     public TestingOsfServiceFactory(String jsonConfigurationResource) {
         // Configure the configuration service.
-       osfConfigurationService = new JacksonOsfConfigurationService(jsonConfigurationResource);
+        osfConfigurationService = new JacksonOsfConfigurationService(jsonConfigurationResource);
+        wbConfigurationService = new JacksonWbConfigurationService(jsonConfigurationResource);
 
         // Wiring for the RetrofitOsfService Factory
 
@@ -117,12 +122,21 @@ public class TestingOsfServiceFactory {
     }
 
     /**
-     * Expose the {@link OsfConfigurationService} used by this factory.
+     * Expose the {@link OsfConfigurationService OSF configuration service} used by this factory.
      *
-     * @return the configuration service
+     * @return the OSF configuration service
      */
     public OsfConfigurationService getConfigurationService() {
         return osfConfigurationService;
+    }
+
+    /**
+     * Expose the {@link WbConfigurationService Waterbutler configuration service} used by this factory.
+     *
+     * @return the Waterbutler configuration service
+     */
+    public WbConfigurationService getWbConfigurationService() {
+        return wbConfigurationService;
     }
 
     /**
