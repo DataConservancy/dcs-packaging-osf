@@ -29,11 +29,13 @@ import java.net.URL;
  * Example configuration:
  * <pre>
  * {
- *   "v2": {
- *     "host": "192.168.99.100",
- *     "port": "8000",
- *     "basePath": "/v2/",
- *     "authHeader": "Basic ADFlkdsfadUdfjaLjfoir=="
+ *   "osf:" {
+ *     "v2": {
+ *       "host": "192.168.99.100",
+ *       "port": "8000",
+ *       "basePath": "/v2/",
+ *       "authHeader": "Basic ADFlkdsfadUdfjaLjfoir=="
+ *     }
  *   }
  * }
  * </pre>
@@ -134,7 +136,7 @@ public class JacksonOsfConfigurationService implements OsfConfigurationService {
 
         try {
             JsonNode config = mapper.readTree(IOUtils.toString(configUrl, "UTF-8"));
-            return mapper.treeToValue(config.get("v2"), OsfClientConfiguration.class);
+            return mapper.treeToValue(config.get("osf").get("v2"), OsfClientConfiguration.class);
         } catch (IOException e) {
             throw new RuntimeException(
                     String.format(ERR_READING_RESOURCE, configurationResource, e.getMessage()), e);

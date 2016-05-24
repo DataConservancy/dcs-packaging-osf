@@ -1,9 +1,11 @@
 {
-  "v2": {
-    "host": "localhost",
-    "port": "8000",
-    "basePath": "/v2/",
-    "authHeader": "Basic ZW1ldHNnZXJAZ21haWwuY29tOmZvb2JhcmJheg==",
-    "scheme": "http"
+  "osf": {
+    "v2": {
+      "host": "localhost",
+      "port": "8000",
+      "basePath": "/v2/",
+      "authHeader": "Basic ZW1ldHNnZXJAZ21haWwuY29tOmZvb2JhcmJheg==",
+      "scheme": "http"
+    }
   }
 }
