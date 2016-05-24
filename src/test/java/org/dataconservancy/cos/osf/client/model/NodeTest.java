@@ -20,6 +20,7 @@ import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.junit.Before;
 import org.junit.Rule;
@@ -30,11 +31,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
@@ -62,12 +63,6 @@ public class NodeTest extends AbstractMockServerTest {
      */
     private static final String JSON_ROOT = "/json/";
 
-    /**
-     * Set by {@link AbstractMockServerTest#mockServerRule}.  Due to the way Mock Server 3.10.4 works, this
-     * field can't be put in a superclass.
-     */
-    private MockServerClient mockServer;
-
     private String baseUri = getBaseUri().toString();
 
     @Rule
@@ -85,6 +80,14 @@ public class NodeTest extends AbstractMockServerTest {
          * response.
          */
         mockServer.when(
+                request()
+                        .withHeader(X_RESPONSE_RESOURCE)
+        )
+                .callback(
+                        callback()
+                                .withCallbackClass(NodeResponseCallback.class.getName())
+                );
+        wbMockServer.when(
                 request()
                         .withHeader(X_RESPONSE_RESOURCE)
         )
@@ -311,6 +314,43 @@ public class NodeTest extends AbstractMockServerTest {
         // Last is 'null', which is arguably incorrect, but this is the way the OSF JSON-API implementation works.
         assertNull(pageTwo.getLast());
 
+    }
+
+    @Test
+    public void testDownloadFile() throws Exception {
+        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri(), (name, base, req) -> {
+            // /json/NodeTest/testDownloadFile/
+            Path fsBase = Paths.get(resourceBase(testName));
+
+            // We probably have a Waterbutler request (wb requests go to port 7777, typically)
+            if (req.getPort() != getBaseUri().getPort()) {
+                // req.getPath() = v1/resources/pd24n/providers/osfstorage/
+                return Paths.get(fsBase.toString(), req.getPath());
+            }
+
+            // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
+            URI relativizedRequestUri = getBaseUri().relativize(req);
+            Path requestPath = Paths.get(relativizedRequestUri.getPath());
+
+            // /json/NodeTest/testDownloadFile/nodes/v8x57/files/osfstorage/index.json
+            return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+        }));
+
+        OsfService osfService = factory.getOsfService(OsfService.class);
+        Node nodeWithFile = osfService.node("pd24n").execute().body();
+        assertNotNull(nodeWithFile);
+        File osfProvider = nodeWithFile.getFiles().get(0);
+        File binary = osfProvider.getFiles().get(0);
+        assertNotNull(binary);
+        assertEquals("porsche.jpg", binary.getName());
+
+        String downloadUrl = (String)binary.getLinks().get("download");
+        assertNotNull(downloadUrl);
+
+        InputStream response = osfService.stream(downloadUrl).execute().body().byteStream();
+        byte[] content = IOUtils.toByteArray(response);
+        assertNotNull(content);
+        assertEquals(Long.valueOf(binary.getSize()), Long.valueOf(content.length));
     }
 
     private static URI relativize(URI baseUri, URI requestUri) {
