@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.github.jasminb.jsonapi.ResourceList;
+import com.squareup.okhttp.Response;
+import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
@@ -30,6 +32,7 @@ import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.Query;
 import retrofit.http.QueryMap;
+import retrofit.http.Streaming;
 import retrofit.http.Url;
 
 /**
@@ -47,6 +50,10 @@ public interface OsfService {
 
     @GET
     Call<ResourceList<Node>> paginatedNodeList(@Url String url);
+
+    @Streaming
+    @GET
+    Call<ResponseBody> stream(@Url String url);
 
     @GET("nodes/")
     Call<List<Node>> nodeList(@QueryMap Map<String, String> params);
