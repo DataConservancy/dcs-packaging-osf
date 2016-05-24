@@ -11,18 +11,11 @@ import java.net.URL;
  * A configuration service implementation that reads JSON-formatted Waterbutler client configuration from the classpath
  * using Jackson.  By default this service reads the configuration from the classpath resource
  * {@link #DEFAULT_CONFIGURATION_RESOURCE /org/dataconservancy/cos/osf/client/config/osf-client.json}.
- * Example configuration:
- * <pre>
- * {
- *   "wb:" {
- *     "v1": {
- *       "host": "192.168.99.100",
- *       "port": "7777",
- *       "basePath": "/v1/"
- *     }
- *   }
- * }
- * </pre>
+ * <p>
+ * The supported configuration file format is a function of the {@link DefaultWbJacksonConfigurer}.
+ * </p>
+ *
+ * @see DefaultWbJacksonConfigurer
  */
 public class JacksonWbConfigurationService extends AbstractJacksonConfigurationService
         implements WbConfigurationService {
@@ -63,7 +56,7 @@ public class JacksonWbConfigurationService extends AbstractJacksonConfigurationS
 
         try {
             JsonNode config = mapper.readTree(IOUtils.toString(configUrl, "UTF-8"));
-            return mapper.treeToValue(config.get("wb").get("v1"), WbClientConfiguration.class);
+            return new DefaultWbJacksonConfigurer<WbClientConfiguration>().configure(config, mapper, WbClientConfiguration.class);
         } catch (IOException e) {
             throw new RuntimeException(
                     String.format(ERR_READING_RESOURCE, configurationResource, e.getMessage()), e);

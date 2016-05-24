@@ -26,19 +26,11 @@ import java.net.URL;
  * A configuration service implementation that reads JSON-formatted OSF client configuration from the classpath using
  * Jackson.  By default this service reads the configuration from the classpath resource
  * {@link #DEFAULT_CONFIGURATION_RESOURCE /org/dataconservancy/cos/osf/client/config/osf-client.json}.
- * Example configuration:
- * <pre>
- * {
- *   "osf:" {
- *     "v2": {
- *       "host": "192.168.99.100",
- *       "port": "8000",
- *       "basePath": "/v2/",
- *       "authHeader": "Basic ADFlkdsfadUdfjaLjfoir=="
- *     }
- *   }
- * }
- * </pre>
+ * <p>
+ * The supported configuration file format is a function of the {@link DefaultOsfJacksonConfigurer}.
+ * </p>
+ *
+ * @see DefaultOsfJacksonConfigurer
  */
 public class JacksonOsfConfigurationService extends AbstractJacksonConfigurationService
         implements OsfConfigurationService {
@@ -79,7 +71,7 @@ public class JacksonOsfConfigurationService extends AbstractJacksonConfiguration
 
         try {
             JsonNode config = mapper.readTree(IOUtils.toString(configUrl, "UTF-8"));
-            return mapper.treeToValue(config.get("osf").get("v2"), OsfClientConfiguration.class);
+            return new DefaultOsfJacksonConfigurer<OsfClientConfiguration>().configure(config, mapper, OsfClientConfiguration.class);
         } catch (IOException e) {
             throw new RuntimeException(
                     String.format(ERR_READING_RESOURCE, configurationResource, e.getMessage()), e);

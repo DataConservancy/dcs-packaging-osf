@@ -10,6 +10,12 @@ public abstract class AbstractJacksonConfigurationService extends BaseConfigurat
 
     public static final String DEFAULT_CONFIGURATION_RESOURCE = "osf-client.json";
 
+    /**
+     * Error message when a JSON node cannot be mapped to a configuration.  Parameters are: error message, contents
+     * of the JSON node
+     */
+    static final String ERR_MAPPING_NODE = "Error mapping JSON resource (Error: %s): %s";
+
     final ObjectMapper mapper;
 
     /**
