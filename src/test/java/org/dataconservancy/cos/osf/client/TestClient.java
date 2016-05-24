@@ -47,6 +47,7 @@ import org.dataconservancy.cos.osf.client.service.TestingOsfServiceFactory;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
 import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import retrofit.Call;
@@ -64,6 +65,7 @@ import com.squareup.okhttp.Request;
  * @author esm
  * @author khanson
  */
+@Ignore("Regularly run unit tests belong in NodeTest, or a similar class.  This class assumes too much about the local developer environment to be useful for systematic unit testing.")
 public class TestClient {
 
     /**
