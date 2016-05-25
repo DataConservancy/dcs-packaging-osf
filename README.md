@@ -86,6 +86,12 @@ Other configuration exercises are left to the reader.
 ### Configuration
 
 * Create a file named `osf-client.json` and put it on your classpath under `/org/dataconservancy/cos/osf/client/config`
+* Since the most interesting things are revealed by the OSF v2 API while logged in, be sure to configure an `authHeader`, which will be sent on every request to the API.  You can do this by base64 encoding your login id contatenated to your password with a colon:
+  * On MacOS: 
+
+    > $ echo 'c3po@tatooine.com:excuseme' | base64
+    > YzNwb0B0YXRvb2luZS5jb206ZXhjdXNlbWUK
+    > $
 
 ```json
 {
