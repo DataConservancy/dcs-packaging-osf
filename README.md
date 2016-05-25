@@ -10,6 +10,13 @@ Right now the "client" is comprised of:
 
 Run the `TestClient` from Maven or from within the IDE.
 
+Obtain an instance of `OsfService` and use the client:
+<pre>
+  RetrofitOsfServiceFactory factory = new RetrofitOsfServiceFactory();
+  // default configuration resolves to /org/dataconservancy/cos/osf/client/config/osf-client.json
+  OsfService osfService = factory.getOsfService(OsfService.class);
+</pre>
+
 ### Installation
 
 * Clone this repository
