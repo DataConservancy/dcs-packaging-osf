@@ -108,7 +108,8 @@ public class TestingOsfServiceFactory {
 
         JSONAPIConverterFactory jsonApiConverterFactory = new JSONAPIConverterFactory(resourceConverter);
 
-        factory = new RetrofitOsfServiceFactory(osfConfigurationService, httpClient, jsonApiConverterFactory);
+        factory = new RetrofitOsfServiceFactory(osfConfigurationService, wbConfigurationService, httpClient,
+                jsonApiConverterFactory);
     }
 
     /**
