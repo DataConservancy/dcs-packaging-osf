@@ -13,13 +13,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public interface JacksonConfigurer<T> {
 
     /**
-     * Given a Jackson object mapper, the JSON, and the configuration class to be created, map the configuration JSON into an instance
-     * of the {@code configurationClass}.
+     * Given a Jackson object mapper, the JSON, and the configuration class to be created, map the configuration JSON
+     * into an instance of the {@code configurationClass}.
      *
      * @param configRoot the JSON node containing the configuration
      * @param mapper the Jackson object mapper
-     * @param configurationClass the class that will be used to encapsulate the JSON configuration found in the {@param configRoot}
-     * @return
+     * @param configurationClass the class that will be used to encapsulate the JSON configuration found in the {@code configRoot}
+     * @return an instance of the the configuration class specified by {@code <T>}
      */
     T configure(JsonNode configRoot, ObjectMapper mapper, Class<T> configurationClass);
 
