@@ -208,7 +208,7 @@
     </owl:DatatypeProperty>
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasCurrentUserPermissions -->
-
+    <!-- TODO: probably should be an ObjectProperty, because permissions are complex objects -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasCurrentuserPermissions">
         <rdfs:label xml:lang="en">hasCurrentUserPermissions</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the current user permissions of the Node </rdfs:comment>
@@ -360,6 +360,8 @@
         <rdfs:label xml:lang="en">hasHref</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the URI of a Link or RelatedLink</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;LinkBase"/>
+        <!-- TODO: don't think that 'hasHref' property is a subproperty of xsd:anyUri because
+             anyUri is a type; probably a rdfs:range of anyUri needed.-->
         <rdfs:subPropertyOf rdf:resource="&xsd;anyUri"/>
     </owl:DatatypeProperty>
 
@@ -434,6 +436,8 @@
     </owl:DatatypeProperty>
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasMeta -->
+    <!-- TODO: hasMeta probably isn't a string, it's arbitrarily complex per the
+        json-api spec, so should be a ObjectProperty -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasMeta">
       <rdfs:label xml:lang="en">hasMeta</rdfs:label>
       <rdfs:comment xml:lang="en">A data property specifying metadata for a related link </rdfs:comment>
@@ -562,6 +566,8 @@
     <owl:DatatypeProperty rdf:about="&osfbom;hasRelatedLinkType">
         <rdfs:label xml:lang="en">hasRelatedLinkType</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the type of a RelatedLink</rdfs:comment>
+        <!-- TODO: should be the domain of Link (or linkbase?) because all links have a type,
+        not just related links -->        
         <rdfs:domain rdf:resource="&osfbom;RelatedLink"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
@@ -693,6 +699,8 @@
         <rdfs:label xml:lang="en">OSFBusinessObject</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <!-- TODO: probably should be a string; OSF ids seem to be strings, 
+                    five characters in length -->
                 <owl:onProperty rdf:resource="&osfbom;hasId"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
@@ -804,6 +812,7 @@
     </owl:Class>
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#LinkBase -->
+    <!-- TODO: difference/reasoning for Link and LinkBase? -->
     <owl:Class rdf:about="&osfbom;LinkBase">
       <rdfs:label xml:lang="en">LinkBase</rdfs:label>
       <owl:disjointWith rdf:resource="&osfbom;OSFBusinessObject"/>
@@ -816,6 +825,10 @@
       <rdfs:subClassOf rdf:resource="&osfbom;LinkBase"/>
     </owl:Class>
 
+    <!-- TODO: difference between Link and RelatedLink?  I think 
+        they can be collapsed? -->
+    <!-- "Link" describes the resource object, "relatedlink" describes a
+        "relationship", I think -->
     <!-- http://www.dataconservancy.org/osf-business-object-model#RelatedLink -->
     <owl:Class rdf:about="&osfbom;RelatedLink">
       <rdfs:label xml:lang="en">RelatedLink</rdfs:label>
