@@ -907,4 +907,6 @@
        </owl:equivalentClass>  
     </owl:Class>
   
+    <!-- TODO: Comments that may appear on a Project (or other node categories?) are
+        not represented in this ontology -->
 </rdf:RDF>
