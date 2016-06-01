@@ -17,20 +17,14 @@ package org.dataconservancy.cos.osf.client.model;
 
 import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.ResourceList;
-import com.squareup.okhttp.Interceptor;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
-import org.mockserver.client.server.MockServerClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.Path;
@@ -44,7 +38,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.mockserver.model.HttpCallback.callback;
 import static org.mockserver.model.HttpRequest.request;
 
 /**
@@ -58,44 +51,10 @@ public class NodeTest extends AbstractMockServerTest {
 
     private static final Logger LOG = LoggerFactory.getLogger(NodeTest.class);
 
-    /**
-     * Base path of the file system hierarchy containing JSON response documents
-     */
-    private static final String JSON_ROOT = "/json/";
-
     private String baseUri = getBaseUri().toString();
 
     @Rule
     public TestName testName = new TestName();
-
-    /**
-     * Sets up the expectations of the mock http server.
-     */
-    @Before
-    public void setUpExpectations() {
-
-        /*
-         * Invokes the NodeResponseCallback when the HTTP header "X-Response-Resource" is present.
-         * The header value is a classpath resource to the JSON document to be serialized for the
-         * response.
-         */
-        mockServer.when(
-                request()
-                        .withHeader(X_RESPONSE_RESOURCE)
-        )
-                .callback(
-                        callback()
-                                .withCallbackClass(NodeResponseCallback.class.getName())
-                );
-        wbMockServer.when(
-                request()
-                        .withHeader(X_RESPONSE_RESOURCE)
-        )
-                .callback(
-                        callback()
-                                .withCallbackClass(NodeResponseCallback.class.getName())
-                );
-    }
 
     /**
      * This is a basic sanity test, insuring a JSON response document is properly mapped into a Node.
@@ -155,7 +114,7 @@ public class NodeTest extends AbstractMockServerTest {
     @Test
     public void testGetNodeObjectResolution() throws Exception {
 
-        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri()));
 
         Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
         assertNotNull(n);
@@ -206,7 +165,7 @@ public class NodeTest extends AbstractMockServerTest {
         String sub = "pd24n";
         String fileName = "porsche.jpg";
 
-        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri()));
 
         Node topNode = factory.getOsfService(OsfService.class).node(topLevel).execute().body();
         assertNotNull(topNode);
@@ -244,7 +203,7 @@ public class NodeTest extends AbstractMockServerTest {
 //            System.out.println("Requesting: " + chain.request().urlString());
 //            return chain.proceed(chain.request());
 //        });
-        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri(),
+        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri(),
                 (name, baseUri, reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
                     Path fsBase = Paths.get(resourceBase(testName));
@@ -318,7 +277,7 @@ public class NodeTest extends AbstractMockServerTest {
 
     @Test
     public void testDownloadFile() throws Exception {
-        factory.interceptors().add(new BasicInterceptor(testName, getBaseUri(), (name, base, req) -> {
+        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri(), (name, base, req) -> {
             // /json/NodeTest/testDownloadFile/
             Path fsBase = Paths.get(resourceBase(testName));
 
@@ -353,44 +312,6 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(Long.valueOf(binary.getSize()), Long.valueOf(content.length));
     }
 
-    private static URI relativize(URI baseUri, URI requestUri) {
-        URI result = baseUri.relativize(requestUri);
-        LOG.trace("Relativizing {} against {}: {}", baseUri, requestUri, result);
-        return result;
-    }
-
-    private static String resourceBase(TestName testName) {
-        assertNotNull(testName);
-        StringBuilder base = new StringBuilder(JSON_ROOT);
-        base.append(NodeTest.class.getSimpleName()).append("/");
-        base.append(testName.getMethodName()).append("/");
-
-        LOG.trace("Test resource base path: {}", base);
-        return base.toString();
-    }
-
-    /**
-     * Responsible for resolving the JSON response resource.
-     *
-     * @param test contains metadata about the current test method.
-     * @param baseUri the baseUri of the OSF V2 API
-     * @param requestUri the full request URI
-     * @return a Path that identifies a classpath resource containing the JSON response document
-     */
-    private static Path resolveResponseResource(TestName test, URI baseUri, URI requestUri) {
-        // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-        URI relativizedRequestUri = baseUri.relativize(requestUri);
-        Path requestPath = Paths.get(relativizedRequestUri.getPath());
-
-        // /json/NodeTest/testGetNodeObjectResolution/
-        Path fsBase = Paths.get(resourceBase(test));
-
-        // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
-        Path resolvedPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
-
-        return resolvedPath;
-    }
-
     /**
      * Asserts that the supplied {@code files} collection contains at least one {@code File} with the supplied
      * {@code name}.
@@ -417,87 +338,6 @@ public class NodeTest extends AbstractMockServerTest {
 
         fail("Expected file named '" + name + "' was not found.");
         return null;
-    }
-
-    private class BasicInterceptor implements Interceptor {
-
-        private final URI baseUri;
-
-        private final TestName testName;
-
-        private ResponseResolver resolver;
-
-
-        /**
-         * Responsible for resolving the JSON response resource for OSF v2 API calls that are recursive.
-         * <p>
-         * For example, the {@link ResolutionStrategy} for {@code Node} {@link Node#contributors contributors} says
-         * that when a {@code Node} is retrieved using the {@link OsfService}, the "contributors" relationship should be
-         * recursively retrieved in the same API call, and deserialized into a {@code List} of {@code Contributor}
-         * objects.  Once the {@code Node} is retrieved, the caller can iterate over the {@code Contributor} objects
-         * without issuing subsequent calls to {@link OsfService}.  This behavior is governed by the
-         * {@code ResolutionStrategy} annotations on the model classes.
-         * </p>
-         * <p>
-         * This interceptor will map a response based on attributes of the request (and test name).  This insures that
-         * {@link OsfService} API calls which are recursive will result in proper responses.
-         * </p>
-         */
-        private BasicInterceptor(TestName testName, URI baseUri) {
-            this.baseUri = baseUri;
-            this.testName = testName;
-
-            resolver = (name, base, req) -> {
-                // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-                URI relativizedRequestUri = baseUri.relativize(req);
-                Path requestPath = Paths.get(relativizedRequestUri.getPath());
-
-                // /json/NodeTest/testGetNodeObjectResolution/
-                Path fsBase = Paths.get(resourceBase(testName));
-
-                // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
-                return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
-            };
-        }
-
-        private BasicInterceptor(TestName testName, URI baseUri, ResponseResolver resolver) {
-            this.testName = testName;
-            this.baseUri = baseUri;
-            this.resolver = resolver;
-        }
-
-        @Override
-        public Response intercept(Chain chain) throws IOException {
-            Request req = chain.request();
-            LOG.debug("HTTP request: {}", req.urlString());
-
-            // Resolve the request URI to a path on the filesystem.
-            Path resourcePath = resolver.resolve(testName, baseUri, req.uri());
-            LOG.debug("Response resource: {}", resourcePath.toString());
-
-            req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath.toString()).build();
-
-            return chain.proceed(req);
-        }
-    }
-
-    /**
-     * Responsible for resolving the JSON response for OSF v2 API calls.
-     */
-    @FunctionalInterface
-    private interface ResponseResolver {
-
-        /**
-         * Resolves a JSON response document based on properties of the OSF API, the HTTP request, and the test being
-         * executed.  This method should return a classpath resource containing the JSON for the HTTP response body.
-         *
-         * @param testName contains metadata about the current test method.
-         * @param baseUri the baseUri of the OSF V2 API
-         * @param requestUri the full request URI
-         * @return a Path that identifies a classpath resource containing the JSON response document
-         */
-        Path resolve(TestName testName, URI baseUri, URI requestUri);
-
     }
 
 }
