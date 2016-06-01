@@ -1,5 +1,8 @@
 package org.dataconservancy.cos.osf.client.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.net.URL;
 
 /**
@@ -7,6 +10,8 @@ import java.net.URL;
  * containing the client configuration.
  */
 public abstract class BaseConfigurationService {
+
+    static final Logger LOG = LoggerFactory.getLogger(BaseConfigurationService.class);
 
     /**
      * Error message when a classpath resource cannot be resolved.  Parameters are: name of the resource, error message.

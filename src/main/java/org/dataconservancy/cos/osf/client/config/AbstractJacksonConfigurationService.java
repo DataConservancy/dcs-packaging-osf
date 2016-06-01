@@ -34,6 +34,8 @@ public abstract class AbstractJacksonConfigurationService extends BaseConfigurat
         this.mapper = new ObjectMapper();
 
         try {
+            LOG.debug("Configuring {} with classpath resource {}",
+                    this.getClass().getName(), this.configurationResource);
             getConfigurationResource(this.configurationResource);
         } catch (Exception e) {
             throw new IllegalArgumentException(e.getMessage(), e);
@@ -61,6 +63,8 @@ public abstract class AbstractJacksonConfigurationService extends BaseConfigurat
         this.mapper = mapper;
 
         try {
+            LOG.debug("Configuring {} with classpath resource {}",
+                    this.getClass().getName(), this.configurationResource);
             getConfigurationResource(this.configurationResource);
         } catch (Exception e) {
             throw new IllegalArgumentException(e.getMessage(), e);
