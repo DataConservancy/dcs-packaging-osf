@@ -627,6 +627,9 @@
         <rdfs:domain rdf:resource="&osfbom;Registration"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
+    
+    <!-- TODO registered_meta.* Found in data.attributes -->
+    
 
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasScholar -->
