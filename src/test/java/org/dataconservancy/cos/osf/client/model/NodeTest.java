@@ -114,7 +114,7 @@ public class NodeTest extends AbstractMockServerTest {
     @Test
     public void testGetNodeObjectResolution() throws Exception {
 
-        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri()));
 
         Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
         assertNotNull(n);
@@ -165,7 +165,7 @@ public class NodeTest extends AbstractMockServerTest {
         String sub = "pd24n";
         String fileName = "porsche.jpg";
 
-        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri()));
 
         Node topNode = factory.getOsfService(OsfService.class).node(topLevel).execute().body();
         assertNotNull(topNode);
@@ -203,7 +203,7 @@ public class NodeTest extends AbstractMockServerTest {
 //            System.out.println("Requesting: " + chain.request().urlString());
 //            return chain.proceed(chain.request());
 //        });
-        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri(),
+        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri(),
                 (name, baseUri, reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
                     Path fsBase = Paths.get(resourceBase(testName));
@@ -277,23 +277,24 @@ public class NodeTest extends AbstractMockServerTest {
 
     @Test
     public void testDownloadFile() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(testName, getBaseUri(), (name, base, req) -> {
-            // /json/NodeTest/testDownloadFile/
-            Path fsBase = Paths.get(resourceBase(testName));
+        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri(),
+                (name, base, req) -> {
+                    // /json/NodeTest/testDownloadFile/
+                    Path fsBase = Paths.get(resourceBase(testName));
 
-            // We probably have a Waterbutler request (wb requests go to port 7777, typically)
-            if (req.getPort() != getBaseUri().getPort()) {
-                // req.getPath() = v1/resources/pd24n/providers/osfstorage/
-                return Paths.get(fsBase.toString(), req.getPath());
-            }
+                    // We probably have a Waterbutler request (wb requests go to port 7777, typically)
+                    if (req.getPort() != getBaseUri().getPort()) {
+                        // req.getPath() = v1/resources/pd24n/providers/osfstorage/
+                        return Paths.get(fsBase.toString(), req.getPath());
+                    }
 
-            // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-            URI relativizedRequestUri = getBaseUri().relativize(req);
-            Path requestPath = Paths.get(relativizedRequestUri.getPath());
+                    // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
+                    URI relativizedRequestUri = getBaseUri().relativize(req);
+                    Path requestPath = Paths.get(relativizedRequestUri.getPath());
 
-            // /json/NodeTest/testDownloadFile/nodes/v8x57/files/osfstorage/index.json
-            return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
-        }));
+                    // /json/NodeTest/testDownloadFile/nodes/v8x57/files/osfstorage/index.json
+                    return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+                }));
 
         OsfService osfService = factory.getOsfService(OsfService.class);
         Node nodeWithFile = osfService.node("pd24n").execute().body();
