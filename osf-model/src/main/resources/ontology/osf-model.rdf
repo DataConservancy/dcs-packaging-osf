@@ -371,9 +371,7 @@
         <rdfs:label xml:lang="en">hasHref</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the URI of a Link or RelatedLink</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;LinkBase"/>
-        <!-- TODO: don't think that 'hasHref' property is a subproperty of xsd:anyUri because
-             anyUri is a type; probably a rdfs:range of anyUri needed.-->
-        <rdfs:subPropertyOf rdf:resource="&xsd;anyUri"/>
+        <rdfs:range rdf:resource="&xsd;anyUri"/>
     </owl:DatatypeProperty>
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasId -->
@@ -855,18 +853,11 @@
       <rdfs:label xml:lang="en">RelatedLink</rdfs:label>
       <rdfs:subClassOf rdf:resource="&osfbom;LinkBase"/>
     </owl:Class>
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#Embed -->
-    <!-- TODO: Remove, not going to model 'Embed' -->
-    <owl:Class rdf:about="&osfbom;Embed">
-      <rdfs:label xml:lang="en">Embed</rdfs:label>
-      <owl:disjointWith rdf:resource="&osfbom;OSFBusinessObject"/>
-    </owl:Class>
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#FileBase -->
     <owl:Class rdf:about="&osfbom;FileBase">
       <rdfs:label xml:lang="en">FileBase</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
       <owl:disjointWith rdf:resource="&osfbom;User"/>
       <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
       <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
@@ -876,7 +867,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#File --> 
     <owl:Class rdf:about="&osfbom;File">
       <rdfs:label xml:lang="en">File</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
       <owl:disjointWith rdf:resource="&osfbom;Folder"/>
       <owl:disjointWith rdf:resource="&osfbom;Provider"/>
     </owl:Class>    
@@ -884,7 +875,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#Folder -->
     <owl:Class rdf:about="&osfbom;Folder">
       <rdfs:label xml:lang="en">Folder</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
       <owl:disjointWith rdf:resource="&osfbom;File"/>
       <owl:disjointWith rdf:resource="&osfbom;Provider"/>
     </owl:Class>    
@@ -892,7 +883,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#Provider -->
     <owl:Class rdf:about="&osfbom;Provider">
       <rdfs:label xml:lang="en">Provider</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
       <owl:disjointWith rdf:resource="&osfbom;File"/>
       <owl:disjointWith rdf:resource="&osfbom;Folder"/>
     </owl:Class>
@@ -900,6 +891,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#FileEntity -->
     <owl:Class rdf:about="&osfbom;FileEntity">
       <rdfs:label xml:lang="en">FileEntity</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
       <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
