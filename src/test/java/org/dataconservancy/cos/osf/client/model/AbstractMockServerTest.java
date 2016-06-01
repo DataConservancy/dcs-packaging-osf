@@ -124,6 +124,16 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         return base.toString();
     }
 
+    public static String resourceBase(TestName testName, Class testClass) {
+        assertNotNull(testName);
+        StringBuilder base = new StringBuilder(JSON_ROOT);
+        base.append(testClass.getSimpleName()).append("/");
+        base.append(testName.getMethodName()).append("/");
+
+        LOG.trace("Test resource base path: {}", base);
+        return base.toString();
+    }
+
     /**
      * Responsible for resolving the JSON response resource.
      *
@@ -132,13 +142,13 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
      * @param requestUri the full request URI
      * @return a Path that identifies a classpath resource containing the JSON response document
      */
-    public static Path resolveResponseResource(TestName test, URI baseUri, URI requestUri) {
+    public static Path resolveResponseResource(TestName test, Class testClass, URI baseUri, URI requestUri) {
         // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
         URI relativizedRequestUri = baseUri.relativize(requestUri);
         Path requestPath = Paths.get(relativizedRequestUri.getPath());
 
         // /json/NodeTest/testGetNodeObjectResolution/
-        Path fsBase = Paths.get(resourceBase(test));
+        Path fsBase = Paths.get(resourceBase(test, testClass));
 
         // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
         Path resolvedPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
@@ -198,11 +208,14 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         private final TestName testName;
 
+        private final Class testClass;
+
         private ResponseResolver resolver;
 
-        public RecursiveInterceptor(TestName testName, URI baseUri) {
+        public RecursiveInterceptor(TestName testName, Class testClass, URI baseUri) {
             this.baseUri = baseUri;
             this.testName = testName;
+            this.testClass = testClass;
 
             resolver = (name, base, req) -> {
                 // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
@@ -210,15 +223,16 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                 Path requestPath = Paths.get(relativizedRequestUri.getPath());
 
                 // /json/NodeTest/testGetNodeObjectResolution/
-                Path fsBase = Paths.get(resourceBase(testName));
+                Path fsBase = Paths.get(resourceBase(testName, testClass));
 
                 // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
                 return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
             };
         }
 
-        public RecursiveInterceptor(TestName testName, URI baseUri, ResponseResolver resolver) {
+        public RecursiveInterceptor(TestName testName, Class testClass, URI baseUri, ResponseResolver resolver) {
             this.testName = testName;
+            this.testClass = testClass;
             this.baseUri = baseUri;
             this.resolver = resolver;
         }
