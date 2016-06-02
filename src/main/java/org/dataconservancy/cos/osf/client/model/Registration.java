@@ -20,6 +20,10 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 
 import java.util.List;
 
+import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.Rdf;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -27,6 +31,7 @@ import com.github.jasminb.jsonapi.RelType;
 import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 
 /**
  * OSF Registration model, an extension of the Node model
@@ -34,6 +39,7 @@ import com.github.jasminb.jsonapi.annotations.Type;
  */
 @Type("registrations")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@OwlIndividual(OwlClasses.OSF_REGISTRATION)
 public class Registration extends NodeBase  {
 
 	/**List of nodes that are children of this node.*/
@@ -41,27 +47,35 @@ public class Registration extends NodeBase  {
 	protected List<Registration> children;
 
 	/**Is this registered node visible on the user dashboard?**/
+	@OwlProperty(OwlProperties.OSF_IS_DASHBOARD)
 	private Boolean isDashboard;
 	
 	/**Has this registration been withdrawn?**/
+	@OwlProperty(OwlProperties.OSF_IS_WITHDRAWN)
 	private Boolean isWithdrawn;
 
 	/**	Timestamp that the registration was created */
+	@OwlProperty(OwlProperties.OSF_HAS_DATEREGISTERED)
 	private DateTime date_registered;
 	
 	/** When the embargo on this registration will be lifted (if applicable) */
+	@OwlProperty(OwlProperties.OSF_HAS_EMBARGOENDDATE)
 	private DateTime embargo_end_date;
 	
 	/**Reasons for withdrawing the registration*/
+	// TODO: @OwlProperty()
 	private String withdrawal_justification;
 
 	/** Is this registration pending withdrawal?*/
+	@OwlProperty(OwlProperties.OSF_IS_PENDINGWITHDRAWL)
 	private Boolean isPending_withdrawal;
 	
 	/**Is this registration pending approval?*/
+	@OwlProperty(OwlProperties.OSF_IS_PENDINGREGISTRATIONAPPROVAL)
 	private Boolean isPending_registration_approval; 
 	
 	/** Is the associated Embargo awaiting approval by project admins? */
+	@OwlProperty(OwlProperties.OSF_IS_PENDINGEMBARGOAPPROVAL)
 	private Boolean isPending_embargo_approval;           
 	
 	/**registration supplementary information*/
@@ -72,7 +86,10 @@ public class Registration extends NodeBase  {
 	
 	/**Node registered from who are contributors to this node. */
 	@Relationship(value = "registered_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	@OwlProperty(OwlProperties.OSF_REGISTERED_FROM)
 	private String registered_from;
+
+	// TODO: Registered By!
 	
 	public List<Registration> getChildren() {
 		return children;

@@ -5,6 +5,9 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 import java.util.List;
 import java.util.Map;
 
+import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,6 +27,8 @@ public abstract class NodeBase {
 
 	/**node id*/
 	@Id
+	@OwlProperty(OwlProperties.OSF_HAS_ID)
+	@IndividualUri
 	private String id;
 
 	/**List of users who are contributors to this node. */
