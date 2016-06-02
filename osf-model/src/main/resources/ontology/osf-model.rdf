@@ -278,7 +278,7 @@
 
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasDescription -->
-
+    <!-- TODO: sub property of dcterms:description instead of a rdfs:range of dcterms:description -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasDescription">
         <rdfs:label xml:lang="en">hasDescription</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying a description of a Node or Registration</rdfs:comment>
@@ -376,6 +376,7 @@
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasId -->
 
+    <!-- TODO: Consider making this a subclass of dcterms:identifier instead of using dcterms:identifier as a range -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasId">
         <rdfs:label xml:lang="en">hasId</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the business ID of a OSFBusinessObject</rdfs:comment>
@@ -626,6 +627,8 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
+    <!-- TODO registered from? -->
+    
     <!-- TODO registered_meta.* Found in data.attributes -->
     
 
@@ -672,6 +675,7 @@
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasTitle -->
 
+<!-- TODO: subproperty of dcterms:title instead of a rdfs:range of dcterms:title -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasTitle">
         <rdfs:label xml:lang="en">hasTitle</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
