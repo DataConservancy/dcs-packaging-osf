@@ -87,5 +87,5 @@ public @interface OwlProperty {
      * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field to a
      * {@code String}
      */
-    Class<? extends Function<Object, String>> transform() default ToStringTransform.class;
+    Class<? extends Function> transform() default IdentityTransform.class;
 }
