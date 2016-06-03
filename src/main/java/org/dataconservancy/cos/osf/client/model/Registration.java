@@ -20,10 +20,10 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 
 import java.util.List;
 
+import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
-import org.dataconservancy.cos.rdf.support.Rdf;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -44,6 +44,7 @@ public class Registration extends NodeBase  {
 
 	/**List of nodes that are children of this node.*/
 	@Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+	@OwlProperty(OwlProperties.OSF_HAS_CHILD)
 	protected List<Registration> children;
 
 	/**Is this registered node visible on the user dashboard?**/
@@ -79,17 +80,21 @@ public class Registration extends NodeBase  {
 	private Boolean isPending_embargo_approval;           
 	
 	/**registration supplementary information*/
+	// TODO @OwlProperty
 	private RegistrationMetadata registered_meta;
 	
 	/**registration template used*/
+	@OwlProperty(OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT)
 	private String registration_supplement;
 	
 	/**Node registered from who are contributors to this node. */
 	@Relationship(value = "registered_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-	@OwlProperty(OwlProperties.OSF_REGISTERED_FROM)
+	@OwlProperty(value = OwlProperties.OSF_REGISTERED_FROM, transform = UrlToIdTransform.class)
 	private String registered_from;
 
-	// TODO: Registered By!
+	@Relationship(value = "registered_by", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	@OwlProperty(value = OwlProperties.OSF_REGISTERED_BY, transform = UrlToIdTransform.class)
+	private String registered_by;
 	
 	public List<Registration> getChildren() {
 		return children;
@@ -204,5 +209,12 @@ public class Registration extends NodeBase  {
 		this.registered_from = registered_from;
 	}
 
-	
+
+	public String getRegistered_by() {
+		return registered_by;
+	}
+
+	public void setRegistered_by(String registered_by) {
+		this.registered_by = registered_by;
+	}
 }

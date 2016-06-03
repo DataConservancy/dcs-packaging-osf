@@ -5,6 +5,7 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 import java.util.List;
 import java.util.Map;
 
+import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
@@ -42,11 +43,13 @@ public abstract class NodeBase {
 
 	/**Root node if you walk up the tree of projects/components.*/
 	@Relationship(value = "root", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	@OwlProperty(value = OwlProperties.OSF_HAS_ROOT, transform = UrlToIdTransform.class)
 	private String root;
 
 	/**If this node is a child node of another node, the parent's canonical endpoint will 
 	 * be available in the /parent/links/related/href key. Otherwise, it will be null.*/
 	@Relationship(value = "parent", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	@OwlProperty(value = OwlProperties.OSF_HAS_PARENT, transform = UrlToIdTransform.class)
 	private String parent;
 
 	/**Link to list of registrations related to the current node*/
@@ -56,6 +59,7 @@ public abstract class NodeBase {
 	/**If this node was forked from another node, the canonical endpoint of the node that was 
 	 * forked from will be available in the /forked_from/links/related/href key. Otherwise, it will be null.*/
 	@Relationship(value = "forked_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	// TODO: @OwlProperty(value = OwlProperties.OSF_, transform = UrlToIdTransform.class)
 	private String forked_from;
 
 	/**Link to list of links to other Nodes.*/
@@ -74,36 +78,47 @@ public abstract class NodeBase {
 	private org.dataconservancy.cos.osf.client.model.Links pageLinks;
 
 	/**Node category, must be one of the allowed values.*/
+	@OwlProperty(OwlProperties.OSF_HAS_CATEGORY)
 	private Category category;
 
 	/**description of the node*/
+	@OwlProperty(OwlProperties.OSF_HAS_DESCRIPTION)
 	private String description;
 
 	/**title of project or component*/
+	@OwlProperty(OwlProperties.OSF_HAS_TITLE)
 	private String title;
 
 	/**list of tags that describe the node*/
+	// TODO: @OwlProperty(OwlProperties.OSF_HAS_TAG)
 	private List<String> tags;
 	
 	/**List of strings representing the permissions for the current user on this node*/
+	// TODO
 	private List<Permission> current_user_permissions;
 	
 	/**timestamp that the node was created*/
+	@OwlProperty(OwlProperties.OSF_HAS_DATECREATED)
 	private DateTime date_created;
 	
 	/**timestamp when the node was last updated*/
+	@OwlProperty(OwlProperties.OSF_HAS_DATEMODIFIED)
 	private DateTime date_modified;
 	
 	/**is this node a fork of another node?*/
+	@OwlProperty(OwlProperties.OSF_IS_FORK)
 	private Boolean isFork;
 	
 	/**as this node been made publicly-visible?*/
+	@OwlProperty(OwlProperties.OSF_IS_PUBLIC)
 	private Boolean isPublic;
 	
 	/**has this project been registered?*/
+	@OwlProperty(OwlProperties.OSF_IS_REGISTRATION)
 	private Boolean isRegistration;
 	
 	/**is project a collection?*/
+	@OwlProperty(OwlProperties.OSF_IS_COLLECTION)
 	private Boolean isCollection;
 
 	
