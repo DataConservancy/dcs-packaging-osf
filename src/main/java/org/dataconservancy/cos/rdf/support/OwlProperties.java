@@ -43,6 +43,8 @@ public enum OwlProperties {
 
     OSF_REGISTERED_FROM ("registeredFrom", true),
 
+    OSF_FORKED_FROM ("forkedFrom", true),
+
     DCTERMS_DESCRIPTION ("description"),
 
     DCTERMS_IDENTIFIER ("identifier"),
@@ -82,6 +84,8 @@ public enum OwlProperties {
     OSF_HAS_DESCRIPTION ("hasDescription"),
 
     OSF_HAS_EMBARGOENDDATE ("hasEmbargoEndDate"),
+
+    OSF_HAS_TAG ("hasTag"),
 
     OSF_HAS_ETAG ("hasEtag"),
 
@@ -165,7 +169,9 @@ public enum OwlProperties {
 
     OSF_HAS_TYPE ("hasType"),
 
-    OSF_IS_WITHDRAWN ("isWithdrawn");
+    OSF_IS_WITHDRAWN ("isWithdrawn"),
+
+    OSF_HAS_WITHDRAW_JUSTIFICATION ("hasWithdrawJustification");
 
     private String ns = Rdf.Ns.OSF;
     
@@ -221,6 +227,11 @@ public enum OwlProperties {
     }
 
     /**
+     * TODO: Reconsider if this needs to be represented in the Java.  The property definition in the ontology
+     * TODO: will have this information.  If the Java code retrieves the property definition from the ontology,
+     * TODO: it can determine whether or not it is an ObjectProperty.  Removing this information from the Java model
+     * TODO: eliminates a potential issue where a property is considered a ObjectProperty according to Java but
+     * TODO: is defined as a DatatypeProperty according to the ontology.
      * Whether or not the property represents an OWL Object property or Datatype property.
      *
      * @return true if the property is an OWL Object property
