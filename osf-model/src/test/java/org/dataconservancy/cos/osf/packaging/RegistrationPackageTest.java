@@ -125,7 +125,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     }
 
     @Test
-    public void testCreateRegistrationPackageAnnotation() throws Exception {
+    public <T, R> void testCreateRegistrationPackageAnnotation() throws Exception {
         factory.interceptors().add(new RecursiveInterceptor(testName, RegistrationPackageTest.class, getBaseUri()));
         Registration registration = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
         assertNotNull(registration);
@@ -178,16 +178,16 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                 return;
             }
 
-            Class<Function<Object, String>> transformClass = (Class<Function<Object, String>>) attributes.getClass("transform");
-            Function<Object, String> transformer;
+            Class<Function<T, R>> transformClass = (Class<Function<T, R>>) attributes.getClass("transform");
+            Function<T, R> transformer;
             try {
                 transformer = transformClass.newInstance();
             } catch (InstantiationException|IllegalAccessException e) {
                 throw new RuntimeException(e.getMessage(), e);
             }
-
-            String transformedValue = transformer.apply(fieldValue);
-            System.err.println(String.format("Adding property %s %s", property.localname(), transformedValue));
+            System.err.println(String.format("Transforming property %s (type %s) with %s", field.getName(), field.getType(), transformClass.getSimpleName()));
+            R transformedValue = transformer.apply((T) fieldValue); //performTransform(transformer, field);
+            System.err.println(String.format("Adding property %s %s (type %s)", property.localname(), transformedValue, transformedValue.getClass().getSimpleName()));
 
             if (!property.object()) {
                 registrationIndividual.addLiteral(
@@ -197,7 +197,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                 if (isCollection(field.getType())) {
                     // repeat the property for each element in the list
                     ((Collection) fieldValue).forEach(o -> {
-                        String transformed = transformer.apply(o);
+                        R transformed = transformer.apply((T) o);
                         // Obtain the OwlIndividual for the object
                         // Obtain the IndividualId for the object
                         Individual i = newIndividual(getOwlClass(o), getIndividualId(o));
@@ -211,7 +211,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                     // not a collection, so we just add a single property
                     registrationIndividual.addProperty(
                             ontology.objectProperty(property.ns(), property.localname()),
-                            asResource(transformedValue));
+                            asResource(transformedValue.toString()));
                 }
             }
         });
@@ -223,6 +223,10 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         writeModel(onlyIndividuals(ontology.getOntModel()));
 //        writeModel(ontology.getOntModel());
+    }
+
+    private <T, R> R performTransform(Function<T, R> fn, T foo) {
+        return fn.apply(foo);
     }
 
     private boolean isCollection(Class<?> candidate) {
