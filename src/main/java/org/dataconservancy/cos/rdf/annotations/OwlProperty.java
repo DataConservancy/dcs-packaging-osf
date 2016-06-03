@@ -15,8 +15,8 @@
  */
 package org.dataconservancy.cos.rdf.annotations;
 
+import org.dataconservancy.cos.rdf.support.IdentityTransform;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
-import org.dataconservancy.cos.rdf.support.ToStringTransform;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -84,8 +84,7 @@ public @interface OwlProperty {
      * that accepts the value of the annotated field (in this example {@code http://mydomain/object/abcde}) and
      * transforms it to the desired value (e.g {@code abcde}).
      *
-     * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field to a
-     * {@code String}
+     * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field
      */
     Class<? extends Function> transform() default IdentityTransform.class;
 }
