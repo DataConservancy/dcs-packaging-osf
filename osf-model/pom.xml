@@ -45,10 +45,65 @@
   <!-- Provided  =================================================== -->
 
   <!-- Compile  ==================================================== -->
+
+    <dependency>
+      <groupId>org.dataconservancy.cos</groupId>
+      <artifactId>osf-client</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-core</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-arq</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dataconservancy.cos</groupId>
+      <artifactId>rdf-annotations</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.diffplug.durian</groupId>
+      <artifactId>durian</artifactId>
+      <scope>compile</scope>
+    </dependency>
     
   <!-- Runtime  ==================================================== -->
 
   <!-- Test ======================================================== -->
+
+    <dependency>
+      <groupId>org.dataconservancy.cos</groupId>
+      <artifactId>osf-client</artifactId>
+      <scope>test</scope>
+      <type>test-jar</type>
+      <classifier>tests</classifier>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mock-server</groupId>
+      <artifactId>mockserver-client-java</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mock-server</groupId>
+      <artifactId>mockserver-netty</artifactId>
+      <scope>test</scope>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>

@@ -1,0 +1,484 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179d/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179d/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179d/"
+      },
+      "attributes": {
+        "date": "2016-05-31T19:39:32.305000",
+        "action": "project_registered",
+        "params": {
+          "view_url": null,
+          "params_node": {
+            "id": "v8x57",
+            "title": "Raw Data"
+          },
+          "params_project": {}
+        }
+      },
+      "type": "logs",
+      "id": "574de874cfa27c004a16179d"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179c/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179c/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179c/"
+      },
+      "attributes": {
+        "date": "2016-05-31T19:39:32.266000",
+        "action": "project_registered",
+        "params": {
+          "view_url": null,
+          "params_node": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "params_project": {}
+        }
+      },
+      "type": "logs",
+      "id": "574de874cfa27c004a16179c"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179b/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179b/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/574de874cfa27c004a16179b/"
+      },
+      "attributes": {
+        "date": "2016-05-31T19:39:32.258000",
+        "action": "registration_approved",
+        "params": {
+          "view_url": null,
+          "params_node": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "params_project": {}
+        }
+      },
+      "type": "logs",
+      "id": "574de874cfa27c004a16179b"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de853cfa27c004a161798/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de853cfa27c004a161798/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/574de853cfa27c004a161798/"
+      },
+      "attributes": {
+        "date": "2016-05-31T19:38:59.054000",
+        "action": "registration_initiated",
+        "params": {
+          "view_url": null,
+          "params_node": {
+            "id": "y6cx7",
+            "title": "First Proj"
+          },
+          "params_project": {}
+        }
+      },
+      "type": "logs",
+      "id": "574de853cfa27c004a161798"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de82ac39efa004f0cf296/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de82ac39efa004f0cf296/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/574de82ac39efa004f0cf296/"
+      },
+      "attributes": {
+        "date": "2016-05-31T19:38:18.983000",
+        "action": "comment_added",
+        "params": {
+          "view_url": null,
+          "params_node": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "params_project": {}
+        }
+      },
+      "type": "logs",
+      "id": "574de82ac39efa004f0cf296"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de6eccfa27c004a161789/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/574de6eccfa27c004a161789/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/574de6eccfa27c004a161789/"
+      },
+      "attributes": {
+        "date": "2016-05-31T19:33:00.806000",
+        "action": "osf_storage_file_removed",
+        "params": {
+          "path": "/moo/",
+          "params_node": {
+            "id": "v8x57",
+            "title": "Raw Data"
+          },
+          "params_project": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "view_url": "/project/v8x57/files/osfstorage/5731e69ecfa27c0047716290//"
+        }
+      },
+      "type": "logs",
+      "id": "574de6eccfa27c004a161789"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e7c3cfa27c0045d051e3/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e7c3cfa27c0045d051e3/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/5731e7c3cfa27c0045d051e3/"
+      },
+      "attributes": {
+        "date": "2016-05-10T13:53:07.886000",
+        "action": "osf_storage_file_added",
+        "params": {
+          "path": "/moo/sah/Screen Shot 2016-05-03 at 10.39.05 PM.png",
+          "params_node": {
+            "id": "v8x57",
+            "title": "Raw Data"
+          },
+          "params_project": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "view_url": "/project/v8x57/files/osfstorage/5731e7c3cfa27c0045d051e1/"
+        }
+      },
+      "type": "logs",
+      "id": "5731e7c3cfa27c0045d051e3"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e7becfa27c0045d051e0/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e7becfa27c0045d051e0/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/5731e7becfa27c0045d051e0/"
+      },
+      "attributes": {
+        "date": "2016-05-10T13:53:02.052000",
+        "action": "osf_storage_folder_created",
+        "params": {
+          "path": "/moo/sah/",
+          "params_node": {
+            "id": "v8x57",
+            "title": "Raw Data"
+          },
+          "params_project": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "view_url": "/project/v8x57/files/osfstorage/5731e7becfa27c0045d051df//"
+        }
+      },
+      "type": "logs",
+      "id": "5731e7becfa27c0045d051e0"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e6e0cfa27c0045d051de/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e6e0cfa27c0045d051de/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/5731e6e0cfa27c0045d051de/"
+      },
+      "attributes": {
+        "date": "2016-05-10T13:49:20.699000",
+        "action": "osf_storage_file_added",
+        "params": {
+          "path": "/moo/osf-gui.png",
+          "params_node": {
+            "id": "v8x57",
+            "title": "Raw Data"
+          },
+          "params_project": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "view_url": "/project/v8x57/files/osfstorage/5731e6e0cfa27c0045d051dc/"
+        }
+      },
+      "type": "logs",
+      "id": "5731e6e0cfa27c0045d051de"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e69ecfa27c0047716291/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/5731e69ecfa27c0047716291/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/5731e69ecfa27c0047716291/"
+      },
+      "attributes": {
+        "date": "2016-05-10T13:48:14.203000",
+        "action": "osf_storage_folder_created",
+        "params": {
+          "path": "/moo/",
+          "params_node": {
+            "id": "v8x57",
+            "title": "Raw Data"
+          },
+          "params_project": {
+            "id": "r5s4u",
+            "title": "First Proj"
+          },
+          "view_url": "/project/v8x57/files/osfstorage/5731e69ecfa27c0047716290//"
+        }
+      },
+      "type": "logs",
+      "id": "5731e69ecfa27c0047716291"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://192.168.99.100:8000/v2/nodes/r5s4u/logs/?page=3",
+    "prev": null,
+    "next": "http://192.168.99.100:8000/v2/nodes/r5s4u/logs/?page=2",
+    "meta": {
+      "total": 23,
+      "per_page": 10
+    }
+  }
+}
