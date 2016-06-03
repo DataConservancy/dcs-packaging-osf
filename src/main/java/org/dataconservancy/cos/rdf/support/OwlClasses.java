@@ -54,20 +54,31 @@ public enum OwlClasses {
         this.localname = localname;
     }
 
+    /**
+     * The RDF namespace of the class.
+     *
+     * @return the namespace
+     */
     public String ns() {
         return ns;
     }
 
+    /**
+     * The RDF name of the class sans namespace.
+     *
+     * @return the local name
+     */
     public String localname() {
         return localname;
     }
 
+    /**
+     * The fully qualified RDF name of this class.
+     *
+     * @return the fully qualified name
+     */
     public String fqname() {
         return ns + localname;
-    }
-
-    public String value() {
-        return fqname();
     }
 
 }

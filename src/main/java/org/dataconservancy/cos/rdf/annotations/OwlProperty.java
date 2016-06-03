@@ -36,6 +36,13 @@ import java.util.function.Function;
 @Inherited
 @Target(ElementType.FIELD)
 public @interface OwlProperty {
+
+    /**
+     * The Owl property associated with the annotated field.  This field will be serialized as the object of the
+     * supplied property, and its subject will be that of the containing {@code @OwlIndividal}.
+     *
+     * @return the OWL property associated with this field
+     */
     OwlProperties value();
 
     /**

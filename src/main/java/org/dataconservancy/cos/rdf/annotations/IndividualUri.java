@@ -26,7 +26,8 @@ import java.lang.annotation.Target;
 import java.util.function.Function;
 
 /**
- * Annotates a field to be used as a URI for an OWL individual.
+ * Annotates a field to be used as a resource identifier for an OWL individual.  Each Java class annotated as a
+ * {@link OwlIndividual} is expected to have exactly one field annotated with {@code @IndividualUri}.
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

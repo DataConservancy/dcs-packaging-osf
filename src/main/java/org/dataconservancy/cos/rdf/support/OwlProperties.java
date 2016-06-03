@@ -21,17 +21,23 @@ package org.dataconservancy.cos.rdf.support;
  */
 public enum OwlProperties {
 
-    OSF_HASFILE ("hasFile", true),
+    OSF_HAS_FILE ("hasFile", true),
 
-    OSF_HASCONTRIBUTOR ("hasContributor", true),
+    OSF_HAS_CONTRIBUTOR ("hasContributor", true),
 
-    OSF_HASLINK ("hasLink", true),
+    OSF_HAS_LINK ("hasLink", true),
 
-    OSF_HASNODE ("hasNode", true),
+    OSF_HAS_NODE ("hasNode", true),
 
-    OSF_HASRELATIONSHIP ("hasRelationship", true),
+    OSF_HAS_CHILD ("hasChild", true),
 
-    OSF_HASRELATEDLINK ("hasRelatedLink", true),
+    OSF_HAS_PARENT ("hasParent", true),
+
+    OSF_HAS_ROOT ("hasRoot", true),
+
+    OSF_HAS_RELATIONSHIP ("hasRelationship", true),
+
+    OSF_HAS_RELATEDLINK ("hasRelatedLink", true),
 
     OSF_REGISTERED_BY ("registeredBy", true),
 
@@ -187,18 +193,38 @@ public enum OwlProperties {
         this.isObject = isObject;
     }
 
+    /**
+     * The RDF namespace of the property.
+     *
+     * @return the namespace
+     */
     public String ns() {
         return ns;
     }
 
+    /**
+     * The RDF name of the property sans namespace.
+     *
+     * @return the local name
+     */
     public String localname() {
         return localname;
     }
-    
-    public String fqlocalname() {
+
+    /**
+     * The fully qualified RDF name of this property.
+     *
+     * @return the fully qualified name
+     */
+    public String fqname() {
         return ns + localname;
     }
 
+    /**
+     * Whether or not the property represents an OWL Object property or Datatype property.
+     *
+     * @return true if the property is an OWL Object property
+     */
     public boolean object() {
         return isObject;
     }

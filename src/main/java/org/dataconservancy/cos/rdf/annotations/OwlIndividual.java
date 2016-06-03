@@ -25,12 +25,21 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotates a class which will be mapped to an OWL individual.
+ * Annotates a class which will be mapped to an OWL individual.  Annotated classes are expected to have exactly one
+ * member annotated with {@link IndividualUri}, used to provide the identifier of the RDF resource.
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 @Target(ElementType.TYPE)
 public @interface OwlIndividual {
-    OwlClasses value() default OwlClasses.OSF_BO;
+
+    /**
+     * The Owl class associated with the annotated Java class.  Instances of the annotated Java class will be serialized
+     * as an OWL individual that is an instance of the supplied {@code OwlClasses}.
+     *
+     * @return the OWL class associated with this Java class
+     */
+    OwlClasses value();
+
 }
