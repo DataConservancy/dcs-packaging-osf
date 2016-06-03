@@ -5,10 +5,13 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 import java.util.List;
 import java.util.Map;
 
+import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.ToBooleanTransform;
 import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.ToStringTransform;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -78,7 +81,7 @@ public abstract class NodeBase {
 	private org.dataconservancy.cos.osf.client.model.Links pageLinks;
 
 	/**Node category, must be one of the allowed values.*/
-	@OwlProperty(OwlProperties.OSF_HAS_CATEGORY)
+	@OwlProperty(value = OwlProperties.OSF_HAS_CATEGORY, transform = ToStringTransform.class)
 	private Category category;
 
 	/**description of the node*/
@@ -98,11 +101,11 @@ public abstract class NodeBase {
 	private List<Permission> current_user_permissions;
 	
 	/**timestamp that the node was created*/
-	@OwlProperty(OwlProperties.OSF_HAS_DATECREATED)
+	@OwlProperty(value = OwlProperties.OSF_HAS_DATECREATED, transform = DateTimeTransform.class)
 	private DateTime date_created;
 	
 	/**timestamp when the node was last updated*/
-	@OwlProperty(OwlProperties.OSF_HAS_DATEMODIFIED)
+	@OwlProperty(value = OwlProperties.OSF_HAS_DATEMODIFIED, transform = DateTimeTransform.class)
 	private DateTime date_modified;
 	
 	/**is this node a fork of another node?*/

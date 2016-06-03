@@ -20,6 +20,7 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 
 import java.util.List;
 
+import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
@@ -56,11 +57,11 @@ public class Registration extends NodeBase  {
 	private Boolean isWithdrawn;
 
 	/**	Timestamp that the registration was created */
-	@OwlProperty(OwlProperties.OSF_HAS_DATEREGISTERED)
+	@OwlProperty(value = OwlProperties.OSF_HAS_DATEREGISTERED, transform = DateTimeTransform.class)
 	private DateTime date_registered;
 	
 	/** When the embargo on this registration will be lifted (if applicable) */
-	@OwlProperty(OwlProperties.OSF_HAS_EMBARGOENDDATE)
+	@OwlProperty(value = OwlProperties.OSF_HAS_EMBARGOENDDATE, transform = DateTimeTransform.class)
 	private DateTime embargo_end_date;
 	
 	/**Reasons for withdrawing the registration*/
