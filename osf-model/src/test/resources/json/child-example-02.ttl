@@ -1,0 +1,62 @@
+@prefix    :     <http://www.dataconservancy.org/osf-business-object-model#> .
+@prefix osf:     <http://www.dataconservancy.org/osf-business-object-model#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# <abdcde> is the parent registration
+# <fghij> <klmno> <pqrst> are child registrations
+<abcde> a :Registration ;
+  :hasRelationship [
+    :hasRelationshipType "children" ;    
+    :hasRelatedLink [
+      :hasRelatedLinkType "related" ;
+      :hasHref "http://localhost:8000/v2/registrations/abdce/children/"^^xsd:anyUri ;
+    ] ;
+  ] .
+
+<fghij> a :Registration ;
+  :hasRelationship [
+    :hasRelationshipType "parent" ;
+    :hasRelatedLink [
+      :hasRelatedLinkType "related" ;
+      :hasHref "http://localhost:8000/v2/registrations/fghij/parent/"^^xsd:anyUri ;
+    ] ;
+  ] ,
+  [
+    :hasRelationshipType "root" ;
+    :hasRelatedLink [
+      :hasRelatedLinkType "related" ;
+      :hasHref "http://localhost:8000/v2/registrations/fghij/root/"^^xsd:anyUri ;
+    ] ;
+  ] .
+
+<klmno> a :Registration ;
+  :hasRelationship [
+    :hasRelationshipType "parent" ;
+    :hasRelatedLink [
+      :hasRelatedLinkType "related" ;
+      :hasHref "http://localhost:8000/v2/registrations/klmno/parent/"^^xsd:anyUri ;
+    ] ;
+  ] ,
+  [
+    :hasRelationshipType "root" ;
+    :hasRelatedLink [
+      :hasRelatedLinkType "related" ;
+      :hasHref "http://localhost:8000/v2/registrations/klmno/root/"^^xsd:anyUri ;
+    ] ;
+  ] .
+  
+<pqrst> a :Registration ;
+  :hasRelationship [
+    :hasRelationshipType "parent" ;
+    :hasRelatedLink [
+      :hasRelatedLinkType "related" ;
+      :hasHref "http://localhost:8000/v2/registrations/pqrst/parent/"^^xsd:anyUri ;
+    ] ;
+  ] ,
+  [
+    :hasRelationshipType "root" ;
+    :hasRelatedLink [
+      :hasRelatedLinkType "related" ;
+      :hasHref "http://localhost:8000/v2/registrations/pqrst/root/"^^xsd:anyUri ;
+    ] ;
+  ] .

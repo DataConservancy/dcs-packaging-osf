@@ -1,0 +1,176 @@
+{
+    "data": [
+        {
+            "relationships": {
+                "nodes": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/logs/57162dc8cfa27c004857a452/nodes/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                },
+                "user": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                },
+                "contributors": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/logs/57162dc8cfa27c004857a452/contributors/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                }
+            },
+            "links": {
+                "self": "http://192.168.99.100:8000/v2/logs/57162dc8cfa27c004857a452/"
+            },
+            "attributes": {
+                "date": "2016-04-19T13:08:24.039000",
+                "action": "project_created",
+                "params": {
+                    "view_url": null,
+                    "params_node": {
+                        "id": "v8x57",
+                        "title": "Raw Data"
+                    },
+                    "params_project": {
+
+                    }
+                }
+            },
+            "type": "logs",
+            "id": "57162dc8cfa27c004857a452"
+        },
+        {
+            "relationships": {
+                "nodes": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/logs/57162db7cfa27c004857a44e/nodes/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                },
+                "user": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                },
+                "contributors": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/logs/57162db7cfa27c004857a44e/contributors/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                }
+            },
+            "links": {
+                "self": "http://192.168.99.100:8000/v2/logs/57162db7cfa27c004857a44e/"
+            },
+            "attributes": {
+                "date": "2016-04-19T13:08:07.849000",
+                "action": "wiki_updated",
+                "params": {
+                    "params_project": {
+
+                    },
+                    "view_url": null,
+                    "params_node": {
+                        "id": "r5s4u",
+                        "title": "First Proj"
+                    },
+                    "version": "1",
+                    "page_id": "kxhud",
+                    "page": "home"
+                }
+            },
+            "type": "logs",
+            "id": "57162db7cfa27c004857a44e"
+        },
+        {
+            "relationships": {
+                "nodes": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/logs/57162d51c39efa004dd0f07f/nodes/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                },
+                "user": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                },
+                "contributors": {
+                    "links": {
+                        "related": {
+                            "href": "http://192.168.99.100:8000/v2/logs/57162d51c39efa004dd0f07f/contributors/",
+                            "meta": {
+
+                            }
+                        }
+                    }
+                }
+            },
+            "links": {
+                "self": "http://192.168.99.100:8000/v2/logs/57162d51c39efa004dd0f07f/"
+            },
+            "attributes": {
+                "date": "2016-04-19T13:06:25.038000",
+                "action": "project_created",
+                "params": {
+                    "view_url": null,
+                    "params_node": {
+                        "id": "r5s4u",
+                        "title": "First Proj"
+                    },
+                    "params_project": {
+
+                    }
+                }
+            },
+            "type": "logs",
+            "id": "57162d51c39efa004dd0f07f"
+        }
+    ],
+    "links": {
+        "first": "http://192.168.99.100:8000/v2/nodes/r5s4u/logs/",
+        "last": null,
+        "prev": "http://192.168.99.100:8000/v2/nodes/r5s4u/logs/?page=2",
+        "next": null,
+        "meta": {
+            "total": 23,
+            "per_page": 10
+        }
+    }
+}

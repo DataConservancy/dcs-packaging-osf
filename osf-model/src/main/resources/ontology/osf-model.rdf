@@ -9,8 +9,9 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY ore "http://www.openarchives.org/ore/terms/" >
     <!ENTITY xsi "http://www.w3.org/2001/XMLSchema-instance" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >    
     <!ENTITY osfbom "http://www.dataconservancy.org/osf-business-object-model#" >
+    <!ENTITY jsonapi "http://jsonapi.org/format/1.0/#" >
 ]>
 
 
@@ -24,6 +25,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:opmv="http://purl.org/net/opmv/ns#"
+     xmlns:jsonapi="http://jsonapi.org/format/1.0/#"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <owl:Ontology rdf:about="http://www.dataconservancy.org/osf-business-object-model">
         <dcterms:modified rdf:datatype="&xsd;date">2015-08-18</dcterms:modified>
@@ -102,7 +104,48 @@
       <rdfs:domain rdf:resource="&osfbom;Relationship"/>
       <rdfs:range rdf:resource="&osfbom;RelatedLink"/>
     </owl:ObjectProperty>
-          
+    
+    <owl:ObjectProperty rdf:about="&osfbom;registeredFrom">
+        <rdfs:label xml:lang="en">registeredFrom</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the Node that the Registration was registered from.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&osfbom;Node"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;registeredBy">
+        <rdfs:label xml:lang="en">registeredBy</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the User that created the Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasRoot">
+        <rdfs:label xml:lang="en">hasRoot</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying root Node in a graph of Nodes.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>root</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasParent">
+        <rdfs:label xml:lang="en">hasRoot</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the parent Node of a Node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>parent</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasChild">
+        <rdfs:label xml:lang="en">hasChild</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the child of a Node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>children</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -294,6 +337,13 @@
         <rdfs:comment xml:lang="en">A data property specifying the end date for a registration's embargo</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Registration"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;isWithdrawn">
+        <rdfs:label xml:lang="en">isWithdrawn</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicating if the registration is withdrawn</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasEtag -->

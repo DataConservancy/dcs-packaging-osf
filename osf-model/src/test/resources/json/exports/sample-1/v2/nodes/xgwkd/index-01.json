@@ -1,0 +1,105 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/files/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "self": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/relationships/institution/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/xgwkd/children/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://192.168.99.100:8000/v2/nodes/xgwkd/",
+      "html": "http://192.168.99.100:5000/xgwkd/"
+    },
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "description": "",
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-05-12T14:09:51.489000",
+      "title": "Project 14",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-05-12T14:09:51.489000",
+      "public": false,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "xgwkd"
+  }
+}
