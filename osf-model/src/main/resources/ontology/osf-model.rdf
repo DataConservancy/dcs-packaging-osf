@@ -64,6 +64,18 @@
         <rdfs:domain rdf:resource="&osfbom;Node"/>
         <rdfs:range rdf:resource="&osfbom;Contributor"/>
     </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasUser -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasUser">
+        <rdfs:label xml:lang="en">hasUser</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying a user belonging to a contributor</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Contributor"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    
+    
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasLink -->
 
