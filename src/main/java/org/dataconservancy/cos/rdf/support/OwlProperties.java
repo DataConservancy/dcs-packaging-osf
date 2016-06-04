@@ -45,6 +45,8 @@ public enum OwlProperties {
 
     OSF_FORKED_FROM ("forkedFrom", true),
 
+    OSF_HAS_USER ("hasUser", true),
+
     DCTERMS_DESCRIPTION ("description"),
 
     DCTERMS_IDENTIFIER ("identifier"),
