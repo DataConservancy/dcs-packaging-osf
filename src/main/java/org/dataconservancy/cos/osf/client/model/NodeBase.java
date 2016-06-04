@@ -37,11 +37,13 @@ public abstract class NodeBase {
 
 	/**List of users who are contributors to this node. */
 	@Relationship(value = "contributors", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+	// TODO: @OwlProperty(....)
 	private List<Contributor> contributors;
 
 	/**List of top-level folders (actually cloud-storage providers) associated with this node.
 	 * This is the starting point for accessing the actual files stored within this node.*/
 	@Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+	// TODO: @OwlProperty(....)
 	private List<File> files;
 
 	/**Root node if you walk up the tree of projects/components.*/
@@ -57,12 +59,13 @@ public abstract class NodeBase {
 
 	/**Link to list of registrations related to the current node*/
 	@Relationship(value = "registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	// TODO: @OwlProperty(....)
 	private String registrations;
 
 	/**If this node was forked from another node, the canonical endpoint of the node that was 
 	 * forked from will be available in the /forked_from/links/related/href key. Otherwise, it will be null.*/
 	@Relationship(value = "forked_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-	// TODO: @OwlProperty(value = OwlProperties.OSF_, transform = UrlToIdTransform.class)
+	@OwlProperty(value = OwlProperties.OSF_FORKED_FROM, transform = UrlToIdTransform.class)
 	private String forked_from;
 
 	/**Link to list of links to other Nodes.*/
@@ -71,7 +74,12 @@ public abstract class NodeBase {
 
 	/**Link to list of logs for Node.*/
 	@Relationship(value = "logs", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	// TODO: Logs class and annotation
 	private String logs;
+
+	// TODO: License
+
+	// TODO: Wiki
 
 	/**Gets other links found in data.links:{} section of JSON**/
 	@Links
@@ -93,7 +101,7 @@ public abstract class NodeBase {
 	private String title;
 
 	/**list of tags that describe the node*/
-	// TODO: @OwlProperty(OwlProperties.OSF_HAS_TAG)
+	@OwlProperty(OwlProperties.OSF_HAS_TAG)
 	private List<String> tags;
 	
 	/**List of strings representing the permissions for the current user on this node*/
