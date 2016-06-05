@@ -31,6 +31,8 @@ import org.dataconservancy.cos.osf.client.model.NodeBase;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.model.Ontology;
+import org.dataconservancy.cos.osf.packaging.support.AnnotatedElementPair;
+import org.dataconservancy.cos.osf.packaging.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.osf.packaging.support.Rdf;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
@@ -151,12 +153,12 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         // get the owl class to use from the instance
 
-        OwlClasses owlClass = getOwlClass(registration, annotationAttributesMap);
+        OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(registration, annotationAttributesMap);
         assertNotNull(owlClass);
         assertSame(OwlClasses.OSF_REGISTRATION, owlClass);
 
         // get the id to use for the individual from the instance; note, comes from super class
-        Object owlIndividualId = getIndividualId(registration, annotationAttributesMap);
+        Object owlIndividualId = OwlAnnotationProcessor.getIndividualId(registration, annotationAttributesMap);
         assertNotNull(owlIndividualId);
 
         // create the individual
@@ -234,16 +236,16 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
                             // otherwise, create a resource
 
-                            if (annotationAttributesMap.get(AnnotatedElementPair.forAnnotatedElement(field, AnonIndividual.class)) != null) {
-                                OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forAnnotatedElement(field, AnonIndividual.class)).getEnum("value");
+                            if (annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)) != null) {
+                                OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)).getEnum("value");
                                 i = newIndividual(anonClass);
                                 registrationIndividual.addProperty(
                                         ontology.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
                                 // need to recurse and add the properties of the anonymous individual
-                            } else if (annotationAttributesMap.containsKey(AnnotatedElementPair.forAnnotatedElement(owlObject.getClass(), OwlIndividual.class))) {
+                            } else if (annotationAttributesMap.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
                                 // Obtain the OwlIndividual for the object
                                 // Obtain the IndividualId for the object
-                                i = newIndividual(getOwlClass(owlObject), getIndividualId(owlObject));
+                                i = newIndividual(OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap), OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
                                 registrationIndividual.addProperty(
                                         ontology.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
                             } else {
@@ -376,7 +378,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         assertEquals(aep1, aep2);
 
-        AnnotationAttributes attribs = result.get(AnnotatedElementPair.forAnnotatedElement(r.getClass(), OwlIndividual.class));
+        AnnotationAttributes attribs = result.get(AnnotatedElementPair.forPair(r.getClass(), OwlIndividual.class));
         assertNotNull(attribs);
         assertEquals(OwlClasses.OSF_REGISTRATION, attribs.getEnum("value"));
 
@@ -451,108 +453,108 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         return individuals;
     }
 
-    private OwlClasses getOwlClass(Object o) {
-        OwlClasses owlClass = (OwlClasses) AnnotationUtils.getValue(o.getClass().getAnnotation(OwlIndividual.class));
-        assertNotNull(owlClass);
-        return owlClass;
-    }
-
-    private OwlClasses getOwlClass(Object o, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
-        Class<OwlIndividual> annotationClass = OwlIndividual.class;
-        String valueAttr = "value";
-
-        AnnotatedElementPair aep = AnnotatedElementPair.forAnnotatedElement(o.getClass(), annotationClass);
-        if (!attributesMap.containsKey(aep)) {
-            throw new IllegalArgumentException(String.format("Could not find annotation %s on %s", annotationClass.getSimpleName(), o.getClass().getSimpleName()));
-        }
-
-        AnnotationAttributes attrs = attributesMap.get(aep);
-        OwlClasses owlClass = attrs.getEnum(valueAttr);
-        if (owlClass == null) {
-            throw new IllegalArgumentException(String.format("Annotation %s missing required attribute %s on class %s", annotationClass.getSimpleName(), valueAttr, o.getClass().getSimpleName()));
-        }
-
-        return owlClass;
-    }
-
-    private Object getIndividualId(Object o, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
-        Class<OwlIndividual> owlIndividualClass = OwlIndividual.class;
-        Class<IndividualUri> individualUriClass = IndividualUri.class;
-        String transformAttr = "transform";
-        List<Field> annotatedFields = new ArrayList<>();
-
-        ReflectionUtils.doWithFields(o.getClass(),
-                annotatedFields::add,
-                field -> field.getDeclaredAnnotation(individualUriClass) != null);
-
-        if (annotatedFields.size() == 0) {
-            // The enclosing class may not be an OwlIndividual, therefore it wouldn't have an IndividualUri
-
-            if (!attributesMap.containsKey(AnnotatedElementPair.forAnnotatedElement(o.getClass(), owlIndividualClass))) {
-                throw new IllegalArgumentException(String.format("Annotation %s not found on %s.  Is %s an OwlIndividual?", individualUriClass.getSimpleName(), o.getClass().getSimpleName(), o.getClass().getSimpleName()));
-            }
-
-            throw new IllegalArgumentException(String.format("Missing required annotation %s on %s, an OwlIndividual.", individualUriClass.getSimpleName(), o.getClass().getSimpleName()));
-        }
-
-        if (annotatedFields.size() > 1) {
-            throw new IllegalArgumentException(String.format("Found %s fields (%s) on %s annotated with %s.  Only one field may be annotated with %s", annotatedFields.size(), annotatedFields.stream().map(Field::getName).collect(Collectors.joining(", ")), o.getClass().getSimpleName(), individualUriClass.getSimpleName(), individualUriClass.getSimpleName()));
-        }
-
-        Field annotatedField = annotatedFields.get(0);
-        AnnotatedElementPair aep = AnnotatedElementPair.forAnnotatedElement(annotatedField, individualUriClass);
-        Class<Function> transformClass = (Class<Function>) attributesMap.get(aep).getClass(transformAttr);
-
-        Function transformFn = null;
-        try {
-            transformFn = transformClass.newInstance();
-        } catch (InstantiationException|IllegalAccessException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-
-        Object individualUriValue = null;
-        try {
-            annotatedField.setAccessible(true);
-            individualUriValue = annotatedField.get(o);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-
-        if (individualUriValue == null) {
-            throw new IllegalArgumentException(String.format("IndividualUri field %s on class %s is null", annotatedFields.get(0).getName(), o.getClass().getSimpleName()));
-        }
-
-        return transformFn.apply(individualUriValue);
-    }
-
-    private Object getIndividualId(Object o) {
-        Map<Field, Function<Object, String>> individualUriFields = new HashMap<>();
-        doWithFields(o.getClass(), f -> {
-                    f.setAccessible(true);
-                    Class<Function> transformClass = (Class<Function>) AnnotationUtils.getValue(f.getAnnotation(IndividualUri.class), "transform");
-
-                    try {
-                        individualUriFields.put(f, transformClass.newInstance());
-                    } catch (InstantiationException e) {
-                        throw new RuntimeException(e.getMessage(), e);
-                    }
-                },
-                f -> f.getDeclaredAnnotation(IndividualUri.class) != null);
-
-        assertEquals(1, individualUriFields.size());
-        Object owlIndividualId = null;
-        try {
-            Field f = individualUriFields.keySet().iterator().next();
-            Object fieldValue = f.get(o);
-            Function<Object, String> fn = individualUriFields.get(f);
-            owlIndividualId = fn.apply(fieldValue);
-
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-        assertNotNull(owlIndividualId);
-        return owlIndividualId;
-    }
+//    private OwlClasses getOwlClass(Object o) {
+//        OwlClasses owlClass = (OwlClasses) AnnotationUtils.getValue(o.getClass().getAnnotation(OwlIndividual.class));
+//        assertNotNull(owlClass);
+//        return owlClass;
+//    }
+//
+//    private OwlClasses getOwlClass(Object o, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+//        Class<OwlIndividual> annotationClass = OwlIndividual.class;
+//        String valueAttr = "value";
+//
+//        AnnotatedElementPair aep = AnnotatedElementPair.forAnnotatedElement(o.getClass(), annotationClass);
+//        if (!attributesMap.containsKey(aep)) {
+//            throw new IllegalArgumentException(String.format("Could not find annotation %s on %s", annotationClass.getSimpleName(), o.getClass().getSimpleName()));
+//        }
+//
+//        AnnotationAttributes attrs = attributesMap.get(aep);
+//        OwlClasses owlClass = attrs.getEnum(valueAttr);
+//        if (owlClass == null) {
+//            throw new IllegalArgumentException(String.format("Annotation %s missing required attribute %s on class %s", annotationClass.getSimpleName(), valueAttr, o.getClass().getSimpleName()));
+//        }
+//
+//        return owlClass;
+//    }
+//
+//    private <T, R> Object getIndividualId(Object o, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+//        Class<OwlIndividual> owlIndividualClass = OwlIndividual.class;
+//        Class<IndividualUri> individualUriClass = IndividualUri.class;
+//        String transformAttr = "transform";
+//        List<Field> annotatedFields = new ArrayList<>();
+//
+//        ReflectionUtils.doWithFields(o.getClass(),
+//                annotatedFields::add,
+//                field -> field.getDeclaredAnnotation(individualUriClass) != null);
+//
+//        if (annotatedFields.size() == 0) {
+//            // The enclosing class may not be an OwlIndividual, therefore it wouldn't have an IndividualUri
+//
+//            if (!attributesMap.containsKey(AnnotatedElementPair.forAnnotatedElement(o.getClass(), owlIndividualClass))) {
+//                throw new IllegalArgumentException(String.format("Annotation %s not found on %s.  Is %s an OwlIndividual?", individualUriClass.getSimpleName(), o.getClass().getSimpleName(), o.getClass().getSimpleName()));
+//            }
+//
+//            throw new IllegalArgumentException(String.format("Missing required annotation %s on %s, an OwlIndividual.", individualUriClass.getSimpleName(), o.getClass().getSimpleName()));
+//        }
+//
+//        if (annotatedFields.size() > 1) {
+//            throw new IllegalArgumentException(String.format("Found %s fields (%s) on %s annotated with %s.  Only one field may be annotated with %s", annotatedFields.size(), annotatedFields.stream().map(Field::getName).collect(Collectors.joining(", ")), o.getClass().getSimpleName(), individualUriClass.getSimpleName(), individualUriClass.getSimpleName()));
+//        }
+//
+//        Field annotatedField = annotatedFields.get(0);
+//        AnnotatedElementPair aep = AnnotatedElementPair.forAnnotatedElement(annotatedField, individualUriClass);
+//        Class<Function<T, R>> transformClass = (Class<Function<T, R>>) attributesMap.get(aep).getClass(transformAttr);
+//
+//        Function<T, R> transformFn = null;
+//        try {
+//            transformFn = transformClass.newInstance();
+//        } catch (InstantiationException|IllegalAccessException e) {
+//            throw new RuntimeException(e.getMessage(), e);
+//        }
+//
+//        T individualUriValue = null;
+//        try {
+//            annotatedField.setAccessible(true);
+//            individualUriValue = (T) annotatedField.get(o);
+//        } catch (IllegalAccessException e) {
+//            throw new RuntimeException(e.getMessage(), e);
+//        }
+//
+//        if (individualUriValue == null) {
+//            throw new IllegalArgumentException(String.format("IndividualUri field %s on class %s is null", annotatedFields.get(0).getName(), o.getClass().getSimpleName()));
+//        }
+//
+//        return transformFn.apply(individualUriValue);
+//    }
+//
+//    private Object getIndividualId(Object o) {
+//        Map<Field, Function<Object, String>> individualUriFields = new HashMap<>();
+//        doWithFields(o.getClass(), f -> {
+//                    f.setAccessible(true);
+//                    Class<Function> transformClass = (Class<Function>) AnnotationUtils.getValue(f.getAnnotation(IndividualUri.class), "transform");
+//
+//                    try {
+//                        individualUriFields.put(f, transformClass.newInstance());
+//                    } catch (InstantiationException e) {
+//                        throw new RuntimeException(e.getMessage(), e);
+//                    }
+//                },
+//                f -> f.getDeclaredAnnotation(IndividualUri.class) != null);
+//
+//        assertEquals(1, individualUriFields.size());
+//        Object owlIndividualId = null;
+//        try {
+//            Field f = individualUriFields.keySet().iterator().next();
+//            Object fieldValue = f.get(o);
+//            Function<Object, String> fn = individualUriFields.get(f);
+//            owlIndividualId = fn.apply(fieldValue);
+//
+//        } catch (IllegalAccessException e) {
+//            throw new RuntimeException(e.getMessage(), e);
+//        }
+//        assertNotNull(owlIndividualId);
+//        return owlIndividualId;
+//    }
 
     private Individual newIndividual(OwlClasses owlClass) {
         return ontology.individual(owlClass.ns(), owlClass.localname());
@@ -563,44 +565,44 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     }
 
 
-    private static class AnnotatedElementPair {
-        AnnotatedElement annotatedElement;
-        Class<? extends Annotation> annotationClass;
-
-        public AnnotatedElementPair(AnnotatedElement annotatedElement, Class<? extends Annotation> annotationClass) {
-            this.annotatedElement = annotatedElement;
-            this.annotationClass = annotationClass;
-        }
-
-        static AnnotatedElementPair forAnnotatedElement(AnnotatedElement e, Class<? extends Annotation> annotationClass) {
-            return new AnnotatedElementPair(e, annotationClass);
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-
-            AnnotatedElementPair that = (AnnotatedElementPair) o;
-
-            if (!annotatedElement.equals(that.annotatedElement)) return false;
-            return annotationClass.equals(that.annotationClass);
-
-        }
-
-        @Override
-        public int hashCode() {
-            int result = annotatedElement.hashCode();
-            result = 31 * result + annotationClass.hashCode();
-            return result;
-        }
-
-        @Override
-        public String toString() {
-            return "AnnotatedElementPair{" +
-                    "annotatedElement=" + annotatedElement +
-                    ", annotationClass=" + annotationClass +
-                    '}';
-        }
-    }
+//    private static class AnnotatedElementPair {
+//        AnnotatedElement annotatedElement;
+//        Class<? extends Annotation> annotationClass;
+//
+//        public AnnotatedElementPair(AnnotatedElement annotatedElement, Class<? extends Annotation> annotationClass) {
+//            this.annotatedElement = annotatedElement;
+//            this.annotationClass = annotationClass;
+//        }
+//
+//        static AnnotatedElementPair forAnnotatedElement(AnnotatedElement e, Class<? extends Annotation> annotationClass) {
+//            return new AnnotatedElementPair(e, annotationClass);
+//        }
+//
+//        @Override
+//        public boolean equals(Object o) {
+//            if (this == o) return true;
+//            if (o == null || getClass() != o.getClass()) return false;
+//
+//            AnnotatedElementPair that = (AnnotatedElementPair) o;
+//
+//            if (!annotatedElement.equals(that.annotatedElement)) return false;
+//            return annotationClass.equals(that.annotationClass);
+//
+//        }
+//
+//        @Override
+//        public int hashCode() {
+//            int result = annotatedElement.hashCode();
+//            result = 31 * result + annotationClass.hashCode();
+//            return result;
+//        }
+//
+//        @Override
+//        public String toString() {
+//            return "AnnotatedElementPair{" +
+//                    "annotatedElement=" + annotatedElement +
+//                    ", annotationClass=" + annotationClass +
+//                    '}';
+//        }
+//    }
 }
