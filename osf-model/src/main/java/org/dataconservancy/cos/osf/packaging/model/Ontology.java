@@ -23,9 +23,9 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
-import org.dataconservancy.cos.osf.packaging.support.Rdf;
 
 /**
  * Created by esm on 6/1/16.
@@ -55,28 +55,12 @@ public class Ontology {
         return ontModel;
     }
 
-    public OntProperty property(Rdf.Property property) {
-        if (property.isObject()) {
-            return objectProperty(property);
-        }
-
-        return datatypeProperty(property);
-    }
-
-    public DatatypeProperty datatypeProperty(Rdf.Property property) {
-        return datatypeProperty(property.getNs(), property.getName());
-    }
-
     public DatatypeProperty datatypeProperty(String ns, String propertyName) {
         return datatypeProperty(ns + propertyName);
     }
 
     public DatatypeProperty datatypeProperty(String propertyName) {
         return (DatatypeProperty) getProperty(propertyName, DatatypeProperty.class);
-    }
-
-    public ObjectProperty objectProperty(Rdf.Property property) {
-        return objectProperty(property.getNs(), property.getName());
     }
 
     public ObjectProperty objectProperty(String ns, String propertyName) {

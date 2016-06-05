@@ -31,12 +31,12 @@ import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.model.Ontology;
 import org.dataconservancy.cos.osf.packaging.support.AnnotatedElementPair;
 import org.dataconservancy.cos.osf.packaging.support.OwlAnnotationProcessor;
-import org.dataconservancy.cos.osf.packaging.support.Rdf;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.Rdf;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -44,7 +44,6 @@ import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.annotation.AnnotationUtils;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,16 +54,6 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_HAS_DATEREGISTERED;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_HAS_REGISTRATIONSUPPLEMENT;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_DASHBOARD;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_PENDINGEMBARGOAPPROVAL;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_PENDINGREGISTRATIONAPPROVAL;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_PENDINGWITHDRAWL;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_REGISTRATION;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_WITHDRAWN;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.ObjectProperty.OSF_REGISTERED_BY;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.ObjectProperty.OSF_REGISTERED_FROM;
 import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
 import static org.dataconservancy.cos.osf.packaging.support.Util.relativeId;
 import static org.junit.Assert.assertEquals;
@@ -107,19 +96,19 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertFalse(ontology.getOntModel().listIndividuals().hasNext());
 
 
-        Individual registration = ontology.individual(relativeId(r.getId()), Rdf.Ns.OSF, Rdf.OwlClass.OSF_REGISTRATION);
+        Individual registration = ontology.individual(relativeId(r.getId()), OwlClasses.OSF_REGISTRATION.ns(), OwlClasses.OSF_REGISTRATION.localname());
 
-        registration.addLiteral(ontology.property(OSF_HAS_DATEREGISTERED), dateRegistered);
-        registration.addLiteral(ontology.property(OSF_IS_REGISTRATION), true);
-        registration.addLiteral(ontology.property(OSF_IS_WITHDRAWN), isRegistrationWithdrawn);
-        registration.addProperty(ontology.property(OSF_REGISTERED_BY), asResource(relativeId("a3q2g")));
-        registration.addProperty(ontology.property(OSF_REGISTERED_FROM), asResource(projectRegisteredFrom));
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_HAS_DATEREGISTERED.fqname()), dateRegistered);
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_IS_REGISTRATION.fqname()), true);
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_IS_WITHDRAWN.fqname()), isRegistrationWithdrawn);
+        registration.addProperty(ontology.objectProperty(OwlProperties.OSF_REGISTERED_BY.fqname()), asResource(relativeId("a3q2g")));
+        registration.addProperty(ontology.objectProperty(OwlProperties.OSF_REGISTERED_FROM.fqname()), asResource(projectRegisteredFrom));
 
-        registration.addLiteral(ontology.property(OSF_IS_PENDINGEMBARGOAPPROVAL), isPendingEmbargoApproval);
-        registration.addLiteral(ontology.property(OSF_IS_PENDINGREGISTRATIONAPPROVAL), isPendingRegistrationApproval);
-        registration.addLiteral(ontology.property(OSF_IS_DASHBOARD), isDashboard);
-        registration.addLiteral(ontology.property(OSF_IS_PENDINGWITHDRAWL), isPendingWithdrawl);
-        registration.addLiteral(ontology.property(OSF_HAS_REGISTRATIONSUPPLEMENT), registrationSupplement);
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_IS_PENDINGEMBARGOAPPROVAL.fqname()), isPendingEmbargoApproval);
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_IS_PENDINGREGISTRATIONAPPROVAL.fqname()), isPendingRegistrationApproval);
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_IS_DASHBOARD.fqname()), isDashboard);
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_IS_PENDINGWITHDRAWL.fqname()), isPendingWithdrawl);
+        registration.addLiteral(ontology.datatypeProperty(OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT.fqname()), registrationSupplement);
 
         assertFalse(ontology.getOntModel().listSubModels().hasNext());
         assertTrue(ontology.getOntModel().isInBaseModel(registration));
