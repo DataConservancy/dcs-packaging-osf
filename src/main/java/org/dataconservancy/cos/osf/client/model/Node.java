@@ -23,6 +23,10 @@ import com.github.jasminb.jsonapi.RelType;
 import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
+import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
  * POJO representation of OSF Node in OSF API V2
@@ -32,10 +36,12 @@ import com.github.jasminb.jsonapi.annotations.Type;
  */
 @Type("nodes")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@OwlIndividual(OwlClasses.OSF_NODE)
 public class Node extends NodeBase {
 
 	/**List of nodes that are children of this node.*/
 	@Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+	@OwlProperty(OwlProperties.OSF_HAS_CHILD)
 	protected List<Node> children;
 
 	public List<Node> getChildren() {
