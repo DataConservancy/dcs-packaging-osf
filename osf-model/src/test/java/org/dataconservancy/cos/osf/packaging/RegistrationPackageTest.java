@@ -28,7 +28,7 @@ import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.NodeBase;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.dataconservancy.cos.osf.packaging.model.OntologyManager;
+import org.dataconservancy.cos.osf.packaging.ont.OntologyManager;
 import org.dataconservancy.cos.osf.packaging.support.AnnotatedElementPair;
 import org.dataconservancy.cos.osf.packaging.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
