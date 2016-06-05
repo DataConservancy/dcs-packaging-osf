@@ -124,6 +124,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
     @Test
     public <T, R> void testCreateRegistrationPackageAnnotation() throws Exception {
+        PackageGraph packageGraph = new PackageGraph(ontologyManager);
         factory.interceptors().add(new RecursiveInterceptor(testName, RegistrationPackageTest.class, getBaseUri()));
         Registration registration = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
         assertNotNull(registration);
@@ -143,8 +144,10 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertNotNull(owlIndividualId);
 
         // create the individual
-        Individual registrationIndividual = newIndividual(owlClass, owlIndividualId);
-        assertNotNull(registrationIndividual);
+//        Individual registrationIndividual = newIndividual(owlClass, owlIndividualId);
+//        assertNotNull(registrationIndividual);
+        String registrationIndividualUri = packageGraph.newIndividual(owlClass, owlIndividualId);
+        assertNotNull(registrationIndividualUri);
 
         // get the properties (recursively up the class hierarchy) used for OWL
 
@@ -205,10 +208,12 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                 System.err.println(String.format("Adding property %s %s (type %s)", owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
 
                 if (!owlProperty.object()) {
-                    registrationIndividual.addLiteral(
-                            ontologyManager.datatypeProperty(owlProperty.ns(), owlProperty.localname()), transformedObject);
+//                    registrationIndividual.addLiteral(
+//                            ontologyManager.datatypeProperty(owlProperty.ns(), owlProperty.localname()), transformedObject);
+                    packageGraph.addLiteral(registrationIndividualUri, owlProperty.fqname(), transformedObject);
                 } else {
-                    Individual i;
+//                    Individual i;
+                    String individualUri;
 
                     // if the object property is annotated with @AnonIndividual create an anonymous individual
 
@@ -219,20 +224,28 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
                     if (annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)) != null) {
                         OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)).getEnum("value");
-                        i = newIndividual(anonClass);
-                        registrationIndividual.addProperty(
-                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
+//                        i = newIndividual(anonClass);
+                        Individual anonIndividual = packageGraph.newIndividual(anonClass);
                         // need to recurse and add the properties of the anonymous individual
+
+//                        registrationIndividual.addProperty(
+//                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
+                        packageGraph.addAnonIndividual(registrationIndividualUri, owlProperty.fqname(), anonIndividual);
                     } else if (annotationAttributesMap.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
                         // Obtain the OwlIndividual for the object
                         // Obtain the IndividualId for the object
-                        i = newIndividual(OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap), OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
-                        registrationIndividual.addProperty(
-                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
+//                        i = newIndividual(OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap), OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
+                        individualUri = packageGraph.newIndividual(
+                                OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap),
+                                OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
+//                        registrationIndividual.addProperty(
+//                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
+                        packageGraph.addIndividual(registrationIndividualUri, owlProperty.fqname(), individualUri);
                     } else {
-                        registrationIndividual.addProperty(
-                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()),
-                                asResource(transformedObject.toString()));
+//                        registrationIndividual.addProperty(
+//                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()),
+//                                asResource(transformedObject.toString()));
+                        packageGraph.addResource(registrationIndividualUri, owlProperty.fqname(), asResource(transformedObject.toString()));
                     }
                 }
             });
@@ -241,6 +254,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         writeModel(onlyIndividuals(ontologyManager.getOntModel()));
 
+        Individual registrationIndividual = ontologyManager.getOntModel().getIndividual(registrationIndividualUri);
         assertEquals("PROJECT", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_CATEGORY.fqname())).toString());
         assertEquals(ResourceFactory.createResource("zgbd5"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CHILD.fqname())));
         // TODO hasContributor
@@ -273,7 +287,6 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertTrue(ontologyManager.individual("a3q2g").hasOntClass(OwlClasses.OSF_USER.fqname()));
         assertTrue(ontologyManager.individual("r5s4u").hasOntClass(OwlClasses.OSF_NODE.fqname()));
 
-//        writeModel(ontology.getOntModel());
     }
 
     @Test
@@ -335,12 +348,6 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     }
 
 
-    private Individual newIndividual(OwlClasses owlClass) {
-        return ontologyManager.individual(owlClass.ns(), owlClass.localname());
-    }
 
-    private Individual newIndividual(OwlClasses owlClass, Object individualId) {
-        return ontologyManager.individual(individualId.toString(), owlClass.ns(), owlClass.localname());
-    }
 
 }
