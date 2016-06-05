@@ -105,6 +105,16 @@ public class Ontology {
         return result;
     }
 
+    public Individual individual(String ns, String className) {
+        String fqcn = ns + className;
+        Individual result = ontModel.createIndividual(owlClass(ns, className));
+        if (result == null) {
+            throw new IllegalArgumentException(String.format("Could not create individual for class %s", fqcn));
+        }
+
+        return result;
+    }
+
     public Individual individual(String uri, String ns, String className) {
         String fqcn = ns + className;
         Individual result = ontModel.createIndividual(uri, owlClass(ns, className));
@@ -122,16 +132,18 @@ public class Ontology {
 
     private OntProperty getProperty(String name, Class<?> propertyClass) {
         OntProperty result = null;
+        boolean isObject = false;
         if (DatatypeProperty.class.isAssignableFrom(propertyClass)) {
             result = ontModel.getDatatypeProperty(name);
         }
 
         if (ObjectProperty.class.isAssignableFrom(propertyClass)) {
+            isObject = true;
             result = ontModel.getObjectProperty(name);
         }
 
         if (result == null) {
-            throw new IllegalArgumentException(String.format("Could not find property %s", name));
+            throw new IllegalArgumentException(String.format("Could not find %s property %s (maybe the property is a %s instead, or the property is not present in the ontology)", ((isObject) ? "object" : "datatype"), name, ((isObject) ? "datatype" : "object")));
         }
 
         return result;
