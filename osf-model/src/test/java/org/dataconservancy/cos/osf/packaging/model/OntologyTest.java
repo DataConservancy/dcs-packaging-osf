@@ -17,9 +17,11 @@ package org.dataconservancy.cos.osf.packaging.model;
 
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.ObjectProperty;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by esm on 6/1/16.
@@ -40,19 +42,23 @@ public class OntologyTest {
 
     @Test
     public void testGetDatatypeProperty() throws Exception {
-        DatatypeProperty p = underTest.datatypeProperty(OldRdf.Ns.OSF, OldRdf.DatatypeProperty.OSF_HAS_NAME);
+        // Create a data type property 'osf:hasName' in the underlying ontology model
+        DatatypeProperty p = underTest.datatypeProperty(OwlProperties.OSF_HAS_NAME.fqname());
         assertNotNull(p);
 
-        assertEquals(OldRdf.DatatypeProperty.OSF_HAS_NAME, p.getLocalName());
-        assertEquals(OldRdf.Ns.OSF, p.getNameSpace());
+        // Insure the newly created datatype property has the expected local name and namespace
+        assertEquals(OwlProperties.OSF_HAS_NAME.localname(), p.getLocalName());
+        assertEquals(OwlProperties.OSF_HAS_NAME.ns(), p.getNameSpace());
     }
 
     @Test
     public void testGetObjectProperty() throws Exception {
-        ObjectProperty p = underTest.objectProperty(OldRdf.Ns.OSF, OldRdf.ObjectProperty.OSF_HASNODE);
+        // Create a object type property 'osf:hasRoot' in the underlying ontology model
+        ObjectProperty p = underTest.objectProperty(OwlProperties.OSF_HAS_ROOT.fqname());
         assertNotNull(p);
 
-        assertEquals(OldRdf.ObjectProperty.OSF_HASNODE, p.getLocalName());
-        assertEquals(OldRdf.Ns.OSF, p.getNameSpace());
+        // Insure the newly created object property has the expected local name and namespace
+        assertEquals(OwlProperties.OSF_HAS_ROOT.localname(), p.getLocalName());
+        assertEquals(OwlProperties.OSF_HAS_ROOT.ns(), p.getNameSpace());
     }
 }
