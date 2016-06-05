@@ -144,8 +144,6 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertNotNull(owlIndividualId);
 
         // create the individual
-//        Individual registrationIndividual = newIndividual(owlClass, owlIndividualId);
-//        assertNotNull(registrationIndividual);
         String registrationIndividualUri = packageGraph.newIndividual(owlClass, owlIndividualId);
         assertNotNull(registrationIndividualUri);
 
@@ -208,11 +206,8 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                 System.err.println(String.format("Adding property %s %s (type %s)", owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
 
                 if (!owlProperty.object()) {
-//                    registrationIndividual.addLiteral(
-//                            ontologyManager.datatypeProperty(owlProperty.ns(), owlProperty.localname()), transformedObject);
                     packageGraph.addLiteral(registrationIndividualUri, owlProperty.fqname(), transformedObject);
                 } else {
-//                    Individual i;
                     String individualUri;
 
                     // if the object property is annotated with @AnonIndividual create an anonymous individual
@@ -228,23 +223,17 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                         Individual anonIndividual = packageGraph.newIndividual(anonClass);
                         // need to recurse and add the properties of the anonymous individual
 
-//                        registrationIndividual.addProperty(
-//                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
                         packageGraph.addAnonIndividual(registrationIndividualUri, owlProperty.fqname(), anonIndividual);
                     } else if (annotationAttributesMap.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
                         // Obtain the OwlIndividual for the object
                         // Obtain the IndividualId for the object
-//                        i = newIndividual(OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap), OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
                         individualUri = packageGraph.newIndividual(
                                 OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap),
                                 OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
-//                        registrationIndividual.addProperty(
-//                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()), i);
+
                         packageGraph.addIndividual(registrationIndividualUri, owlProperty.fqname(), individualUri);
                     } else {
-//                        registrationIndividual.addProperty(
-//                                ontologyManager.objectProperty(owlProperty.ns(), owlProperty.localname()),
-//                                asResource(transformedObject.toString()));
+
                         packageGraph.addResource(registrationIndividualUri, owlProperty.fqname(), asResource(transformedObject.toString()));
                     }
                 }
