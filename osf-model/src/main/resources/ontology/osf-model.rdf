@@ -762,8 +762,15 @@
         <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
-
-   
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasTag -->
+    <!-- TODO: review domain: are tags just for nodes and registrations or do they apply to other types like users? -->
+    <owl:DatatypeProperty rdf:about="&osfbom;hasTag">
+        <rdfs:label xml:lang="en">hasTag</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying a user-defined tag for the Node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////

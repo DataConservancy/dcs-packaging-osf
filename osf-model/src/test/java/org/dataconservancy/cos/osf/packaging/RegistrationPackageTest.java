@@ -15,13 +15,15 @@
  */
 package org.dataconservancy.cos.osf.packaging;
 
-import com.diffplug.common.base.Errors;
-import com.diffplug.common.base.Throwing;
-import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
+import org.apache.jena.datatypes.RDFDatatype;
+import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.NodeIterator;
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
@@ -30,6 +32,7 @@ import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.model.Ontology;
 import org.dataconservancy.cos.osf.packaging.support.Rdf;
+import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
@@ -40,21 +43,32 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.annotation.AnnotationUtils;
-import org.springframework.util.ReflectionUtils;
+import sun.security.tools.keytool.Resources_fr;
 
-import javax.swing.text.html.HTMLDocument;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.AnnotatedElement;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
+import java.util.Set;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.*;
-import static org.dataconservancy.cos.osf.packaging.support.Rdf.ObjectProperty.*;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_HAS_CATEGORY;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_HAS_DATEREGISTERED;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_HAS_REGISTRATIONSUPPLEMENT;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_DASHBOARD;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_PENDINGEMBARGOAPPROVAL;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_PENDINGREGISTRATIONAPPROVAL;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_PENDINGWITHDRAWL;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_REGISTRATION;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.DatatypeProperty.OSF_IS_WITHDRAWN;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.ObjectProperty.OSF_REGISTERED_BY;
+import static org.dataconservancy.cos.osf.packaging.support.Rdf.ObjectProperty.OSF_REGISTERED_FROM;
 import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
 import static org.dataconservancy.cos.osf.packaging.support.Util.relativeId;
 import static org.junit.Assert.assertEquals;
@@ -62,7 +76,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import static org.springframework.util.ReflectionUtils.doWithFields;
 
 /**
@@ -148,23 +161,23 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         // get the properties (recursively up the class hierarchy) used for OWL
 
         List<Field> owlPropertyFields = new ArrayList<>();
-        Map<Field, AnnotationAttributes> fieldAnnotationAttrs = new HashMap<>();
-        doWithFields(registration.getClass(),
-                f -> {
-                    f.setAccessible(true);
-                    owlPropertyFields.add(f);
-                    AnnotationAttributes annotationAttributes = AnnotationUtils.getAnnotationAttributes(f, f.getAnnotation(OwlProperty.class));
-                    fieldAnnotationAttrs.put(f, annotationAttributes);
-                },
-                f -> f.getDeclaredAnnotation(OwlProperty.class) != null);
-        assertEquals(23, owlPropertyFields.size());
+        List<Field> anonIndividualFields = new ArrayList<>();
+        Map<Field, AnnotationAttributes> owlPropertyAnnotations = getFieldAnnotationAttribute(registration, owlPropertyFields, OwlProperty.class);
+        Map<Field, AnnotationAttributes> anonIndividiualAnnotations = getFieldAnnotationAttribute(registration, anonIndividualFields, AnonIndividual.class);
+        assertEquals(26, owlPropertyFields.size());
         assertTrue(owlPropertyFields.contains(NodeBase.class.getDeclaredField("id")));
+        assertEquals(1, anonIndividiualAnnotations.size());
+
+        Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributesMap = new HashMap<>();
+        getAnnotationsForClass(registration.getClass(), annotationAttributesMap);
+        assertEquals(44, annotationAttributesMap.size());
 
         // for each property:
         //  - determine Datatype vs Object property
         //  - for each Datatype property, add a literal to the individual
+        //  - for each Object property, add a resource or an anonymous individual
 
-        fieldAnnotationAttrs.forEach((field, attributes) -> {
+        owlPropertyAnnotations.forEach((field, attributes) -> {
             OwlProperties property = attributes.getEnum("value");
             Object fieldValue = null;
             try {
@@ -182,25 +195,67 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
             Function<T, R> transformer;
             try {
                 transformer = transformClass.newInstance();
-            } catch (InstantiationException|IllegalAccessException e) {
+            } catch (InstantiationException | IllegalAccessException e) {
                 throw new RuntimeException(e.getMessage(), e);
             }
             System.err.println(String.format("Transforming property %s (type %s) with %s", field.getName(), field.getType(), transformClass.getSimpleName()));
-            R transformedValue = transformer.apply((T) fieldValue); //performTransform(transformer, field);
+            R transformedValue = transformer.apply((T) fieldValue);
             System.err.println(String.format("Adding property %s %s (type %s)", property.localname(), transformedValue, transformedValue.getClass().getSimpleName()));
 
             if (!property.object()) {
-                registrationIndividual.addLiteral(
-                        ontology.datatypeProperty(property.ns(), property.localname()), transformedValue);
+
+                Stream<T> elements = null;
+
+                // handle datatype properties in collections or arrays
+
+                if (isCollection(field.getType())) {
+                    elements = ((Collection) fieldValue).stream();
+                }
+
+                if (isArray(field.getType())) {
+                    elements = Stream.of(((T[]) fieldValue));
+                }
+                if (elements != null) {
+                    elements.forEach( element -> {
+                        // todo: does the tranform apply to each element of a collection, or to the collection as a whole?
+                        registrationIndividual.addLiteral(
+                        ontology.datatypeProperty(property.ns(), property.localname()), element);
+                    });
+                } else {
+                    registrationIndividual.addLiteral(
+                            ontology.datatypeProperty(property.ns(), property.localname()), transformedValue);
+                }
             } else {
                 System.err.println(String.format("Adding property %s %s", property.localname(), transformedValue));
+
+                Stream<T> elements = null;
+
                 if (isCollection(field.getType())) {
+                    elements = ((Collection) fieldValue).stream();
+                }
+
+                if (isArray(field.getType())) {
+                    elements = Stream.of(((T[]) fieldValue));
+                }
+
+                if (elements != null) {
                     // repeat the property for each element in the list
-                    ((Collection) fieldValue).forEach(o -> {
+                    (elements).forEach(o -> {
                         R transformed = transformer.apply((T) o);
-                        // Obtain the OwlIndividual for the object
-                        // Obtain the IndividualId for the object
-                        Individual i = newIndividual(getOwlClass(o), getIndividualId(o));
+                        Individual i;
+
+                        // if the object property is annotated with anonindividual create an an anonymous individual
+                        // otherwise, create an individual with an id.
+
+                        if (annotationAttributesMap.get(AnnotatedElementPair.forAnnotatedElement(field, AnonIndividual.class)) != null) {
+                            OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forAnnotatedElement(field, AnonIndividual.class)).getEnum("value");
+                            i = newIndividual(anonClass);
+                            // need to recurse and add the properties of the anonymous individual
+                        } else {
+                            // Obtain the OwlIndividual for the object
+                            // Obtain the IndividualId for the object
+                            i = newIndividual(getOwlClass(o), getIndividualId(o));
+                        }
 
                         registrationIndividual.addProperty(
                                 ontology.objectProperty(property.ns(), property.localname()), i);
@@ -209,9 +264,23 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
                 } else {
                     // not a collection, so we just add a single property
-                    registrationIndividual.addProperty(
-                            ontology.objectProperty(property.ns(), property.localname()),
-                            asResource(transformedValue.toString()));
+
+                    // if the object property is annotated with anonindividual create an an anonymous individual
+                    // otherwise, add a resource
+
+                    if (annotationAttributesMap.get(AnnotatedElementPair.forAnnotatedElement(field, AnonIndividual.class)) != null) {
+                        OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forAnnotatedElement(field, AnonIndividual.class)).getEnum("value");
+                        registrationIndividual.addProperty(
+                                ontology.objectProperty(property.ns(), property.localname()), newIndividual(anonClass));
+
+                        // need to recurse and add the properties of the anonymous individual
+                    } else {
+                        registrationIndividual.addProperty(
+                                ontology.objectProperty(property.ns(), property.localname()),
+                                asResource(transformedValue.toString()));
+                    }
+
+
                 }
             }
         });
@@ -222,7 +291,101 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         // - determine if it is a resource
 
         writeModel(onlyIndividuals(ontology.getOntModel()));
+
+        assertEquals("PROJECT", registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_CATEGORY.fqname())).toString());
+        assertEquals(ResourceFactory.createResource("zgbd5"), registrationIndividual.getPropertyResourceValue(ontology.objectProperty(OwlProperties.OSF_HAS_CHILD.fqname())));
+        // TODO hasContributor
+        assertEquals(ResourceFactory.createTypedLiteral("2016-04-19T17:06:25.038Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_DATECREATED.fqname())));
+        assertEquals(ResourceFactory.createTypedLiteral("2016-05-31T23:38:18.983Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_DATEMODIFIED.fqname())));
+        assertEquals(ResourceFactory.createTypedLiteral("2016-05-31T23:38:58.952Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_DATEREGISTERED.fqname())));
+        assertEquals("My first project created through the OSF UI", registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_DESCRIPTION.fqname())).toString());
+        assertEquals("y6cx7", registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_ID.fqname())).toString());
+        assertEquals("Open-Ended Registration", registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT.fqname())).toString());
+        assertEquals(ResourceFactory.createResource("y6cx7"), registrationIndividual.getPropertyResourceValue(ontology.objectProperty(OwlProperties.OSF_HAS_ROOT.fqname())));
+        assertEquals("First Proj", registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_HAS_TITLE.fqname())).toString());
+        assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_IS_COLLECTION.fqname())).asLiteral());
+        assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_IS_FORK.fqname())).asLiteral());
+        assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_IS_PENDINGEMBARGOAPPROVAL.fqname())).asLiteral());
+        assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_IS_PENDINGREGISTRATIONAPPROVAL.fqname())).asLiteral());
+        assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_IS_PUBLIC.fqname())).asLiteral());
+        assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_IS_REGISTRATION.fqname())).asLiteral());
+        assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontology.datatypeProperty(OwlProperties.OSF_IS_WITHDRAWN.fqname())).asLiteral());
+        assertEquals(ResourceFactory.createResource("a3q2g"), registrationIndividual.getPropertyResourceValue(ontology.objectProperty(OwlProperties.OSF_REGISTERED_BY.fqname())));
+        assertEquals(ResourceFactory.createResource("r5s4u"), registrationIndividual.getPropertyResourceValue(ontology.objectProperty(OwlProperties.OSF_REGISTERED_FROM.fqname())));
+
+        Set<RDFNode> tags = registrationIndividual.listPropertyValues(ontology.datatypeProperty(OwlProperties.OSF_HAS_TAG.fqname())).toSet();
+        assertEquals(2, tags.size());
+
+        assertTrue(tags.contains(ResourceFactory.createPlainLiteral("firstproject")));
+        assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newbie")));
+
+        assertTrue(ontology.individual("y6cx7").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertTrue(ontology.individual("zgbd5").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertTrue(ontology.individual("a3q2g").hasOntClass(OwlClasses.OSF_USER.fqname()));
+        assertTrue(ontology.individual("r5s4u").hasOntClass(OwlClasses.OSF_NODE.fqname()));
+
 //        writeModel(ontology.getOntModel());
+    }
+
+    @Test
+    public void testGetAnnotations() throws Exception {
+        factory.interceptors().add(new RecursiveInterceptor(testName, RegistrationPackageTest.class, getBaseUri()));
+        Registration r = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
+        assertNotNull(r);
+
+        Map<AnnotatedElementPair, AnnotationAttributes> result = new HashMap<>();
+        getAnnotationsForClass(r.getClass(), result);
+        assertEquals(44, result.size());
+
+        AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
+        AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
+        assertEquals(aep1, aep2);
+
+        AnnotationAttributes attribs = result.get(AnnotatedElementPair.forAnnotatedElement(r.getClass(), OwlIndividual.class));
+        assertNotNull(attribs);
+        assertEquals(OwlClasses.OSF_REGISTRATION, attribs.getEnum("value"));
+
+
+    }
+
+    private Map<Field, AnnotationAttributes> getFieldAnnotationAttribute(Registration registration, List<Field> annotatedFields, Class<? extends Annotation> annotation) {
+        Map<Field, AnnotationAttributes> fieldAnnotationAttrs = new HashMap<>();
+        doWithFields(registration.getClass(),
+                f -> {
+                    f.setAccessible(true);
+                    annotatedFields.add(f);
+                    AnnotationAttributes annotationAttributes = AnnotationUtils.getAnnotationAttributes(f, f.getAnnotation(annotation));
+                    fieldAnnotationAttrs.put(f, annotationAttributes);
+                },
+                f -> f.getDeclaredAnnotation(annotation) != null);
+        return fieldAnnotationAttrs;
+    }
+
+    private void getAnnotationsForClass(Class clazz, Map<AnnotatedElementPair, AnnotationAttributes> result) {
+        System.err.println("Getting annotations for " + clazz.getName());
+        // Get class-level annotations
+        getAnnotations(clazz, result);
+
+        // Recurse through its fields
+        Stream.of(clazz.getDeclaredFields()).forEach(f -> getAnnotations(f, result));
+
+        // Recurse the class hierarchy
+        Class superclass = clazz.getSuperclass();
+        if (superclass == Object.class) {
+            return;
+        }
+
+        getAnnotationsForClass(superclass, result);
+    }
+
+
+    private void getAnnotations(AnnotatedElement annotatedElement, Map<AnnotatedElementPair, AnnotationAttributes> result) {
+        Annotation[] annotations = annotatedElement.getDeclaredAnnotations();
+        Stream.of(annotations).forEach(annotation -> {
+                    AnnotatedElementPair aep = new AnnotatedElementPair(annotatedElement, annotation.annotationType());
+                    result.put(aep, AnnotationUtils.getAnnotationAttributes(annotatedElement, annotation));
+                }
+        );
     }
 
     private <T, R> R performTransform(Function<T, R> fn, T foo) {
@@ -230,11 +393,11 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     }
 
     private boolean isCollection(Class<?> candidate) {
-        if (Collection.class.isAssignableFrom(candidate)) {
-            return true;
-        }
+        return Collection.class.isAssignableFrom(candidate);
+    }
 
-        return false;
+    private boolean isArray(Class<?> candidate) {
+        return candidate.isArray();
     }
 
     private void writeModel(Model m) {
@@ -254,15 +417,25 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     }
 
     private OwlClasses getOwlClass(Object o) {
-        OwlClasses owlClass = (OwlClasses) AnnotationUtils.getValue(o.getClass().getAnnotation(OwlIndividual.class));;
+        OwlClasses owlClass = (OwlClasses) AnnotationUtils.getValue(o.getClass().getAnnotation(OwlIndividual.class));
         assertNotNull(owlClass);
         return owlClass;
     }
+
+    private Object getIndividualId(Object o, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+        Class<Function> transformClass = (Class<Function>) attributesMap.get(
+                AnnotatedElementPair.forAnnotatedElement(o.getClass(), IndividualUri.class)).getClass("transform");
+        // need to be able to look up the Field by the Annotation
+        // Something like Map<Class<? extends Annotation>, Field>
+
+        return null;
+    }
+
     private Object getIndividualId(Object o) {
         Map<Field, Function<Object, String>> individualUriFields = new HashMap<>();
         doWithFields(o.getClass(), f -> {
-            f.setAccessible(true);
-                    Class<Function> transformClass = (Class<Function>)AnnotationUtils.getValue(f.getAnnotation(IndividualUri.class), "transform");
+                    f.setAccessible(true);
+                    Class<Function> transformClass = (Class<Function>) AnnotationUtils.getValue(f.getAnnotation(IndividualUri.class), "transform");
 
                     try {
                         individualUriFields.put(f, transformClass.newInstance());
@@ -270,7 +443,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                         throw new RuntimeException(e.getMessage(), e);
                     }
                 },
-        f -> f.getDeclaredAnnotation(IndividualUri.class) != null);
+                f -> f.getDeclaredAnnotation(IndividualUri.class) != null);
 
         assertEquals(1, individualUriFields.size());
         Object owlIndividualId = null;
@@ -287,9 +460,53 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         return owlIndividualId;
     }
 
+    private Individual newIndividual(OwlClasses owlClass) {
+        return ontology.individual(owlClass.ns(), owlClass.localname());
+    }
+
     private Individual newIndividual(OwlClasses owlClass, Object individualId) {
         return ontology.individual(individualId.toString(), owlClass.ns(), owlClass.localname());
     }
 
 
+    private static class AnnotatedElementPair {
+        AnnotatedElement annotatedElement;
+        Class<? extends Annotation> annotationClass;
+
+        public AnnotatedElementPair(AnnotatedElement annotatedElement, Class<? extends Annotation> annotationClass) {
+            this.annotatedElement = annotatedElement;
+            this.annotationClass = annotationClass;
+        }
+
+        static AnnotatedElementPair forAnnotatedElement(AnnotatedElement e, Class<? extends Annotation> annotationClass) {
+            return new AnnotatedElementPair(e, annotationClass);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            AnnotatedElementPair that = (AnnotatedElementPair) o;
+
+            if (!annotatedElement.equals(that.annotatedElement)) return false;
+            return annotationClass.equals(that.annotationClass);
+
+        }
+
+        @Override
+        public int hashCode() {
+            int result = annotatedElement.hashCode();
+            result = 31 * result + annotationClass.hashCode();
+            return result;
+        }
+
+        @Override
+        public String toString() {
+            return "AnnotatedElementPair{" +
+                    "annotatedElement=" + annotatedElement +
+                    ", annotationClass=" + annotationClass +
+                    '}';
+        }
+    }
 }
