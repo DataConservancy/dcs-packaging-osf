@@ -21,6 +21,12 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 import java.util.List;
 import java.util.Map;
 
+import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
+import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -38,10 +44,12 @@ import com.github.jasminb.jsonapi.annotations.Type;
  */
 @Type("users")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@OwlIndividual(OwlClasses.OSF_USER)
 public class User {
 
 	/** Unique OSF identifier for User ID */
     @Id
+	@IndividualUri
     private String id;
     
     /**Link to list of nodes associated with the User*/
@@ -64,66 +72,88 @@ public class User {
     private org.dataconservancy.cos.osf.client.model.Links pageLinks;
 
 	/** full name of the user; used for display*/
+	@OwlProperty(OwlProperties.OSF_HAS_FULLNAME)
     private String full_name;
     
     /** given name of the user; for bibliographic citations*/
+	@OwlProperty(OwlProperties.OSF_HAS_GIVENNAME)
     private String given_name;
     
     /** middle name of user; for bibliographic citations */
+	// TODO: check- should this be a collection?
+	@OwlProperty(OwlProperties.OSF_HAS_MIDDLENAMES)
     private String middle_names;
     
     /** family name of user; for bibliographic citations*/
+	// TODO: @OwlProperty()
     private String family_name;
-    
+
     /** suffix of user's name for bibliographic citations*/
+	@OwlProperty(OwlProperties.OSF_HAS_SUFFIX)
     private String suffix;
-    
+
     /** timestamp when the user's account was created*/
+	@OwlProperty(value = OwlProperties.OSF_HAS_DATEUSERREGISTERED, transform = DateTimeTransform.class)
     private DateTime date_registered;
-    
+
     /**github account name (not full url) e.g. "karenhanson" **/
+	//TODO @OwlProperty(OwlProperties.OSF_HAS_GITHUB)
     private String gitHub;
-    
+
     /**personal website**/
+	@OwlProperty(OwlProperties.OSF_HAS_PERSONALWEBSITE)
     private String personal_website;
-    
+
     /**academic institution name*/
+	@OwlProperty(OwlProperties.OSF_HAS_ACADEMICINSTITUTION)
     private String academicaInstitution;
-    
+
     /**Baidu Scholar ID*/
+	@OwlProperty(OwlProperties.OSF_HAS_BAIDUID)
     private String baiduScholar;
-    
+
     /**twitter handle e.g. bobsmith*/
+	@OwlProperty(OwlProperties.OSF_HAS_TWITTER)
     private String twitter;
-    
+
     /**orcid id e.g. 0000-1234-1234-1234"*/
+	// TODO @OwlProperty(OwlProperties.OSF_HAS_ORCID)
     private String orcid;
-    
+
     /**Thomson Reuters Researcher ID e.g. H-9999-9999 **/
+	@OwlProperty(OwlProperties.OSF_HAS_RESEARCHERID)
     private String researcherId;
-    
+
     /** linkedin profile path (not full url) e.g. "in/karenlhanson" */
+	@OwlProperty(OwlProperties.OSF_HAS_LINKEDIN)
     private String linkedIn;
-    
+
     /** Impact Story profile ID (not full url) e.g. bobsmith*/
+	@OwlProperty(OwlProperties.OSF_HAS_IMPACTSTORY)
     private String impactStory;
-    
+
     /** Google scholar profile ID (not full url) e.g. bobsmith*/
+	@OwlProperty(OwlProperties.OSF_HAS_SCHOLAR)
     private String scholar;
-    
+
     /** Academia Profile ID */
+	@OwlProperty(OwlProperties.OSF_HAS_ACADEMICPROFILEID)
     private String academiaProfileId;
-    
+
     /**ResearchGate ID*/
+	@OwlProperty(OwlProperties.OSF_HAS_RESEARCHGATE)
     private String researchGate;
 
     /** User active?*/
+	@OwlProperty(OwlProperties.OSF_IS_ACTIVE)
     private Boolean isActive;
-    
+
     /** user timezone */
+	// TODO? @OwlProperty(OwlProperties.OSF_TIMEZONE)
     private String timezone;
-    
+
     /**locale e.g. en_US*/
+	@OwlProperty(OwlProperties.OSF_HAS_LOCALE)
     private String locale;
 
 	public String getId() {

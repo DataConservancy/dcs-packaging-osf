@@ -23,6 +23,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
+import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
+import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.ToStringTransform;
 
 /**
  * Contributor model for OSF
@@ -34,12 +38,15 @@ public class Contributor {
 
 	/** contributor ID - this corresponds to User ID*/
     @Id
+	@OwlProperty(OwlProperties.OSF_HAS_USER)
     private String id;
     
     /**Whether the user will be included in citations for this node. Default is true.*/
+	@OwlProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC)
     private Boolean isBibliographic;
     
     /**User permission level. Must be "read", "write", or "admin". Default is "write".*/
+	@OwlProperty(value = OwlProperties.OSF_HAS_PERMISSION, transform = ToStringTransform.class)
     private Permission permission;
     	    
 	/**Gets other links found in data.links:{} section of JSON**/
