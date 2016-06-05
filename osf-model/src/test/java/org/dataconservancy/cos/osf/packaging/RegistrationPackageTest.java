@@ -140,7 +140,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertNotNull(registration);
 
         Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributesMap = new HashMap<>();
-        getAnnotationsForClass(registration.getClass(), annotationAttributesMap);
+        OwlAnnotationProcessor.getAnnotationsForClass(registration.getClass(), annotationAttributesMap);
         assertEquals(44, annotationAttributesMap.size());
 
         // get the owl class to use from the instance
@@ -294,7 +294,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertNotNull(r);
 
         Map<AnnotatedElementPair, AnnotationAttributes> result = new HashMap<>();
-        getAnnotationsForClass(r.getClass(), result);
+        OwlAnnotationProcessor.getAnnotationsForClass(r.getClass(), result);
         assertEquals(44, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
@@ -319,33 +319,6 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                 },
                 f -> f.getDeclaredAnnotation(annotation) != null);
         return fieldAnnotationAttrs;
-    }
-
-    private void getAnnotationsForClass(Class clazz, Map<AnnotatedElementPair, AnnotationAttributes> result) {
-        System.err.println("Getting annotations for " + clazz.getName());
-        // Get class-level annotations
-        getAnnotations(clazz, result);
-
-        // Recurse through its fields
-        Stream.of(clazz.getDeclaredFields()).forEach(f -> getAnnotations(f, result));
-
-        // Recurse the class hierarchy
-        Class superclass = clazz.getSuperclass();
-        if (superclass == Object.class) {
-            return;
-        }
-
-        getAnnotationsForClass(superclass, result);
-    }
-
-
-    private void getAnnotations(AnnotatedElement annotatedElement, Map<AnnotatedElementPair, AnnotationAttributes> result) {
-        Annotation[] annotations = annotatedElement.getDeclaredAnnotations();
-        Stream.of(annotations).forEach(annotation -> {
-                    AnnotatedElementPair aep = new AnnotatedElementPair(annotatedElement, annotation.annotationType());
-                    result.put(aep, AnnotationUtils.getAnnotationAttributes(annotatedElement, annotation));
-                }
-        );
     }
 
     private boolean isCollection(Class<?> candidate) {
