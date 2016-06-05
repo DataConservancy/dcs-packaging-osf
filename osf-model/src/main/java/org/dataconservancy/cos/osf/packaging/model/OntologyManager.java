@@ -30,7 +30,7 @@ import org.apache.jena.riot.RDFFormat;
 /**
  * Created by esm on 6/1/16.
  */
-public class Ontology {
+public class OntologyManager {
 
     private static final String DEFAULT_ONTOLOGY_RESOURCE = "/ontology/osf-model.rdf";
 
@@ -38,7 +38,7 @@ public class Ontology {
 
     private OntModel readOnlyOntModel;
 
-    public Ontology() {
+    public OntologyManager() {
         ontModel = ModelFactory.createOntologyModel();
         ontModel.read(this.getClass().getResourceAsStream(DEFAULT_ONTOLOGY_RESOURCE),
                 "http://www.dataconservancy.org/osf-business-object-model#",

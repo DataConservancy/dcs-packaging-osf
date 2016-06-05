@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNotNull;
  */
 public class OntologyTest {
 
-    private Ontology underTest = new Ontology();
+    private OntologyManager underTest = new OntologyManager();
 
     @Test(expected = IllegalArgumentException.class)
     public void testGetNonExistentDatatypeProperty() throws Exception {
