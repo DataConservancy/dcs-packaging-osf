@@ -74,6 +74,19 @@ public class PackageGraph {
     }
 
     /**
+     * Add an individual as an object of a property.  Convenience method for adding a new individual in one method call,
+     * then setting that individual as the object of a property in the second.  This method will create a new
+     * individual for {@code objectIndividualUri}, and use it as a object resource for the {@code propertyUri}.
+     *
+     * @param individual
+     * @param propertyUri
+     * @param objectIndividualUri
+     */
+    public void addIndividual(Individual individual, String propertyUri, String objectIndividualUri) {
+        individual.addProperty(ontMgr.objectProperty(propertyUri), ontMgr.individual(objectIndividualUri));
+    }
+
+    /**
      * Adds an anonymous individual to the model.
      *
      * @param individualUri
@@ -90,6 +103,22 @@ public class PackageGraph {
     }
 
     /**
+     * Adds an anonymous individual to the model.
+     *
+     * @param individual
+     * @param propertyUri
+     * @param anonIndividual
+     */
+    public void addAnonIndividual(Individual individual, String propertyUri, Individual anonIndividual) {
+        if (anonIndividual.getURI() != null) {
+            throw new IllegalArgumentException(String.format("Found URI on an anonymous individual: '%s'.  OWL " +
+                            "Individuals withURIs must be added by invoking 'newIndividual(OwlClasses, Object)'",
+                    anonIndividual.getURI()));
+        }
+        individual.addProperty(ontMgr.objectProperty(propertyUri), anonIndividual);
+    }
+
+    /**
      * Adds a literal as the object of the individual.
      *
      * @param individualUri
@@ -98,6 +127,17 @@ public class PackageGraph {
      */
     public void addLiteral(String individualUri, String propertyUri, Object literal) {
         Individual individual = ontMgr.individual(individualUri);
+        individual.addLiteral(ontMgr.datatypeProperty(propertyUri), literal);
+    }
+
+    /**
+     * Adds a literal as the object of the individual.
+     *
+     * @param individual
+     * @param propertyUri
+     * @param literal
+     */
+    public void addLiteral(Individual individual, String propertyUri, Object literal) {
         individual.addLiteral(ontMgr.datatypeProperty(propertyUri), literal);
     }
 
@@ -113,6 +153,15 @@ public class PackageGraph {
         individual.addProperty(ontMgr.objectProperty(propertyUri), resource);
     }
 
-
+    /**
+     * Adds a resource as the object of the individual.
+     *
+     * @param individual
+     * @param propertyUri
+     * @param resource
+     */
+    public void addResource(Individual individual, String propertyUri, Resource resource) {
+        individual.addProperty(ontMgr.objectProperty(propertyUri), resource);
+    }
 
 }
