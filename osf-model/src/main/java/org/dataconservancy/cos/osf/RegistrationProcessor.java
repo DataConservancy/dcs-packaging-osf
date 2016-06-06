@@ -59,18 +59,6 @@ public class RegistrationProcessor {
     }
 
     public String process() {
-
-//        Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributes = getAnnotationAttributes(registration);
-//
-//        String registrationUri = newIndividual(registration, annotationAttributes, packageGraph);
-//
-//        List<Field> owlPropertyFields = new ArrayList<>();
-//        List<Field> anonIndividualFields = new ArrayList<>();
-//        Map<Field, AnnotationAttributes> owlPropertyAnnotations = getFieldAnnotationAttribute(registration, owlPropertyFields, OwlProperty.class);
-//        Map<Field, AnnotationAttributes> anonIndividiualAnnotations = getFieldAnnotationAttribute(registration, anonIndividualFields, AnonIndividual.class);
-//
-//        processOwlProperties(registrationUri, registration, packageGraph, owlPropertyAnnotations, anonIndividiualAnnotations, annotationAttributes);
-//        return registrationUri;
         return process(registration);
     }
 
@@ -102,6 +90,7 @@ public class RegistrationProcessor {
         Object owlIndividualId = OwlAnnotationProcessor.getIndividualId(object, annotationAttributes);
 
         // create the individual
+        System.err.println(String.format("Creating individual for %s with id %s", owlClass.fqname(), owlIndividualId.toString()));
         return packageGraph.newIndividual(owlClass, owlIndividualId);
     }
 
@@ -243,9 +232,13 @@ public class RegistrationProcessor {
                 } else if (annotationAttributes.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
                     // Obtain the OwlIndividual for the object
                     // Obtain the IndividualId for the object
-                    individualUri = packageGraph.newIndividual(
-                            OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributes),
-                            OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributes));
+
+                    Object individualId = OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributes);
+                    OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributes);
+
+                    individualUri = packageGraph.newIndividual(owlClass, individualId);
+                    System.err.println(String.format("Processing owl individual %s, id %s with value %s", owlObject.getClass().getSimpleName(), individualUri, owlObject));
+                    processOwlProperties(individualUri, owlObject, packageGraph, getFieldAnnotationAttribute(owlObject, new ArrayList<>(), OwlProperty.class), getFieldAnnotationAttribute(owlObject, new ArrayList<>(), AnonIndividual.class), getAnnotationAttributes(owlObject));
 
                     packageGraph.addIndividual(individual, owlProperty.fqname(), individualUri);
                 } else {
@@ -288,9 +281,13 @@ public class RegistrationProcessor {
                 } else if (annotationAttributes.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
                     // Obtain the OwlIndividual for the object
                     // Obtain the IndividualId for the object
-                    individualUri = packageGraph.newIndividual(
-                            OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributes),
-                            OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributes));
+
+                    Object individualId = OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributes);
+                    OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributes);
+
+                    individualUri = packageGraph.newIndividual(owlClass, individualId);
+                    System.err.println(String.format("Processing owl individual %s, id %s with value %s", owlObject.getClass().getSimpleName(), individualUri, owlObject));
+                    processOwlProperties(individualUri, owlObject, packageGraph, getFieldAnnotationAttribute(owlObject, new ArrayList<>(), OwlProperty.class), getFieldAnnotationAttribute(owlObject, new ArrayList<>(), AnonIndividual.class), getAnnotationAttributes(owlObject));
 
                     packageGraph.addIndividual(registrationIndividualUri, owlProperty.fqname(), individualUri);
                 } else {
