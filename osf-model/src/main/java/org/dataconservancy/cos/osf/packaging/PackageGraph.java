@@ -48,7 +48,7 @@ public class PackageGraph {
 
     /**
      * Create an individual.  Invoking this method with the same OWL class and individual id will return the existing
-     * instance of the {@code Individual}.
+     * instance of the {@code Individual}, otherwise a new instance is created.
      *
      * @param owlClass
      * @param individualId
