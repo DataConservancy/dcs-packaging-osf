@@ -213,9 +213,9 @@ public class RegistrationProcessor {
 
     private <T, R> Consumer<T> processOwlObjects(Individual individual, PackageGraph packageGraph, Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributes, Field field, OwlProperties owlProperty, Class<Function<T, R>> transformClass, Function<T, R> transformer) {
         return owlObject -> {
-            System.err.println(String.format("Transforming property %s (type %s) with %s", field.getName(), field.getType(), transformClass.getSimpleName()));
+            System.err.println(String.format("Transforming %s property %s (type %s) with %s", (owlProperty.object() ? "object" : "datatype"), field.getName(), field.getType(), transformClass.getSimpleName()));
             R transformedObject = transformer.apply(owlObject);
-            System.err.println(String.format("Adding property %s %s (type %s)", owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
+            System.err.println(String.format("Adding %s property %s %s (type %s)", (owlProperty.object() ? "object" : "datatype"),owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
 
             if (!owlProperty.object()) {
                 packageGraph.addLiteral(individual, owlProperty.fqname(), transformedObject);
@@ -258,9 +258,9 @@ public class RegistrationProcessor {
 
     private <T, R> Consumer<T> processOwlObjects(String registrationIndividualUri, PackageGraph packageGraph, Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributes, Field field, OwlProperties owlProperty, Class<Function<T, R>> transformClass, Function<T, R> transformer) {
         return owlObject -> {
-            System.err.println(String.format("Transforming property %s (type %s) with %s", field.getName(), field.getType(), transformClass.getSimpleName()));
+            System.err.println(String.format("Boop Transforming %s property %s (type %s) with %s", (owlProperty.object() ? "object" : "datatype"), field.getName(), field.getType(), transformClass.getSimpleName()));
             R transformedObject = transformer.apply(owlObject);
-            System.err.println(String.format("Adding property %s %s (type %s)", owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
+            System.err.println(String.format("Boop Adding %s property %s %s (type %s)", (owlProperty.object() ? "object" : "datatype"), owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
 
             if (!owlProperty.object()) {
                 packageGraph.addLiteral(registrationIndividualUri, owlProperty.fqname(), transformedObject);

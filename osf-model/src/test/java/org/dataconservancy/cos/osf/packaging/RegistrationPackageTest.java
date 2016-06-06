@@ -16,11 +16,13 @@
 package org.dataconservancy.cos.osf.packaging;
 
 import org.apache.jena.datatypes.xsd.XSDDatatype;
+import org.apache.jena.graph.Node;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
@@ -250,7 +252,12 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         Individual registrationIndividual = ontologyManager.getOntModel().getIndividual(registrationIndividualUri);
         assertEquals("PROJECT", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_CATEGORY.fqname())).toString());
         assertEquals(ResourceFactory.createResource("zgbd5"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CHILD.fqname())));
-        // TODO hasContributor
+        Set<RDFNode> contributorNodes = registrationIndividual.listPropertyValues(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CONTRIBUTOR.fqname())).toSet();
+        assertEquals(1, contributorNodes.size());
+        RDFNode contributorNode = contributorNodes.iterator().next();
+        assertTrue(contributorNode.isAnon());
+        assertTrue(contributorNode.asResource().hasLiteral(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC.fqname()), true));
+        assertTrue(contributorNode.asResource().hasLiteral(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERMISSION.fqname()), "ADMIN"));
         assertEquals(ResourceFactory.createTypedLiteral("2016-04-19T17:06:25.038Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATECREATED.fqname())));
         assertEquals(ResourceFactory.createTypedLiteral("2016-05-31T23:38:18.983Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEMODIFIED.fqname())));
         assertEquals(ResourceFactory.createTypedLiteral("2016-05-31T23:38:58.952Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEREGISTERED.fqname())));
@@ -271,9 +278,14 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         Set<RDFNode> tags = registrationIndividual.listPropertyValues(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TAG.fqname())).toSet();
         assertEquals(2, tags.size());
-
         assertTrue(tags.contains(ResourceFactory.createPlainLiteral("firstproject")));
         assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newbie")));
+
+        Set<RDFNode> perms = registrationIndividual.listPropertyValues(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERMISSION.fqname())).toSet();
+        assertEquals(3, perms.size());
+        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("READ")));
+        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("WRITE")));
+        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("ADMIN")));
 
         assertTrue(ontologyManager.individual("y6cx7").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
         assertTrue(ontologyManager.individual("zgbd5").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
@@ -290,7 +302,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         Map<AnnotatedElementPair, AnnotationAttributes> result = new HashMap<>();
         OwlAnnotationProcessor.getAnnotationsForClass(r.getClass(), result);
-        assertEquals(44, result.size());
+        assertEquals(45, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
