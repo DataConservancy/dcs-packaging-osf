@@ -30,6 +30,7 @@ import org.dataconservancy.cos.osf.RegistrationProcessor;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.NodeBase;
 import org.dataconservancy.cos.osf.client.model.Registration;
+import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.ont.OntologyManager;
 import org.dataconservancy.cos.osf.packaging.support.AnnotatedElementPair;
@@ -131,121 +132,11 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(testName, RegistrationPackageTest.class, getBaseUri()));
         Registration registration = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
         assertNotNull(registration);
+        User user = factory.getOsfService(OsfService.class).user(registration.getContributors().iterator().next().getId()).execute().body();
 
         RegistrationProcessor rp = new RegistrationProcessor(registration, packageGraph);
         String registrationIndividualUri = rp.process();
-
-//        Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributesMap = new HashMap<>();
-//        OwlAnnotationProcessor.getAnnotationsForClass(registration.getClass(), annotationAttributesMap);
-//        assertEquals(44, annotationAttributesMap.size());
-//
-//        // get the owl class to use from the instance
-//
-//        OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(registration, annotationAttributesMap);
-//        assertNotNull(owlClass);
-//        assertSame(OwlClasses.OSF_REGISTRATION, owlClass);
-//
-//        // get the id to use for the individual from the instance; note, comes from super class
-//        Object owlIndividualId = OwlAnnotationProcessor.getIndividualId(registration, annotationAttributesMap);
-//        assertNotNull(owlIndividualId);
-//
-//        // create the individual
-//        String registrationIndividualUri = packageGraph.newIndividual(owlClass, owlIndividualId);
-//        assertNotNull(registrationIndividualUri);
-//
-//        // get the properties (recursively up the class hierarchy) used for OWL
-//
-//        List<Field> owlPropertyFields = new ArrayList<>();
-//        List<Field> anonIndividualFields = new ArrayList<>();
-//        Map<Field, AnnotationAttributes> owlPropertyAnnotations = getFieldAnnotationAttribute(registration, owlPropertyFields, OwlProperty.class);
-//        Map<Field, AnnotationAttributes> anonIndividiualAnnotations = getFieldAnnotationAttribute(registration, anonIndividualFields, AnonIndividual.class);
-//        assertEquals(26, owlPropertyFields.size());
-//        assertTrue(owlPropertyFields.contains(NodeBase.class.getDeclaredField("id")));
-//        assertEquals(1, anonIndividiualAnnotations.size());
-//
-//
-//        // for each property:
-//        //  - determine Datatype vs Object property
-//        //  - for each Datatype property, add a literal to the individual
-//        //  - for each Object property, add a resource or an anonymous individual
-//
-//        owlPropertyAnnotations.forEach((field, attributes) -> {
-//
-//            // The OWL property we are adding to the individual
-//            OwlProperties owlProperty = attributes.getEnum("value");
-//
-//            // The objects of the OWL property.  If the field is a Collection or an array type, there may be multiple
-//            // objects.
-//            Stream<T> owlObjects = null;
-//
-//            try {
-//                Object fieldValue = null;
-//                fieldValue = field.get(registration);
-//                if (fieldValue == null) {
-//                    System.err.println(String.format("Skipping null property %s", owlProperty.localname()));
-//                    return;
-//                }
-//                if (isCollection(field.getType())) {
-//                    owlObjects = ((Collection) fieldValue).stream();
-//                } else if (isArray(field.getType())) {
-//                    owlObjects = Stream.of(((T[]) fieldValue));
-//                } else {
-//                    owlObjects = Stream.of((T) fieldValue);
-//                }
-//            } catch (IllegalAccessException e) {
-//                throw new RuntimeException(e.getMessage(), e);
-//            }
-//
-//            // Create an instance of the transformer that is applied to each owlObject.
-//
-//            Class<Function<T, R>> transformClass = (Class<Function<T, R>>) attributes.getClass("transform");
-//            Function<T, R> transformer;
-//            try {
-//                transformer = transformClass.newInstance();
-//            } catch (InstantiationException | IllegalAccessException e) {
-//                throw new RuntimeException(e.getMessage(), e);
-//            }
-//
-//            owlObjects.forEach(owlObject -> {
-//                System.err.println(String.format("Transforming property %s (type %s) with %s", field.getName(), field.getType(), transformClass.getSimpleName()));
-//                R transformedObject = transformer.apply(owlObject);
-//                System.err.println(String.format("Adding property %s %s (type %s)", owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
-//
-//                if (!owlProperty.object()) {
-//                    packageGraph.addLiteral(registrationIndividualUri, owlProperty.fqname(), transformedObject);
-//                } else {
-//                    String individualUri;
-//
-//                    // if the object property is annotated with @AnonIndividual create an anonymous individual
-//
-//                    // if the object property is an instance of a Java class with an @OwlIndividual, create an
-//                    // Owl identifier for the individual
-//
-//                    // otherwise, create a resource
-//
-//                    if (annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)) != null) {
-//                        OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)).getEnum("value");
-////                        i = newIndividual(anonClass);
-//                        Individual anonIndividual = packageGraph.newIndividual(anonClass);
-//                        // need to recurse and add the properties of the anonymous individual
-//
-//                        packageGraph.addAnonIndividual(registrationIndividualUri, owlProperty.fqname(), anonIndividual);
-//                    } else if (annotationAttributesMap.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
-//                        // Obtain the OwlIndividual for the object
-//                        // Obtain the IndividualId for the object
-//                        individualUri = packageGraph.newIndividual(
-//                                OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap),
-//                                OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
-//
-//                        packageGraph.addIndividual(registrationIndividualUri, owlProperty.fqname(), individualUri);
-//                    } else {
-//
-//                        packageGraph.addResource(registrationIndividualUri, owlProperty.fqname(), asResource(transformedObject.toString()));
-//                    }
-//                }
-//            });
-//        });
-
+        String userIndividualUri = rp.process(user);
 
         writeModel(onlyIndividuals(ontologyManager.getOntModel()));
 
@@ -288,9 +179,33 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertTrue(perms.contains(ResourceFactory.createPlainLiteral("ADMIN")));
 
         assertTrue(ontologyManager.individual("y6cx7").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertFalse(ontologyManager.individual("y6cx7").hasOntClass(OwlClasses.OSF_USER.fqname()));
         assertTrue(ontologyManager.individual("zgbd5").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertFalse(ontologyManager.individual("zgbd5").hasOntClass(OwlClasses.OSF_USER.fqname()));
         assertTrue(ontologyManager.individual("a3q2g").hasOntClass(OwlClasses.OSF_USER.fqname()));
+        assertFalse(ontologyManager.individual("a3q2g").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
         assertTrue(ontologyManager.individual("r5s4u").hasOntClass(OwlClasses.OSF_NODE.fqname()));
+        assertFalse(ontologyManager.individual("r5s4u").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+
+        Individual userIndividual = ontologyManager.getOntModel().getIndividual(userIndividualUri);
+        assertEquals(ResourceFactory.createTypedLiteral("2016-04-19T17:05:36.232Z", XSDDatatype.XSDdateTime), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEUSERREGISTERED.fqname())));
+        // TODO: not sure about these empty strings...
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_BAIDUID.fqname())).toString());
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TWITTER.fqname())).toString());
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_IMPACTSTORY.fqname())).toString());
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_MIDDLENAMES.fqname())).toString());
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERSONALWEBSITE.fqname())).toString());
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHGATE.fqname())).toString());
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHERID.fqname())).toString());
+        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SUFFIX.fqname())).toString());
+        assertEquals("Elliot Metsger", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_FULLNAME.fqname())).toString());
+        assertEquals("Elliot", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_GIVENNAME.fqname())).toString());
+        assertEquals("in/elliot-metsger-2455915", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LINKEDIN.fqname())).toString());
+        assertEquals("en_US", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LOCALE.fqname())).toString());
+        assertEquals("QsELf4QAAAAJ", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SCHOLAR.fqname())).toString());
+
+        assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_ACTIVE.fqname())).asLiteral());
+
 
     }
 
