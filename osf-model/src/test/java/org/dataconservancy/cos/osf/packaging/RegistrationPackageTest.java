@@ -24,6 +24,7 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
+import org.dataconservancy.cos.osf.RegistrationProcessor;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.NodeBase;
 import org.dataconservancy.cos.osf.client.model.Registration;
@@ -129,116 +130,119 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         Registration registration = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
         assertNotNull(registration);
 
-        Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributesMap = new HashMap<>();
-        OwlAnnotationProcessor.getAnnotationsForClass(registration.getClass(), annotationAttributesMap);
-        assertEquals(44, annotationAttributesMap.size());
+        RegistrationProcessor rp = new RegistrationProcessor(registration, packageGraph);
+        String registrationIndividualUri = rp.process();
 
-        // get the owl class to use from the instance
-
-        OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(registration, annotationAttributesMap);
-        assertNotNull(owlClass);
-        assertSame(OwlClasses.OSF_REGISTRATION, owlClass);
-
-        // get the id to use for the individual from the instance; note, comes from super class
-        Object owlIndividualId = OwlAnnotationProcessor.getIndividualId(registration, annotationAttributesMap);
-        assertNotNull(owlIndividualId);
-
-        // create the individual
-        String registrationIndividualUri = packageGraph.newIndividual(owlClass, owlIndividualId);
-        assertNotNull(registrationIndividualUri);
-
-        // get the properties (recursively up the class hierarchy) used for OWL
-
-        List<Field> owlPropertyFields = new ArrayList<>();
-        List<Field> anonIndividualFields = new ArrayList<>();
-        Map<Field, AnnotationAttributes> owlPropertyAnnotations = getFieldAnnotationAttribute(registration, owlPropertyFields, OwlProperty.class);
-        Map<Field, AnnotationAttributes> anonIndividiualAnnotations = getFieldAnnotationAttribute(registration, anonIndividualFields, AnonIndividual.class);
-        assertEquals(26, owlPropertyFields.size());
-        assertTrue(owlPropertyFields.contains(NodeBase.class.getDeclaredField("id")));
-        assertEquals(1, anonIndividiualAnnotations.size());
-
-
-        // for each property:
-        //  - determine Datatype vs Object property
-        //  - for each Datatype property, add a literal to the individual
-        //  - for each Object property, add a resource or an anonymous individual
-
-        owlPropertyAnnotations.forEach((field, attributes) -> {
-
-            // The OWL property we are adding to the individual
-            OwlProperties owlProperty = attributes.getEnum("value");
-
-            // The objects of the OWL property.  If the field is a Collection or an array type, there may be multiple
-            // objects.
-            Stream<T> owlObjects = null;
-
-            try {
-                Object fieldValue = null;
-                fieldValue = field.get(registration);
-                if (fieldValue == null) {
-                    System.err.println(String.format("Skipping null property %s", owlProperty.localname()));
-                    return;
-                }
-                if (isCollection(field.getType())) {
-                    owlObjects = ((Collection) fieldValue).stream();
-                } else if (isArray(field.getType())) {
-                    owlObjects = Stream.of(((T[]) fieldValue));
-                } else {
-                    owlObjects = Stream.of((T) fieldValue);
-                }
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e.getMessage(), e);
-            }
-
-            // Create an instance of the transformer that is applied to each owlObject.
-
-            Class<Function<T, R>> transformClass = (Class<Function<T, R>>) attributes.getClass("transform");
-            Function<T, R> transformer;
-            try {
-                transformer = transformClass.newInstance();
-            } catch (InstantiationException | IllegalAccessException e) {
-                throw new RuntimeException(e.getMessage(), e);
-            }
-
-            owlObjects.forEach(owlObject -> {
-                System.err.println(String.format("Transforming property %s (type %s) with %s", field.getName(), field.getType(), transformClass.getSimpleName()));
-                R transformedObject = transformer.apply(owlObject);
-                System.err.println(String.format("Adding property %s %s (type %s)", owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
-
-                if (!owlProperty.object()) {
-                    packageGraph.addLiteral(registrationIndividualUri, owlProperty.fqname(), transformedObject);
-                } else {
-                    String individualUri;
-
-                    // if the object property is annotated with @AnonIndividual create an anonymous individual
-
-                    // if the object property is an instance of a Java class with an @OwlIndividual, create an
-                    // Owl identifier for the individual
-
-                    // otherwise, create a resource
-
-                    if (annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)) != null) {
-                        OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)).getEnum("value");
-//                        i = newIndividual(anonClass);
-                        Individual anonIndividual = packageGraph.newIndividual(anonClass);
-                        // need to recurse and add the properties of the anonymous individual
-
-                        packageGraph.addAnonIndividual(registrationIndividualUri, owlProperty.fqname(), anonIndividual);
-                    } else if (annotationAttributesMap.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
-                        // Obtain the OwlIndividual for the object
-                        // Obtain the IndividualId for the object
-                        individualUri = packageGraph.newIndividual(
-                                OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap),
-                                OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
-
-                        packageGraph.addIndividual(registrationIndividualUri, owlProperty.fqname(), individualUri);
-                    } else {
-
-                        packageGraph.addResource(registrationIndividualUri, owlProperty.fqname(), asResource(transformedObject.toString()));
-                    }
-                }
-            });
-        });
+//        Map<AnnotatedElementPair, AnnotationAttributes> annotationAttributesMap = new HashMap<>();
+//        OwlAnnotationProcessor.getAnnotationsForClass(registration.getClass(), annotationAttributesMap);
+//        assertEquals(44, annotationAttributesMap.size());
+//
+//        // get the owl class to use from the instance
+//
+//        OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(registration, annotationAttributesMap);
+//        assertNotNull(owlClass);
+//        assertSame(OwlClasses.OSF_REGISTRATION, owlClass);
+//
+//        // get the id to use for the individual from the instance; note, comes from super class
+//        Object owlIndividualId = OwlAnnotationProcessor.getIndividualId(registration, annotationAttributesMap);
+//        assertNotNull(owlIndividualId);
+//
+//        // create the individual
+//        String registrationIndividualUri = packageGraph.newIndividual(owlClass, owlIndividualId);
+//        assertNotNull(registrationIndividualUri);
+//
+//        // get the properties (recursively up the class hierarchy) used for OWL
+//
+//        List<Field> owlPropertyFields = new ArrayList<>();
+//        List<Field> anonIndividualFields = new ArrayList<>();
+//        Map<Field, AnnotationAttributes> owlPropertyAnnotations = getFieldAnnotationAttribute(registration, owlPropertyFields, OwlProperty.class);
+//        Map<Field, AnnotationAttributes> anonIndividiualAnnotations = getFieldAnnotationAttribute(registration, anonIndividualFields, AnonIndividual.class);
+//        assertEquals(26, owlPropertyFields.size());
+//        assertTrue(owlPropertyFields.contains(NodeBase.class.getDeclaredField("id")));
+//        assertEquals(1, anonIndividiualAnnotations.size());
+//
+//
+//        // for each property:
+//        //  - determine Datatype vs Object property
+//        //  - for each Datatype property, add a literal to the individual
+//        //  - for each Object property, add a resource or an anonymous individual
+//
+//        owlPropertyAnnotations.forEach((field, attributes) -> {
+//
+//            // The OWL property we are adding to the individual
+//            OwlProperties owlProperty = attributes.getEnum("value");
+//
+//            // The objects of the OWL property.  If the field is a Collection or an array type, there may be multiple
+//            // objects.
+//            Stream<T> owlObjects = null;
+//
+//            try {
+//                Object fieldValue = null;
+//                fieldValue = field.get(registration);
+//                if (fieldValue == null) {
+//                    System.err.println(String.format("Skipping null property %s", owlProperty.localname()));
+//                    return;
+//                }
+//                if (isCollection(field.getType())) {
+//                    owlObjects = ((Collection) fieldValue).stream();
+//                } else if (isArray(field.getType())) {
+//                    owlObjects = Stream.of(((T[]) fieldValue));
+//                } else {
+//                    owlObjects = Stream.of((T) fieldValue);
+//                }
+//            } catch (IllegalAccessException e) {
+//                throw new RuntimeException(e.getMessage(), e);
+//            }
+//
+//            // Create an instance of the transformer that is applied to each owlObject.
+//
+//            Class<Function<T, R>> transformClass = (Class<Function<T, R>>) attributes.getClass("transform");
+//            Function<T, R> transformer;
+//            try {
+//                transformer = transformClass.newInstance();
+//            } catch (InstantiationException | IllegalAccessException e) {
+//                throw new RuntimeException(e.getMessage(), e);
+//            }
+//
+//            owlObjects.forEach(owlObject -> {
+//                System.err.println(String.format("Transforming property %s (type %s) with %s", field.getName(), field.getType(), transformClass.getSimpleName()));
+//                R transformedObject = transformer.apply(owlObject);
+//                System.err.println(String.format("Adding property %s %s (type %s)", owlProperty.localname(), transformedObject, transformedObject.getClass().getSimpleName()));
+//
+//                if (!owlProperty.object()) {
+//                    packageGraph.addLiteral(registrationIndividualUri, owlProperty.fqname(), transformedObject);
+//                } else {
+//                    String individualUri;
+//
+//                    // if the object property is annotated with @AnonIndividual create an anonymous individual
+//
+//                    // if the object property is an instance of a Java class with an @OwlIndividual, create an
+//                    // Owl identifier for the individual
+//
+//                    // otherwise, create a resource
+//
+//                    if (annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)) != null) {
+//                        OwlClasses anonClass = annotationAttributesMap.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)).getEnum("value");
+////                        i = newIndividual(anonClass);
+//                        Individual anonIndividual = packageGraph.newIndividual(anonClass);
+//                        // need to recurse and add the properties of the anonymous individual
+//
+//                        packageGraph.addAnonIndividual(registrationIndividualUri, owlProperty.fqname(), anonIndividual);
+//                    } else if (annotationAttributesMap.containsKey(AnnotatedElementPair.forPair(owlObject.getClass(), OwlIndividual.class))) {
+//                        // Obtain the OwlIndividual for the object
+//                        // Obtain the IndividualId for the object
+//                        individualUri = packageGraph.newIndividual(
+//                                OwlAnnotationProcessor.getOwlClass(owlObject, annotationAttributesMap),
+//                                OwlAnnotationProcessor.getIndividualId(owlObject, annotationAttributesMap));
+//
+//                        packageGraph.addIndividual(registrationIndividualUri, owlProperty.fqname(), individualUri);
+//                    } else {
+//
+//                        packageGraph.addResource(registrationIndividualUri, owlProperty.fqname(), asResource(transformedObject.toString()));
+//                    }
+//                }
+//            });
+//        });
 
 
         writeModel(onlyIndividuals(ontologyManager.getOntModel()));
