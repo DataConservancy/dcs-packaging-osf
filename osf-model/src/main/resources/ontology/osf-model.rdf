@@ -158,6 +158,20 @@
         <jsonapi:relName>children</jsonapi:relName>            
     </owl:ObjectProperty>
     
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventAgent">
+        <rdfs:label xml:lang="en">hasEventAgent</rdfs:label>
+        <rdfs:comment xml:lang="en">The agent responsible for performing the action</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventTarget">
+        <rdfs:label xml:lang="en">hasEventTarget</rdfs:label>
+        <rdfs:comment xml:lang="en">The OSF Node, User, ... that was the target of the action.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:ObjectProperty>
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -773,6 +787,20 @@
         <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEventDate">
+        <rdfs:label xml:lang="en">hasEventDate</rdfs:label>
+        <rdfs:comment xml:lang="en">Date the event occurred</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEventAction">
+        <rdfs:label xml:lang="en">hasEventAction</rdfs:label>
+        <rdfs:comment xml:lang="en">The action that was taken on the event target</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -803,6 +831,21 @@
         <rdfs:comment xml:lang="en">
         A Business Object is a common superclass for the OSF objects "User", "Collection", "NodeBase", "FileBase" and "Registration"
       </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Event -->    
+    
+    <owl:Class rdf:about="&osfbom;Event">
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
+        <owl:disjointWith rdf:resource="&osfbom;Collection"/>
+        <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
+        <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
+        <owl:disjointWith rdf:resource="&osfbom;User"/>
+        <rdfs:comment xml:lang="en">
+            Encapsulates an action performed by an agent to accomplish some task
+        </rdfs:comment>
     </owl:Class>
     
    <!-- http://www.dataconservancy.org/osf-business-object-model#User -->
