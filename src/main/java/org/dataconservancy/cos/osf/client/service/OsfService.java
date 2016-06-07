@@ -22,6 +22,7 @@ import java.util.Map;
 import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.Response;
 import com.squareup.okhttp.ResponseBody;
+import org.dataconservancy.cos.osf.client.model.Event;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
@@ -50,6 +51,9 @@ public interface OsfService {
 
     @GET
     Call<ResourceList<Node>> paginatedNodeList(@Url String url);
+
+    @GET
+    Call<ResourceList<Event>> getLogs(@Url String url);
 
     @Streaming
     @GET
