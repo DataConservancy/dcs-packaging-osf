@@ -43,7 +43,9 @@ public enum OwlClasses {
 
     OSF_FOLDER (Rdf.Ns.OSF, "Folder"),
 
-    OSF_FILEENTITY (Rdf.Ns.OSF, "FileEntity");
+    OSF_FILEENTITY (Rdf.Ns.OSF, "FileEntity"),
+
+    OSF_EVENT (Rdf.Ns.OSF, "Event");
     
     private String ns;
 

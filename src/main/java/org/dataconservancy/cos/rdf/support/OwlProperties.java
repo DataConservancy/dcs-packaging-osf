@@ -47,6 +47,12 @@ public enum OwlProperties {
 
     OSF_HAS_USER ("hasUser", true),
 
+    OSF_HAS_EVENT_AGENT ("hasEventAgent", true),
+
+    OSF_HAS_EVENT_SOURCE ("hasEventTarget", true),
+
+    OSF_HAS_EVENT_TARGET ("hasEventTarget", true),
+
     DCTERMS_DESCRIPTION ("description"),
 
     DCTERMS_IDENTIFIER ("identifier"),
@@ -173,7 +179,11 @@ public enum OwlProperties {
 
     OSF_IS_WITHDRAWN ("isWithdrawn"),
 
-    OSF_HAS_WITHDRAW_JUSTIFICATION ("hasWithdrawJustification");
+    OSF_HAS_WITHDRAW_JUSTIFICATION ("hasWithdrawJustification"),
+
+    OSF_HAS_EVENT_DATE ("hasEventDate"),
+
+    OSF_HAS_EVENT_ACTION ("hasEventAction");
 
     private String ns = Rdf.Ns.OSF;
     
