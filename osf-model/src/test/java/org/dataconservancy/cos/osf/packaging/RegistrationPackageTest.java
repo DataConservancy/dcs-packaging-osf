@@ -130,7 +130,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     public <T, R> void testCreateRegistrationPackageAnnotation() throws Exception {
         PackageGraph packageGraph = new PackageGraph(ontologyManager);
         factory.interceptors().add(new RecursiveInterceptor(testName, RegistrationPackageTest.class, getBaseUri()));
-        Registration registration = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
+        Registration registration = factory.getOsfService(OsfService.class).registration("eq7a4").execute().body();
         assertNotNull(registration);
         User user = factory.getOsfService(OsfService.class).user(registration.getContributors().iterator().next().getId()).execute().body();
 
@@ -142,21 +142,23 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         Individual registrationIndividual = ontologyManager.getOntModel().getIndividual(registrationIndividualUri);
         assertEquals("PROJECT", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_CATEGORY.fqname())).toString());
-        assertEquals(ResourceFactory.createResource("zgbd5"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CHILD.fqname())));
+        assertEquals(ResourceFactory.createResource("vae86"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CHILD.fqname())));
         Set<RDFNode> contributorNodes = registrationIndividual.listPropertyValues(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CONTRIBUTOR.fqname())).toSet();
-        assertEquals(1, contributorNodes.size());
+        // TODO verify both contributors
+        assertEquals(2, contributorNodes.size());
         RDFNode contributorNode = contributorNodes.iterator().next();
         assertTrue(contributorNode.isAnon());
-        assertTrue(contributorNode.asResource().hasLiteral(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC.fqname()), true));
+// TODO       assertTrue(contributorNode.asResource().hasLiteral(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC.fqname()), true));
         assertTrue(contributorNode.asResource().hasLiteral(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERMISSION.fqname()), "ADMIN"));
-        assertEquals(ResourceFactory.createTypedLiteral("2016-04-19T17:06:25.038Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATECREATED.fqname())));
-        assertEquals(ResourceFactory.createTypedLiteral("2016-05-31T23:38:18.983Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEMODIFIED.fqname())));
-        assertEquals(ResourceFactory.createTypedLiteral("2016-05-31T23:38:58.952Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEREGISTERED.fqname())));
-        assertEquals("My first project created through the OSF UI", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DESCRIPTION.fqname())).toString());
-        assertEquals("y6cx7", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_ID.fqname())).toString());
+        // TODO double-check timezone and conversion from JodaTime to Calendar
+        assertEquals(ResourceFactory.createTypedLiteral("2016-06-03T21:53:52.434Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATECREATED.fqname())));
+        assertEquals(ResourceFactory.createTypedLiteral("2016-06-07T21:52:19.617Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEMODIFIED.fqname())));
+        assertEquals(ResourceFactory.createTypedLiteral("2016-06-07T21:53:10.603Z", XSDDatatype.XSDdateTime), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEREGISTERED.fqname())));
+        assertEquals("Test project Two.", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DESCRIPTION.fqname())).toString());
+        assertEquals("eq7a4", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_ID.fqname())).toString());
         assertEquals("Open-Ended Registration", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT.fqname())).toString());
-        assertEquals(ResourceFactory.createResource("y6cx7"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_HAS_ROOT.fqname())));
-        assertEquals("First Proj", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TITLE.fqname())).toString());
+        assertEquals(ResourceFactory.createResource("eq7a4"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_HAS_ROOT.fqname())));
+        assertEquals("Project Two", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TITLE.fqname())).toString());
         assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_COLLECTION.fqname())).asLiteral());
         assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_FORK.fqname())).asLiteral());
         assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_PENDINGEMBARGOAPPROVAL.fqname())).asLiteral());
@@ -164,13 +166,12 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_PUBLIC.fqname())).asLiteral());
         assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_REGISTRATION.fqname())).asLiteral());
         assertEquals(ResourceFactory.createTypedLiteral("false", XSDDatatype.XSDboolean), registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_WITHDRAWN.fqname())).asLiteral());
-        assertEquals(ResourceFactory.createResource("a3q2g"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_REGISTERED_BY.fqname())));
-        assertEquals(ResourceFactory.createResource("r5s4u"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_REGISTERED_FROM.fqname())));
+        assertEquals(ResourceFactory.createResource("qmdz6"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_REGISTERED_BY.fqname())));
+        assertEquals(ResourceFactory.createResource("3e7rd"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_REGISTERED_FROM.fqname())));
 
         Set<RDFNode> tags = registrationIndividual.listPropertyValues(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TAG.fqname())).toSet();
-        assertEquals(2, tags.size());
-        assertTrue(tags.contains(ResourceFactory.createPlainLiteral("firstproject")));
-        assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newbie")));
+        assertEquals(1, tags.size());
+        assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newtag")));
 
         Set<RDFNode> perms = registrationIndividual.listPropertyValues(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERMISSION.fqname())).toSet();
         assertEquals(3, perms.size());
@@ -178,17 +179,17 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertTrue(perms.contains(ResourceFactory.createPlainLiteral("WRITE")));
         assertTrue(perms.contains(ResourceFactory.createPlainLiteral("ADMIN")));
 
-        assertTrue(ontologyManager.individual("y6cx7").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
-        assertFalse(ontologyManager.individual("y6cx7").hasOntClass(OwlClasses.OSF_USER.fqname()));
-        assertTrue(ontologyManager.individual("zgbd5").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
-        assertFalse(ontologyManager.individual("zgbd5").hasOntClass(OwlClasses.OSF_USER.fqname()));
-        assertTrue(ontologyManager.individual("a3q2g").hasOntClass(OwlClasses.OSF_USER.fqname()));
-        assertFalse(ontologyManager.individual("a3q2g").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
-        assertTrue(ontologyManager.individual("r5s4u").hasOntClass(OwlClasses.OSF_NODE.fqname()));
-        assertFalse(ontologyManager.individual("r5s4u").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertTrue(ontologyManager.individual("eq7a4").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertFalse(ontologyManager.individual("eq7a4").hasOntClass(OwlClasses.OSF_USER.fqname()));
+        assertTrue(ontologyManager.individual("vae86").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertFalse(ontologyManager.individual("vae86").hasOntClass(OwlClasses.OSF_USER.fqname()));
+        assertTrue(ontologyManager.individual("qmdz6").hasOntClass(OwlClasses.OSF_USER.fqname()));
+        assertFalse(ontologyManager.individual("qmdz6").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
+        assertTrue(ontologyManager.individual("3e7rd").hasOntClass(OwlClasses.OSF_NODE.fqname()));
+        assertFalse(ontologyManager.individual("3e7rd").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
 
         Individual userIndividual = ontologyManager.getOntModel().getIndividual(userIndividualUri);
-        assertEquals(ResourceFactory.createTypedLiteral("2016-04-19T17:05:36.232Z", XSDDatatype.XSDdateTime), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEUSERREGISTERED.fqname())));
+        assertEquals(ResourceFactory.createTypedLiteral("2016-06-03T21:52:35.4Z", XSDDatatype.XSDdateTime), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEUSERREGISTERED.fqname())));
         // TODO: not sure about these empty strings...
         assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_BAIDUID.fqname())).toString());
         assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TWITTER.fqname())).toString());
@@ -200,10 +201,10 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SUFFIX.fqname())).toString());
         assertEquals("Elliot Metsger", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_FULLNAME.fqname())).toString());
         assertEquals("Elliot", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_GIVENNAME.fqname())).toString());
-        assertEquals("in/elliot-metsger-2455915", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LINKEDIN.fqname())).toString());
+//        assertEquals("in/elliot-metsger-2455915", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LINKEDIN.fqname())).toString());
         assertEquals("en_US", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LOCALE.fqname())).toString());
-        assertEquals("QsELf4QAAAAJ", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SCHOLAR.fqname())).toString());
-
+//        assertEquals("QsELf4QAAAAJ", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SCHOLAR.fqname())).toString());
+        // TODO map github in java model
         assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_ACTIVE.fqname())).asLiteral());
 
 
