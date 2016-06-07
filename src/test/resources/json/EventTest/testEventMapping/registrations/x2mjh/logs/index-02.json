@@ -1,0 +1,66 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/575705d9c7950c0045ac8004/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/575705d9c7950c0045ac8004/"
+      },
+      "attributes": {
+        "date": "2016-06-03T17:53:52.434000",
+        "action": "project_created",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "575705d9c7950c0045ac8004"
+    }
+  ],
+  "links": {
+    "first": "http://192.168.99.100:8000/v2/registrations/x2mjh/logs/",
+    "last": null,
+    "prev": "http://192.168.99.100:8000/v2/registrations/x2mjh/logs/",
+    "next": null,
+    "meta": {
+      "total": 11,
+      "per_page": 10
+    }
+  }
+}
