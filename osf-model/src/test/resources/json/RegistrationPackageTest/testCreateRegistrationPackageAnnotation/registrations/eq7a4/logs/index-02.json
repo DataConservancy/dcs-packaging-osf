@@ -1,0 +1,223 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8037/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8037/"
+      },
+      "attributes": {
+        "date": "2016-06-07T14:46:05.134000",
+        "action": "tag_added",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "tag": "newtag",
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "57570a06c7950c0045ac8037"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8036/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8036/"
+      },
+      "attributes": {
+        "date": "2016-06-03T18:01:28.511000",
+        "action": "made_contributor_invisible",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "57570a06c7950c0045ac8036"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8035/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8035/"
+      },
+      "attributes": {
+        "date": "2016-06-03T18:01:15.812000",
+        "action": "contributor_added",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "57570a06c7950c0045ac8035"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8034/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/57570a06c7950c0045ac8034/"
+      },
+      "attributes": {
+        "date": "2016-06-03T17:53:52.434000",
+        "action": "project_created",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "57570a06c7950c0045ac8034"
+    }
+  ],
+  "links": {
+    "first": "http://192.168.99.100:8000/v2/registrations/eq7a4/logs/",
+    "last": null,
+    "prev": "http://192.168.99.100:8000/v2/registrations/eq7a4/logs/",
+    "next": null,
+    "meta": {
+      "total": 14,
+      "per_page": 10
+    }
+  }
+}
