@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.ToBooleanTransform;
+import org.dataconservancy.cos.osf.client.support.TruncatingTransform;
 import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
@@ -80,7 +81,10 @@ public abstract class NodeBase {
 	// TODO: Logs class and annotation
 	private String logs;
 
-	// TODO: License
+	@Relationship(value = "license", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+	@AnonIndividual(OwlClasses.OSF_LICENSE)
+	@OwlProperty(OwlProperties.OSF_HAS_LICENSE)
+	private License license;
 
 	// TODO: Wiki
 
@@ -347,4 +351,11 @@ public abstract class NodeBase {
 	    this.pageLinks = pageLinks;
 	}
 
+	public License getLicense() {
+		return license;
+	}
+
+	public void setLicense(License license) {
+		this.license = license;
+	}
 }
