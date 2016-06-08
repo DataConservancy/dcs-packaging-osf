@@ -225,8 +225,42 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                 // /json/NodeTest/testGetNodeObjectResolution/
                 Path fsBase = Paths.get(resourceBase(testName, testClass));
 
-                // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
-                return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+                // If there's a "page" query parameter, use it to return 'index-0?.json'
+                if (req.getQuery() != null && req.getQuery().contains("page=")) {
+                    int startIndex = req.getQuery().indexOf("page=") + "page=".length();
+                    // HACK unlikely to have double-digit pages
+                    int page = Integer.parseInt(req.getQuery().substring(startIndex, startIndex + 1));
+                    String jsonFile = String.format("index-0%s.json", page);
+                    LOG.trace("Request carried 'page' parameter, using JSON resource {}", jsonFile);
+                    return Paths.get(fsBase.toString(), requestPath.toString(), jsonFile);
+                } else {
+                    LOG.trace("  Request did not carry 'page' parameter.");
+                }
+
+                // If there is no "page" query parameter, and the request ends in a "/", and there is
+                // no 'index.json' file, then see if there is an 'index-01.json' file, and return that.
+
+                Path jsonPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+                if (req.getPath().endsWith("/")) {
+                    // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
+                    if (this.getClass().getResource(jsonPath.toString()) != null) {
+                        return jsonPath;
+                    } else {
+                        LOG.trace("  JSON resource {} does not exist.", jsonPath.toFile());
+                    }
+
+                    // If there's no 'index.json' file, then perhaps the request is for a paginated response
+                    jsonPath = Paths.get(fsBase.toString(), requestPath.toString(), "index-01.json");
+                    if (this.getClass().getResource(jsonPath.toString()) != null) {
+                        return jsonPath;
+                    } else {
+                        LOG.trace("  JSON resource {} does not exist.", jsonPath.toFile());
+                    }
+                }
+
+                throw new IllegalArgumentException(
+                        String.format("Unable to resolve request %s to a classpath resource under %s", req, fsBase));
+
             };
         }
 
