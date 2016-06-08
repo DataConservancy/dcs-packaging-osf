@@ -9,8 +9,9 @@
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY ore "http://www.openarchives.org/ore/terms/" >
     <!ENTITY xsi "http://www.w3.org/2001/XMLSchema-instance" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >    
     <!ENTITY osfbom "http://www.dataconservancy.org/osf-business-object-model#" >
+    <!ENTITY jsonapi "http://jsonapi.org/format/1.0/#" >
 ]>
 
 
@@ -24,6 +25,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:opmv="http://purl.org/net/opmv/ns#"
+     xmlns:jsonapi="http://jsonapi.org/format/1.0/#"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <owl:Ontology rdf:about="http://www.dataconservancy.org/osf-business-object-model">
         <dcterms:modified rdf:datatype="&xsd;date">2015-08-18</dcterms:modified>
@@ -62,6 +64,18 @@
         <rdfs:domain rdf:resource="&osfbom;Node"/>
         <rdfs:range rdf:resource="&osfbom;Contributor"/>
     </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasUser -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasUser">
+        <rdfs:label xml:lang="en">hasUser</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying a user belonging to a contributor</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Contributor"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    
+    
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasLink -->
 
@@ -102,7 +116,77 @@
       <rdfs:domain rdf:resource="&osfbom;Relationship"/>
       <rdfs:range rdf:resource="&osfbom;RelatedLink"/>
     </owl:ObjectProperty>
-          
+    
+    <owl:ObjectProperty rdf:about="&osfbom;registeredFrom">
+        <rdfs:label xml:lang="en">registeredFrom</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the Node that the Registration was registered from.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&osfbom;Node"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;registeredBy">
+        <rdfs:label xml:lang="en">registeredBy</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the User that created the Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasRoot">
+        <rdfs:label xml:lang="en">hasRoot</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying root Node in a graph of Nodes.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>root</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasParent">
+        <rdfs:label xml:lang="en">hasRoot</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the parent Node of a Node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>parent</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasChild">
+        <rdfs:label xml:lang="en">hasChild</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the child of a Node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>children</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventAgent">
+        <!-- TODO FOAF Agent -->
+        <rdfs:label xml:lang="en">hasEventAgent</rdfs:label>
+        <rdfs:comment xml:lang="en">The agent responsible for performing the action</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventTarget">
+        <rdfs:label xml:lang="en">hasEventTarget</rdfs:label>
+        <rdfs:comment xml:lang="en">The OSF Node, User, ... that was the target of the action.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventSource">
+        <rdfs:label xml:lang="en">hasEventSource</rdfs:label>
+        <rdfs:comment xml:lang="en">The OSF Node, User, ... that was the source of the action.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasLicense">
+        <rdfs:label xml:lang="en">hasLicense</rdfs:label>
+        <rdfs:comment xml:lang="en">The license that governs the possible re-use of the content relating to a Node or Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;License"/>
+    </owl:ObjectProperty>
+    
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -294,6 +378,13 @@
         <rdfs:comment xml:lang="en">A data property specifying the end date for a registration's embargo</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Registration"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;isWithdrawn">
+        <rdfs:label xml:lang="en">isWithdrawn</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicating if the registration is withdrawn</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasEtag -->
@@ -702,8 +793,43 @@
         <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
-
-   
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasTag -->
+    <!-- TODO: review domain: are tags just for nodes and registrations or do they apply to other types like users? -->
+    <owl:DatatypeProperty rdf:about="&osfbom;hasTag">
+        <rdfs:label xml:lang="en">hasTag</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying a user-defined tag for the Node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEventDate">
+        <rdfs:label xml:lang="en">hasEventDate</rdfs:label>
+        <rdfs:comment xml:lang="en">Date the event occurred</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEventAction">
+        <rdfs:label xml:lang="en">hasEventAction</rdfs:label>
+        <rdfs:comment xml:lang="en">The action that was taken on the event target</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseName">
+        <rdfs:label xml:lang="en">hasLicenseName</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseText">
+        <rdfs:label xml:lang="en">hasLicenseText</rdfs:label>
+        <rdfs:comment xml:lang="en">The legal text of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -734,6 +860,34 @@
         <rdfs:comment xml:lang="en">
         A Business Object is a common superclass for the OSF objects "User", "Collection", "NodeBase", "FileBase" and "Registration"
       </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Event -->    
+    
+    <owl:Class rdf:about="&osfbom;Event">
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
+        <owl:disjointWith rdf:resource="&osfbom;Collection"/>
+        <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
+        <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
+        <owl:disjointWith rdf:resource="&osfbom;User"/>
+        <rdfs:comment xml:lang="en">
+            Encapsulates an action performed by an agent to accomplish some task
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#License -->
+    
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Liceneses really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
+    <owl:Class rdf:about="&osfbom;License">
+        <rdfs:label xml:lang="en">License</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:comment xml:lang="en">
+            Represents a licence governing the use of the information encapsulated by a Node or Registration.
+        </rdfs:comment>
     </owl:Class>
     
    <!-- http://www.dataconservancy.org/osf-business-object-model#User -->
@@ -820,6 +974,9 @@
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#Contributor -->
     <!-- TODO: consider subclassing foaf:Person -->
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Contributors really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
     <owl:Class rdf:about="&osfbom;Contributor">
       <rdfs:label xml:lang="en">Contributor</rdfs:label>
       <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
