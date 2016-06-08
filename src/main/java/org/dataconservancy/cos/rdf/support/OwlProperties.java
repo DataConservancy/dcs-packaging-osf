@@ -53,6 +53,8 @@ public enum OwlProperties {
 
     OSF_HAS_EVENT_TARGET ("hasEventTarget", true),
 
+    OSF_HAS_LICENSE ("hasLicense", true),
+
     DCTERMS_DESCRIPTION ("description"),
 
     DCTERMS_IDENTIFIER ("identifier"),
@@ -183,7 +185,11 @@ public enum OwlProperties {
 
     OSF_HAS_EVENT_DATE ("hasEventDate"),
 
-    OSF_HAS_EVENT_ACTION ("hasEventAction");
+    OSF_HAS_EVENT_ACTION ("hasEventAction"),
+
+    OSF_HAS_LICENSE_NAME ("hasLicenseName"),
+
+    OSF_HAS_LICENSE_TEXT ("hasLicenseText");
 
     private String ns = Rdf.Ns.OSF;
     

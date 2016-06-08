@@ -45,7 +45,9 @@ public enum OwlClasses {
 
     OSF_FILEENTITY (Rdf.Ns.OSF, "FileEntity"),
 
-    OSF_EVENT (Rdf.Ns.OSF, "Event");
+    OSF_EVENT (Rdf.Ns.OSF, "Event"),
+
+    OSF_LICENSE (Rdf.Ns.OSF, "License");
     
     private String ns;
 
