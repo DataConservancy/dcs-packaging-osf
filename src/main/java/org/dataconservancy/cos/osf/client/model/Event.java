@@ -1,7 +1,5 @@
 package org.dataconservancy.cos.osf.client.model;
 
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.RelType;
 import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Id;
