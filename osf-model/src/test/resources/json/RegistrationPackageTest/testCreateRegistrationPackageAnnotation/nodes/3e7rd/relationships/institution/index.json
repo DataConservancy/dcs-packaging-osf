@@ -1,7 +1,7 @@
 {
   "data": null,
   "links": {
-    "self": "http://192.168.99.100:8000/v2/nodes/3e7rd/relationships/institution/",
-    "related": "http://192.168.99.100:8000/v2/nodes/3e7rd/institution/"
+    "self": "http://localhost:8000/v2/nodes/3e7rd/relationships/institution/",
+    "related": "http://localhost:8000/v2/nodes/3e7rd/institution/"
   }
 }

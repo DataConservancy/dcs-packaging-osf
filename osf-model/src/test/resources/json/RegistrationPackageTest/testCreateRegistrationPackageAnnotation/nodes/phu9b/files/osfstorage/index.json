@@ -5,19 +5,19 @@
         "versions": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/files/5757058ac7950c0045ac7ff3/versions/",
+              "href": "http://localhost:8000/v2/files/5757058ac7950c0045ac7ff3/versions/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "info": "http://192.168.99.100:8000/v2/files/5757058ac7950c0045ac7ff3/",
-        "self": "http://192.168.99.100:8000/v2/files/5757058ac7950c0045ac7ff3/",
-        "move": "http://192.168.99.100:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3",
-        "upload": "http://192.168.99.100:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3",
-        "download": "http://192.168.99.100:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3",
-        "delete": "http://192.168.99.100:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3"
+        "info": "http://localhost:8000/v2/files/5757058ac7950c0045ac7ff3/",
+        "self": "http://localhost:8000/v2/files/5757058ac7950c0045ac7ff3/",
+        "move": "http://localhost:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3",
+        "upload": "http://localhost:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3",
+        "download": "http://localhost:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3",
+        "delete": "http://localhost:7777/v1/resources/phu9b/providers/osfstorage/5757058ac7950c0045ac7ff3"
       },
       "attributes": {
         "extra": {

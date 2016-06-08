@@ -5,19 +5,19 @@
         "versions": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/files/57570a07c7950c0045ac8051/versions/",
+              "href": "http://localhost:8000/v2/files/57570a07c7950c0045ac8051/versions/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "info": "http://192.168.99.100:8000/v2/files/57570a07c7950c0045ac8051/",
-        "self": "http://192.168.99.100:8000/v2/files/57570a07c7950c0045ac8051/",
-        "move": "http://192.168.99.100:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051",
-        "upload": "http://192.168.99.100:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051",
-        "download": "http://192.168.99.100:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051",
-        "delete": "http://192.168.99.100:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051"
+        "info": "http://localhost:8000/v2/files/57570a07c7950c0045ac8051/",
+        "self": "http://localhost:8000/v2/files/57570a07c7950c0045ac8051/",
+        "move": "http://localhost:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051",
+        "upload": "http://localhost:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051",
+        "download": "http://localhost:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051",
+        "delete": "http://localhost:7777/v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051"
       },
       "attributes": {
         "extra": {

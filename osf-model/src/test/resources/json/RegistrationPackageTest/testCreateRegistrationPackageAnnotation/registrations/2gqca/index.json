@@ -4,7 +4,7 @@
       "files": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/files/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/files/",
             "meta": {}
           }
         }
@@ -12,7 +12,7 @@
       "parent": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+            "href": "http://localhost:8000/v2/registrations/x2mjh/",
             "meta": {}
           }
         }
@@ -20,7 +20,7 @@
       "license": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
             "meta": {}
           }
         }
@@ -28,7 +28,7 @@
       "contributors": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/contributors/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/contributors/",
             "meta": {}
           }
         }
@@ -36,7 +36,7 @@
       "forks": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/forks/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/forks/",
             "meta": {}
           }
         }
@@ -44,7 +44,7 @@
       "registered_by": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+            "href": "http://localhost:8000/v2/users/qmdz6/",
             "meta": {}
           }
         }
@@ -52,7 +52,7 @@
       "identifiers": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/identifiers/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/identifiers/",
             "meta": {}
           }
         }
@@ -60,7 +60,7 @@
       "comments": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/comments/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/comments/",
             "meta": {}
           }
         }
@@ -68,7 +68,7 @@
       "registered_from": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/",
+            "href": "http://localhost:8000/v2/nodes/6uwzk/",
             "meta": {}
           }
         }
@@ -76,7 +76,7 @@
       "node_links": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/node_links/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/node_links/",
             "meta": {}
           }
         }
@@ -84,7 +84,7 @@
       "primary_institution": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/institution/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/institution/",
             "meta": {}
           }
         }
@@ -92,7 +92,7 @@
       "wikis": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/wikis/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/wikis/",
             "meta": {}
           }
         }
@@ -100,7 +100,7 @@
       "root": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+            "href": "http://localhost:8000/v2/registrations/x2mjh/",
             "meta": {}
           }
         }
@@ -108,7 +108,7 @@
       "children": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/children/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/children/",
             "meta": {}
           }
         }
@@ -116,15 +116,15 @@
       "logs": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/2gqca/logs/",
+            "href": "http://localhost:8000/v2/registrations/2gqca/logs/",
             "meta": {}
           }
         }
       }
     },
     "links": {
-      "self": "http://192.168.99.100:8000/v2/registrations/2gqca/",
-      "html": "http://192.168.99.100:5000/2gqca/"
+      "self": "http://localhost:8000/v2/registrations/2gqca/",
+      "html": "http://localhost:5000/2gqca/"
     },
     "attributes": {
       "category": "data",

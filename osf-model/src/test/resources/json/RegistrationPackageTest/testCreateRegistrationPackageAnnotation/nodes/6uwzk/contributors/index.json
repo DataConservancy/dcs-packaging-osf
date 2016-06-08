@@ -2,7 +2,7 @@
   "data": [
     {
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/6uwzk/contributors/qmdz6/"
+        "self": "http://localhost:8000/v2/nodes/6uwzk/contributors/qmdz6/"
       },
       "embeds": {
         "users": {
@@ -11,7 +11,7 @@
               "nodes": {
                 "links": {
                   "related": {
-                    "href": "http://192.168.99.100:8000/v2/users/qmdz6/nodes/",
+                    "href": "http://localhost:8000/v2/users/qmdz6/nodes/",
                     "meta": {}
                   }
                 }
@@ -19,11 +19,11 @@
               "institutions": {
                 "links": {
                   "self": {
-                    "href": "http://192.168.99.100:8000/v2/users/qmdz6/relationships/institutions/",
+                    "href": "http://localhost:8000/v2/users/qmdz6/relationships/institutions/",
                     "meta": {}
                   },
                   "related": {
-                    "href": "http://192.168.99.100:8000/v2/users/qmdz6/institutions/",
+                    "href": "http://localhost:8000/v2/users/qmdz6/institutions/",
                     "meta": {}
                   }
                 }
@@ -31,15 +31,15 @@
               "registrations": {
                 "links": {
                   "related": {
-                    "href": "http://192.168.99.100:8000/v2/users/qmdz6/registrations/",
+                    "href": "http://localhost:8000/v2/users/qmdz6/registrations/",
                     "meta": {}
                   }
                 }
               }
             },
             "links": {
-              "self": "http://192.168.99.100:8000/v2/users/qmdz6/",
-              "html": "http://192.168.99.100:5000/qmdz6/",
+              "self": "http://localhost:8000/v2/users/qmdz6/",
+              "html": "http://localhost:5000/qmdz6/",
               "profile_image": "https://secure.gravatar.com/avatar/90bbc2cb7740b04be9acee67f2ea5169?d=identicon"
             },
             "attributes": {

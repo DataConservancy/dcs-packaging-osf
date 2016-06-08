@@ -5,7 +5,7 @@
         "nodes": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/bwgcm/nodes/",
+              "href": "http://localhost:8000/v2/users/bwgcm/nodes/",
               "meta": {}
             }
           }
@@ -13,11 +13,11 @@
         "institutions": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/users/bwgcm/relationships/institutions/",
+              "href": "http://localhost:8000/v2/users/bwgcm/relationships/institutions/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/bwgcm/institutions/",
+              "href": "http://localhost:8000/v2/users/bwgcm/institutions/",
               "meta": {}
             }
           }
@@ -25,15 +25,15 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/bwgcm/registrations/",
+              "href": "http://localhost:8000/v2/users/bwgcm/registrations/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/users/bwgcm/",
-        "html": "http://192.168.99.100:5000/bwgcm/",
+        "self": "http://localhost:8000/v2/users/bwgcm/",
+        "html": "http://localhost:5000/bwgcm/",
         "profile_image": "https://secure.gravatar.com/avatar/28c8df5d9d69402567777b46e669a6b3?d=identicon"
       },
       "attributes": {

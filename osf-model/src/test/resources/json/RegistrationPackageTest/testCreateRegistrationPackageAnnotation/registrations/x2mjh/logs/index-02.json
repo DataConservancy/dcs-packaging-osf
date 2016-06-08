@@ -5,7 +5,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+              "href": "http://localhost:8000/v2/registrations/x2mjh/",
               "meta": {}
             }
           }
@@ -13,7 +13,7 @@
         "original_node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -21,7 +21,7 @@
         "user": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
@@ -29,14 +29,14 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/logs/575705d9c7950c0045ac8004/contributors/",
+              "href": "http://localhost:8000/v2/logs/575705d9c7950c0045ac8004/contributors/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/logs/575705d9c7950c0045ac8004/"
+        "self": "http://localhost:8000/v2/logs/575705d9c7950c0045ac8004/"
       },
       "attributes": {
         "date": "2016-06-03T17:53:52.434000",
@@ -54,9 +54,9 @@
     }
   ],
   "links": {
-    "first": "http://192.168.99.100:8000/v2/registrations/x2mjh/logs/",
+    "first": "http://localhost:8000/v2/registrations/x2mjh/logs/",
     "last": null,
-    "prev": "http://192.168.99.100:8000/v2/registrations/x2mjh/logs/",
+    "prev": "http://localhost:8000/v2/registrations/x2mjh/logs/",
     "next": null,
     "meta": {
       "total": 11,

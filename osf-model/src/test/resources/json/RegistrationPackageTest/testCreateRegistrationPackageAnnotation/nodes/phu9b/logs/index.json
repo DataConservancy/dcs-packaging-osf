@@ -5,7 +5,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/",
               "meta": {}
             }
           }
@@ -13,7 +13,7 @@
         "original_node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5w8q7/",
+              "href": "http://localhost:8000/v2/nodes/5w8q7/",
               "meta": {}
             }
           }
@@ -21,7 +21,7 @@
         "user": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
@@ -29,14 +29,14 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/logs/5757058ac7950c0045ac7fee/contributors/",
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fee/contributors/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/logs/5757058ac7950c0045ac7fee/"
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fee/"
       },
       "attributes": {
         "date": "2016-06-07T17:34:02.639000",
@@ -57,7 +57,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/",
               "meta": {}
             }
           }
@@ -65,7 +65,7 @@
         "original_node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5w8q7/",
+              "href": "http://localhost:8000/v2/nodes/5w8q7/",
               "meta": {}
             }
           }
@@ -73,7 +73,7 @@
         "user": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
@@ -81,14 +81,14 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/logs/5757058ac7950c0045ac7ff0/contributors/",
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ff0/contributors/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/logs/5757058ac7950c0045ac7ff0/"
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ff0/"
       },
       "attributes": {
         "date": "2016-06-07T17:33:33.188000",
@@ -117,7 +117,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/",
               "meta": {}
             }
           }
@@ -125,7 +125,7 @@
         "original_node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5w8q7/",
+              "href": "http://localhost:8000/v2/nodes/5w8q7/",
               "meta": {}
             }
           }
@@ -133,7 +133,7 @@
         "user": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
@@ -141,14 +141,14 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/logs/5757058ac7950c0045ac7fef/contributors/",
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fef/contributors/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/logs/5757058ac7950c0045ac7fef/"
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fef/"
       },
       "attributes": {
         "date": "2016-06-07T14:48:45.312000",
