@@ -132,6 +132,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(testName, RegistrationPackageTest.class, getBaseUri()));
         Registration registration = factory.getOsfService(OsfService.class).registration("eq7a4").execute().body();
         assertNotNull(registration);
+        assertNotNull(registration.getLicense());
         User user = factory.getOsfService(OsfService.class).user(registration.getContributors().iterator().next().getId()).execute().body();
 
         RegistrationProcessor rp = new RegistrationProcessor(registration, packageGraph);
@@ -208,6 +209,15 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_ACTIVE.fqname())).asLiteral());
 
 
+        Set<RDFNode> licenseNodes = registrationIndividual.listPropertyValues(ontologyManager.objectProperty(OwlProperties.OSF_HAS_LICENSE.fqname())).toSet();
+        assertEquals(1, licenseNodes.size());
+        RDFNode license = licenseNodes.iterator().next();
+        assertTrue(license.isAnon());
+        assertTrue(license.asResource().hasProperty(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LICENSE_NAME.fqname())));
+        assertTrue(license.asResource().hasProperty(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LICENSE_TEXT.fqname())));
+        assertTrue(license.asResource().hasLiteral(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LICENSE_NAME.fqname()), "CC-By Attribution 4.0 International"));
+        assertTrue(license.asResource().getProperty(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LICENSE_TEXT.fqname())).getLiteral().getString().startsWith("Creative Commons Attribution 4.0 International Public License"));
+
     }
 
     @Test
@@ -218,7 +228,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         Map<AnnotatedElementPair, AnnotationAttributes> result = new HashMap<>();
         OwlAnnotationProcessor.getAnnotationsForClass(r.getClass(), result);
-        assertEquals(45, result.size());
+        assertEquals(47, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
