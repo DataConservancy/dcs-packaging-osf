@@ -179,6 +179,13 @@
         <rdfs:domain rdf:resource="&osfbom;Event"/>
         <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
     </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasLicense">
+        <rdfs:label xml:lang="en">hasLicense</rdfs:label>
+        <rdfs:comment xml:lang="en">The license that governs the possible re-use of the content relating to a Node or Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;License"/>
+    </owl:ObjectProperty>
     
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -809,6 +816,20 @@
         <rdfs:domain rdf:resource="&osfbom;Event"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseName">
+        <rdfs:label xml:lang="en">hasLicenseName</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseText">
+        <rdfs:label xml:lang="en">hasLicenseText</rdfs:label>
+        <rdfs:comment xml:lang="en">The legal text of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -853,6 +874,19 @@
         <owl:disjointWith rdf:resource="&osfbom;User"/>
         <rdfs:comment xml:lang="en">
             Encapsulates an action performed by an agent to accomplish some task
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#License -->
+    
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Liceneses really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
+    <owl:Class rdf:about="&osfbom;License">
+        <rdfs:label xml:lang="en">License</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:comment xml:lang="en">
+            Represents a licence governing the use of the information encapsulated by a Node or Registration.
         </rdfs:comment>
     </owl:Class>
     
@@ -940,6 +974,9 @@
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#Contributor -->
     <!-- TODO: consider subclassing foaf:Person -->
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Contributors really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
     <owl:Class rdf:about="&osfbom;Contributor">
       <rdfs:label xml:lang="en">Contributor</rdfs:label>
       <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
