@@ -15,6 +15,7 @@
  */
 package org.dataconservancy.cos.osf.packaging;
 
+import com.diffplug.common.base.Errors;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.graph.Node;
 import org.apache.jena.ontology.Individual;
@@ -28,6 +29,7 @@ import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.osf.RegistrationProcessor;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
+import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.NodeBase;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
@@ -47,6 +49,7 @@ import org.junit.rules.TestName;
 import org.springframework.core.annotation.AnnotationAttributes;
 import org.springframework.core.annotation.AnnotationUtils;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -56,6 +59,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
@@ -130,14 +134,31 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     public <T, R> void testCreateRegistrationPackageAnnotation() throws Exception {
         PackageGraph packageGraph = new PackageGraph(ontologyManager);
         factory.interceptors().add(new RecursiveInterceptor(testName, RegistrationPackageTest.class, getBaseUri()));
-        Registration registration = factory.getOsfService(OsfService.class).registration("eq7a4").execute().body();
+        OsfService osfService = factory.getOsfService(OsfService.class);
+        Registration registration = osfService.registration("eq7a4").execute().body();
         assertNotNull(registration);
         assertNotNull(registration.getLicense());
-        User user = factory.getOsfService(OsfService.class).user(registration.getContributors().iterator().next().getId()).execute().body();
 
+        // list users
+        List<Contributor> contributors = registration.getContributors();
+        assertNotNull(contributors);
+        assertFalse(contributors.isEmpty());
+        List<User> users = contributors.stream()
+                .map(c -> {
+                    try {
+                        return osfService.user(c.getId()).execute().body();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e.getMessage(), e);
+                    }
+                })
+                .collect(Collectors.toList());
+
+        assertNotNull(users);
+        assertFalse(users.isEmpty());
+        
         RegistrationProcessor rp = new RegistrationProcessor(registration, packageGraph);
         String registrationIndividualUri = rp.process();
-        String userIndividualUri = rp.process(user);
+        users.forEach(rp::process);
 
         writeModel(onlyIndividuals(ontologyManager.getOntModel()));
 
@@ -174,7 +195,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertEquals(1, tags.size());
         assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newtag")));
 
-        Set<RDFNode> perms = registrationIndividual.listPropertyValues(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERMISSION.fqname())).toSet();
+        Set<RDFNode> perms = registrationIndividual.listPropertyValues(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_CURRENTUSERPERMISSION.fqname())).toSet();
         assertEquals(3, perms.size());
         assertTrue(perms.contains(ResourceFactory.createPlainLiteral("READ")));
         assertTrue(perms.contains(ResourceFactory.createPlainLiteral("WRITE")));
@@ -182,32 +203,56 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         assertTrue(ontologyManager.individual("eq7a4").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
         assertFalse(ontologyManager.individual("eq7a4").hasOntClass(OwlClasses.OSF_USER.fqname()));
+        assertFalse(ontologyManager.individual("eq7a4").hasOntClass(OwlClasses.OSF_CONTRIBUTOR.fqname()));
         assertTrue(ontologyManager.individual("vae86").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
         assertFalse(ontologyManager.individual("vae86").hasOntClass(OwlClasses.OSF_USER.fqname()));
+        assertFalse(ontologyManager.individual("vae86").hasOntClass(OwlClasses.OSF_CONTRIBUTOR.fqname()));
         assertTrue(ontologyManager.individual("qmdz6").hasOntClass(OwlClasses.OSF_USER.fqname()));
         assertFalse(ontologyManager.individual("qmdz6").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
         assertTrue(ontologyManager.individual("3e7rd").hasOntClass(OwlClasses.OSF_NODE.fqname()));
         assertFalse(ontologyManager.individual("3e7rd").hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
 
-        Individual userIndividual = ontologyManager.getOntModel().getIndividual(userIndividualUri);
-        assertEquals(ResourceFactory.createTypedLiteral("2016-06-03T21:52:35.4Z", XSDDatatype.XSDdateTime), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEUSERREGISTERED.fqname())));
-        // TODO: not sure about these empty strings...
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_BAIDUID.fqname())).toString());
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TWITTER.fqname())).toString());
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_IMPACTSTORY.fqname())).toString());
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_MIDDLENAMES.fqname())).toString());
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERSONALWEBSITE.fqname())).toString());
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHGATE.fqname())).toString());
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHERID.fqname())).toString());
-        assertEquals("", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SUFFIX.fqname())).toString());
-        assertEquals("Elliot Metsger", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_FULLNAME.fqname())).toString());
-        assertEquals("Elliot", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_GIVENNAME.fqname())).toString());
-//        assertEquals("in/elliot-metsger-2455915", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LINKEDIN.fqname())).toString());
-        assertEquals("en_US", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LOCALE.fqname())).toString());
-//        assertEquals("QsELf4QAAAAJ", userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SCHOLAR.fqname())).toString());
-        // TODO map github in java model
-        assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), userIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_ACTIVE.fqname())).asLiteral());
+        List<Individual> userIndividuals = users.stream().map(User::getId).map(ontologyManager::individual).collect(Collectors.toList());
+        assertEquals(users.size(), userIndividuals.size());
+        assertTrue(userIndividuals.stream().anyMatch(userIndividual -> userIndividual.getURI().equals("bwgcm")));
+        assertTrue(userIndividuals.stream().anyMatch(userIndividual -> userIndividual.getURI().equals("qmdz6")));
 
+        Individual qmdzgIndividual = userIndividuals.stream().filter(userIndividual -> userIndividual.getURI().equals("qmdz6")).findFirst().orElseThrow(() -> new IllegalArgumentException("Missing expected user qmdz6"));
+        Individual bwgcmIndividual = userIndividuals.stream().filter(userIndividual -> userIndividual.getURI().equals("bwgcm")).findFirst().orElseThrow(() -> new IllegalArgumentException("Missing expected user bwgcm"));
+        
+        assertEquals(ResourceFactory.createTypedLiteral("2016-06-03T21:52:35.4Z", XSDDatatype.XSDdateTime), qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEUSERREGISTERED.fqname())));
+        // TODO: not sure about these empty strings...
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_BAIDUID.fqname())).toString());
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TWITTER.fqname())).toString());
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_IMPACTSTORY.fqname())).toString());
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_MIDDLENAMES.fqname())).toString());
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERSONALWEBSITE.fqname())).toString());
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHGATE.fqname())).toString());
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHERID.fqname())).toString());
+        assertEquals("", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SUFFIX.fqname())).toString());
+        assertEquals("Elliot Metsger", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_FULLNAME.fqname())).toString());
+        assertEquals("Elliot", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_GIVENNAME.fqname())).toString());
+//        assertEquals("in/elliot-metsger-2455915", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LINKEDIN.fqname())).toString());
+        assertEquals("en_US", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LOCALE.fqname())).toString());
+//        assertEquals("QsELf4QAAAAJ", qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SCHOLAR.fqname())).toString());
+        // TODO map github in java model
+        assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), qmdzgIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_ACTIVE.fqname())).asLiteral());
+
+        assertEquals(ResourceFactory.createTypedLiteral("2016-06-03T22:00:16.559Z", XSDDatatype.XSDdateTime), bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_DATEUSERREGISTERED.fqname())));
+        // TODO: not sure about these empty strings...
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_BAIDUID.fqname())).toString());
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_TWITTER.fqname())).toString());
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_IMPACTSTORY.fqname())).toString());
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_MIDDLENAMES.fqname())).toString());
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_PERSONALWEBSITE.fqname())).toString());
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHGATE.fqname())).toString());
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_RESEARCHERID.fqname())).toString());
+        assertEquals("", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_SUFFIX.fqname())).toString());
+        assertEquals("JHU Emetsger", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_FULLNAME.fqname())).toString());
+        assertEquals("JHU", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_GIVENNAME.fqname())).toString());
+        assertEquals("en_US", bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_LOCALE.fqname())).toString());
+        // TODO map github in java model
+        assertEquals(ResourceFactory.createTypedLiteral("true", XSDDatatype.XSDboolean), bwgcmIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_IS_ACTIVE.fqname())).asLiteral());
 
         Set<RDFNode> licenseNodes = registrationIndividual.listPropertyValues(ontologyManager.objectProperty(OwlProperties.OSF_HAS_LICENSE.fqname())).toSet();
         assertEquals(1, licenseNodes.size());
