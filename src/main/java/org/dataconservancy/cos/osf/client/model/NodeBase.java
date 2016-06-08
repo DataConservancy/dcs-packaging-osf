@@ -112,7 +112,7 @@ public abstract class NodeBase {
 	private List<String> tags;
 	
 	/**List of strings representing the permissions for the current user on this node*/
-	@OwlProperty(value = OwlProperties.OSF_HAS_PERMISSION, transform = ToStringTransform.class)
+	@OwlProperty(value = OwlProperties.OSF_HAS_CURRENTUSERPERMISSION, transform = ToStringTransform.class)
 	private List<Permission> current_user_permissions;
 	
 	/**timestamp that the node was created*/
