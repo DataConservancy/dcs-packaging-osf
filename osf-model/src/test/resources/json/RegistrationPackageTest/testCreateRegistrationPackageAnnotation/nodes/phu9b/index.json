@@ -1,0 +1,151 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/files/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "forked_from": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/5w8q7/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "self": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/relationships/institution/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/wikis/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/children/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/logs/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://192.168.99.100:8000/v2/nodes/phu9b/",
+      "html": "http://192.168.99.100:5000/phu9b/"
+    },
+    "attributes": {
+      "category": "software",
+      "fork": true,
+      "description": null,
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-06-07T17:33:33.188000",
+      "title": "Workflow Execution",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-06-07T14:48:45.312000",
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "public": false,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "phu9b"
+  }
+}
