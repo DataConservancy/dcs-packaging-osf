@@ -5,7 +5,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -13,7 +13,7 @@
         "user": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
@@ -21,16 +21,16 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/comments/?filter[target]=jmfd3",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/comments/?filter[target]=jmfd3",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "info": "http://192.168.99.100:8000/v2/wikis/jmfd3/",
-        "download": "http://192.168.99.100:8000/v2/wikis/jmfd3/content/",
-        "self": "http://192.168.99.100:8000/v2/wikis/jmfd3/"
+        "info": "http://localhost:8000/v2/wikis/jmfd3/",
+        "download": "http://localhost:8000/v2/wikis/jmfd3/content/",
+        "self": "http://localhost:8000/v2/wikis/jmfd3/"
       },
       "attributes": {
         "kind": "file",

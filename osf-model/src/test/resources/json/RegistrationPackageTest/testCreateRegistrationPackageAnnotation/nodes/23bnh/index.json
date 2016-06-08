@@ -4,7 +4,7 @@
       "files": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/files/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/files/",
             "meta": {}
           }
         }
@@ -12,7 +12,7 @@
       "logs": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/logs/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/logs/",
             "meta": {}
           }
         }
@@ -20,7 +20,7 @@
       "contributors": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/contributors/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/contributors/",
             "meta": {}
           }
         }
@@ -28,7 +28,7 @@
       "forks": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/forks/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/forks/",
             "meta": {}
           }
         }
@@ -36,7 +36,7 @@
       "comments": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/comments/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/comments/",
             "meta": {}
           }
         }
@@ -44,7 +44,7 @@
       "registrations": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/registrations/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/registrations/",
             "meta": {}
           }
         }
@@ -52,7 +52,7 @@
       "node_links": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/node_links/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/node_links/",
             "meta": {}
           }
         }
@@ -60,11 +60,11 @@
       "primary_institution": {
         "links": {
           "self": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/relationships/institution/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/relationships/institution/",
             "meta": {}
           },
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/institution/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/institution/",
             "meta": {}
           }
         }
@@ -72,7 +72,7 @@
       "wikis": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/wikis/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/wikis/",
             "meta": {}
           }
         }
@@ -80,7 +80,7 @@
       "root": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/",
             "meta": {}
           }
         }
@@ -88,15 +88,15 @@
       "children": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/23bnh/children/",
+            "href": "http://localhost:8000/v2/nodes/23bnh/children/",
             "meta": {}
           }
         }
       }
     },
     "links": {
-      "self": "http://192.168.99.100:8000/v2/nodes/23bnh/",
-      "html": "http://192.168.99.100:5000/23bnh/"
+      "self": "http://localhost:8000/v2/nodes/23bnh/",
+      "html": "http://localhost:5000/23bnh/"
     },
     "attributes": {
       "category": "project",

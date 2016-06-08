@@ -5,7 +5,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/files/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/files/",
               "meta": {}
             }
           }
@@ -13,7 +13,7 @@
         "parent": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -21,7 +21,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/contributors/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/contributors/",
               "meta": {}
             }
           }
@@ -29,7 +29,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/forks/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/forks/",
               "meta": {}
             }
           }
@@ -37,7 +37,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/comments/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/comments/",
               "meta": {}
             }
           }
@@ -45,7 +45,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/registrations/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/registrations/",
               "meta": {}
             }
           }
@@ -53,7 +53,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/node_links/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/node_links/",
               "meta": {}
             }
           }
@@ -61,11 +61,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/institution/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/institution/",
               "meta": {}
             }
           }
@@ -73,7 +73,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/wikis/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/wikis/",
               "meta": {}
             }
           }
@@ -81,7 +81,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -89,7 +89,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/children/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/children/",
               "meta": {}
             }
           }
@@ -97,15 +97,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/logs/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/6uwzk/",
-        "html": "http://192.168.99.100:5000/6uwzk/"
+        "self": "http://localhost:8000/v2/nodes/6uwzk/",
+        "html": "http://localhost:5000/6uwzk/"
       },
       "attributes": {
         "category": "data",
@@ -133,7 +133,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/files/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/files/",
               "meta": {}
             }
           }
@@ -141,7 +141,7 @@
         "license": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
               "meta": {}
             }
           }
@@ -149,7 +149,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/contributors/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/contributors/",
               "meta": {}
             }
           }
@@ -157,7 +157,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/forks/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/forks/",
               "meta": {}
             }
           }
@@ -165,7 +165,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/comments/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/comments/",
               "meta": {}
             }
           }
@@ -173,7 +173,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/registrations/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/registrations/",
               "meta": {}
             }
           }
@@ -181,7 +181,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/node_links/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/node_links/",
               "meta": {}
             }
           }
@@ -189,11 +189,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/institution/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/institution/",
               "meta": {}
             }
           }
@@ -201,7 +201,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/wikis/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/wikis/",
               "meta": {}
             }
           }
@@ -209,7 +209,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -217,7 +217,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/children/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/children/",
               "meta": {}
             }
           }
@@ -225,15 +225,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/logs/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
-        "html": "http://192.168.99.100:5000/3e7rd/"
+        "self": "http://localhost:8000/v2/nodes/3e7rd/",
+        "html": "http://localhost:5000/3e7rd/"
       },
       "attributes": {
         "category": "project",
@@ -268,7 +268,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/files/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/files/",
               "meta": {}
             }
           }
@@ -276,7 +276,7 @@
         "license": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
               "meta": {}
             }
           }
@@ -284,7 +284,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/contributors/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/contributors/",
               "meta": {}
             }
           }
@@ -292,7 +292,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/forks/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/forks/",
               "meta": {}
             }
           }
@@ -300,7 +300,7 @@
         "forked_from": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -308,7 +308,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/comments/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/comments/",
               "meta": {}
             }
           }
@@ -316,7 +316,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/registrations/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/registrations/",
               "meta": {}
             }
           }
@@ -324,7 +324,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/node_links/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/node_links/",
               "meta": {}
             }
           }
@@ -332,11 +332,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/institution/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/institution/",
               "meta": {}
             }
           }
@@ -344,7 +344,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/wikis/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/wikis/",
               "meta": {}
             }
           }
@@ -352,7 +352,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
               "meta": {}
             }
           }
@@ -360,7 +360,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/children/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/children/",
               "meta": {}
             }
           }
@@ -368,15 +368,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/logs/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
-        "html": "http://192.168.99.100:5000/vt2bp/"
+        "self": "http://localhost:8000/v2/nodes/vt2bp/",
+        "html": "http://localhost:5000/vt2bp/"
       },
       "attributes": {
         "category": "project",
@@ -411,7 +411,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/files/",
+              "href": "http://localhost:8000/v2/nodes/pzust/files/",
               "meta": {}
             }
           }
@@ -419,7 +419,7 @@
         "parent": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
               "meta": {}
             }
           }
@@ -427,7 +427,7 @@
         "license": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
               "meta": {}
             }
           }
@@ -435,7 +435,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/contributors/",
+              "href": "http://localhost:8000/v2/nodes/pzust/contributors/",
               "meta": {}
             }
           }
@@ -443,7 +443,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/forks/",
+              "href": "http://localhost:8000/v2/nodes/pzust/forks/",
               "meta": {}
             }
           }
@@ -451,7 +451,7 @@
         "forked_from": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/",
               "meta": {}
             }
           }
@@ -459,7 +459,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/comments/",
+              "href": "http://localhost:8000/v2/nodes/pzust/comments/",
               "meta": {}
             }
           }
@@ -467,7 +467,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/registrations/",
+              "href": "http://localhost:8000/v2/nodes/pzust/registrations/",
               "meta": {}
             }
           }
@@ -475,7 +475,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/node_links/",
+              "href": "http://localhost:8000/v2/nodes/pzust/node_links/",
               "meta": {}
             }
           }
@@ -483,11 +483,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/pzust/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/institution/",
+              "href": "http://localhost:8000/v2/nodes/pzust/institution/",
               "meta": {}
             }
           }
@@ -495,7 +495,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/wikis/",
+              "href": "http://localhost:8000/v2/nodes/pzust/wikis/",
               "meta": {}
             }
           }
@@ -503,7 +503,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
               "meta": {}
             }
           }
@@ -511,7 +511,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/children/",
+              "href": "http://localhost:8000/v2/nodes/pzust/children/",
               "meta": {}
             }
           }
@@ -519,15 +519,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/pzust/logs/",
+              "href": "http://localhost:8000/v2/nodes/pzust/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/pzust/",
-        "html": "http://192.168.99.100:5000/pzust/"
+        "self": "http://localhost:8000/v2/nodes/pzust/",
+        "html": "http://localhost:5000/pzust/"
       },
       "attributes": {
         "category": "data",
@@ -560,7 +560,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/files/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/files/",
               "meta": {}
             }
           }
@@ -568,7 +568,7 @@
         "parent": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
               "meta": {}
             }
           }
@@ -576,7 +576,7 @@
         "license": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
               "meta": {}
             }
           }
@@ -584,7 +584,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/contributors/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/contributors/",
               "meta": {}
             }
           }
@@ -592,7 +592,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/forks/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/forks/",
               "meta": {}
             }
           }
@@ -600,7 +600,7 @@
         "forked_from": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5w8q7/",
+              "href": "http://localhost:8000/v2/nodes/5w8q7/",
               "meta": {}
             }
           }
@@ -608,7 +608,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/comments/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/comments/",
               "meta": {}
             }
           }
@@ -616,7 +616,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/registrations/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/registrations/",
               "meta": {}
             }
           }
@@ -624,7 +624,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/node_links/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/node_links/",
               "meta": {}
             }
           }
@@ -632,11 +632,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/institution/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/institution/",
               "meta": {}
             }
           }
@@ -644,7 +644,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/wikis/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/wikis/",
               "meta": {}
             }
           }
@@ -652,7 +652,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
               "meta": {}
             }
           }
@@ -660,7 +660,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/children/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/children/",
               "meta": {}
             }
           }
@@ -668,15 +668,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/phu9b/logs/",
+              "href": "http://localhost:8000/v2/nodes/phu9b/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/phu9b/",
-        "html": "http://192.168.99.100:5000/phu9b/"
+        "self": "http://localhost:8000/v2/nodes/phu9b/",
+        "html": "http://localhost:5000/phu9b/"
       },
       "attributes": {
         "category": "software",
@@ -709,7 +709,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/files/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/files/",
               "meta": {}
             }
           }
@@ -717,7 +717,7 @@
         "license": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
               "meta": {}
             }
           }
@@ -725,7 +725,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/contributors/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/contributors/",
               "meta": {}
             }
           }
@@ -733,7 +733,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/forks/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/forks/",
               "meta": {}
             }
           }
@@ -741,7 +741,7 @@
         "forked_from": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -749,7 +749,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/comments/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/comments/",
               "meta": {}
             }
           }
@@ -757,7 +757,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/registrations/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/registrations/",
               "meta": {}
             }
           }
@@ -765,7 +765,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/node_links/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/node_links/",
               "meta": {}
             }
           }
@@ -773,11 +773,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/institution/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/institution/",
               "meta": {}
             }
           }
@@ -785,7 +785,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/wikis/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/wikis/",
               "meta": {}
             }
           }
@@ -793,7 +793,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/",
               "meta": {}
             }
           }
@@ -801,7 +801,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/children/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/children/",
               "meta": {}
             }
           }
@@ -809,15 +809,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/logs/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/5zy6x/",
-        "html": "http://192.168.99.100:5000/5zy6x/"
+        "self": "http://localhost:8000/v2/nodes/5zy6x/",
+        "html": "http://localhost:5000/5zy6x/"
       },
       "attributes": {
         "category": "project",
@@ -852,7 +852,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/files/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/files/",
               "meta": {}
             }
           }
@@ -860,7 +860,7 @@
         "parent": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/",
               "meta": {}
             }
           }
@@ -868,7 +868,7 @@
         "license": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
               "meta": {}
             }
           }
@@ -876,7 +876,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/contributors/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/contributors/",
               "meta": {}
             }
           }
@@ -884,7 +884,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/forks/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/forks/",
               "meta": {}
             }
           }
@@ -892,7 +892,7 @@
         "forked_from": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/",
               "meta": {}
             }
           }
@@ -900,7 +900,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/comments/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/comments/",
               "meta": {}
             }
           }
@@ -908,7 +908,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/registrations/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/registrations/",
               "meta": {}
             }
           }
@@ -916,7 +916,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/node_links/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/node_links/",
               "meta": {}
             }
           }
@@ -924,11 +924,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/institution/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/institution/",
               "meta": {}
             }
           }
@@ -936,7 +936,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/wikis/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/wikis/",
               "meta": {}
             }
           }
@@ -944,7 +944,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/",
+              "href": "http://localhost:8000/v2/nodes/5zy6x/",
               "meta": {}
             }
           }
@@ -952,7 +952,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/children/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/children/",
               "meta": {}
             }
           }
@@ -960,15 +960,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/aw4gm/logs/",
+              "href": "http://localhost:8000/v2/nodes/aw4gm/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/aw4gm/",
-        "html": "http://192.168.99.100:5000/aw4gm/"
+        "self": "http://localhost:8000/v2/nodes/aw4gm/",
+        "html": "http://localhost:5000/aw4gm/"
       },
       "attributes": {
         "category": "data",
@@ -1001,7 +1001,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/files/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/files/",
               "meta": {}
             }
           }
@@ -1009,7 +1009,7 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/logs/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/logs/",
               "meta": {}
             }
           }
@@ -1017,7 +1017,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/contributors/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/contributors/",
               "meta": {}
             }
           }
@@ -1025,7 +1025,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/forks/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/forks/",
               "meta": {}
             }
           }
@@ -1033,7 +1033,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/comments/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/comments/",
               "meta": {}
             }
           }
@@ -1041,7 +1041,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/registrations/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/registrations/",
               "meta": {}
             }
           }
@@ -1049,7 +1049,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/node_links/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/node_links/",
               "meta": {}
             }
           }
@@ -1057,11 +1057,11 @@
         "primary_institution": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/relationships/institution/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/relationships/institution/",
               "meta": {}
             },
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/institution/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/institution/",
               "meta": {}
             }
           }
@@ -1069,7 +1069,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/wikis/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/wikis/",
               "meta": {}
             }
           }
@@ -1077,7 +1077,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/",
               "meta": {}
             }
           }
@@ -1085,15 +1085,15 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/23bnh/children/",
+              "href": "http://localhost:8000/v2/nodes/23bnh/children/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/nodes/23bnh/",
-        "html": "http://192.168.99.100:5000/23bnh/"
+        "self": "http://localhost:8000/v2/nodes/23bnh/",
+        "html": "http://localhost:5000/23bnh/"
       },
       "attributes": {
         "category": "project",

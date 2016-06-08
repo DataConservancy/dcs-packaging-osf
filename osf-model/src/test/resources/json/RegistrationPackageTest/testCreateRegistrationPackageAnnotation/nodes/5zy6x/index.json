@@ -4,7 +4,7 @@
       "files": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/files/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/files/",
             "meta": {}
           }
         }
@@ -12,7 +12,7 @@
       "license": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
             "meta": {}
           }
         }
@@ -20,7 +20,7 @@
       "contributors": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/contributors/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/contributors/",
             "meta": {}
           }
         }
@@ -28,7 +28,7 @@
       "forks": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/forks/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/forks/",
             "meta": {}
           }
         }
@@ -36,7 +36,7 @@
       "forked_from": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+            "href": "http://localhost:8000/v2/nodes/3e7rd/",
             "meta": {}
           }
         }
@@ -44,7 +44,7 @@
       "comments": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/comments/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/comments/",
             "meta": {}
           }
         }
@@ -52,7 +52,7 @@
       "registrations": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/registrations/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/registrations/",
             "meta": {}
           }
         }
@@ -60,7 +60,7 @@
       "node_links": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/node_links/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/node_links/",
             "meta": {}
           }
         }
@@ -68,11 +68,11 @@
       "primary_institution": {
         "links": {
           "self": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/relationships/institution/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/relationships/institution/",
             "meta": {}
           },
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/institution/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/institution/",
             "meta": {}
           }
         }
@@ -80,7 +80,7 @@
       "wikis": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/wikis/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/wikis/",
             "meta": {}
           }
         }
@@ -88,7 +88,7 @@
       "root": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/",
             "meta": {}
           }
         }
@@ -96,7 +96,7 @@
       "children": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/children/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/children/",
             "meta": {}
           }
         }
@@ -104,15 +104,15 @@
       "logs": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5zy6x/logs/",
+            "href": "http://localhost:8000/v2/nodes/5zy6x/logs/",
             "meta": {}
           }
         }
       }
     },
     "links": {
-      "self": "http://192.168.99.100:8000/v2/nodes/5zy6x/",
-      "html": "http://192.168.99.100:5000/5zy6x/"
+      "self": "http://localhost:8000/v2/nodes/5zy6x/",
+      "html": "http://localhost:5000/5zy6x/"
     },
     "attributes": {
       "category": "project",

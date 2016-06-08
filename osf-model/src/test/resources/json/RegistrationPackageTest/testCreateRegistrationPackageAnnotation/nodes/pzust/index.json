@@ -4,7 +4,7 @@
       "files": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/files/",
+            "href": "http://localhost:8000/v2/nodes/pzust/files/",
             "meta": {}
           }
         }
@@ -12,7 +12,7 @@
       "parent": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+            "href": "http://localhost:8000/v2/nodes/vt2bp/",
             "meta": {}
           }
         }
@@ -20,7 +20,7 @@
       "license": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
             "meta": {}
           }
         }
@@ -28,7 +28,7 @@
       "contributors": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/contributors/",
+            "href": "http://localhost:8000/v2/nodes/pzust/contributors/",
             "meta": {}
           }
         }
@@ -36,7 +36,7 @@
       "forks": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/forks/",
+            "href": "http://localhost:8000/v2/nodes/pzust/forks/",
             "meta": {}
           }
         }
@@ -44,7 +44,7 @@
       "forked_from": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/",
+            "href": "http://localhost:8000/v2/nodes/6uwzk/",
             "meta": {}
           }
         }
@@ -52,7 +52,7 @@
       "comments": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/comments/",
+            "href": "http://localhost:8000/v2/nodes/pzust/comments/",
             "meta": {}
           }
         }
@@ -60,7 +60,7 @@
       "registrations": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/registrations/",
+            "href": "http://localhost:8000/v2/nodes/pzust/registrations/",
             "meta": {}
           }
         }
@@ -68,7 +68,7 @@
       "node_links": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/node_links/",
+            "href": "http://localhost:8000/v2/nodes/pzust/node_links/",
             "meta": {}
           }
         }
@@ -76,11 +76,11 @@
       "primary_institution": {
         "links": {
           "self": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/relationships/institution/",
+            "href": "http://localhost:8000/v2/nodes/pzust/relationships/institution/",
             "meta": {}
           },
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/institution/",
+            "href": "http://localhost:8000/v2/nodes/pzust/institution/",
             "meta": {}
           }
         }
@@ -88,7 +88,7 @@
       "wikis": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/wikis/",
+            "href": "http://localhost:8000/v2/nodes/pzust/wikis/",
             "meta": {}
           }
         }
@@ -96,7 +96,7 @@
       "root": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+            "href": "http://localhost:8000/v2/nodes/vt2bp/",
             "meta": {}
           }
         }
@@ -104,7 +104,7 @@
       "children": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/children/",
+            "href": "http://localhost:8000/v2/nodes/pzust/children/",
             "meta": {}
           }
         }
@@ -112,15 +112,15 @@
       "logs": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/pzust/logs/",
+            "href": "http://localhost:8000/v2/nodes/pzust/logs/",
             "meta": {}
           }
         }
       }
     },
     "links": {
-      "self": "http://192.168.99.100:8000/v2/nodes/pzust/",
-      "html": "http://192.168.99.100:5000/pzust/"
+      "self": "http://localhost:8000/v2/nodes/pzust/",
+      "html": "http://localhost:5000/pzust/"
     },
     "attributes": {
       "category": "data",

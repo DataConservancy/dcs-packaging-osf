@@ -5,7 +5,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {}
             }
           }
@@ -13,7 +13,7 @@
         "replies": {
           "links": {
             "self": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/comments/?filter[target]=yr4qcu8vhefp",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/comments/?filter[target]=yr4qcu8vhefp",
               "meta": {}
             }
           }
@@ -21,7 +21,7 @@
         "target": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
               "meta": {
                 "type": "nodes"
               }
@@ -31,7 +31,7 @@
         "reports": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/comments/yr4qcu8vhefp/reports/",
+              "href": "http://localhost:8000/v2/comments/yr4qcu8vhefp/reports/",
               "meta": {}
             }
           }
@@ -39,14 +39,14 @@
         "user": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/comments/yr4qcu8vhefp/"
+        "self": "http://localhost:8000/v2/comments/yr4qcu8vhefp/"
       },
       "attributes": {
         "can_edit": true,

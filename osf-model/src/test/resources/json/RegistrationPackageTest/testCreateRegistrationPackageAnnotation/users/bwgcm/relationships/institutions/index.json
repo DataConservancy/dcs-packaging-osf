@@ -1,7 +1,7 @@
 {
   "data": [],
   "links": {
-    "self": "http://192.168.99.100:8000/v2/users/bwgcm/relationships/institutions/",
-    "html": "http://192.168.99.100:8000/v2/users/bwgcm/institutions/"
+    "self": "http://localhost:8000/v2/users/bwgcm/relationships/institutions/",
+    "html": "http://localhost:8000/v2/users/bwgcm/institutions/"
   }
 }

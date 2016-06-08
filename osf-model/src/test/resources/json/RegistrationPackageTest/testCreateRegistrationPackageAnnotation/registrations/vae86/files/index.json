@@ -5,15 +5,15 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/files/osfstorage/",
+              "href": "http://localhost:8000/v2/registrations/vae86/files/osfstorage/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "upload": "http://192.168.99.100:7777/v1/resources/vae86/providers/osfstorage/",
-        "new_folder": "http://192.168.99.100:7777/v1/resources/vae86/providers/osfstorage/?kind=folder"
+        "upload": "http://localhost:7777/v1/resources/vae86/providers/osfstorage/",
+        "new_folder": "http://localhost:7777/v1/resources/vae86/providers/osfstorage/?kind=folder"
       },
       "attributes": {
         "node": "vae86",

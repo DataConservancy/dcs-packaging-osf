@@ -4,7 +4,7 @@
       "files": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/files/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/files/",
             "meta": {}
           }
         }
@@ -12,7 +12,7 @@
       "parent": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+            "href": "http://localhost:8000/v2/nodes/vt2bp/",
             "meta": {}
           }
         }
@@ -20,7 +20,7 @@
       "license": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
             "meta": {}
           }
         }
@@ -28,7 +28,7 @@
       "contributors": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/contributors/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/contributors/",
             "meta": {}
           }
         }
@@ -36,7 +36,7 @@
       "forks": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/forks/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/forks/",
             "meta": {}
           }
         }
@@ -44,7 +44,7 @@
       "forked_from": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/5w8q7/",
+            "href": "http://localhost:8000/v2/nodes/5w8q7/",
             "meta": {}
           }
         }
@@ -52,7 +52,7 @@
       "comments": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/comments/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/comments/",
             "meta": {}
           }
         }
@@ -60,7 +60,7 @@
       "registrations": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/registrations/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/registrations/",
             "meta": {}
           }
         }
@@ -68,7 +68,7 @@
       "node_links": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/node_links/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/node_links/",
             "meta": {}
           }
         }
@@ -76,11 +76,11 @@
       "primary_institution": {
         "links": {
           "self": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/relationships/institution/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/relationships/institution/",
             "meta": {}
           },
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/institution/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/institution/",
             "meta": {}
           }
         }
@@ -88,7 +88,7 @@
       "wikis": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/wikis/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/wikis/",
             "meta": {}
           }
         }
@@ -96,7 +96,7 @@
       "root": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/vt2bp/",
+            "href": "http://localhost:8000/v2/nodes/vt2bp/",
             "meta": {}
           }
         }
@@ -104,7 +104,7 @@
       "children": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/children/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/children/",
             "meta": {}
           }
         }
@@ -112,15 +112,15 @@
       "logs": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/phu9b/logs/",
+            "href": "http://localhost:8000/v2/nodes/phu9b/logs/",
             "meta": {}
           }
         }
       }
     },
     "links": {
-      "self": "http://192.168.99.100:8000/v2/nodes/phu9b/",
-      "html": "http://192.168.99.100:5000/phu9b/"
+      "self": "http://localhost:8000/v2/nodes/phu9b/",
+      "html": "http://localhost:5000/phu9b/"
     },
     "attributes": {
       "category": "software",
