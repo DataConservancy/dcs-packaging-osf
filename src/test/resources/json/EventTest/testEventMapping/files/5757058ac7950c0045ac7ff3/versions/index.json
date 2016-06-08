@@ -2,8 +2,8 @@
   "data": [
     {
       "links": {
-        "self": "http://192.168.99.100:8000/v2/files/5757058ac7950c0045ac7ff3/versions/1/",
-        "html": "http://192.168.99.100:5000/phu9b/files/osfstorage/5757058ac7950c0045ac7ff3?revision=1"
+        "self": "http://localhost:8000/v2/files/5757058ac7950c0045ac7ff3/versions/1/",
+        "html": "http://localhost:5000/phu9b/files/osfstorage/5757058ac7950c0045ac7ff3?revision=1"
       },
       "attributes": {
         "content_type": null,

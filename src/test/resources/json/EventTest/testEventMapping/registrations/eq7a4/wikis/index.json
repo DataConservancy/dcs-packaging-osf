@@ -5,7 +5,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/eq7a4/",
+              "href": "http://localhost:8000/v2/nodes/eq7a4/",
               "meta": {}
             }
           }
@@ -13,7 +13,7 @@
         "user": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
@@ -21,16 +21,16 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/eq7a4/comments/?filter[target]=xytsa",
+              "href": "http://localhost:8000/v2/nodes/eq7a4/comments/?filter[target]=xytsa",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "info": "http://192.168.99.100:8000/v2/wikis/xytsa/",
-        "download": "http://192.168.99.100:8000/v2/wikis/xytsa/content/",
-        "self": "http://192.168.99.100:8000/v2/wikis/xytsa/"
+        "info": "http://localhost:8000/v2/wikis/xytsa/",
+        "download": "http://localhost:8000/v2/wikis/xytsa/content/",
+        "self": "http://localhost:8000/v2/wikis/xytsa/"
       },
       "attributes": {
         "kind": "file",

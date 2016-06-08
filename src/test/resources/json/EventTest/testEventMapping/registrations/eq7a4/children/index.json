@@ -5,7 +5,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/files/",
+              "href": "http://localhost:8000/v2/registrations/vae86/files/",
               "meta": {}
             }
           }
@@ -13,7 +13,7 @@
         "parent": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+              "href": "http://localhost:8000/v2/registrations/eq7a4/",
               "meta": {}
             }
           }
@@ -21,7 +21,7 @@
         "license": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
               "meta": {}
             }
           }
@@ -29,7 +29,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/contributors/",
+              "href": "http://localhost:8000/v2/registrations/vae86/contributors/",
               "meta": {}
             }
           }
@@ -37,7 +37,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/forks/",
+              "href": "http://localhost:8000/v2/registrations/vae86/forks/",
               "meta": {}
             }
           }
@@ -45,7 +45,7 @@
         "registered_by": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "href": "http://localhost:8000/v2/users/qmdz6/",
               "meta": {}
             }
           }
@@ -53,7 +53,7 @@
         "identifiers": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/identifiers/",
+              "href": "http://localhost:8000/v2/registrations/vae86/identifiers/",
               "meta": {}
             }
           }
@@ -61,7 +61,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/comments/",
+              "href": "http://localhost:8000/v2/registrations/vae86/comments/",
               "meta": {}
             }
           }
@@ -69,7 +69,7 @@
         "registered_from": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/",
+              "href": "http://localhost:8000/v2/nodes/6uwzk/",
               "meta": {}
             }
           }
@@ -77,7 +77,7 @@
         "node_links": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/node_links/",
+              "href": "http://localhost:8000/v2/registrations/vae86/node_links/",
               "meta": {}
             }
           }
@@ -85,7 +85,7 @@
         "primary_institution": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/institution/",
+              "href": "http://localhost:8000/v2/registrations/vae86/institution/",
               "meta": {}
             }
           }
@@ -93,7 +93,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/wikis/",
+              "href": "http://localhost:8000/v2/registrations/vae86/wikis/",
               "meta": {}
             }
           }
@@ -101,7 +101,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+              "href": "http://localhost:8000/v2/registrations/eq7a4/",
               "meta": {}
             }
           }
@@ -109,7 +109,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/children/",
+              "href": "http://localhost:8000/v2/registrations/vae86/children/",
               "meta": {}
             }
           }
@@ -117,15 +117,15 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/vae86/logs/",
+              "href": "http://localhost:8000/v2/registrations/vae86/logs/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "self": "http://192.168.99.100:8000/v2/registrations/vae86/",
-        "html": "http://192.168.99.100:5000/vae86/"
+        "self": "http://localhost:8000/v2/registrations/vae86/",
+        "html": "http://localhost:5000/vae86/"
       },
       "attributes": {
         "category": "data",

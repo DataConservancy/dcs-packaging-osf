@@ -5,19 +5,19 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/files/osfstorage/575705dcc7950c0045ac8023/",
+              "href": "http://localhost:8000/v2/registrations/2gqca/files/osfstorage/575705dcc7950c0045ac8023/",
               "meta": {}
             }
           }
         }
       },
       "links": {
-        "info": "http://192.168.99.100:8000/v2/files/575705dcc7950c0045ac8023/",
-        "new_folder": "http://192.168.99.100:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/?kind=folder",
-        "self": "http://192.168.99.100:8000/v2/files/575705dcc7950c0045ac8023/",
-        "move": "http://192.168.99.100:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/",
-        "upload": "http://192.168.99.100:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/",
-        "delete": "http://192.168.99.100:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/"
+        "info": "http://localhost:8000/v2/files/575705dcc7950c0045ac8023/",
+        "new_folder": "http://localhost:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/?kind=folder",
+        "self": "http://localhost:8000/v2/files/575705dcc7950c0045ac8023/",
+        "move": "http://localhost:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/",
+        "upload": "http://localhost:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/",
+        "delete": "http://localhost:7777/v1/resources/2gqca/providers/osfstorage/575705dcc7950c0045ac8023/"
       },
       "attributes": {
         "extra": {
