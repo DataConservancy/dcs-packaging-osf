@@ -4,7 +4,7 @@
       "files": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/files/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/files/",
             "meta": {}
           }
         }
@@ -12,7 +12,7 @@
       "license": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
             "meta": {}
           }
         }
@@ -20,7 +20,7 @@
       "contributors": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/contributors/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/contributors/",
             "meta": {}
           }
         }
@@ -28,7 +28,7 @@
       "forks": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/forks/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/forks/",
             "meta": {}
           }
         }
@@ -36,7 +36,7 @@
       "registered_by": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+            "href": "http://localhost:8000/v2/users/qmdz6/",
             "meta": {}
           }
         }
@@ -44,7 +44,7 @@
       "identifiers": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/identifiers/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/identifiers/",
             "meta": {}
           }
         }
@@ -52,7 +52,7 @@
       "comments": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/comments/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/comments/",
             "meta": {}
           }
         }
@@ -60,7 +60,7 @@
       "registered_from": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+            "href": "http://localhost:8000/v2/nodes/3e7rd/",
             "meta": {}
           }
         }
@@ -68,7 +68,7 @@
       "node_links": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/node_links/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/node_links/",
             "meta": {}
           }
         }
@@ -76,7 +76,7 @@
       "primary_institution": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/institution/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/institution/",
             "meta": {}
           }
         }
@@ -84,7 +84,7 @@
       "wikis": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/wikis/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/wikis/",
             "meta": {}
           }
         }
@@ -92,7 +92,7 @@
       "root": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/",
             "meta": {}
           }
         }
@@ -100,7 +100,7 @@
       "children": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/children/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/children/",
             "meta": {}
           }
         }
@@ -108,15 +108,15 @@
       "logs": {
         "links": {
           "related": {
-            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/logs/",
+            "href": "http://localhost:8000/v2/registrations/eq7a4/logs/",
             "meta": {}
           }
         }
       }
     },
     "links": {
-      "self": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
-      "html": "http://192.168.99.100:5000/eq7a4/"
+      "self": "http://localhost:8000/v2/registrations/eq7a4/",
+      "html": "http://localhost:5000/eq7a4/"
     },
     "attributes": {
       "category": "project",
