@@ -24,6 +24,7 @@ import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
@@ -38,6 +39,26 @@ import java.util.function.Function;
 public @interface OwlProperty {
 
     /**
+     * String constant identifying the annotation attribute {@link #transform()}
+     */
+    static final String FIELD_TRANSFORM_ATTRIBUTE = "transform";
+
+    /**
+     * String constant identifying the annotation attribute {@link #classTransform()}
+     */
+    static final String CLASS_TRANSFORM_ATTRIBUTE = "classTransform";
+
+    /**
+     * Class constant identifying the default field transformation function
+     */
+    static final Class<? extends Function> DEFAULT_FIELD_TRANSFORM_FUNCTION = IdentityTransform.class;
+
+    /**
+     * Class constant identifying the default class transformation function
+     */
+    static final Class<? extends Function> DEFAULT_CLASS_TRANSFORM_FUNCTION = IdentityTransform.class;
+
+    /**
      * The Owl property associated with the annotated field.  This field will be serialized as the object of the
      * supplied property, and its subject will be that of the containing {@code @OwlIndividal}.
      *
@@ -46,7 +67,7 @@ public @interface OwlProperty {
     OwlProperties value();
 
     /**
-     * A function that transforms the value of the annotated field.
+     * A function that transforms the value of the annotated field, provided the value of the field.
      * <p>
      * This is useful when the value of annotated field needs to be manipulated prior to being converted to RDF.  For
      * example, assume that {@code parent} in the following class contains the string form of a URL:
@@ -84,7 +105,22 @@ public @interface OwlProperty {
      * that accepts the value of the annotated field (in this example {@code http://mydomain/object/abcde}) and
      * transforms it to the desired value (e.g {@code abcde}).
      *
-     * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field
+     * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field, provided the
+     * value of the field
      */
     Class<? extends Function> transform() default IdentityTransform.class;
+
+    /**
+     * A function that transforms the value of the annotated field, provided an instance of the enclosing class of the
+     * field.
+     * <p>
+     * The use cases for using a class transform are similar to using a {@link #transform() field transform}, but the
+     * function is provided an instance of the class that declares the annotated field.  This is useful when you wish
+     * to transform the value of the field with additional information contained in the class instance.
+     * </p>
+     *
+     * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field provided an
+     * instance of the class that declares the field.
+     */
+    Class<? extends Function> classTransform() default IdentityTransform.class;
 }
