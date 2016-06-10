@@ -55,6 +55,10 @@ public enum OwlProperties {
 
     OSF_HAS_LICENSE ("hasLicense", true),
 
+    OSF_HAS_HASPROVIDER ("hasProvider", true),
+
+    OSF_PROVIDED_BY ("providedBy", true),
+
     DCTERMS_DESCRIPTION ("description"),
 
     DCTERMS_IDENTIFIER ("identifier"),
@@ -144,8 +148,6 @@ public enum OwlProperties {
     OSF_HAS_PERSONALWEBSITE ("hasPersonalWebsite"),
 
     OSF_HAS_PERMISSION ("hasPermission"),
-
-    OSF_HAS_HASPROVIDER ("hasProvider"),
 
     OSF_IS_PUBLIC ("isPublic"),
 
