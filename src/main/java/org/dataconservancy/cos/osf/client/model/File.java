@@ -21,6 +21,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.FileIdTransform;
+import org.dataconservancy.cos.osf.client.support.ProviderIdTransform;
+import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
+import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -40,14 +48,19 @@ import com.github.jasminb.jsonapi.annotations.Type;
  */
 @Type("files")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@OwlIndividual(OwlClasses.OSF_FILEBASE)
 public class File {
 
-	/*unique OSF ID for the file**/
+    /*unique OSF ID for the file**/
     @Id
+    @IndividualUri(classTransform = FileIdTransform.class)
+    // class transform the uri to include the provider id with the path.  the path is scoped to an instance of the
+    // provider.  if there are two instances of the same provider, is it possible to have conflicting IDs?
     private String id;
     
     /**list of files down next level of file tree*/
     @Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    @OwlProperty(OwlProperties.OSF_HAS_FILE)
     private List<File> files;
 
 	/**list of versions associated with file*/
@@ -66,31 +79,40 @@ public class File {
     private org.dataconservancy.cos.osf.client.model.Links pageLinks;
     
     /**name of the file or folder; used for display*/
+    @OwlProperty(OwlProperties.OSF_HAS_NAME)
     private String name;    
         
 	/**"file" or "folder"*/
+    @OwlProperty(OwlProperties.OSF_HAS_HASKIND)
     private String kind;
 
     /**the unix-style path to the file relative to the provider root*/
+    @OwlProperty(OwlProperties.OSF_HAS_MATERIALIZEDPATH)
     private String materialized_path;
 
     /**timestamp of when this file was created**/
+    @OwlProperty(value = OwlProperties.OSF_HAS_DATECREATED, transform = DateTimeTransform.class)
     private DateTime date_created;
 
     /**timestamp of when this file was last updated*/
+    @OwlProperty(value = OwlProperties.OSF_HAS_DATEMODIFIED, transform = DateTimeTransform.class)
     private DateTime date_modified;
 
     /**storage provider for this file. "osfstorage" if stored on the
      * OSF.  other examples include "s3" for Amazon S3, "googledrive"   */
+    @OwlProperty(value = OwlProperties.OSF_PROVIDED_BY, classTransform = ProviderIdTransform.class)
     private String provider;
 
     /**node this provider belongs to*/
-    private String node;    
-    
+    @OwlProperty(OwlProperties.OSF_HAS_NODE)
+    private String node;
+
     /**same as for corresponding WaterButler entity*/
+    @OwlProperty(OwlProperties.OSF_HAS_PATH)
     private String path;
 
     /**size of file in bytes, null for folders*/
+    @OwlProperty(OwlProperties.OSF_HAS_SIZE)
     private Integer size;
 
     /**list of hashes of the hashes for the files*/
