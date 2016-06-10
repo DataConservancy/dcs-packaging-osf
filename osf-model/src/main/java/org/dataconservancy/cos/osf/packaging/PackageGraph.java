@@ -76,9 +76,9 @@ public class PackageGraph {
      * @param individualId
      * @return
      */
-    public String newIndividual(OwlClasses owlClass, Object individualId) {
+    public Individual newIndividual(OwlClasses owlClass, Object individualId) {
         Individual individual =  ontMgr.individual(individualId.toString(), owlClass.ns(), owlClass.localname());
-        return individual.getURI();
+        return individual;
     }
 
     /**
