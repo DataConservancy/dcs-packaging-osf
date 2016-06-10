@@ -122,7 +122,7 @@ public class OwlAnnotationProcessorTest {
     @Test
     public void testIgnored() throws Exception {
         assertTrue(OwlAnnotationProcessor.ignored(Object.class));
-        assertTrue(OwlAnnotationProcessor.ignored(sun.awt.util.IdentityArrayList.class));
+        assertTrue(OwlAnnotationProcessor.ignored(sun.misc.Unsafe.class));
         assertFalse(OwlAnnotationProcessor.ignored(SomeClass.class));
     }
 }
