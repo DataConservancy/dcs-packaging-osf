@@ -50,8 +50,8 @@
     <owl:ObjectProperty rdf:about="&osfbom;hasFile">
         <rdfs:label xml:lang="en">hasFile</rdfs:label>
         <rdfs:comment xml:lang="en">An object property specifying a file or directory belonging to a node</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Node"/>
-        <rdfs:range rdf:resource="&osfbom;File"/>
+        <rdfs:domain rdf:resource="&osfbom;Folder"/>
+        <rdfs:range rdf:resource="&osfbom;FileBase"/>
     </owl:ObjectProperty>
 
     
@@ -185,6 +185,24 @@
         <rdfs:comment xml:lang="en">The license that governs the possible re-use of the content relating to a Node or Registration</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
         <rdfs:range rdf:resource="&osfbom;License"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasProvider -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasProvider">
+        <rdfs:label xml:lang="en">hasProvider</rdfs:label>
+        <rdfs:comment xml:lang="en">A property referencing a storage provider for a Node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&osfbom;Provider"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#providedBy -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;providedBy">
+        <rdfs:label xml:lang="en">providedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">A property referencing the storage provider for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileEntity"/>
+        <rdfs:range rdf:resource="&osfbom;Provider"/>
     </owl:ObjectProperty>
     
     <!-- 
@@ -615,15 +633,6 @@
         <rdfs:comment xml:lang="en">A data property specifying the User's personal meb site</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;User"/>
         <rdfs:range rdf:resource="&xsd;anyUri"/>
-    </owl:DatatypeProperty>
-
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasProvider -->
-
-    <owl:DatatypeProperty rdf:about="&osfbom;hasProvider">
-        <rdfs:label xml:lang="en">hasProvider</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the storage provider for a file  </rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;File"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
 
 
