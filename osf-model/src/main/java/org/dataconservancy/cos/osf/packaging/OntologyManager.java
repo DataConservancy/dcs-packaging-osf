@@ -53,6 +53,7 @@ import java.net.URL;
  * <ul>
  *   <li>No explicit support for sub classes of {@code ObjectProperty} (TransitiveProperty, SymmetricProperty, etc.)</li>
  *   <li>No support for AnnotationProperty or FunctionalProperty or their sub classes</li>
+ *   <li>Unsure (untested) if {@code owl:imports} are followed in the supplied ontology resource</li>
  * </ul>
  */
 public class OntologyManager {
