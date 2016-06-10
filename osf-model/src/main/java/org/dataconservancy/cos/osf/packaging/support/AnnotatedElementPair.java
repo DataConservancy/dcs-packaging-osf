@@ -19,7 +19,43 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedElement;
 
 /**
- * Created by esm on 6/5/16.
+ * Links an annotated element with an annotation on that element.  Suitable for use as a key in a {@code Map}.
+ * <h4>Examples</h4>
+ * An {@code AnnotatedElementPair} for this example would be composed of {@code Class MyClass} and the annotation
+ * {@code Class OwlIndividual}:
+ * <pre>
+ * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
+ * public class MyClass {
+ *     // ...
+ * }
+ * </pre>
+ *
+ * If a field is added to the example like so, an {@code AnnotatedElementPair} for the field would be composed of
+ * {@code Field id} and the annotation {@code Class IndividualId}:
+ * <pre>
+ * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
+ * public class MyClass {
+ *     &#x40;IndividualId
+ *     private String id;
+ *     // ...
+ * }
+ * </pre>
+ *
+ * If another field is added to the example like so, two more {@code AnnotatedElementPair}s can be composed by:
+ * {@code Field foo} and the annotation {@code Class OwlProperties}, and {@code Field foo} and the annotation
+ * {@code Class AnonIndividual}:
+ * <pre>
+ * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
+ * public class MyClass {
+ *     &#x40;IndividualId
+ *     private String id;
+ *
+ *     &#x40;OwlProperties(OwlProperties.MY_PROPERTY)
+ *     &#x40;AnonIndividual
+ *     private AnotherClass foo;
+ *     // ...
+ * }
+ * </pre>
  */
 public class AnnotatedElementPair {
 
@@ -30,6 +66,14 @@ public class AnnotatedElementPair {
     public AnnotatedElementPair(AnnotatedElement annotatedElement, Class<? extends Annotation> annotationClass) {
         this.annotatedElement = annotatedElement;
         this.annotationClass = annotationClass;
+    }
+
+    public AnnotatedElement getAnnotatedElement() {
+        return annotatedElement;
+    }
+
+    public Class<? extends Annotation> getAnnotationClass() {
+        return annotationClass;
     }
 
     public static AnnotatedElementPair forPair(AnnotatedElement e, Class<? extends Annotation> annotationClass) {
