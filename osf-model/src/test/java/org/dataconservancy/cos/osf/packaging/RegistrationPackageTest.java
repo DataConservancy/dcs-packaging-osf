@@ -15,31 +15,24 @@
  */
 package org.dataconservancy.cos.osf.packaging;
 
-import com.diffplug.common.base.Errors;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
-import org.apache.jena.graph.Node;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
-import org.dataconservancy.cos.osf.RegistrationProcessor;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Contributor;
-import org.dataconservancy.cos.osf.client.model.NodeBase;
+import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.dataconservancy.cos.osf.packaging.ont.OntologyManager;
 import org.dataconservancy.cos.osf.packaging.support.AnnotatedElementPair;
 import org.dataconservancy.cos.osf.packaging.support.OwlAnnotationProcessor;
-import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
-import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.Rdf;
@@ -52,21 +45,20 @@ import org.springframework.core.annotation.AnnotationUtils;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
 import static org.dataconservancy.cos.osf.packaging.support.Util.relativeId;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.springframework.util.ReflectionUtils.doWithFields;
@@ -138,8 +130,17 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         Registration registration = osfService.registration("eq7a4").execute().body();
         assertNotNull(registration);
         assertNotNull(registration.getLicense());
+        Registration vae86 = registration.getChildren().stream().filter(r -> r.getId().equals("vae86")).findFirst().orElseThrow(() -> new RuntimeException("Missing expected child registration vae86"));
+        assertNotNull(vae86.getParent());
+        // TODO: the 'root' relationship is missing from /children/ endpoint for the parent registration eq7a4.
+        assertNull(vae86.getRoot());
 
-        // list users
+        AnnotationsProcessor ap = new AnnotationsProcessor(packageGraph);
+
+        // Process the registration
+        Map<String, Individual> createdIndividuals = ap.process(registration);
+
+        // Collect users from contributors
         List<Contributor> contributors = registration.getContributors();
         assertNotNull(contributors);
         assertFalse(contributors.isEmpty());
@@ -155,14 +156,30 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         assertNotNull(users);
         assertFalse(users.isEmpty());
-        
-        RegistrationProcessor rp = new RegistrationProcessor(registration, packageGraph);
-        String registrationIndividualUri = rp.process();
-        users.forEach(rp::process);
+
+        // Process each user
+        users.forEach(ap::process);
+
+        // Collect File providers from all registration nodes
+        List<File> providers = registration.getFiles();
+        assertNotNull(providers);
+        assertTrue(providers.size() > 0);
+        List<Registration> children = registration.getChildren();
+        assertNotNull(children);
+        assertTrue(children.size() > 0);
+
+        Iterator<Registration> childRegItr = children.iterator();
+        while (childRegItr.hasNext()) {
+            Registration child = childRegItr.next();
+            child.getFiles().forEach(ap::process);
+            if (child.getChildren() != null && child.getChildren().size() > 0) {
+                childRegItr = child.getChildren().iterator();
+            }
+        }
 
         writeModel(onlyIndividuals(ontologyManager.getOntModel()));
 
-        Individual registrationIndividual = ontologyManager.getOntModel().getIndividual(registrationIndividualUri);
+        Individual registrationIndividual = ontologyManager.getOntModel().getIndividual("eq7a4");
         assertEquals("PROJECT", registrationIndividual.getPropertyValue(ontologyManager.datatypeProperty(OwlProperties.OSF_HAS_CATEGORY.fqname())).toString());
         assertEquals(ResourceFactory.createResource("vae86"), registrationIndividual.getPropertyResourceValue(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CHILD.fqname())));
         Set<RDFNode> contributorNodes = registrationIndividual.listPropertyValues(ontologyManager.objectProperty(OwlProperties.OSF_HAS_CONTRIBUTOR.fqname())).toSet();
@@ -272,8 +289,8 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertNotNull(r);
 
         Map<AnnotatedElementPair, AnnotationAttributes> result = new HashMap<>();
-        OwlAnnotationProcessor.getAnnotationsForClass(r.getClass(), result);
-        assertEquals(47, result.size());
+        OwlAnnotationProcessor.getAnnotationsForInstance(r, result);
+        assertEquals(78, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
