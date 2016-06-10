@@ -47,7 +47,7 @@ public abstract class NodeBase {
 	/**List of top-level folders (actually cloud-storage providers) associated with this node.
 	 * This is the starting point for accessing the actual files stored within this node.*/
 	@Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
-	// TODO: @OwlProperty(....)
+	@OwlProperty(OwlProperties.OSF_HAS_HASPROVIDER)
 	private List<File> files;
 
 	/**Root node if you walk up the tree of projects/components.*/
