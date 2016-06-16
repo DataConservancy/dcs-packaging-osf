@@ -83,7 +83,7 @@
                                 <manifestEntries>
                                     <Implementation-Title>${project.name}</Implementation-Title>
                                     <Implementation-Version>${project.version}
-                                        r${buildNumber}</Implementation-Version>
+                                        ${buildNumber}</Implementation-Version>
                                 </manifestEntries>
                             </archive>
                             <finalName>${pkg.gen.assembly.standalone.fileName}</finalName>
@@ -100,11 +100,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <argLine>${surefireArgLine}</argLine>
-                    <systemPropertyVariables>
-                        <dcs.package.tool.package.dir>${project.build.testOutputDirectory}/generated-packages</dcs.package.tool.package.dir>
-                        <dcs.package.tool.staging.dir>${project.build.testOutputDirectory}/package-staging</dcs.package.tool.staging.dir>
-                        <dcs.package.tool.test.content>${project.basedir}/src/test/resources</dcs.package.tool.test.content>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
 
