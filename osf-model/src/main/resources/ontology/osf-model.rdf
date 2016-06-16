@@ -975,13 +975,6 @@
       <rdfs:label xml:lang="en">RelatedLink</rdfs:label>
       <rdfs:subClassOf rdf:resource="&osfbom;LinkBase"/>
     </owl:Class>
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#Embed -->
-    <!-- TODO: Remove, not going to model 'Embed' -->
-    <owl:Class rdf:about="&osfbom;Embed">
-      <rdfs:label xml:lang="en">Embed</rdfs:label>
-      <owl:disjointWith rdf:resource="&osfbom;OSFBusinessObject"/>
-    </owl:Class>
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#FileBase -->
     <owl:Class rdf:about="&osfbom;FileBase">
