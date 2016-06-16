@@ -82,8 +82,7 @@
                                 </manifest>
                                 <manifestEntries>
                                     <Implementation-Title>${project.name}</Implementation-Title>
-                                    <Implementation-Version>${project.version}
-                                        ${buildNumber}</Implementation-Version>
+                                    <Implementation-Version>${project.version} (${buildNumber})</Implementation-Version>
                                 </manifestEntries>
                             </archive>
                             <finalName>${pkg.gen.assembly.standalone.fileName}</finalName>
