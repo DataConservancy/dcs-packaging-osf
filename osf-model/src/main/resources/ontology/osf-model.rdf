@@ -839,6 +839,14 @@
         <rdfs:domain rdf:resource="&osfbom;License"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasBinaryUri">
+        <rdfs:label xml:lang="en">hasBinaryUri</rdfs:label>
+        <rdfs:comment xml:lang="en">The URI to the binary content of a file</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;File"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
