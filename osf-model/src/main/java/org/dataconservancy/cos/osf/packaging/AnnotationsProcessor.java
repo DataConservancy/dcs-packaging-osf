@@ -181,7 +181,13 @@ public class AnnotationsProcessor {
         final Stream<?> objectsToProcess = OwlAnnotationProcessor.unwrap(field, fieldValue);
 
         objectsToProcess.forEach(objectToProcess -> {
-            final Object value = OwlAnnotationProcessor.transform(enclosingObject, field, objectToProcess, annotations);
+            final Object value;
+
+            if ((value = OwlAnnotationProcessor.transform(enclosingObject, field, objectToProcess, annotations)) == null) {
+                LOG.trace("  Result of transformation was null.  Skipping processing of transformed null value on field {} for OWL property {}",
+                        field.getName(), owlProperty.localname());
+                return;
+            }
 
             if (!owlProperty.object()) {
                 LOG.trace("  Adding literal {} with value '{}' to {} {}", owlProperty.localname(), value, (enclosingIndividual.isAnon() ? "anonymous individual" : "individual"), (enclosingIndividual.isAnon() ? enclosingIndividual.getId() : enclosingIndividual.getURI()));
