@@ -17,11 +17,33 @@ package org.dataconservancy.cos.osf.packaging;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Resource;
-import org.dataconservancy.cos.osf.packaging.ont.OntologyManager;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 /**
- * Created by esm on 6/5/16.
+ * Provides a facade for managing OWL individuals and properties over an {@link OntologyManager}.
+ * <p>
+ * The intent of this class is to represent a graph of objects that will eventually be packaged according to the Data
+ * Conservancy Packaging Specification.  In the future this class will support methods that facilitate packaging.
+ * At this time, however, it simply offers convenience methods for creating and retrieving OWL individuals and
+ * properties from the underlying {@code OntologyManager}.
+ * </p>
+ * <p>
+ * The {@link AnnotationsProcessor} uses this class to create OWL individuals and properties.
+ * </p>
+ * <p>
+ * It may be a little obtuse, and subject to change in the future, but this is how the facades relate to each other and
+ * to other classes in this package
+ * </p>
+ * <pre>
+ * Jena OntModel <-- OntologyManager <-- Package Graph <-- AnnotationsProcessor
+ *                                                                   /
+ *                                       OwlAnnotationsProcessor <--+
+ * </pre>
+ *
+ * <h4>Shortcomings</h4>
+ * <ul>
+ *   <li>No explicit methods for supporting graph operations or packages</li>
+ * </ul>
  */
 public class PackageGraph {
 
@@ -54,9 +76,9 @@ public class PackageGraph {
      * @param individualId
      * @return
      */
-    public String newIndividual(OwlClasses owlClass, Object individualId) {
+    public Individual newIndividual(OwlClasses owlClass, Object individualId) {
         Individual individual =  ontMgr.individual(individualId.toString(), owlClass.ns(), owlClass.localname());
-        return individual.getURI();
+        return individual;
     }
 
     /**

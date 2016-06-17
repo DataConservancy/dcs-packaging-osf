@@ -50,8 +50,8 @@
     <owl:ObjectProperty rdf:about="&osfbom;hasFile">
         <rdfs:label xml:lang="en">hasFile</rdfs:label>
         <rdfs:comment xml:lang="en">An object property specifying a file or directory belonging to a node</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Node"/>
-        <rdfs:range rdf:resource="&osfbom;File"/>
+        <rdfs:domain rdf:resource="&osfbom;Folder"/>
+        <rdfs:range rdf:resource="&osfbom;FileBase"/>
     </owl:ObjectProperty>
 
     
@@ -179,6 +179,31 @@
         <rdfs:domain rdf:resource="&osfbom;Event"/>
         <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
     </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasLicense">
+        <rdfs:label xml:lang="en">hasLicense</rdfs:label>
+        <rdfs:comment xml:lang="en">The license that governs the possible re-use of the content relating to a Node or Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;License"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasProvider -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasProvider">
+        <rdfs:label xml:lang="en">hasProvider</rdfs:label>
+        <rdfs:comment xml:lang="en">A property referencing a storage provider for a Node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&osfbom;Provider"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#providedBy -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;providedBy">
+        <rdfs:label xml:lang="en">providedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">A property referencing the storage provider for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileEntity"/>
+        <rdfs:range rdf:resource="&osfbom;Provider"/>
+    </owl:ObjectProperty>
     
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -297,7 +322,7 @@
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasCurrentUserPermissions -->
     <!-- TODO: probably should be an ObjectProperty, because permissions are complex objects -->
-    <owl:DatatypeProperty rdf:about="&osfbom;hasCurrentuserPermissions">
+    <owl:DatatypeProperty rdf:about="&osfbom;hasCurrentUserPermissions">
         <rdfs:label xml:lang="en">hasCurrentUserPermissions</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the current user permissions of the Node </rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
@@ -355,7 +380,7 @@
 
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasDescription -->
-
+    <!-- TODO: sub property of dcterms:description instead of a rdfs:range of dcterms:description -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasDescription">
         <rdfs:label xml:lang="en">hasDescription</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying a description of a Node or Registration</rdfs:comment>
@@ -455,13 +480,12 @@
         <rdfs:label xml:lang="en">hasHref</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the URI of a Link or RelatedLink</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;LinkBase"/>
-        <!-- TODO: don't think that 'hasHref' property is a subproperty of xsd:anyUri because
-             anyUri is a type; probably a rdfs:range of anyUri needed.-->
-        <rdfs:subPropertyOf rdf:resource="&xsd;anyUri"/>
+        <rdfs:range rdf:resource="&xsd;anyUri"/>
     </owl:DatatypeProperty>
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasId -->
 
+    <!-- TODO: Consider making this a subclass of dcterms:identifier instead of using dcterms:identifier as a range -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasId">
         <rdfs:label xml:lang="en">hasId</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the business ID of a OSFBusinessObject</rdfs:comment>
@@ -611,15 +635,6 @@
         <rdfs:range rdf:resource="&xsd;anyUri"/>
     </owl:DatatypeProperty>
 
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasProvider -->
-
-    <owl:DatatypeProperty rdf:about="&osfbom;hasProvider">
-        <rdfs:label xml:lang="en">hasProvider</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the storage provider for a file  </rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;File"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#isPublic -->
 
@@ -712,6 +727,8 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
+    <!-- TODO registered from? -->
+    
     <!-- TODO registered_meta.* Found in data.attributes -->
     
 
@@ -758,6 +775,7 @@
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasTitle -->
 
+<!-- TODO: subproperty of dcterms:title instead of a rdfs:range of dcterms:title -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasTitle">
         <rdfs:label xml:lang="en">hasTitle</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
@@ -807,6 +825,20 @@
         <rdfs:domain rdf:resource="&osfbom;Event"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseName">
+        <rdfs:label xml:lang="en">hasLicenseName</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseText">
+        <rdfs:label xml:lang="en">hasLicenseText</rdfs:label>
+        <rdfs:comment xml:lang="en">The legal text of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -851,6 +883,19 @@
         <owl:disjointWith rdf:resource="&osfbom;User"/>
         <rdfs:comment xml:lang="en">
             Encapsulates an action performed by an agent to accomplish some task
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#License -->
+    
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Liceneses really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
+    <owl:Class rdf:about="&osfbom;License">
+        <rdfs:label xml:lang="en">License</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:comment xml:lang="en">
+            Represents a licence governing the use of the information encapsulated by a Node or Registration.
         </rdfs:comment>
     </owl:Class>
     
@@ -938,6 +983,9 @@
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#Contributor -->
     <!-- TODO: consider subclassing foaf:Person -->
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Contributors really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
     <owl:Class rdf:about="&osfbom;Contributor">
       <rdfs:label xml:lang="en">Contributor</rdfs:label>
       <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
@@ -979,7 +1027,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#FileBase -->
     <owl:Class rdf:about="&osfbom;FileBase">
       <rdfs:label xml:lang="en">FileBase</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
       <owl:disjointWith rdf:resource="&osfbom;User"/>
       <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
       <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
@@ -989,7 +1037,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#File --> 
     <owl:Class rdf:about="&osfbom;File">
       <rdfs:label xml:lang="en">File</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
       <owl:disjointWith rdf:resource="&osfbom;Folder"/>
       <owl:disjointWith rdf:resource="&osfbom;Provider"/>
     </owl:Class>    
@@ -997,7 +1045,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#Folder -->
     <owl:Class rdf:about="&osfbom;Folder">
       <rdfs:label xml:lang="en">Folder</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
       <owl:disjointWith rdf:resource="&osfbom;File"/>
       <owl:disjointWith rdf:resource="&osfbom;Provider"/>
     </owl:Class>    
@@ -1005,7 +1053,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#Provider -->
     <owl:Class rdf:about="&osfbom;Provider">
       <rdfs:label xml:lang="en">Provider</rdfs:label>
-      <owl:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
       <owl:disjointWith rdf:resource="&osfbom;File"/>
       <owl:disjointWith rdf:resource="&osfbom;Folder"/>
     </owl:Class>
@@ -1013,6 +1061,7 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#FileEntity -->
     <owl:Class rdf:about="&osfbom;FileEntity">
       <rdfs:label xml:lang="en">FileEntity</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
       <owl:equivalentClass>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
