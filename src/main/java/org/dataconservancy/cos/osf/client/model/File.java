@@ -17,11 +17,14 @@ package org.dataconservancy.cos.osf.client.model;
 
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonSetter;
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.DownloadLinkTransform;
 import org.dataconservancy.cos.osf.client.support.FileIdTransform;
 import org.dataconservancy.cos.osf.client.support.ProviderIdTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
@@ -73,6 +76,7 @@ public class File {
         
     /**Gets other links found in data.links:{} section of JSON**/
     @Links
+    @OwlProperty(value = OwlProperties.OSF_HAS_BINARYURI, transform = DownloadLinkTransform.class)
     Map<String, ?> links;        
     
     /**pagination links, applies when list is returned**/
