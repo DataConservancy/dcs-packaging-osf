@@ -137,6 +137,8 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         final String registeredByUserId = "qmdz6";
         final String registeredFromNodeId = "3e7rd";
         final String contributorUserId = "bwgcm";
+        final String registrationStorageProviderId = registrationId + ":osfstorage";
+        final String childRegistrationStorageProviderId = childRegistrationId + ":osfstorage";
 
         // Step one: retrieve all of the objects that we want to serialize into the package:
         //   - Registration
@@ -226,10 +228,40 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertHasTypedLiteralWithValue(registrationIndividual, OwlProperties.OSF_IS_WITHDRAWN, "false", XSDDatatype.XSDboolean);
         assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_REGISTERED_BY, asResource(registeredByUserId));
         assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_REGISTERED_FROM, asResource(registeredFromNodeId));
+        assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_HAS_HASPROVIDER, asResource(registrationStorageProviderId));
+        Set<RDFNode> tags = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_TAG)).toSet();
+        assertEquals(1, tags.size());
+        assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newtag")));
+
+        Set<RDFNode> perms = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_CURRENTUSERPERMISSION)).toSet();
+        assertEquals(3, perms.size());
+        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("READ")));
+        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("WRITE")));
+        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("ADMIN")));
 
         //   the Individual for the Child Registration
         final Individual childRegistrationIndividual = ontologyManager.getOntModel().getIndividual(childRegistrationId);
         assertNotNull(childRegistrationIndividual);
+        assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_CATEGORY, Category.DATA.name());
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATECREATED, "2016-06-07T18:46:14.778Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATEMODIFIED, "2016-06-07T21:47:39.006Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATEREGISTERED, "2016-06-07T21:53:10.766Z", XSDDatatype.XSDdateTime);
+        assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT, "Open-Ended Registration");
+        // TODO: /root/ relationship is missing from the parent registration's /children/ relationship
+        // assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_ROOT, asResource(registrationId));
+        assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_TITLE, "Raw Experimental Data");
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_IS_COLLECTION, "false", XSDDatatype.XSDboolean);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_IS_FORK, "false", XSDDatatype.XSDboolean);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_IS_PENDINGEMBARGOAPPROVAL, "false", XSDDatatype.XSDboolean);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_IS_PENDINGREGISTRATIONAPPROVAL, "false", XSDDatatype.XSDboolean);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_IS_PUBLIC, "true", XSDDatatype.XSDboolean);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_IS_REGISTRATION, "true", XSDDatatype.XSDboolean);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_IS_WITHDRAWN, "false", XSDDatatype.XSDboolean);
+        assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_HASPROVIDER, asResource(childRegistrationStorageProviderId));
+
+        // TODO: confirm that registered_by and registered_from are not attributes on child registrations
+//        assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_REGISTERED_BY, asResource(registeredByUserId));
+//        assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_REGISTERED_FROM, asResource(registeredFromNodeId));
 
         //   the Individuals for the Users; each Java User instance should have an OWL Individual
         final List<Individual> userIndividuals = users.stream().map(User::getId).map(ontologyManager::individual).collect(Collectors.toList());
@@ -299,19 +331,30 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertTrue(registeredByContributorNode.asResource().hasLiteral(asProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC), false));
         assertTrue(registeredByContributorNode.asResource().hasLiteral(asProperty(OwlProperties.OSF_HAS_PERMISSION), "ADMIN"));
 
+        //   the anonymous Individuals for License information
+        Set<RDFNode> licenseNodes = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_LICENSE)).toSet();
+        assertEquals(1, licenseNodes.size());
+        RDFNode license = licenseNodes.iterator().next();
+        assertTrue(license.isAnon());
+        assertTrue(license.asResource().hasProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_NAME)));
+        assertTrue(license.asResource().hasProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_TEXT)));
+        assertTrue(license.asResource().hasLiteral(asProperty(OwlProperties.OSF_HAS_LICENSE_NAME), "CC-By Attribution 4.0 International"));
+        assertTrue(license.asResource().getProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_TEXT)).getLiteral().getString().startsWith("Creative Commons Attribution 4.0 International Public License"));
+
+        //   the storage providers
+        final Individual registrationStorageProvider = ontologyManager.individual(registrationStorageProviderId);
+        final Individual childStorageProvider = ontologyManager.individual(childRegistrationStorageProviderId);
+        final Set<Individual> providersByClass = ontologyManager.getOntModel().listIndividuals(ontologyManager.owlClass(OwlClasses.OSF_PROVIDER.ns(), OwlClasses.OSF_PROVIDER.localname())).toSet();
+        assertNotNull(registrationStorageProvider);
+        assertNotNull(childStorageProvider);
+        assertNotNull(providersByClass);
+        assertEquals(2, providersByClass.size());
+        assertTrue(providersByClass.stream().anyMatch(candidateProvider -> candidateProvider.getURI().equals(registrationStorageProviderId)));
+        assertTrue(providersByClass.stream().anyMatch(candidateProvider -> candidateProvider.getURI().equals(childRegistrationStorageProviderId)));
 
 
 
 
-        Set<RDFNode> tags = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_TAG)).toSet();
-        assertEquals(1, tags.size());
-        assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newtag")));
-
-        Set<RDFNode> perms = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_CURRENTUSERPERMISSION)).toSet();
-        assertEquals(3, perms.size());
-        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("READ")));
-        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("WRITE")));
-        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("ADMIN")));
 
         assertTrue(ontologyManager.individual(registrationId).hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
         assertFalse(ontologyManager.individual(registrationId).hasOntClass(OwlClasses.OSF_USER.fqname()));
@@ -328,18 +371,6 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertFalse(ontologyManager.individual(registeredFromNodeId).hasOntClass(OwlClasses.OSF_REGISTRATION.fqname()));
 
 
-
-
-
-
-        Set<RDFNode> licenseNodes = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_LICENSE)).toSet();
-        assertEquals(1, licenseNodes.size());
-        RDFNode license = licenseNodes.iterator().next();
-        assertTrue(license.isAnon());
-        assertTrue(license.asResource().hasProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_NAME)));
-        assertTrue(license.asResource().hasProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_TEXT)));
-        assertTrue(license.asResource().hasLiteral(asProperty(OwlProperties.OSF_HAS_LICENSE_NAME), "CC-By Attribution 4.0 International"));
-        assertTrue(license.asResource().getProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_TEXT)).getLiteral().getString().startsWith("Creative Commons Attribution 4.0 International Public License"));
 
     }
 
