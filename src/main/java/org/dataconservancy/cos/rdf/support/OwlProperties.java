@@ -193,7 +193,9 @@ public enum OwlProperties {
 
     OSF_HAS_LICENSE_TEXT ("hasLicenseText"),
 
-    OSF_HAS_BINARYURI ("hasBinaryUri");
+    OSF_HAS_BINARYURI ("hasBinaryUri"),
+
+    OSF_PROVIDER_NAME ("providerName");
 
     private String ns = Rdf.Ns.OSF;
     
