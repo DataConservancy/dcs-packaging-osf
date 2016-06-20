@@ -20,15 +20,20 @@ import org.dataconservancy.cos.osf.client.model.File;
 import java.util.function.Function;
 
 /**
- * Created by esm on 6/8/16.
+ * Creates an id for a File provider in the form {@code nodeId:providerName}.
+ * <p>
+ * TODO: To calculate a provider id, its node is required.  Unfortunately, only the first level of files
+ * in a file hierarchy (the providers) carry a Node instance.  So this class does not work as intended.
+ * </p>
  */
 public class ProviderIdTransform implements Function<File, String> {
 
     @Override
     public String apply(File file) {
-        if (file.getNode() != null) {
-            return file.getNode() + ":" + file.getProvider();
-        }
+        // TODO: If every File instance had a node, then we could reliably produce a provider ID, but we don't.
+//        if (file.getNode() != null) {
+//            return file.getNode() + ":" + file.getProvider();
+//        }
 
         return file.getProvider();
     }

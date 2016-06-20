@@ -56,7 +56,7 @@ public class File {
 
     /*unique OSF ID for the file**/
     @Id
-    @IndividualUri(classTransform = FileIdTransform.class)
+    @IndividualUri
     // class transform the uri to include the provider id with the path.  the path is scoped to an instance of the
     // provider.  if there are two instances of the same provider, is it possible to have conflicting IDs?
     private String id;
@@ -104,7 +104,7 @@ public class File {
 
     /**storage provider for this file. "osfstorage" if stored on the
      * OSF.  other examples include "s3" for Amazon S3, "googledrive"   */
-    @OwlProperty(value = OwlProperties.OSF_PROVIDED_BY, classTransform = ProviderIdTransform.class)
+    @OwlProperty(value = OwlProperties.OSF_PROVIDER_NAME)
     private String provider;
 
     /**node this provider belongs to*/
