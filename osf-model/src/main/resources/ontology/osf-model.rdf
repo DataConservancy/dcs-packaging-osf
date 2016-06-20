@@ -847,6 +847,14 @@
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
     
+    <!-- http://www.dataconservancy.org/osf-business-object-model#providerName -->
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;providerName">
+        <rdfs:label xml:lang="en">providerName</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of the storage provider for a file</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;File"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
 
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
