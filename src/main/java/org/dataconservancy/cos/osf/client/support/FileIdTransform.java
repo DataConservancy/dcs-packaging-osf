@@ -21,14 +21,19 @@ import org.dataconservancy.cos.osf.client.model.File;
 import java.util.function.Function;
 
 /**
- * Created by esm on 6/9/16.
+ * Creates an id for a File in the form {@code providerName:fileId}.
+ * <p>
+ * TODO: To calculate a file id, its node is required.  Unfortunately, only the first level of files
+ * in a file hierarchy (the providers) carry a Node instance.  So this class does not work as intended.
+ * </p>
  */
 public class FileIdTransform implements Function<File, String> {
     @Override
     public String apply(File file) {
-        if (file.getNode() != null) {
-            return file.getId();
-        }
-        return file.getProvider() + ":" + file.getId();
+//        if (file.getNode() != null) {
+//            return file.getId();
+//        }
+//        return file.getProvider() + ":" + file.getId();
+        return file.getId();
     }
 }
