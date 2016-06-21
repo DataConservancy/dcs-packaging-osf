@@ -128,6 +128,12 @@
       </dependency>
 
       <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-ontology</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
         <groupId>com.github.jasminb</groupId>
         <artifactId>jsonapi-converter</artifactId>
         <version>0.3-SNAPSHOT</version>
@@ -250,6 +256,12 @@
     <dependency>
       <groupId>org.dataconservancy.cos</groupId>
       <artifactId>rdf-annotations</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dataconservancy.cos</groupId>
+      <artifactId>osf-ontology</artifactId>
       <scope>compile</scope>
     </dependency>
 
