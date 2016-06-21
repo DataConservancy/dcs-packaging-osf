@@ -13,6 +13,7 @@
     <!ENTITY osfbom "http://www.dataconservancy.org/osf-business-object-model#" >
     <!ENTITY jsonapi "http://jsonapi.org/format/1.0/#" >
     <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY dbpedia "http://dbpedia.org/ontology/" >
 ]>
 
 
@@ -28,6 +29,7 @@
      xmlns:opmv="http://purl.org/net/opmv/ns#"
      xmlns:jsonapi="http://jsonapi.org/format/1.0/#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dbpedia="http://dbpedia.org/ontology/"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <owl:Ontology rdf:about="http://www.dataconservancy.org/osf-business-object-model">
         <dcterms:modified rdf:datatype="&xsd;date">2015-08-18</dcterms:modified>
@@ -224,9 +226,13 @@
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
     
-    <!-- TODO: double-check the social-related predicates; currently missing ORCID.  Consider using the
-        DBPedia 'orcidId' property. http://dbpedia.org/ontology/orcidId.
-        Consider attemtping to find other vocabs for other socially-related predicates. -->
+    <owl:DatatypeProperty rdf:about="&osfbom;hasOrcid">
+        <rdfs:label xml:lang="en">hasOrcid</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's ORCID</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&dbpedia;orchidId"/>
+    </owl:DatatypeProperty>
+
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasBaiduId -->
 
