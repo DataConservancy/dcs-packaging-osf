@@ -21,7 +21,7 @@ import java.lang.reflect.AnnotatedElement;
 /**
  * Links an annotated element with an annotation on that element.  Suitable for use as a key in a {@code Map}.
  * <h4>Examples</h4>
- * An {@code AnnotatedElementPair} for this example would be composed of {@code Class MyClass} and the annotation
+ * This example contains a single {@code AnnotatedElementPair} composed of {@code Class MyClass} and the annotation
  * {@code Class OwlIndividual}:
  * <pre>
  * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
@@ -30,8 +30,8 @@ import java.lang.reflect.AnnotatedElement;
  * }
  * </pre>
  *
- * If a field is added to the example like so, an {@code AnnotatedElementPair} for the field would be composed of
- * {@code Field id} and the annotation {@code Class IndividualId}:
+ * After adding a field annotated with {@code IndividualId}, another {@code AnnotatedElementPair} would exist,
+ * composed of {@code Field id} and the annotation {@code Class IndividualId}:
  * <pre>
  * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
  * public class MyClass {
@@ -41,9 +41,9 @@ import java.lang.reflect.AnnotatedElement;
  * }
  * </pre>
  *
- * If another field is added to the example like so, two more {@code AnnotatedElementPair}s can be composed by:
- * {@code Field foo} and the annotation {@code Class OwlProperties}, and {@code Field foo} and the annotation
- * {@code Class AnonIndividual}:
+ * Adding a second field annotated with {@code OwlProperties} and {@code AnonIndividual} would create two
+ * more {@code AnnotatedElementPair}s composed by: {@code Field foo} and the annotation {@code Class OwlProperties},
+ * and {@code Field foo} and the annotation {@code Class AnonIndividual}:
  * <pre>
  * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
  * public class MyClass {
@@ -68,10 +68,19 @@ public class AnnotatedElementPair {
         this.annotationClass = annotationClass;
     }
 
+    /**
+     * Obtain the {@code AnnotatedElement} referenced by this pair.
+     *
+     * @return
+     */
     public AnnotatedElement getAnnotatedElement() {
         return annotatedElement;
     }
 
+    /**
+     * Obtain the {@code AnnotationClass} referenced by this pair.
+     * @return
+     */
     public Class<? extends Annotation> getAnnotationClass() {
         return annotationClass;
     }

@@ -19,9 +19,7 @@ import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.annotations.TransformMode;
-import org.dataconservancy.cos.rdf.support.IdentityTransform;
 import org.dataconservancy.cos.ont.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.ToStringTransform;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotationAttributes;
@@ -48,29 +46,40 @@ public class OwlAnnotationProcessor {
 
     private static final Logger LOG = LoggerFactory.getLogger(OwlAnnotationProcessor.class);
 
+    /**
+     * Cache of field transformers for the {@code OwlProperty#transform()} attribute.  Populated by
+     * {@link #populateTransformers(Map)}
+     */
     private static final ConcurrentHashMap<Class<? extends Function>, Function> FIELD_TRANSFORMERS =
             new ConcurrentHashMap<>();
 
+    /**
+     * Cache of class transformers for the {@code OwlProperty#transform()} attribute.  Populated by
+     * {@link #populateTransformers(Map)}
+     */
     private static final ConcurrentHashMap<Class<? extends Function>, Function> CLASS_TRANSFORMERS =
             new ConcurrentHashMap<>();
 
+    /**
+     * Cache of field transformers for the {@code IndividualUri#transform()} attribute.  Populated by
+     * {@link #populateTransformers(Map)}
+     */
     private static final ConcurrentHashMap<Class<? extends Function>, Function> URI_FIELD_TRANSFORMERS =
             new ConcurrentHashMap<>();
 
+    /**
+     * Cache of class transformers for the {@code IndividualUri#transform()} attribute.  Populated by
+     * {@link #populateTransformers(Map)}
+     */
     private static final ConcurrentHashMap<Class<? extends Function>, Function> URI_CLASS_TRANSFORMERS =
             new ConcurrentHashMap<>();
 
-    static {
-        FIELD_TRANSFORMERS.put(OwlProperty.DEFAULT_TRANSFORM_FUNCTION,
-                newFunction(OwlProperty.DEFAULT_TRANSFORM_FUNCTION));
-        CLASS_TRANSFORMERS.put(OwlProperty.DEFAULT_TRANSFORM_FUNCTION,
-                newFunction(OwlProperty.DEFAULT_TRANSFORM_FUNCTION));
-        URI_FIELD_TRANSFORMERS.put(IndividualUri.DEFAULT_TRANSFORM_FUNCTION,
-                newFunction(IndividualUri.DEFAULT_TRANSFORM_FUNCTION));
-        URI_CLASS_TRANSFORMERS.put(IndividualUri.DEFAULT_TRANSFORM_FUNCTION,
-                newFunction(IndividualUri.DEFAULT_TRANSFORM_FUNCTION));
-    }
-
+    /**
+     * Instantiate an instance of the supplied {@code Function} class.
+     *
+     * @param functionClass the function to instantiate
+     * @return an instance of the {@code Function} specified by {@code functionClass}
+     */
     private static Function newFunction(Class<? extends Function> functionClass) {
         try {
             return functionClass.newInstance();
@@ -81,10 +90,10 @@ public class OwlAnnotationProcessor {
     }
 
     /**
-     * Creates single instances of the transformers found on each annotated element, and caches them in static member
-     * fields.
+     * Creates single instances of the transformer {@code Function}s found on each annotated element, and caches them in static member
+     * fields according to their {@code TransformMode}.
      *
-     * @param annotations
+     * @param annotations a map annotated elements and their attributes
      */
     private static void populateTransformers(Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
         annotations.keySet().stream()
@@ -119,14 +128,7 @@ public class OwlAnnotationProcessor {
 
     /**
      * Processes the transformation of fields annotated with {@code OwlProperty}.
-     * Selects a transformer for the supplied {@code field} and invokes it on the supplied {@code fieldValue}.  This
-     * method selects a field {@code transformer} or a {@code classTransformer} using the following rubric:
-     * <ul>
-     *     <li>prefer a non-default, non-identity field transformer</li>
-     *     <li>prefer a non-default, non-identity class transformer</li>
-     *     <li>prefer a field transform over a default class transform</li>
-     *     <li>prefer a class transform</li>
-     * </ul>
+     * Selects a transformer for the supplied {@code field} and invokes it on the supplied {@code fieldValue}.
      *
      * @param enclosingObject the object that declares the member {@code field}
      * @param field the field being transformed
@@ -159,14 +161,7 @@ public class OwlAnnotationProcessor {
 
     /**
      * Processes the transformation of fields annotated with {@code IndividualUri}.
-     * Selects a transformer for the supplied {@code field} and invokes it on the supplied {@code fieldValue}.  This
-     * method selects a field {@code transformer} or a {@code classTransformer} using the following rubric:
-     * <ul>
-     *     <li>prefer a non-default, non-tostring field transformer</li>
-     *     <li>prefer a non-default, non-tostring class transformer</li>
-     *     <li>prefer a field transform over a default class transform</li>
-     *     <li>prefer a class transform</li>
-     * </ul>
+     * Selects a transformer for the supplied {@code field} and invokes it on the supplied {@code fieldValue}.
      *
      * @param enclosingObject the object that declares the member {@code field}
      * @param annotatedField the field being transformed
@@ -232,8 +227,10 @@ public class OwlAnnotationProcessor {
             Object value = f.get(object);
 
             if (value != null) {
+                // Unwrap fields that are Collection or Array types.
                 Stream<?> unwrappedValues = unwrap(f, value);
                 Optional<?> element = unwrappedValues.findFirst();
+                // Obtain the annotations on first element found in the Collection or Array
                 if (element.isPresent()) {
                     getAnnotationsForInstance(element.get(), result);
                 }
@@ -241,6 +238,7 @@ public class OwlAnnotationProcessor {
         },
         f -> (isCollection(f.getType()) || isArray(f.getType())) && !object.getClass().isEnum());
 
+        // Instantiate and cache any transformation functions that are present on the annotated elements
         populateTransformers(result);
     }
 
@@ -339,21 +337,25 @@ public class OwlAnnotationProcessor {
     }
 
     /**
-     * Obtains the value of the field annotated with {@code IndividualUri} on the supplied object.  Performs any
-     * transformation on the value before returning the transformed value.
+     * Obtains the value of the field annotated with {@code IndividualUri} on the supplied object, {@code o}.  Performs
+     * any transformation on the value of the field before returning the value.
      *
-     * @param o
-     * @param attributesMap
+     * @param o an object containing fields that may be annotated with {@code IndividualUri}
+     * @param attributesMap a map annotated elements and their attributes
      * @param <T> the type of the field annotated with {@code IndividualUri}
      * @param <R> the type of the field annotated with {@code IndividualUri} after transformation
-     * @return the transformed value of the {@code IndividualUri} field
+     * @return the transformed value of the field annotated with {@code IndividualUri}
+     * @throws IllegalArgumentException if no field of object {@code o} is found to be annotated with
+     * {@code IndividualUri}, or if more than one field is annotated with {@code IndividualUri}
      */
     public static <T, R> R getIndividualId(Object o, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
         Class<OwlIndividual> owlIndividualClass = OwlIndividual.class;
         Class<IndividualUri> individualUriClass = IndividualUri.class;
 
+        // Fields annotated with {@code IndividualUri}
         List<Field> annotatedFields = new ArrayList<>();
 
+        // Select fields that are annotated with {@code IndividualUri} and add them to the list
         ReflectionUtils.doWithFields(o.getClass(),
                 annotatedFields::add,
                 field -> field.getDeclaredAnnotation(individualUriClass) != null);

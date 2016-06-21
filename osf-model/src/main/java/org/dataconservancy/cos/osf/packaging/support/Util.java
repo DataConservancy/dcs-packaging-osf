@@ -15,8 +15,6 @@
  */
 package org.dataconservancy.cos.osf.packaging.support;
 
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 
