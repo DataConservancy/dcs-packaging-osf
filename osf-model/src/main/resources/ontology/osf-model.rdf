@@ -74,48 +74,13 @@
         <rdfs:range rdf:resource="&osfbom;User"/>
     </owl:ObjectProperty>
     
-    
-    
-
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasLink -->
-
-    <!-- TODO: revisit the domain of this property.  The way this is now, any
-        resource that possesses a 'hasLink' property is an OSFBusinessObject, but
-        I'm not sure that's the correct semantic -->
-    <owl:ObjectProperty rdf:about="&osfbom;hasLink">
-        <rdfs:label xml:lang="en">hasLink</rdfs:label>
-        <rdfs:comment xml:lang="en">An object property specifying a link</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
-        <rdfs:range rdf:resource="&osfbom;Link"/>
-    </owl:ObjectProperty>
-    
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasNode -->
     <owl:ObjectProperty rdf:about="&osfbom;hasNode">
         <rdfs:label xml:lang="en">hasNode</rdfs:label>
         <rdfs:comment xml:lang="en">An object property specifying a node for a provider</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Provider"/>
         <rdfs:range rdf:resource="&osfbom;Node"/>
-    </owl:ObjectProperty>
- 
- 
-    <!-- TODO: revisit the domain of this property.  The way this is now, any
-        resource that possesses a 'hasRelationship' property is an OSFBusinessObject, but
-        I'm not sure that's the correct semantic -->
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasRelationship -->
-    <owl:ObjectProperty rdf:about="&osfbom;hasRelationship">
-      <rdfs:label xml:lang="en">hasRelationship</rdfs:label>
-      <rdfs:comment xml:lang="en">An object property specifying a Relationship </rdfs:comment>
-      <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
-      <rdfs:range rdf:resource="&osfbom;Relationship"/>
-    </owl:ObjectProperty>
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasRelatedLink -->
-    <owl:ObjectProperty rdf:about="&osfbom;hasRelatedLink">
-      <rdfs:label xml:lang="en">hasRelatedLink</rdfs:label>
-      <rdfs:comment xml:lang="en">An object property specifying a link for a relationship</rdfs:comment>
-      <rdfs:domain rdf:resource="&osfbom;Relationship"/>
-      <rdfs:range rdf:resource="&osfbom;RelatedLink"/>
-    </owl:ObjectProperty>
+    </owl:ObjectProperty>    
     
     <owl:ObjectProperty rdf:about="&osfbom;registeredFrom">
         <rdfs:label xml:lang="en">registeredFrom</rdfs:label>
@@ -473,16 +438,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
 
-
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasHref -->
-
-    <owl:DatatypeProperty rdf:about="&osfbom;hasHref">
-        <rdfs:label xml:lang="en">hasHref</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the URI of a Link or RelatedLink</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;LinkBase"/>
-        <rdfs:range rdf:resource="&xsd;anyUri"/>
-    </owl:DatatypeProperty>
-
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasId -->
 
     <!-- TODO: Consider making this a subclass of dcterms:identifier instead of using dcterms:identifier as a range -->
@@ -560,7 +515,7 @@
     <owl:DatatypeProperty rdf:about="&osfbom;hasMeta">
       <rdfs:label xml:lang="en">hasMeta</rdfs:label>
       <rdfs:comment xml:lang="en">A data property specifying metadata for a related link </rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;RelatedLink"/>
+        <!-- TODO: this was osf:RelatedLink, but that class is gone, so the domain is just owl:Thing for now. -->
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>      
     
@@ -663,29 +618,7 @@
         <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Registration"/>
         <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasRelationshipType -->
-
-    <owl:DatatypeProperty rdf:about="&osfbom;hasRelationshipType">
-        <rdfs:label xml:lang="en">hasRelationshipType</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the type of a Relationship</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Relationship"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasRelatedLinkType -->
-
-    <owl:DatatypeProperty rdf:about="&osfbom;hasRelatedLinkType">
-        <rdfs:label xml:lang="en">hasRelatedLinkType</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the type of a RelatedLink</rdfs:comment>
-        <!-- TODO: should be the domain of Link (or linkbase?) because all links have a type,
-        not just related links -->        
-        <rdfs:domain rdf:resource="&osfbom;RelatedLink"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-
+    </owl:DatatypeProperty>   
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasResearcherId -->
 
@@ -1005,39 +938,6 @@
     <owl:Class rdf:about="&osfbom;Contributor">
       <rdfs:label xml:lang="en">Contributor</rdfs:label>
       <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
-    </owl:Class>
-
-    <!-- http://www.dataconservancy.org/osf-business-object-model#Relationship -->
-    <owl:Class rdf:about="&osfbom;Relationship">
-      <rdfs:label xml:lang="en">Relationship</rdfs:label>
-      <rdfs:disjointWith rdf:resource="&osfbom;OSFBusinessObject"/>
-      <rdfs:disjointWith rdf:resource="&osfbom;LinkBase"/>
-    </owl:Class>
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#LinkBase -->
-    <!-- TODO: difference/reasoning for Link and LinkBase? -->
-    <owl:Class rdf:about="&osfbom;LinkBase">
-      <rdfs:label xml:lang="en">LinkBase</rdfs:label>
-      <owl:disjointWith rdf:resource="&osfbom;OSFBusinessObject"/>
-      <owl:disjointWith rdf:resource="&osfbom;Relationship"/>
-    </owl:Class>      
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#Link -->
-    <owl:Class rdf:about="&osfbom;Link">
-      <rdfs:label xml:lang="en">Link</rdfs:label>
-      <rdfs:subClassOf rdf:resource="&osfbom;LinkBase"/>
-    </owl:Class>
-
-    <!-- TODO: difference between Link and RelatedLink?  I think 
-        they can be collapsed? -->
-    <!-- "Link" describes the resource object, "relatedlink" describes a
-        "relationship", I think -->
-    <!-- TODO: consider creating a vocabulary from https://tools.ietf.org/html/rfc5988 to
-        represent links and their properties (like relationship type, etc.). -->
-    <!-- http://www.dataconservancy.org/osf-business-object-model#RelatedLink -->
-    <owl:Class rdf:about="&osfbom;RelatedLink">
-      <rdfs:label xml:lang="en">RelatedLink</rdfs:label>
-      <rdfs:subClassOf rdf:resource="&osfbom;LinkBase"/>
     </owl:Class>
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#FileBase -->
