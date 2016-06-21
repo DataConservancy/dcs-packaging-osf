@@ -36,17 +36,19 @@ import java.util.function.Function;
 public @interface IndividualUri {
 
     /**
-     * Class constant identifying the default transformation function
+     * Class constant identifying the default transformation function.
      */
     static final Class<? extends Function> DEFAULT_TRANSFORM_FUNCTION = ToStringTransform.class;
 
     /**
-     * String constant identifying the annotation attribute {@link #transform()}
+     * String constant identifying the annotation attribute {@link #transform()}.  Useful when using this
+     * annotation with the Java Reflection API.
      */
     static final String TRANSFORM = "transform";
 
     /**
-     * String constant identifying the annotation attribute {@link #mode()}
+     * String constant identifying the annotation attribute {@link #mode()}. Useful when using this
+     * annotation with the Java Reflection API.
      */
     static final String TRANSFORM_MODE = "mode";
 
