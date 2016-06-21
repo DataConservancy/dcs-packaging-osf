@@ -285,15 +285,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasCurrentUserPermissions -->
-    <!-- TODO: probably should be an ObjectProperty, because permissions are complex objects -->
-    <owl:DatatypeProperty rdf:about="&osfbom;hasCurrentUserPermissions">
-        <rdfs:label xml:lang="en">hasCurrentUserPermissions</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the current user permissions of the Node </rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
-
     <!-- http://www.dataconservancy.org/osf-business-object-model#isDashboard -->
 
     <owl:DatatypeProperty rdf:about="&osfbom;isDashboard">
