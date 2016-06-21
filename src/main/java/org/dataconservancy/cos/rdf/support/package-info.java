@@ -15,6 +15,6 @@
  */
 
 /**
- * Provides enumerations of supported OWL properties and classes, relevant RDF constants, and other support classes.
+ * Provides default transformers for OWL annotations
  */
 package org.dataconservancy.cos.rdf.support;
