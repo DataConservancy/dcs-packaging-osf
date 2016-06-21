@@ -15,9 +15,6 @@
  */
 package org.dataconservancy.cos.osf.packaging.support.test.model.OwlAnnotationProcessorTest.testEnum;
 
-import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
-
 import java.util.Arrays;
 import java.util.List;
 

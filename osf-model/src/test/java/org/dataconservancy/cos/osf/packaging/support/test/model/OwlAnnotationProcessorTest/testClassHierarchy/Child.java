@@ -17,7 +17,7 @@ package org.dataconservancy.cos.osf.packaging.support.test.model.OwlAnnotationPr
 
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
-import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.ont.support.OwlClasses;
 
 /**
  * Created by esm on 6/9/16.

@@ -37,9 +37,9 @@ import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.support.AnnotatedElementPair;
 import org.dataconservancy.cos.osf.packaging.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
-import org.dataconservancy.cos.rdf.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
-import org.dataconservancy.cos.rdf.support.Rdf;
+import org.dataconservancy.cos.ont.support.OwlClasses;
+import org.dataconservancy.cos.ont.support.OwlProperties;
+import org.dataconservancy.cos.ont.support.Rdf;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -382,7 +382,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         Map<AnnotatedElementPair, AnnotationAttributes> result = new HashMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(r, result);
-        assertEquals(78, result.size());
+        assertEquals(79, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);

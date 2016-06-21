@@ -18,8 +18,9 @@ package org.dataconservancy.cos.osf.packaging.support;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.annotations.TransformMode;
 import org.dataconservancy.cos.rdf.support.IdentityTransform;
-import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.ont.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.ToStringTransform;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,19 +57,18 @@ public class OwlAnnotationProcessor {
     private static final ConcurrentHashMap<Class<? extends Function>, Function> URI_FIELD_TRANSFORMERS =
             new ConcurrentHashMap<>();
 
-
     private static final ConcurrentHashMap<Class<? extends Function>, Function> URI_CLASS_TRANSFORMERS =
             new ConcurrentHashMap<>();
 
     static {
-        FIELD_TRANSFORMERS.put(OwlProperty.DEFAULT_FIELD_TRANSFORM_FUNCTION,
-                newFunction(OwlProperty.DEFAULT_FIELD_TRANSFORM_FUNCTION));
-        CLASS_TRANSFORMERS.put(OwlProperty.DEFAULT_CLASS_TRANSFORM_FUNCTION,
-                newFunction(OwlProperty.DEFAULT_CLASS_TRANSFORM_FUNCTION));
-        URI_FIELD_TRANSFORMERS.put(IndividualUri.DEFAULT_FIELD_TRANSFORM_FUNCTION,
-                newFunction(IndividualUri.DEFAULT_FIELD_TRANSFORM_FUNCTION));
-        URI_CLASS_TRANSFORMERS.put(IndividualUri.DEFAULT_CLASS_TRANSFORM_FUNCTION,
-                newFunction(IndividualUri.DEFAULT_CLASS_TRANSFORM_FUNCTION));
+        FIELD_TRANSFORMERS.put(OwlProperty.DEFAULT_TRANSFORM_FUNCTION,
+                newFunction(OwlProperty.DEFAULT_TRANSFORM_FUNCTION));
+        CLASS_TRANSFORMERS.put(OwlProperty.DEFAULT_TRANSFORM_FUNCTION,
+                newFunction(OwlProperty.DEFAULT_TRANSFORM_FUNCTION));
+        URI_FIELD_TRANSFORMERS.put(IndividualUri.DEFAULT_TRANSFORM_FUNCTION,
+                newFunction(IndividualUri.DEFAULT_TRANSFORM_FUNCTION));
+        URI_CLASS_TRANSFORMERS.put(IndividualUri.DEFAULT_TRANSFORM_FUNCTION,
+                newFunction(IndividualUri.DEFAULT_TRANSFORM_FUNCTION));
     }
 
     private static Function newFunction(Class<? extends Function> functionClass) {
@@ -91,16 +91,13 @@ public class OwlAnnotationProcessor {
                 .filter(pair -> pair.getAnnotationClass() == OwlProperty.class)
                 .forEach(pair -> {
                     AnnotationAttributes attributes = annotations.get(pair);
-                    Class<? extends Function> fieldTransform = attributes.getClass(OwlProperty.FIELD_TRANSFORM_ATTRIBUTE);
-                    Class<? extends Function> classTransform = attributes.getClass(OwlProperty.CLASS_TRANSFORM_ATTRIBUTE);
+                    Class<? extends Function> transformFunction = attributes.getClass(OwlProperty.TRANSFORM);
 
-
-                    if (fieldTransform != null) {
-                        FIELD_TRANSFORMERS.putIfAbsent(fieldTransform, newFunction(fieldTransform));
-                    }
-
-                    if (classTransform != null) {
-                        CLASS_TRANSFORMERS.putIfAbsent(classTransform, newFunction(classTransform));
+                    TransformMode mode = attributes.getEnum(OwlProperty.TRANSFORM_MODE);
+                    if (mode == TransformMode.FIELD) {
+                        FIELD_TRANSFORMERS.putIfAbsent(transformFunction, newFunction(transformFunction));
+                    } else {
+                        CLASS_TRANSFORMERS.putIfAbsent(transformFunction, newFunction(transformFunction));
                     }
                 });
 
@@ -108,15 +105,14 @@ public class OwlAnnotationProcessor {
                 .filter(pair -> pair.getAnnotationClass() == IndividualUri.class)
                 .forEach(pair -> {
                     AnnotationAttributes attributes = annotations.get(pair);
-                    Class<? extends Function> uriFieldTransform = attributes.getClass(IndividualUri.FIELD_TRANSFORM_ATTRIBUTE);
-                    Class<? extends Function> uriClassTransform = attributes.getClass(IndividualUri.CLASS_TRANSFORM_ATTRIBUTE);
+                    Class<? extends Function> transformFunction = attributes.getClass(IndividualUri.TRANSFORM);
 
-                    if (uriFieldTransform != null) {
-                        URI_FIELD_TRANSFORMERS.putIfAbsent(uriFieldTransform, newFunction(uriFieldTransform));
-                    }
+                    TransformMode mode = attributes.getEnum(OwlProperty.TRANSFORM_MODE);
 
-                    if (uriClassTransform != null) {
-                        URI_CLASS_TRANSFORMERS.putIfAbsent(uriClassTransform, newFunction(uriClassTransform));
+                    if (mode == TransformMode.FIELD) {
+                        URI_FIELD_TRANSFORMERS.putIfAbsent(transformFunction, newFunction(transformFunction));
+                    } else {
+                        URI_CLASS_TRANSFORMERS.putIfAbsent(transformFunction, newFunction(transformFunction));
                     }
                 });
     }
@@ -142,32 +138,20 @@ public class OwlAnnotationProcessor {
     public static Object transform(Object enclosingObject, Field field, Object fieldValue, Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
         OwlProperty property = getOwlProperty(field, annotations);
         Function fieldTransformer = FIELD_TRANSFORMERS.get(property.transform());
-        Function classTransformer = CLASS_TRANSFORMERS.get(property.classTransform());
+        Function classTransformer = CLASS_TRANSFORMERS.get(property.transform());
 
         Object transformedValue;
 
         String logMsg = "    Transforming %s %s with value %s using %s to %s";
 
-        if (property.transform() != IdentityTransform.class && property.transform() != OwlProperty.DEFAULT_FIELD_TRANSFORM_FUNCTION) {
-            // prefer a non-default, non-identity field transformer
+        if (fieldTransformer != null) {
             transformedValue = fieldTransformer.apply(fieldValue);
             LOG.trace(String.format(logMsg, "field", field.getType(), fieldValue, fieldTransformer.getClass().getName(), transformedValue));
 
         } else {
+            transformedValue = classTransformer.apply(enclosingObject);
+            LOG.trace(String.format(logMsg, "class", field.getType(), fieldValue, classTransformer.getClass().getName(), transformedValue));
 
-            if (property.classTransform() != IdentityTransform.class && property.transform() != OwlProperty.DEFAULT_CLASS_TRANSFORM_FUNCTION) {
-                // prefer a non-default, non-identity class transformer
-                transformedValue = classTransformer.apply(enclosingObject);
-                LOG.trace(String.format(logMsg, "class", field.getType(), fieldValue, classTransformer.getClass().getName(), transformedValue));
-
-            } else if (property.classTransform() == OwlProperty.DEFAULT_CLASS_TRANSFORM_FUNCTION) {
-                // prefer a field transform over a default class transform
-                transformedValue = fieldTransformer.apply(fieldValue);
-
-            } else {
-                // otherwise, use the class transform
-                transformedValue = classTransformer.apply(enclosingObject);
-            }
         }
 
         return transformedValue;
@@ -194,7 +178,7 @@ public class OwlAnnotationProcessor {
     public static Object transformIndividualUri(Object enclosingObject, Field annotatedField, Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
         IndividualUri annotation = getIndividualUri(annotatedField, annotations);
         Function fieldTransformer = URI_FIELD_TRANSFORMERS.get(annotation.transform());
-        Function classTransformer = URI_CLASS_TRANSFORMERS.get(annotation.classTransform());
+        Function classTransformer = URI_CLASS_TRANSFORMERS.get(annotation.transform());
 
         ReflectionUtils.makeAccessible(annotatedField);
         Object fieldValue = ReflectionUtils.getField(annotatedField, enclosingObject);
@@ -205,26 +189,14 @@ public class OwlAnnotationProcessor {
         Object transformedValue;
         String logMsg = "    Transforming %s %s with value %s using %s to %s";
 
-        // prefer a non-default, non-tostring field transformer
-        if (annotation.transform() != ToStringTransform.class && annotation.transform() != IndividualUri.DEFAULT_FIELD_TRANSFORM_FUNCTION) {
+        if (fieldTransformer != null) {
             transformedValue = fieldTransformer.apply(fieldValue);
             LOG.trace(String.format(logMsg, "field", annotatedField.getType(), fieldValue, fieldTransformer.getClass().getName(), transformedValue));
 
         } else {
+            transformedValue = classTransformer.apply(enclosingObject);
+            LOG.trace(String.format(logMsg, "class", annotatedField.getType(), fieldValue, classTransformer.getClass().getName(), transformedValue));
 
-            if (annotation.classTransform() != ToStringTransform.class && annotation.classTransform() != IndividualUri.DEFAULT_CLASS_TRANSFORM_FUNCTION) {
-                // prefer a non-default, non-tostring class transformer
-                transformedValue = classTransformer.apply(enclosingObject);
-                LOG.trace(String.format(logMsg, "class", annotatedField.getType(), fieldValue, classTransformer.getClass().getName(), transformedValue));
-
-            } else if (annotation.classTransform() == IndividualUri.DEFAULT_CLASS_TRANSFORM_FUNCTION) {
-                // prefer a field transform over a default class transform
-                transformedValue = fieldTransformer.apply(fieldValue);
-
-            } else {
-                // otherwise, use the class transform
-                transformedValue = classTransformer.apply(enclosingObject);
-            }
         }
 
         return transformedValue;

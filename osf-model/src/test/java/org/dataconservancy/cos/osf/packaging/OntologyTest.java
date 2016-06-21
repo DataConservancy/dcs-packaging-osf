@@ -17,7 +17,7 @@ package org.dataconservancy.cos.osf.packaging;
 
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.ObjectProperty;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.ont.support.OwlProperties;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
