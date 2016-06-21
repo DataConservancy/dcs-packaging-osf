@@ -36,24 +36,19 @@ import java.util.function.Function;
 public @interface IndividualUri {
 
     /**
+     * Class constant identifying the default transformation function
+     */
+    static final Class<? extends Function> DEFAULT_TRANSFORM_FUNCTION = ToStringTransform.class;
+
+    /**
      * String constant identifying the annotation attribute {@link #transform()}
      */
-    static final String FIELD_TRANSFORM_ATTRIBUTE = "transform";
+    static final String TRANSFORM = "transform";
 
     /**
-     * String constant identifying the annotation attribute {@link #classTransform()}
+     * String constant identifying the annotation attribute {@link #mode()}
      */
-    static final String CLASS_TRANSFORM_ATTRIBUTE = "classTransform";
-
-    /**
-     * Class constant identifying the default field transformation function
-     */
-    static final Class<? extends Function> DEFAULT_FIELD_TRANSFORM_FUNCTION = ToStringTransform.class;
-
-    /**
-     * Class constant identifying the default class transformation function
-     */
-    static final Class<? extends Function> DEFAULT_CLASS_TRANSFORM_FUNCTION = ToStringTransform.class;
+    static final String TRANSFORM_MODE = "mode";
 
     /**
      * A function that transforms the value of the annotated field, provided the value of the field.
@@ -98,16 +93,16 @@ public @interface IndividualUri {
     Class<? extends Function<Object, String>> transform() default ToStringTransform.class;
 
     /**
-     * A function that transforms the value of the annotated field, provided an instance of the enclosing class of the
-     * field.
+     * The transformation mode.
      * <p>
-     * The use cases for using a class transform are similar to using a {@link #transform() field transform}, but the
-     * function is provided an instance of the class that declares the annotated field.  This is useful when you wish
-     * to transform the value of the field with additional information contained in the class instance.
+     * A mode of {@link TransformMode#FIELD} means that the value of the annotated field will be supplied to the
+     * transform function.  A mode of {@link TransformMode#CLASS} means that the instance of the class enclosing the
+     * annotated field will be supplied to the transform function.
      * </p>
      *
-     * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field provided an
-     * instance of the class that declares the field.
+     * @return the mode of the transformation function; whether it is accepting an instance of the annotated field or
+     * an instance of the class enclosing the annotated field
      */
-    Class<? extends Function> classTransform() default ToStringTransform.class;
+    TransformMode mode() default TransformMode.FIELD;
+
 }

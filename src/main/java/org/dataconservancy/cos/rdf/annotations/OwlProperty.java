@@ -39,28 +39,23 @@ import java.util.function.Function;
 public @interface OwlProperty {
 
     /**
+     * Class constant identifying the default transformation function
+     */
+    static final Class<? extends Function> DEFAULT_TRANSFORM_FUNCTION = IdentityTransform.class;
+
+    /**
      * String constant identifying the annotation attribute {@link #transform()}
      */
-    static final String FIELD_TRANSFORM_ATTRIBUTE = "transform";
+    static final String TRANSFORM = "transform";
 
     /**
-     * String constant identifying the annotation attribute {@link #classTransform()}
+     * String constant identifying the annotation attribute {@link #mode()}
      */
-    static final String CLASS_TRANSFORM_ATTRIBUTE = "classTransform";
+    static final String TRANSFORM_MODE = "mode";
 
     /**
-     * Class constant identifying the default field transformation function
-     */
-    static final Class<? extends Function> DEFAULT_FIELD_TRANSFORM_FUNCTION = IdentityTransform.class;
-
-    /**
-     * Class constant identifying the default class transformation function
-     */
-    static final Class<? extends Function> DEFAULT_CLASS_TRANSFORM_FUNCTION = IdentityTransform.class;
-
-    /**
-     * The Owl property associated with the annotated field.  This field will be serialized as the object of the
-     * supplied property, and its subject will be that of the containing {@code @OwlIndividal}.
+     * The URI of the OWL property associated with the annotated field.  This field will be serialized as the object of
+     * the supplied property, and its subject will be that of the containing {@code @OwlIndividual}.
      *
      * @return the OWL property associated with this field
      */
@@ -111,16 +106,16 @@ public @interface OwlProperty {
     Class<? extends Function> transform() default IdentityTransform.class;
 
     /**
-     * A function that transforms the value of the annotated field, provided an instance of the enclosing class of the
-     * field.
+     * The transformation mode.
      * <p>
-     * The use cases for using a class transform are similar to using a {@link #transform() field transform}, but the
-     * function is provided an instance of the class that declares the annotated field.  This is useful when you wish
-     * to transform the value of the field with additional information contained in the class instance.
+     * A mode of {@link TransformMode#FIELD} means that the value of the annotated field will be supplied to the
+     * transform function.  A mode of {@link TransformMode#CLASS} means that the instance of the class enclosing the
+     * annotated field will be supplied to the transform function.
      * </p>
      *
-     * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field provided an
-     * instance of the class that declares the field.
+     * @return the mode of the transformation function; whether it is accepting an instance of the annotated field or
+     * an instance of the class enclosing the annotated field
      */
-    Class<? extends Function> classTransform() default IdentityTransform.class;
+    TransformMode mode() default TransformMode.FIELD;
+
 }
