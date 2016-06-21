@@ -12,6 +12,7 @@
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >    
     <!ENTITY osfbom "http://www.dataconservancy.org/osf-business-object-model#" >
     <!ENTITY jsonapi "http://jsonapi.org/format/1.0/#" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
 ]>
 
 
@@ -26,6 +27,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:opmv="http://purl.org/net/opmv/ns#"
      xmlns:jsonapi="http://jsonapi.org/format/1.0/#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <owl:Ontology rdf:about="http://www.dataconservancy.org/osf-business-object-model">
         <dcterms:modified rdf:datatype="&xsd;date">2015-08-18</dcterms:modified>
@@ -124,11 +126,10 @@
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&osfbom;hasEventAgent">
-        <!-- TODO FOAF Agent -->
         <rdfs:label xml:lang="en">hasEventAgent</rdfs:label>
         <rdfs:comment xml:lang="en">The agent responsible for performing the action</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Event"/>
-        <rdfs:range rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&osfbom;hasEventTarget">
