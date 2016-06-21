@@ -15,7 +15,7 @@
  */
 package org.dataconservancy.cos.rdf.annotations;
 
-import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.ont.support.OwlClasses;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -35,8 +35,8 @@ import java.lang.annotation.Target;
 public @interface OwlIndividual {
 
     /**
-     * The Owl class associated with the annotated Java class.  Instances of the annotated Java class will be serialized
-     * as an OWL individual that is an instance of the supplied {@code OwlClasses}.
+     * The URI of the OWL class associated with the annotated Java class.  Instances of the annotated Java class will be
+     * serialized as an OWL individual that is an instance of the supplied OWL class.
      *
      * @return the OWL class associated with this Java class
      */

@@ -15,8 +15,8 @@
  */
 package org.dataconservancy.cos.rdf.annotations;
 
+import org.dataconservancy.cos.ont.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.IdentityTransform;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -24,7 +24,6 @@ import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**

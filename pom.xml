@@ -51,6 +51,13 @@
   <!-- Provided  =================================================== -->
 
   <!-- Compile  ==================================================== -->
+
+    <dependency>
+      <groupId>org.dataconservancy.cos</groupId>
+      <artifactId>osf-ontology</artifactId>
+      <version>${project.parent.version}</version>
+      <scope>compile</scope>
+    </dependency>
     
   <!-- Runtime  ==================================================== -->
 
