@@ -25,8 +25,8 @@ import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.rdf.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.ont.support.OwlClasses;
+import org.dataconservancy.cos.ont.support.OwlProperties;
 
 /**
  * POJO representation of OSF Node in OSF API V2
