@@ -20,7 +20,7 @@ import java.util.function.Function;
 /**
  * Function that transforms its argument to a {@code String}
  */
-public class ToStringTransform implements Function<Object, String> {
+public final class ToStringTransform implements Function<Object, String> {
 
     /**
      * {@inheritDoc}
