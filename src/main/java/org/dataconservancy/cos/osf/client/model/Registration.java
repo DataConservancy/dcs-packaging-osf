@@ -23,8 +23,8 @@ import java.util.List;
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.rdf.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.ont.support.OwlClasses;
+import org.dataconservancy.cos.ont.support.OwlProperties;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
