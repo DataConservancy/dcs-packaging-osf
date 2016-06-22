@@ -283,4 +283,35 @@
 
   </dependencies>
 
+  <!-- Repositories =============================================== -->
+
+  <repositories>
+    <repository>
+      <id>dc.maven.releases</id>
+      <name>Data Conservancy Public Maven 2 Repository (releases)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>dc.maven.snapshots</id>
+      <name>Data Conservancy Public Maven 2 Repository (snapshots)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+  </repositories>
+
 </project>
