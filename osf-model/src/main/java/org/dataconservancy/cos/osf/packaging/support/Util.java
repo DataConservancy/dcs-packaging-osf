@@ -15,6 +15,7 @@
  */
 package org.dataconservancy.cos.osf.packaging.support;
 
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 
@@ -42,5 +43,12 @@ public class Util {
             throw new IllegalArgumentException("uriRef must not be null or empty");
         }
         return ResourceFactory.createResource(uriRef);
+    }
+
+    public static Property asProperty(String uriRef) {
+        if (uriRef == null || uriRef.trim().length() == 0) {
+            throw new IllegalArgumentException("uriRef must not be null or empty");
+        }
+        return ResourceFactory.createProperty(uriRef);
     }
 }
