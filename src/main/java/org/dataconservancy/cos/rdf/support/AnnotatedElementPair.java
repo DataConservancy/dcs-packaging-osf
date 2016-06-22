@@ -20,18 +20,21 @@ import java.lang.reflect.AnnotatedElement;
 
 /**
  * Links an annotated element with an annotation on that element.  Suitable for use as a key in a {@code Map}.
- * <h4>Examples</h4>
+ * <h3>Examples</h3>
+ * <p>
  * This example contains a single {@code AnnotatedElementPair} composed of {@code Class MyClass} and the annotation
  * {@code Class OwlIndividual}:
+ * </p>
  * <pre>
  * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
  * public class MyClass {
  *     // ...
  * }
  * </pre>
- *
+ * <p>
  * After adding a field annotated with {@code IndividualId}, another {@code AnnotatedElementPair} would exist,
  * composed of {@code Field id} and the annotation {@code Class IndividualId}:
+ * </p>
  * <pre>
  * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
  * public class MyClass {
@@ -40,10 +43,11 @@ import java.lang.reflect.AnnotatedElement;
  *     // ...
  * }
  * </pre>
- *
+ * <p>
  * Adding a second field annotated with {@code OwlProperties} and {@code AnonIndividual} would create two
  * more {@code AnnotatedElementPair}s composed by: {@code Field foo} and the annotation {@code Class OwlProperties},
  * and {@code Field foo} and the annotation {@code Class AnonIndividual}:
+ * </p>
  * <pre>
  * &#x40;OwlIndividual(OwlClasses.MY_CLASS)
  * public class MyClass {
@@ -71,7 +75,7 @@ public class AnnotatedElementPair {
     /**
      * Obtain the {@code AnnotatedElement} referenced by this pair.
      *
-     * @return
+     * @return the annotated element
      */
     public AnnotatedElement getAnnotatedElement() {
         return annotatedElement;
@@ -79,7 +83,8 @@ public class AnnotatedElementPair {
 
     /**
      * Obtain the {@code AnnotationClass} referenced by this pair.
-     * @return
+     *
+     * @return the annotation class
      */
     public Class<? extends Annotation> getAnnotationClass() {
         return annotationClass;
