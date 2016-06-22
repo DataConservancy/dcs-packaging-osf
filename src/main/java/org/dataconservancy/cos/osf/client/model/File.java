@@ -30,8 +30,8 @@ import org.dataconservancy.cos.osf.client.support.ProviderIdTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.ont.support.OwlClasses;
-import org.dataconservancy.cos.ont.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

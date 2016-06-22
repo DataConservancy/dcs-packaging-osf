@@ -12,8 +12,8 @@ import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.ont.support.OwlClasses;
-import org.dataconservancy.cos.ont.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.ToStringTransform;
 import org.joda.time.DateTime;
 
