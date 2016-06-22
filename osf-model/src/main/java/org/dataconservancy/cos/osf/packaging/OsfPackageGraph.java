@@ -34,6 +34,41 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
 
 /**
  * Responsible for creating a package graph from OSF domain objects.
+ * <p>
+ * Note that the {@code OsfPackageGraph} creates an instance of the {@link AnnotationsProcessor} internally, and
+ * provides a reference to {@code this} instance.  When OSF domain-specific methods are called (e.g.
+ * {@link #add(Registration)}), the internal instance of {@code AnnotationsProcessor} is invoked, which populates the
+ * underlying {@code OntModel} (via {@code OntologyManager}).
+ * </p>
+ * <pre>
+ * Jena OntModel <-- OntologyManager <-- Package Graph <-- extends - OsfPackageGraph - creates --> AnnotationsProcessor
+ *                                                /
+ *                    OwlAnnotationsProcessor <--+
+ * </pre>
+ * <h3>Example</h3>
+ * <pre>
+ * // Create an OntologyManager, which is a facade around a Jena OntModel
+ * // This facade insures that any OWL classes or properties added to the OntModel are defined in an ontology.
+ *
+ * OntologyManager ontMgr = new OntologyManager(); // uses defaults for the ontology location and URI resolution
+ *
+ * // Create an OsfPackageGraph, which can manipulate the underlying OntModel via the OntologyManager.
+ *
+ * OsfPackageGraph graph = new OsfPackageGraph(ontMgr);
+ *
+ * // Even though the OsfPackageGraph exposes methods to mutate the underlying OntModel, the preferred mechanism is to
+ * // add objects via domain-specific methods.
+ *
+ * Registration osfRegistration = retrieveRegistration("abcde");  // implementation elided for brevity
+ *
+ * // Add the registration to the graph.  
+ * // Under the hood the Registration object will be converted to RDF and added to the underlying model
+ *
+ * Map<String, Individual> individuals = graph.add(osfRegistration);
+ *
+ * // The OWL individuals that are added to the graph are returned, and keyed by their identifier.  Note that the
+ * // Map may contain anonymous OWL individuals.
+ * </pre>
  */
 public class OsfPackageGraph extends PackageGraph {
 
