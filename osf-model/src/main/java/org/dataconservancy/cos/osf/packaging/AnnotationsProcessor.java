@@ -16,8 +16,8 @@
 package org.dataconservancy.cos.osf.packaging;
 
 import org.apache.jena.ontology.Individual;
-import org.dataconservancy.cos.osf.packaging.support.AnnotatedElementPair;
-import org.dataconservancy.cos.osf.packaging.support.OwlAnnotationProcessor;
+import org.dataconservancy.cos.rdf.support.AnnotatedElementPair;
+import org.dataconservancy.cos.rdf.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
