@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging;
+package org.dataconservancy.cos.osf.packaging.support;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
@@ -28,7 +28,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
 /**
- * Created by esm on 6/5/16.
+ * Tests behaviors of the Jena {@code OntModel}
  */
 public class OntTest {
 

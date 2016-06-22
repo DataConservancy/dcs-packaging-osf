@@ -25,6 +25,8 @@ import org.apache.jena.rdf.model.Selector;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
+import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
+import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.Rdf;
 import org.slf4j.Logger;

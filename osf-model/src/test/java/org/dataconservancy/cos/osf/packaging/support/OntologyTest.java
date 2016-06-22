@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging;
+package org.dataconservancy.cos.osf.packaging.support;
 
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.ObjectProperty;
+import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.junit.Test;
 

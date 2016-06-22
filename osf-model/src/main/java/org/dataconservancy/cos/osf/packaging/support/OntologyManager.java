@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging;
+package org.dataconservancy.cos.osf.packaging.support;
 
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.Individual;
@@ -23,6 +23,7 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.dataconservancy.cos.osf.packaging.PackageGraph;
 import org.dataconservancy.cos.rdf.support.Rdf;
 
 import java.io.IOException;
@@ -129,7 +130,7 @@ public class OntologyManager {
      *
      * @return the mutable ontology model encapsulated by this class
      */
-    OntModel getOntModel() {
+    public OntModel getOntModel() {
         return ontModel;
     }
 

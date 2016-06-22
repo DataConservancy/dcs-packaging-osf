@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging;
+package org.dataconservancy.cos.osf.packaging.support;
 
 import org.apache.jena.ontology.Individual;
+import org.dataconservancy.cos.osf.packaging.PackageGraph;
 import org.dataconservancy.cos.rdf.support.AnnotatedElementPair;
 import org.dataconservancy.cos.rdf.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;

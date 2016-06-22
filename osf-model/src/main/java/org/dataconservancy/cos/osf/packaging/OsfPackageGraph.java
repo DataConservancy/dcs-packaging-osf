@@ -24,6 +24,8 @@ import org.apache.jena.rdf.model.Selector;
 import org.apache.jena.rdf.model.Statement;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
+import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
+import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.Rdf;
 
 import java.util.Map;

@@ -34,6 +34,8 @@ import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
+import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.AnnotatedElementPair;
 import org.dataconservancy.cos.rdf.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
