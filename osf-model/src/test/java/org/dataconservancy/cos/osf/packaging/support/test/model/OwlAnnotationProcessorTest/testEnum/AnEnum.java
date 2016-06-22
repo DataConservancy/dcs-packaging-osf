@@ -16,7 +16,7 @@
 package org.dataconservancy.cos.osf.packaging.support.test.model.OwlAnnotationProcessorTest.testEnum;
 
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.ont.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
  * Created by esm on 6/9/16.

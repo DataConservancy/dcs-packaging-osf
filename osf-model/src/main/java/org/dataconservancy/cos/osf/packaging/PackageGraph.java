@@ -17,7 +17,7 @@ package org.dataconservancy.cos.osf.packaging;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Resource;
-import org.dataconservancy.cos.ont.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 /**
  * Provides a facade for managing OWL individuals and properties over an {@link OntologyManager}.

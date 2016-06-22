@@ -17,8 +17,8 @@ package org.dataconservancy.cos.osf.packaging.support.test.model.OwlAnnotationPr
 
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.ont.support.OwlClasses;
-import org.dataconservancy.cos.ont.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 import java.util.List;
 

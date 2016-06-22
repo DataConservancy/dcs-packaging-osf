@@ -19,7 +19,7 @@ import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.annotations.TransformMode;
-import org.dataconservancy.cos.ont.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.AnnotationAttributes;
