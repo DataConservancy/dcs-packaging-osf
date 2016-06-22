@@ -39,7 +39,7 @@ import org.dataconservancy.cos.osf.packaging.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
-import org.dataconservancy.cos.ont.support.Rdf;
+import org.dataconservancy.cos.rdf.support.Rdf;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
