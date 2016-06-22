@@ -25,7 +25,7 @@ import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.ont.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.ToStringTransform;
 
 /**
