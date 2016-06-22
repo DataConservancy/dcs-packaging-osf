@@ -233,12 +233,6 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertEquals(1, tags.size());
         assertTrue(tags.contains(ResourceFactory.createPlainLiteral("newtag")));
 
-        Set<RDFNode> perms = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_CURRENTUSERPERMISSION)).toSet();
-        assertEquals(3, perms.size());
-        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("READ")));
-        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("WRITE")));
-        assertTrue(perms.contains(ResourceFactory.createPlainLiteral("ADMIN")));
-
         //   the Individual for the Child Registration
         final Individual childRegistrationIndividual = ontologyManager.getOntModel().getIndividual(childRegistrationId);
         assertNotNull(childRegistrationIndividual);
