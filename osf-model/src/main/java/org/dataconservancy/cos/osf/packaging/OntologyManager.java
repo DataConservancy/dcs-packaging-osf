@@ -263,6 +263,16 @@ public class OntologyManager {
     }
 
     /**
+     * Returns true if the supplied {@code uri} identifies an OWL individual in the underlying model.
+     *
+     * @param uri a URI which may identify an OWL individual in the underlying model
+     * @return true if the underlying model contains the identified individual
+     */
+    public boolean hasIndividual(String uri) {
+        return ontModel.getIndividual(uri) != null;
+    }
+
+    /**
      * Attempts to return the difference between the read-only model which contains the ontology only, and the
      * mutable model which contains individuals.
      *
