@@ -60,8 +60,8 @@ public class PackageGraph {
      * This method returns the actual {@code Individual} instead of a URI, because anonymous Individuals cannot be
      * referenced by any kind of string identifier.
      *
-     * @param owlClass
-     * @return
+     * @param owlClass the class the created individual will be a member of
+     * @return the OWL individual
      */
     public Individual newIndividual(OwlClasses owlClass) {
         Individual individual = ontMgr.individual(owlClass.ns(), owlClass.localname());
@@ -72,9 +72,9 @@ public class PackageGraph {
      * Create an individual.  Invoking this method with the same OWL class and individual id will return the existing
      * instance of the {@code Individual}, otherwise a new instance is created.
      *
-     * @param owlClass
-     * @param individualId
-     * @return
+     * @param owlClass the class the created individual will be a member of
+     * @param individualId the identifier to be assigned to the newly created individual
+     * @return the OWL individual
      */
     public Individual newIndividual(OwlClasses owlClass, Object individualId) {
         Individual individual =  ontMgr.individual(individualId.toString(), owlClass.ns(), owlClass.localname());
@@ -86,9 +86,9 @@ public class PackageGraph {
      * then setting that individual as the object of a property in the second.  This method will create a new
      * individual for {@code objectIndividualUri}, and use it as a object resource for the {@code propertyUri}.
      *
-     * @param subjectIndividualUri
-     * @param propertyUri
-     * @param objectIndividualUri
+     * @param subjectIndividualUri the subject identifying an OWL individual
+     * @param propertyUri the predicate relating the {@code subjectIndividualUri} to the {@code objectIndividualUri}
+     * @param objectIndividualUri the object identifying an OWL individual
      */
     public void addIndividual(String subjectIndividualUri, String propertyUri, String objectIndividualUri) {
         ontMgr.individual(subjectIndividualUri).addProperty(ontMgr.objectProperty(propertyUri),
@@ -100,9 +100,9 @@ public class PackageGraph {
      * then setting that individual as the object of a property in the second.  This method will create a new
      * individual for {@code objectIndividualUri}, and use it as a object resource for the {@code propertyUri}.
      *
-     * @param individual
-     * @param propertyUri
-     * @param objectIndividualUri
+     * @param individual the subject, an OWL individual
+     * @param propertyUri the predicate relating the {@code individual} to the {@code objectIndividualUri}
+     * @param objectIndividualUri the object identifying an OWL individual
      */
     public void addIndividual(Individual individual, String propertyUri, String objectIndividualUri) {
         individual.addProperty(ontMgr.objectProperty(propertyUri), ontMgr.individual(objectIndividualUri));
@@ -111,9 +111,9 @@ public class PackageGraph {
     /**
      * Adds an anonymous individual to the model.
      *
-     * @param individualUri
-     * @param propertyUri
-     * @param anonIndividual
+     * @param individualUri the subject identifying an OWL individual
+     * @param propertyUri the predicate relating the {@code individualUri} to the {@code anonIndividual}
+     * @param anonIndividual the object, an anonymous OWL individual
      */
     public void addAnonIndividual(String individualUri, String propertyUri, Individual anonIndividual) {
         if (anonIndividual.getURI() != null) {
@@ -127,9 +127,9 @@ public class PackageGraph {
     /**
      * Adds an anonymous individual to the model.
      *
-     * @param individual
-     * @param propertyUri
-     * @param anonIndividual
+     * @param individual the subject, an OWL individual
+     * @param propertyUri the predicate relating the {@code individualUri} to the {@code anonIndividual}
+     * @param anonIndividual the object, an anonymous OWL individual
      */
     public void addAnonIndividual(Individual individual, String propertyUri, Individual anonIndividual) {
         if (anonIndividual.getURI() != null) {
@@ -143,9 +143,9 @@ public class PackageGraph {
     /**
      * Adds a literal as the object of the individual.
      *
-     * @param individualUri
-     * @param propertyUri
-     * @param literal
+     * @param individualUri the subject identifying an OWL individual
+     * @param propertyUri the predicate relating the {@code individualUri} to the {@code literal}
+     * @param literal the object, a literal
      */
     public void addLiteral(String individualUri, String propertyUri, Object literal) {
         Individual individual = ontMgr.individual(individualUri);
@@ -155,9 +155,9 @@ public class PackageGraph {
     /**
      * Adds a literal as the object of the individual.
      *
-     * @param individual
-     * @param propertyUri
-     * @param literal
+     * @param individual the subject, an OWL individual
+     * @param propertyUri the predicate relating the {@code individualUri} to the {@code literal}
+     * @param literal the object, a literal
      */
     public void addLiteral(Individual individual, String propertyUri, Object literal) {
         individual.addLiteral(ontMgr.datatypeProperty(propertyUri), literal);
@@ -166,9 +166,9 @@ public class PackageGraph {
     /**
      * Adds a resource as the object of the individual.
      *
-     * @param individualUri
-     * @param propertyUri
-     * @param resource
+     * @param individualUri the subject identifying an OWL individual
+     * @param propertyUri the predicate relating the {@code individualUri} to the {@code resource}
+     * @param resource the object, a resource
      */
     public void addResource(String individualUri, String propertyUri, Resource resource) {
         Individual individual = ontMgr.individual(individualUri);
@@ -178,9 +178,9 @@ public class PackageGraph {
     /**
      * Adds a resource as the object of the individual.
      *
-     * @param individual
-     * @param propertyUri
-     * @param resource
+     * @param individual the subject, an OWL individual
+     * @param propertyUri the predicate relating the {@code individualUri} to the {@code resource}
+     * @param resource the object, a resource
      */
     public void addResource(Individual individual, String propertyUri, Resource resource) {
         individual.addProperty(ontMgr.objectProperty(propertyUri), resource);
