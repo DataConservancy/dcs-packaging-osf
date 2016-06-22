@@ -117,7 +117,7 @@ public class User {
     private String twitter;
 
     /**orcid id e.g. 0000-1234-1234-1234"*/
-	// TODO @OwlProperty(OwlProperties.OSF_HAS_ORCID)
+	@OwlProperty(OwlProperties.OSF_HAS_ORCID)
     private String orcid;
 
     /**Thomson Reuters Researcher ID e.g. H-9999-9999 **/
