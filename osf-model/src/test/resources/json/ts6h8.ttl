@@ -1,0 +1,71 @@
+@prefix osf:     <http://www.dataconservancy.org/osf-business-object-model#> .
+@prefix ore:     <http://www.openarchives.org/ore/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix opmv:    <http://purl.org/net/opmv/ns#> .
+@prefix xsi:     <http://www.w3.org/2001/XMLSchema-instance> .
+
+
+# Possible alternate forms of the resource id:
+#   - Use a relative URI:
+#     :ts6h8 a osf:Node ; 
+
+# Is this form of a resource ID going to be unique?  
+#   - Unclear how the node id 'ts6h8' is minted.
+<http://localhost:8000/v2/nodes/ts6h8/> a osf:Node ;
+  
+  #####################################
+  # Properties of osf:OSFBusinessObject
+  #####################################
+  
+  # From JSON member data
+  osf:hasId "ts6h8" ;
+  osf:hasType "nodes" ;
+  
+  # Links (from JSON member data.links and data.relationships)
+  osf:hasLink [
+    osf:hasHref "http://localhost:8000/v2/nodes/ts6h8/"^^xsd:anyUri ;
+    osf:hasReltype "self" ;
+  ] ;
+  
+  osf:hasLink [
+    osf:hasHref "http://localhost:5000/ts6h8/"^^xsd:anyUri ;
+    osf:hasReltype "html" ;
+  ] ;
+  
+  osf:hasRelationship [
+    osf:hasRelationshipType "files" ;
+    # TODO: collapse osf:hasRelatedLinkType and osf:hasLink.  Probably osf:hasLink will suffice
+    osf:hasRelatedLinkType [
+      osf:hasRelationshipLinkType "related" ;
+      osf:hasHref "http://localhost:8000/v2/nodes/ts6h8/files/"^^xsd:anyUri ;
+     ] ;
+   ] ;
+  
+  # all the other relationships, not mapped for brevity
+  
+  #####################################
+  # Properties of osf:NodeBase
+  #####################################
+  
+  # From JSON member data.attributes
+  osf:hasCategory "project" ;
+  osf:hasCurrentUserPermissions <TODO: this needs to be a complex object> ;
+  osf:hasDescription "This is my first OSF project using the GUI client." ;
+  
+  #####################################
+  # Properties of osf:Node
+  #####################################
+  
+  # From JSON member data.attributes
+  osf:hasContributor <uri for Contributor> ; # TODO not sure this predicate belongs; 
+                                             # a relationship for contributors already exists
+  osf:isCollection  "false"^^xsd:boolean ; 
+  osf:isFork "false"^^xsd:boolean ;
+  osf:isPublic "false"^^xsd:boolean ;
+  osf:isRegistration "false"^^xsd:boolean .
+  
+  

@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "source": {},
+      "meta": {},
+      "detail": "The requested node is no longer available."
+    }
+  ]
+}

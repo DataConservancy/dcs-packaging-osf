@@ -1,0 +1,350 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/files/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/6uwzk/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/2gqca/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/registrations/2gqca/",
+        "html": "http://192.168.99.100:5000/2gqca/"
+      },
+      "attributes": {
+        "category": "data",
+        "fork": false,
+        "pending_registration_approval": false,
+        "description": null,
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-06-07T17:33:39.732000",
+        "registration_supplement": "Open-Ended Registration",
+        "registered_meta": {
+          "summary": {
+            "value": "Registration of Project 2.",
+            "comments": [],
+            "extra": []
+          }
+        },
+        "title": "Raw Experimental Data",
+        "collection": false,
+        "withdrawn": false,
+        "date_registered": "2016-06-07T17:35:22.077000",
+        "pending_embargo_approval": false,
+        "withdrawal_justification": null,
+        "registration": true,
+        "embargo_end_date": null,
+        "date_created": "2016-06-07T14:46:14.778000",
+        "pending_withdrawal": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "public": true,
+        "tags": []
+      },
+      "type": "registrations",
+      "id": "2gqca"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/files/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/5w8q7/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/x2mjh/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/4r6s7/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/registrations/4r6s7/",
+        "html": "http://192.168.99.100:5000/4r6s7/"
+      },
+      "attributes": {
+        "category": "software",
+        "fork": false,
+        "pending_registration_approval": false,
+        "description": null,
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-06-07T17:33:33.188000",
+        "registration_supplement": "Open-Ended Registration",
+        "registered_meta": {
+          "summary": {
+            "value": "Registration of Project 2.",
+            "comments": [],
+            "extra": []
+          }
+        },
+        "title": "Workflow Execution",
+        "collection": false,
+        "withdrawn": false,
+        "date_registered": "2016-06-07T17:35:22.202000",
+        "pending_embargo_approval": false,
+        "withdrawal_justification": null,
+        "registration": true,
+        "embargo_end_date": null,
+        "date_created": "2016-06-07T14:48:45.312000",
+        "pending_withdrawal": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "public": true,
+        "tags": []
+      },
+      "type": "registrations",
+      "id": "4r6s7"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "prev": null,
+    "next": null,
+    "meta": {
+      "total": 2,
+      "per_page": 10
+    }
+  }
+}

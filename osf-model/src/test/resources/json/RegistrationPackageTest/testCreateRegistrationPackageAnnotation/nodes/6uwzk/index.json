@@ -1,0 +1,130 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/files/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/3e7rd/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/relationships/institution/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/wikis/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/3e7rd/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/children/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/logs/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/6uwzk/",
+      "html": "http://localhost:5000/6uwzk/"
+    },
+    "attributes": {
+      "category": "data",
+      "fork": false,
+      "description": null,
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-06-07T17:53:45.971000",
+      "title": "Raw Experimental Data",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-06-07T14:46:14.778000",
+      "node_license": null,
+      "public": false,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "6uwzk"
+  }
+}

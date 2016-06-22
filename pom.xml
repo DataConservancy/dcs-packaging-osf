@@ -15,7 +15,8 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dataconservancy.cos</groupId>
@@ -23,7 +24,8 @@
   <packaging>pom</packaging>
   <name>OSF Packaging</name>
   <description>Supporting models and code for importing and exporting content from
-    the Center for Open Science Open Science Framework</description>
+    the Center for Open Science Open Science Framework
+  </description>
   <version>1.0.0-SNAPSHOT</version>
 
   <parent>
@@ -33,7 +35,7 @@
   </parent>
 
   <!-- Modules  =================================================== -->
-  
+
   <modules>
     <module>osf-model</module>
     <module>osf-cli</module>
@@ -46,7 +48,7 @@
     <pluginManagement>
 
       <plugins>
-        
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -74,17 +76,17 @@
           <artifactId>maven-verifier-plugin</artifactId>
           <version>1.1</version>
         </plugin>
-        
+
       </plugins>
 
     </pluginManagement>
 
     <plugins>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-        </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
 
     </plugins>
 
@@ -93,9 +95,9 @@
   <!-- Dependency Management ====================================== -->
 
   <dependencyManagement>
-    
+
     <dependencies>
-     
+
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client</artifactId>
@@ -107,6 +109,76 @@
         <artifactId>args4j</artifactId>
         <version>2.32</version>
       </dependency>
+
+  <dependency>   
+    <groupId>org.dataconservancy.cos</groupId>
+    <artifactId>osf-client</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <type>test-jar</type>
+    <classifier>tests</classifier>
+  </dependency>
+
+  <dependency>
+    <groupId>org.dataconservancy.cos</groupId>
+    <artifactId>rdf-annotations</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>4.2.6.RELEASE</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.mock-server</groupId>
+    <artifactId>mockserver-client-java</artifactId>
+    <version>3.10.4</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.mock-server</groupId>
+    <artifactId>mockserver-netty</artifactId>
+    <version>3.10.4</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena-core</artifactId>
+    <version>3.0.1</version>
+    <exclusions>
+      <exclusion>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+      </exclusion>
+    </exclusions>
+  </dependency>
+
+  <dependency>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena-arq</artifactId>
+    <version>3.0.1</version>
+    <exclusions>
+      <exclusion>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+      </exclusion>
+      <exclusion>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+      </exclusion>
+    </exclusions>
+  </dependency>
+
+  <dependency>
+    <groupId>com.diffplug.durian</groupId>
+    <artifactId>durian</artifactId>
+    <version>3.4.0</version>
+  </dependency>
 
     </dependencies>
 
