@@ -1,0 +1,7 @@
+{
+  "data": null,
+  "links": {
+    "self": "http://localhost:8000/v2/nodes/phu9b/relationships/institution/",
+    "related": "http://localhost:8000/v2/nodes/phu9b/institution/"
+  }
+}

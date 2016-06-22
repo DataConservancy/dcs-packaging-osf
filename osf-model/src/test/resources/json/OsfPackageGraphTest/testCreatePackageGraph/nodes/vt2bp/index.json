@@ -1,0 +1,145 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/files/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "forked_from": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/3e7rd/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/relationships/institution/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/wikis/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/children/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/vt2bp/logs/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/vt2bp/",
+      "html": "http://localhost:5000/vt2bp/"
+    },
+    "attributes": {
+      "category": "project",
+      "fork": true,
+      "description": "Test project Two.",
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-06-07T17:34:15.764000",
+      "title": "Second Fork of Project Two",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-06-03T17:53:52.434000",
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "public": false,
+      "tags": [
+        "newtag"
+      ]
+    },
+    "type": "nodes",
+    "id": "vt2bp"
+  }
+}
