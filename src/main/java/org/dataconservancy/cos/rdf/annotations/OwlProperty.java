@@ -15,7 +15,7 @@
  */
 package org.dataconservancy.cos.rdf.annotations;
 
-import org.dataconservancy.cos.ont.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.IdentityTransform;
 
 import java.lang.annotation.Documented;

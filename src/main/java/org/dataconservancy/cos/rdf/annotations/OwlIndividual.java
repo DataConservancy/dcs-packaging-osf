@@ -15,7 +15,7 @@
  */
 package org.dataconservancy.cos.rdf.annotations;
 
-import org.dataconservancy.cos.ont.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
