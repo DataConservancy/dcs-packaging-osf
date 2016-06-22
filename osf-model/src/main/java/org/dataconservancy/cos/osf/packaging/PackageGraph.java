@@ -16,8 +16,22 @@
 package org.dataconservancy.cos.osf.packaging;
 
 import org.apache.jena.ontology.Individual;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.Selector;
+import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.Rdf;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.OutputStream;
+import java.util.Set;
 
 /**
  * Provides a facade for managing OWL individuals and properties over an {@link OntologyManager}.
@@ -47,7 +61,39 @@ import org.dataconservancy.cos.rdf.support.OwlClasses;
  */
 public class PackageGraph {
 
-    private OntologyManager ontMgr;
+    protected static final Logger LOG = LoggerFactory.getLogger(PackageGraph.class);
+
+    protected OntologyManager ontMgr;
+
+    /**
+     * A {@link Selector} which selects all statements.
+     */
+    public final Selector ALWAYS_TRUE_SELECTOR = new Selector() {
+        @Override
+        public boolean isSimple() {
+            return false;
+        }
+
+        @Override
+        public Resource getSubject() {
+            return null;
+        }
+
+        @Override
+        public Property getPredicate() {
+            return null;
+        }
+
+        @Override
+        public RDFNode getObject() {
+            return null;
+        }
+
+        @Override
+        public boolean test(Statement statement) {
+            return true;
+        }
+    };
 
     public PackageGraph(OntologyManager ontMgr) {
         this.ontMgr = ontMgr;
@@ -184,6 +230,37 @@ public class PackageGraph {
      */
     public void addResource(Individual individual, String propertyUri, Resource resource) {
         individual.addProperty(ontMgr.objectProperty(propertyUri), resource);
+    }
+
+    /**
+     * Obtain the OWL individuals that have been added to the graph.
+     *
+     * @return a {@code Set} of OWL individuals.
+     */
+    public Set<Individual> individuals() {
+        return ontMgr.getOntModel().listIndividuals().toSet();
+    }
+
+    /**
+     * Serialize the statements in this graph to the supplied output stream.
+     *
+     * @param out output stream receiving the serialized graph
+     * @param format the format the statements should be serialized in
+     * @param selector used to select the statements to be serialized
+     */
+    public void serialize(OutputStream out, RDFFormat format, Selector selector) {
+        if (selector != ALWAYS_TRUE_SELECTOR) {
+            Model selected = ModelFactory.createDefaultModel();
+            selected.setNsPrefixes(Rdf.Ns.PREFIXES);
+            ontMgr.getOntModel().listStatements(selector).forEachRemaining(statement -> {
+                LOG.debug("Statement selected for Package serialization: {} {} {}",
+                        statement.getSubject(), statement.getPredicate(), statement.getObject());
+                selected.add(statement);
+            });
+            RDFDataMgr.write(out, selected, format);
+        } else {
+            RDFDataMgr.write(out, ontMgr.getOntModel(), format);
+        }
     }
 
 }
