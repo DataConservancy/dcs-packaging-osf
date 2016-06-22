@@ -23,6 +23,7 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+import org.dataconservancy.cos.rdf.support.Rdf;
 
 import java.io.IOException;
 import java.net.URL;
@@ -278,8 +279,12 @@ public class OntologyManager {
      *
      * @return a model containing individuals
      */
-    Model instances() {
-        return ontModel.getBaseModel().difference(readOnlyOntModel.getBaseModel());
+    OntModel instances() {
+        Model m = ontModel.getBaseModel().difference(readOnlyOntModel.getBaseModel());
+        OntModel ontM = ModelFactory.createOntologyModel();
+        ontM.setNsPrefixes(Rdf.Ns.PREFIXES);
+        ontM.add(m.listStatements());
+        return ontM;
     }
 
     /**
