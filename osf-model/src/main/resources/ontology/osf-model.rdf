@@ -510,6 +510,8 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasMeta -->
     <!-- TODO: hasMeta probably isn't a string, it's arbitrarily complex per the
         json-api spec, so should be a ObjectProperty -->
+    <!-- TODO: research how meta is used by OSF, and if it isn't relevant, then we can strike this from the model 
+        and all confusing questions -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasMeta">
       <rdfs:label xml:lang="en">hasMeta</rdfs:label>
       <rdfs:comment xml:lang="en">A data property specifying metadata for a related link </rdfs:comment>
@@ -656,9 +658,8 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-    <!-- TODO registered from? -->
-    
     <!-- TODO registered_meta.* Found in data.attributes -->
+    <!-- TODO registered_meta is a dictionary.  best practice how to model? Don to look at -->
     
 
 
