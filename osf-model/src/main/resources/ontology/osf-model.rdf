@@ -343,12 +343,12 @@
 
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasDescription -->
-    <!-- TODO: sub property of dcterms:description instead of a rdfs:range of dcterms:description -->
+
     <owl:DatatypeProperty rdf:about="&osfbom;hasDescription">
         <rdfs:label xml:lang="en">hasDescription</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying a description of a Node or Registration</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
-        <rdfs:range rdf:resource="&dcterms;description"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;description"/>
     </owl:DatatypeProperty>
 
 
@@ -438,12 +438,12 @@
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasId -->
 
-    <!-- TODO: Consider making this a subclass of dcterms:identifier instead of using dcterms:identifier as a range -->
+    <!-- TODO: Discuss/consider identifier semantics (semantics of business ids vs repository ids) -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasId">
         <rdfs:label xml:lang="en">hasId</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the business ID of a OSFBusinessObject</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
-        <rdfs:range rdf:resource="&dcterms;identifier"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;identifier"/>
     </owl:DatatypeProperty>
 
 
@@ -510,6 +510,8 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasMeta -->
     <!-- TODO: hasMeta probably isn't a string, it's arbitrarily complex per the
         json-api spec, so should be a ObjectProperty -->
+    <!-- TODO: research how meta is used by OSF, and if it isn't relevant, then we can strike this from the model 
+        and all confusing questions -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasMeta">
       <rdfs:label xml:lang="en">hasMeta</rdfs:label>
       <rdfs:comment xml:lang="en">A data property specifying metadata for a related link </rdfs:comment>
@@ -566,8 +568,6 @@
 
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasPermission -->
-    
-    <!-- TODO: consider using predicates from https://www.w3.org/wiki/WebAccessControl? -->
 
     <owl:DatatypeProperty rdf:about="&osfbom;hasPermission">
         <rdfs:label xml:lang="en">hasPermission</rdfs:label>
@@ -579,13 +579,11 @@
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasPersonalWebsite -->
     
-    <!-- TODO: consider making this a sub-property of foaf:homepage? -->
-
     <owl:DatatypeProperty rdf:about="&osfbom;hasPersonalWebsite">
         <rdfs:label xml:lang="en">hasPersonalWebsite</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the User's personal meb site</rdfs:comment>
+        <rdfs:comment xml:lang="en">A data property specifying the User's personal web site</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;User"/>
-        <rdfs:range rdf:resource="&xsd;anyUri"/>
+        <rdfs:subPropertyOf rdf:resource="&foaf;homepage"/>
     </owl:DatatypeProperty>
 
 
@@ -658,9 +656,8 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
-    <!-- TODO registered from? -->
-    
     <!-- TODO registered_meta.* Found in data.attributes -->
+    <!-- TODO registered_meta is a dictionary.  best practice how to model? Don to look at -->
     
 
 
@@ -706,12 +703,11 @@
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasTitle -->
 
-<!-- TODO: subproperty of dcterms:title instead of a rdfs:range of dcterms:title -->
     <owl:DatatypeProperty rdf:about="&osfbom;hasTitle">
         <rdfs:label xml:lang="en">hasTitle</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;DataEntity"/>
-        <rdfs:range rdf:resource="&dcterms;title"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;title"/>
     </owl:DatatypeProperty>
 
 
@@ -735,12 +731,11 @@
     </owl:DatatypeProperty>
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasTag -->
-    <!-- TODO: review domain: are tags just for nodes and registrations or do they apply to other types like users? -->
+    
     <owl:DatatypeProperty rdf:about="&osfbom;hasTag">
         <rdfs:label xml:lang="en">hasTag</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying a user-defined tag for the Node</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:comment xml:lang="en">A data property specifying a user-defined tag for a Node or Registration</rdfs:comment>
+        <rdfs:subProperyOf rdf:resource="&dcterms;subject"/>
     </owl:DatatypeProperty>
     
     <owl:DatatypeProperty rdf:about="&osfbom;hasEventDate">
