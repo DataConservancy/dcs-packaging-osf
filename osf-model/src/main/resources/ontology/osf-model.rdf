@@ -568,8 +568,6 @@
 
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasPermission -->
-    
-    <!-- TODO: consider using predicates from https://www.w3.org/wiki/WebAccessControl? -->
 
     <owl:DatatypeProperty rdf:about="&osfbom;hasPermission">
         <rdfs:label xml:lang="en">hasPermission</rdfs:label>
