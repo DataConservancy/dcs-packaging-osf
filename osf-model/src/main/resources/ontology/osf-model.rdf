@@ -720,15 +720,6 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
 
-
-    <!-- http://www.dataconservancy.org/osf-business-object-model#hasType -->
-
-    <owl:DatatypeProperty rdf:about="&osfbom;hasType">
-        <rdfs:label xml:lang="en">hasType</rdfs:label>
-        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </owl:DatatypeProperty>
     
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasTag -->
     
@@ -799,12 +790,6 @@
                 <owl:onProperty rdf:resource="&osfbom;hasId"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-                <owl:onProperty rdf:resource="&osfbom;hasType"/>
-                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
-          </owl:Restriction>
     </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">
         A Business Object is a common superclass for the OSF objects "User", "Collection", "NodeBase", "FileBase" and "Registration"
