@@ -796,8 +796,6 @@
         <rdfs:label xml:lang="en">OSFBusinessObject</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <!-- TODO: probably should be a string; OSF ids seem to be strings, 
-                    five characters in length -->
                 <owl:onProperty rdf:resource="&osfbom;hasId"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
