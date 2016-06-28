@@ -6,11 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.LicenseHashUriGenerator;
 import org.dataconservancy.cos.osf.client.support.ToBooleanTransform;
 import org.dataconservancy.cos.osf.client.support.TruncatingTransform;
 import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
@@ -82,7 +84,6 @@ public abstract class NodeBase {
 	private String logs;
 
 	@Relationship(value = "license", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
-	@AnonIndividual(OwlClasses.OSF_LICENSE)
 	@OwlProperty(OwlProperties.OSF_HAS_LICENSE)
 	private License license;
 
