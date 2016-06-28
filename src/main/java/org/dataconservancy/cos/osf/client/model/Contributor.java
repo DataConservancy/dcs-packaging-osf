@@ -16,17 +16,20 @@
 
 package org.dataconservancy.cos.osf.client.model;
 
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
-import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
+import org.dataconservancy.cos.osf.client.support.ContributorHashUriGenerator;
+import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.ToStringTransform;
+
+import java.util.Map;
 
 /**
  * Contributor model for OSF
@@ -34,12 +37,19 @@ import org.dataconservancy.cos.rdf.support.ToStringTransform;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Type("contributors")
+@OwlIndividual(OwlClasses.OSF_CONTRIBUTOR)
 public class Contributor {
 
 	/** contributor ID - this corresponds to User ID*/
     @Id
 	@OwlProperty(OwlProperties.OSF_HAS_USER)
     private String id;
+
+	/**
+	 * Form of Contributor ID used when generating RDF.
+	 */
+	@IndividualUri(transform = ContributorHashUriGenerator.class)
+	private String contributorIndividualId;
     
     /**Whether the user will be included in citations for this node. Default is true.*/
 	@OwlProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC)
@@ -62,6 +72,23 @@ public class Contributor {
 	//TODO: into CoS' internal Jira
     //Commenting out for now.
     //User user;
+
+
+	/**
+	 * The Contributor ID used when emitting RDF.
+	 * @return
+     */
+	public String getContributorIndividualId() {
+		return contributorIndividualId;
+	}
+
+	/**
+	 * The Contributor ID used when emitting RDF.
+	 * @param contributorIndividualId
+     */
+	public void setContributorIndividualId(String contributorIndividualId) {
+		this.contributorIndividualId = contributorIndividualId;
+	}
 
 	public String getId() {
 		return id;

@@ -17,17 +17,23 @@ package org.dataconservancy.cos.osf.client.model;
 
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Type;
+import org.dataconservancy.cos.osf.client.support.LicenseHashUriGenerator;
 import org.dataconservancy.cos.osf.client.support.TruncatingTransform;
+import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
  * Encapsulates a license for a OSF Node or Registration.
  */
 @Type("licenses")
+@OwlIndividual(value = OwlClasses.OSF_LICENSE)
 public class License {
 
     @Id
+    @IndividualUri(transform = LicenseHashUriGenerator.class)
     private String id;
 
     @OwlProperty(value = OwlProperties.OSF_HAS_LICENSE_TEXT, transform = TruncatingTransform.class)
