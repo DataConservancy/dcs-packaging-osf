@@ -13,31 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy;
+package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion;
 
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
-import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
- * Created by esm on 6/9/16.
+ * Created by esm on 6/28/16.
  */
-@OwlIndividual(OwlClasses.OSF_FILE)
-public class Child {
+@OwlIndividual(OwlClasses.OSF_BO)
+public class Recursive {
 
-    @IndividualUri
-    private String id;
+    private static final Recursive INSTANCE = new Recursive();
 
-    @OwlProperty(OwlProperties.OSF_HAS_CHILD)
-    private SomeOtherClass foo = new SomeOtherClass();
+    private static final RecursiveContainer CONTAINER_INSTANCE = new RecursiveContainer();
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }

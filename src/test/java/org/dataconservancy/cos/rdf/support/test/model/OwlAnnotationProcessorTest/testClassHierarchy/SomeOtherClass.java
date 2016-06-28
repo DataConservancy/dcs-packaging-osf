@@ -15,32 +15,17 @@
  */
 package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy;
 
-import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
-import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
 
-import java.util.List;
-
-
-public class Container extends AbstractContainer {
+/**
+ * Created by esm on 6/28/16.
+ */
+@OwlIndividual(OwlClasses.OSF_BO)
+public class SomeOtherClass {
 
     @IndividualUri
-    private String containerId;
+    private String id = "some other class";
 
-    @OwlProperty(OwlProperties.OSF_HAS_FILE)
-    private List<Child> children;
-
-    @OwlProperty(OwlProperties.OSF_HAS_HASPROVIDER)
-    @AnonIndividual(OwlClasses.OSF_BO)
-    private Object foo;
-
-    public List<Child> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<Child> children) {
-        this.children = children;
-    }
 }

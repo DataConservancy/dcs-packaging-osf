@@ -15,7 +15,7 @@
  */
 package org.dataconservancy.cos.rdf.annotations;
 
-import org.dataconservancy.cos.rdf.support.ToStringTransform;
+import org.dataconservancy.cos.rdf.support.IndividualUriTransform;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -23,7 +23,7 @@ import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 /**
  * Annotates a field to be used as a resource identifier for an OWL individual.  Each Java class annotated as a
@@ -38,19 +38,13 @@ public @interface IndividualUri {
     /**
      * Class constant identifying the default transformation function.
      */
-    static final Class<? extends Function> DEFAULT_TRANSFORM_FUNCTION = ToStringTransform.class;
+    static final Class<? extends BiFunction> DEFAULT_TRANSFORM_FUNCTION = IndividualUriTransform.class;
 
     /**
      * String constant identifying the annotation attribute {@link #transform()}.  Useful when using this
      * annotation with the Java Reflection API.
      */
     static final String TRANSFORM = "transform";
-
-    /**
-     * String constant identifying the annotation attribute {@link #mode()}. Useful when using this
-     * annotation with the Java Reflection API.
-     */
-    static final String TRANSFORM_MODE = "mode";
 
     /**
      * A function that transforms the value of the annotated field, provided the value of the field.
@@ -92,19 +86,6 @@ public @interface IndividualUri {
      * @return the {@code Class} of a {@code Function} responsible for transforming the value of the field, provided the
      * value of the field, to a {@code String}
      */
-    Class<? extends Function<Object, String>> transform() default ToStringTransform.class;
-
-    /**
-     * The transformation mode.
-     * <p>
-     * A mode of {@link TransformMode#FIELD} means that the value of the annotated field will be supplied to the
-     * transform function.  A mode of {@link TransformMode#CLASS} means that the instance of the class enclosing the
-     * annotated field will be supplied to the transform function.
-     * </p>
-     *
-     * @return the mode of the transformation function; whether it is accepting an instance of the annotated field or
-     * an instance of the class enclosing the annotated field
-     */
-    TransformMode mode() default TransformMode.FIELD;
+    Class<? extends BiFunction> transform() default IndividualUriTransform.class;
 
 }

@@ -20,15 +20,6 @@ public class IndividualUriTest {
     }
 
     /**
-     * Asserts the default mode is TransformMode.FIELD.
-     * @throws Exception
-     */
-    @Test
-    public void testDefaultTransformMode() throws Exception {
-        assertEquals(TransformMode.FIELD, individualUri.mode());
-    }
-
-    /**
      * Asserts the default transform function field aligns with the actual default transform function.
      * @throws Exception
      */
@@ -46,12 +37,4 @@ public class IndividualUriTest {
         assertNotNull(IndividualUri.class.getMethod(IndividualUri.TRANSFORM));
     }
 
-    /**
-     * Asserts that the {@code mode()} can be retrieved via reflection using the {@link IndividualUri#TRANSFORM_MODE} constant.
-     * @throws Exception
-     */
-    @Test
-    public void testTransformModeConstant() throws Exception {
-        assertNotNull(IndividualUri.class.getMethod(IndividualUri.TRANSFORM_MODE));
-    }
 }

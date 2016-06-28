@@ -13,34 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy;
+package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion;
 
-import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
-import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 
-import java.util.List;
+/**
+ * Created by esm on 6/28/16.
+ */
+public class RecursiveContainer {
 
+    @OwlProperty(OwlProperties.OSF_HAS_CHILD)
+    Recursive recursiveField = new Recursive();
 
-public class Container extends AbstractContainer {
-
-    @IndividualUri
-    private String containerId;
-
-    @OwlProperty(OwlProperties.OSF_HAS_FILE)
-    private List<Child> children;
-
-    @OwlProperty(OwlProperties.OSF_HAS_HASPROVIDER)
-    @AnonIndividual(OwlClasses.OSF_BO)
-    private Object foo;
-
-    public List<Child> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<Child> children) {
-        this.children = children;
-    }
 }
