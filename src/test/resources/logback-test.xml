@@ -13,7 +13,7 @@
     and wire traffic -->
   <logger name="org.mockserver" level="OFF"/>
 
-  <logger name="org.dataconservancy.cos.osf.client" level="OFF"/>
+  <logger name="org.dataconservancy.cos.osf" level="OFF"/>
 
   <root level="INFO">
     <appender-ref ref="STDOUT" />
