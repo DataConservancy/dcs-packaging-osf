@@ -15,27 +15,26 @@
  */
 package org.dataconservancy.cos.rdf.support;
 
-import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy.Child;
-import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy.Container;
-import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy.SomeOtherClass;
-import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testEnum.AnEnum;
-
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy.Child;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy.Container;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy.SomeOtherClass;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testEnum.AnEnum;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testEnum.SomeClass;
 
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen.AContainer;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen.YetAnotherClass;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion.Recursive;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion.RecursiveContainer;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testUnwrapEmptyArray.ClassWithEmptyArrays;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testUnwrapPrimitives.ClassWithArrays;
 import org.junit.Test;
 import org.springframework.core.annotation.AnnotationAttributes;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -148,6 +147,7 @@ public class OwlAnnotationProcessorTest {
         assertTrue(OwlAnnotationProcessor.ignored(Object.class));
         assertTrue(OwlAnnotationProcessor.ignored(sun.misc.Unsafe.class));
         assertFalse(OwlAnnotationProcessor.ignored(SomeClass.class));
+        assertTrue(OwlAnnotationProcessor.ignored(ClassWithArrays.array_of_ints.getClass()));
     }
 
     /**
@@ -207,5 +207,38 @@ public class OwlAnnotationProcessorTest {
         assertTrue(attributesMap.containsKey(AnnotatedElementPair.forPair(YetAnotherClass.class, OwlIndividual.class)));
         assertTrue(attributesMap.containsKey(AnnotatedElementPair.forPair(YetAnotherClass.class.getDeclaredField("id"), IndividualUri.class)));
         assertEquals(2, attributesMap.size());
+    }
+
+    /**
+     * Insures that a Java class with different forms of array fields can be processed for annotations without the
+     * annotation processor throwing an exception.  Specifically this test is meant to insure arrays with null
+     * elements can be processed without throwing NPEs.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testGetAnnotationsForInstanceWithNullArrayElements() throws Exception {
+        try {
+            // Note that unwrap can produce a Stream that will throw an NPE
+            OwlAnnotationProcessor.unwrap(ClassWithEmptyArrays.class.getField("ARRAY_OF_FOO_WITH_SIZE"),
+                    ClassWithEmptyArrays.ARRAY_OF_FOO_WITH_SIZE).findFirst();
+            fail("Expected NPE.");
+        } catch (Exception e) {
+            assertEquals(NullPointerException.class, e.getClass());
+        }
+
+        // Note that getAnnotationsForInstance will encounter an NPE when processing the Stream of elements produced
+        // by ClassWithArrays#ARRAY_OF_FOO_WITH_SIZE, and it is caught.
+        OwlAnnotationProcessor.getAnnotationsForInstance(new ClassWithEmptyArrays(), new AnnotatedElementPairMap<>());
+    }
+
+    /**
+     * Insures that arrays of primitives are properly handled
+     * @throws Exception
+     */
+    @Test
+    public void testUnwrapPrimitives() throws Exception {
+        assertTrue(OwlAnnotationProcessor.ignored(ClassWithArrays.array_of_ints.getClass()));
+        OwlAnnotationProcessor.getAnnotationsForInstance(new ClassWithArrays(), new AnnotatedElementPairMap<>());
     }
 }

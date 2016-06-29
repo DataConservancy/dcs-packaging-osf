@@ -229,14 +229,20 @@ public class OwlAnnotationProcessor {
             if (value != null) {
                 // Unwrap fields that are Collection or Array types.
                 Stream<?> unwrappedValues = unwrap(f, value);
-                Optional<?> element = unwrappedValues.findFirst();
-                // Obtain the annotations on first element found in the Collection or Array
-                if (element.isPresent()) {
-                    getAnnotationsForInstance(element.get(), result);
+                try {
+                    Optional<?> element = unwrappedValues.findFirst();
+                    // Obtain the annotations on first element found in the Collection or Array
+                    if (element.isPresent()) {
+                        LOG.trace("Unwrapping and processing class '{}' field '{}' (field type '{}') for annotations.", object.getClass(), f.getName(), f.getType());
+                        getAnnotationsForInstance(element.get(), result);
+                    }
+                } catch (NullPointerException e) {
+                    // this can happen when a Stream attempts to iterate over null elements
+                    // e.g. a Stream.of(new Integer[1]).  See OwlAnnotationProcessorTest.
                 }
             }
         },
-        f -> (isCollection(f.getType()) || isArray(f.getType())) && !object.getClass().isEnum());
+        f -> (isCollection(f.getType()) || isArray(f.getType())) && (!object.getClass().isEnum() && !isPrimitiveArray(f.getType())));
 
         // Instantiate and cache any transformation functions that are present on the annotated elements
         populateTransformers(result);
@@ -409,7 +415,11 @@ public class OwlAnnotationProcessor {
      * @return a stream of objects contained in the Collection or Array, or a stream containing the supplied value
      */
     public static Stream<?> unwrap(Field field, Object fieldValue) {
+        if (fieldValue == null) {
+            return Stream.empty();
+        }
         final Stream<?> objectsToProcess;
+
         if (OwlAnnotationProcessor.isCollection(field.getType())) {
             objectsToProcess = ((Collection) fieldValue).stream();
         } else if (OwlAnnotationProcessor.isArray(field.getType())) {
@@ -417,6 +427,7 @@ public class OwlAnnotationProcessor {
         } else {
             objectsToProcess = Stream.of(fieldValue);
         }
+
         return objectsToProcess;
     }
 
@@ -429,11 +440,24 @@ public class OwlAnnotationProcessor {
      * @return true if the class is to be ignored for the purposes of annotation processing
      */
     static boolean ignored(Class<?> candidateToIgnore) {
-        Stream<String> packagePrefixToIgnore = Stream.of("java", "javax", "sun");
         // Enum classes has a null package?
         if (candidateToIgnore.getPackage() == null) {
             return true;
         }
-        return packagePrefixToIgnore.anyMatch(prefix -> candidateToIgnore.getPackage().getName().startsWith(prefix));
+
+        Stream<String> packagePrefixToIgnore = Stream.of("java", "javax", "sun");
+        if (packagePrefixToIgnore.anyMatch(prefix -> candidateToIgnore.getPackage().getName().startsWith(prefix))) {
+            return true;
+        }
+
+        if (candidateToIgnore.isPrimitive()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private static boolean isPrimitiveArray(Class<?> candidate) {
+        return isArray(candidate) && candidate.getComponentType().isPrimitive();
     }
 }
