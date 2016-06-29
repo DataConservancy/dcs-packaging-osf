@@ -37,7 +37,7 @@ public class AnnotatedElementPairTest {
         assertFalse(fooPair.equals(barPair));
 
         // For collecting AnnotatedElementPairs off of our test classes.
-        Map<AnnotatedElementPair, AnnotationAttributes> attributesMap = new HashMap<>();
+        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> attributesMap = new AnnotatedElementPairMap<>();
 
         // Collect AnnotatedElementPairs off of the Foo instance.
         OwlAnnotationProcessor.getAnnotationsForInstance(foo, attributesMap);

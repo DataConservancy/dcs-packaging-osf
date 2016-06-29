@@ -195,7 +195,7 @@ public class OwlAnnotationProcessor {
      * @param object the object to obtain annotations for
      * @param result the results, populated by this method
      */
-    public static void getAnnotationsForInstance(Object object, Map<AnnotatedElementPair, AnnotationAttributes> result) {
+    public static void getAnnotationsForInstance(Object object, AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result) {
         // If the class is in java.*, javax.*, sun.*, we ignore.  No need to process JDK classes.
         if (ignored(object.getClass())) {
 //            LOG.trace("  Ignoring annotations on '{}'", object.getClass());
@@ -203,8 +203,10 @@ public class OwlAnnotationProcessor {
         }
 
         // Get class-level annotations
-        LOG.trace("Processing class level annotations for '{}'", object.getClass());
-        getAnnotations(object.getClass(), result);
+        if (!result.seen(object.getClass())) {
+            LOG.trace("Processing class level annotations for '{}'", object.getClass());
+            getAnnotations(object.getClass(), result);
+        }
 
         // Recurse through declared fields of the class and super-class, getting the annotations of each field.
         LOG.trace("Processing field level annotations for '{}'", object.getClass());
@@ -212,10 +214,11 @@ public class OwlAnnotationProcessor {
             ReflectionUtils.makeAccessible(f);
             getAnnotations(f, result);
             Object fieldValue;
-            if ( (fieldValue = f.get(object)) != null &&! f.getType().isEnum() &&! f.getType().equals(object.getClass()) &&! fieldValue.getClass().equals(object.getClass())) {
+            if ((fieldValue = f.get(object)) != null) {
+                result.seen(f);
                 getAnnotationsForInstance(fieldValue, result);
             }
-        });
+        }, f -> !result.hasSeen(f));
 
         // Recurse through declared fields, filtering for collections or arrays, and then getting annotations on the
         // type contained by the collection or array.  We do not process the fields of enums, because it produces an

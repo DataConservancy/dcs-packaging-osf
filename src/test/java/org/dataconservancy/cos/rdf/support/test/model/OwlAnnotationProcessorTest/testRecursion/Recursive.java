@@ -15,12 +15,11 @@
  */
 package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion;
 
-import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 /**
- * Created by esm on 6/28/16.
+ * A class which contains an instance of itself, and which references a class that contains this class as a member.
  */
 @OwlIndividual(OwlClasses.OSF_BO)
 public class Recursive {

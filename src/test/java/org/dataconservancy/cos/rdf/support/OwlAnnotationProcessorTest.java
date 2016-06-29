@@ -25,6 +25,9 @@ import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testEnum.SomeClass;
+
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen.AContainer;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen.YetAnotherClass;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion.Recursive;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion.RecursiveContainer;
 import org.junit.Test;
@@ -34,7 +37,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * Insures proper behaviors of the OwlAnnotationProcessor
@@ -53,7 +61,7 @@ public class OwlAnnotationProcessorTest {
         Container container = new Container();
         container.setChildren(Arrays.asList(child));
 
-        Map<AnnotatedElementPair, AnnotationAttributes> annotations = new HashMap<>();
+        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> annotations = new AnnotatedElementPairMap<>();
 
         OwlAnnotationProcessor.getAnnotationsForInstance(container, annotations);
 
@@ -98,7 +106,7 @@ public class OwlAnnotationProcessorTest {
      */
     @Test
     public void testEnum() throws Exception {
-        Map<AnnotatedElementPair, AnnotationAttributes> annotations = new HashMap<>();
+        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> annotations = new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(AnEnum.BAR, annotations);
         assertEquals(1, annotations.size());
         assertTrue(annotations.keySet().contains(
@@ -142,41 +150,62 @@ public class OwlAnnotationProcessorTest {
         assertFalse(OwlAnnotationProcessor.ignored(SomeClass.class));
     }
 
+    /**
+     * Insures that a recursive loop will not occur when processing annotations
+     * @throws Exception
+     */
     @Test
     public void testRecursion() throws Exception {
         Recursive recursive = new Recursive();
-        Map<AnnotatedElementPair, AnnotationAttributes> annotations = new HashMap<>();
+        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> annotations = new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(recursive, annotations);
 
         // Expecting:
-        //   OwlIndividual annotation on Recursive class
+        //  OwlProperty annotation on RecursiveContainer recursiveField field
+        //  OwlIndividual annotation on Recursive class
 
         assertEquals(2, annotations.size());
-        assertTrue(annotations.keySet().contains(
-                AnnotatedElementPair.forPair(Recursive.class.getDeclaredField("id"), IndividualUri.class)));
-        assertTrue(annotations.keySet().contains(
-                AnnotatedElementPair.forPair(Recursive.class, OwlIndividual.class)));
-
-        annotations.clear();
-
-        RecursiveContainer recursiveContainer = new RecursiveContainer();
-
-        // Expecting:
-        //  OwlProperty annotation on RecursiveContainer recursiveField field
-        //
-        // Expecting:
-        //   OwlIndividual annotation on Recursive class
-
-        annotations = new HashMap<>();
-        OwlAnnotationProcessor.getAnnotationsForInstance(recursiveContainer, annotations);
-
-        assertEquals(3, annotations.size());
-        assertTrue(annotations.keySet().contains(
-                AnnotatedElementPair.forPair(Recursive.class.getDeclaredField("id"), IndividualUri.class)));
         assertTrue(annotations.keySet().contains(
                 AnnotatedElementPair.forPair(Recursive.class, OwlIndividual.class)));
         assertTrue(annotations.keySet().contains(
                 AnnotatedElementPair.forPair(RecursiveContainer.class.getDeclaredField("recursiveField"), OwlProperty.class)));
+    }
 
+
+
+    /**
+     * A side-affect of recursion detection was that fields with null values were marked as processed.  Subsequent
+     * processing of those fields never occurred because the initial processing of the null mistakenly marked it as
+     * 'seen'.  This test triggers the bug and verifies the fix.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testNullFieldValueAndInteractionWithSeen() throws Exception {
+        // Initial state
+        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> attributesMap = new AnnotatedElementPairMap<>();
+        AContainer container = new AContainer();
+        assertNull(container.a_field);
+        assertTrue(attributesMap.isEmpty());
+
+        // Obtain annotations.  The container.a_field is null, so no annotations are expected to be found.
+        OwlAnnotationProcessor.getAnnotationsForInstance(container, attributesMap);
+
+        // Verify expectations
+        assertFalse(attributesMap.containsKey(AnnotatedElementPair.forPair(YetAnotherClass.class, OwlIndividual.class)));
+        assertFalse(attributesMap.containsKey(AnnotatedElementPair.forPair(YetAnotherClass.class.getDeclaredField("id"), IndividualUri.class)));
+        assertTrue(attributesMap.isEmpty());
+
+        container = new AContainer();              // a new instance of the container
+        container.a_field = new YetAnotherClass(); // this time with a not-null field
+
+        // Obtain annotations.  The container.a_field is not null, so we expect that the class YetAnotherClass will
+        // be processed for annotations.
+        OwlAnnotationProcessor.getAnnotationsForInstance(container, attributesMap);
+
+        // Verify expectations (fails without the fix)
+        assertTrue(attributesMap.containsKey(AnnotatedElementPair.forPair(YetAnotherClass.class, OwlIndividual.class)));
+        assertTrue(attributesMap.containsKey(AnnotatedElementPair.forPair(YetAnotherClass.class.getDeclaredField("id"), IndividualUri.class)));
+        assertEquals(2, attributesMap.size());
     }
 }

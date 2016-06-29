@@ -13,17 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion;
-
-import org.dataconservancy.cos.rdf.annotations.OwlProperty;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
+package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen;
 
 /**
- * A test class which helps form a recursive loop between this class and {@link Recursive}.
+ * Created by esm on 6/29/16.
  */
-public class RecursiveContainer {
+public class AContainer {
 
-    @OwlProperty(OwlProperties.OSF_HAS_CHILD)
-    Recursive recursiveField = new Recursive();
+
+    public YetAnotherClass a_field = null;
 
 }
