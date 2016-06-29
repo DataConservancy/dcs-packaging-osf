@@ -27,6 +27,8 @@ import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest
 
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen.AContainer;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen.YetAnotherClass;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testIndividualUriTransform.AnOwlIndividual;
+import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testIndividualUriTransform.TransformerProbeWrapper;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion.Recursive;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testRecursion.RecursiveContainer;
 import org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testUnwrapEmptyArray.ClassWithEmptyArrays;
@@ -240,5 +242,20 @@ public class OwlAnnotationProcessorTest {
     public void testUnwrapPrimitives() throws Exception {
         assertTrue(OwlAnnotationProcessor.ignored(ClassWithArrays.array_of_ints.getClass()));
         OwlAnnotationProcessor.getAnnotationsForInstance(new ClassWithArrays(), new AnnotatedElementPairMap<>());
+    }
+
+    @Test
+    public void testInsureTransformIsInvoked() throws Exception {
+        AnOwlIndividual i = new AnOwlIndividual();
+        TransformerProbeWrapper.transformerProbe = (individual, idInstance) -> {
+            assertSame(i, individual);
+            assertEquals(i.id, idInstance);
+            return "some value";
+        };
+
+        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> attributesMap = new AnnotatedElementPairMap<>();
+        OwlAnnotationProcessor.getAnnotationsForInstance(i, attributesMap);
+
+        assertEquals("some value", OwlAnnotationProcessor.getIndividualId(i, attributesMap));
     }
 }
