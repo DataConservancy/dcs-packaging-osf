@@ -198,19 +198,18 @@ public class OwlAnnotationProcessor {
     public static void getAnnotationsForInstance(Object object, AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result) {
         // If the class is in java.*, javax.*, sun.*, we ignore.  No need to process JDK classes.
         if (ignored(object.getClass())) {
-//            LOG.trace("  Ignoring annotations on '{}'", object.getClass());
             return;
         }
 
         // Get class-level annotations
         if (!result.seen(object.getClass())) {
-            LOG.trace("Processing class level annotations for '{}'", object.getClass());
+            LOG.debug("Processing class level annotations for '{}'", object.getClass());
             getAnnotations(object.getClass(), result);
         }
 
         // Recurse through declared fields of the class and super-class, getting the annotations of each field.
-        LOG.trace("Processing field level annotations for '{}'", object.getClass());
         ReflectionUtils.doWithFields(object.getClass(), f -> {
+            LOG.debug("  Processing field level annotations for '{}' (a '{}' on class '{}')", f.getName(), f.getType(), object.getClass().getName());
             ReflectionUtils.makeAccessible(f);
             getAnnotations(f, result);
             Object fieldValue;
@@ -224,7 +223,6 @@ public class OwlAnnotationProcessor {
         // type contained by the collection or array.  We do not process the fields of enums, because it produces an
         // endless loop.
         ReflectionUtils.doWithFields(object.getClass(), f -> {
-            LOG.trace("Unwrapping and processing class '{}' field '{}' (field type '{}') for annotations.", object.getClass(), f.getName(), f.getType());
             ReflectionUtils.makeAccessible(f);
             Object value = f.get(object);
 
@@ -256,7 +254,7 @@ public class OwlAnnotationProcessor {
         Stream.of(annotations).forEach(annotation -> {
                     AnnotatedElementPair aep = new AnnotatedElementPair(annotatedElement, annotation.annotationType());
                     result.put(aep, AnnotationUtils.getAnnotationAttributes(annotatedElement, annotation));
-                    LOG.trace("    - Created AnnotatedElementPair (AnnotatedElement: '{}', AnnotationClass: '{}')", aep.getAnnotatedElement(), aep.getAnnotationClass());
+                    LOG.debug("    - Created AnnotatedElementPair (AnnotatedElement: '{}', AnnotationClass: '{}')", aep.getAnnotatedElement(), aep.getAnnotationClass());
                 }
         );
     }

@@ -23,7 +23,7 @@
     </encoder>
   </appender>
 
-  <logger name="org.dataconservancy.cos.rdf" level="TRACE"/>
+  <logger name="org.dataconservancy.cos.rdf" level="DEBUG"/>
 
   <root level="INFO">
     <appender-ref ref="STDOUT" />
