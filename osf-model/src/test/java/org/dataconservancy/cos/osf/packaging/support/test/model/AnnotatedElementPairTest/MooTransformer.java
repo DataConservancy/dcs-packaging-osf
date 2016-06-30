@@ -1,14 +1,14 @@
 package org.dataconservancy.cos.osf.packaging.support.test.model.AnnotatedElementPairTest;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 /**
  * A simple transformer.
  */
-public class MooTransformer implements Function<Object, String> {
+public class MooTransformer implements BiFunction<Foo, String, String> {
 
     @Override
-    public String apply(Object foo) {
+    public String apply(Foo enclosingObject, String idInstance) {
         return "Moo!";
     }
 

@@ -8,7 +8,7 @@ import org.dataconservancy.cos.rdf.annotations.TransformMode;
  */
 public class Bar {
 
-    @IndividualUri(mode = TransformMode.FIELD)
+    @IndividualUri
     String id = "bar";
 
 }

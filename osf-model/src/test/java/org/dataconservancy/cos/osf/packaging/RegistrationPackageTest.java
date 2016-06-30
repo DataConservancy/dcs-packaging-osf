@@ -37,6 +37,7 @@ import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
 import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.AnnotatedElementPair;
+import org.dataconservancy.cos.rdf.support.AnnotatedElementPairMap;
 import org.dataconservancy.cos.rdf.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
@@ -311,7 +312,10 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         final Set<RDFNode> contributorNodes = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_CONTRIBUTOR)).toSet();
         assertNotNull(contributorNodes);
         assertEquals(2, contributorNodes.size());
-        contributorNodes.stream().forEach(contributorIndividual -> assertTrue(contributorIndividual.isAnon()));
+        contributorNodes.stream().forEach(contributorIndividual -> {
+            assertFalse(contributorIndividual.isAnon());
+            assertTrue(contributorIndividual.asResource().getURI().contains("#contributor"));
+        });
         final RDFNode registeredByContributorNode = contributorNodes.stream()
                 .filter(candidate -> candidate.asResource().hasProperty(asProperty(OwlProperties.OSF_HAS_USER), asResource(registeredByUserId)))
                 .findFirst()
@@ -330,7 +334,8 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         Set<RDFNode> licenseNodes = registrationIndividual.listPropertyValues(asProperty(OwlProperties.OSF_HAS_LICENSE)).toSet();
         assertEquals(1, licenseNodes.size());
         RDFNode license = licenseNodes.iterator().next();
-        assertTrue(license.isAnon());
+        assertFalse(license.isAnon());
+        assertTrue(license.asResource().getURI().contains("#license"));
         assertTrue(license.asResource().hasProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_NAME)));
         assertTrue(license.asResource().hasProperty(asProperty(OwlProperties.OSF_HAS_LICENSE_TEXT)));
         assertTrue(license.asResource().hasLiteral(asProperty(OwlProperties.OSF_HAS_LICENSE_NAME), "CC-By Attribution 4.0 International"));
@@ -375,7 +380,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         Registration r = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
         assertNotNull(r);
 
-        Map<AnnotatedElementPair, AnnotationAttributes> result = new HashMap<>();
+        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result = new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(r, result);
         assertEquals(79, result.size());
 
