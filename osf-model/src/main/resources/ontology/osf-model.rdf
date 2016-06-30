@@ -81,8 +81,8 @@
     <!-- http://www.dataconservancy.org/osf-business-object-model#hasNode -->
     <owl:ObjectProperty rdf:about="&osfbom;hasNode">
         <rdfs:label xml:lang="en">hasNode</rdfs:label>
-        <rdfs:comment xml:lang="en">An object property specifying a node for a provider</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Provider"/>
+        <rdfs:comment xml:lang="en">An object property specifying an owning node for a provider or comment</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
         <rdfs:range rdf:resource="&osfbom;Node"/>
     </owl:ObjectProperty>    
     
@@ -110,7 +110,7 @@
     </owl:ObjectProperty>
     
     <owl:ObjectProperty rdf:about="&osfbom;hasParent">
-        <rdfs:label xml:lang="en">hasRoot</rdfs:label>
+        <rdfs:label xml:lang="en">hasParent</rdfs:label>
         <rdfs:comment xml:lang="en">An object property specifying the parent Node of a Node.</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
         <rdfs:range rdf:resource="&osfbom;NodeBase"/>
@@ -773,21 +773,14 @@
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
 
-    <owl:DatatypeProperty rdf:about="&osfbom;hasContent>
+    <owl:DatatypeProperty rdf:about="&osfbom;hasContent">
         <rdfs:label xml:lang="en">hasContent</rdfs:label>
         <rdfs:comment xml:lang="en">The text of this comment</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Comment"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
 
-    <owl:DatatypeProperty rdf:about="&osfbom;isDeleted>
-        <rdfs:label xml:lang="en">isDeleted</rdfs:label>
-        <rdfs:comment xml:lang="en">Whether this comment is deleted</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Comment"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
-    </owl:DatatypeProperty>
-
-    <owl:DatatypeProperty rdf:about="&osfbom;isDeleted>
+    <owl:DatatypeProperty rdf:about="&osfbom;isDeleted">
         <rdfs:label xml:lang="en">isDeleted</rdfs:label>
         <rdfs:comment xml:lang="en">Whether this comment is deleted</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Comment"/>
@@ -795,34 +788,32 @@
     </owl:DatatypeProperty>
 
     <!-- "hasNode" is already taken -->
-    <owl:DatatypeProperty rdf:about="&osfbom;associatedNode>
+    <owl:DatatypeProperty rdf:about="&osfbom;associatedNode">
         <rdfs:label xml:lang="en">associatedNode</rdfs:label>
         <rdfs:comment xml:lang="en">The node this comment belongs to</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Comment"/>
         <rdfs:range rdf:resource="&osfbom;Node"/>
     </owl:DatatypeProperty>
 
-    <!-- "hasNode" is already taken -->
-    <owl:DatatypeProperty rdf:about="&osfbom;target>
+    <owl:DatatypeProperty rdf:about="&osfbom;target">
         <rdfs:label xml:lang="en">target</rdfs:label>
-        <rdfs:comment xml:lang="en">The target of this comment</rdfs:comment>
+        <rdfs:comment xml:lang="en">The item this comment is referring to, a node or another comment</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Comment"/>
-        <!-- range may be either comment or node -->
+        <rdfs:range rdf:resource="&osfbom;CommentTarget"/>
     </owl:DatatypeProperty>
 
-    <!-- "hasUser" already taken -->
-    <owl:DatatypeProperty rdf:about="&osfbom;madeBy>
-        <rdfs:label xml:lang="en">madeBy</rdfs:label>
+    <owl:DatatypeProperty rdf:about="&osfbom;authoredBy">
+        <rdfs:label xml:lang="en">authoredBy</rdfs:label>
         <rdfs:comment xml:lang="en">The user who made this comment</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Comment"/>
         <rdfs:range rdf:resource="&osfbom;User"/>
     </owl:DatatypeProperty>
 
-    <owl:DatatypeProperty rdf:about="&osfbom;isModified>
+    <owl:DatatypeProperty rdf:about="&osfbom;isModified">
         <rdfs:label xml:lang="en">isModified</rdfs:label>
         <rdfs:comment xml:lang="en">Whether this comment has been changed</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;Comment"/>
-        <rdfs:range rdf:resource="&xsd;Boolean"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
 
     <!-- Comment properties remaining to be defined:
@@ -1022,10 +1013,23 @@
             </owl:Class>
        </owl:equivalentClass>  
     </owl:Class>
-  
+
     <!-- http://www.dataconservancy.org/osf-business-object-model#Comment
          TODO: Comments that may appear on a node or on other comments -->
     <owl:Class rdf:about="&osfbom;Comment">
       <rdfs:label xml:lang="en">Comment</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&osfbom;CommentTarget">
+      <rdfs:label xml:lang="en">CommentTarget</rdfs:label>
+      <rdfs:subClassOf>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&osfbom;Comment"/>
+            <rdf:Description rdf:about="&osfbom;NodeBase"/>
+          </owl:unionOf>
+        </owl:Class>
+      </rdfs:subClassOf>
     </owl:Class>
 </rdf:RDF>
