@@ -445,7 +445,7 @@ public class OwlAnnotationProcessor {
             return true;
         }
 
-        Stream<String> packagePrefixToIgnore = Stream.of("java", "javax", "sun");
+        Stream<String> packagePrefixToIgnore = Stream.of("java", "javax", "sun", "org.joda");
         if (packagePrefixToIgnore.anyMatch(prefix -> candidateToIgnore.getPackage().getName().startsWith(prefix))) {
             return true;
         }
