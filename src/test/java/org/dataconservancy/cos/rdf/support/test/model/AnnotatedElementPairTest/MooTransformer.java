@@ -5,10 +5,10 @@ import java.util.function.BiFunction;
 /**
  * A simple transformer.
  */
-public class MooTransformer implements BiFunction<Foo, String, String> {
+public class MooTransformer implements BiFunction<Object, Foo, String> {
 
     @Override
-    public String apply(Foo enclosingObject, String idInstance) {
+    public String apply(Object outerObject, Foo individual) {
         return "Moo!";
     }
 

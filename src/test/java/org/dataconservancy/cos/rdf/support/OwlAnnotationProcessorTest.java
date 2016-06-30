@@ -37,6 +37,7 @@ import org.junit.Test;
 import org.springframework.core.annotation.AnnotationAttributes;
 
 import java.util.Arrays;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -244,18 +245,33 @@ public class OwlAnnotationProcessorTest {
         OwlAnnotationProcessor.getAnnotationsForInstance(new ClassWithArrays(), new AnnotatedElementPairMap<>());
     }
 
+    /**
+     * Insures that {@link OwlAnnotationProcessor#getIndividualId(Object, Object, Map)} invokes the {@code BiFunction}
+     * specified by the {@code IndividualUri transform} attribute.
+     *
+     * @throws Exception
+     */
     @Test
     public void testInsureTransformIsInvoked() throws Exception {
+
+        // The outer object that would normally contain a field of type 'AnOwlIndividual'
+        Object outerObj = new Object();
+
+        // The OWL individual that would normally contain a field annotated with @IndividualUri
         AnOwlIndividual i = new AnOwlIndividual();
-        TransformerProbeWrapper.transformerProbe = (individual, idInstance) -> {
+
+        // Configure the probe to return a unique value, and verify the supplied arguments
+        TransformerProbeWrapper.transformerProbe = (outer, individual) -> {
+            assertSame(outerObj, outer);
             assertSame(i, individual);
-            assertEquals(i.id, idInstance);
             return "some value";
         };
 
+        // Discover annotations on the OWL individual
         AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> attributesMap = new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(i, attributesMap);
 
-        assertEquals("some value", OwlAnnotationProcessor.getIndividualId(i, attributesMap));
+        // Verify the probe transformer above is invoked
+        assertEquals("some value", OwlAnnotationProcessor.getIndividualId(outerObj, i, attributesMap));
     }
 }

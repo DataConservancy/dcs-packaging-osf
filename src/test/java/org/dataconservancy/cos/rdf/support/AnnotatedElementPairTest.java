@@ -49,9 +49,9 @@ public class AnnotatedElementPairTest {
         assertTrue(attributesMap.keySet().contains(fooPair));
         assertTrue(attributesMap.keySet().contains(barPair));
 
-        // Sanit check insuring that OwlAnnotationProcessor properly applies the transform to the 'foo' instance
-        assertEquals("bar", OwlAnnotationProcessor.getIndividualId(bar, attributesMap));
-        assertEquals("Moo!", OwlAnnotationProcessor.getIndividualId(foo, attributesMap));
+        // Sanity check insuring that OwlAnnotationProcessor properly applies the transform to the 'foo' instance
+        assertEquals("bar", OwlAnnotationProcessor.getIndividualId(null, bar, attributesMap));
+        assertEquals("Moo!", OwlAnnotationProcessor.getIndividualId(null, foo, attributesMap));
     }
 
 }

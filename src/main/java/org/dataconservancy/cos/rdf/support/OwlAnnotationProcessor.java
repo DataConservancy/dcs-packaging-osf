@@ -189,6 +189,13 @@ public class OwlAnnotationProcessor {
         return transformedValue;
     }
 
+    public static Object transformIndividualUri(Object outer, Object inner, Field annotatedField, Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
+        IndividualUri annotation = getIndividualUri(annotatedField, annotations);
+        BiFunction fieldTransformer = INDIVIDUAL_URI_TRANSFORMS.get(annotation.transform());
+
+        return fieldTransformer.apply(outer, inner);
+    }
+
     /**
      * Obtain the annotations on the provided class, its fields, super classes, and super class fields.
      *
@@ -383,6 +390,36 @@ public class OwlAnnotationProcessor {
 
         Field annotatedField = annotatedFields.get(0);
         return (R)transformIndividualUri(o, annotatedField, attributesMap);
+    }
+
+    public static <T, U, R> R getIndividualId(Object outer, Object inner, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+        Class<OwlIndividual> owlIndividualClass = OwlIndividual.class;
+        Class<IndividualUri> individualUriClass = IndividualUri.class;
+
+        // Fields annotated with {@code IndividualUri}
+        List<Field> annotatedFields = new ArrayList<>();
+
+        // Select fields that are annotated with {@code IndividualUri} and add them to the list
+        ReflectionUtils.doWithFields(inner.getClass(),
+                annotatedFields::add,
+                field -> field.getDeclaredAnnotation(individualUriClass) != null);
+
+        if (annotatedFields.size() == 0) {
+            // The enclosing class may not be an OwlIndividual, therefore it wouldn't have an IndividualUri
+
+            if (!attributesMap.containsKey(AnnotatedElementPair.forPair(inner.getClass(), owlIndividualClass))) {
+                throw new IllegalArgumentException(String.format("Annotation %s not found on %s.  Is %s an OwlIndividual?", individualUriClass.getSimpleName(), inner.getClass().getSimpleName(), inner.getClass().getSimpleName()));
+            }
+
+            throw new IllegalArgumentException(String.format("Missing required annotation %s on %s, an OwlIndividual.", individualUriClass.getSimpleName(), inner.getClass().getSimpleName()));
+        }
+
+        if (annotatedFields.size() > 1) {
+            throw new IllegalArgumentException(String.format("Found %s fields (%s) on %s annotated with %s.  Only one field may be annotated with %s", annotatedFields.size(), annotatedFields.stream().map(Field::getName).collect(Collectors.joining(", ")), inner.getClass().getSimpleName(), individualUriClass.getSimpleName(), individualUriClass.getSimpleName()));
+        }
+
+        Field annotatedField = annotatedFields.get(0);
+        return (R)transformIndividualUri(outer, inner, annotatedField, attributesMap);
     }
 
     /**

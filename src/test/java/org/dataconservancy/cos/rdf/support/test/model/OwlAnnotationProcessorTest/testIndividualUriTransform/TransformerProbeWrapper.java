@@ -20,12 +20,12 @@ import java.util.function.BiFunction;
 /**
  * Created by esm on 6/29/16.
  */
-public class TransformerProbeWrapper implements BiFunction<AnOwlIndividual, String, String> {
+public class TransformerProbeWrapper implements BiFunction<Object, AnOwlIndividual, String> {
 
-    public static BiFunction<AnOwlIndividual, String, String> transformerProbe;
+    public static BiFunction<Object, AnOwlIndividual, String> transformerProbe;
 
     @Override
-    public String apply(AnOwlIndividual anOwlIndividual, String idInstance) {
-        return transformerProbe.apply(anOwlIndividual, idInstance);
+    public String apply(Object outer, AnOwlIndividual individualInstance) {
+        return transformerProbe.apply(outer, individualInstance);
     }
 }

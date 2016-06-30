@@ -15,29 +15,61 @@
  */
 package org.dataconservancy.cos.rdf.support;
 
+import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.springframework.core.annotation.AnnotationUtils;
+import org.springframework.util.ReflectionUtils;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.BiFunction;
 
 /**
- * Function that transforms its argument to a {@code String}
+ * Discovers the field annotated with {@code IndividualUri} on an OWL individual, and returns the value of that field.
  *
- * @param <U> the type of the object enclosing the {@code IndividualUri} annotated field
- * @param <T> the type of the {@code IndividualUri} annotated field, typically a {@code String}
+ * @param <T> the type of the object enclosing the individual instance
+ * @param <U> the type of the individual instance, which contains the {@code IndividualUri} annotated field
  */
-public final class IndividualUriTransform<U, T> implements BiFunction<U, T, String> {
+public final class IndividualUriTransform<T, U> implements BiFunction<T, U, String> {
 
     /**
      * {@inheritDoc}
      * <h3>Implementation note:</h3>
      * <p>
-     * Applies the {@code toString()} method on the supplied object.
+     * Discovers the field annotated with {@code IndividualUri} on the supplied {@code individual}, and returns the
+     * string value of the field by invoking {@code toString()}.  The {@code outerObject} is ignored,
+     * and may be {@code null}.
      * </p>
-     * @param enclosingObject instance of the object that has the {@code IndividualUri} annotated field as a member
-     * @param idInstance the instance of the {@code IndividualUri} annotated field
-     * @return the string form of {@code idInstance}
+     * @param outerObject instance of the object that has the {@code individual} as a member
+     * @param individual the instance of the class declaring the {@code IndividualUri} annotated field
+     * @return the string form of {@code idInstance}, may be {@code null}
+     * @throws IllegalArgumentException if {@code individual} is {@code null} or no field annotated with
+     * {@code IndividualUri} is found on the {@code individual} class.
      */
     @Override
-    public String apply(U enclosingObject, T idInstance) {
-        return idInstance.toString();
-    }
+    @SuppressWarnings("unchecked")
+    public String apply(T outerObject, U individual) {
+        if (individual == null) {
+            throw new IllegalArgumentException("Supplied individual must not be null.");
+        }
 
+        AtomicBoolean found = new AtomicBoolean(false);
+        AtomicReference atomicRef = new AtomicReference();
+        ReflectionUtils.doWithFields(individual.getClass(), field -> {
+            ReflectionUtils.makeAccessible(field);
+            atomicRef.set(field.get(individual));
+            found.set(true);
+        }, field -> atomicRef.get() == null && AnnotationUtils.getAnnotation(field, IndividualUri.class) != null);
+
+        if (atomicRef.get() == null && !found.get()) {
+            throw new IllegalArgumentException(
+                    String.format("Class '%s' is missing required annotation '%s'",
+                            individual.getClass().getName(), IndividualUri.class.getName()));
+        }
+
+        if (atomicRef.get() == null) {
+            return null;
+        }
+
+        return atomicRef.get().toString();
+    }
 }
