@@ -64,7 +64,7 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
  * // Add the registration to the graph.  
  * // Under the hood the Registration object will be converted to RDF and added to the underlying model
  *
- * Map&gt;String, Individual&lt; individuals = graph.add(osfRegistration);
+ * &lt;Map&gt;String, Individual&lt; individuals = graph.add(osfRegistration);
  *
  * // The OWL individuals that are added to the graph are returned, and keyed by their identifier.  Note that the
  * // Map may contain anonymous OWL individuals.
