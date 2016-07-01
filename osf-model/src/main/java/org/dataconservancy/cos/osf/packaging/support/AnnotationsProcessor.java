@@ -53,8 +53,9 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
  * </p>
  * <p>
  * This class is able to reason over the following annotations and their attributes:
+ * </p>
  * <dl>
- *     <dt>{@link OwlIndividual}</dt
+ *     <dt>{@link OwlIndividual}</dt>
  *     <dd>Class-level annotation defining a Java class as an OWL individual</dd>
  *     <dt>{@link IndividualUri}</dt>
  *     <dd>Field-level annotation defining the value of the field as the identifier for an OWL individual</dd>
@@ -63,7 +64,6 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
  *     <dt>{@link AnonIndividual}</dt>
  *     <dd>Field-level annotation defining the value of the field as an anonymous OWL individual</dd>
  * </dl>
- * </p>
  * <p>
  * The intent of this class is to process Java objects that posses OWL annotations according to some ontology.
  * Annotated Java objects will be mapped from their Java representation to RDF.  Each invocation of the
@@ -77,11 +77,11 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
  * to other classes in this package
  * </p>
  * <pre>
- * Jena OntModel <-- OntologyManager <-- Package Graph <-- AnnotationsProcessor
+ * Jena OntModel &lt;-- OntologyManager &lt;-- Package Graph &lt;-- AnnotationsProcessor
  *                                                                   /
- *                                       OwlAnnotationsProcessor <--+
+ *                                       OwlAnnotationsProcessor &lt;--+
  * </pre>
- * <h4>Shortcomings</h4>
+ * <h3>Shortcomings</h3>
  * <ul>
  *   <li>I'm sure there are many</li>
  * </ul>

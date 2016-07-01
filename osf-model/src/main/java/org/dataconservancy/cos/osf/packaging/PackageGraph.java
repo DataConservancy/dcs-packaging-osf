@@ -51,12 +51,12 @@ import java.util.Set;
  * to other classes in this package
  * </p>
  * <pre>
- * Jena OntModel <-- OntologyManager <-- Package Graph <-- AnnotationsProcessor
+ * Jena OntModel &lt;-- OntologyManager &lt;-- Package Graph &lt;-- AnnotationsProcessor
  *                                                                   /
- *                                       OwlAnnotationsProcessor <--+
+ *                                       OwlAnnotationsProcessor &lt;--+
  * </pre>
  *
- * <h4>Shortcomings</h4>
+ * <h3>Shortcomings</h3>
  * <ul>
  *   <li>No explicit methods for supporting graph operations or packages</li>
  * </ul>
@@ -104,7 +104,7 @@ public class PackageGraph {
     /**
      * Create an anonymous individual in the model.  Each invocation results in a new instance of an OWL individual
      * added to the model.
-     * <h4>Implementation note</h4>
+     * <h3>Implementation note</h3>
      * This method returns the actual {@code Individual} instead of a URI, because anonymous Individuals cannot be
      * referenced by any kind of string identifier.
      *

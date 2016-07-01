@@ -41,9 +41,9 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
  * underlying {@code OntModel} (via {@code OntologyManager}).
  * </p>
  * <pre>
- * Jena OntModel <-- OntologyManager <-- Package Graph <-- extends - OsfPackageGraph - creates --> AnnotationsProcessor
+ * Jena OntModel &lt;-- OntologyManager &lt;-- Package Graph &lt;-- extends - OsfPackageGraph - creates --&gt; AnnotationsProcessor
  *                                                /
- *                    OwlAnnotationsProcessor <--+
+ *                    OwlAnnotationsProcessor &lt;--+
  * </pre>
  * <h3>Example</h3>
  * <pre>
@@ -64,7 +64,7 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
  * // Add the registration to the graph.  
  * // Under the hood the Registration object will be converted to RDF and added to the underlying model
  *
- * Map<String, Individual> individuals = graph.add(osfRegistration);
+ * Map&gt;String, Individual&lt; individuals = graph.add(osfRegistration);
  *
  * // The OWL individuals that are added to the graph are returned, and keyed by their identifier.  Note that the
  * // Map may contain anonymous OWL individuals.

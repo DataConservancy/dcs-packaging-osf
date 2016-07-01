@@ -46,12 +46,12 @@ import java.net.URL;
  * to other classes in this package
  * </p>
  * <pre>
- * Jena OntModel <-- OntologyManager <-- Package Graph <-- AnnotationsProcessor
+ * Jena OntModel &lt;-- OntologyManager &lt;-- Package Graph &lt;-- AnnotationsProcessor
  *                                                                   /
- *                                       OwlAnnotationsProcessor <--+
+ *                                       OwlAnnotationsProcessor &lt;--+
  * </pre>
  *
- * <h4>Shortcomings</h4>
+ * <h3>Shortcomings</h3>
  * <ul>
  *   <li>No explicit support for sub classes of {@code ObjectProperty} (TransitiveProperty, SymmetricProperty, etc.)</li>
  *   <li>No support for AnnotationProperty or FunctionalProperty or their sub classes</li>
