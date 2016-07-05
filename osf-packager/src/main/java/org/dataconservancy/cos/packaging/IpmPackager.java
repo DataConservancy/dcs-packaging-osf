@@ -150,6 +150,12 @@ public class IpmPackager {
         domainObjects.listSubjects().forEachRemaining(subject -> {
             if (!subject.isAnon()) {
                 URI u = URI.create(subject.getURI());
+
+                // Hash URIs do not get their own node; they will be considered to be a single node.
+                if (u.getFragment() != null) {
+                    return;
+                }
+
                 String fileName;
                 if (u.getPath() != null) {
                     String[] pathElements = u.getPath().split("\\/");
@@ -158,9 +164,6 @@ public class IpmPackager {
                     fileName = escape(subject.getURI());
                 }
 
-                if (u.getFragment() != null) {
-                    fileName = escape(fileName + u.getFragment());
-                }
                 System.err.println("Creating node for subject " + subject + " with file name " + fileName);
                 Node n = new Node(u);
                 n.setDomainObject(u);
