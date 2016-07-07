@@ -19,6 +19,7 @@ package org.dataconservancy.cos.osf.client.support;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
 
 import java.io.IOException;
 
@@ -29,13 +30,35 @@ public class AuthInterceptor implements Interceptor {
 
     private String authHeader;
 
+    private OsfConfigurationService osfConfigurationService;
+
+    public AuthInterceptor(OsfConfigurationService osfConfigurationService) {
+        this.osfConfigurationService = osfConfigurationService;
+    }
+
     public AuthInterceptor(String authHeader) {
         this.authHeader = authHeader;
     }
 
     @Override
     public Response intercept(Chain chain) throws IOException {
-        if (authHeader == null || authHeader.trim().equals("")) {
+
+        String localAuthheader = null;
+
+        // Check the value of the authHeader field, which may have been set on construction
+        if (authHeader != null && !authHeader.trim().equals("")) {
+            localAuthheader = authHeader;
+        }
+
+        // If it wasn't set, see if there's a configuration service and use that
+        if (osfConfigurationService != null &&
+                osfConfigurationService.getConfiguration().getAuthHeader() != null &&
+                !osfConfigurationService.getConfiguration().getAuthHeader().trim().equals("")) {
+            localAuthheader = osfConfigurationService.getConfiguration().getAuthHeader();
+        }
+
+        // if the auth header has been set, use it, otherwise simply proceed with the chain.
+        if (localAuthheader == null) {
             return chain.proceed(chain.request());
         }
 
