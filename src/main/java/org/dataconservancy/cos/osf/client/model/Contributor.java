@@ -76,7 +76,7 @@ public class Contributor {
 
 	/**
 	 * The Contributor ID used when emitting RDF.
-	 * @return
+	 * @return the RDF identifier of this contributor
      */
 	public String getContributorIndividualId() {
 		return contributorIndividualId;
@@ -84,7 +84,7 @@ public class Contributor {
 
 	/**
 	 * The Contributor ID used when emitting RDF.
-	 * @param contributorIndividualId
+	 * @param contributorIndividualId the RDF identifier of this contributor
      */
 	public void setContributorIndividualId(String contributorIndividualId) {
 		this.contributorIndividualId = contributorIndividualId;
