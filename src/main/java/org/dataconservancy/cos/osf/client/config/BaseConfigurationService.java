@@ -17,7 +17,12 @@ package org.dataconservancy.cos.osf.client.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -53,11 +58,35 @@ public abstract class BaseConfigurationService {
      * @throws RuntimeException if the classpath resource cannot be resolved
      */
     public static URL getConfigurationResource(String configurationResource) {
-        URL configUrl = BaseConfigurationService.class.getResource(configurationResource);
+
+        if (configurationResource == null || configurationResource.trim().length() == 0) {
+            throw new IllegalArgumentException("Supplied resource path must not be null or empty.");
+        }
+
+        Resource springResource;
+
+        if (configurationResource.startsWith("file:") || configurationResource.startsWith("http")) {
+            try {
+                springResource = new UrlResource(configurationResource);
+            } catch (MalformedURLException e) {
+                throw new RuntimeException("Unable to create a file: URL from the supplied configuration resource '" +
+                        configurationResource + "': " + e.getMessage(), e);
+            }
+        } else {
+            springResource = new ClassPathResource(configurationResource);
+        }
+
+        URL configUrl = null;
+        try {
+            configUrl = springResource.getURL();
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to obtain a URL from the Spring configuration resource '" + springResource +
+                    "': " + e.getMessage(), e);
+        }
 
         if (configUrl == null) {
             throw new RuntimeException(
-                    String.format(ERR_RESOLVE_RESOURCE, configurationResource, "not found on classpath"));
+                    String.format(ERR_RESOLVE_RESOURCE, configurationResource, "not found!"));
         }
 
         return configUrl;

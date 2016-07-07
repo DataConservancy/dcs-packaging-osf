@@ -28,7 +28,7 @@ public class JacksonOsfConfigurationServiceTest {
 
     @Test
     public void testOsf() throws Exception {
-        JacksonOsfConfigurationService underTest = new JacksonOsfConfigurationService("osf-client-jacksontest.json");
+        JacksonOsfConfigurationService underTest = new JacksonOsfConfigurationService("org/dataconservancy/cos/osf/client/config/osf-client-jacksontest.json");
 
         OsfClientConfiguration config = underTest.getConfiguration();
         assertNotNull(config);
@@ -41,7 +41,7 @@ public class JacksonOsfConfigurationServiceTest {
 
     @Test
     public void testWb() throws Exception {
-        JacksonWbConfigurationService underTest = new JacksonWbConfigurationService("osf-client-jacksontest.json");
+        JacksonWbConfigurationService underTest = new JacksonWbConfigurationService("org/dataconservancy/cos/osf/client/config/osf-client-jacksontest.json");
 
         WbClientConfiguration config = underTest.getConfiguration();
         assertNotNull(config);
