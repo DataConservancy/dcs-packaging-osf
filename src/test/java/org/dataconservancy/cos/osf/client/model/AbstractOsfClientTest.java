@@ -30,7 +30,7 @@ public abstract class AbstractOsfClientTest {
     /**
      * The default configuration of the OSF client, represented as a classpath resource.
      */
-    protected static final String DEFAULT_OSF_CONFIGURATION_RESOURCE = "osf-client-local.json";
+    protected static final String DEFAULT_OSF_CONFIGURATION_RESOURCE = "org/dataconservancy/cos/osf/client/config/osf-client-local.json";
 
     /**
      * Instance of the {@link TestingOsfServiceFactory} provided by this test fixture

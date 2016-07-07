@@ -84,7 +84,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         mockServer = ClientAndServer.startClientAndServer(
                 osfConfigurer.configure(
-                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("osf-client-local.json"), "UTF-8")),
+                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("org/dataconservancy/cos/osf/client/config/osf-client-local.json"), "UTF-8")),
                         mapper,
                         OsfClientConfiguration.class
                 ).getPort()
@@ -92,7 +92,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         wbMockServer = ClientAndServer.startClientAndServer(
                 wbConfigurer.configure(
-                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("osf-client-local.json"), "UTF-8")),
+                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("org/dataconservancy/cos/osf/client/config/osf-client-local.json"), "UTF-8")),
                         mapper,
                         WbClientConfiguration.class
                 ).getPort()
