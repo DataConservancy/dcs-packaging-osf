@@ -22,6 +22,7 @@ import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
 import org.dataconservancy.cos.osf.client.support.ContributorHashUriGenerator;
+import org.dataconservancy.cos.osf.client.support.ContributorIdSplitter;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
@@ -42,7 +43,7 @@ public class Contributor {
 
 	/** contributor ID - this corresponds to User ID*/
     @Id
-	@OwlProperty(OwlProperties.OSF_HAS_USER)
+	@OwlProperty(value = OwlProperties.OSF_HAS_USER, transform = ContributorIdSplitter.class)
     private String id;
 
 	/**
