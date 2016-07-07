@@ -17,24 +17,21 @@ package org.dataconservancy.cos.osf.client.support;
 
 import org.dataconservancy.cos.osf.client.model.File;
 
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 /**
- * Creates an id for a File provider in the form {@code nodeId:providerName}.
- * <p>
- * TODO: To calculate a provider id, its node is required.  Unfortunately, only the first level of files
- * in a file hierarchy (the providers) carry a Node instance.  So this class does not work as intended.
- * </p>
+ * File objects that represent an OSF storage provider will have identifiers in the form: {@code nodeId:providerId}.
+ * This transform replaces the {@code :} with a {@code _} so that the id can be properly encoded as a URI.
  */
-public class ProviderIdTransform implements Function<File, String> {
+public class ProviderIdTransform implements BiFunction<Object, File, String> {
 
     @Override
-    public String apply(File file) {
-        // TODO: If every File instance had a node, then we could reliably produce a provider ID, but we don't.
-//        if (file.getNode() != null) {
-//            return file.getNode() + ":" + file.getProvider();
-//        }
+    public String apply(Object o, File file) {
+        if (file.getId().contains(":")) {
+            return file.getId().replace(":", "_");
+        }
 
-        return file.getProvider();
+        return file.getId();
     }
+
 }
