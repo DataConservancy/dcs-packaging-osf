@@ -170,7 +170,7 @@
             <dependency>
                 <groupId>org.dataconservancy.cos</groupId>
                 <artifactId>rdf-annotations</artifactId>
-                <version>1.0.0</version>
+                <version>1.0.1</version>
             </dependency>
 
             <dependency>
