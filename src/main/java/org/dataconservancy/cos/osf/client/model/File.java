@@ -56,9 +56,7 @@ public class File {
 
     /*unique OSF ID for the file**/
     @Id
-    @IndividualUri
-    // class transform the uri to include the provider id with the path.  the path is scoped to an instance of the
-    // provider.  if there are two instances of the same provider, is it possible to have conflicting IDs?
+    @IndividualUri(transform = ProviderIdTransform.class)
     private String id;
     
     /**list of files down next level of file tree*/
