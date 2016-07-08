@@ -246,7 +246,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                     if (this.getClass().getResource(jsonPath.toString()) != null) {
                         return jsonPath;
                     } else {
-                        LOG.trace("  JSON resource {} does not exist.", jsonPath.toFile());
+                        LOG.debug("  JSON resource {} does not exist.", jsonPath.toFile());
                     }
 
                     // If there's no 'index.json' file, then perhaps the request is for a paginated response
