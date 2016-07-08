@@ -18,8 +18,11 @@ package org.dataconservancy.cos.osf.client.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.github.jasminb.jsonapi.RelType;
+import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Links;
+import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 import org.dataconservancy.cos.osf.client.support.ContributorHashUriGenerator;
 import org.dataconservancy.cos.osf.client.support.ContributorIdSplitter;
@@ -72,7 +75,10 @@ public class Contributor {
 	//TODO: and created a GitHub issue https://github.com/CenterForOpenScience/osf.io/issues/5590 which has been rolled
 	//TODO: into CoS' internal Jira
     //Commenting out for now.
-    //User user;
+
+	@Relationship(value = "users", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+	private String userRel;
+
 
 
 	/**
@@ -132,5 +138,11 @@ public class Contributor {
 		this.pageLinks = pageLinks;
 	}
 
-	
+	public String getUserRel() {
+		return userRel;
+	}
+
+	public void setUserRel(String userRel) {
+		this.userRel = userRel;
+	}
 }

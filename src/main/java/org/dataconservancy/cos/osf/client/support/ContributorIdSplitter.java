@@ -24,7 +24,8 @@ import java.util.function.Function;
  * The latest versions of the OSF API concat the node or registration id with the user id for use as contributor id.
  * For example, a contributor id may be {@code 0zqbo-vni4p} where {@code 0zqbo} is a registration id, and {@code vni4p}
  * is a user id.  This transformation splits the id on the {@code -} character, and returns the user id portion of the
- * identifier.
+ * identifier.  Older versions of the OSF JSON API did not provide a relationship between a contributor
+ * and a user, so the relationship was derived by parsing the contributor identifier.
  */
 public class ContributorIdSplitter implements Function<String, String> {
 
