@@ -22,6 +22,7 @@ import java.util.Map;
 import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.Response;
 import com.squareup.okhttp.ResponseBody;
+import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.Event;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
@@ -100,6 +101,9 @@ public interface OsfService {
 
     @GET("users/{id}/")
     Call<User> user(@Path("id") String id);
+
+    @GET
+    Call<List<Contributor>> contributors(@Url String url);
        
     //Call<List<NodeFile>> listFiles(@Path(""))
 }
