@@ -768,8 +768,8 @@
     
     <owl:DatatypeProperty rdf:about="&osfbom;providerName">
         <rdfs:label xml:lang="en">providerName</rdfs:label>
-        <rdfs:comment xml:lang="en">The name of the storage provider for a file</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;File"/>
+        <rdfs:comment xml:lang="en">The name of the storage provider for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileBase"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
 

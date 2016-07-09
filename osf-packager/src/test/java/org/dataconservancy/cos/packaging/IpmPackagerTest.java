@@ -30,10 +30,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
-
 /**
- * Created by esm on 6/22/16.
+ * Simple test exercising the IpmPackager
  */
 public class IpmPackagerTest  extends AbstractMockServerTest {
     private String baseUri = getBaseUri().toString();
@@ -66,7 +64,7 @@ public class IpmPackagerTest  extends AbstractMockServerTest {
 
         packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
-        IpmPackager.build(packageGraph);
+        IpmPackager.buildPackage(packageGraph);
 
     }
 }
