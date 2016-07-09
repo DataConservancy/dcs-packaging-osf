@@ -80,6 +80,9 @@ public interface OsfService {
 
     @GET("registrations/{id}/")
     Call<Registration> registration(@Path("id") String id);
+
+    @GET
+    Call<Registration> registrationByUrl(@Url String registrationUrl);
     
     @GET("registrations/")
     Call<List<RegistrationId>> registrationIdList();
@@ -101,6 +104,9 @@ public interface OsfService {
 
     @GET("users/{id}/")
     Call<User> user(@Path("id") String id);
+
+    @GET
+    Call<User> userByUrl(@Url String userUrl);
 
     @GET
     Call<List<Contributor>> contributors(@Url String url);
