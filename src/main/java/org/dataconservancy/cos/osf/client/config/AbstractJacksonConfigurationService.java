@@ -23,7 +23,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public abstract class AbstractJacksonConfigurationService extends BaseConfigurationService {
 
-    public static final String DEFAULT_CONFIGURATION_RESOURCE = "osf-client.json";
+    public static final String DEFAULT_CONFIGURATION_RESOURCE = System.getProperty("osf.client.conf",
+            "/org/dataconservancy/cos/osf/client/config/osf-client.json");
 
     /**
      * Error message when a JSON node cannot be mapped to a configuration.  Parameters are: error message, contents
