@@ -2,7 +2,7 @@
 
 This is a prototype client for interacting with the OSF v2 JSON-API.  
 
-It provides a interface for making HTTP calls to the OSF API, and a model for interacting with the data returned by the API.  Currently the API is read-only; writes to the OSF API are not supported.
+It provides a interface for making HTTP calls to the OSF API, and a model for interacting with the data returned by the API.  Currently the client is read-only; writes to the OSF API are not supported.
 
 The client is comprised of:
 
