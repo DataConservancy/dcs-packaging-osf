@@ -72,6 +72,10 @@ public abstract class BaseConfigurationService {
                 throw new RuntimeException("Unable to create a file: URL from the supplied configuration resource '" +
                         configurationResource + "': " + e.getMessage(), e);
             }
+        } else if (configurationResource.startsWith("classpath:")) {
+            springResource = new ClassPathResource(configurationResource.substring("classpath:".length()));
+        } else if (configurationResource.startsWith("classpath*:")) {
+            springResource = new ClassPathResource(configurationResource.substring("classpath*:".length()));
         } else {
             springResource = new ClassPathResource(configurationResource);
         }
