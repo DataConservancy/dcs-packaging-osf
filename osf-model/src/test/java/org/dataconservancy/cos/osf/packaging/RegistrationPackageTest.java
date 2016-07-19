@@ -139,8 +139,8 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         final String registeredByUserId = "qmdz6";
         final String registeredFromNodeId = "3e7rd";
         final String contributorUserId = "bwgcm";
-        final String registrationStorageProviderId = registrationId + ":osfstorage";
-        final String childRegistrationStorageProviderId = childRegistrationId + ":osfstorage";
+        final String registrationStorageProviderId = registrationId + "_osfstorage";
+        final String childRegistrationStorageProviderId = childRegistrationId + "_osfstorage";
 
         // Step one: retrieve all of the objects that we want to serialize into the package:
         //   - Registration
@@ -382,7 +382,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result = new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(r, result);
-        assertEquals(79, result.size());
+        assertEquals(80, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
