@@ -263,11 +263,22 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                         return jsonPath;
                     } else {
                         LOG.trace("  JSON resource {} does not exist.", jsonPath.toFile());
+                        throw new IllegalArgumentException(
+                                String.format("Unable to resolve request %s to a classpath resource under %s", req, fsBase));
+                    }
+                } else {
+                    // This is binary content, e.g.: /v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051
+                    jsonPath = Paths.get(fsBase.toString(), requestPath.toString());
+                    if (this.getClass().getResource(jsonPath.toString()) != null) {
+                        return jsonPath;
+                    } else {
+                        LOG.debug("  JSON resource {} does not exist.", jsonPath.toFile());
+                        throw new IllegalArgumentException(
+                                String.format("Unable to resolve request %s to a classpath resource under %s", req, fsBase));
                     }
                 }
 
-                throw new IllegalArgumentException(
-                        String.format("Unable to resolve request %s to a classpath resource under %s", req, fsBase));
+
 
             };
         }
