@@ -33,13 +33,18 @@ import java.util.stream.Collectors;
 /**
  * Simple test exercising the IpmPackager
  */
-public class IpmPackagerTest  extends AbstractMockServerTest {
+public class IpmPackagerTest extends AbstractMockServerTest {
     private String baseUri = getBaseUri().toString();
 
     private OntologyManager ontologyManager = new OntologyManager();
 
     @Rule
     public TestName testName = new TestName();
+
+    @Override
+    protected String getOsfServiceConfigurationResource() {
+        return "/org/dataconservancy/cos/packaging/config/osf-client.json";
+    }
 
     @Test
     public void testCreatePackageSimple() throws Exception {
