@@ -123,6 +123,18 @@ public class TestingOsfServiceFactory {
     }
 
     /**
+     * Expose the underlying OkHttpClient.  This is the HTTP client shared by every {@code OsfService} instance produced
+     * by this factory.  If the returned HTTP client is mutated, behavior is undefined for {@code OsfService} instances
+     * previously created by this factory.  Future instances of {@code OsfService} will use any settings that have been
+     * set by the caller.
+     *
+     * @return the shared OkHttpClient
+     */
+    public OkHttpClient getHttpClient() {
+        return httpClient;
+    }
+
+    /**
      * Expose the {@link OsfConfigurationService OSF configuration service} used by this factory.
      *
      * @return the OSF configuration service
