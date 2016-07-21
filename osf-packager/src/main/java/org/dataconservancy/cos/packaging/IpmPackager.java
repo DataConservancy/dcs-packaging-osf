@@ -91,7 +91,25 @@ public class IpmPackager {
         private static final Property RDF_TYPE = ResourceFactory.createProperty(Rdf.Ns.RDF, "type");
     }
 
-    private static final RelationshipResolver resolver = cxt.getBean("jsonApiRelationshipResolver", RelationshipResolver.class);
+    private static final RelationshipResolver DEFAULT_RESOLVER = cxt.getBean("jsonApiRelationshipResolver", RelationshipResolver.class);
+
+    private RelationshipResolver resolver;
+
+    public IpmPackager() {
+        resolver = DEFAULT_RESOLVER;
+    }
+
+    public IpmPackager(RelationshipResolver resolver) {
+        this.resolver = resolver;
+    }
+
+    public RelationshipResolver getResolver() {
+        return resolver;
+    }
+
+    public void setResolver(RelationshipResolver resolver) {
+        this.resolver = resolver;
+    }
 
     public static void main(String[] args) throws Exception {
 
@@ -121,11 +139,13 @@ public class IpmPackager {
         packageGraph.add(registration);
         users.forEach(packageGraph::add);
 
-        buildPackage(packageGraph);
+        IpmPackager packager = new IpmPackager();
+
+        packager.buildPackage(packageGraph);
 
     }
 
-    public static void buildPackage(OsfPackageGraph graph) {
+    public void buildPackage(OsfPackageGraph graph) {
 
         IpmRdfTransformService ipm2rdf =
                 cxt.getBean(IpmRdfTransformService.class);
@@ -152,7 +172,7 @@ public class IpmPackager {
          * buildContentTree(), then serialize to RDF
          */
         try {
-            state.setPackageTree(ipm2rdf.transformToRDF(buildContentTree(state.getDomainObjectRDF())));
+            state.setPackageTree(ipm2rdf.transformToRDF(buildContentTree(state.getDomainObjectRDF(), resolver)));
         } catch (RDFTransformException e) {
             throw new RuntimeException(e.getMessage(), e);
         }
@@ -187,7 +207,7 @@ public class IpmPackager {
      * describes associated content. 3) Arranging these nodes into a tree
      * structure of our liking.
      */
-    private static Node buildContentTree(Model domainObjects) {
+    private static Node buildContentTree(Model domainObjects, RelationshipResolver resolver) {
         // Synthesize a root node to anchor the objects in the domain object graph
         Node root = new Node(URI.create(UUID.randomUUID().toString()));
         root.setFileInfo(directory("root"));
@@ -225,7 +245,8 @@ public class IpmPackager {
                 n.setFileInfo(
                         contentFromUrl(
                                 filename,
-                                binaryUri));
+                                binaryUri,
+                                resolver));
 
             } else {
                 String filename;
@@ -258,7 +279,7 @@ public class IpmPackager {
      * @return populated FileInfo
      * @throws RuntimeException if the content cannot be downloaded or saved to a temporary file
      */
-    private static FileInfo contentFromUrl(String filename, String contentUrl) {
+    private static FileInfo contentFromUrl(String filename, String contentUrl, RelationshipResolver resolver) {
         LOG.debug("  Retrieving '{}' content from '{}'", filename, contentUrl);
 
         File outFile = null;
