@@ -15,6 +15,8 @@
  */
 package org.dataconservancy.cos.packaging;
 
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Request;
 import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Registration;
@@ -69,7 +71,16 @@ public class IpmPackagerTest extends AbstractMockServerTest {
 
         packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
-        IpmPackager.buildPackage(packageGraph);
+        IpmPackager packager = new IpmPackager((String url) -> {
+            Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
+            try {
+                return req.execute().body().bytes();
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage(), e);
+            }
+        });
+        
+        packager.buildPackage(packageGraph);
 
     }
 }
