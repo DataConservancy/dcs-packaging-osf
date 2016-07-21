@@ -28,6 +28,7 @@ import org.dataconservancy.cos.osf.client.config.JacksonConfigurer;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
 import org.dataconservancy.cos.osf.client.config.WbClientConfiguration;
 import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -36,13 +37,19 @@ import org.mockserver.client.server.MockServerClient;
 import org.mockserver.integration.ClientAndServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.mockserver.model.HttpCallback.callback;
 import static org.mockserver.model.HttpRequest.request;
 
@@ -75,16 +82,23 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
     /**
      * Starts mock HTTP servers on the port specified by the OSF client configuration and the Waterbutler client configuration
      */
-    @BeforeClass
-    public static void startMockServer() throws Exception {
+    @Before
+    public void startMockServer() throws Exception {
         final ObjectMapper mapper = new ObjectMapper();
 
         JacksonConfigurer<OsfClientConfiguration> osfConfigurer = new DefaultOsfJacksonConfigurer<>();
         JacksonConfigurer<WbClientConfiguration> wbConfigurer = new DefaultWbJacksonConfigurer<>();
 
+        ResourceLoader loader = new DefaultResourceLoader();
+
+        Resource configuration = loader.getResource(getOsfServiceConfigurationResource());
+        assertTrue("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'", configuration.exists());
+
+//        assertNotNull("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'", configuration);
+
         mockServer = ClientAndServer.startClientAndServer(
                 osfConfigurer.configure(
-                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("org/dataconservancy/cos/osf/client/config/osf-client-local.json"), "UTF-8")),
+                        mapper.readTree(IOUtils.toString(configuration.getURL(), "UTF-8")),
                         mapper,
                         OsfClientConfiguration.class
                 ).getPort()
@@ -92,18 +106,41 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         wbMockServer = ClientAndServer.startClientAndServer(
                 wbConfigurer.configure(
-                        mapper.readTree(IOUtils.toString(BaseConfigurationService.getConfigurationResource("org/dataconservancy/cos/osf/client/config/osf-client-local.json"), "UTF-8")),
+                        mapper.readTree(IOUtils.toString(configuration.getURL(), "UTF-8")),
                         mapper,
                         WbClientConfiguration.class
                 ).getPort()
         );
+
+        /* Sets up the expectations of the mock http server.
+         *
+         * Invokes the NodeResponseCallback when the HTTP header "X-Response-Resource" is present.
+         * The header value is a classpath resource to the JSON document to be serialized for the
+         * response.
+         */
+        mockServer.when(
+                request()
+                        .withHeader(X_RESPONSE_RESOURCE)
+        )
+                .callback(
+                        callback()
+                                .withCallbackClass(NodeResponseCallback.class.getName())
+                );
+        wbMockServer.when(
+                request()
+                        .withHeader(X_RESPONSE_RESOURCE)
+        )
+                .callback(
+                        callback()
+                                .withCallbackClass(NodeResponseCallback.class.getName())
+                );
     }
 
     /**
      * Stops mock HTTP servers
      */
-    @AfterClass
-    public static void stopMockServer() throws Exception {
+    @After
+    public void stopMockServer() throws Exception {
         mockServer.stop();
         wbMockServer.stop();
     }
@@ -154,35 +191,6 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         Path resolvedPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
 
         return resolvedPath;
-    }
-
-    /**
-     * Sets up the expectations of the mock http server.
-     */
-    @Before
-    public void setUpExpectations() {
-
-        /*
-         * Invokes the NodeResponseCallback when the HTTP header "X-Response-Resource" is present.
-         * The header value is a classpath resource to the JSON document to be serialized for the
-         * response.
-         */
-        mockServer.when(
-                request()
-                        .withHeader(X_RESPONSE_RESOURCE)
-        )
-                .callback(
-                        callback()
-                                .withCallbackClass(NodeResponseCallback.class.getName())
-                );
-        wbMockServer.when(
-                request()
-                        .withHeader(X_RESPONSE_RESOURCE)
-        )
-                .callback(
-                        callback()
-                                .withCallbackClass(NodeResponseCallback.class.getName())
-                );
     }
 
     /**
