@@ -30,6 +30,8 @@
 
   <logger name="org.dataconservancy.cos.packaging" level="DEBUG"/>
 
+  <logger name="org.springframework" level="OFF"/>
+
   <root level="WARN">
     <appender-ref ref="STDOUT" />
   </root>

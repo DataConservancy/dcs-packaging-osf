@@ -25,11 +25,11 @@
       the client configuration.
   -->
   <bean id="osfConfigurationSvc" class="org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService">
-    <constructor-arg value="org/dataconservancy/cos/packaging/config/osf-client.json"/>
+    <constructor-arg value="${osf.client.conf:org/dataconservancy/cos/packaging/config/osf-client.json}"/>
   </bean>
 
   <bean id="wbConfigurationSvc" class="org.dataconservancy.cos.osf.client.config.JacksonWbConfigurationService">
-    <constructor-arg value="org/dataconservancy/cos/packaging/config/osf-client.json"/>
+    <constructor-arg value="${osf.client.conf:org/dataconservancy/cos/packaging/config/osf-client.json}"/>
   </bean>
 
   <!--

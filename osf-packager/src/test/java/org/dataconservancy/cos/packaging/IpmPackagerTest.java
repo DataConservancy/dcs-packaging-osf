@@ -18,6 +18,7 @@ package org.dataconservancy.cos.packaging;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Request;
 import org.apache.jena.riot.RDFFormat;
+import org.dataconservancy.cos.osf.client.config.WbConfigurationService;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
@@ -27,10 +28,13 @@ import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Simple test exercising the IpmPackager
@@ -82,5 +86,17 @@ public class IpmPackagerTest extends AbstractMockServerTest {
         
         packager.buildPackage(packageGraph);
 
+    }
+
+    /**
+     * Insures that the system property, {@code osf.client.conf}, is honored by Spring when constructing the application context.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testIpmManagerConfigurationResolutionWithSpring() throws Exception {
+        System.setProperty("osf.client.conf", "classpath:/org/dataconservancy/cos/packaging/TestSpringClientConfiguration-classpath.json");
+        WbConfigurationService configSvc = IpmPackager.cxt.getBean("wbConfigurationSvc", WbConfigurationService.class);
+        assertEquals("test-host", configSvc.getConfiguration().getHost());
     }
 }
