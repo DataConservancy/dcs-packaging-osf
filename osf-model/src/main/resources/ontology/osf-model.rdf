@@ -337,6 +337,7 @@
     <owl:DatatypeProperty rdf:about="&osfbom;hasDateCreated">
         <rdfs:label xml:lang="en">hasDateCreated</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the creation date</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;created"/>
         <rdfs:domain rdf:resource="&osfbom;DataEntity"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
@@ -347,6 +348,7 @@
     <owl:DatatypeProperty rdf:about="&osfbom;hasDateModified">
         <rdfs:label xml:lang="en">hasDateModified</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the modification date</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;modified"/>
         <rdfs:domain rdf:resource="&osfbom;DataEntity"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
