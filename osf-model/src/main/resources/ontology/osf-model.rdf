@@ -894,6 +894,7 @@
    <!-- http://www.dataconservancy.org/osf-business-object-model#NodeBase -->
    <owl:Class rdf:about="&osfbom;NodeBase">
      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+     <rdfs:subClassOf rdf:resource="&osfbom;DataEntity"/>
         <owl:disjointWith rdf:resource="&osfbom;Collection"/>
     <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
     <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
@@ -902,7 +903,7 @@
       NodeBase is a common superclass for Node and Registration
       </rdfs:comment>
    </owl:Class>
-   
+
     <!-- http://www.dataconservancy.org/osf-business-object-model#Node -->
    <owl:Class rdf:about="&osfbom;Node">
         <rdfs:label xml:lang="en">Node</rdfs:label>
@@ -924,6 +925,7 @@
    <owl:Class rdf:about="&osfbom;Collection">
         <rdfs:label xml:lang="en">Collection</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:subClassOf rdf:resource="&osfbom;DataEntity"/>
         <owl:disjointWith rdf:resource="&osfbom;User"/>
         <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
     <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
@@ -933,19 +935,10 @@
       </rdfs:comment>
    </owl:Class>
 
-      
+
    <!-- http://www.dataconservancy.org/business-object-model#DataEntity -->
    <owl:Class rdf:about="&osfbom;DataEntity">
        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&osfbom;Collection"/>
-                    <rdf:Description rdf:about="&osfbom;NodeBase"/>
-            <rdf:Description rdf:about="&osfbom;File"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>     
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&osfbom;hasDateCreated"/>
@@ -959,7 +952,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
-    
+
     <!-- http://www.dataconservancy.org/osf-business-object-model#Contributor -->
     <!-- TODO: consider subclassing foaf:Person -->
     <!-- TODO: is this really a sub-class of OSFBusinessObject?  Contributors really have 
@@ -979,14 +972,15 @@
       <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
       <owl:disjointWith rdf:resource="&osfbom;Collection"/>
     </owl:Class>    
-    
-    <!-- http://www.dataconservancy.org/osf-business-object-model#File --> 
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#File -->
     <owl:Class rdf:about="&osfbom;File">
       <rdfs:label xml:lang="en">File</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;DataEntity"/>
       <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
       <owl:disjointWith rdf:resource="&osfbom;Folder"/>
       <owl:disjointWith rdf:resource="&osfbom;Provider"/>
-    </owl:Class>    
+    </owl:Class>
 
     <!-- http://www.dataconservancy.org/osf-business-object-model#Folder -->
     <owl:Class rdf:about="&osfbom;Folder">
