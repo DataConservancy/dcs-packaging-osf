@@ -260,7 +260,7 @@
         <rdfs:label xml:lang="en">hasOrcid</rdfs:label>
         <rdfs:comment xml:lang="en">A data property specifying the User's ORCID</rdfs:comment>
         <rdfs:domain rdf:resource="&osfbom;User"/>
-        <rdfs:range rdf:resource="&dbpedia;orchidId"/>
+        <rdfs:range rdf:resource="&dbpedia;orcidId"/>
     </owl:DatatypeProperty>
 
 
