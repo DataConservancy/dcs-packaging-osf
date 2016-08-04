@@ -51,6 +51,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Paths;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -65,7 +66,7 @@ public class IpmPackager {
 
     static final Logger LOG = LoggerFactory.getLogger(IpmPackager.class);
 
-    static final String PACKAGE_NAME = "MyPackage";
+    private String PACKAGE_NAME = "MyPackage"; // this will get overridden by the CLI  using the setter
 
     static final ClassPathXmlApplicationContext cxt =
             new ClassPathXmlApplicationContext("classpath*:applicationContext.xml",
@@ -111,6 +112,9 @@ public class IpmPackager {
         this.resolver = resolver;
     }
 
+    public void setPackageName(String packageName) { this.PACKAGE_NAME = packageName; }
+
+
     public static void main(String[] args) throws Exception {
 
         final OsfPackageGraph packageGraph = cxt.getBean("packageGraph", OsfPackageGraph.class);
@@ -141,11 +145,12 @@ public class IpmPackager {
 
         IpmPackager packager = new IpmPackager();
 
-        packager.buildPackage(packageGraph);
+
+        packager.buildPackage(packageGraph, null);
 
     }
 
-    public void buildPackage(OsfPackageGraph graph) {
+    public Package buildPackage(OsfPackageGraph graph,  LinkedHashMap<String, List<String>> metadata) {
 
         IpmRdfTransformService ipm2rdf =
                 cxt.getBean(IpmRdfTransformService.class);
@@ -177,6 +182,10 @@ public class IpmPackager {
             throw new RuntimeException(e.getMessage(), e);
         }
 
+        if (metadata != null) {
+            state.setPackageMetadataList(metadata);
+        }
+
         /* Construct the package */
         Package pkg = null;
         try {
@@ -185,19 +194,7 @@ public class IpmPackager {
             throw new RuntimeException(e.getMessage(), e);
         }
 
-        /* Now just write the package out to a file */
-        FileOutputStream out = null;
-        try {
-            out = new FileOutputStream(PACKAGE_NAME + ".tar.gz");
-            IOUtils.copy(pkg.serialize(), out);
-            out.close();
-        } catch (java.io.IOException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-
-        pkg.cleanupPackage();
-
-        System.out.println("DONE");
+        return pkg;
     }
     
     /*
@@ -326,7 +323,7 @@ public class IpmPackager {
     }
 
     /* Package building boilerplate */
-    private static Package buildPackage(PackageState state) throws Exception {
+    private Package buildPackage(PackageState state) throws Exception {
         PackageGenerationParameters params =
                 new PropertiesConfigurationParametersBuilder()
                         .buildParameters(IpmPackager.class

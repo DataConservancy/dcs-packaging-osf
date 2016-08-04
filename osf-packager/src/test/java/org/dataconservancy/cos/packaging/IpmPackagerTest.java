@@ -25,6 +25,9 @@ import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
 import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
+import org.dataconservancy.packaging.tool.model.GeneralParameterNames;
+import org.dataconservancy.packaging.tool.model.PackageGenerationParameters;
+import org.dataconservancy.packaging.tool.model.PropertiesConfigurationParametersBuilder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -59,6 +62,13 @@ public class IpmPackagerTest extends AbstractMockServerTest {
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
 
+        final PackageGenerationParameters params =  new PropertiesConfigurationParametersBuilder()
+                        .buildParameters(IpmPackager.class
+                                .getResourceAsStream("/PackageGenerationParams.properties"));
+
+        params.addParam(GeneralParameterNames.PACKAGE_LOCATION,
+                System.getProperty("java.io.tmpdir"));
+        params.addParam(GeneralParameterNames.PACKAGE_NAME, "MyPackage");
         final Registration registration = osfService.registration(registrationId).execute().body();
         final List<User> users = registration.getContributors().stream()
                 .map(c -> {
@@ -84,7 +94,7 @@ public class IpmPackagerTest extends AbstractMockServerTest {
             }
         });
         
-        packager.buildPackage(packageGraph);
+        packager.buildPackage(packageGraph, null);
 
     }
 
