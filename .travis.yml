@@ -5,10 +5,7 @@ script:
 jdk:
 - oraclejdk8
 before_install:
-- mvn -X -e help:system
-- openssl aes-256-cbc -K $encrypted_3f7fcd4374c4_key -iv $encrypted_3f7fcd4374c4_iv
-  -in settings.tar.enc -out settings.tar -d -in settings.tar.enc -out settings.tar
-  -d
+- openssl aes-256-cbc -K $encrypted_3f7fcd4374c4_key -iv $encrypted_3f7fcd4374c4_iv -in settings.tar.enc -out settings.tar -d -in settings.tar.enc -out settings.tar -d
 - tar xf settings.tar
 - cat known_hosts >> ~/.ssh/known_hosts
 install: true
