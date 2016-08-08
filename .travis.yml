@@ -1,7 +1,9 @@
 language: java
 install: true
-env:
-- MAVEN_OPTS="-Xmx1024m"
+#env:
+#- MAVEN_OPTS="-Xmx1024m"
+before_script:
+  - echo "MAVEN_OPTS='-Xmx1024m'" > ~/.mavenrc
 script: 
 - mvn -X -e -s ./settings.xml help:system
 - mvn -X -e -s ./settings.xml clean deploy
