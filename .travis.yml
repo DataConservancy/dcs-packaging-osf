@@ -1,5 +1,8 @@
 language: java
-script: mvn -s ./settings.xml clean deploy
+install: true
+script: 
+- mvn -s ./settings.xml clean deploy
+- cat target/rat.txt
 jdk:
 - oraclejdk8
 notifications:
