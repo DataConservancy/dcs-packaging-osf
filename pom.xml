@@ -131,6 +131,8 @@
                         <exclude>.travis.yml</exclude>
                         <exclude>travis_dc</exclude>
                         <exclude>**/*.md</exclude>
+                        <exclude>src/test/resources/json/**</exclude>
+                        <exclude>**/*.json</exclude>
                     </excludes> 
                 </configuration>
             </plugin>
