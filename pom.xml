@@ -123,6 +123,16 @@
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>settings.tar</exclude>
+                        <exclude>settings.xml</exclude>
+                        <exclude>known_hosts</exclude>
+                        <exclude>.travis.yml</exclude>
+                        <exclude>travis_dc</exclude>
+                        <exclude>**/*.md</exclude>
+                    </excludes> 
+                </configuration>
             </plugin>
 
             <plugin>
