@@ -1,5 +1,6 @@
 language: java
 script:
+- mvn -s ./settings.xml help:system
 - mvn -s ./settings.xml clean deploy
 - cat target/rat.txt
 jdk:
