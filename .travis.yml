@@ -3,6 +3,7 @@ install: true
 env:
 - MAVEN_OPTS="-Xmx1024m"
 script: 
+- mvn -X -e -s ./settings.xml help:system
 - mvn -X -e -s ./settings.xml clean deploy
 - cat target/rat.txt
 jdk:
