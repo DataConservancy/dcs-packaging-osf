@@ -6,11 +6,12 @@ jdk:
 - oraclejdk8
 before_install:
 - mvn -X -e help:system
-- openssl aes-256-cbc -K $encrypted_3f7fcd4374c4_key -iv $encrypted_3f7fcd4374c4_iv -in settings.tar.enc -out settings.tar -d
-  -in settings.tar.enc -out settings.tar -d
+- openssl aes-256-cbc -K $encrypted_3f7fcd4374c4_key -iv $encrypted_3f7fcd4374c4_iv
+  -in settings.tar.enc -out settings.tar -d -in settings.tar.enc -out settings.tar
+  -d
 - tar xf settings.tar
 - cat known_hosts >> ~/.ssh/known_hosts
 install: true
 notifications:
   slack:
-    secure: TvrybyxkkA+rhCrnPgUfJhsjG095ArZVK89AVZ8c6Cgw00P4ldWVJOTgajnLBTyl55JMV7mfV7za9XfZhVA65Rt1H/yrjHl9lDC5gJlFMuqhtvgrP2hfyNoVx92VCBmdF0kmkIxMSMvRIuTjerhaJgDiqFJiLr1Ak3gdIGPfZ8GPQSgWR/MYLI7xaJWxCyW5ea5ckmTEkUiCKSt+UEipp1May/9UodSPpyvyKD+KzA5M0YeAbyDL3sMdHhNtr1GoKHfsClZ8yyClBMgsNF83ngGa3hYjzRRprat0/92qojrkPA/lZoudbNMShpQcsS61WEr/D4bL9r1d5fxQJyWtuc6JFb6l2lc/02WOFkFc7sg0oNZRyYNhqL8hk/LfdaH/IxYDYwCGKLZ9CMngUeesBw4G2nD+43y6wtsj28qVuvI7lMAdSIL923bsl3ImkDCvKcDzT1mfUfhHJCSgQTA/xtA4nP6Tuw6aoo6YOF0b6ZZgURaJKRmskarO9uwyo56h0CYo8LGjilIqubSdyZ/BbV9ETnbxBchKBvtwsnFgFX6YXRO9dGghCKDJFDHBlNerIwnVHOb6/wPtb6JvZ1mMUNN2J3QLn6PRdEeacr5t2+a6WjXk9oZZWBU2pA4+0qzWiRD7kgWZOp98e2d8crF4pa9nmz6l66oPM/bFaFRPsMw=
+    secure: oTaeh5zR/jc6e4MlxvgCet6hteRTyrKh1V7pADZjGy4OfVuSKXO60PJC+lrY2Y9VQDtOLEPp3nUwQvmPdDTq6nJSiD9mtsoVtOWTLnh4ls3IX7c9R1Ykh0BRiDsLVKWwSEjxm7rzXzJK6T1N3wzjiIZVvyfm+ixNaDEb3mOW5cgxuD6rZ7xd9+3VqPamJeQ9PUWit2Mw6XCsAXjyg6oqFr7CdxJq5o8YfpRqlzj7WEz3UT8iXklNgqiVlcNCDwXUpOSBDGoglB4DxDWArFREo6/bEqjYM8ZHMpz4w759UvPJhxbofISBZ0QcszD0kfegsg2jak9Gp6bUi+NwZZZ1Zwd1yiVDwmpHR2OP2/zGReQQTGdfyjP+dET0Pi86+zwVdGy31h5vJXViqx+kl14cuu+yv1cTh84oMnrYBZRIi0v6ZwnLnAn36YIjNW9xDM1BXF5b8oN4iXKFu3zQqvZ1f5pWY5JBT1YfeBNNphcshMG7LrWmHppKAjV9IyGwQ5TSwtpXWeGZ9P2iWrUHl1KP60PhyyehXKJ1sC7StI5K+fuzVOpzu4Ohpt7EYNYzV0z5zUAeHiJWZYUXHxYoF/7z2rtDMJoyFxxr/N9RdObds84M9hWLFbUoUqH//Dcx/22ibWWmB4bQ6mIEvVvzu1dA6fC4C33VxSQIKOS3l0QSEhk=
