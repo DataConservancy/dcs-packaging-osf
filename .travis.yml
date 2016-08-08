@@ -1,0 +1,15 @@
+language: java
+script:
+- mvn -s ./settings.xml clean deploy
+- cat target/rat.txt
+jdk:
+- oraclejdk8
+before_install:
+- openssl aes-256-cbc -K $encrypted_3f7fcd4374c4_key -iv $encrypted_3f7fcd4374c4_iv -in settings.tar.enc -out settings.tar -d
+  -in settings.tar.enc -out settings.tar -d
+- tar xf settings.tar
+- cat known_hosts >> ~/.ssh/known_hosts
+install: true
+notifications:
+  slack:
+    secure: TvrybyxkkA+rhCrnPgUfJhsjG095ArZVK89AVZ8c6Cgw00P4ldWVJOTgajnLBTyl55JMV7mfV7za9XfZhVA65Rt1H/yrjHl9lDC5gJlFMuqhtvgrP2hfyNoVx92VCBmdF0kmkIxMSMvRIuTjerhaJgDiqFJiLr1Ak3gdIGPfZ8GPQSgWR/MYLI7xaJWxCyW5ea5ckmTEkUiCKSt+UEipp1May/9UodSPpyvyKD+KzA5M0YeAbyDL3sMdHhNtr1GoKHfsClZ8yyClBMgsNF83ngGa3hYjzRRprat0/92qojrkPA/lZoudbNMShpQcsS61WEr/D4bL9r1d5fxQJyWtuc6JFb6l2lc/02WOFkFc7sg0oNZRyYNhqL8hk/LfdaH/IxYDYwCGKLZ9CMngUeesBw4G2nD+43y6wtsj28qVuvI7lMAdSIL923bsl3ImkDCvKcDzT1mfUfhHJCSgQTA/xtA4nP6Tuw6aoo6YOF0b6ZZgURaJKRmskarO9uwyo56h0CYo8LGjilIqubSdyZ/BbV9ETnbxBchKBvtwsnFgFX6YXRO9dGghCKDJFDHBlNerIwnVHOb6/wPtb6JvZ1mMUNN2J3QLn6PRdEeacr5t2+a6WjXk9oZZWBU2pA4+0qzWiRD7kgWZOp98e2d8crF4pa9nmz6l66oPM/bFaFRPsMw=
