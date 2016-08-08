@@ -1,7 +1,7 @@
 language: java
 install: true
 env:
-- MAVEN_OPTS="-Xmx=500m"
+- MAVEN_OPTS="-Xmx=1024m"
 script: 
 - mvn -s ./settings.xml clean deploy
 - cat target/rat.txt
