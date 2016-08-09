@@ -16,6 +16,8 @@
 package org.dataconservancy.cos.packaging;
 
 import com.github.jasminb.jsonapi.RelationshipResolver;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.jena.rdf.model.Model;
@@ -284,7 +286,15 @@ public class IpmPackager {
             outFile = new File(System.getProperty("java.io.tmpdir"), filename);
             byte[] data = resolver.resolve(contentUrl);
             if (data == null || data.length == 0) {
-                throw new RuntimeException("Unable to retrieve content from '" + contentUrl + "'");
+                // We actually don't know receiving zero bytes is an error, because the file to be retrieved at
+                // 'contentUrl' may be in actuality, a zero-length file.  The 'Content-Length' header would let us
+                // know this, but we don't have access to the HTTP headers.
+                OkHttpClient client = cxt.getBean("okHttpClient", OkHttpClient.class);
+                Request head = new Request.Builder().head().url(contentUrl).build();
+                Integer contentLength = Integer.parseInt(client.newCall(head).execute().header("Content-Length", "-1"));
+                if (contentLength > 0) {
+                    throw new RuntimeException("Unable to retrieve content from '" + contentUrl + "': Expected " + contentLength + " bytes but received 0 bytes.");
+                }
             }
             IOUtils.write(data,
                     new FileOutputStream(outFile));
