@@ -26,7 +26,11 @@ import org.joda.time.format.DateTimeFormatter;
  */
 public class JodaSupport {
 
-    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS");
+    /**
+     * A Joda DateTimeFormatter which parses timezone-less strings as UTC using the pattern: {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}
+     */
+    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS").withZoneUTC();
+
     //NOTE: dates on some of the API paths are formatted with the 'Z' at the end. Until they are consistent, there is this...
     public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
