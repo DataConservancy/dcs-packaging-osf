@@ -10,3 +10,4 @@ osf-client-test.json
 .DS_Store
 catalog-v001.xml
 MyPackage*
+dependency-reduced-pom.xml
