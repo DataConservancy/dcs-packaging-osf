@@ -72,7 +72,7 @@ public class PackageGenerationApp {
     private static File confFile;
 
     /** the output directory for the package */
-    @Option(name = "-o", aliases = {"-output", "--output"}, usage = "path to the directory where the package will be written")
+    @Option(name = "-o", aliases = {"-output", "--output"}, required = true, usage = "path to the directory where the package will be written")
     private static File outputLocation;
 
     /** the package name  **/
