@@ -214,9 +214,9 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_HAS_CATEGORY, Category.PROJECT.name());
         assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_HAS_CHILD, asResource(childRegistrationId));
         // TODO double-check timezone and conversion from JodaTime to Calendar
-        assertHasTypedLiteralWithValue(registrationIndividual, OwlProperties.OSF_HAS_DATECREATED, "2016-06-03T21:53:52.434Z", XSDDatatype.XSDdateTime);
-        assertHasTypedLiteralWithValue(registrationIndividual, OwlProperties.OSF_HAS_DATEMODIFIED, "2016-06-07T21:52:19.617Z", XSDDatatype.XSDdateTime);
-        assertHasTypedLiteralWithValue(registrationIndividual, OwlProperties.OSF_HAS_DATEREGISTERED, "2016-06-07T21:53:10.603Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(registrationIndividual, OwlProperties.OSF_HAS_DATECREATED, "2016-06-03T17:53:52.434Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(registrationIndividual, OwlProperties.OSF_HAS_DATEMODIFIED, "2016-06-07T17:52:19.617Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(registrationIndividual, OwlProperties.OSF_HAS_DATEREGISTERED, "2016-06-07T17:53:10.603Z", XSDDatatype.XSDdateTime);
         assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_HAS_DESCRIPTION, "Test project Two.");
         assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT, "Open-Ended Registration");
         assertHasPropertyWithValue(registrationIndividual, OwlProperties.OSF_HAS_ROOT, asResource(registrationId));
@@ -239,9 +239,9 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         final Individual childRegistrationIndividual = ontologyManager.getOntModel().getIndividual(childRegistrationId);
         assertNotNull(childRegistrationIndividual);
         assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_CATEGORY, Category.DATA.name());
-        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATECREATED, "2016-06-07T18:46:14.778Z", XSDDatatype.XSDdateTime);
-        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATEMODIFIED, "2016-06-07T21:47:39.006Z", XSDDatatype.XSDdateTime);
-        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATEREGISTERED, "2016-06-07T21:53:10.766Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATECREATED, "2016-06-07T14:46:14.778Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATEMODIFIED, "2016-06-07T17:47:39.006Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_DATEREGISTERED, "2016-06-07T17:53:10.766Z", XSDDatatype.XSDdateTime);
         assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT, "Open-Ended Registration");
         // TODO: /root/ relationship is missing from the parent registration's /children/ relationship
         // assertHasPropertyWithValue(childRegistrationIndividual, OwlProperties.OSF_HAS_ROOT, asResource(registrationId));
@@ -285,13 +285,13 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertHasPropertyWithValue(registeredByUser, OwlProperties.OSF_HAS_SUFFIX, "");
         assertHasPropertyWithValue(registeredByUser, OwlProperties.OSF_HAS_LINKEDIN, "");
         assertHasPropertyWithValue(registeredByUser, OwlProperties.OSF_HAS_SCHOLAR, "");
-        assertHasTypedLiteralWithValue(registeredByUser, OwlProperties.OSF_HAS_DATEUSERREGISTERED, "2016-06-03T21:52:35.4Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(registeredByUser, OwlProperties.OSF_HAS_DATEUSERREGISTERED, "2016-06-03T17:52:35.4Z", XSDDatatype.XSDdateTime);
         assertHasPropertyWithValue(registeredByUser, OwlProperties.OSF_HAS_FULLNAME, "Elliot Metsger");
         assertHasPropertyWithValue(registeredByUser, OwlProperties.OSF_HAS_GIVENNAME, "Elliot");
         assertHasPropertyWithValue(registeredByUser, OwlProperties.OSF_HAS_LOCALE, "en_US");
         assertHasTypedLiteralWithValue(registeredByUser, OwlProperties.OSF_IS_ACTIVE, "true", XSDDatatype.XSDboolean);
 
-        assertHasTypedLiteralWithValue(contributorUser, OwlProperties.OSF_HAS_DATEUSERREGISTERED, "2016-06-03T22:00:16.559Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(contributorUser, OwlProperties.OSF_HAS_DATEUSERREGISTERED, "2016-06-03T18:00:16.559Z", XSDDatatype.XSDdateTime);
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_BAIDUID, "");
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_TWITTER, "");
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_IMPACTSTORY, "");
@@ -302,7 +302,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_SUFFIX, "");
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_LINKEDIN, "");
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_SCHOLAR, "");
-        assertHasTypedLiteralWithValue(contributorUser, OwlProperties.OSF_HAS_DATEUSERREGISTERED, "2016-06-03T22:00:16.559Z", XSDDatatype.XSDdateTime);
+        assertHasTypedLiteralWithValue(contributorUser, OwlProperties.OSF_HAS_DATEUSERREGISTERED, "2016-06-03T18:00:16.559Z", XSDDatatype.XSDdateTime);
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_FULLNAME, "JHU Emetsger");
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_GIVENNAME, "JHU");
         assertHasPropertyWithValue(contributorUser, OwlProperties.OSF_HAS_LOCALE, "en_US");
