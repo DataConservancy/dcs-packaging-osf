@@ -95,6 +95,14 @@
               <exclude>.travis.yml</exclude>
               <exclude>travis_dc</exclude>
               <exclude>**/*.md</exclude>
+              <exclude>**/src/test/resources/json/**</exclude>
+              <exclude>**/*.json</exclude>
+              <exclude>**/*.iml</exclude>
+              <exclude>**/dependency-reduced-pom.xml</exclude>
+              <exclude>**/src/test/resources/**/*.ttl</exclude>
+              <exclude>**/src/test/resources/**/*.sh</exclude>
+              <exclude>**/catalog-v*.xml</exclude>
+              <exclude>**/target/**</exclude>
             </excludes> 
           </configuration>
         </plugin>
@@ -108,6 +116,11 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
       </plugin>
 
     </plugins>
