@@ -17,6 +17,7 @@ package org.dataconservancy.cos.osf.client.model;
 
 import java.util.Map;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Links;
@@ -27,6 +28,7 @@ import com.github.jasminb.jsonapi.annotations.Type;
  *
  */
 @Type("institutions")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Institution {
 
 	/**unique institution identifier in the OSF*/
