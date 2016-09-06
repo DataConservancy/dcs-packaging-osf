@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.JodaSupport;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
@@ -215,7 +216,7 @@ public class User {
 
     public void setDate_registered(String date_registered) {
     	if (date_registered!=null){
-    		this.date_registered = DATE_TIME_FORMATTER.parseDateTime(date_registered);
+    		this.date_registered = JodaSupport.parseDateTime(date_registered);
     	} else {
     		this.date_registered=null;
     	}

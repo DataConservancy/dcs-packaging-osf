@@ -21,6 +21,7 @@ import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.JodaSupport;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
@@ -91,7 +92,7 @@ public class Event {
     }
 
     public void setDate(String date) {
-        this.date = DATE_TIME_FORMATTER.parseDateTime(date);
+        this.date = JodaSupport.parseDateTime(date);
     }
 
     public String getNode() {

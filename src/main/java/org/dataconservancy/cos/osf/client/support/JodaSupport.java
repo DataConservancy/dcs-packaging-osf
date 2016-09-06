@@ -15,8 +15,12 @@
  */
 package org.dataconservancy.cos.osf.client.support;
 
+import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by esm on 5/2/16.
@@ -33,5 +37,42 @@ public class JodaSupport {
 
     //NOTE: dates on some of the API paths are formatted with the 'Z' at the end. Until they are consistent, there is this...
     public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+
+    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_2 = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+    private static final List<DateTimeFormatter> DATE_TIME_FORMATTERS =
+            new ArrayList<DateTimeFormatter>() {
+                {
+                    add(DATE_TIME_FORMATTER);
+                    add(DATE_TIME_FORMATTER_ALT);
+                    add(DATE_TIME_FORMATTER_ALT_2);
+                }
+            };
+
+    /**
+     * Parses a string timestamp into a Joda {@code DateTime} object.
+     * <p>
+     * This method is able to parse multiple representations of a timestamp:
+     * </p>
+     * <ul>
+     *   <li>yyyy-MM-dd'T'HH:mm:ss.SSSSSS</li>
+     *   <li>yyyy-MM-dd'T'HH:mm:ss.SSS'Z'</li>
+     *   <li>yyyy-MM-dd'T'HH:mm:ss'Z'</li>
+     * </ul>
+     *
+     * @param dateTime a string representing a timestamp
+     * @return the Joda {@code DateTime} for the timestamp
+     * @throws RuntimeException if the string representing the timestamp cannot be parsed
+     */
+    public static DateTime parseDateTime(String dateTime) {
+        for (DateTimeFormatter formatter : DATE_TIME_FORMATTERS) {
+            try {
+                return formatter.parseDateTime(dateTime);
+            } catch (Exception e) {
+                // nothing we can do, try the next formatter in line, or error out below.
+            }
+        }
+        throw new RuntimeException("Unable to parse '" + dateTime + "' to a Joda DateTime object: Missing a DateTimeFormatter.");
+    }
 
 }

@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.JodaSupport;
 import org.dataconservancy.cos.osf.client.support.LicenseHashUriGenerator;
 import org.dataconservancy.cos.osf.client.support.ToBooleanTransform;
 import org.dataconservancy.cos.osf.client.support.TruncatingTransform;
@@ -230,7 +231,7 @@ public abstract class NodeBase {
 
 	public void setDate_created(String date_created) {
 		if (date_created!=null){
-			this.date_created = DATE_TIME_FORMATTER.parseDateTime(date_created);
+			this.date_created = JodaSupport.parseDateTime(date_created);
 		} else {
 			this.date_created = null;
 		}
@@ -246,7 +247,7 @@ public abstract class NodeBase {
 
 	public void setDate_modified(String date_modified) {
 		if (date_modified!=null){
-			this.date_modified = DATE_TIME_FORMATTER.parseDateTime(date_modified);
+			this.date_modified = JodaSupport.parseDateTime(date_modified);
 		} else {
 			date_modified=null;
 		}

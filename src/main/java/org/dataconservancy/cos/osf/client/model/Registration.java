@@ -21,6 +21,7 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 import java.util.List;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.JodaSupport;
 import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
@@ -131,7 +132,7 @@ public class Registration extends NodeBase  {
 
 	public void setDate_registered(String date_registered) {
     	if (date_registered!=null){
-    		this.date_registered = DATE_TIME_FORMATTER.parseDateTime(date_registered);
+    		this.date_registered = JodaSupport.parseDateTime(date_registered);
     	} else {
     		this.date_registered = null;
     	}
@@ -147,7 +148,7 @@ public class Registration extends NodeBase  {
 
 	public void setEmbargo_end_date(String embargo_end_date) {
     	if (embargo_end_date!=null){
-    		this.embargo_end_date = DATE_TIME_FORMATTER.parseDateTime(embargo_end_date);
+    		this.embargo_end_date = JodaSupport.parseDateTime(embargo_end_date);
     	} else {
     		this.embargo_end_date = null;
     	}
