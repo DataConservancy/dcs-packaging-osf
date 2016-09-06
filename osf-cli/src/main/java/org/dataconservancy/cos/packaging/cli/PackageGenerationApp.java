@@ -29,7 +29,11 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.apache.commons.io.IOUtils;
+import org.apache.jena.atlas.json.JSON;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
@@ -46,6 +50,8 @@ import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.swing.text.html.HTML;
+
 /**
  * Application for generating packages from package descriptions.
  * <p>
@@ -61,7 +67,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class PackageGenerationApp {
 
     @Argument(multiValued = false, usage="URL to the registration to be packaged" )
-    private String registrationUrl;
+    private static String registrationUrl;
 
      /** Request for help/usage documentation */
     @Option(name = "-h", aliases = {"-help", "--help"}, usage = "print help message")
@@ -133,6 +139,20 @@ public class PackageGenerationApp {
                 System.err.println("Supplied bag metadata file " + bagMetadataFile.getCanonicalPath() + " does not exist or is not a file.");
                 System.exit(1);
             }
+
+            Response response = new OkHttpClient().newCall(
+                                                            new Request.Builder()
+                                                                    .head()
+                                                                        .url(registrationUrl)
+                                                                            .build()
+                                                          ).execute();
+
+            if (!response.header("Content-Type").contains("json")) {
+                System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" + response.header("Content-Type") + "')");
+                System.err.println("Please be sure you are using a valid API URL to a node or registration.");
+                System.exit(1);
+            }
+
 
 			/* Run the package generation application proper */
 			application.run();
