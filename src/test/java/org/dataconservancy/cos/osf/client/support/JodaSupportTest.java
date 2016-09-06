@@ -18,6 +18,7 @@ package org.dataconservancy.cos.osf.client.support;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Tests covering the JodaSupport utility class.
@@ -34,6 +35,13 @@ public class JodaSupportTest {
     @Test
     public void testDateTimeFormatterUtc() {
         assertEquals(PARSED_EXPECTED, JodaSupport.DATE_TIME_FORMATTER.parseDateTime(TO_BE_PARSED_NO_TZ).toString());
+    }
+
+    @Test
+    public void testDateTimeFormatters() {
+        assertNotNull(JodaSupport.parseDateTime("2016-07-29T14:35:29Z"));
+        assertNotNull(JodaSupport.parseDateTime("2016-09-06T16:47:59.791429"));
+        assertNotNull(JodaSupport.parseDateTime("2016-07-29T14:35:29Z"));
     }
 
 }
