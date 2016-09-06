@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.DownloadLinkTransform;
 import org.dataconservancy.cos.osf.client.support.FileIdTransform;
+import org.dataconservancy.cos.osf.client.support.JodaSupport;
 import org.dataconservancy.cos.osf.client.support.ProviderIdTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
@@ -162,7 +163,7 @@ public class File {
 
     public void setDate_created(String date_created) {
     	if (date_created!=null){
-    		this.date_created = DATE_TIME_FORMATTER_ALT.parseDateTime(date_created);
+    		this.date_created = JodaSupport.parseDateTime(date_created);
     	} else {
     		this.date_created = null;
     	}
@@ -178,7 +179,7 @@ public class File {
 
     public void setDate_modified(String date_modified) {
     	if (date_modified!=null){
-    		this.date_modified = DATE_TIME_FORMATTER_ALT.parseDateTime(date_modified);
+    		this.date_modified = JodaSupport.parseDateTime(date_modified);
     	} else {
     		date_modified=null;
     	}
