@@ -97,6 +97,9 @@
               <exclude>**/src/test/resources/json/**</exclude>
               <exclude>**/*.json</exclude>
               <exclude>**/*.iml</exclude>
+              <exclude>**/*.ipr</exclude>
+              <exclude>**/*.iws</exclude>
+              <exclude>**/.idea/**</exclude>
               <exclude>**/dependency-reduced-pom.xml</exclude>
               <exclude>**/src/test/resources/**/*.ttl</exclude>
               <exclude>**/src/test/resources/**/*.sh</exclude>
