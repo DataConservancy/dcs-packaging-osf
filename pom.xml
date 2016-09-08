@@ -133,6 +133,11 @@
                         <exclude>**/*.md</exclude>
                         <exclude>src/test/resources/json/**</exclude>
                         <exclude>**/*.json</exclude>
+                        <exclude>**/*.md</exclude>
+                        <exclude>**/*.iml</exclude>
+                        <exclude>**/*.ipr</exclude>
+                        <exclude>**/*.iws</exclude>
+                        <exclude>.idea</exclude>
                     </excludes> 
                 </configuration>
             </plugin>
