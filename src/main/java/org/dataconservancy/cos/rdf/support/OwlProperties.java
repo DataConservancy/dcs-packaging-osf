@@ -61,6 +61,8 @@ public enum OwlProperties {
 
     OSF_AUTHORED_BY ("authoredBy", true),
 
+    OSF_HAS_WIKI ("hasWiki", true), 
+
     DCTERMS_DESCRIPTION ("description"),
 
     DCTERMS_IDENTIFIER ("identifier"),
