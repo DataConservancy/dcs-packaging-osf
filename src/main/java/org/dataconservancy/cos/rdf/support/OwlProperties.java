@@ -59,6 +59,8 @@ public enum OwlProperties {
 
     OSF_PROVIDED_BY ("providedBy", true),
 
+    OSF_AUTHORED_BY ("authoredBy", true),
+
     DCTERMS_DESCRIPTION ("description"),
 
     DCTERMS_IDENTIFIER ("identifier"),
