@@ -33,6 +33,7 @@ import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
+import org.dataconservancy.cos.osf.client.model.Wiki;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
 import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
@@ -53,6 +54,7 @@ import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -384,7 +386,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result = new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(r, result);
-        assertEquals(80, result.size());
+        assertEquals(81, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
@@ -395,6 +397,48 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         assertEquals(OwlClasses.OSF_REGISTRATION, attribs.getEnum("value"));
 
 
+    }
+
+    /**
+     * A streamlined test which creates a RDF graph consisting of a single registration with a single wiki page.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testGenerateWikiAnnotations() throws Exception {
+
+        Wiki w = new Wiki();
+        w.setId("hgkfe");
+        w.setUser("https://test-api.osf.io/v2/users/9m8ky/");
+        w.setDate_modified("2016-09-15T14:19:14.417000");
+        w.setContent_type("text/markdown");
+        w.setNode("https://test-api.osf.io/v2/nodes/u9dc7/");
+        w.setKind("file");
+        w.setPath("/hgkfe");
+        w.setMaterialized_path("/hgkfe");
+        w.setSize(224);
+        w.setName("home");
+        HashMap<String, String> links = new HashMap<>();
+        links.put("download", "https://test-api.osf.io/v2/wikis/hgkfe/content/");
+        links.put("info", "https://test-api.osf.io/v2/wikis/hgkfe/");
+        links.put("self", "https://test-api.osf.io/v2/wikis/hgkfe/");
+        w.setLinks(links);
+        HashMap<String, String> extra = new HashMap<>();
+        extra.put("version", "3");
+        w.setExtra(extra);
+
+        Registration r = new Registration();
+        r.setId("registration");
+        r.setWikis(Collections.singletonList(w));
+
+        final PackageGraph packageGraph = new PackageGraph(ontologyManager);
+        final AnnotationsProcessor ap = new AnnotationsProcessor(packageGraph);
+
+        // Process the OWL annotations on the Registration, its super classes, and its fields
+        Map<String, Individual> createdIndividuals = ap.process(r);
+
+        // Write the individuals to stderr for debugging
+        writeModel(onlyIndividuals(ontologyManager.getOntModel()));
     }
 
     private Map<Field, AnnotationAttributes> getFieldAnnotationAttribute(Registration registration, List<Field> annotatedFields, Class<? extends Annotation> annotation) {

@@ -17,14 +17,21 @@ package org.dataconservancy.cos.osf.packaging;
 
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.Individual;
+import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.rdf.model.Statement;
 import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.Rdf;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 /**
@@ -36,6 +43,18 @@ class RdfTestUtil {
 
     RdfTestUtil(OntologyManager ontologyManager) {
         this.ontologyManager = ontologyManager;
+    }
+
+    void assertIsType(Individual individual, String... typeUri) {
+        final OntModel model = ontologyManager.getOntModel();
+        final Property rdfType = ResourceFactory.createProperty(Rdf.Ns.RDF + "type");
+        final List<String> types = model.listStatements(individual.asResource(), rdfType, (String)null)
+                .filterKeep(statement -> true)
+                .mapWith(statement -> statement.getObject().asResource().getURI())
+                .toList();
+
+        Stream.of(typeUri).forEach(uri ->
+                assertTrue("Expected individual " + individual.getURI() + " to be of type " + uri, types.contains(uri)));
     }
 
     /**
