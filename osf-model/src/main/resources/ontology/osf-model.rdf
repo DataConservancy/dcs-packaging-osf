@@ -187,7 +187,7 @@
         <rdfs:range rdf:resource="&osfbom;Provider"/>
     </owl:ObjectProperty>
 
-    <!-- osfbom:Coment -->
+    <!-- osfbom:Comment -->
 
     <owl:ObjectProperty rdf:about="&osfbom;associatedNode">
         <rdfs:label xml:lang="en">associatedNode</rdfs:label>
