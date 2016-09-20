@@ -199,7 +199,9 @@ public enum OwlProperties {
 
     OSF_PROVIDER_NAME ("providerName"),
 
-    OSF_HAS_ORCID ("hasOrcid");
+    OSF_HAS_ORCID ("hasOrcid"),
+
+    OSF_VERSION ("version");
 
     private String ns = Rdf.Ns.OSF;
     
