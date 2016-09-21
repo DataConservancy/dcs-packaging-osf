@@ -61,13 +61,13 @@ public enum OwlProperties {
 
     OSF_AUTHORED_BY ("authoredBy", true),
 
-    OSF_HAS_WIKI ("hasWiki", true), 
+    OSF_HAS_WIKI ("hasWiki", true),
 
-    DCTERMS_DESCRIPTION ("description"),
+    DCTERMS_DESCRIPTION (Rdf.Ns.DCTERMS, "description"),
 
-    DCTERMS_IDENTIFIER ("identifier"),
+    DCTERMS_IDENTIFIER (Rdf.Ns.DCTERMS, "identifier"),
 
-    DCTERMS_TITLE ("title"),
+    DCTERMS_TITLE (Rdf.Ns.DCTERMS, "title"),
 
     OSF_HAS_ACADEMICINSTITUTION ("hasAcademicInstitution"),
 
