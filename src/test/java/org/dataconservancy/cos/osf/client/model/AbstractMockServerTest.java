@@ -21,7 +21,6 @@ import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import org.apache.commons.io.IOUtils;
-import org.dataconservancy.cos.osf.client.config.BaseConfigurationService;
 import org.dataconservancy.cos.osf.client.config.DefaultOsfJacksonConfigurer;
 import org.dataconservancy.cos.osf.client.config.DefaultWbJacksonConfigurer;
 import org.dataconservancy.cos.osf.client.config.JacksonConfigurer;
@@ -29,9 +28,7 @@ import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
 import org.dataconservancy.cos.osf.client.config.WbClientConfiguration;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.rules.TestName;
 import org.mockserver.client.server.MockServerClient;
 import org.mockserver.integration.ClientAndServer;
@@ -42,9 +39,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URI;
-import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -228,10 +223,10 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             resolver = (name, base, req) -> {
                 // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
                 URI relativizedRequestUri = baseUri.relativize(req);
-                Path requestPath = Paths.get(relativizedRequestUri.getPath());
+                String requestPath = relativizedRequestUri.getPath();
 
                 // /json/NodeTest/testGetNodeObjectResolution/
-                Path fsBase = Paths.get(resourceBase(testName, testClass));
+                String fsBase = resourceBase(testName, testClass);
 
                 // If there's a "page" query parameter, use it to return 'index-0?.json'
                 if (req.getQuery() != null && req.getQuery().contains("page=")) {
@@ -240,7 +235,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                     int page = Integer.parseInt(req.getQuery().substring(startIndex, startIndex + 1));
                     String jsonFile = String.format("index-0%s.json", page);
                     LOG.trace("Request carried 'page' parameter, using JSON resource {}", jsonFile);
-                    return Paths.get(fsBase.toString(), requestPath.toString(), jsonFile);
+                    return fsBase + requestPath + jsonFile;
                 } else {
                     LOG.trace("  Request did not carry 'page' parameter.");
                 }
@@ -248,33 +243,33 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                 // If there is no "page" query parameter, and the request ends in a "/", and there is
                 // no 'index.json' file, then see if there is an 'index-01.json' file, and return that.
 
-                Path jsonPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+                String jsonPath = fsBase + requestPath + "index.json";
                 if (req.getPath().endsWith("/")) {
                     // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
-                    if (this.getClass().getResource(jsonPath.toString()) != null) {
+                    if (testClass.getResource(jsonPath) != null) {
                         return jsonPath;
                     } else {
-                        LOG.debug("  JSON resource {} does not exist.", jsonPath.toFile());
+                        LOG.debug("  JSON resource '{}' does not exist.", jsonPath);
                     }
 
                     // If there's no 'index.json' file, then perhaps the request is for a paginated response
-                    jsonPath = Paths.get(fsBase.toString(), requestPath.toString(), "index-01.json");
-                    if (this.getClass().getResource(jsonPath.toString()) != null) {
+                    jsonPath = fsBase + requestPath + "index-01.json";
+                    if (testClass.getResource(jsonPath) != null) {
                         return jsonPath;
                     } else {
-                        LOG.trace("  JSON resource {} does not exist.", jsonPath.toFile());
+                        LOG.trace("  JSON resource '{}' does not exist.", jsonPath);
                         throw new IllegalArgumentException(
-                                String.format("Unable to resolve request %s to a classpath resource under %s", req, fsBase));
+                                String.format("Unable to resolve request '%s' to a classpath resource '%s'", req, jsonPath));
                     }
                 } else {
                     // This is binary content, e.g.: /v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051
-                    jsonPath = Paths.get(fsBase.toString(), requestPath.toString());
-                    if (this.getClass().getResource(jsonPath.toString()) != null) {
+                    jsonPath = fsBase + requestPath;
+                    if (testClass.getResource(jsonPath) != null) {
                         return jsonPath;
                     } else {
-                        LOG.debug("  JSON resource {} does not exist.", jsonPath.toFile());
+                        LOG.debug("  JSON resource '{}' does not exist.", jsonPath);
                         throw new IllegalArgumentException(
-                                String.format("Unable to resolve request %s to a classpath resource under %s", req, fsBase));
+                                String.format("Unable to resolve request '%s' to a classpath resource '%s'", req, jsonPath));
                     }
                 }
 
@@ -296,10 +291,10 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             LOG.debug("HTTP request: {}", req.urlString());
 
             // Resolve the request URI to a path on the filesystem.
-            Path resourcePath = resolver.resolve(testName, baseUri, req.uri());
-            LOG.debug("Response resource: {}", resourcePath.toString());
+            String resourcePath = resolver.resolve(testName, baseUri, req.uri());
+            LOG.debug("Response resource: {}", resourcePath);
 
-            req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath.toString()).build();
+            req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath).build();
 
             return chain.proceed(req);
         }
@@ -320,7 +315,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
          * @param requestUri the full request URI
          * @return a Path that identifies a classpath resource containing the JSON response document
          */
-        Path resolve(TestName testName, URI baseUri, URI requestUri);
+        String resolve(TestName testName, URI baseUri, URI requestUri);
 
     }
 }
