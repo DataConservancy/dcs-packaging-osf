@@ -22,6 +22,7 @@ import java.util.Map;
 import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.Response;
 import com.squareup.okhttp.ResponseBody;
+import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.Event;
 import org.dataconservancy.cos.osf.client.model.Node;
@@ -56,6 +57,9 @@ public interface OsfService {
 
     @GET
     Call<ResourceList<Event>> getLogs(@Url String url);
+
+    @GET
+    Call<ResourceList<Comment>> getComments(@Url String url);
 
     @Streaming
     @GET
