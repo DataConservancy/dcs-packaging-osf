@@ -1,0 +1,44 @@
+{
+  "data": {
+    "relationships": {
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9m8ky/nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "institutions": {
+        "links": {
+          "self": {
+            "href": "http://localhost:8000/v2/users/9m8ky/relationships/institutions/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://localhost:8000/v2/users/9m8ky/institutions/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/users/9m8ky/",
+      "html": "http://localhost:5000/9m8ky/",
+      "profile_image": "http://secure.gravatar.com/avatar/90bbc2cb7740b04be9acee67f2ea5169?d=identicon"
+    },
+    "attributes": {
+      "family_name": "Metsger",
+      "suffix": "",
+      "locale": "en_US",
+      "date_registered": "2016-04-12T18:51:34.137000",
+      "middle_names": "",
+      "given_name": "Elliot",
+      "full_name": "Elliot Metsger",
+      "active": true,
+      "timezone": "America/New_York"
+    },
+    "type": "users",
+    "id": "9m8ky"
+  }
+}
