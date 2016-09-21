@@ -19,6 +19,9 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 
 import java.util.Map;
 
+import com.github.jasminb.jsonapi.RelType;
+import com.github.jasminb.jsonapi.ResolutionStrategy;
+import com.github.jasminb.jsonapi.annotations.Relationship;
 import org.dataconservancy.cos.osf.client.support.JodaSupport;
 import org.joda.time.DateTime;
 
@@ -60,27 +63,32 @@ public class Comment {
     /**
      * has this comment been edited?
      */
-    private Boolean isModified;
+    private boolean isModified;
 
     /**
      * is this comment deleted?
      */
-    private Boolean isDeleted;
+    private boolean isDeleted;
 
     /**
-     * has this comment been reported by the current user?
+     * has this comment been marked as abuse?
      */
-    private Boolean is_abuse;
+    private boolean is_abuse;
+
+    /**
+     * has this comment been reported?
+     */
+    private boolean has_report;
 
     /**
      * does this comment have replies?
      */
-    private Boolean has_children;
+    private boolean has_children;
 
     /**
      * can the current user edit this comment?
      */
-    private Boolean can_edit;
+    private boolean can_edit;
 
     /**
      * Gets other links found in data.links:{} section of JSON
@@ -92,6 +100,40 @@ public class Comment {
      * pagination links for multiple records
      */
     private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+
+    /**
+     * the node this comment belongs to (distinct from the target)
+     */
+    @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String node;
+
+    /**
+     * API url to replies to this comment
+     */
+    @Relationship(value = "replies", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String replies;
+
+    /**
+     * API url to the target of this comment (i.e. the entity that the comment was placed on)
+     */
+    @Relationship(value = "target", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String target;
+
+    /**
+     * The user that authored the comment
+     */
+    @Relationship(value = "user", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    private User user;
+
+    /**
+     * whether or not this comment is ham
+     */
+    private boolean is_ham;
+
+    /**
+     * The "type" of thing being commented on (e.g. "page", "wiki")
+     */
+    private String page;
 
     public String getId() {
         return id;
@@ -141,7 +183,7 @@ public class Comment {
         }
     }
 
-    public Boolean isModified() {
+    public boolean isModified() {
         return isModified;
     }
 
@@ -149,7 +191,7 @@ public class Comment {
         this.isModified = isModified;
     }
 
-    public Boolean isDeleted() {
+    public boolean isDeleted() {
         return isDeleted;
     }
 
@@ -157,7 +199,7 @@ public class Comment {
         this.isDeleted = isDeleted;
     }
 
-    public Boolean isIs_abuse() {
+    public boolean isIs_abuse() {
         return is_abuse;
     }
 
@@ -165,7 +207,7 @@ public class Comment {
         this.is_abuse = is_abuse;
     }
 
-    public Boolean isHas_children() {
+    public boolean isHas_children() {
         return has_children;
     }
 
@@ -173,7 +215,7 @@ public class Comment {
         this.has_children = has_children;
     }
 
-    public Boolean isCan_edit() {
+    public boolean isCan_edit() {
         return can_edit;
     }
 
@@ -198,4 +240,59 @@ public class Comment {
         this.links = links;
     }
 
+    public String getNode() {
+        return node;
+    }
+
+    public void setNode(String node) {
+        this.node = node;
+    }
+
+    public String getReplies() {
+        return replies;
+    }
+
+    public void setReplies(String replies) {
+        this.replies = replies;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public boolean is_ham() {
+        return is_ham;
+    }
+
+    public void setIs_ham(boolean is_ham) {
+        this.is_ham = is_ham;
+    }
+
+    public boolean isHas_report() {
+        return has_report;
+    }
+
+    public void setHas_report(boolean has_report) {
+        this.has_report = has_report;
+    }
+
+    public String getPage() {
+        return page;
+    }
+
+    public void setPage(String page) {
+        this.page = page;
+    }
 }
