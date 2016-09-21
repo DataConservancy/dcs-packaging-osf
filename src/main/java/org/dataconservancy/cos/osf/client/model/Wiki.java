@@ -20,8 +20,10 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 import java.util.List;
 import java.util.Map;
 
+import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
+import org.dataconservancy.cos.osf.client.support.DownloadLinkTransform;
 import org.dataconservancy.cos.osf.client.support.JodaSupport;
-import org.dataconservancy.cos.osf.client.support.ProviderIdTransform;
+import org.dataconservancy.cos.osf.client.support.VersionTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
@@ -41,37 +43,50 @@ import com.github.jasminb.jsonapi.annotations.Type;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Type("wikis")
+@OwlIndividual(OwlClasses.OSF_WIKI)
 public class Wiki {
 
     @Id
+    @IndividualUri
     private String id;
 
     @Relationship(value = "comments", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<Comment> comments;
 
     @Links
+    @OwlProperty(value = OwlProperties.OSF_HAS_BINARYURI, transform = DownloadLinkTransform.class)
     private Map<String, ?> links;
 
+    @OwlProperty(OwlProperties.OSF_HAS_NAME)
     private String name;
 
+    @OwlProperty(OwlProperties.OSF_HAS_HASKIND)
     private String kind;
 
+    @OwlProperty(OwlProperties.OSF_HAS_MATERIALIZEDPATH)
     private String materialized_path;
 
+    @OwlProperty(value = OwlProperties.OSF_HAS_DATEMODIFIED, transform = DateTimeTransform.class)
     private DateTime date_modified;
 
     @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    @OwlProperty(OwlProperties.OSF_HAS_NODE)
     private String node;
 
     @Relationship(value = "user", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    @OwlProperty(OwlProperties.OSF_AUTHORED_BY)
     private String user;
 
+    @OwlProperty(OwlProperties.OSF_HAS_PATH)
     private String path;
 
+    @OwlProperty(OwlProperties.OSF_HAS_CONTENTTYPE)
     private String content_type;
 
+    @OwlProperty(value = OwlProperties.OSF_VERSION, transform = VersionTransform.class)
     private Map<String, ?> extra; // for "version"
 
+    @OwlProperty(OwlProperties.OSF_HAS_SIZE)
     private int size;
 
 
@@ -183,5 +198,5 @@ public class Wiki {
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
-
+    
 }
