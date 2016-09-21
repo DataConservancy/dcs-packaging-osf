@@ -206,13 +206,13 @@ public class NodeTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri(),
                 (name, baseUri, reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
-                    Path fsBase = Paths.get(resourceBase(testName));
+                    String fsBase = resourceBase(testName);
 
                     requestCount.incrementAndGet();
 
                     // First request will be the first page of nodes
                     if (requestCount.get() == 1) {
-                        return Paths.get(fsBase.toString(), "index-01.json");
+                        return fsBase + "index-01.json";
                     }
 
                     // Subsequent requests without a query path are requests for resolving relationships
@@ -221,11 +221,11 @@ public class NodeTest extends AbstractMockServerTest {
                         // just return a valid, but empty, json response.
 
                         // /json/NodeTest/testNodeListPagination/empty-response.json
-                        return Paths.get(fsBase.toString(), "empty-response.json");
+                        return fsBase + "empty-response.json";
                     }
 
                     // Subsequent requests that carry a query path will be for the next page
-                    return Paths.get(fsBase.toString(), "index-02.json");
+                    return fsBase + "index-02.json";
         }));
 
         OsfService osfService = factory.getOsfService(OsfService.class);
@@ -280,20 +280,20 @@ public class NodeTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri(),
                 (name, base, req) -> {
                     // /json/NodeTest/testDownloadFile/
-                    Path fsBase = Paths.get(resourceBase(testName));
+                    String fsBase = resourceBase(testName);
 
                     // We probably have a Waterbutler request (wb requests go to port 7777, typically)
                     if (req.getPort() != getBaseUri().getPort()) {
                         // req.getPath() = v1/resources/pd24n/providers/osfstorage/
-                        return Paths.get(fsBase.toString(), req.getPath());
+                        return fsBase + req.getPath();
                     }
 
                     // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
                     URI relativizedRequestUri = getBaseUri().relativize(req);
-                    Path requestPath = Paths.get(relativizedRequestUri.getPath());
+                    String requestPath = relativizedRequestUri.getPath();
 
                     // /json/NodeTest/testDownloadFile/nodes/v8x57/files/osfstorage/index.json
-                    return Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+                    return fsBase + requestPath + "index.json";
                 }));
 
         OsfService osfService = factory.getOsfService(OsfService.class);
