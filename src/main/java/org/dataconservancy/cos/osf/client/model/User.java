@@ -86,7 +86,7 @@ public class User {
     private String middle_names;
     
     /** family name of user; for bibliographic citations*/
-	// TODO: @OwlProperty()
+	@OwlProperty(OwlProperties.OSF_HAS_HASFAMILYNAME)
     private String family_name;
 
     /** suffix of user's name for bibliographic citations*/
