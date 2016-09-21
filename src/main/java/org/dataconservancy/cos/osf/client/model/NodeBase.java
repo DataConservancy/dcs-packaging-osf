@@ -102,7 +102,8 @@ public abstract class NodeBase {
 	@OwlProperty(OwlProperties.OSF_HAS_LICENSE)
 	private License license;
 
-	// TODO: Wiki
+	@OwlProperty(OwlProperties.OSF_HAS_WIKI)
+	private List<Wiki> wikis;
 
 	/**Gets other links found in data.links:{} section of JSON**/
 	@Links
@@ -372,5 +373,13 @@ public abstract class NodeBase {
 
 	public void setLicense(License license) {
 		this.license = license;
+	}
+
+	public List<Wiki> getWikis() {
+		return wikis;
+	}
+
+	public void setWikis(List<Wiki> wikis) {
+		this.wikis = wikis;
 	}
 }
