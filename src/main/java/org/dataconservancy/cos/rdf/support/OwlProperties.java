@@ -85,6 +85,8 @@ public enum OwlProperties {
 
     OSF_IS_BOOKMARK ("isBookmark"),
 
+    OSF_HAS_CONTENT ("hasContent"),
+
     OSF_HAS_CONTENTTYPE ("hasContentType"),
     
     OSF_IS_DASHBOARD ("isDashboard"),
