@@ -51,7 +51,9 @@ public enum OwlClasses {
 
     OSF_PROVIDER (Rdf.Ns.OSF, "Provider"),
 
-    OSF_WIKI (Rdf.Ns.OSF, "Wiki");
+    OSF_WIKI (Rdf.Ns.OSF, "Wiki"),
+
+    OSF_COMMENT (Rdf.Ns.OSF, "Comment");
     
     private String ns;
 
