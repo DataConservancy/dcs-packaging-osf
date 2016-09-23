@@ -28,6 +28,7 @@ import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
+import org.dataconservancy.cos.osf.client.model.Wiki;
 
 import retrofit.Call;
 import retrofit.http.GET;
@@ -110,6 +111,9 @@ public interface OsfService {
 
     @GET
     Call<List<Contributor>> contributors(@Url String url);
-       
+
+    @GET
+    Call<List<Wiki>> wikis(@Url String url);
+
     //Call<List<NodeFile>> listFiles(@Path(""))
 }
