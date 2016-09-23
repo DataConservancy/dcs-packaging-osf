@@ -53,7 +53,9 @@ public enum OwlClasses {
 
     OSF_WIKI (Rdf.Ns.OSF, "Wiki"),
 
-    OSF_COMMENT (Rdf.Ns.OSF, "Comment");
+    OSF_COMMENT (Rdf.Ns.OSF, "Comment"),
+
+    OSF_COMMENT_TARGET (Rdf.Ns.OSF, "CommentTarget");
     
     private String ns;
 
