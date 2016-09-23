@@ -63,6 +63,8 @@ public enum OwlProperties {
 
     OSF_HAS_WIKI ("hasWiki", true),
 
+    OSF_HAS_COMMENT ("hasComment", true),
+
     DCTERMS_DESCRIPTION (Rdf.Ns.DCTERMS, "description"),
 
     DCTERMS_IDENTIFIER (Rdf.Ns.DCTERMS, "identifier"),
@@ -203,7 +205,9 @@ public enum OwlProperties {
 
     OSF_HAS_ORCID ("hasOrcid"),
 
-    OSF_VERSION ("version");
+    OSF_VERSION ("version"),
+
+    OSF_IN_REPLY_TO ("inReplyTo");
 
     private String ns = Rdf.Ns.OSF;
     
