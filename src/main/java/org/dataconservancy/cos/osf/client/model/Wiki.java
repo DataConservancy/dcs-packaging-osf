@@ -51,6 +51,7 @@ public class Wiki {
     private String id;
 
     @Relationship(value = "comments", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    @OwlProperty(OwlProperties.OSF_HAS_COMMENT)
     private List<Comment> comments;
 
     @Links
