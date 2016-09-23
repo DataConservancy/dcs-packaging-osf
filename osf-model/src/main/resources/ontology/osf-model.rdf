@@ -189,35 +189,28 @@
 
     <!-- osfbom:Comment -->
 
-    <owl:ObjectProperty rdf:about="&osfbom;associatedNode">
-        <rdfs:label xml:lang="en">associatedNode</rdfs:label>
-        <rdfs:comment xml:lang="en">The node this comment belongs to.</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Comment"/>
-        <rdfs:range rdf:resource="&osfbom;Node"/>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="&osfbom;inReplyTo">
-        <rdfs:label xml:lang="en">inReplyTo</rdfs:label>
-        <rdfs:comment xml:lang="en">The item this comment is referring to, a node or another comment</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Comment"/>
-        <rdfs:range rdf:resource="&osfbom;CommentTarget"/>
-    </owl:ObjectProperty>
-
-    <!-- hasReply is intended to be inferenced -->
-    <owl:ObjectProperty rdf:about="&osfbom;hasReply">
-        <rdfs:label xml:lang="en">hasReply</rdfs:label>
-        <rdfs:comment xml:lang="en">A comment referring to the current node or comment</rdfs:comment>
-        <owl:inverseOf rdf:resource="&osfbom;inReplyTo"/>
-    </owl:ObjectProperty>
-
     <owl:ObjectProperty rdf:about="&osfbom;authoredBy">
         <rdfs:label xml:lang="en">authoredBy</rdfs:label>
-        <rdfs:comment xml:lang="en">The user who made this comment</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Comment"/>
+        <rdfs:comment xml:lang="en">The user who authored the comment or wiki page</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
         <rdfs:range rdf:resource="&osfbom;User"/>
     </owl:ObjectProperty>
 
-    <!-- 
+    <owl:ObjectProperty rdf:about="&osfbom;hasWiki">
+        <rdfs:label xml:lang="en">hasWiki</rdfs:label>
+        <rdfs:comment xml:lang="en">A Wiki page that is attached to the node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;Wiki"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasComment">
+        <rdfs:label xml:lang="en">hasComment</rdfs:label>
+        <rdfs:comment xml:lang="en">References the comment that is attached to the CommentTarget</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;CommentTarget"/>
+        <rdfs:range rdf:resource="&osfbom;Comment"/>
+    </owl:ObjectProperty>
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data Properties
@@ -842,8 +835,21 @@
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </owl:DatatypeProperty>
 
+    <owl:DatatypeProperty rdf:about="&osfbom;version">
+        <rdfs:label xml:lang="en">version</rdfs:label>
+        <rdfs:comment xml:lang="en">A monotonically increasing integer identifying a unique version of the resource</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Wiki"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
 
-    <!-- 
+    <owl:DatatypeProperty rdf:about="&osfbom;inReplyTo">
+        <rdfs:label xml:lang="en">inReplyTo</rdfs:label>
+        <rdfs:comment xml:lang="en">The thing being commented on; a wiki page, another comment, or a node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Comment"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Classes
@@ -1037,11 +1043,13 @@
 
     <owl:Class rdf:about="&osfbom;CommentTarget">
       <rdfs:label xml:lang="en">CommentTarget</rdfs:label>
+      <rdfs:comment xml:lang="en">Members of the CommentTarget class may have Comments placed on them (i.e. be the "target" of a Comment)</rdfs:comment>
       <rdfs:subClassOf>
         <owl:Class>
           <owl:unionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="&osfbom;Comment"/>
             <rdf:Description rdf:about="&osfbom;NodeBase"/>
+            <rdf:Description rdf:about="&osfbom;Wiki"/>
           </owl:unionOf>
         </owl:Class>
       </rdfs:subClassOf>
