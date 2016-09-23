@@ -17,12 +17,19 @@ package org.dataconservancy.cos.osf.client.model;
 
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
 
+import java.net.URI;
 import java.util.Map;
 
 import com.github.jasminb.jsonapi.RelType;
 import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.annotations.Relationship;
+import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.JodaSupport;
+import org.dataconservancy.cos.rdf.annotations.IndividualUri;
+import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
+import org.dataconservancy.cos.rdf.annotations.OwlProperty;
+import org.dataconservancy.cos.rdf.support.OwlClasses;
+import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -37,27 +44,32 @@ import com.github.jasminb.jsonapi.annotations.Type;
  * @author esm
  */
 @Type("comments")
+@OwlIndividual(OwlClasses.OSF_COMMENT)
 public class Comment {
 
     /**
      * Unique OSF id for comment
      */
     @Id
+    @IndividualUri
     private String id;
 
     /**
      * content of the comment
      */
+    @OwlProperty(OwlProperties.OSF_HAS_CONTENT)
     private String content;
 
     /**
      * timestamp that the comment was created
      */
+    @OwlProperty(value = OwlProperties.OSF_HAS_DATECREATED, transform = DateTimeTransform.class)
     private DateTime date_created;
 
     /**
      * timestamp when the comment was last updated
      */
+    @OwlProperty(value = OwlProperties.OSF_HAS_DATEMODIFIED, transform = DateTimeTransform.class)
     private DateTime date_modified;
 
     /**
@@ -104,8 +116,9 @@ public class Comment {
     /**
      * the node this comment belongs to (distinct from the target)
      */
-    @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    private String node;
+    @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    @OwlProperty(OwlProperties.OSF_HAS_NODE)
+    private Node node;
 
     /**
      * API url to replies to this comment
@@ -120,9 +133,16 @@ public class Comment {
     private String target;
 
     /**
+     * API url to the target of this comment (i.e. the entity that the comment was placed on), typed as a URI
+     */
+    @OwlProperty(OwlProperties.OSF_IN_REPLY_TO)
+    private URI targetUri;
+
+    /**
      * The user that authored the comment
      */
     @Relationship(value = "user", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    @OwlProperty(OwlProperties.OSF_HAS_USER)
     private User user;
 
     /**
@@ -240,11 +260,11 @@ public class Comment {
         this.links = links;
     }
 
-    public String getNode() {
+    public Node getNode() {
         return node;
     }
 
-    public void setNode(String node) {
+    public void setNode(Node node) {
         this.node = node;
     }
 
@@ -260,8 +280,34 @@ public class Comment {
         return target;
     }
 
+    /**
+     * Sets the target of this comment, which is the URI (typed as a {@code String}) of the thing being commented on.
+     * <p>
+     * <em>N.B.</em> this method calls {@link #setTargetUri(URI)} to provide a type-safe way of obtaining the URI.
+     * </p>
+     *
+     * @param target the URI of the thing being commented on
+     */
     public void setTarget(String target) {
         this.target = target;
+        setTargetUri(URI.create(target));
+    }
+
+    public URI getTargetUri() {
+        return targetUri;
+    }
+
+    /**
+     * Sets the target of this comment, which is the URI (typed as a {@code URI}) of the thing being commented on.
+     * <p>
+     * <em>N.B.</em> this method is invoked by {@link #setTarget(String)} to provide a type-safe way of obtaining the
+     * URI.
+     * </p>
+     *
+     * @param targetUri the URI of the thing being commented on
+     */
+    public void setTargetUri(URI targetUri) {
+        this.targetUri = targetUri;
     }
 
     public User getUser() {
