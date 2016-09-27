@@ -60,7 +60,16 @@ public class WikiTest extends AbstractMockServerTest {
 
         assertTrue(pjnbm.getNode().endsWith("ng9em/"));
         assertTrue(pjnbm.getUser().endsWith("3rty2/"));
-        // TODO - Check "comments" here.
+
+        List<Comment> comments = pjnbm.getComments();
+        assertNotNull(comments);
+        assertEquals(2, comments.size());
+        comments.stream().filter(comment -> comment.getId().equals("3ben8mz4ugwp"))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Missing expected Comment with id '3ben8mz4ugwp'"));
+        comments.stream().filter(comment -> comment.getId().equals("86c4gqutj9bz"))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Missing expected Comment with id '86c4gqutj9bz'"));
 
         assertEquals("file", pjnbm.getKind());
         assertEquals("home", pjnbm.getName());

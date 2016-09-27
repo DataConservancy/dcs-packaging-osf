@@ -1,0 +1,189 @@
+{
+    "data": {
+        "relationships": {
+            "files": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/files/",
+                        "meta": {}
+                    }
+                }
+            },
+            "view_only_links": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/view_only_links/",
+                        "meta": {}
+                    }
+                }
+            },
+            "identifiers": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/identifiers/",
+                        "meta": {}
+                    }
+                }
+            },
+            "registration_schema": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/metaschemas/564f924dda3e240141cd743b/",
+                        "meta": {}
+                    }
+                }
+            },
+            "logs": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/logs/",
+                        "meta": {}
+                    }
+                }
+            },
+            "contributors": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/contributors/",
+                        "meta": {}
+                    }
+                }
+            },
+            "forks": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/forks/",
+                        "meta": {}
+                    }
+                }
+            },
+            "root": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/",
+                        "meta": {}
+                    }
+                }
+            },
+            "citation": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/citation/",
+                        "meta": {}
+                    }
+                }
+            },
+            "comments": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/comments/?filter=%5Btarget%5D=ng9em",
+                        "meta": {}
+                    }
+                }
+            },
+            "registered_from": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/nodes/d3res/",
+                        "meta": {}
+                    }
+                }
+            },
+            "node_links": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/node_links/",
+                        "meta": {}
+                    }
+                }
+            },
+            "registered_by": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/users/3rty2/",
+                        "meta": {}
+                    }
+                }
+            },
+            "linked_nodes": {
+                "links": {
+                    "self": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/relationships/linked_nodes/",
+                        "meta": {}
+                    },
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/linked_nodes/",
+                        "meta": {}
+                    }
+                }
+            },
+            "wikis": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/wikis/",
+                        "meta": {}
+                    }
+                }
+            },
+            "affiliated_institutions": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/institutions/",
+                        "meta": {}
+                    }
+                }
+            },
+            "children": {
+                "links": {
+                    "related": {
+                        "href": "http://localhost:8000/v2/registrations/ng9em/children/",
+                        "meta": {}
+                    }
+                }
+            }
+        },
+        "links": {
+            "self": "http://localhost:8000/v2/registrations/ng9em/",
+            "html": "https://test.osf.io/ng9em/"
+        },
+        "attributes": {
+            "registration_supplement": "Open-Ended Registration",
+            "pending_embargo_approval": false,
+            "registration": true,
+            "embargo_end_date": null,
+            "withdrawn": false,
+            "withdrawal_justification": null,
+            "category": "project",
+            "preprint": false,
+            "current_user_permissions": [
+                "read",
+                "write",
+                "admin"
+            ],
+            "title": "Test Wiki Packaging",
+            "registered_meta": {
+                "summary": {
+                    "value": "This registration is for testing wiki packaging.",
+                    "comments": [],
+                    "extra": []
+                }
+            },
+            "public": true,
+            "fork": false,
+            "description": "",
+            "tags": [
+                "Fantastic"
+            ],
+            "collection": false,
+            "current_user_can_comment": true,
+            "pending_registration_approval": false,
+            "date_modified": "2016-09-23T18:17:55.105000",
+            "date_registered": "2016-09-13T22:29:40.225000",
+            "date_created": "2016-09-13T22:21:46.970000",
+            "pending_withdrawal": false,
+            "node_license": null
+        },
+        "type": "registrations",
+        "id": "ng9em"
+    }
+}
