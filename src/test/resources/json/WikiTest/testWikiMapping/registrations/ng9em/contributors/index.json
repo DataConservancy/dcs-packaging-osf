@@ -1,0 +1,91 @@
+{
+    "data": [
+        {
+            "relationships": {
+                "node": {
+                    "links": {
+                        "related": {
+                            "href": "http://localhost:8000/v2/nodes/ng9em/",
+                            "meta": {}
+                        }
+                    }
+                },
+                "users": {
+                    "links": {
+                        "related": {
+                            "href": "http://localhost:8000/v2/users/3rty2/",
+                            "meta": {}
+                        }
+                    }
+                }
+            },
+            "links": {
+                "self": "http://localhost:8000/v2/registrations/ng9em/contributors/3rty2/"
+            },
+            "embeds": {
+                "users": {
+                    "data": {
+                        "relationships": {
+                            "nodes": {
+                                "links": {
+                                    "related": {
+                                        "href": "http://localhost:8000/v2/users/3rty2/nodes/",
+                                        "meta": {}
+                                    }
+                                }
+                            },
+                            "institutions": {
+                                "links": {
+                                    "self": {
+                                        "href": "http://localhost:8000/v2/users/3rty2/relationships/institutions/",
+                                        "meta": {}
+                                    },
+                                    "related": {
+                                        "href": "http://localhost:8000/v2/users/3rty2/institutions/",
+                                        "meta": {}
+                                    }
+                                }
+                            }
+                        },
+                        "links": {
+                            "self": "http://localhost:8000/v2/users/3rty2/",
+                            "html": "https://test.osf.io/3rty2/",
+                            "profile_image": "https://secure.gravatar.com/avatar/10b6d6c30eaf41f8db9f0a787407dc04?d=identicon"
+                        },
+                        "attributes": {
+                            "family_name": "Trumbore",
+                            "suffix": "",
+                            "locale": "en_US",
+                            "date_registered": "2016-09-13T22:19:30.178000",
+                            "middle_names": "",
+                            "given_name": "Ben",
+                            "full_name": "Ben Trumbore",
+                            "active": true,
+                            "timezone": "America/New_York"
+                        },
+                        "type": "users",
+                        "id": "3rty2"
+                    }
+                }
+            },
+            "attributes": {
+                "index": 0,
+                "unregistered_contributor": null,
+                "bibliographic": true,
+                "permission": "admin"
+            },
+            "type": "contributors",
+            "id": "ng9em-3rty2"
+        }
+    ],
+    "links": {
+        "first": null,
+        "last": null,
+        "prev": null,
+        "next": null,
+        "meta": {
+            "total": 1,
+            "per_page": 10
+        }
+    }
+}
