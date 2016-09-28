@@ -3,7 +3,7 @@
         {
             "links": {
                 "self": "http://localhost:8000/v2/files/57d87dd6da3e2401ed91bbfe/versions/1/",
-                "html": "https://test.osf.io/ng9em/files/osfstorage/57d87dd6da3e2401ed91bbfe?revision=1"
+                "html": "http://localhost:8000/ng9em/files/osfstorage/57d87dd6da3e2401ed91bbfe?revision=1"
             },
             "attributes": {
                 "content_type": "application/octet-stream",

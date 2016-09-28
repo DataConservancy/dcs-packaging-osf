@@ -24,7 +24,7 @@
         },
         "links": {
             "self": "http://localhost:8000/v2/users/3rty2/",
-            "html": "https://test.osf.io/3rty2/",
+            "html": "http://localhost:8000/3rty2/",
             "profile_image": "https://secure.gravatar.com/avatar/10b6d6c30eaf41f8db9f0a787407dc04?d=identicon"
         },
         "attributes": {

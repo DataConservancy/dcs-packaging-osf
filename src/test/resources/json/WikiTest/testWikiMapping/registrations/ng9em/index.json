@@ -144,7 +144,7 @@
         },
         "links": {
             "self": "http://localhost:8000/v2/registrations/ng9em/",
-            "html": "https://test.osf.io/ng9em/"
+            "html": "http://localhost:8000/ng9em/"
         },
         "attributes": {
             "registration_supplement": "Open-Ended Registration",
