@@ -22,6 +22,7 @@ import org.dataconservancy.cos.osf.client.config.WbConfigurationService;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
+import org.dataconservancy.cos.osf.client.model.Wiki;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
 import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
@@ -93,7 +94,51 @@ public class IpmPackagerTest extends AbstractMockServerTest {
                 throw new RuntimeException(e.getMessage(), e);
             }
         });
-        
+
+        packager.buildPackage(packageGraph, null);
+
+    }
+
+    @Test
+    public void testCreatePackageWithWiki() throws Exception {
+        final OsfPackageGraph packageGraph = new OsfPackageGraph(ontologyManager);
+        factory.interceptors().add(new RecursiveInterceptor(testName, IpmPackagerTest.class, getBaseUri()));
+        final OsfService osfService = factory.getOsfService(OsfService.class);
+        final String registrationId = "ng9em";
+
+        final PackageGenerationParameters params =  new PropertiesConfigurationParametersBuilder()
+                .buildParameters(IpmPackager.class
+                        .getResourceAsStream("/PackageGenerationParams.properties"));
+
+        params.addParam(GeneralParameterNames.PACKAGE_LOCATION,
+                System.getProperty("java.io.tmpdir"));
+        params.addParam(GeneralParameterNames.PACKAGE_NAME, "WikiPackage");
+        final Registration registration = osfService.registration(registrationId).execute().body();
+        final List<User> users = registration.getContributors().stream()
+                .map(c -> {
+                    try {
+                        return osfService.user(c.getId()).execute().body();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e.getMessage(), e);
+                    }
+                })
+                .collect(Collectors.toList());
+
+        packageGraph.add(registration);
+        users.forEach(packageGraph::add);
+
+        List<Wiki> wikis = osfService.wikis("http://localhost:8000/v2/registrations/ng9em/wikis/").execute().body();
+        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
+
+        IpmPackager packager = new IpmPackager((String url) -> {
+            Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
+            try {
+                return req.execute().body().bytes();
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage(), e);
+            }
+        });
+
         packager.buildPackage(packageGraph, null);
 
     }
