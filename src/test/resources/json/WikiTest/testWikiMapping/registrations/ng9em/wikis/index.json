@@ -5,7 +5,7 @@
                 "node": {
                     "links": {
                         "related": {
-                            "href": "https://test-api.osf.io/v2/nodes/ng9em/",
+                            "href": "http://localhost:8000/v2/nodes/ng9em/",
                             "meta": {}
                         }
                     }
@@ -13,16 +13,24 @@
                 "user": {
                     "links": {
                         "related": {
-                            "href": "https://test-api.osf.io/v2/users/3rty2/",
+                            "href": "http://localhost:8000/v2/users/3rty2/",
+                            "meta": {}
+                        }
+                    }
+                },
+                "comments": {
+                    "links": {
+                        "related": {
+                            "href": "http://localhost:8000/v2/registrations/ng9em/comments/?filter=%5Btarget%5D=pjnbm",
                             "meta": {}
                         }
                     }
                 }
             },
             "links": {
-                "info": "https://test-api.osf.io/v2/wikis/pjnbm/",
-                "download": "https://test-api.osf.io/v2/wikis/pjnbm/content/",
-                "self": "https://test-api.osf.io/v2/wikis/pjnbm/"
+                "info": "http://localhost:8000/v2/wikis/pjnbm/",
+                "download": "http://localhost:8000/v2/wikis/pjnbm/content/",
+                "self": "http://localhost:8000/v2/wikis/pjnbm/"
             },
             "attributes": {
                 "kind": "file",

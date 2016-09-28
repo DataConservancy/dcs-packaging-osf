@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "relationships": {
+                "files": {
+                    "links": {
+                        "related": {
+                            "href": "http://localhost:8000/v2/registrations/sb4ec/files/osfstorage/",
+                            "meta": {}
+                        }
+                    }
+                }
+            },
+            "links": {
+                "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+                "upload": "http://localhost:8000/v1/resources/sb4ec/providers/osfstorage/",
+                "new_folder": "http://localhost:8000/v1/resources/sb4ec/providers/osfstorage/?kind=folder"
+            },
+            "attributes": {
+                "node": "sb4ec",
+                "path": "/",
+                "kind": "folder",
+                "name": "osfstorage",
+                "provider": "osfstorage"
+            },
+            "type": "files",
+            "id": "sb4ec:osfstorage"
+        }
+    ],
+    "links": {
+        "first": null,
+        "last": null,
+        "prev": null,
+        "next": null,
+        "meta": {
+            "total": 1,
+            "per_page": 10
+        }
+    }
+}
