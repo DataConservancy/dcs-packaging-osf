@@ -102,6 +102,7 @@ public abstract class NodeBase {
 	@OwlProperty(OwlProperties.OSF_HAS_LICENSE)
 	private License license;
 
+	@Relationship(value = "wikis", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
 	@OwlProperty(OwlProperties.OSF_HAS_WIKI)
 	private List<Wiki> wikis;
 
