@@ -47,9 +47,11 @@ public class WikiTest extends AbstractMockServerTest {
 
     @Test
     public void testWikiMapping() throws Exception {
-        String wikiEndpoint = "http://localhost:8000/v2/registrations/ng9em/wikis/";
-        List<Wiki> wikis = osfService.wikis(wikiEndpoint).execute().body();
+        String registrationId = "ng9em";
+        Registration registration = osfService.registration(registrationId).execute().body();
+        assertNotNull(registration);
 
+        List<Wiki> wikis = registration.getWikis();
         assertNotNull(wikis);
         assertEquals(1, wikis.size());
 
