@@ -74,9 +74,9 @@ public class Wiki {
     @OwlProperty(OwlProperties.OSF_HAS_NODE)
     private String node;
 
-    @Relationship(value = "user", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    @Relationship(value = "user", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     @OwlProperty(OwlProperties.OSF_AUTHORED_BY)
-    private String user;
+    private User user;
 
     @OwlProperty(OwlProperties.OSF_HAS_PATH)
     private String path;
@@ -107,11 +107,11 @@ public class Wiki {
         this.node = node;
     }
 
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

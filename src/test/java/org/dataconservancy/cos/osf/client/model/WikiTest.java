@@ -59,7 +59,7 @@ public class WikiTest extends AbstractMockServerTest {
                 .orElseThrow(() -> new RuntimeException("Missing expected wiki pjnbm"));
 
         assertTrue(pjnbm.getNode().endsWith("ng9em/"));
-        assertTrue(pjnbm.getUser().endsWith("3rty2/"));
+        assertTrue(pjnbm.getUser().getId().equals("3rty2"));
 
         List<Comment> comments = pjnbm.getComments();
         assertNotNull(comments);

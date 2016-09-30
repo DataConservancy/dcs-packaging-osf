@@ -1,0 +1,23 @@
+{
+  "data": {
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "description": null,
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-05-12T12:50:54.507000",
+      "title": "Sub Project",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-05-12T12:50:05.939000",
+      "public": false,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "ng9em"
+  }
+}
