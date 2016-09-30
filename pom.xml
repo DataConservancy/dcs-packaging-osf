@@ -192,7 +192,7 @@
             <dependency>
                 <groupId>org.dataconservancy.jasminb</groupId>
                 <artifactId>jsonapi-converter</artifactId>
-                <version>0.3</version>
+                <version>0.4-SNAPSHOT</version>
             </dependency>
 
             <dependency>
