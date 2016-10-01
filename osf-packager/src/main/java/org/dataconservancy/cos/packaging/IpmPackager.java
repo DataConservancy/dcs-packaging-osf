@@ -25,6 +25,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
@@ -67,6 +68,8 @@ import java.util.stream.Collectors;
 public class IpmPackager {
 
     static final Logger LOG = LoggerFactory.getLogger(IpmPackager.class);
+
+    private static final String MISSING_PROVIDER = "missing_storage_provider";
 
     private String PACKAGE_NAME = "MyPackage"; // this will get overridden by the CLI  using the setter
 
@@ -399,7 +402,16 @@ public class IpmPackager {
      */
     private static String getFileName(Resource subject, Model domainObjects) {
         String baseName = escape(domainObjects.getProperty(subject, RdfProperties.OSF_FILE_NAME).getObject().toString());
-        String providerName = domainObjects.getProperty(subject, RdfProperties.OSF_PROVIDER_NAME).getObject().toString();
+        final Statement providerNameProperty = domainObjects.getProperty(subject, RdfProperties.OSF_PROVIDER_NAME);
+        // TODO: correct model for wikis.  Either they are a File, and have a provider, or they are something else.
+        // Currently wikis are very much like files, but they don't have a provider.  So this workaround supplies a
+        // stand-in storage provider for now.
+        String providerName = null;
+        if (providerNameProperty != null) {
+            providerName = providerNameProperty.getObject().toString();
+        } else {
+            providerName = MISSING_PROVIDER;
+        }
         return escape(providerName + "_" + baseName);
     }
 
