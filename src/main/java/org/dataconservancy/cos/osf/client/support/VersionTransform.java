@@ -32,9 +32,14 @@ public class VersionTransform implements Function<Map<String, ?>, Integer> {
     public Integer apply(Map<String, ?> map) {
         if (map.containsKey("version")) {
             try {
-                final String val = (String) map.get("version");
-                if (val != null && val.trim().length() > 0) {
-                    return Integer.parseInt(val);
+                final Object val = map.get("version");
+                if (val != null && val instanceof String) {
+                    if (((String)val).trim().length() > 0) {
+                        return Integer.parseInt((String)val);
+                    }
+                }
+                if (val != null && val instanceof Integer) {
+                    return (Integer) val;
                 }
             } catch (NumberFormatException|ClassCastException e) {
                 LOG.warn("Unable to parse the value of 'version' key into an integer.  " +
