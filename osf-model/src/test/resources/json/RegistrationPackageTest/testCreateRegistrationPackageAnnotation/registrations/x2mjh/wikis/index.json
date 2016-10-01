@@ -5,7 +5,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/x2mjh/",
+              "href": "http://localhost:8000/v2/registrations/x2mjh/",
               "meta": {}
             }
           }
@@ -21,7 +21,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/x2mjh/comments/?filter[target]=tcbs6",
+              "href": "http://localhost:8000/v2/registrations/x2mjh/comments/?filter[target]=tcbs6",
               "meta": {}
             }
           }
