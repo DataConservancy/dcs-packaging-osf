@@ -31,6 +31,7 @@ import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Category;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.File;
+import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.model.Wiki;
@@ -407,12 +408,22 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     @Test
     public void testGenerateWikiAnnotations() throws Exception {
 
+
+        Node n = new Node();
+        n.setId("u9dc7");
+
+        User u = new User();
+        u.setId("9m8ky");
+        u.setFamily_name("Metsger");
+        u.setGiven_name("Elliot");
+        u.setFull_name("Elliot Metsger");
+
         Wiki w = new Wiki();
         w.setId("hgkfe");
-        w.setUser("https://test-api.osf.io/v2/users/9m8ky/");
+        w.setUser(u);
         w.setDate_modified("2016-09-15T14:19:14.417000");
         w.setContent_type("text/markdown");
-        w.setNode("https://test-api.osf.io/v2/nodes/u9dc7/");
+        w.setNode(n);
         w.setKind("file");
         w.setPath("/hgkfe");
         w.setMaterialized_path("/hgkfe");

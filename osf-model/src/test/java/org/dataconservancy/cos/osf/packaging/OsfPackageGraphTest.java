@@ -139,10 +139,10 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
 
         Wiki w = new Wiki();
         w.setId(wikiId);
-        w.setUser(wikiUser);
+        w.setUser(u);
         w.setDate_modified("2016-09-15T14:19:14.417000");
         w.setContent_type(content_type);
-        w.setNode(node);
+        w.setNode(n);
         w.setKind(kind);
         w.setPath(filePath);
         w.setMaterialized_path(filePath);
