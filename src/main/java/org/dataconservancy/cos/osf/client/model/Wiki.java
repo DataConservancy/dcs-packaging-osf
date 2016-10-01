@@ -23,6 +23,7 @@ import java.util.Map;
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.DownloadLinkTransform;
 import org.dataconservancy.cos.osf.client.support.JodaSupport;
+import org.dataconservancy.cos.osf.client.support.UrlToIdTransform;
 import org.dataconservancy.cos.osf.client.support.VersionTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
@@ -71,7 +72,7 @@ public class Wiki {
     private DateTime date_modified;
 
     @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    @OwlProperty(OwlProperties.OSF_HAS_NODE)
+    @OwlProperty(value = OwlProperties.OSF_HAS_NODE, transform = UrlToIdTransform.class)
     private String node;
 
     @Relationship(value = "user", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
