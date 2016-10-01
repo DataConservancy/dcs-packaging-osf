@@ -5,7 +5,7 @@
         "node": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/eq7a4/",
+              "href": "http://localhost:8000/v2/registrations/eq7a4/",
               "meta": {}
             }
           }
