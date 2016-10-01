@@ -116,11 +116,6 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.dataconservancy.jasminb</groupId>
-      <artifactId>jsonapi-converter</artifactId>
-      <version>RELEASE</version>
-    </dependency>
 
   </dependencies>
 
