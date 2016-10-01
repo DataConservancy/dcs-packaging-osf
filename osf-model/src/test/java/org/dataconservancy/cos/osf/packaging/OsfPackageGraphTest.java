@@ -130,7 +130,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         final String binaryUri = "https://test-api.osf.io/v2/wikis/hgkfe/content/";
 
         Node n = new Node();
-        n.setId(node);
+        n.setId(nodeGuid);
 
         User u = new User();
         u.setId("9m8ky");
@@ -143,7 +143,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         w.setUser(u);
         w.setDate_modified("2016-09-15T14:19:14.417000");
         w.setContent_type(content_type);
-        w.setNode(nodeGuid);
+        w.setNode(n.getId());
         w.setKind(kind);
         w.setPath(filePath);
         w.setMaterialized_path(filePath);
