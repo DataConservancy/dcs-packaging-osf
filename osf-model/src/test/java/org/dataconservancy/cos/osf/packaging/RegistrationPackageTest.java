@@ -422,7 +422,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         w.setUser(u);
         w.setDate_modified("2016-09-15T14:19:14.417000");
         w.setContent_type("text/markdown");
-        w.setNode(n);
+        w.setNode(n.getId());
         w.setKind("file");
         w.setPath("/hgkfe");
         w.setMaterialized_path("/hgkfe");

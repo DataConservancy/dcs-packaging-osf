@@ -121,7 +121,8 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         final String wikiId = "hgkfe";
         final String wikiUser = "9m8ky";
         final String content_type = "text/markdown";
-        final String node = "https://test-api.osf.io/v2/nodes/u9dc7/";
+        final String nodeGuid = "u9dc7";
+        final String node = "https://test-api.osf.io/v2/nodes/" + nodeGuid + "/";
         final String kind = "file";
         final String filePath = "/hgkfe";
         final int size = 224;
@@ -142,7 +143,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         w.setUser(u);
         w.setDate_modified("2016-09-15T14:19:14.417000");
         w.setContent_type(content_type);
-        w.setNode(n);
+        w.setNode(nodeGuid);
         w.setKind(kind);
         w.setPath(filePath);
         w.setMaterialized_path(filePath);
@@ -198,7 +199,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         testUtil.assertHasPropertyWithValue(wikiIndividual, OSF_HAS_NAME, name);
         testUtil.assertHasTypedLiteralWithValue(wikiIndividual, OSF_HAS_BINARYURI, binaryUri, XSDanyURI);
         testUtil.assertHasPropertyWithValue(wikiIndividual, OSF_AUTHORED_BY, createResource(u.getId()));
-        testUtil.assertHasPropertyWithValue(wikiIndividual, OSF_HAS_NODE, createResource(node));
+        testUtil.assertHasPropertyWithValue(wikiIndividual, OSF_HAS_NODE, createResource(nodeGuid));
         testUtil.assertHasPropertyWithValue(wikiIndividual, OSF_HAS_COMMENT, createResource(c.getId()));
 
         testUtil.assertIsType(userIndividual, OSF_USER.fqname());
