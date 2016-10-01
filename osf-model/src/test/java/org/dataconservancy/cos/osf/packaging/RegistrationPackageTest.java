@@ -386,7 +386,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result = new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(r, result);
-        assertEquals(81, result.size());
+        assertEquals(82, result.size());
 
         AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
