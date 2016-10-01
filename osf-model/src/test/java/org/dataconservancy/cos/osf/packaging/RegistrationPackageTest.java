@@ -171,8 +171,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
                 .orElseThrow(
                         () -> new RuntimeException("Missing expected child registration " + childRegistrationId));
         assertTrue(childRegistration.getParent().endsWith(registrationId + "/"));
-        // TODO: the 'root' relationship is missing from /children/ endpoint for the parent registration.
-        assertNull(childRegistration.getRoot());
+        assertTrue(childRegistration.getRoot().endsWith(registrationId + "/"));
 
         //   Collect users from contributors.  Contributors only refer to their users by reference, so we
         //   have to contact the OSF API to retrieve the referenced users.
