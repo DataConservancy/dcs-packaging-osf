@@ -24,12 +24,12 @@
   <name>RDF Annotations</name>
   <description>Collection of annotations and utilities used to produce RDF instances
                of OSF java classes.</description>
-  <version>1.0.2-SNAPSHOT</version>
+  <version>1.0.2</version>
 
   <parent>
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-rdf</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2</version>
   </parent>
 
   <!-- Build  ===================================================== -->
