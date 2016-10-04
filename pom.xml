@@ -186,13 +186,13 @@
             <dependency>
                 <groupId>org.dataconservancy.cos</groupId>
                 <artifactId>rdf-annotations</artifactId>
-                <version>1.0.2-SNAPSHOT</version>
+                <version>1.0.2</version>
             </dependency>
 
             <dependency>
                 <groupId>org.dataconservancy.jasminb</groupId>
                 <artifactId>jsonapi-converter</artifactId>
-                <version>0.4-SNAPSHOT</version>
+                <version>0.4</version>
             </dependency>
 
             <dependency>
