@@ -25,7 +25,7 @@
   <description>Supporting models and code for importing and exporting content from
     the Center for Open Science Open Science Framework
   </description>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
 
   <parent>
     <groupId>org.dataconservancy</groupId>
@@ -149,7 +149,7 @@
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client</artifactId>
-        <version>${osf-client.version}</version>
+        <version>1.0.2</version>
       </dependency>
 
       <dependency>
@@ -179,7 +179,7 @@
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
         <type>test-jar</type>
         <classifier>tests</classifier>
       </dependency>
@@ -249,4 +249,8 @@
     </dependencies>
 
   </dependencyManagement>
+
+  <scm>
+    <tag>osf-packaging-1.0.1</tag>
+  </scm>
 </project>

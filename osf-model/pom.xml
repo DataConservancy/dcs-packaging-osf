@@ -24,12 +24,12 @@
   <name>OSF Models</name>
   <description>Supporting model for importing and exporting content from
     the Center for Open Science Open Science Framework</description>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
 
   <parent>
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-packaging</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
   </parent>
 
   <!-- Build  ===================================================== -->
