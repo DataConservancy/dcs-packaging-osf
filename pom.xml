@@ -149,7 +149,7 @@
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>${osf-client.version}</version>
       </dependency>
 
       <dependency>
