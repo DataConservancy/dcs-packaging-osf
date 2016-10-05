@@ -44,8 +44,8 @@
   <!-- Build  ===================================================== -->
 
   <properties>
-    <osf-client.version>1.0.2-SNAPSHOT</osf-client.version>
-    <osf-rdf.version>1.0.2-SNAPSHOT</osf-rdf.version>
+    <osf-client.version>1.0.2</osf-client.version>
+    <osf-rdf.version>1.0.2</osf-rdf.version>
   </properties>
 
 
