@@ -47,6 +47,32 @@ Import/export of packages from OSF could be a building block of several kinds of
 * It’s unclear if they have a defined object model at all
 * We would need to confirm that the Django API supports everything that we need to do.
 
+# Developer Notes
+
+Currently Maven SNAPSHOT artifacts are not published to a reachable Maven repository.  However, our release artifacts are reachable.  We plan to publish SNAPSHOT artifacts to Sonatype; in the interim you may either check out and build a tag (which will pull publicly available release artifacts), or you may manually build and install SNAPSHOT dependencies.
+
+## Build Requirements
+
+* Java 8
+* Maven 3.3.x
+
+## Test Drive
+
+If you simply want give the CLI a test drive, the best way to do this right now is to clone this repository, check out the latest tag, and perform a `mvn install`.  The CLI will be compiled and assembled in the `osf-cli/target/osf-cli-<version>.jar`  The [README](osf-cli/README.md) contains further instructions on getting started with the CLI.
+
+## Snapshot Dependencies
+
+If you wish to build and install our SNAPSHOTs, read on.  You need three dependencies, installed in the following order:
+
+* The [jsonapi-converter](https://github.com/DataConservancy/jsonapi-converter)
+* Our home-grown (!) [RDF annotation framework](https://github.com/DataConservancy/osf-rdf)
+* Finally, the [OSF Java Client](https://github.com/DataConservancy/osf-client)
+
+After installing these dependencies locally (by running `mvn install` for each dependency), you ought to be able to perform a `mvn install` of this code repository.
+
+
+
+
 [dc-bagit-profile]: http://dataconservancy.github.io/dc-packaging-spec/dc-bagit-profile-1.0.html "Data Conservancy BagIt Profile"
 [dc-packaging-spec]: http://dataconservancy.github.io/dc-packaging-spec/dc-packaging-spec-1.0.html "Data Conservancy Packaging Specification"
 [dc-ptg]: https://github.com/DataConservancy/dcs-packaging-tool "Data Conservancy Package Tool GUI"
