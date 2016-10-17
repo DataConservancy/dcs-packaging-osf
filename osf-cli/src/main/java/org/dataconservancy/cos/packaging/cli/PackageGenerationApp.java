@@ -29,9 +29,8 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 import org.apache.commons.io.IOUtils;
 import org.apache.jena.atlas.json.JSON;
 import org.dataconservancy.cos.osf.client.model.Registration;
@@ -140,20 +139,6 @@ public class PackageGenerationApp {
                 System.exit(1);
             }
 
-            Response response = new OkHttpClient().newCall(
-                                                            new Request.Builder()
-                                                                    .head()
-                                                                        .url(registrationUrl)
-                                                                            .build()
-                                                          ).execute();
-
-            if (!response.header("Content-Type").contains("json")) {
-                System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" + response.header("Content-Type") + "')");
-                System.err.println("Please be sure you are using a valid API URL to a node or registration.");
-                System.exit(1);
-            }
-
-
 			/* Run the package generation application proper */
 			application.run();
 
@@ -179,6 +164,28 @@ public class PackageGenerationApp {
                     "classpath*:org/dataconservancy/packaging/tool/ser/config/applicationContext.xml",
                     "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
                     "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
+
+        final com.squareup.okhttp.OkHttpClient httpClient = cxt.getBean("okHttpClient", com.squareup.okhttp.OkHttpClient.class);
+
+        Response response = httpClient.newCall(
+                                            new Request.Builder()
+                                                    .head()
+                                                    .url(registrationUrl)
+                                                    .build()
+                                        ).execute();
+
+        if (response.code() != 200 ) {
+            System.err.println("There was an error executing '" + registrationUrl + "', response code " + response.code() + " reason: '" + response.message() + "'");
+            System.err.print("Please be sure you are using a valid API URL to a node or registration, ");
+            System.err.println("and have properly configured authorization credentials, if necessary.");
+            System.exit(1);
+        }
+
+        if (!response.header("Content-Type").contains("json")) {
+            System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" + response.header("Content-Type") + "')");
+            System.err.println("Please be sure you are using a valid API URL to a node or registration.");
+            System.exit(1);
+        }
 
         final OsfPackageGraph packageGraph = cxt.getBean("packageGraph", OsfPackageGraph.class);
         final OsfService osfService = cxt.getBean("osfService", OsfService.class);

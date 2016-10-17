@@ -44,7 +44,7 @@
   <!-- Build  ===================================================== -->
 
   <properties>
-    <osf-client.version>1.0.2</osf-client.version>
+    <osf-client.version>1.0.3-SNAPSHOT</osf-client.version>
     <osf-rdf.version>1.0.2</osf-rdf.version>
   </properties>
 
@@ -149,7 +149,7 @@
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client</artifactId>
-        <version>1.0.2</version>
+        <version>${osf-client.version}</version>
       </dependency>
 
       <dependency>
