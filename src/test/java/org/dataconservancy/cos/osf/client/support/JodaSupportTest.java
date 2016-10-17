@@ -44,4 +44,9 @@ public class JodaSupportTest {
         assertNotNull(JodaSupport.parseDateTime("2016-07-29T14:35:29Z"));
     }
 
+    @Test
+    public void testEmbargoEndDate() throws Exception {
+        assertNotNull(JodaSupport.parseDateTime("2016-10-31T00:00:00"));
+        assertEquals("2016-10-31T00:00:00.000Z", JodaSupport.parseDateTime("2016-10-31T00:00:00").toString());
+    }
 }
