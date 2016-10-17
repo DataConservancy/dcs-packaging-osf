@@ -66,7 +66,7 @@ public class AuthInterceptor implements Interceptor {
 
         if (req.header("Authorization") == null) {
             req = req.newBuilder()
-                    .addHeader("Authorization", authHeader)
+                    .addHeader("Authorization", localAuthheader)
                     .build();
         }
 

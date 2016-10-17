@@ -44,8 +44,9 @@ public class BeanAccessibleOkHttpClient extends OkHttpClient {
      * @param interceptors interceptors to set on the client
      */
     public void setInterceptors(List<Interceptor> interceptors) {
-        List<Interceptor> existing = this.interceptors();
-        existing.clear();
-        interceptors.addAll(existing);
+        this.interceptors().clear();
+        for (Interceptor toAdd : interceptors) {
+            this.interceptors().add(toAdd);
+        }
     }
 }
