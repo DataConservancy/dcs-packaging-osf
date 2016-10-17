@@ -130,7 +130,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         allIndividuals.setNsPrefixes(Rdf.Ns.PREFIXES);
 
         ontologyManager.getOntModel().listIndividuals().forEachRemaining(i -> allIndividuals.add(i.listProperties()));
-        writeModel(allIndividuals);
+//        writeModel(allIndividuals);
 
     }
 
@@ -207,7 +207,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         users.forEach(ap::process);
 
         // Write the individuals to stderr for debugging
-        writeModel(onlyIndividuals(ontologyManager.getOntModel()));
+//        writeModel(onlyIndividuals(ontologyManager.getOntModel()));
 
 
         // Step 3: Verify that the expected OWL individuals are present in the model
@@ -448,7 +448,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         Map<String, Individual> createdIndividuals = ap.process(r);
 
         // Write the individuals to stderr for debugging
-        writeModel(onlyIndividuals(ontologyManager.getOntModel()));
+//        writeModel(onlyIndividuals(ontologyManager.getOntModel()));
     }
 
     private Map<Field, AnnotationAttributes> getFieldAnnotationAttribute(Registration registration, List<Field> annotatedFields, Class<? extends Annotation> annotation) {

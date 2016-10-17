@@ -28,7 +28,7 @@
     and wire traffic -->
   <logger name="org.mockserver" level="OFF"/>
 
-  <logger name="org.dataconservancy.cos.packaging" level="DEBUG"/>
+  <logger name="org.dataconservancy.cos.packaging" level="INFO"/>
 
   <logger name="org.springframework" level="OFF"/>
 

@@ -84,7 +84,7 @@ public class IpmPackagerTest extends AbstractMockServerTest {
         packageGraph.add(registration);
         users.forEach(packageGraph::add);
 
-        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
+//        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
         IpmPackager packager = new IpmPackager((String url) -> {
             Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
@@ -128,7 +128,7 @@ public class IpmPackagerTest extends AbstractMockServerTest {
         users.forEach(packageGraph::add);
 
         List<Wiki> wikis = osfService.wikis("http://localhost:8000/v2/registrations/ng9em/wikis/").execute().body();
-        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
+//        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
         IpmPackager packager = new IpmPackager((String url) -> {
             Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());

@@ -28,7 +28,7 @@
     and wire traffic -->
   <logger name="org.mockserver" level="OFF"/>
 
-  <logger name="org.dataconservancy.cos" level="TRACE"/>
+  <logger name="org.dataconservancy.cos" level="INFO"/>
 
   <root level="INFO">
     <appender-ref ref="STDOUT" />

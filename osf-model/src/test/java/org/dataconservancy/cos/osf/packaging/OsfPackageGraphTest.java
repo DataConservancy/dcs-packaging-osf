@@ -105,7 +105,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         packageGraph.add(registration);
         users.forEach(packageGraph::add);
 
-        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
+//        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
     }
 
@@ -174,7 +174,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         packageGraph.add(r);
         packageGraph.add(u);
 
-        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
+//        packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
         final Individual wikiIndividual = ontologyManager.individual(w.getId());
         final Individual userIndividual = ontologyManager.individual(u.getId());
