@@ -18,6 +18,7 @@ package org.dataconservancy.cos.packaging;
 import com.github.jasminb.jsonapi.RelationshipResolver;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.jena.rdf.model.Model;
@@ -162,6 +163,17 @@ public class IpmPackager {
 
         PackageState state = new PackageState();
 
+        // Allocate a unique location for storing any binary content that will go into the package.  If another
+        // thread or JVM is running simultaneously, content will go into unique directory, and avoid any file name
+        // conflicts
+        File temporaryDirectory;
+        try {
+            temporaryDirectory = allocateTempDir();
+        } catch (IOException e) {
+            LOG.warn("Unable to allocate a temporary directory, will use 'java.io.tmpdir' instead.", e);
+            temporaryDirectory = new File(System.getProperty("java.io.tmpdir"));
+        }
+
         ByteArrayOutputStream sink = new ByteArrayOutputStream();
         graph.serialize(sink, RDFFormat.TURTLE_PRETTY, graph.OSF_SELECTOR);
 
@@ -182,7 +194,11 @@ public class IpmPackager {
          * buildContentTree(), then serialize to RDF
          */
         try {
-            state.setPackageTree(ipm2rdf.transformToRDF(buildContentTree(state.getDomainObjectRDF(), resolver)));
+            state.setPackageTree(ipm2rdf.transformToRDF(
+                    buildContentTree(
+                            state.getDomainObjectRDF(),
+                            resolver,
+                            temporaryDirectory)));
         } catch (RDFTransformException e) {
             throw new RuntimeException(e.getMessage(), e);
         }
@@ -197,6 +213,13 @@ public class IpmPackager {
             pkg = buildPackage(state);
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);
+        } finally {
+            // Clean up the downloaded binary files
+            try {
+                FileUtils.deleteDirectory(temporaryDirectory);
+            } catch (IOException e) {
+                LOG.warn("Clean up of package download directory failed: " + e.getMessage(), e);
+            }
         }
 
         return pkg;
@@ -209,7 +232,7 @@ public class IpmPackager {
      * describes associated content. 3) Arranging these nodes into a tree
      * structure of our liking.
      */
-    private static Node buildContentTree(Model domainObjects, RelationshipResolver resolver) {
+    private static Node buildContentTree(Model domainObjects, RelationshipResolver resolver, File downloadDir) {
         // Synthesize a root node to anchor the objects in the domain object graph
         Node root = new Node(URI.create(UUID.randomUUID().toString()));
         root.setFileInfo(directory("root"));
@@ -218,7 +241,6 @@ public class IpmPackager {
         // For each subject resource that is not anonymous, create a node
         //   - If the type of the node is a osf:File, then it will be a content node
         //   - Otherwise, make a directory node
-
         domainObjects.listSubjects().forEachRemaining(subject -> {
 
             if (subject.isAnon()) {
@@ -248,7 +270,8 @@ public class IpmPackager {
                         contentFromUrl(
                                 filename,
                                 binaryUri,
-                                resolver));
+                                resolver,
+                                downloadDir));
 
             } else {
                 String filename;
@@ -278,16 +301,18 @@ public class IpmPackager {
      *
      * @param filename the logical name of the content represented by the returned {@code FileInfo}
      * @param contentUrl resolvable URL to the content
+     * @param resolver used to resolve the {@code contentUrl} and download the content
+     * @param temporaryDirectory the directory where downloaded content will be kept
      * @return populated FileInfo
      * @throws RuntimeException if the content cannot be downloaded or saved to a temporary file
      */
-    private static FileInfo contentFromUrl(String filename, String contentUrl, RelationshipResolver resolver) {
+    private static FileInfo contentFromUrl(String filename, String contentUrl, RelationshipResolver resolver, File temporaryDirectory) {
         LOG.debug("  Retrieving '{}' content from '{}'", filename, contentUrl);
 
         File outFile = null;
         try {
             outFile = new File(System.getProperty("java.io.tmpdir"), filename);
-            byte[] data = resolver.resolve(contentUrl);
+            byte[] data = resolver.resolve(contentUrl);  // TODO unfortunately this interface doesn't stream, do we need it?
             if (data == null || data.length == 0) {
                 // We actually don't know receiving zero bytes is an error, because the file to be retrieved at
                 // 'contentUrl' may be in actuality, a zero-length file.  The 'Content-Length' header would let us
@@ -299,8 +324,10 @@ public class IpmPackager {
                     throw new RuntimeException("Unable to retrieve content from '" + contentUrl + "': Expected " + contentLength + " bytes but received 0 bytes.");
                 }
             }
-            IOUtils.write(data,
-                    new FileOutputStream(outFile));
+
+            try (FileOutputStream fos = new FileOutputStream(outFile)) {
+                IOUtils.write(data, fos);
+            }
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);
         }
@@ -308,6 +335,32 @@ public class IpmPackager {
         FileInfo info = new FileInfo(outFile.toPath());
         info.setIsFile(true);
         return info;
+    }
+
+    /**
+     * Creates a temporary directory under {@code java.io.tmpdir}.  The directory will be uniquely named, so as to
+     * avoid any filename conflicts with simultaneously executing downloads (e.g. another packager running in another
+     * JVM).
+     *
+     * @return the temporary directory
+     * @throws IOException if the directory cannot be allocated
+     */
+    static File allocateTempDir() throws IOException {
+        // Use createTempFile to generate a unique filename in the temporary directory, then remove it and create
+        // a directory of the same name
+        File tmpDir = File.createTempFile("IpmPackager", ".content");
+        if (tmpDir.delete()) {
+            // Windows may have a problem if we simply attempt to call tmpDir.mkdir(), so create a new file with "-dir"
+            // suffixed to the original directory name
+            tmpDir = new File(tmpDir.getParentFile(), tmpDir.getName() + "-dir");
+            if (!tmpDir.mkdir()) {
+                throw new IOException("Unable to allocate temporary directory: failed to make the directory '" + tmpDir + "'");
+            }
+        } else {
+            throw new IOException("Unable to allocate temporary directory: cannot delete the template file '" + tmpDir + "'");
+        }
+
+        return tmpDir;
     }
 
     /**
