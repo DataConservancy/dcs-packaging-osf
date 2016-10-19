@@ -17,6 +17,7 @@ package org.dataconservancy.cos.packaging;
 
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Request;
+import org.apache.commons.io.FileUtils;
 import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.osf.client.config.WbConfigurationService;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
@@ -34,11 +35,17 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * Simple test exercising the IpmPackager
@@ -153,5 +160,92 @@ public class IpmPackagerTest extends AbstractMockServerTest {
         System.setProperty("osf.client.conf", "classpath:/org/dataconservancy/cos/packaging/TestSpringClientConfiguration-classpath.json");
         WbConfigurationService configSvc = IpmPackager.cxt.getBean("wbConfigurationSvc", WbConfigurationService.class);
         assertEquals("test-host", configSvc.getConfiguration().getHost());
+    }
+
+    /**
+     * An unsatisfying test attempting to insure that a temporary download directory can be created on different
+     * platforms.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testAllocateTempDirectory() throws Exception {
+        final File allocatedDirectory = IpmPackager.allocateTempDir();
+        assertNotNull(allocatedDirectory);
+        assertTrue(allocatedDirectory.exists());
+        assertTrue(allocatedDirectory.isDirectory());
+
+        // clean up
+        FileUtils.deleteQuietly(allocatedDirectory);
+    }
+
+    /**
+     * Multiple calls to allocateTempDir result in a unique name each time.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testAllocateTempDirectoryUniqueNames() throws Exception {
+        File one = IpmPackager.allocateTempDir();
+        File two = IpmPackager.allocateTempDir();
+
+        assertNotSame(one, two);
+        assertNotEquals(one, two);
+        assertNotEquals(one.getName(), two.getName());
+
+        // Clean up
+        FileUtils.forceDelete(one);
+        FileUtils.forceDelete(two);
+    }
+
+    /**
+     * Another unsatisfying test attempting to insure that temporary directory names don't collide even when
+     * called from the same parent thread.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testAllocateTempDirectoryThreaded() throws Exception {
+        final FileHolder fhOne = new FileHolder();
+        final FileHolder fhTwo = new FileHolder();
+
+        Thread one = new Thread(() -> {
+            try {
+                fhOne.setF(IpmPackager.allocateTempDir());
+            } catch (IOException e) {
+                fail(e.getMessage());
+            }
+        });
+
+        Thread two = new Thread(() -> {
+            try {
+                fhTwo.setF(IpmPackager.allocateTempDir());
+            } catch (IOException e) {
+                fail(e.getMessage());
+            }
+        });
+
+        one.start();
+        two.start();
+
+        one.join(10000);
+        two.join(10000);
+
+        assertNotNull(fhOne.f);
+        assertNotNull(fhTwo.f);
+        assertNotEquals(fhOne.f, fhTwo.f);
+        assertNotEquals(fhOne.f.getName(), fhTwo.f.getName());
+
+        // Clean up
+        FileUtils.deleteQuietly(fhOne.f);
+        FileUtils.deleteQuietly(fhTwo.f);
+    }
+
+    private class FileHolder {
+        File f;
+
+        public void setF(File f) {
+            this.f = f;
+        }
     }
 }
