@@ -170,8 +170,7 @@ public class IpmPackager {
         try {
             temporaryDirectory = allocateTempDir();
         } catch (IOException e) {
-            LOG.warn("Unable to allocate a temporary directory, will use 'java.io.tmpdir' instead.", e);
-            temporaryDirectory = new File(System.getProperty("java.io.tmpdir"));
+            throw new RuntimeException("Unable to allocate a temporary directory:" + e.getMessage(), e);
         }
 
         ByteArrayOutputStream sink = new ByteArrayOutputStream();
