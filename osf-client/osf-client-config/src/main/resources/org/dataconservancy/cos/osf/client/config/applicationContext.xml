@@ -1,0 +1,36 @@
+<!--
+  ~ Copyright 2016 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+  <context:property-placeholder/>
+
+  <!--
+    Configuration for connecting to OSF and Waterbutler
+      The services provide mutators for the configuration, but as long as we don't mutate the configuration they can
+      be safely shared as singletons.
+  -->
+  <bean id="osfConfigurationSvc" class="org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService">
+    <constructor-arg value="${osf.client.conf:/org/dataconservancy/cos/osf/client/config/osf-config.json}"/>
+  </bean>
+
+  <bean id="wbConfigurationSvc" class="org.dataconservancy.cos.osf.client.config.JacksonWbConfigurationService">
+    <constructor-arg value="${osf.client.conf:/org/dataconservancy/cos/osf/client/config/osf-config.json}"/>
+  </bean>
+
+</beans>
