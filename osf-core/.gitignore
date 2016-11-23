@@ -1,0 +1,7 @@
+.idea
+*.iws
+*.ipr
+*.iml
+.DS_Store
+target/
+*.sh
