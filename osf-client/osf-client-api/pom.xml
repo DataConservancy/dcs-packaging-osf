@@ -21,63 +21,18 @@
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-client-api</artifactId>
     <packaging>jar</packaging>
-    <name>OSF Client</name>
-    <description>Client for the Center for Open Science Open Science Framework</description>
-    <version>1.1.0-SNAPSHOT</version>
+    <name>OSF client API</name>
+    <description>OSF Client API, based on Retrofit and the jsonapi-converter</description>
 
     <parent>
-        <groupId>org.dataconservancy</groupId>
-        <artifactId>project-pom</artifactId>
-        <version>8</version>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-client</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
-
-    <!-- Modules  =================================================== -->
 
     <!-- Build  ===================================================== -->
 
     <build>
-
-        <pluginManagement>
-
-            <plugins>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                        <encoding>UTF-8</encoding>
-                    </configuration>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-assembly-plugin</artifactId>
-                    <version>2.6</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.19.1</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-verifier-plugin</artifactId>
-                    <version>1.1</version>
-                </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.0</version>
-                </plugin>
-
-            </plugins>
-
-        </pluginManagement>
 
         <plugins>
 
@@ -89,27 +44,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>jar</goal>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
@@ -123,142 +64,21 @@
             <plugin>
                 <groupId>org.apache.rat</groupId>
                 <artifactId>apache-rat-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>settings.tar</exclude>
-                        <exclude>settings.xml</exclude>
-                        <exclude>known_hosts</exclude>
-                        <exclude>.travis.yml</exclude>
-                        <exclude>travis_dc</exclude>
-                        <exclude>**/*.md</exclude>
-                        <exclude>src/test/resources/json/**</exclude>
-                        <exclude>**/*.json</exclude>
-                        <exclude>**/*.md</exclude>
-                        <exclude>**/*.iml</exclude>
-                        <exclude>**/*.ipr</exclude>
-                        <exclude>**/*.iws</exclude>
-                        <exclude>.idea</exclude>
-                        <exclude>**/*.sh</exclude>
-                    </excludes> 
-                </configuration>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>enforce-java</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireJavaVersion>
-                                    <version>[1.8.0-31,)</version>
-                                </requireJavaVersion>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <configuration>
-                    <preparationGoals>clean install</preparationGoals>
-                    <goals>deploy</goals>
-                    <localCheckout>true</localCheckout>
-                    <pushChanges>false</pushChanges>
-                </configuration>
             </plugin>
 
         </plugins>
 
     </build>
-
-    <!-- Dependency Management ====================================== -->
-
-    <dependencyManagement>
-
-        <dependencies>
-
-            <dependency>
-                <groupId>org.dataconservancy.cos</groupId>
-                <artifactId>osf-core-annotations</artifactId>
-                <version>1.1.0-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.dataconservancy.cos</groupId>
-                <artifactId>osf-core-model</artifactId>
-                <version>1.1.0-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.dataconservancy.jasminb</groupId>
-                <artifactId>jsonapi-converter</artifactId>
-                <version>0.4</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
-                <artifactId>jackson-databind</artifactId>
-                <version>2.7.1</version>
-            </dependency>
-
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
-            </dependency>
-
-            <dependency>
-                <groupId>joda-time</groupId>
-                <artifactId>joda-time</artifactId>
-                <version>2.9.3</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.squareup.retrofit</groupId>
-                <artifactId>retrofit</artifactId>
-                <version>2.0.0-beta2</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.squareup.okhttp</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>2.5.0</version>
-            </dependency>
-
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>2.5</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.github.lukehutch</groupId>
-                <artifactId>fast-classpath-scanner</artifactId>
-                <version>1.9.21</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mock-server</groupId>
-                <artifactId>mockserver-client-java</artifactId>
-                <version>3.10.4</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.mock-server</groupId>
-                <artifactId>mockserver-netty</artifactId>
-                <version>3.10.4</version>
-            </dependency>
-
-        </dependencies>
-
-    </dependencyManagement>
 
     <!-- Dependencies ================================================ -->
 
@@ -382,34 +202,4 @@
 
     </dependencies>
 
-    <!-- Repositories =============================================== -->
-
-    <repositories>
-        <repository>
-            <id>dc.maven.releases</id>
-            <name>Data Conservancy Public Maven 2 Repository (releases)</name>
-            <layout>default</layout>
-            <url>http://maven.dataconservancy.org/public/releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-
-        <repository>
-            <id>dc.maven.snapshots</id>
-            <name>Data Conservancy Public Maven 2 Repository (snapshots)</name>
-            <layout>default</layout>
-            <url>http://maven.dataconservancy.org/public/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-
-    </repositories>
 </project>
