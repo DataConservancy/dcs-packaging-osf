@@ -138,7 +138,8 @@
                         <exclude>**/*.ipr</exclude>
                         <exclude>**/*.iws</exclude>
                         <exclude>.idea</exclude>
-                    </excludes> 
+                        <exclude>filter.sh</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
 

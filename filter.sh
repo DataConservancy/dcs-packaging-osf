@@ -1,0 +1,2 @@
+git filter-branch -f --tree-filter "find . -type f|egrep -v '(resources/org/dataconservancy/cos/osf/client/config|java/org/dataconservancy/cos/osf/client/config|resources.*.xml|pom.xml)'| sed -e '/^\.$/d' | xargs rm -df"
+#git filter-branch -f --tree-filter "find . -name 'project-node-only-ref-rels.json' -o -name 'Bean*Client.java' -o -name '*Interceptor*.java' -o -name '*Scanner.java' -o -name '*Factory.java' -o -name '*Callback.java' -o -name '*Test.java' -o -name '*Resolver.java' | sed -e '/^\.$/d' | xargs rm -f"
