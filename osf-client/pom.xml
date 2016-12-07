@@ -38,6 +38,8 @@
         <module>osf-client-api</module>
         <module>osf-client-support-jsonapi</module>
         <module>osf-client-support-okhttp</module>
+        <module>osf-client-impl</module>
+        <module>osf-client-integration</module>
     </modules>
 
     <!-- Build properties  ========================================== -->
