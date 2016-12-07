@@ -1,0 +1,20 @@
+language: java
+install: true
+#env:
+#- MAVEN_OPTS="-Xmx1024m"
+before_script:
+  - echo "MAVEN_OPTS='-Xmx1024m'" > ~/.mavenrc
+script: 
+#- mvn -X -e -s ./settings.xml help:system
+- mvn -s ./settings.xml clean deploy
+- cat target/rat.txt
+jdk:
+- oraclejdk8
+notifications:
+  slack:
+    secure: EE92LRrjadAHtMUn9SynaUPo7w0UjIXiVMS7OA4UbI6VrQ28wJtwXdh9+lRgHSQxj80arkluWuE00BT2XR9r+d+Yp+S7AHBLetu3WDMpDsBl3PQW8f0FmZmoXraNW5YVvrXlj7sDx9SNkWnul/oaPDhAi16Yp4TnCbtkNErpf6QC0UvEvHTBrDXvFE0ZyIiC+rQAiPV/tMgsdmpL6b4sRmozGU3OuGcOnDeesLMIzVh6fKH0H+eD0MRMRtNRRnbo60/NOzaymlBM7kKQvvaiBoSmzO/HwUxKNK8OLilOTyFiYqQ2qHP4xagG7PtxAyQoiyavDPxnVNSSh/UT4yUca8JwA9nejBSoJvO+kGWJ3/bqjybpKI9UbythnMq0XOFgJvUEB6UNhWhwjldxSE6aOtqqM+b8TLwcn1sg1fKhRGWE/rTHrIqFW36jYcfj5ckT0K+Fp9fGz8sN+kvZiA+PPnt+Wj173F5wyAOYufc7UB5mAm5EML00utRKms+SI03Lo2I9mU+8GsUSmxd+HDHZzgz2a56rLDVwy3olLTjKR6Q0gRp5etq9PYtg8Q2mUIu4+ZpzNQv9RMk1P2W4xwkubysx4Ny8VCM7/XYIc5JhlEq2XrqEAe9m6/7+CzdRk2N5/Hw/Z42i2TxNM3M93CWLC74EH5PzCXeHBe9wyup4wds=
+before_install:
+- openssl aes-256-cbc -K $encrypted_f7c5364613c8_key -iv $encrypted_f7c5364613c8_iv
+  -in settings.tar.enc -out settings.tar -d
+- tar xf settings.tar
+- cat known_hosts >> ~/.ssh/known_hosts

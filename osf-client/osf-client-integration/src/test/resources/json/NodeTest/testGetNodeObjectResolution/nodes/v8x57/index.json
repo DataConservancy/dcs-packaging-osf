@@ -1,0 +1,113 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/files/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/r5s4u/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/relationships/institution/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/r5s4u/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/children/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/v8x57/logs/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/v8x57/",
+      "html": "http://localhost:5000/v8x57/"
+    },
+    "attributes": {
+      "category": "data",
+      "fork": false,
+      "description": null,
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-05-10T13:53:07.886000",
+      "title": "Raw Data",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-04-19T13:08:24.039000",
+      "public": false,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "v8x57"
+  }
+}

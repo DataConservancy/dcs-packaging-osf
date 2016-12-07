@@ -1,0 +1,170 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/files/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/eq7a4/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_by": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/qmdz6/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_from": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/6uwzk/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/wikis/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/eq7a4/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/children/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/vae86/logs/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/registrations/vae86/",
+      "html": "http://localhost:5000/vae86/"
+    },
+    "attributes": {
+      "category": "data",
+      "fork": false,
+      "pending_registration_approval": false,
+      "description": null,
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-06-07T17:47:39.006000",
+      "registration_supplement": "Open-Ended Registration",
+      "registered_meta": {
+        "summary": {
+          "value": "This is a registration of Project Two!",
+          "comments": [],
+          "extra": []
+        }
+      },
+      "title": "Raw Experimental Data",
+      "collection": false,
+      "withdrawn": false,
+      "date_registered": "2016-06-07T17:53:10.766000",
+      "pending_embargo_approval": false,
+      "withdrawal_justification": null,
+      "registration": true,
+      "embargo_end_date": null,
+      "date_created": "2016-06-07T14:46:14.778000",
+      "pending_withdrawal": false,
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "public": true,
+      "tags": []
+    },
+    "type": "registrations",
+    "id": "vae86"
+  }
+}

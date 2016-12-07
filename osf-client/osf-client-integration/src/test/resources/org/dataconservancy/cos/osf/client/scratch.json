@@ -1,0 +1,49 @@
+{
+  "data": {
+    "relationships": {
+      // duplicated in embeds
+    },
+    "links": {
+      // duplicated in embeds
+    },
+    "embeds": {
+      "root": {
+        "data": {
+          "relationships": {
+            // duplicated in primary data relationships
+          },
+          "links": {
+            // duplicated in primary data links
+          },
+          "attributes": {
+            // duplicated in primary data attributes
+          },
+          "type": "nodes", // duplicated
+          "id": "r5s4u"    // duplicated
+        }
+      }
+    },
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "description": "My first project created through the OSF UI",
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-04-20T01:29:28.730000",
+      "title": "First Proj",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-04-19T13:06:25.038000",
+      "public": false,
+      "tags": [
+        "firstproject",
+        "newbie"
+      ]
+    },
+    "type": "nodes",
+    "id": "r5s4u"
+  }
+}
