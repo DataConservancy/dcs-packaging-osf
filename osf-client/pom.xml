@@ -37,6 +37,7 @@
         <module>osf-client-config</module>
         <module>osf-client-api</module>
         <module>osf-client-support-jsonapi</module>
+        <module>osf-client-support-okhttp</module>
     </modules>
 
     <!-- Build properties  ========================================== -->
