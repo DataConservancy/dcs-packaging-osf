@@ -106,6 +106,12 @@
 
         <!-- Test ======================================================== -->
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>4.12</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
