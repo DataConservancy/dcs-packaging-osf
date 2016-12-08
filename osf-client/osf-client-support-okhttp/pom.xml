@@ -30,56 +30,11 @@
         <version>1.1.0-SNAPSHOT</version>
     </parent>
 
-    <!-- Build  ===================================================== -->
+    <!-- Build properties  ========================================== -->
 
-    <build>
-
-        <plugins>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.rat</groupId>
-                <artifactId>apache-rat-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-release-plugin</artifactId>
-            </plugin>
-
-        </plugins>
-
-    </build>
-
+    <properties>
+        <github.site.path>${project.version}/${project.artifactId}</github.site.path>
+    </properties>
 
     <!-- Dependencies ================================================ -->
 
@@ -93,7 +48,6 @@
             <groupId>org.dataconservancy.cos</groupId>
             <artifactId>osf-client-config</artifactId>
             <scope>compile</scope>
-            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
@@ -109,7 +63,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <scope>4.12</scope>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
