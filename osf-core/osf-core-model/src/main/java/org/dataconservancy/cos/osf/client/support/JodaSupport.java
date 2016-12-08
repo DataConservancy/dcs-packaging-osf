@@ -40,12 +40,16 @@ public class JodaSupport {
 
     public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_2 = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
+    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_3 = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss").withZoneUTC();
+
+
     private static final List<DateTimeFormatter> DATE_TIME_FORMATTERS =
             new ArrayList<DateTimeFormatter>() {
                 {
                     add(DATE_TIME_FORMATTER);
                     add(DATE_TIME_FORMATTER_ALT);
                     add(DATE_TIME_FORMATTER_ALT_2);
+                    add(DATE_TIME_FORMATTER_ALT_3);
                 }
             };
 
