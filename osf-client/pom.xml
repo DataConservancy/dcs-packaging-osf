@@ -26,9 +26,9 @@
     <version>1.1.0-SNAPSHOT</version>
 
     <parent>
-        <groupId>org.dataconservancy</groupId>
-        <artifactId>project-pom</artifactId>
-        <version>8</version>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>dcs-packaging-osf</artifactId>
+        <version>1</version>
     </parent>
 
     <!-- Modules  =================================================== -->
