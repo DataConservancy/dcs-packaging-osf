@@ -70,6 +70,13 @@
     </dependency>
 
     <dependency>
+      <groupId>org.dataconservancy.packaging.shared</groupId>
+      <artifactId>dcs-packaging-shared</artifactId>
+      <scope>compile</scope>
+      <version>1.0.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>okhttp</artifactId>
       <scope>compile</scope>
@@ -81,6 +88,7 @@
       <groupId>org.dataconservancy.cos</groupId>
       <artifactId>osf-client</artifactId>
       <scope>compile</scope>
+      <version>1.0.3-SNAPSHOT</version>
     </dependency>
 
     <dependency>

@@ -16,40 +16,33 @@
 
 package org.dataconservancy.cos.packaging.cli;
 
-
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.apache.commons.io.IOUtils;
-import org.apache.jena.atlas.json.JSON;
+
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
+import org.dataconservancy.cos.packaging.OsfContentProvider;
 import org.dataconservancy.packaging.tool.api.Package;
-import org.dataconservancy.cos.packaging.IpmPackager;
+import org.dataconservancy.packaging.shared.IpmPackager;
 
-import org.dataconservancy.packaging.tool.model.BagItParameterNames;
-import org.dataconservancy.packaging.tool.model.PackageToolException;
-import org.dataconservancy.packaging.tool.model.PackagingToolReturnInfo;
 import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import javax.swing.text.html.HTML;
 
 /**
  * Application for generating packages from package descriptions.
@@ -114,7 +107,6 @@ public class PackageGenerationApp {
 				System.exit(0);
 			}
 
-
 			Properties props = System.getProperties();
 
             if (confFile.exists() && confFile.isFile()) {
@@ -139,6 +131,26 @@ public class PackageGenerationApp {
                 System.exit(1);
             }
 
+            Response response = new OkHttpClient().newCall(
+                                                            new Request.Builder()
+                                                                    .head()
+                                                                        .url(registrationUrl)
+                                                                            .build()
+                                                          ).execute();
+
+            if (response.code() != 200 ) {
+                System.err.println("There was an error executing '" + registrationUrl + "', response code " + response.code() + " reason: '" + response.message() + "'");
+                System.err.print("Please be sure you are using a valid API URL to a node or registration, ");
+                System.err.println("and have properly configured authorization credentials, if necessary.");
+                System.exit(1);
+            }
+
+            if (!response.header("Content-Type").contains("json")) {
+                System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" + response.header("Content-Type") + "')");
+                System.err.println("Please be sure you are using a valid API URL to a node or registration.");
+                System.exit(1);
+            }
+
 			/* Run the package generation application proper */
 			application.run();
 
@@ -157,42 +169,15 @@ public class PackageGenerationApp {
         }
     }
 
+
    	private void run() throws Exception {
         final ClassPathXmlApplicationContext cxt =
-                new ClassPathXmlApplicationContext("classpath*:applicationContext.xml",
-                    "classpath*:org/dataconservancy/config/applicationContext.xml",
-                    "classpath*:org/dataconservancy/packaging/tool/ser/config/applicationContext.xml",
+                new ClassPathXmlApplicationContext(
                     "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
                     "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
 
-        final com.squareup.okhttp.OkHttpClient httpClient = cxt.getBean("okHttpClient", com.squareup.okhttp.OkHttpClient.class);
-
-        Response response = httpClient.newCall(
-                                            new Request.Builder()
-                                                    .head()
-                                                    .url(registrationUrl)
-                                                    .build()
-                                        ).execute();
-
-        if (response.code() != 200 ) {
-            System.err.println("There was an error executing '" + registrationUrl + "', response code " + response.code() + " reason: '" + response.message() + "'");
-            System.err.print("Please be sure you are using a valid API URL to a node or registration, ");
-            System.err.println("and have properly configured authorization credentials, if necessary.");
-            System.exit(1);
-        }
-
-        if (!response.header("Content-Type").contains("json")) {
-            System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" + response.header("Content-Type") + "')");
-            System.err.println("Please be sure you are using a valid API URL to a node or registration.");
-            System.exit(1);
-        }
-
-        final OsfPackageGraph packageGraph = cxt.getBean("packageGraph", OsfPackageGraph.class);
+        // Prepare the OSF registration and users information
         final OsfService osfService = cxt.getBean("osfService", OsfService.class);
-        IpmPackager ipmPackager = new IpmPackager();
-
-        ipmPackager.setPackageName(packageName);
-
         final Registration registration = osfService.registrationByUrl(registrationUrl).execute().body();
 
         if (registration == null) {
@@ -219,12 +204,25 @@ public class PackageGenerationApp {
                 })
                 .collect(Collectors.toList());
 
+        // Prepare package graph
+        final OsfPackageGraph packageGraph = cxt.getBean("packageGraph", OsfPackageGraph.class);
         packageGraph.add(registration);
         users.forEach(packageGraph::add);
 
-        LinkedHashMap<String, List<String>> metadata = createPackageMetadata();
+        // Prepare content provider using package graph
+        // TODO - Does this work without the lambda-specified resolver used in OsfContentProviderTest?
+        OsfContentProvider contentProvider = new OsfContentProvider(packageGraph);
 
-        Package pkg = ipmPackager.buildPackage(packageGraph, metadata);
+        // Load the metadata file
+        InputStream metadataStream = new FileInputStream(bagMetadataFile);
+
+        // Create the package in the default location with the supplied name.
+        // No package generation parameters are supplied.
+        IpmPackager ipmPackager = new IpmPackager();
+        ipmPackager.setPackageName(packageName);
+        ipmPackager.setPackageLocation(outputLocation.getPath());
+        Package pkg = ipmPackager.buildPackage(contentProvider, metadataStream, null);
+        contentProvider.close();
 
         // Now just write the package out to a file in the output location
         // this must agree with the package root directory name according to our
@@ -240,40 +238,6 @@ public class PackageGenerationApp {
         }
 
         pkg.cleanupPackage();
-
-    }
-
-
-    private LinkedHashMap<String, List<String>> createPackageMetadata() {
-
-        Properties props = new Properties();
-
-        if (bagMetadataFile != null) {
-            try (InputStream fileStream = new FileInputStream(bagMetadataFile)) {
-                props.load(fileStream);
-            } catch (FileNotFoundException e) {
-                throw new PackageToolException(PackagingToolReturnInfo.CMD_LINE_FILE_NOT_FOUND_EXCEPTION, e);
-            } catch (IOException e) {
-                throw new PackageToolException(PackagingToolReturnInfo.CMD_LINE_FILE_NOT_FOUND_EXCEPTION);
-            }
-
-            LinkedHashMap<String, List<String>> metadata = new LinkedHashMap<>();
-            List<String> valueList;
-
-            for (String key : props.stringPropertyNames()) {
-                valueList = Arrays.asList(props.getProperty(key).trim().split("\\s*,\\s*"));
-
-                //these required elements will be provided
-                if (!key.equals(BagItParameterNames.BAGIT_PROFILE_ID) && !key.equals(BagItParameterNames.PACKAGE_MANIFEST)) {
-                        metadata.put(key, valueList);
-                }
-            }
-
-            return metadata;
-
-        } else {
-            return null;
-        }
     }
 
 }

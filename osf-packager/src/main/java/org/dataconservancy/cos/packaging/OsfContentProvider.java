@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package org.dataconservancy.cos.packaging;
 
 import com.github.jasminb.jsonapi.RelationshipResolver;
@@ -28,23 +29,15 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFFormat;
-import org.dataconservancy.cos.osf.client.model.Registration;
-import org.dataconservancy.cos.osf.client.model.User;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.Rdf;
-import org.dataconservancy.packaging.tool.api.Package;
-import org.dataconservancy.packaging.tool.api.PackageGenerationService;
-import org.dataconservancy.packaging.tool.impl.IpmRdfTransformService;
-import org.dataconservancy.packaging.tool.model.GeneralParameterNames;
-import org.dataconservancy.packaging.tool.model.PackageGenerationParameters;
-import org.dataconservancy.packaging.tool.model.PackageState;
-import org.dataconservancy.packaging.tool.model.PropertiesConfigurationParametersBuilder;
-import org.dataconservancy.packaging.tool.model.RDFTransformException;
+import org.dataconservancy.packaging.shared.AbstractContentProvider;
 import org.dataconservancy.packaging.tool.model.ipm.FileInfo;
 import org.dataconservancy.packaging.tool.model.ipm.Node;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -55,31 +48,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.file.Paths;
-import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 /**
- * Created by esm on 6/22/16.
- *
- * @author apb
- * @author esm
+ * Implementation of ContentProvider for OSF source data.
+ * Adapted from previous implementation of IpmPackager in this project.
+ * Created by Ben Trumbore on 12/1/2016.
  */
-public class IpmPackager {
-
-    static final Logger LOG = LoggerFactory.getLogger(IpmPackager.class);
-
-    private static final String MISSING_PROVIDER = "missing_storage_provider";
-
-    private String PACKAGE_NAME = "MyPackage"; // this will get overridden by the CLI  using the setter
-
-    static final ClassPathXmlApplicationContext cxt =
-            new ClassPathXmlApplicationContext("classpath*:applicationContext.xml",
-                    "classpath*:org/dataconservancy/config/applicationContext.xml",
-                    "classpath*:org/dataconservancy/packaging/tool/ser/config/applicationContext.xml",
-                    "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
-                    "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
+public class OsfContentProvider extends AbstractContentProvider {
 
     /**
      * Jena Property instances used by the IpmPackager.
@@ -98,81 +74,44 @@ public class IpmPackager {
         private static final Property RDF_TYPE = ResourceFactory.createProperty(Rdf.Ns.RDF, "type");
     }
 
-    private static final RelationshipResolver DEFAULT_RESOLVER = cxt.getBean("jsonApiRelationshipResolver", RelationshipResolver.class);
+    private Logger                  LOG = LoggerFactory.getLogger(OsfContentProvider.class);
+    private RelationshipResolver    resolver;
+    private Model                   domainObjects = null;
+    private File                    temporaryDirectory;
 
-    private RelationshipResolver resolver;
+    static final ClassPathXmlApplicationContext cxt = new ClassPathXmlApplicationContext(
+        "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
+        "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
 
-    public IpmPackager() {
-        resolver = DEFAULT_RESOLVER;
+    private static final String missingProvider = "missing_storage_provider";
+
+    /**
+     * Construct a content provider from the given graph and a default relationship resolver.
+     * @param graph The OSF package graph containing the package content.
+     */
+    public OsfContentProvider(OsfPackageGraph graph) {
+        this(graph, cxt.getBean("jsonApiRelationshipResolver", RelationshipResolver.class));
     }
 
-    public IpmPackager(RelationshipResolver resolver) {
+    /**
+     * Construct a content provider from the given graph and relationship resolver.
+     * @param graph The OSF package graph containing the package content.
+     * @param resolver The relationship resolver to use when processing the package graph.
+     */
+    public OsfContentProvider(OsfPackageGraph graph, RelationshipResolver resolver) {
         this.resolver = resolver;
-    }
 
-    public RelationshipResolver getResolver() {
-        return resolver;
-    }
-
-    public void setResolver(RelationshipResolver resolver) {
-        this.resolver = resolver;
-    }
-
-    public void setPackageName(String packageName) { this.PACKAGE_NAME = packageName; }
-
-
-    public static void main(String[] args) throws Exception {
-
-        final OsfPackageGraph packageGraph = cxt.getBean("packageGraph", OsfPackageGraph.class);
-        final OsfService osfService = cxt.getBean("osfService", OsfService.class);
-        final String registrationUrl = "https://api.osf.io/v2/registrations/0zqbo/";
-
-        final Registration registration = osfService.registrationByUrl(registrationUrl).execute().body();
-        final List<User> users = registration.getContributors().stream()
-                .map(c -> {
-                    try {
-                        if (c.getUserRel() != null) {
-                            return osfService.userByUrl(c.getUserRel()).execute().body();
-                        } else {
-                            String contributorId = c.getId();
-                            if (contributorId.contains("-")) {
-                                contributorId = contributorId.split("-")[1];
-                            }
-                            return osfService.user(contributorId).execute().body();
-                        }
-                    } catch (IOException e) {
-                        throw new RuntimeException(e.getMessage(), e);
-                    }
-                })
-                .collect(Collectors.toList());
-
-        packageGraph.add(registration);
-        users.forEach(packageGraph::add);
-
-        IpmPackager packager = new IpmPackager();
-
-
-        packager.buildPackage(packageGraph, null);
-
-    }
-
-    public Package buildPackage(OsfPackageGraph graph,  LinkedHashMap<String, List<String>> metadata) {
-
-        IpmRdfTransformService ipm2rdf =
-                cxt.getBean(IpmRdfTransformService.class);
-
-        PackageState state = new PackageState();
-
-        // Allocate a unique location for storing any binary content that will go into the package.  If another
-        // thread or JVM is running simultaneously, content will go into unique directory, and avoid any file name
-        // conflicts
-        File temporaryDirectory;
+        // Allocate a unique location for storing any binary content that will go into the package.
+        // If another thread or JVM is running simultaneously, content will go into unique directory,
+        // and avoid any file name conflicts.
+        // The owner of this object must call close() when finished, and the folder is deleted there.
         try {
             temporaryDirectory = allocateTempDir();
         } catch (IOException e) {
             throw new RuntimeException("Unable to allocate a temporary directory:" + e.getMessage(), e);
         }
 
+        // Initialize the domain objects
         ByteArrayOutputStream sink = new ByteArrayOutputStream();
         graph.serialize(sink, RDFFormat.TURTLE_PRETTY, graph.OSF_SELECTOR);
 
@@ -182,56 +121,28 @@ public class IpmPackager {
             // ignore
         }
 
-        /* Put the domain object RDF into the package state */
-        state.setDomainObjectRDF(ModelFactory.createDefaultModel()
-                .read(new ByteArrayInputStream(sink.toByteArray()),
-                        null,
-                        "TTL"));
-
-        /*
-         * Now put the IPM tree in the package state. We build it in java via
-         * buildContentTree(), then serialize to RDF
-         */
-        try {
-            state.setPackageTree(ipm2rdf.transformToRDF(
-                    buildContentTree(
-                            state.getDomainObjectRDF(),
-                            resolver,
-                            temporaryDirectory)));
-        } catch (RDFTransformException e) {
-            throw new RuntimeException(e.getMessage(), e);
-        }
-
-        if (metadata != null) {
-            state.setPackageMetadataList(metadata);
-        }
-
-        /* Construct the package */
-        Package pkg = null;
-        try {
-            pkg = buildPackage(state);
-        } catch (Exception e) {
-            throw new RuntimeException(e.getMessage(), e);
-        } finally {
-            // Clean up the downloaded binary files
-            try {
-                FileUtils.deleteDirectory(temporaryDirectory);
-            } catch (IOException e) {
-                LOG.warn("Clean up of package download directory failed: " + e.getMessage(), e);
-            }
-        }
-
-        return pkg;
+        domainObjects = ModelFactory.createDefaultModel()
+                .read(new ByteArrayInputStream(sink.toByteArray()), null, "TTL");
     }
-    
-    /*
-     * We manually build the IPM tree here. Fundamentally, we're doing three
-     * things: 1) Creating "directory" nodes that correspond to a domain object.
-     * 2) Creating "content" nodes that correspond to a domain object that
-     * describes associated content. 3) Arranging these nodes into a tree
-     * structure of our liking.
+
+    /**
+     * Returns an RDF representation of the domain model from the OSF package graph.
+     * @return The Model representing the domain objects.
      */
-    private static Node buildContentTree(Model domainObjects, RelationshipResolver resolver, File downloadDir) {
+    public Model getDomainModel() {
+        return domainObjects;
+    }
+
+    /**
+     * Returns the IPM tree corresponding to the provided OSF package graph.
+     * We manually build the IPM tree here. Fundamentally, we're doing three things:
+     * 1) Creating "directory" nodes that correspond to a domain object.
+     * 2) Creating "content" nodes that correspond to a domain object that describes associated content.
+     * 3) Arranging these nodes into a tree structure of our liking.
+     * @return The root Node for the IPM tree representing the content.
+     */
+    public Node getIpmModel() {
+
         // Synthesize a root node to anchor the objects in the domain object graph
         Node root = new Node(URI.create(UUID.randomUUID().toString()));
         root.setFileInfo(directory("root"));
@@ -260,17 +171,15 @@ public class IpmPackager {
             Node n = new Node(u);
             n.setDomainObject(u);
 
-            if (isFile(subject, domainObjects)) {
-                String binaryUri = getBinaryUri(subject, domainObjects);
-                String filename = getFileName(subject, domainObjects);
+            if (isFile(subject)) {
+                String binaryUri = getBinaryUri(subject);
+                String filename = getFileName(subject);
                 LOG.info(String.format(msgFmt, "binary file", filename, subject.getURI()));
 
                 n.setFileInfo(
                         contentFromUrl(
                                 filename,
-                                binaryUri,
-                                resolver,
-                                downloadDir));
+                                binaryUri));
 
             } else {
                 String filename;
@@ -292,26 +201,36 @@ public class IpmPackager {
     }
 
     /**
-     * Create a FileInfo that points to file content present at a URL.  The content from the URL is downloaded and
-     * stored in a temporary file.
+     * This method must be called when the owner is finished with the object.
+     */
+    public void close() {
+        // Clean up the downloaded binary files
+        try {
+            FileUtils.deleteDirectory(temporaryDirectory);
+        } catch (IOException e) {
+            LOG.warn("Clean up of package download directory failed: " + e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Create a FileInfo that points to file content present at a URL.
+     * The content from the URL is downloaded and stored in a temporary file.
      * <p>
      * The logical name of the file represented in the FileInfo is the {@code name} parameter.
      * </p>
      *
      * @param filename the logical name of the content represented by the returned {@code FileInfo}
      * @param contentUrl resolvable URL to the content
-     * @param resolver used to resolve the {@code contentUrl} and download the content
-     * @param temporaryDirectory the directory where downloaded content will be kept
      * @return populated FileInfo
      * @throws RuntimeException if the content cannot be downloaded or saved to a temporary file
      */
-    private static FileInfo contentFromUrl(String filename, String contentUrl, RelationshipResolver resolver, File temporaryDirectory) {
+    private FileInfo contentFromUrl(String filename, String contentUrl) {
         LOG.debug("  Retrieving '{}' content from '{}'", filename, contentUrl);
 
-        File outFile = null;
+        File outFile;
         try {
-            outFile = new File(System.getProperty("java.io.tmpdir"), filename);
-            byte[] data = resolver.resolve(contentUrl);  // TODO unfortunately this interface doesn't stream, do we need it?
+            outFile = new File(temporaryDirectory, filename);
+            byte[] data = this.resolver.resolve(contentUrl);
             if (data == null || data.length == 0) {
                 // We actually don't know receiving zero bytes is an error, because the file to be retrieved at
                 // 'contentUrl' may be in actuality, a zero-length file.  The 'Content-Length' header would let us
@@ -320,13 +239,12 @@ public class IpmPackager {
                 Request head = new Request.Builder().head().url(contentUrl).build();
                 Integer contentLength = Integer.parseInt(client.newCall(head).execute().header("Content-Length", "-1"));
                 if (contentLength > 0) {
-                    throw new RuntimeException("Unable to retrieve content from '" + contentUrl + "': Expected " + contentLength + " bytes but received 0 bytes.");
+                    throw new RuntimeException("Unable to retrieve content from '" + contentUrl + "': Expected " +
+                            contentLength + " bytes but received 0 bytes.");
                 }
             }
-
-            try (FileOutputStream fos = new FileOutputStream(outFile)) {
-                IOUtils.write(data, fos);
-            }
+            IOUtils.write(data,
+                    new FileOutputStream(outFile));
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);
         }
@@ -344,7 +262,7 @@ public class IpmPackager {
      * @return the temporary directory
      * @throws IOException if the directory cannot be allocated
      */
-    static File allocateTempDir() throws IOException {
+    private File allocateTempDir() throws IOException {
         // Use createTempFile to generate a unique filename in the temporary directory, then remove it and create
         // a directory of the same name
         File tmpDir = File.createTempFile("IpmPackager", ".content");
@@ -370,11 +288,10 @@ public class IpmPackager {
      * given name matters.
      * </p>
      *
-     * @param name
-     *        Given directory name
+     * @param name Given directory name
      * @return FileInfo for a node corresponding to this directory.
      */
-    private static FileInfo directory(String name) {
+    private FileInfo directory(String name) {
         /*
          * DomainObjectResourceBuilder has a sanity check that files and
          * directories must exist. This check is not meaningful here, since
@@ -387,30 +304,13 @@ public class IpmPackager {
         return info;
     }
 
-    /* Package building boilerplate */
-    private Package buildPackage(PackageState state) throws Exception {
-        PackageGenerationParameters params =
-                new PropertiesConfigurationParametersBuilder()
-                        .buildParameters(IpmPackager.class
-                                .getResourceAsStream("/PackageGenerationParams.properties"));
-
-        PackageGenerationService generator =
-                cxt.getBean(PackageGenerationService.class);
-
-        params.addParam(GeneralParameterNames.PACKAGE_LOCATION,
-                System.getProperty("java.io.tmpdir"));
-        params.addParam(GeneralParameterNames.PACKAGE_NAME, PACKAGE_NAME);
-
-        return generator.generatePackage(state, params);
-    }
-
     /**
      * Escapes troublesome characters from file names.
-     * 
+     *
      * @param candidateFilename a candidate filename that may contain characters to be escaped
      * @return the escaped filename
      */
-    private static String escape(String candidateFilename) {
+    private String escape(String candidateFilename) {
         return candidateFilename
                 .replace(":", "_")
                 .replace(" ", "_");
@@ -428,12 +328,10 @@ public class IpmPackager {
      * </pre>
      *
      * @param subject a resource from the supplied {@code domainObjects} which may be an {@code osf:File}
-     * @param domainObjects Jena model containing the triples for all the domain objects in a package
      * @return true if the {@code subject} is a {@code osf:File}
      */
-    private static boolean isFile(Resource subject, Model domainObjects) {
-        return domainObjects.contains(subject, RdfProperties.RDF_TYPE, RdfProperties.OSF_FILE);
-
+    private boolean isFile(Resource subject) {
+        return domainObjects.contains(subject, OsfContentProvider.RdfProperties.RDF_TYPE, OsfContentProvider.RdfProperties.OSF_FILE);
     }
 
     /**
@@ -449,20 +347,19 @@ public class IpmPackager {
      * </pre>
      *
      * @param subject a resource from the supplied {@code domainObjects} which is an {@code osf:File}
-     * @param domainObjects Jena model containing the triples for all the domain objects in a package
      * @return a logical filename for the supplied {@code subject}
      */
-    private static String getFileName(Resource subject, Model domainObjects) {
-        String baseName = escape(domainObjects.getProperty(subject, RdfProperties.OSF_FILE_NAME).getObject().toString());
-        final Statement providerNameProperty = domainObjects.getProperty(subject, RdfProperties.OSF_PROVIDER_NAME);
+    private String getFileName(Resource subject) {
+        String baseName = escape(domainObjects.getProperty(subject, OsfContentProvider.RdfProperties.OSF_FILE_NAME).getObject().toString());
+        final Statement providerNameProperty = domainObjects.getProperty(subject, OsfContentProvider.RdfProperties.OSF_PROVIDER_NAME);
         // TODO: correct model for wikis.  Either they are a File, and have a provider, or they are something else.
         // Currently wikis are very much like files, but they don't have a provider.  So this workaround supplies a
         // stand-in storage provider for now.
-        String providerName = null;
+        String providerName;
         if (providerNameProperty != null) {
             providerName = providerNameProperty.getObject().toString();
         } else {
-            providerName = MISSING_PROVIDER;
+            providerName = missingProvider;
         }
         return escape(providerName + "_" + baseName);
     }
@@ -479,11 +376,10 @@ public class IpmPackager {
      * </pre>
      *
      * @param subject a resource from the supplied {@code domainObjects} which is an {@code osf:File}
-     * @param domainObjects Jena model containing the triples for all the domain objects in a package
      * @return the value of the {@code osf:hasBinaryUri} predicate for the supplied {@code subject}
      */
-    private static String getBinaryUri(Resource subject, Model domainObjects) {
-        return domainObjects.getProperty(subject, RdfProperties.OSF_BINARY_URI).getObject().asLiteral().getString();
+    private String getBinaryUri(Resource subject) {
+        return domainObjects.getProperty(subject, OsfContentProvider.RdfProperties.OSF_BINARY_URI).getObject().asLiteral().getString();
     }
 
 }

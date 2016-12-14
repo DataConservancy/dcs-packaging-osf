@@ -128,6 +128,11 @@
             <artifactId>osf-packager</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.dataconservancy.packaging.shared</groupId>
+            <artifactId>dcs-packaging-shared</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>
