@@ -222,7 +222,6 @@ public class PackageGenerationApp {
         ipmPackager.setPackageName(packageName);
         ipmPackager.setPackageLocation(outputLocation.getPath());
         Package pkg = ipmPackager.buildPackage(contentProvider, metadataStream, null);
-        contentProvider.close();
 
         // Now just write the package out to a file in the output location
         // this must agree with the package root directory name according to our
