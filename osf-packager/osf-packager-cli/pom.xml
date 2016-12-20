@@ -16,17 +16,17 @@
   -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>osf-cli</artifactId>
+    <artifactId>osf-packager-cli</artifactId>
     <packaging>jar</packaging>
     <name>OSF Package Tool Command Line</name>
 
     <parent>
         <groupId>org.dataconservancy.cos</groupId>
-        <artifactId>osf-packaging</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <artifactId>osf-packager</artifactId>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
-    <!-- Properties ================================================== -->
 
+    <!-- Properties ================================================== -->
 
     <properties>
         <!-- definition of assembly related properties -->
@@ -34,7 +34,6 @@
         <pkg.gen.assembly.standalone.fileName>${project.artifactId}</pkg.gen.assembly.standalone.fileName>
 
     </properties>
-    <!-- Profiles  =================================================== -->
 
     <!-- Build ======================================================= -->
 
@@ -114,25 +113,29 @@
     </build>
 
     <!-- Dependencies =============================================== -->
+
     <dependencies>
+
         <dependency>
             <groupId>args4j</groupId>
             <artifactId>args4j</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.dataconservancy.cos</groupId>
-            <artifactId>osf-model</artifactId>
+            <artifactId>osf-core-model</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.dataconservancy.cos</groupId>
-            <artifactId>osf-packager</artifactId>
-            <version>${project.parent.version}</version>
+            <artifactId>osf-packager-provider</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.dataconservancy.packaging.shared</groupId>
             <artifactId>dcs-packaging-shared</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
         </dependency>
+
     </dependencies>
 
 </project>
