@@ -1,0 +1,524 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/r5s4u/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/children/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/registrations/y6cx7/",
+        "html": "http://192.168.99.100:5000/y6cx7/"
+      },
+      "attributes": {
+        "category": "project",
+        "fork": false,
+        "pending_registration_approval": false,
+        "description": "My first project created through the OSF UI",
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-05-31T19:38:18.983000",
+        "registration_supplement": "Open-Ended Registration",
+        "registered_meta": {
+          "summary": {
+            "value": "Removed some files but added a comment.",
+            "comments": [],
+            "extra": {}
+          }
+        },
+        "title": "First Proj",
+        "collection": false,
+        "withdrawn": false,
+        "date_registered": "2016-05-31T19:38:58.952000",
+        "pending_embargo_approval": false,
+        "withdrawal_justification": null,
+        "registration": true,
+        "embargo_end_date": null,
+        "date_created": "2016-04-19T13:06:25.038000",
+        "pending_withdrawal": false,
+        "public": true,
+        "tags": [
+          "firstproject",
+          "newbie"
+        ]
+      },
+      "type": "registrations",
+      "id": "y6cx7"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/zgbd5/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/zgbd5/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/zgbd5/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/v8x57/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/zgbd5/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/zgbd5/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/y6cx7/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/zgbd5/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/zgbd5/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/registrations/zgbd5/",
+        "html": "http://192.168.99.100:5000/zgbd5/"
+      },
+      "attributes": {
+        "category": "data",
+        "fork": false,
+        "pending_registration_approval": false,
+        "description": null,
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-05-31T19:33:00.806000",
+        "registration_supplement": "Open-Ended Registration",
+        "registered_meta": {
+          "summary": {
+            "value": "Removed some files but added a comment.",
+            "comments": [],
+            "extra": {}
+          }
+        },
+        "title": "Raw Data",
+        "collection": false,
+        "withdrawn": false,
+        "date_registered": "2016-05-31T19:38:58.982000",
+        "pending_embargo_approval": false,
+        "withdrawal_justification": null,
+        "registration": true,
+        "embargo_end_date": null,
+        "date_created": "2016-04-19T13:08:24.039000",
+        "pending_withdrawal": false,
+        "public": true,
+        "tags": []
+      },
+      "type": "registrations",
+      "id": "zgbd5"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/r5s4u/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/children/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/registrations/t8kjy/",
+        "html": "http://192.168.99.100:5000/t8kjy/"
+      },
+      "attributes": {
+        "category": "project",
+        "fork": false,
+        "pending_registration_approval": false,
+        "description": "My first project created through the OSF UI",
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-04-19T13:26:58.888000",
+        "registration_supplement": "Open-Ended Registration",
+        "registered_meta": {
+          "summary": {
+            "value": "This is a registration of my first project!",
+            "comments": [],
+            "extra": {}
+          }
+        },
+        "title": "First Proj",
+        "collection": false,
+        "withdrawn": false,
+        "date_registered": "2016-04-19T13:58:43.264000",
+        "pending_embargo_approval": false,
+        "withdrawal_justification": null,
+        "registration": true,
+        "embargo_end_date": null,
+        "date_created": "2016-04-19T13:06:25.038000",
+        "pending_withdrawal": false,
+        "public": true,
+        "tags": [
+          "firstproject",
+          "newbie"
+        ]
+      },
+      "type": "registrations",
+      "id": "t8kjy"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/jz7pc/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/jz7pc/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/jz7pc/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/nodes/v8x57/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/jz7pc/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/jz7pc/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/t8kjy/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/jz7pc/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/registrations/jz7pc/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/registrations/jz7pc/",
+        "html": "http://192.168.99.100:5000/jz7pc/"
+      },
+      "attributes": {
+        "category": "data",
+        "fork": false,
+        "pending_registration_approval": false,
+        "description": null,
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-04-19T13:22:38.117000",
+        "registration_supplement": "Open-Ended Registration",
+        "registered_meta": {
+          "summary": {
+            "value": "This is a registration of my first project!",
+            "comments": [],
+            "extra": {}
+          }
+        },
+        "title": "Raw Data",
+        "collection": false,
+        "withdrawn": false,
+        "date_registered": "2016-04-19T13:58:43.285000",
+        "pending_embargo_approval": false,
+        "withdrawal_justification": null,
+        "registration": true,
+        "embargo_end_date": null,
+        "date_created": "2016-04-19T13:08:24.039000",
+        "pending_withdrawal": false,
+        "public": true,
+        "tags": []
+      },
+      "type": "registrations",
+      "id": "jz7pc"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "prev": null,
+    "next": null,
+    "meta": {
+      "total": 4,
+      "per_page": 10
+    }
+  }
+}

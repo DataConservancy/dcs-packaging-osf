@@ -1,0 +1,122 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/files/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/relationships/institution/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/wikis/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/23bnh/children/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/23bnh/",
+      "html": "http://localhost:5000/23bnh/"
+    },
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "description": "Test project One.",
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-06-03T17:53:32.651000",
+      "title": "Project One",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-06-03T17:53:32.651000",
+      "node_license": null,
+      "public": false,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "23bnh"
+  }
+}

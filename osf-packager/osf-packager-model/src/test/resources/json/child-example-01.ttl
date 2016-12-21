@@ -1,0 +1,23 @@
+@prefix    :     <http://www.dataconservancy.org/osf-business-object-model#> .
+@prefix osf:     <http://www.dataconservancy.org/osf-business-object-model#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# <abdcde> is the parent registration
+# <fghij> <klmno> <pqrst> are child registrations
+<abcde> a :Registration ;
+  :hasChild 
+    <fghij> , 
+    <klmno> , 
+    <pqrst> .
+    
+<fghij> a :Registration ;
+  :hasParent <abcde> ;
+  :hasRoot   <abcde> .
+
+<klmno> a :Registration ;
+  :hasParent <abcde> ;
+  :hasRoot   <abcde> .
+
+<pqrst> a :Registration ;
+  :hasParent <abcde> ;
+  :hasRoot   <abcde> .

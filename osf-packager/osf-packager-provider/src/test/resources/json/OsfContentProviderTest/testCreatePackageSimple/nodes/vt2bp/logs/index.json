@@ -1,0 +1,555 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/57570597c7950c0045ac8001/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57570597c7950c0045ac8001/"
+      },
+      "attributes": {
+        "date": "2016-06-07T17:34:15.764000",
+        "action": "edit_title",
+        "params": {
+          "title_new": "Second Fork of Project Two",
+          "params_node": {
+            "id": "vt2bp",
+            "title": "Second Fork of Project Two"
+          },
+          "title_original": "Fork of Project Two",
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "57570597c7950c0045ac8001"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/phu9b/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5w8q7/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fee/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fee/"
+      },
+      "attributes": {
+        "date": "2016-06-07T17:34:02.639000",
+        "action": "node_forked",
+        "params": {
+          "params_node": {
+            "id": "5w8q7",
+            "title": "Workflow Execution"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7fee"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6uwzk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fe6/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fe6/"
+      },
+      "attributes": {
+        "date": "2016-06-07T17:34:02.559000",
+        "action": "node_forked",
+        "params": {
+          "params_node": {
+            "id": "6uwzk",
+            "title": "Raw Experimental Data"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7fe6"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ff6/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ff6/"
+      },
+      "attributes": {
+        "date": "2016-06-07T17:34:02.554000",
+        "action": "node_forked",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7ff6"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6uwzk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fe8/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fe8/"
+      },
+      "attributes": {
+        "date": "2016-06-07T17:33:39.732000",
+        "action": "osf_storage_file_added",
+        "params": {
+          "path": "/output.log",
+          "params_node": {
+            "id": "6uwzk",
+            "title": "Raw Experimental Data"
+          },
+          "urls": {
+            "download": "/project/6uwzk/files/osfstorage/57570573c7950c0045ac7fe2/?action=download",
+            "view": "/project/6uwzk/files/osfstorage/57570573c7950c0045ac7fe2/"
+          },
+          "params_project": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          }
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7fe8"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/phu9b/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5w8q7/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ff0/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ff0/"
+      },
+      "attributes": {
+        "date": "2016-06-07T17:33:33.188000",
+        "action": "osf_storage_file_added",
+        "params": {
+          "path": "/jq-osx-amd64",
+          "params_node": {
+            "id": "5w8q7",
+            "title": "Workflow Execution"
+          },
+          "urls": {
+            "download": "/project/5w8q7/files/osfstorage/5757056dc7950c0045ac7fdf/?action=download",
+            "view": "/project/5w8q7/files/osfstorage/5757056dc7950c0045ac7fdf/"
+          },
+          "params_project": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          }
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7ff0"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ffd/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ffd/"
+      },
+      "attributes": {
+        "date": "2016-06-07T15:09:10.611000",
+        "action": "comment_added",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7ffd"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/phu9b/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5w8q7/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fef/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7fef/"
+      },
+      "attributes": {
+        "date": "2016-06-07T14:48:45.312000",
+        "action": "project_created",
+        "params": {
+          "params_node": {
+            "id": "5w8q7",
+            "title": "Workflow Execution"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7fef"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ffc/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ffc/"
+      },
+      "attributes": {
+        "date": "2016-06-07T14:47:26.476000",
+        "action": "wiki_updated",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "version": "1",
+          "page_id": "jmfd3",
+          "page": "home",
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7ffc"
+    },
+    {
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3e7rd/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qmdz6/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ffb/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5757058ac7950c0045ac7ffb/"
+      },
+      "attributes": {
+        "date": "2016-06-07T14:47:01.078000",
+        "action": "license_changed",
+        "params": {
+          "params_node": {
+            "id": "3e7rd",
+            "title": "Project Two"
+          },
+          "params_project": null
+        }
+      },
+      "type": "logs",
+      "id": "5757058ac7950c0045ac7ffb"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/vt2bp/logs/?page=2",
+    "prev": null,
+    "next": "http://localhost:8000/v2/nodes/vt2bp/logs/?page=2",
+    "meta": {
+      "total": 15,
+      "per_page": 10
+    }
+  }
+}

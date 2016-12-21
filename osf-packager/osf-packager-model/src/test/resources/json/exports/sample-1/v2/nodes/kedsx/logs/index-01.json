@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/57348ea4c39efa004bbcfae7/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/users/a3q2g/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://192.168.99.100:8000/v2/logs/57348ea4c39efa004bbcfae7/contributors/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://192.168.99.100:8000/v2/logs/57348ea4c39efa004bbcfae7/"
+      },
+      "attributes": {
+        "date": "2016-05-12T14:09:40.780000",
+        "action": "project_created",
+        "params": {
+          "view_url": null,
+          "params_node": {
+            "id": "kedsx",
+            "title": "Project 13"
+          },
+          "params_project": {}
+        }
+      },
+      "type": "logs",
+      "id": "57348ea4c39efa004bbcfae7"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "prev": null,
+    "next": null,
+    "meta": {
+      "total": 1,
+      "per_page": 10
+    }
+  }
+}

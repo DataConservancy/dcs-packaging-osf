@@ -1,0 +1,7 @@
+{
+  "data": null,
+  "links": {
+    "self": "http://192.168.99.100:8000/v2/nodes/6uwzk/relationships/institution/",
+    "related": "http://192.168.99.100:8000/v2/nodes/6uwzk/institution/"
+  }
+}

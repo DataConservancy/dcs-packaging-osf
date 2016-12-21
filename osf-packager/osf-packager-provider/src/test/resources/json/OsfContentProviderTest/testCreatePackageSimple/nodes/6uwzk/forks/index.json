@@ -1,0 +1,314 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/files/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "forked_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6uwzk/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/pzust/relationships/institution/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vt2bp/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pzust/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/pzust/",
+        "html": "http://localhost:5000/pzust/"
+      },
+      "attributes": {
+        "category": "data",
+        "fork": true,
+        "description": null,
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-06-07T17:33:39.732000",
+        "title": "Raw Experimental Data",
+        "forked_date": "2016-06-07T17:34:02.559000",
+        "collection": false,
+        "registration": false,
+        "date_created": "2016-06-07T14:46:14.778000",
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "public": false,
+        "tags": []
+      },
+      "type": "nodes",
+      "id": "pzust"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/files/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5zy6x/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "forked_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6uwzk/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/comments/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "node_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/node_links/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_institution": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/relationships/institution/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/institution/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5zy6x/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aw4gm/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/aw4gm/",
+        "html": "http://localhost:5000/aw4gm/"
+      },
+      "attributes": {
+        "category": "data",
+        "fork": true,
+        "description": null,
+        "current_user_permissions": [
+          "read",
+          "write",
+          "admin"
+        ],
+        "date_modified": "2016-06-07T14:46:14.778000",
+        "title": "Raw Experimental Data",
+        "forked_date": "2016-06-07T14:47:51.119000",
+        "collection": false,
+        "registration": false,
+        "date_created": "2016-06-07T14:46:14.778000",
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "public": false,
+        "tags": []
+      },
+      "type": "nodes",
+      "id": "aw4gm"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "prev": null,
+    "next": null,
+    "meta": {
+      "total": 2,
+      "per_page": 10
+    }
+  }
+}

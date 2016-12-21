@@ -1,0 +1,1057 @@
+<?xml version="1.0"?>
+<!--
+  ~ Copyright 2016 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dcterms "http://purl.org/dc/terms/" >
+    <!ENTITY opmv "http://purl.org/net/opmv/ns#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY ore "http://www.openarchives.org/ore/terms/" >
+    <!ENTITY xsi "http://www.w3.org/2001/XMLSchema-instance" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >    
+    <!ENTITY osfbom "http://www.dataconservancy.org/osf-business-object-model#" >
+    <!ENTITY jsonapi "http://jsonapi.org/format/1.0/#" >
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY dbpedia "http://dbpedia.org/ontology/" >
+]>
+
+
+<rdf:RDF xmlns="http://www.dataconservancy.org/osf-business-object-model#"
+     xml:base="http://www.dataconservancy.org/osf-business-object-model"
+     xmlns:osfbom="http://www.dataconservancy.org/osf-business-object-model#"
+     xmlns:ore="http://www.openarchives.org/ore/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:opmv="http://purl.org/net/opmv/ns#"
+     xmlns:jsonapi="http://jsonapi.org/format/1.0/#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dbpedia="http://dbpedia.org/ontology/"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <owl:Ontology rdf:about="http://www.dataconservancy.org/osf-business-object-model">
+        <dcterms:modified rdf:datatype="&xsd;date">2015-08-18</dcterms:modified>
+        <owl:versionInfo>2015/08/14</owl:versionInfo>
+        <rdfs:comment xml:lang="en">Ontology for the Data Conservancy OSF Business Object Model</rdfs:comment>
+        <dcterms:publisher rdf:resource="http://www.dataconservancy.org/"/>
+    </owl:Ontology>
+    
+
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasFile -->
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasFile">
+        <rdfs:label xml:lang="en">hasFile</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying a file or directory belonging to a node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Folder"/>
+        <rdfs:range rdf:resource="&osfbom;FileBase"/>
+    </owl:ObjectProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasContributor -->
+    
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasContributor">
+        <rdfs:label xml:lang="en">hasContributor</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying a contributor belonging to a node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&osfbom;Contributor"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasUser -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasUser">
+        <rdfs:label xml:lang="en">hasUser</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying a user belonging to a contributor</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Contributor"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasNode -->
+    <owl:ObjectProperty rdf:about="&osfbom;hasNode">
+        <rdfs:label xml:lang="en">hasNode</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying an owning node for a provider or comment</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:range rdf:resource="&osfbom;Node"/>
+    </owl:ObjectProperty>    
+    
+    <owl:ObjectProperty rdf:about="&osfbom;registeredFrom">
+        <rdfs:label xml:lang="en">registeredFrom</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the Node that the Registration was registered from.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&osfbom;Node"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;registeredBy">
+        <rdfs:label xml:lang="en">registeredBy</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the User that created the Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasRoot">
+        <rdfs:label xml:lang="en">hasRoot</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying root Node in a graph of Nodes.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>root</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasParent">
+        <rdfs:label xml:lang="en">hasParent</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the parent Node of a Node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>parent</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasChild">
+        <rdfs:label xml:lang="en">hasChild</rdfs:label>
+        <rdfs:comment xml:lang="en">An object property specifying the child of a Node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;NodeBase"/>
+        <rdf:type rdf:resource="&jsonapi;Relationship"/>
+        <jsonapi:relName>children</jsonapi:relName>            
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventAgent">
+        <rdfs:label xml:lang="en">hasEventAgent</rdfs:label>
+        <rdfs:comment xml:lang="en">The agent responsible for performing the action</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&foaf;Agent"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventTarget">
+        <rdfs:label xml:lang="en">hasEventTarget</rdfs:label>
+        <rdfs:comment xml:lang="en">The OSF Node, User, ... that was the target of the action.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasEventSource">
+        <rdfs:label xml:lang="en">hasEventSource</rdfs:label>
+        <rdfs:comment xml:lang="en">The OSF Node, User, ... that was the source of the action.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasLicense">
+        <rdfs:label xml:lang="en">hasLicense</rdfs:label>
+        <rdfs:comment xml:lang="en">The license that governs the possible re-use of the content relating to a Node or Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;License"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasProvider -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;hasProvider">
+        <rdfs:label xml:lang="en">hasProvider</rdfs:label>
+        <rdfs:comment xml:lang="en">A property referencing a storage provider for a Node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&osfbom;Provider"/>
+    </owl:ObjectProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#providedBy -->
+    
+    <owl:ObjectProperty rdf:about="&osfbom;providedBy">
+        <rdfs:label xml:lang="en">providedBy</rdfs:label>
+        <rdfs:comment xml:lang="en">A property referencing the storage provider for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileEntity"/>
+        <rdfs:range rdf:resource="&osfbom;Provider"/>
+    </owl:ObjectProperty>
+
+    <!-- osfbom:Comment -->
+
+    <owl:ObjectProperty rdf:about="&osfbom;authoredBy">
+        <rdfs:label xml:lang="en">authoredBy</rdfs:label>
+        <rdfs:comment xml:lang="en">The user who authored the comment or wiki page</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:range rdf:resource="&osfbom;User"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasWiki">
+        <rdfs:label xml:lang="en">hasWiki</rdfs:label>
+        <rdfs:comment xml:lang="en">A Wiki page that is attached to the node</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&osfbom;Wiki"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="&osfbom;hasComment">
+        <rdfs:label xml:lang="en">hasComment</rdfs:label>
+        <rdfs:comment xml:lang="en">References the comment that is attached to the CommentTarget</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;CommentTarget"/>
+        <rdfs:range rdf:resource="&osfbom;Comment"/>
+    </owl:ObjectProperty>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;description"/>
+    
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;identifier"/>
+    
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="&dcterms;title"/>
+    
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasAcademicInstitution -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasAcademicInstitution">
+        <rdfs:label xml:lang="en">hasAcademicInstitution</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the user's academic institution</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasAcademicProfileId -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasAcademicProfileId">
+        <rdfs:label xml:lang="en">hasAcademicProfileId</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the user's academic profile id</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isActive -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isActive">
+        <rdfs:label xml:lang="en">isActive</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying whether the user is active </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasOrcid">
+        <rdfs:label xml:lang="en">hasOrcid</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's ORCID</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&dbpedia;orcidId"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasBaiduId -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasBaiduId">
+        <rdfs:label xml:lang="en">hasBaiduId</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's Baidu id</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-obect-model#isBibliographic -->
+    
+        <owl:DatatypeProperty rdf:about="&osfbom;isBibliographic">
+        <rdfs:label xml:lang="en">isBibliographic</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying whether the contributor will be included in citations</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Contributor"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isBookmark -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isBookmark">
+        <rdfs:label xml:lang="en">isBookmark</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying whether the collection is a bookmark</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Collection"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasCategory -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasCategory">
+        <rdfs:label xml:lang="en">hasCategory</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the category of a Node or Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isCollection -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isCollection">
+        <rdfs:label xml:lang="en">isCollection</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying whether the Node is a Collection </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasContentType -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasContentType">
+        <rdfs:label xml:lang="en">hasContentType</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying a content type for a file</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;File"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isDashboard -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isDashboard">
+        <rdfs:label xml:lang="en">isDashboard</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying whether the Registration is a dashboard </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasDateCreated -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasDateCreated">
+        <rdfs:label xml:lang="en">hasDateCreated</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the creation date</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;created"/>
+        <rdfs:domain rdf:resource="&osfbom;DataEntity"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasDateModified -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasDateModified">
+        <rdfs:label xml:lang="en">hasDateModified</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the modification date</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;modified"/>
+        <rdfs:domain rdf:resource="&osfbom;DataEntity"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasDateRegistered -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasDateRegistered">
+        <rdfs:label xml:lang="en">hasDateRegistered</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the date a registration was registered</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasDateUserRegistered -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasDateUserRegistered">
+        <rdfs:label xml:lang="en">hasDateUserRegistered</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the date and time a user registered </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasDescription">
+        <rdfs:label xml:lang="en">hasDescription</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying a description of a Node or Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;description"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasEmbargoEndDate -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEmbargoEndDate">
+        <rdfs:label xml:lang="en">hasEmbargoEndDate</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the end date for a registration's embargo</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;isWithdrawn">
+        <rdfs:label xml:lang="en">isWithdrawn</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicating if the registration is withdrawn</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasEtag -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEtag">
+        <rdfs:label xml:lang="en">hasEtag</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying an Etag for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileEntity"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasExtra -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEtag">
+        <rdfs:label xml:lang="en">hasExtra</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying extra metadata for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileEntity"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasFamilyName -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasFamilyName">
+        <rdfs:label xml:lang="en">hasFamilyName</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's family name</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasFork -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isFork">
+        <rdfs:label xml:lang="en">isFork</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicating whether the Node is a fork </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasFullName -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasFullName">
+        <rdfs:label xml:lang="en">hasFullName</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's full name </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasGitHub -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasGitHub">
+        <rdfs:label xml:lang="en">hasGitHub</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasGivenName -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasGivenName">
+        <rdfs:label xml:lang="en">hasGivenName</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's given name</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasId -->
+
+    <!-- TODO: Discuss/consider identifier semantics (semantics of business ids vs repository ids) -->
+    <owl:DatatypeProperty rdf:about="&osfbom;hasId">
+        <rdfs:label xml:lang="en">hasId</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the business ID of a OSFBusinessObject</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;identifier"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasImpactStory -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasImpactStory">
+        <rdfs:label xml:lang="en">hasImpactStory</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's impact story</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasKind -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasKind">
+        <rdfs:label xml:lang="en">hasKind</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the kind of file - file or folder or provider</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileBase"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasLastTouched -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLastTouched">
+        <rdfs:label xml:lang="en">hasLastTouched</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the last time the metadata for the file was retrieved. only
+                                     applies to non-OSF storage providers. </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;File"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasLinkedIn -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLinkedIn">
+        <rdfs:label xml:lang="en">hasLinkedIn</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's LinkedIn </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasLocale -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLocale">
+        <rdfs:label xml:lang="en">hasLocale</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's Locale </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasMaterializedPath -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasMaterializedPath">
+        <rdfs:label xml:lang="en">hasMaterializedPath</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the unix-style path to the file relative to the provider root</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileEntity"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasMeta -->
+    <!-- TODO: hasMeta probably isn't a string, it's arbitrarily complex per the
+        json-api spec, so should be a ObjectProperty -->
+    <!-- TODO: research how meta is used by OSF, and if it isn't relevant, then we can strike this from the model 
+        and all confusing questions -->
+    <owl:DatatypeProperty rdf:about="&osfbom;hasMeta">
+      <rdfs:label xml:lang="en">hasMeta</rdfs:label>
+      <rdfs:comment xml:lang="en">A data property specifying metadata for a related link </rdfs:comment>
+        <!-- TODO: this was osf:RelatedLink, but that class is gone, so the domain is just owl:Thing for now. -->
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>      
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasMiddleNames -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasMiddleNames">
+        <rdfs:label xml:lang="en">hasMiddleNames</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's middle names</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasName -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasName">
+        <rdfs:label xml:lang="en">hasName</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the name of a file or directory - for display purposes</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileBase"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasPath -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasPath">
+        <rdfs:label xml:lang="en">hasPath</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the path for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileBase"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isPendingEmbargoApproval -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isPendingEmbargoApproval">
+        <rdfs:label xml:lang="en">isPendingEmbargoApproval</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying whether embargo approval is pending for a Registration </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isPendingRegistrationApproval -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isPendingRegistrationApproval">
+        <rdfs:label xml:lang="en">isPendingRegistrationApproval</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicting whether the Registration is pending approval </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasPermission -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasPermission">
+        <rdfs:label xml:lang="en">hasPermission</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the permissions a contributor has </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Contributor"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasPersonalWebsite -->
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasPersonalWebsite">
+        <rdfs:label xml:lang="en">hasPersonalWebsite</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's personal web site</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:subPropertyOf rdf:resource="&foaf;homepage"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isPublic -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isPublic">
+        <rdfs:label xml:lang="en">isPublic</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicating whether the Node is public </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isRegistration -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isRegistration">
+        <rdfs:label xml:lang="en">isRegistration</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicating whether the Node is a Registration </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Node"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasRegistrationSupplement -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasRegistrationSupplement">
+        <rdfs:label xml:lang="en">hasRegistrationSupplement</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>   
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasResearcherId -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasResearcherId">
+        <rdfs:label xml:lang="en">hasResearcherId</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's researcher id</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasResearchGate -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasResearchGate">
+        <rdfs:label xml:lang="en">hasResearchGate</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the User's Research Gate</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#isRetracted -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isRetracted">
+        <rdfs:label xml:lang="en">isRetracted</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property indicating whether the Registration is retracted</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasRetractionJustification -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasRetractionJustification">
+        <rdfs:label xml:lang="en">hasRetractionJustification</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <!-- TODO registered_meta.* Found in data.attributes -->
+    <!-- TODO registered_meta is a dictionary.  best practice how to model? Don to look at -->
+    
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasScholar -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasScholar">
+        <rdfs:label xml:lang="en">hasScholar</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasSize -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasSize">
+        <rdfs:label xml:lang="en">hasSize</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the size of a file, in bytes - null for folders</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;File"/>
+        <rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasSuffix -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasSuffix">
+        <rdfs:label xml:lang="en">hasSuffix</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasTimezone -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasTimezone">
+        <rdfs:label xml:lang="en">hasTimezone</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasTitle">
+        <rdfs:label xml:lang="en">hasTitle</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the </rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;DataEntity"/>
+        <rdfs:subPropertyOf rdf:resource="&dcterms;title"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasTwitter -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasTwitter">
+        <rdfs:label xml:lang="en">hasTwitter</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying the user's Twitter</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;User"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#hasTag -->
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasTag">
+        <rdfs:label xml:lang="en">hasTag</rdfs:label>
+        <rdfs:comment xml:lang="en">A data property specifying a user-defined tag for a Node or Registration</rdfs:comment>
+        <rdfs:subProperyOf rdf:resource="&dcterms;subject"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEventDate">
+        <rdfs:label xml:lang="en">hasEventDate</rdfs:label>
+        <rdfs:comment xml:lang="en">Date the event occurred</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasEventAction">
+        <rdfs:label xml:lang="en">hasEventAction</rdfs:label>
+        <rdfs:comment xml:lang="en">The action that was taken on the event target</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseName">
+        <rdfs:label xml:lang="en">hasLicenseName</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLicenseText">
+        <rdfs:label xml:lang="en">hasLicenseText</rdfs:label>
+        <rdfs:comment xml:lang="en">The legal text of a license</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;License"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;hasBinaryUri">
+        <rdfs:label xml:lang="en">hasBinaryUri</rdfs:label>
+        <rdfs:comment xml:lang="en">The URI to the binary content of a file</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;File"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#providerName -->
+    
+    <owl:DatatypeProperty rdf:about="&osfbom;providerName">
+        <rdfs:label xml:lang="en">providerName</rdfs:label>
+        <rdfs:comment xml:lang="en">The name of the storage provider for a file or folder</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;FileBase"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <!-- osfbom:Comment -->
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasContent">
+        <rdfs:label xml:lang="en">hasContent</rdfs:label>
+        <rdfs:comment xml:lang="en">The text of this comment</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Comment"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isDeleted">
+        <rdfs:label xml:lang="en">isDeleted</rdfs:label>
+        <rdfs:comment xml:lang="en">Whether this comment is deleted</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Comment"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&osfbom;isModified">
+        <rdfs:label xml:lang="en">isModified</rdfs:label>
+        <rdfs:comment xml:lang="en">Whether the text of this comment has been changed</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Comment"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&osfbom;version">
+        <rdfs:label xml:lang="en">version</rdfs:label>
+        <rdfs:comment xml:lang="en">A monotonically increasing integer identifying a unique version of the resource</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Wiki"/>
+        <rdfs:range rdf:resource="&xsd;positiveInteger"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&osfbom;inReplyTo">
+        <rdfs:label xml:lang="en">inReplyTo</rdfs:label>
+        <rdfs:comment xml:lang="en">The thing being commented on; a wiki page, another comment, or a node.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Comment"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#BusinessObject -->
+
+    <owl:Class rdf:about="&osfbom;OSFBusinessObject">
+        <rdfs:label xml:lang="en">OSFBusinessObject</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&osfbom;hasId"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+    </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">
+        A Business Object is a common superclass for the OSF objects "User", "Collection", "NodeBase", "FileBase" and "Registration"
+      </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Event -->    
+    
+    <owl:Class rdf:about="&osfbom;Event">
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
+        <owl:disjointWith rdf:resource="&osfbom;Collection"/>
+        <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
+        <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
+        <owl:disjointWith rdf:resource="&osfbom;User"/>
+        <rdfs:comment xml:lang="en">
+            Encapsulates an action performed by an agent to accomplish some task
+        </rdfs:comment>
+    </owl:Class>
+    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#License -->
+    
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Liceneses really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
+    <owl:Class rdf:about="&osfbom;License">
+        <rdfs:label xml:lang="en">License</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:comment xml:lang="en">
+            Represents a licence governing the use of the information encapsulated by a Node or Registration.
+        </rdfs:comment>
+    </owl:Class>
+    
+   <!-- http://www.dataconservancy.org/osf-business-object-model#User -->
+   <owl:Class rdf:about="&osfbom;User">
+        <rdfs:label xml:lang="en">User</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
+        <owl:disjointWith rdf:resource="&osfbom;Collection"/>
+    <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
+    <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
+        <rdfs:comment xml:lang="en">
+      A User is ...
+      </rdfs:comment>
+   </owl:Class>
+
+   <!-- http://www.dataconservancy.org/osf-business-object-model#NodeBase -->
+   <owl:Class rdf:about="&osfbom;NodeBase">
+     <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+     <rdfs:subClassOf rdf:resource="&osfbom;DataEntity"/>
+        <owl:disjointWith rdf:resource="&osfbom;Collection"/>
+    <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
+    <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
+    <owl:disjointWith rdf:resource="&osfbom;User"/>
+    <rdfs:comment xml:lang="en">
+      NodeBase is a common superclass for Node and Registration
+      </rdfs:comment>
+   </owl:Class>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Node -->
+   <owl:Class rdf:about="&osfbom;Node">
+        <rdfs:label xml:lang="en">Node</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;NodeBase"/>
+        <rdfs:comment xml:lang="en">
+      A Node is ...
+      </rdfs:comment>
+   </owl:Class>
+
+
+   <!-- http://www.dataconservancy.org/osf-business-object-model#Registration -->
+   <owl:Class rdf:about="&osfbom;Registration">
+        <rdfs:label xml:lang="en">Registration</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;NodeBase"/>
+   </owl:Class>  
+
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Collection -->
+   <owl:Class rdf:about="&osfbom;Collection">
+        <rdfs:label xml:lang="en">Collection</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:subClassOf rdf:resource="&osfbom;DataEntity"/>
+        <owl:disjointWith rdf:resource="&osfbom;User"/>
+        <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
+    <owl:disjointWith rdf:resource="&osfbom;FileBase"/>
+    <owl:disjointWith rdf:resource="&osfbom;Contributor"/>  
+        <rdfs:comment xml:lang="en">
+      A Node is ...
+      </rdfs:comment>
+   </owl:Class>
+
+
+   <!-- http://www.dataconservancy.org/business-object-model#DataEntity -->
+   <owl:Class rdf:about="&osfbom;DataEntity">
+       <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&osfbom;hasDateCreated"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&osfbom;hasDateModified"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Contributor -->
+    <!-- TODO: consider subclassing foaf:Person -->
+    <!-- TODO: is this really a sub-class of OSFBusinessObject?  Contributors really have 
+        no identity outside of the content of a Node, so can they legitimatly claim to be
+        OSF business objects? -->
+    <owl:Class rdf:about="&osfbom;Contributor">
+      <rdfs:label xml:lang="en">Contributor</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:Class>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#FileBase -->
+    <owl:Class rdf:about="&osfbom;FileBase">
+      <rdfs:label xml:lang="en">FileBase</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+      <owl:disjointWith rdf:resource="&osfbom;User"/>
+      <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
+      <owl:disjointWith rdf:resource="&osfbom;Contributor"/>
+      <owl:disjointWith rdf:resource="&osfbom;Collection"/>
+    </owl:Class>    
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#File -->
+    <owl:Class rdf:about="&osfbom;File">
+      <rdfs:label xml:lang="en">File</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;DataEntity"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <owl:disjointWith rdf:resource="&osfbom;Folder"/>
+      <owl:disjointWith rdf:resource="&osfbom;Provider"/>
+    </owl:Class>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Folder -->
+    <owl:Class rdf:about="&osfbom;Folder">
+      <rdfs:label xml:lang="en">Folder</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <owl:disjointWith rdf:resource="&osfbom;File"/>
+      <owl:disjointWith rdf:resource="&osfbom;Provider"/>
+    </owl:Class>    
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Provider -->
+    <owl:Class rdf:about="&osfbom;Provider">
+      <rdfs:label xml:lang="en">Provider</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;FileBase"/>
+      <owl:disjointWith rdf:resource="&osfbom;File"/>
+      <owl:disjointWith rdf:resource="&osfbom;Folder"/>
+    </owl:Class>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#FileEntity -->
+    <owl:Class rdf:about="&osfbom;FileEntity">
+      <rdfs:label xml:lang="en">FileEntity</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+      <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&osfbom;File"/>
+            <rdf:Description rdf:about="&osfbom;Folder"/>
+                </owl:unionOf>
+            </owl:Class>
+       </owl:equivalentClass>  
+    </owl:Class>
+
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Comment -->
+    <owl:Class rdf:about="&osfbom;Comment">
+      <rdfs:label xml:lang="en">Comment</rdfs:label>
+      <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+      <rdfs:subClassOf rdf:resource="&osfbom;DataEntity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="&osfbom;CommentTarget">
+      <rdfs:label xml:lang="en">CommentTarget</rdfs:label>
+      <rdfs:comment xml:lang="en">Members of the CommentTarget class may have Comments placed on them (i.e. be the "target" of a Comment)</rdfs:comment>
+      <rdfs:subClassOf>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="&osfbom;Comment"/>
+            <rdf:Description rdf:about="&osfbom;NodeBase"/>
+            <rdf:Description rdf:about="&osfbom;Wiki"/>
+          </owl:unionOf>
+        </owl:Class>
+      </rdfs:subClassOf>
+    </owl:Class>
+</rdf:RDF>

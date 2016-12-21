@@ -1,0 +1,164 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/files/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/licenses/574f483cc7950c0001d0fa73/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_by": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/users/qmdz6/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/comments/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_from": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/nodes/3e7rd/",
+            "meta": {}
+          }
+        }
+      },
+      "node_links": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/node_links/",
+            "meta": {}
+          }
+        }
+      },
+      "primary_institution": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/institution/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/wikis/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/children/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://192.168.99.100:8000/v2/registrations/eq7a4/logs/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://192.168.99.100:8000/v2/registrations/eq7a4/",
+      "html": "http://192.168.99.100:5000/eq7a4/"
+    },
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "pending_registration_approval": false,
+      "description": "Test project Two.",
+      "current_user_permissions": [
+        "read",
+        "write",
+        "admin"
+      ],
+      "date_modified": "2016-06-07T17:52:19.617000",
+      "registration_supplement": "Open-Ended Registration",
+      "registered_meta": {
+        "summary": {
+          "value": "This is a registration of Project Two!",
+          "comments": [],
+          "extra": []
+        }
+      },
+      "title": "Project Two",
+      "collection": false,
+      "withdrawn": false,
+      "date_registered": "2016-06-07T17:53:10.603000",
+      "pending_embargo_approval": false,
+      "withdrawal_justification": null,
+      "registration": true,
+      "embargo_end_date": null,
+      "date_created": "2016-06-03T17:53:52.434000",
+      "pending_withdrawal": false,
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "public": true,
+      "tags": [
+        "newtag"
+      ]
+    },
+    "type": "registrations",
+    "id": "eq7a4"
+  }
+}

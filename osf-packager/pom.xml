@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2016 Johns Hopkins University
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.dataconservancy.cos</groupId>
+  <artifactId>osf-packager</artifactId>
+  <packaging>pom</packaging>
+  <name>OSF Packaging</name>
+  <description>Supporting models and code for importing and exporting content from
+    the Center for Open Science Open Science Framework
+  </description>
+  <version>1.1.0-SNAPSHOT</version>
+
+  <parent>
+    <groupId>org.dataconservancy.cos</groupId>
+    <artifactId>dcs-packaging-osf</artifactId>
+    <version>1</version>
+  </parent>
+
+  <!-- Modules  =================================================== -->
+
+  <modules>
+    <module>osf-packager-model</module>
+    <module>osf-packager-cli</module>
+    <module>osf-packager-provider</module>
+  </modules>
+
+  <!-- Build  ===================================================== -->
+
+  <properties>
+    <osf-client.version>1.1.0-SNAPSHOT</osf-client.version>
+    <osf-core.version>1.1.0-SNAPSHOT</osf-core.version>
+    <dcs-packaging-shared.version>1.0.0-SNAPSHOT</dcs-packaging-shared.version>
+  </properties>
+
+  <build>
+
+    <pluginManagement>
+
+      <plugins>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.6</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.19.1</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-verifier-plugin</artifactId>
+          <version>1.1</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.rat</groupId>
+          <artifactId>apache-rat-plugin</artifactId>
+          <configuration>
+            <excludes>
+              <exclude>settings.tar</exclude>
+              <exclude>settings.xml</exclude>
+              <exclude>known_hosts</exclude>
+              <exclude>.travis.yml</exclude>
+              <exclude>travis_dc</exclude>
+              <exclude>**/*.md</exclude>
+              <exclude>**/src/test/resources/json/**</exclude>
+              <exclude>**/*.json</exclude>
+              <exclude>**/*.iml</exclude>
+              <exclude>**/*.ipr</exclude>
+              <exclude>**/*.iws</exclude>
+              <exclude>**/.idea/**</exclude>
+              <exclude>**/dependency-reduced-pom.xml</exclude>
+              <exclude>**/src/test/resources/**/*.ttl</exclude>
+              <exclude>**/src/test/resources/**/*.sh</exclude>
+              <exclude>**/catalog-v*.xml</exclude>
+              <exclude>**/target/**</exclude>
+            </excludes>
+          </configuration>
+        </plugin>
+
+      </plugins>
+
+    </pluginManagement>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <preparationGoals>clean install</preparationGoals>
+          <goals>deploy</goals>
+          <localCheckout>true</localCheckout>
+          <pushChanges>false</pushChanges>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <!-- Dependency Management ====================================== -->
+
+  <dependencyManagement>
+
+    <dependencies>
+
+      <dependency>
+          <groupId>org.dataconservancy.packaging.shared</groupId>
+          <artifactId>dcs-packaging-shared</artifactId>
+          <version>${dcs-packaging-shared.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-client-api</artifactId>
+        <version>${osf-client.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-client-impl</artifactId>
+        <version>${osf-client.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-core-model</artifactId>
+        <version>${osf-core.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-client-integration</artifactId>
+        <version>${osf-client.version}</version>
+        <type>test-jar</type>
+        <classifier>tests</classifier>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-client-config</artifactId>
+        <version>${osf-client.version}</version>
+        <type>test-jar</type>
+        <classifier>tests</classifier>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-packager-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-packager-provider</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.pkgtool</groupId>
+        <artifactId>dcs-packaging-tool-impl</artifactId>
+        <version>1.0.3</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.pkgtool</groupId>
+        <artifactId>dcs-packaging-tool-model-builder-properties</artifactId>
+        <version>1.0.3</version>
+      </dependency>
+
+      <dependency>
+        <groupId>args4j</groupId>
+        <artifactId>args4j</artifactId>
+        <version>2.32</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.dataconservancy.cos</groupId>
+        <artifactId>osf-core-annotations</artifactId>
+        <version>${osf-core.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.mock-server</groupId>
+        <artifactId>mockserver-client-java</artifactId>
+        <version>3.10.4</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.mock-server</groupId>
+        <artifactId>mockserver-netty</artifactId>
+        <version>3.10.4</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.jena</groupId>
+        <artifactId>jena-core</artifactId>
+        <version>3.0.1</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.jena</groupId>
+        <artifactId>jena-arq</artifactId>
+        <version>3.0.1</version>
+        <exclusions>
+          <exclusion>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>com.diffplug.durian</groupId>
+        <artifactId>durian</artifactId>
+        <version>3.4.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>3.2.0</version>
+      </dependency>
+
+    </dependencies>
+
+  </dependencyManagement>
+
+  <!-- Repositories =============================================== -->
+
+  <repositories>
+
+    <repository>
+      <id>dc.maven.releases</id>
+      <name>Data Conservancy Public Maven 2 Repository (releases)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/releases/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+
+    <repository>
+      <id>dc.maven.snapshots</id>
+      <name>Data Conservancy Public Maven 2 Repository (snapshots)</name>
+      <layout>default</layout>
+      <url>http://maven.dataconservancy.org/public/snapshots/</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+
+  </repositories>
+
+</project>
