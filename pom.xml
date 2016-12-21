@@ -36,6 +36,7 @@
     <modules>
         <module>osf-core</module>
         <module>osf-client</module>
+        <module>osf-packager</module>
     </modules>
 
     <!-- Repositories =============================================== -->
