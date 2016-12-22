@@ -19,10 +19,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Responsible for taking a JSON node that represents a configuration file, and returning an instance of a Java object that
- * encapsulates that configuration.
+ * Responsible for taking a JSON node that represents a configuration file, and returning an instance of a Java object
+ * that encapsulates that configuration.
  *
  * @param <T> the type of the Java object that encapsulates the JSON configuration
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @FunctionalInterface
 public interface JacksonConfigurer<T> {
@@ -33,9 +34,10 @@ public interface JacksonConfigurer<T> {
      *
      * @param configRoot the JSON node containing the configuration
      * @param mapper the Jackson object mapper
-     * @param configurationClass the class that will be used to encapsulate the JSON configuration found in the {@code configRoot}
+     * @param configurationClass the class that will be used to encapsulate the JSON configuration found in the
+     *                           {@code configRoot}
      * @return an instance of the the configuration class specified by {@code <T>}
      */
-    T configure(JsonNode configRoot, ObjectMapper mapper, Class<T> configurationClass);
+    T configure(final JsonNode configRoot, final ObjectMapper mapper, final Class<T> configurationClass);
 
 }

@@ -28,7 +28,7 @@
     <parent>
         <groupId>org.dataconservancy</groupId>
         <artifactId>project-pom</artifactId>
-        <version>8</version>
+        <version>9</version>
     </parent>
 
     <!-- Modules  =================================================== -->
@@ -38,6 +38,21 @@
         <module>osf-client</module>
         <module>osf-packager</module>
     </modules>
+
+    <!-- Build  ===================================================== -->
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+
+    </build>
 
     <!-- Repositories =============================================== -->
 

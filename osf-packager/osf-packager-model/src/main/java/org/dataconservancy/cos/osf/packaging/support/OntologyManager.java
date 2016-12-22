@@ -23,7 +23,6 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntProperty;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
-import org.dataconservancy.cos.osf.packaging.PackageGraph;
 import org.dataconservancy.cos.rdf.support.Rdf;
 
 import java.io.IOException;
@@ -39,7 +38,8 @@ import java.net.URL;
  * to keep the ontology as expressed on disk aligned with the classes and properties used in the code.
  * </p>
  * <p>
- * The {@link PackageGraph} uses this class to create OWL individuals and properties.
+ * The {@link org.dataconservancy.cos.osf.packaging.PackageGraph} uses this class to create OWL individuals and
+ * properties.
  * </p>
  * <p>
  * It may be a little obtuse, and subject to change in the future, but this is how the facades relate to each other and
@@ -53,10 +53,13 @@ import java.net.URL;
  *
  * <h3>Shortcomings</h3>
  * <ul>
- *   <li>No explicit support for sub classes of {@code ObjectProperty} (TransitiveProperty, SymmetricProperty, etc.)</li>
+ *   <li>No explicit support for sub classes of {@code ObjectProperty} (TransitiveProperty, SymmetricProperty, etc.)
+ *   </li>
  *   <li>No support for AnnotationProperty or FunctionalProperty or their sub classes</li>
  *   <li>Unsure (untested) if {@code owl:imports} are followed in the supplied ontology resource</li>
  * </ul>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OntologyManager {
 
@@ -104,11 +107,11 @@ public class OntologyManager {
      * @param baseUri the baseUri used to resolve relative URIs
      * @param serializationFormat the serialization format of the OWL ontology
      */
-    public OntologyManager(String ontologyResource, String baseUri, String serializationFormat) {
+    public OntologyManager(final String ontologyResource, final String baseUri, final String serializationFormat) {
         ontModel = ModelFactory.createOntologyModel();
         readOnlyOntModel = ModelFactory.createOntologyModel();
 
-        URL ontologyUrl = this.getClass().getResource(ontologyResource);
+        final URL ontologyUrl = this.getClass().getResource(ontologyResource);
 
         if (ontologyUrl == null) {
             throw new IllegalArgumentException(
@@ -144,7 +147,7 @@ public class OntologyManager {
      * @throws IllegalArgumentException if the property cannot be found in the underlying {@code OntModel}, or if the
      * property exists but is not a Datatype property
      */
-    public DatatypeProperty datatypeProperty(String ns, String propertyName) {
+    public DatatypeProperty datatypeProperty(final String ns, final String propertyName) {
         return datatypeProperty(ns + propertyName);
     }
 
@@ -157,7 +160,7 @@ public class OntologyManager {
      * @throws IllegalArgumentException if the property cannot be found in the underlying {@code OntModel}, or if the
      * property exists but is not a Datatype property
      */
-    public DatatypeProperty datatypeProperty(String fqname) {
+    public DatatypeProperty datatypeProperty(final String fqname) {
         return getProperty(fqname, DatatypeProperty.class);
     }
 
@@ -171,7 +174,7 @@ public class OntologyManager {
      * @throws IllegalArgumentException if the property cannot be found in the underlying {@code OntModel}, or if the
      * property exists but is not a Object property
      */
-    public ObjectProperty objectProperty(String ns, String propertyName) {
+    public ObjectProperty objectProperty(final String ns, final String propertyName) {
         return objectProperty(ns + propertyName);
     }
 
@@ -184,7 +187,7 @@ public class OntologyManager {
      * @throws IllegalArgumentException if the property cannot be found in the underlying {@code OntModel}, or if the
      * property exists but is not a Object property
      */
-    public ObjectProperty objectProperty(String fqname) {
+    public ObjectProperty objectProperty(final String fqname) {
         return getProperty(fqname, ObjectProperty.class);
     }
 
@@ -197,8 +200,8 @@ public class OntologyManager {
      * @return the OWL {@code OntClass}
      * @throws IllegalArgumentException if the class cannot be found in the underlying {@code OntModel}
      */
-    public OntClass owlClass(String ns, String className) {
-        OntClass result = ontModel.getOntClass(ns + className);
+    public OntClass owlClass(final String ns, final String className) {
+        final OntClass result = ontModel.getOntClass(ns + className);
         if (result == null) {
             throw new IllegalArgumentException(String.format("Could not find OWL class %s", ns + className));
         }
@@ -212,8 +215,8 @@ public class OntologyManager {
      * @return the OWL individual
      * @throws IllegalArgumentException if the individual cannot be found in the underlying model
      */
-    public Individual individual(String uri) {
-        Individual result = ontModel.getIndividual(uri);
+    public Individual individual(final String uri) {
+        final Individual result = ontModel.getIndividual(uri);
 
         // TODO: will this ever happen?  Does getIndividual(String) create the individual behind the scenes if it
         // doesn't already exist?
@@ -233,9 +236,9 @@ public class OntologyManager {
      * @throws IllegalArgumentException if the individual could not be created, presumably because the class was not
      * found in the underlying model
      */
-    public Individual individual(String ns, String className) {
-        String fqcn = ns + className;
-        Individual result = ontModel.createIndividual(owlClass(ns, className));
+    public Individual individual(final String ns, final String className) {
+        final String fqcn = ns + className;
+        final Individual result = ontModel.createIndividual(owlClass(ns, className));
         if (result == null) {
             throw new IllegalArgumentException(String.format("Could not create individual for class %s", fqcn));
         }
@@ -253,9 +256,9 @@ public class OntologyManager {
      * @throws IllegalArgumentException if the individual could not be created, presumably because the class was not
      * found in the underlying model
      */
-    public Individual individual(String uri, String ns, String className) {
-        String fqcn = ns + className;
-        Individual result = ontModel.createIndividual(uri, owlClass(ns, className));
+    public Individual individual(final String uri, final String ns, final String className) {
+        final String fqcn = ns + className;
+        final Individual result = ontModel.createIndividual(uri, owlClass(ns, className));
 
         if (result == null) {
             throw new IllegalArgumentException(String.format("Could not create individual for class %s", fqcn));
@@ -270,7 +273,7 @@ public class OntologyManager {
      * @param uri a URI which may identify an OWL individual in the underlying model
      * @return true if the underlying model contains the identified individual
      */
-    public boolean hasIndividual(String uri) {
+    public boolean hasIndividual(final String uri) {
         return ontModel.getIndividual(uri) != null;
     }
 
@@ -281,8 +284,8 @@ public class OntologyManager {
      * @return a model containing individuals
      */
     OntModel instances() {
-        Model m = ontModel.getBaseModel().difference(readOnlyOntModel.getBaseModel());
-        OntModel ontM = ModelFactory.createOntologyModel();
+        final Model m = ontModel.getBaseModel().difference(readOnlyOntModel.getBaseModel());
+        final OntModel ontM = ModelFactory.createOntologyModel();
         ontM.setNsPrefixes(Rdf.Ns.PREFIXES);
         ontM.add(m.listStatements());
         return ontM;
@@ -299,7 +302,7 @@ public class OntologyManager {
      * @throws IllegalArgumentException if the property is not found in the underlying {@code OntModel}, or if the
      * property is found but is not of the expected class.
      */
-    private <T extends OntProperty> T getProperty(String uri, Class<T> propertyClass) {
+    private <T extends OntProperty> T getProperty(final String uri, final Class<T> propertyClass) {
         OntProperty result = null;
         boolean isObject = false;
         if (DatatypeProperty.class.isAssignableFrom(propertyClass)) {
@@ -312,7 +315,10 @@ public class OntologyManager {
         }
 
         if (result == null) {
-            throw new IllegalArgumentException(String.format("Could not find %s property %s (maybe the property is a %s instead, or the property is not present in the ontology)", ((isObject) ? "object" : "datatype"), uri, ((isObject) ? "datatype" : "object")));
+            throw new IllegalArgumentException(String.format(
+                    "Could not find %s property %s (maybe the property is a %s instead, or the property is not" +
+                            "present in the ontology)",
+                    ((isObject) ? "object" : "datatype"), uri, ((isObject) ? "datatype" : "object")));
         }
 
         return (T) result;

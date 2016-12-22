@@ -26,18 +26,21 @@ import java.util.function.Function;
  * is a user id.  This transformation splits the id on the {@code -} character, and returns the user id portion of the
  * identifier.  Older versions of the OSF JSON API did not provide a relationship between a contributor
  * and a user, so the relationship was derived by parsing the contributor identifier.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ContributorIdSplitter implements Function<String, String> {
 
     @Override
-    public String apply(String contributorId) {
+    public String apply(final String contributorId) {
         try {
             if (contributorId.contains("-")) {
                 if (contributorId.startsWith("-")) {
                     // Since the incoming id is malformed, do we really trust that the characters after the dash can
                     // be trusted?  To be consistent with the behavior when receiving an id with a trailing dash, lets
                     // throw a RuntimeException.
-                    throw new RuntimeException("Unable to parse malformed contributor identifier: '" + contributorId + "'");
+                    throw new RuntimeException(
+                            "Unable to parse malformed contributor identifier: '" + contributorId + "'");
                 }
                 return contributorId.split("-")[1];
             }

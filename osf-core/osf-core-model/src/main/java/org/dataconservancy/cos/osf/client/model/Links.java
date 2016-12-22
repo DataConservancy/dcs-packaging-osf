@@ -16,7 +16,7 @@
 package org.dataconservancy.cos.osf.client.model;
 
 /**
- * Created by esm on 5/2/16.
+ * @author Elliot Metsger (emetsger@jhu.com)
  */
 public class Links {
     private String first;
@@ -27,36 +27,67 @@ public class Links {
 
     private String next;
 
-
+    /**
+     *
+     * @return
+     */
     public String getFirst() {
         return first;
     }
 
-    public void setFirst(String first) {
+    /**
+     *
+     * @param first
+     */
+    public void setFirst(final String first) {
         this.first = first;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLast() {
         return last;
     }
 
-    public void setLast(String last) {
+    /**
+     *
+     * @param last
+     */
+    public void setLast(final String last) {
         this.last = last;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPrev() {
         return prev;
     }
 
-    public void setPrev(String prev) {
+    /**
+     *
+     * @param prev
+     */
+    public void setPrev(final String prev) {
         this.prev = prev;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNext() {
         return next;
     }
 
-    public void setNext(String next) {
+    /**
+     *
+     * @param next
+     */
+    public void setNext(final String next) {
         this.next = next;
     }
 }

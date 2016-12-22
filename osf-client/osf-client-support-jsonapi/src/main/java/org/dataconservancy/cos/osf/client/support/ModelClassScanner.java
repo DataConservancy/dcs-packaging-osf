@@ -23,6 +23,8 @@ import java.util.List;
 
 /**
  * Scans the classpath for classes matching the specified package and annotation type.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ModelClassScanner {
 
@@ -30,7 +32,12 @@ public class ModelClassScanner {
 
     private Class<? extends Annotation> annotation;
 
-    public ModelClassScanner(String packageName, Class<? extends Annotation> annotationType) {
+    /**
+     *
+     * @param packageName
+     * @param annotationType
+     */
+    public ModelClassScanner(final String packageName, final Class<? extends Annotation> annotationType) {
         this.packageName = packageName;
         this.annotation = annotationType;
     }
@@ -42,7 +49,7 @@ public class ModelClassScanner {
      * @return a list of classes that meet the detection critera
      */
     public List<Class<?>> getDetectedClasses() {
-        List<Class<?>> domainClasses = new ArrayList<>();
+        final List<Class<?>> domainClasses = new ArrayList<>();
         new FastClasspathScanner(packageName)
                 .matchClassesWithAnnotation(annotation, domainClasses::add)
                 .scan();

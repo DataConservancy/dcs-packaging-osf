@@ -39,16 +39,24 @@ import org.dataconservancy.cos.rdf.support.OwlProperties;
 @OwlIndividual(OwlClasses.OSF_NODE)
 public class Node extends NodeBase {
 
-	/**List of nodes that are children of this node.*/
-	@Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
-	@OwlProperty(OwlProperties.OSF_HAS_CHILD)
-	protected List<Node> children;
+    /**List of nodes that are children of this node.*/
+    @Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    @OwlProperty(OwlProperties.OSF_HAS_CHILD)
+    protected List<Node> children;
 
-	public List<Node> getChildren() {
-		return children;
-	}
+    /**
+     *
+     * @return
+     */
+    public List<Node> getChildren() {
+        return children;
+    }
 
-	public void setChildren(List<Node> children) {
-		this.children = children;
-	}
+    /**
+     *
+     * @param children
+     */
+    public void setChildren(final List<Node> children) {
+        this.children = children;
+    }
 }

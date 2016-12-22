@@ -28,6 +28,7 @@ import java.util.function.BiFunction;
  *
  * @param <T> the type of the object enclosing the individual instance
  * @param <U> the type of the individual instance, which contains the {@code IndividualUri} annotated field
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public final class IndividualUriTransform<T, U> implements BiFunction<T, U, String> {
 
@@ -47,13 +48,13 @@ public final class IndividualUriTransform<T, U> implements BiFunction<T, U, Stri
      */
     @Override
     @SuppressWarnings("unchecked")
-    public String apply(T outerObject, U individual) {
+    public String apply(final T outerObject, final U individual) {
         if (individual == null) {
             throw new IllegalArgumentException("Supplied individual must not be null.");
         }
 
-        AtomicBoolean found = new AtomicBoolean(false);
-        AtomicReference atomicRef = new AtomicReference();
+        final AtomicBoolean found = new AtomicBoolean(false);
+        final AtomicReference atomicRef = new AtomicReference();
         ReflectionUtils.doWithFields(individual.getClass(), field -> {
             ReflectionUtils.makeAccessible(field);
             atomicRef.set(field.get(individual));

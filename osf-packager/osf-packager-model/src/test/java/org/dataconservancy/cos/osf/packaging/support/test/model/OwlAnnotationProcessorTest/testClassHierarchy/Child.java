@@ -20,7 +20,7 @@ import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 /**
- * Created by esm on 6/9/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @OwlIndividual(OwlClasses.OSF_FILE)
 public class Child {
@@ -32,7 +32,7 @@ public class Child {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 }

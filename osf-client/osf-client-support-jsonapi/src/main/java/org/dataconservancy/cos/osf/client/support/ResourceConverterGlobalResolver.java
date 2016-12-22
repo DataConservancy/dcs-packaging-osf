@@ -24,6 +24,8 @@ import java.io.IOException;
 /**
  * Default {@code RelationshipResolver} used by the JSON-API Converter to retrieve the contents of JSON-API
  * relationships.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ResourceConverterGlobalResolver implements RelationshipResolver {
 
@@ -34,13 +36,13 @@ public class ResourceConverterGlobalResolver implements RelationshipResolver {
      *
      * @param httpClient the configured http client
      */
-    public ResourceConverterGlobalResolver(OkHttpClient httpClient) {
+    public ResourceConverterGlobalResolver(final OkHttpClient httpClient) {
         this.httpClient = httpClient;
     }
 
     @Override
-    public byte[] resolve(String relationshipURL) {
-        com.squareup.okhttp.Call req = httpClient.newCall(new Request.Builder().url(relationshipURL).build());
+    public byte[] resolve(final String relationshipURL) {
+        final com.squareup.okhttp.Call req = httpClient.newCall(new Request.Builder().url(relationshipURL).build());
         try {
             return req.execute().body().bytes();
         } catch (IOException e) {

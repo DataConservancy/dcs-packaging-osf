@@ -45,12 +45,14 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Simple test exercising the IpmPackager
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OsfContentProviderTest extends AbstractMockServerTest {
     private OntologyManager ontologyManager = new OntologyManager();
 
     @Rule
-    public TestName testName = new TestName();
+    public TestName TEST_NAME = new TestName();
 
     @Override
     protected String getOsfServiceConfigurationResource() {
@@ -60,7 +62,7 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
     @Test
     public void testCreatePackageSimple() throws Exception {
         // Prepare the OSF registration and users information
-        factory.interceptors().add(new RecursiveInterceptor(testName, OsfContentProviderTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfContentProviderTest.class, getBaseUri()));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
         final Registration registration = osfService.registration(registrationId).execute().body();
@@ -82,8 +84,8 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
         // Prepare content provider using package graph
-        OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (String url) -> {
-            Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
+        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (String url) -> {
+            final Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
             try {
                 return req.execute().body().bytes();
             } catch (IOException e) {
@@ -92,12 +94,12 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         });
 
         // Read package generation parameters from a resource file.
-        InputStream paramStream =
+        final InputStream paramStream =
                 OsfContentProvider.class.getResourceAsStream("/PackageGenerationParams.properties");
 
         // Create the package in the default location with the default name.
         // No metatdata is supplied.
-        IpmPackager packager = new IpmPackager();
+        final IpmPackager packager = new IpmPackager();
         packager.buildPackage(contentProvider, null, paramStream);
         contentProvider.close();
     }
@@ -105,7 +107,7 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
     @Test
     public void testCreatePackageWithWiki() throws Exception {
         final OsfPackageGraph packageGraph = new OsfPackageGraph(ontologyManager);
-        factory.interceptors().add(new RecursiveInterceptor(testName, OsfContentProviderTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfContentProviderTest.class, getBaseUri()));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "ng9em";
 
@@ -135,8 +137,8 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         //List<Wiki> wikis = osfService.wikis("http://localhost:8000/v2/registrations/ng9em/wikis/").execute().body();
         packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
-        OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (String url) -> {
-            Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
+        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (String url) -> {
+            final Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
             try {
                 return req.execute().body().bytes();
             } catch (IOException e) {
@@ -145,23 +147,26 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         });
 
         // Read package generation parameters from a resource file.
-        InputStream paramStream =
+        final InputStream paramStream =
                 OsfContentProvider.class.getResourceAsStream("/PackageGenerationParams.properties");
 
-        IpmPackager packager = new IpmPackager();
+        final IpmPackager packager = new IpmPackager();
         packager.buildPackage(contentProvider, null, paramStream);
         contentProvider.close();
     }
 
     /**
-     * Insures that the system property, {@code osf.client.conf}, is honored by Spring when constructing the application context.
+     * Insures that the system property, {@code osf.client.conf}, is honored by Spring when constructing the application
+     * context.
      *
      * @throws Exception Thrown when the configuration service cannot be found.
      */
     @Test
     public void testIpmManagerConfigurationResolutionWithSpring() throws Exception {
-        System.setProperty("osf.client.conf", "classpath:/org/dataconservancy/cos/packaging/TestSpringClientConfiguration-classpath.json");
-        WbConfigurationService configSvc = OsfContentProvider.cxt.getBean("wbConfigurationSvc", WbConfigurationService.class);
+        System.setProperty("osf.client.conf",
+                "classpath:/org/dataconservancy/cos/packaging/TestSpringClientConfiguration-classpath.json");
+        final WbConfigurationService configSvc =
+                OsfContentProvider.cxt.getBean("wbConfigurationSvc", WbConfigurationService.class);
         assertEquals("test-host", configSvc.getConfiguration().getHost());
     }
 }

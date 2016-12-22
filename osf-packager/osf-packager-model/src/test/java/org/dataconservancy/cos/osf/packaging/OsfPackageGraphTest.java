@@ -15,11 +15,7 @@
  */
 package org.dataconservancy.cos.osf.packaging;
 
-import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.Individual;
-import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.ResourceFactory;
-import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Node;
@@ -28,8 +24,6 @@ import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.model.Wiki;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
-import org.dataconservancy.cos.rdf.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -67,13 +61,12 @@ import static org.dataconservancy.cos.rdf.support.OwlProperties.OSF_HAS_NAME;
 import static org.dataconservancy.cos.rdf.support.OwlProperties.OSF_HAS_NODE;
 import static org.dataconservancy.cos.rdf.support.OwlProperties.OSF_HAS_PATH;
 import static org.dataconservancy.cos.rdf.support.OwlProperties.OSF_HAS_SIZE;
-import static org.dataconservancy.cos.rdf.support.OwlProperties.OSF_HAS_USER;
 import static org.dataconservancy.cos.rdf.support.OwlProperties.OSF_HAS_WIKI;
 import static org.dataconservancy.cos.rdf.support.OwlProperties.OSF_IN_REPLY_TO;
 import static org.junit.Assert.assertNotNull;
 
 /**
- *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OsfPackageGraphTest extends AbstractMockServerTest {
 
@@ -82,12 +75,12 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
     private OntologyManager ontologyManager = new OntologyManager();
 
     @Rule
-    public TestName testName = new TestName();
+    public TestName TEST_NAME = new TestName();
 
     @Test
     public void testCreatePackageGraph() throws Exception {
         final OsfPackageGraph packageGraph = new OsfPackageGraph(ontologyManager);
-        factory.interceptors().add(new RecursiveInterceptor(testName, OsfPackageGraphTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfPackageGraphTest.class, getBaseUri()));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
 
@@ -129,16 +122,16 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         final String name = "home";
         final String binaryUri = "https://test-api.osf.io/v2/wikis/hgkfe/content/";
 
-        Node n = new Node();
+        final Node n = new Node();
         n.setId(nodeGuid);
 
-        User u = new User();
+        final User u = new User();
         u.setId("9m8ky");
         u.setFamily_name("Metsger");
         u.setGiven_name("Elliot");
         u.setFull_name("Elliot Metsger");
 
-        Wiki w = new Wiki();
+        final Wiki w = new Wiki();
         w.setId(wikiId);
         w.setUser(u);
         w.setDate_modified("2016-09-15T14:19:14.417000");
@@ -149,16 +142,16 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         w.setMaterialized_path(filePath);
         w.setSize(size);
         w.setName(name);
-        HashMap<String, String> links = new HashMap<>();
+        final HashMap<String, String> links = new HashMap<>();
         links.put("download", binaryUri);
         links.put("info", "https://test-api.osf.io/v2/wikis/hgkfe/");
         links.put("self", "https://test-api.osf.io/v2/wikis/hgkfe/");
         w.setLinks(links);
-        HashMap<String, String> extra = new HashMap<>();
+        final HashMap<String, String> extra = new HashMap<>();
         extra.put("version", "3");
         w.setExtra(extra);
 
-        Comment c = new Comment();
+        final Comment c = new Comment();
         c.setId("comment");
         c.setContent("This is my comment on the wiki!");
         c.setNode(n);
@@ -166,7 +159,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         c.setTarget(links.get("self")); // target is the "self" url of the wiki
         w.setComments(Collections.singletonList(c));
 
-        Registration r = new Registration();
+        final Registration r = new Registration();
         r.setId("registration");
         r.setWikis(Collections.singletonList(w));
 
@@ -188,8 +181,8 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
         assertNotNull(nodeIndividual);
         assertNotNull(commentIndividual);
 
-        RdfTestUtil testUtil = new RdfTestUtil(ontologyManager);
-        
+        final RdfTestUtil testUtil = new RdfTestUtil(ontologyManager);
+
         testUtil.assertIsType(wikiIndividual, OSF_WIKI.fqname(), OSF_FILE.fqname(), OSF_COMMENT_TARGET.fqname());
         testUtil.assertHasPropertyWithValue(wikiIndividual, OSF_HAS_CONTENTTYPE, content_type);
         testUtil.assertHasPropertyWithValue(wikiIndividual, OSF_HAS_HASKIND, kind);

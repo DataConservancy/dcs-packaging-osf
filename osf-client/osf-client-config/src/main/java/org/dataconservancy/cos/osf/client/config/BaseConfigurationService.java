@@ -28,6 +28,8 @@ import java.net.URL;
 /**
  * Abstract base class for client configuration.  Provides a method to subclasses for resolving a classpath resource
  * containing the client configuration.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public abstract class BaseConfigurationService {
 
@@ -57,13 +59,13 @@ public abstract class BaseConfigurationService {
      * @return the URL of the resolved resource
      * @throws RuntimeException if the classpath resource cannot be resolved
      */
-    public static URL getConfigurationResource(String configurationResource) {
+    public static URL getConfigurationResource(final String configurationResource) {
 
         if (configurationResource == null || configurationResource.trim().length() == 0) {
             throw new IllegalArgumentException("Supplied resource path must not be null or empty.");
         }
 
-        Resource springResource;
+        final Resource springResource;
 
         if (configurationResource.startsWith("file:") || configurationResource.startsWith("http")) {
             try {
@@ -84,8 +86,8 @@ public abstract class BaseConfigurationService {
         try {
             configUrl = springResource.getURL();
         } catch (IOException e) {
-            throw new RuntimeException("Unable to obtain a URL from the Spring configuration resource '" + springResource +
-                    "': " + e.getMessage(), e);
+            throw new RuntimeException("Unable to obtain a URL from the Spring configuration resource '" +
+                    springResource + "': " + e.getMessage(), e);
         }
 
         if (configUrl == null) {

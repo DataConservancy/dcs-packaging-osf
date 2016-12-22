@@ -25,7 +25,6 @@ import org.apache.jena.rdf.model.Selector;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
-import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
 import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.Rdf;
@@ -44,7 +43,8 @@ import java.util.Set;
  * properties from the underlying {@code OntologyManager}.
  * </p>
  * <p>
- * The {@link AnnotationsProcessor} uses this class to create OWL individuals and properties.
+ * The {@link org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor} uses this class to create OWL
+ * individuals and properties.
  * </p>
  * <p>
  * It may be a little obtuse, and subject to change in the future, but this is how the facades relate to each other and
@@ -60,6 +60,8 @@ import java.util.Set;
  * <ul>
  *   <li>No explicit methods for supporting graph operations or packages</li>
  * </ul>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class PackageGraph {
 
@@ -92,12 +94,17 @@ public class PackageGraph {
         }
 
         @Override
-        public boolean test(Statement statement) {
+        public boolean test(final Statement statement) {
             return true;
         }
     };
 
-    public PackageGraph(OntologyManager ontMgr) {
+    /**
+     * Construct a graph that abides by the managed ontology.
+     *
+     * @param ontMgr the ontology manager
+     */
+    public PackageGraph(final OntologyManager ontMgr) {
         this.ontMgr = ontMgr;
     }
 
@@ -111,8 +118,8 @@ public class PackageGraph {
      * @param owlClass the class the created individual will be a member of
      * @return the OWL individual
      */
-    public Individual newIndividual(OwlClasses owlClass) {
-        Individual individual = ontMgr.individual(owlClass.ns(), owlClass.localname());
+    public Individual newIndividual(final OwlClasses owlClass) {
+        final Individual individual = ontMgr.individual(owlClass.ns(), owlClass.localname());
         return individual;
     }
 
@@ -124,8 +131,8 @@ public class PackageGraph {
      * @param individualId the identifier to be assigned to the newly created individual
      * @return the OWL individual
      */
-    public Individual newIndividual(OwlClasses owlClass, Object individualId) {
-        Individual individual =  ontMgr.individual(individualId.toString(), owlClass.ns(), owlClass.localname());
+    public Individual newIndividual(final OwlClasses owlClass, final Object individualId) {
+        final Individual individual =  ontMgr.individual(individualId.toString(), owlClass.ns(), owlClass.localname());
         return individual;
     }
 
@@ -138,7 +145,8 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code subjectIndividualUri} to the {@code objectIndividualUri}
      * @param objectIndividualUri the object identifying an OWL individual
      */
-    public void addIndividual(String subjectIndividualUri, String propertyUri, String objectIndividualUri) {
+    public void addIndividual(final String subjectIndividualUri, final String propertyUri,
+                              final String objectIndividualUri) {
         ontMgr.individual(subjectIndividualUri).addProperty(ontMgr.objectProperty(propertyUri),
                 ontMgr.individual(objectIndividualUri));
     }
@@ -152,7 +160,7 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code individual} to the {@code objectIndividualUri}
      * @param objectIndividualUri the object identifying an OWL individual
      */
-    public void addIndividual(Individual individual, String propertyUri, String objectIndividualUri) {
+    public void addIndividual(final Individual individual, final String propertyUri, final String objectIndividualUri) {
         individual.addProperty(ontMgr.objectProperty(propertyUri), ontMgr.individual(objectIndividualUri));
     }
 
@@ -163,7 +171,8 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code individualUri} to the {@code anonIndividual}
      * @param anonIndividual the object, an anonymous OWL individual
      */
-    public void addAnonIndividual(String individualUri, String propertyUri, Individual anonIndividual) {
+    public void addAnonIndividual(final String individualUri, final String propertyUri,
+                                  final Individual anonIndividual) {
         if (anonIndividual.getURI() != null) {
             throw new IllegalArgumentException(String.format("Found URI on an anonymous individual: '%s'.  OWL " +
                     "Individuals withURIs must be added by invoking 'newIndividual(OwlClasses, Object)'",
@@ -179,7 +188,8 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code individualUri} to the {@code anonIndividual}
      * @param anonIndividual the object, an anonymous OWL individual
      */
-    public void addAnonIndividual(Individual individual, String propertyUri, Individual anonIndividual) {
+    public void addAnonIndividual(final Individual individual, final String propertyUri,
+                                  final Individual anonIndividual) {
         if (anonIndividual.getURI() != null) {
             throw new IllegalArgumentException(String.format("Found URI on an anonymous individual: '%s'.  OWL " +
                             "Individuals withURIs must be added by invoking 'newIndividual(OwlClasses, Object)'",
@@ -195,8 +205,8 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code individualUri} to the {@code literal}
      * @param literal the object, a literal
      */
-    public void addLiteral(String individualUri, String propertyUri, Object literal) {
-        Individual individual = ontMgr.individual(individualUri);
+    public void addLiteral(final String individualUri, final String propertyUri, final Object literal) {
+        final Individual individual = ontMgr.individual(individualUri);
         individual.addLiteral(ontMgr.datatypeProperty(propertyUri), literal);
     }
 
@@ -207,7 +217,7 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code individualUri} to the {@code literal}
      * @param literal the object, a literal
      */
-    public void addLiteral(Individual individual, String propertyUri, Object literal) {
+    public void addLiteral(final Individual individual, final String propertyUri, final Object literal) {
         individual.addLiteral(ontMgr.datatypeProperty(propertyUri), literal);
     }
 
@@ -218,8 +228,8 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code individualUri} to the {@code resource}
      * @param resource the object, a resource
      */
-    public void addResource(String individualUri, String propertyUri, Resource resource) {
-        Individual individual = ontMgr.individual(individualUri);
+    public void addResource(final String individualUri, final String propertyUri, final Resource resource) {
+        final Individual individual = ontMgr.individual(individualUri);
         individual.addProperty(ontMgr.objectProperty(propertyUri), resource);
     }
 
@@ -230,7 +240,7 @@ public class PackageGraph {
      * @param propertyUri the predicate relating the {@code individualUri} to the {@code resource}
      * @param resource the object, a resource
      */
-    public void addResource(Individual individual, String propertyUri, Resource resource) {
+    public void addResource(final Individual individual, final String propertyUri, final Resource resource) {
         individual.addProperty(ontMgr.objectProperty(propertyUri), resource);
     }
 
@@ -250,9 +260,9 @@ public class PackageGraph {
      * @param format the format the statements should be serialized in
      * @param selector used to select the statements to be serialized
      */
-    public void serialize(OutputStream out, RDFFormat format, Selector selector) {
+    public void serialize(final OutputStream out, final RDFFormat format, final Selector selector) {
         if (selector != ALWAYS_TRUE_SELECTOR) {
-            Model selected = ModelFactory.createDefaultModel();
+            final Model selected = ModelFactory.createDefaultModel();
             selected.setNsPrefixes(Rdf.Ns.PREFIXES);
             ontMgr.getOntModel().listStatements(selector).forEachRemaining(statement -> {
                 LOG.debug("Statement selected for Package serialization: {} {} {}",

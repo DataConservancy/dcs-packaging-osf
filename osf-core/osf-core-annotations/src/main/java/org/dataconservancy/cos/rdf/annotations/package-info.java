@@ -31,5 +31,7 @@
  * {@code @OwlProperties} annotation possess a {@code transform} attribute, which specifies a
  * {@code Class<Function<Object,String>>} to be applied to the field value prior to being serialized as RDF.
  * </p>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 package org.dataconservancy.cos.rdf.annotations;

@@ -16,10 +16,11 @@
 package org.dataconservancy.cos.rdf.support.test.model.AnnotatedElementPairTest;
 
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
-import org.dataconservancy.cos.rdf.annotations.TransformMode;
 
 /**
  * Test class sharing the name annotation and field name with the Bar test class.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class Foo {
 

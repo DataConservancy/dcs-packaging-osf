@@ -22,13 +22,13 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 
 /**
- * Created by esm on 4/25/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class LoggingInterceptor implements Interceptor {
 
     @Override
-    public Response intercept(Chain chain) throws IOException {
-        Response res = chain.proceed(chain.request());
+    public Response intercept(final Chain chain) throws IOException {
+        final Response res = chain.proceed(chain.request());
 
         System.err.println(res.body().string());
 

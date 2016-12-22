@@ -17,16 +17,15 @@ package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTes
 
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
-import org.dataconservancy.cos.rdf.support.IndividualUriTransform;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 /**
- * Created by esm on 6/29/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @OwlIndividual(OwlClasses.OSF_LICENSE)
 public class YetAnotherClass {
 
     @IndividualUri
-    public String id = "AnId";
+    public String ID = "AnId";
 
 }

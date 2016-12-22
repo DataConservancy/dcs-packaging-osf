@@ -17,7 +17,6 @@ package org.dataconservancy.cos.osf.packaging.support;
 
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.ObjectProperty;
-import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.junit.Test;
 
@@ -25,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
- * Created by esm on 6/1/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OntologyTest {
 
@@ -44,7 +43,7 @@ public class OntologyTest {
     @Test
     public void testGetDatatypeProperty() throws Exception {
         // Create a data type property 'osf:hasName' in the underlying ontology model
-        DatatypeProperty p = underTest.datatypeProperty(OwlProperties.OSF_HAS_NAME.fqname());
+        final DatatypeProperty p = underTest.datatypeProperty(OwlProperties.OSF_HAS_NAME.fqname());
         assertNotNull(p);
 
         // Insure the newly created datatype property has the expected local name and namespace
@@ -55,7 +54,7 @@ public class OntologyTest {
     @Test
     public void testGetObjectProperty() throws Exception {
         // Create a object type property 'osf:hasRoot' in the underlying ontology model
-        ObjectProperty p = underTest.objectProperty(OwlProperties.OSF_HAS_ROOT.fqname());
+        final ObjectProperty p = underTest.objectProperty(OwlProperties.OSF_HAS_ROOT.fqname());
         assertNotNull(p);
 
         // Insure the newly created object property has the expected local name and namespace

@@ -23,6 +23,8 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Insures the various constants of {@link OwlProperty} work as expected.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OwlPropertyTest {
 
@@ -53,7 +55,8 @@ public class OwlPropertyTest {
     }
 
     /**
-     * Asserts that the {@code transform()} can be retrieved via reflection using the {@link OwlProperty#TRANSFORM} constant.
+     * Asserts that the {@code transform()} can be retrieved via reflection using the
+     * {@link OwlProperty#TRANSFORM} constant.
      * @throws Exception
      */
     @Test
@@ -62,7 +65,8 @@ public class OwlPropertyTest {
     }
 
     /**
-     * Asserts that the {@code mode()} can be retrieved via reflection using the {@link OwlProperty#TRANSFORM_MODE} constant.
+     * Asserts that the {@code mode()} can be retrieved via reflection using the
+     * {@link OwlProperty#TRANSFORM_MODE} constant.
      * @throws Exception
      */
     @Test

@@ -17,6 +17,8 @@ package org.dataconservancy.cos.osf.client.config;
 
 /**
  * Encapsulates the configuration parameters needed by an HTTP-based Waterbutler client
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class WbClientConfiguration {
 
@@ -42,7 +44,7 @@ public class WbClientConfiguration {
      *
      * @param host the API host
      */
-    public void setHost(String host) {
+    public void setHost(final String host) {
         this.host = host;
     }
 
@@ -60,7 +62,7 @@ public class WbClientConfiguration {
      *
      * @param port the API port
      */
-    public void setPort(int port) {
+    public void setPort(final int port) {
         this.port = port;
     }
 
@@ -78,7 +80,7 @@ public class WbClientConfiguration {
      *
      * @param scheme the protocol scheme
      */
-    public void setScheme(String scheme) {
+    public void setScheme(final String scheme) {
         this.scheme = scheme;
     }
 
@@ -96,7 +98,7 @@ public class WbClientConfiguration {
      *
      * @param basePath the base path of the API
      */
-    public void setBasePath(String basePath) {
+    public void setBasePath(final String basePath) {
         this.basePath = basePath;
     }
 }

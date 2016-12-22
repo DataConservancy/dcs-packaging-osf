@@ -22,27 +22,28 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
- * Created by esm on 9/21/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class CommentTest extends AbstractMockServerTest {
 
     @Rule
-    public TestName testName = new TestName();
+    public TestName TEST_NAME = new TestName();
 
     private OsfService osfService;
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(testName, CommentTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, CommentTest.class, getBaseUri()));
         osfService = factory.getOsfService(OsfService.class);
     }
 
     @Test
     public void testSimpleMapping() throws Exception {
-        ResourceList<Comment> comments = osfService.getComments("http://localhost:8000/v2/nodes/u9dc7/comments/")
+        final ResourceList<Comment> comments = osfService.getComments("http://localhost:8000/v2/nodes/u9dc7/comments/")
                 .execute()
                 .body();
 

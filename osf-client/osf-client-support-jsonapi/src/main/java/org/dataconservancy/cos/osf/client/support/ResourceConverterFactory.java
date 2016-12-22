@@ -21,6 +21,8 @@ import com.github.jasminb.jsonapi.ResourceConverter;
 
 /**
  * Produces instances of the JSON API ResourceConverter.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ResourceConverterFactory {
 
@@ -32,8 +34,10 @@ public class ResourceConverterFactory {
      * @param globalResolver the resolver used to resolve JSON-API relationships
      * @return the JSON API resource converter
      */
-    public ResourceConverter newConverter(ObjectMapper mapper, ModelClassScanner scanner, RelationshipResolver globalResolver) {
-        ResourceConverter converter = new ResourceConverter(mapper, scanner.getDetectedClasses().toArray(new Class[]{}));
+    public ResourceConverter newConverter(final ObjectMapper mapper, final ModelClassScanner scanner,
+                                          final RelationshipResolver globalResolver) {
+        final ResourceConverter converter = new ResourceConverter(mapper,
+                scanner.getDetectedClasses().toArray(new Class[]{}));
         converter.setGlobalResolver(globalResolver);
         return converter;
     }

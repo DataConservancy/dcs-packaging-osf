@@ -60,6 +60,8 @@ import java.lang.reflect.AnnotatedElement;
  *     // ...
  * }
  * </pre>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class AnnotatedElementPair {
 
@@ -67,7 +69,14 @@ public class AnnotatedElementPair {
 
     private Class<? extends Annotation> annotationClass;
 
-    public AnnotatedElementPair(AnnotatedElement annotatedElement, Class<? extends Annotation> annotationClass) {
+    /**
+     * Pairs an {@code Annotation} with an {@code AnnotatedElement}.
+     *
+     * @param annotatedElement the element annotated by {@code annotationClass}
+     * @param annotationClass the annotation class annotating the {@code annotatedElement}
+     */
+    public AnnotatedElementPair(final AnnotatedElement annotatedElement,
+                                final Class<? extends Annotation> annotationClass) {
         this.annotatedElement = annotatedElement;
         this.annotationClass = annotationClass;
     }
@@ -90,20 +99,34 @@ public class AnnotatedElementPair {
         return annotationClass;
     }
 
-    public static AnnotatedElementPair forPair(AnnotatedElement e, Class<? extends Annotation> annotationClass) {
-        return new AnnotatedElementPair(e, annotationClass);
+    /**
+     * Pairs an {@code Annotation} with an {@code AnnotatedElement}.
+     *
+     * @param annotatedElement the element annotated by {@code annotationClass}
+     * @param annotationClass the annotation class annotating the {@code annotatedElement}
+     */
+    public static AnnotatedElementPair forPair(final AnnotatedElement annotatedElement,
+                                               final Class<? extends Annotation> annotationClass) {
+        return new AnnotatedElementPair(annotatedElement, annotationClass);
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
 
-        AnnotatedElementPair that = (AnnotatedElementPair) o;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
-        if (!annotatedElement.equals(that.annotatedElement)) return false;
+        final AnnotatedElementPair that = (AnnotatedElementPair) o;
+
+        if (!annotatedElement.equals(that.annotatedElement)) {
+            return false;
+        }
+
         return annotationClass.equals(that.annotationClass);
-
     }
 
     @Override

@@ -40,7 +40,7 @@ import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 
 /**
- * OSF User model 
+ * OSF User model
  * @author khanson
  */
 @Type("users")
@@ -48,339 +48,552 @@ import com.github.jasminb.jsonapi.annotations.Type;
 @OwlIndividual(OwlClasses.OSF_USER)
 public class User {
 
-	/** Unique OSF identifier for User ID */
+    /** Unique OSF identifier for User ID */
     @Id
-	@IndividualUri
+    @IndividualUri
     private String id;
-    
+
     /**Link to list of nodes associated with the User*/
     @Relationship(value = "nodes", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String nodes;
-    
+
     /**Institutions associated with the User*/
     @Relationship(value = "institutions", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<Institution> institutions;
-    
+
     /**Link to list of registrations associated with the User*/
     @Relationship(value = "registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String registrations;
-    
+
     /**Gets other links found in data.links:{} section of JSON**/
     @Links
-    Map<String, ?> links;    
-    
+    Map<String, ?> links;
+
     /**pagination links, applies when list is returned**/
     private org.dataconservancy.cos.osf.client.model.Links pageLinks;
 
-	/** full name of the user; used for display*/
-	@OwlProperty(OwlProperties.OSF_HAS_FULLNAME)
+    /** full name of the user; used for display*/
+    @OwlProperty(OwlProperties.OSF_HAS_FULLNAME)
     private String full_name;
-    
+
     /** given name of the user; for bibliographic citations*/
-	@OwlProperty(OwlProperties.OSF_HAS_GIVENNAME)
+    @OwlProperty(OwlProperties.OSF_HAS_GIVENNAME)
     private String given_name;
-    
+
     /** middle name of user; for bibliographic citations */
-	// TODO: check- should this be a collection?
-	@OwlProperty(OwlProperties.OSF_HAS_MIDDLENAMES)
+    // TODO: check- should this be a collection?
+    @OwlProperty(OwlProperties.OSF_HAS_MIDDLENAMES)
     private String middle_names;
-    
+
     /** family name of user; for bibliographic citations*/
-	@OwlProperty(OwlProperties.OSF_HAS_HASFAMILYNAME)
+    @OwlProperty(OwlProperties.OSF_HAS_HASFAMILYNAME)
     private String family_name;
 
     /** suffix of user's name for bibliographic citations*/
-	@OwlProperty(OwlProperties.OSF_HAS_SUFFIX)
+    @OwlProperty(OwlProperties.OSF_HAS_SUFFIX)
     private String suffix;
 
     /** timestamp when the user's account was created*/
-	@OwlProperty(value = OwlProperties.OSF_HAS_DATEUSERREGISTERED, transform = DateTimeTransform.class)
+    @OwlProperty(value = OwlProperties.OSF_HAS_DATEUSERREGISTERED, transform = DateTimeTransform.class)
     private DateTime date_registered;
 
     /**github account name (not full url) e.g. "karenhanson" **/
-	//TODO @OwlProperty(OwlProperties.OSF_HAS_GITHUB)
+    //TODO @OwlProperty(OwlProperties.OSF_HAS_GITHUB)
     private String gitHub;
 
     /**personal website**/
-	@OwlProperty(OwlProperties.OSF_HAS_PERSONALWEBSITE)
+    @OwlProperty(OwlProperties.OSF_HAS_PERSONALWEBSITE)
     private String personal_website;
 
     /**academic institution name*/
-	@OwlProperty(OwlProperties.OSF_HAS_ACADEMICINSTITUTION)
+    @OwlProperty(OwlProperties.OSF_HAS_ACADEMICINSTITUTION)
     private String academicaInstitution;
 
     /**Baidu Scholar ID*/
-	@OwlProperty(OwlProperties.OSF_HAS_BAIDUID)
+    @OwlProperty(OwlProperties.OSF_HAS_BAIDUID)
     private String baiduScholar;
 
     /**twitter handle e.g. bobsmith*/
-	@OwlProperty(OwlProperties.OSF_HAS_TWITTER)
+    @OwlProperty(OwlProperties.OSF_HAS_TWITTER)
     private String twitter;
 
     /**orcid id e.g. 0000-1234-1234-1234"*/
-	@OwlProperty(OwlProperties.OSF_HAS_ORCID)
+    @OwlProperty(OwlProperties.OSF_HAS_ORCID)
     private String orcid;
 
     /**Thomson Reuters Researcher ID e.g. H-9999-9999 **/
-	@OwlProperty(OwlProperties.OSF_HAS_RESEARCHERID)
+    @OwlProperty(OwlProperties.OSF_HAS_RESEARCHERID)
     private String researcherId;
 
     /** linkedin profile path (not full url) e.g. "in/karenlhanson" */
-	@OwlProperty(OwlProperties.OSF_HAS_LINKEDIN)
+    @OwlProperty(OwlProperties.OSF_HAS_LINKEDIN)
     private String linkedIn;
 
     /** Impact Story profile ID (not full url) e.g. bobsmith*/
-	@OwlProperty(OwlProperties.OSF_HAS_IMPACTSTORY)
+    @OwlProperty(OwlProperties.OSF_HAS_IMPACTSTORY)
     private String impactStory;
 
     /** Google scholar profile ID (not full url) e.g. bobsmith*/
-	@OwlProperty(OwlProperties.OSF_HAS_SCHOLAR)
+    @OwlProperty(OwlProperties.OSF_HAS_SCHOLAR)
     private String scholar;
 
     /** Academia Profile ID */
-	@OwlProperty(OwlProperties.OSF_HAS_ACADEMICPROFILEID)
+    @OwlProperty(OwlProperties.OSF_HAS_ACADEMICPROFILEID)
     private String academiaProfileId;
 
     /**ResearchGate ID*/
-	@OwlProperty(OwlProperties.OSF_HAS_RESEARCHGATE)
+    @OwlProperty(OwlProperties.OSF_HAS_RESEARCHGATE)
     private String researchGate;
 
     /** User active?*/
-	@OwlProperty(OwlProperties.OSF_IS_ACTIVE)
+    @OwlProperty(OwlProperties.OSF_IS_ACTIVE)
     private Boolean isActive;
 
     /** user timezone */
-	// TODO? @OwlProperty(OwlProperties.OSF_TIMEZONE)
+    // TODO? @OwlProperty(OwlProperties.OSF_TIMEZONE)
     private String timezone;
 
     /**locale e.g. en_US*/
-	@OwlProperty(OwlProperties.OSF_HAS_LOCALE)
+    @OwlProperty(OwlProperties.OSF_HAS_LOCALE)
     private String locale;
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getFull_name() {
-		return full_name;
-	}
-
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
-	}
-
-	public String getGiven_name() {
-		return given_name;
-	}
-
-	public void setGiven_name(String given_name) {
-		this.given_name = given_name;
-	}
-
-	public String getMiddle_names() {
-		return middle_names;
-	}
-
-	public void setMiddle_names(String middle_names) {
-		this.middle_names = middle_names;
-	}
-
-	public String getFamily_name() {
-		return family_name;
-	}
-
-	public void setFamily_name(String family_name) {
-		this.family_name = family_name;
-	}
-
-	public String getSuffix() {
-		return suffix;
-	}
-
-	public void setSuffix(String suffix) {
-		this.suffix = suffix;
-	}	
-
-    public String getDate_registered() {
-    	if (date_registered != null){
-            return date_registered.toString(DATE_TIME_FORMATTER);
-    	}
-    	else {
-    		return null;    		
-    	}
+    /**
+     *
+     * @return
+     */
+    public String getId() {
+        return id;
     }
 
-    public void setDate_registered(String date_registered) {
-    	if (date_registered!=null){
-    		this.date_registered = JodaSupport.parseDateTime(date_registered);
-    	} else {
-    		this.date_registered=null;
-    	}
-    }    
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
 
-	public String getGitHub() {
-		return gitHub;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getFull_name() {
+        return full_name;
+    }
 
-	public void setGitHub(String gitHub) {
-		this.gitHub = gitHub;
-	}
+    /**
+     *
+     * @param full_name
+     */
+    public void setFull_name(final String full_name) {
+        this.full_name = full_name;
+    }
 
-	public String getPersonal_website() {
-		return personal_website;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getGiven_name() {
+        return given_name;
+    }
 
-	public void setPersonal_website(String personal_website) {
-		this.personal_website = personal_website;
-	}
+    /**
+     *
+     * @param given_name
+     */
+    public void setGiven_name(final String given_name) {
+        this.given_name = given_name;
+    }
 
-	public String getAcademicaInstitution() {
-		return academicaInstitution;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getMiddle_names() {
+        return middle_names;
+    }
 
-	public void setAcademicaInstitution(String academicaInstitution) {
-		this.academicaInstitution = academicaInstitution;
-	}
+    /**
+     *
+     * @param middle_names
+     */
+    public void setMiddle_names(final String middle_names) {
+        this.middle_names = middle_names;
+    }
 
-	public String getBaiduScholar() {
-		return baiduScholar;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getFamily_name() {
+        return family_name;
+    }
 
-	public void setBaiduScholar(String baiduScholar) {
-		this.baiduScholar = baiduScholar;
-	}
+    /**
+     *
+     * @param family_name
+     */
+    public void setFamily_name(final String family_name) {
+        this.family_name = family_name;
+    }
 
-	public String getTwitter() {
-		return twitter;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getSuffix() {
+        return suffix;
+    }
 
-	public void setTwitter(String twitter) {
-		this.twitter = twitter;
-	}
+    /**
+     *
+     * @param suffix
+     */
+    public void setSuffix(final String suffix) {
+        this.suffix = suffix;
+    }
 
-	public String getOrcid() {
-		return orcid;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getDate_registered() {
+        if (date_registered != null) {
+            return date_registered.toString(DATE_TIME_FORMATTER);
+        } else {
+            return null;
+        }
+    }
 
-	public void setOrcid(String orcid) {
-		this.orcid = orcid;
-	}
+    /**
+     *
+     * @param date_registered
+     */
+    public void setDate_registered(final String date_registered) {
+        if (date_registered != null) {
+            this.date_registered = JodaSupport.parseDateTime(date_registered);
+        }
+    }
 
-	public String getResearcherId() {
-		return researcherId;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getGitHub() {
+        return gitHub;
+    }
 
-	public void setResearcherId(String researcherId) {
-		this.researcherId = researcherId;
-	}
+    /**
+     *
+     * @param gitHub
+     */
+    public void setGitHub(final String gitHub) {
+        this.gitHub = gitHub;
+    }
 
-	public String getLinkedIn() {
-		return linkedIn;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getPersonal_website() {
+        return personal_website;
+    }
 
-	public void setLinkedIn(String linkedIn) {
-		this.linkedIn = linkedIn;
-	}
+    /**
+     *
+     * @param personal_website
+     */
+    public void setPersonal_website(final String personal_website) {
+        this.personal_website = personal_website;
+    }
 
-	public String getImpactStory() {
-		return impactStory;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getAcademicaInstitution() {
+        return academicaInstitution;
+    }
 
-	public void setImpactStory(String impactStory) {
-		this.impactStory = impactStory;
-	}
+    /**
+     *
+     * @param academicaInstitution
+     */
+    public void setAcademicaInstitution(final String academicaInstitution) {
+        this.academicaInstitution = academicaInstitution;
+    }
 
-	public String getScholar() {
-		return scholar;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getBaiduScholar() {
+        return baiduScholar;
+    }
 
-	public void setScholar(String scholar) {
-		this.scholar = scholar;
-	}
+    /**
+     *
+     * @param baiduScholar
+     */
+    public void setBaiduScholar(final String baiduScholar) {
+        this.baiduScholar = baiduScholar;
+    }
 
-	public String getAcademiaProfileId() {
-		return academiaProfileId;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getTwitter() {
+        return twitter;
+    }
 
-	public void setAcademiaProfileId(String academiaProfileId) {
-		this.academiaProfileId = academiaProfileId;
-	}
+    /**
+     *
+     * @param twitter
+     */
+    public void setTwitter(final String twitter) {
+        this.twitter = twitter;
+    }
 
-	public String getResearchGate() {
-		return researchGate;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getOrcid() {
+        return orcid;
+    }
 
-	public void setResearchGate(String researchGate) {
-		this.researchGate = researchGate;
-	}
+    /**
+     *
+     * @param orcid
+     */
+    public void setOrcid(final String orcid) {
+        this.orcid = orcid;
+    }
 
-	public Boolean isActive() {
-		return isActive;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getResearcherId() {
+        return researcherId;
+    }
 
-	public void setActive(Boolean isActive) {
-		this.isActive = isActive;
-	}
+    /**
+     *
+     * @param researcherId
+     */
+    public void setResearcherId(final String researcherId) {
+        this.researcherId = researcherId;
+    }
 
-	public String getTimezone() {
-		return timezone;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getLinkedIn() {
+        return linkedIn;
+    }
 
-	public void setTimezone(String timezone) {
-		this.timezone = timezone;
-	}
+    /**
+     *
+     * @param linkedIn
+     */
+    public void setLinkedIn(final String linkedIn) {
+        this.linkedIn = linkedIn;
+    }
 
-	public String getLocale() {
-		return locale;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getImpactStory() {
+        return impactStory;
+    }
 
-	public void setLocale(String locale) {
-		this.locale = locale;
-	}
+    /**
+     *
+     * @param impactStory
+     */
+    public void setImpactStory(final String impactStory) {
+        this.impactStory = impactStory;
+    }
 
-	public String getNodes() {
-		return nodes;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getScholar() {
+        return scholar;
+    }
 
-	public void setNodes(String nodes) {
-		this.nodes = nodes;
-	}
+    /**
+     *
+     * @param scholar
+     */
+    public void setScholar(final String scholar) {
+        this.scholar = scholar;
+    }
 
-	public List<Institution> getInstitutions() {
-		return institutions;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getAcademiaProfileId() {
+        return academiaProfileId;
+    }
 
-	public void setInstitutions(List<Institution> institutions) {
-		this.institutions = institutions;
-	}
+    /**
+     *
+     * @param academiaProfileId
+     */
+    public void setAcademiaProfileId(final String academiaProfileId) {
+        this.academiaProfileId = academiaProfileId;
+    }
 
+    /**
+     *
+     * @return
+     */
+    public String getResearchGate() {
+        return researchGate;
+    }
+
+    /**
+     *
+     * @param researchGate
+     */
+    public void setResearchGate(final String researchGate) {
+        this.researchGate = researchGate;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Boolean isActive() {
+        return isActive;
+    }
+
+    /**
+     *
+     * @param isActive
+     */
+    public void setActive(final Boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getTimezone() {
+        return timezone;
+    }
+
+    /**
+     *
+     * @param timezone
+     */
+    public void setTimezone(final String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getLocale() {
+        return locale;
+    }
+
+    /**
+     *
+     * @param locale
+     */
+    public void setLocale(final String locale) {
+        this.locale = locale;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getNodes() {
+        return nodes;
+    }
+
+    /**
+     *
+     * @param nodes
+     */
+    public void setNodes(final String nodes) {
+        this.nodes = nodes;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<Institution> getInstitutions() {
+        return institutions;
+    }
+
+    /**
+     *
+     * @param institutions
+     */
+    public void setInstitutions(final List<Institution> institutions) {
+        this.institutions = institutions;
+    }
+
+    /**
+     *
+     * @return
+     */
     public String getRegistrations() {
-		return registrations;
-	}
+        return registrations;
+    }
 
-	public void setRegistrations(String registrations) {
-		this.registrations = registrations;
-	}
+    /**
+     *
+     * @param registrations
+     */
+    public void setRegistrations(final String registrations) {
+        this.registrations = registrations;
+    }
 
-	public Map<String, ?> getLinks() {
-		return links;
-	}
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getLinks() {
+        return links;
+    }
 
-	public void setLinks(Map<String, ?> links) {
-		this.links = links;
-	}
+    /**
+     *
+     * @param links
+     */
+    public void setLinks(final Map<String, ?> links) {
+        this.links = links;
+    }
 
-	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
-		return pageLinks;
-	}
+    /**
+     *
+     * @return
+     */
+    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+        return pageLinks;
+    }
 
+    /**
+     *
+     * @param pageLinks
+     */
     @JsonProperty("links")
-	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
-		this.pageLinks = pageLinks;
-	}
-    
+    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+        this.pageLinks = pageLinks;
+    }
+
 }

@@ -28,7 +28,6 @@ import org.dataconservancy.cos.osf.client.config.JacksonWbConfigurationService;
 import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
 import org.dataconservancy.cos.osf.client.config.WbConfigurationService;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
-import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,6 +58,8 @@ import java.util.List;
  * Node n = svc.node("v8x57").execute().body();
  * </pre>
  * </p>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class TestingOsfServiceFactory {
 
@@ -76,7 +77,7 @@ public class TestingOsfServiceFactory {
      *
      * @param jsonConfigurationResource a classpath resource containing the configuration for the OSF API; must be JSON
      */
-    public TestingOsfServiceFactory(String jsonConfigurationResource) {
+    public TestingOsfServiceFactory(final String jsonConfigurationResource) {
         // Configure the configuration service.
         osfConfigurationService = new JacksonOsfConfigurationService(jsonConfigurationResource);
         wbConfigurationService = new JacksonWbConfigurationService(jsonConfigurationResource);
@@ -88,17 +89,17 @@ public class TestingOsfServiceFactory {
         httpClient.interceptors().add(new AuthInterceptor(osfConfigurationService.getConfiguration().getAuthHeader()));
 
         // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
-        List<Class<?>> domainClasses = new ArrayList<>();
+        final List<Class<?>> domainClasses = new ArrayList<>();
 
         new FastClasspathScanner("org.dataconservancy.cos.osf.client.model")
                 .matchClassesWithAnnotation(Type.class, domainClasses::add)
                 .scan();
 
-        ResourceConverter resourceConverter = new ResourceConverter(new ObjectMapper(),
+        final ResourceConverter resourceConverter = new ResourceConverter(new ObjectMapper(),
                 domainClasses.toArray(new Class[]{}));
 
         resourceConverter.setGlobalResolver(relUrl -> {
-            com.squareup.okhttp.Call req = httpClient.newCall(new Request.Builder().url(relUrl).build());
+            final com.squareup.okhttp.Call req = httpClient.newCall(new Request.Builder().url(relUrl).build());
             try {
                 return req.execute().body().bytes();
             } catch (IOException e) {
@@ -106,7 +107,7 @@ public class TestingOsfServiceFactory {
             }
         });
 
-        JSONAPIConverterFactory jsonApiConverterFactory = new JSONAPIConverterFactory(resourceConverter);
+        final JSONAPIConverterFactory jsonApiConverterFactory = new JSONAPIConverterFactory(resourceConverter);
 
         factory = new RetrofitOsfServiceFactory(osfConfigurationService, wbConfigurationService, httpClient,
                 jsonApiConverterFactory);
@@ -162,7 +163,7 @@ public class TestingOsfServiceFactory {
      * @param <T>        the Retrofit interface type
      * @return a configured Retrofit interface, ready to service requests.
      */
-    public <T> T getOsfService(Class<T> osfService) {
+    public <T> T getOsfService(final Class<T> osfService) {
         return factory.getOsfService(osfService);
     }
 }

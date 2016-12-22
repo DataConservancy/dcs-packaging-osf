@@ -29,64 +29,104 @@ import com.github.jasminb.jsonapi.annotations.Type;
 @Type("file_versions")
 public class FileVersion {
 
-	@Id
-	private String id;
-	
-	/**size of file in bytes*/
-	private Integer size;
+    @Id
+    private String id;
 
-	/**MIME content-type for the file. May be null if unavailable.*/
-	private String content_type;
+    /**size of file in bytes*/
+    private Integer size;
 
-    
-	/**Gets other links found in data.links:{} section of JSON**/
-	@Links
-	Map<String, ?> links;       
-	
-	/** pagination links for multiple records*/
-	private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+    /**MIME content-type for the file. May be null if unavailable.*/
+    private String content_type;
 
-	public String getId() {
-		return id;
-	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    /**Gets other links found in data.links:{} section of JSON**/
+    @Links
+    Map<String, ?> links;
 
-	public Integer getSize() {
-		return size;
-	}
+    /** pagination links for multiple records*/
+    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
 
-	public void setSize(Integer size) {
-		this.size = size;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getId() {
+        return id;
+    }
 
-	public String getContent_type() {
-		return content_type;
-	}
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
 
-	public void setContent_type(String content_type) {
-		this.content_type = content_type;
-	}
+    /**
+     *
+     * @return
+     */
+    public Integer getSize() {
+        return size;
+    }
 
-	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
-		return pageLinks;
-	}
+    /**
+     *
+     * @param size
+     */
+    public void setSize(final Integer size) {
+        this.size = size;
+    }
 
+    /**
+     *
+     * @return
+     */
+    public String getContent_type() {
+        return content_type;
+    }
+
+    /**
+     *
+     * @param content_type
+     */
+    public void setContent_type(final String content_type) {
+        this.content_type = content_type;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+        return pageLinks;
+    }
+
+    /**
+     *
+     * @param links
+     */
     @JsonProperty("links")
-	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links links) {
-		this.pageLinks = links;
-	}
+    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links links) {
+        this.pageLinks = links;
+    }
 
-	public Map<String, ?> getLinks() {
-		return links;
-	}
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getLinks() {
+        return links;
+    }
 
-	public void setLinks(Map<String, ?> links) {
-		this.links = links;
-	}
-	
-	
-	
+    /**
+     *
+     * @param links
+     */
+    public void setLinks(final Map<String, ?> links) {
+        this.links = links;
+    }
+
+
+
 }

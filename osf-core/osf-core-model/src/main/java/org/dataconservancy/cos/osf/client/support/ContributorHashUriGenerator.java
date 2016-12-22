@@ -23,6 +23,8 @@ import java.util.function.BiFunction;
 
 /**
  * Generates a unique hash URI given the Contributor's enclosing Node (or Registration).
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ContributorHashUriGenerator implements BiFunction<NodeBase, Contributor, String> {
     private static final AtomicInteger ID = new AtomicInteger(0);
@@ -30,7 +32,7 @@ public class ContributorHashUriGenerator implements BiFunction<NodeBase, Contrib
     private static final String uriTemplate = "%s#contributor%s";
 
     @Override
-    public String apply(NodeBase nodeBase, Contributor contributor) {
+    public String apply(final NodeBase nodeBase, final Contributor contributor) {
         return String.format(uriTemplate, nodeBase.getId(), String.valueOf(ID.getAndIncrement()));
     }
 }

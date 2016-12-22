@@ -33,6 +33,8 @@ import java.util.function.Function;
  * {@code AnnotatedElement}s that have been seen by an annotation processor.  This state is an implementation
  * detail, and not exposed to users of this class.  This implementation delegates all {@code Map} methods to the
  * underlying {@code Map}.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class AnnotatedElementPairMap<K, V> implements Map<K, V> {
 
@@ -57,7 +59,7 @@ public class AnnotatedElementPairMap<K, V> implements Map<K, V> {
      *
      * @param delegateMap the {@code Map} used to store {@code AnnotatedElementPair}s
      */
-    public AnnotatedElementPairMap(Map<K, V> delegateMap) {
+    public AnnotatedElementPairMap(final Map<K, V> delegateMap) {
         this.delegateMap = delegateMap;
         seen = new HashSet<>();
     }
@@ -69,7 +71,7 @@ public class AnnotatedElementPairMap<K, V> implements Map<K, V> {
      * @param delegateMap the {@code Map} used to store {@code AnnotatedElementPair}s
      * @param seen the {@code Set} used to record seen {@code AnnotatedElement}s
      */
-    public AnnotatedElementPairMap(Map<K, V> delegateMap, Set<AnnotatedElement> seen) {
+    public AnnotatedElementPairMap(final Map<K, V> delegateMap, final Set<AnnotatedElement> seen) {
         this.delegateMap = delegateMap;
         this.seen = seen;
     }
@@ -82,8 +84,8 @@ public class AnnotatedElementPairMap<K, V> implements Map<K, V> {
      * @param annotatedElement the {@code AnnotatedElement} that has been seen by an annotation processor
      * @return if it has already been seen
      */
-    boolean seen(AnnotatedElement annotatedElement) {
-        boolean seen = !this.seen.add(annotatedElement);
+    boolean seen(final AnnotatedElement annotatedElement) {
+        final boolean seen = !this.seen.add(annotatedElement);
         if (seen) {
             LOG.trace("Ignoring already seen AnnotatedElement: '{}'", annotatedElement.toString());
         }
@@ -98,7 +100,7 @@ public class AnnotatedElementPairMap<K, V> implements Map<K, V> {
      * @return true if the {@code annotatedElement} has been marked as 'seen'
      * @see #seen
      */
-    boolean hasSeen(AnnotatedElement annotatedElement) {
+    boolean hasSeen(final AnnotatedElement annotatedElement) {
         return this.seen.contains(annotatedElement);
     }
 
@@ -113,32 +115,32 @@ public class AnnotatedElementPairMap<K, V> implements Map<K, V> {
     }
 
     @Override
-    public boolean containsKey(Object key) {
+    public boolean containsKey(final Object key) {
         return delegateMap.containsKey(key);
     }
 
     @Override
-    public boolean containsValue(Object value) {
+    public boolean containsValue(final Object value) {
         return delegateMap.containsValue(value);
     }
 
     @Override
-    public V get(Object key) {
+    public V get(final Object key) {
         return delegateMap.get(key);
     }
 
     @Override
-    public V put(K key, V value) {
+    public V put(final K key, final V value) {
         return delegateMap.put(key, value);
     }
 
     @Override
-    public V remove(Object key) {
+    public V remove(final Object key) {
         return delegateMap.remove(key);
     }
 
     @Override
-    public void putAll(Map<? extends K, ? extends V> m) {
+    public void putAll(final Map<? extends K, ? extends V> m) {
         delegateMap.putAll(m);
     }
 
@@ -163,57 +165,57 @@ public class AnnotatedElementPairMap<K, V> implements Map<K, V> {
     }
 
     @Override
-    public V getOrDefault(Object key, V defaultValue) {
+    public V getOrDefault(final Object key, final V defaultValue) {
         return delegateMap.getOrDefault(key, defaultValue);
     }
 
     @Override
-    public void forEach(BiConsumer<? super K, ? super V> action) {
+    public void forEach(final BiConsumer<? super K, ? super V> action) {
         delegateMap.forEach(action);
     }
 
     @Override
-    public void replaceAll(BiFunction<? super K, ? super V, ? extends V> function) {
+    public void replaceAll(final BiFunction<? super K, ? super V, ? extends V> function) {
         delegateMap.replaceAll(function);
     }
 
     @Override
-    public V putIfAbsent(K key, V value) {
+    public V putIfAbsent(final K key, final V value) {
         return delegateMap.putIfAbsent(key, value);
     }
 
     @Override
-    public boolean remove(Object key, Object value) {
+    public boolean remove(final Object key, final Object value) {
         return delegateMap.remove(key, value);
     }
 
     @Override
-    public boolean replace(K key, V oldValue, V newValue) {
+    public boolean replace(final K key, final V oldValue, final V newValue) {
         return delegateMap.replace(key, oldValue, newValue);
     }
 
     @Override
-    public V replace(K key, V value) {
+    public V replace(final K key, final V value) {
         return delegateMap.replace(key, value);
     }
 
     @Override
-    public V computeIfAbsent(K key, Function<? super K, ? extends V> mappingFunction) {
+    public V computeIfAbsent(final K key, final Function<? super K, ? extends V> mappingFunction) {
         return delegateMap.computeIfAbsent(key, mappingFunction);
     }
 
     @Override
-    public V computeIfPresent(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction) {
+    public V computeIfPresent(final K key, final BiFunction<? super K, ? super V, ? extends V> remappingFunction) {
         return delegateMap.computeIfPresent(key, remappingFunction);
     }
 
     @Override
-    public V compute(K key, BiFunction<? super K, ? super V, ? extends V> remappingFunction) {
+    public V compute(final K key, final BiFunction<? super K, ? super V, ? extends V> remappingFunction) {
         return delegateMap.compute(key, remappingFunction);
     }
 
     @Override
-    public V merge(K key, V value, BiFunction<? super V, ? super V, ? extends V> remappingFunction) {
+    public V merge(final K key, final V value, final BiFunction<? super V, ? super V, ? extends V> remappingFunction) {
         return delegateMap.merge(key, value, remappingFunction);
     }
 }

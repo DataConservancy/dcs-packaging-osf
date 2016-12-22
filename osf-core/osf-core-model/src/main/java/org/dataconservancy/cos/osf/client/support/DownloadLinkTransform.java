@@ -21,12 +21,14 @@ import java.util.function.Function;
 
 /**
  * Extracts a link named "download" from the supplied map.  If the link is not present, {@code null} is returned.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class DownloadLinkTransform implements Function<Map<String, ?>, URI> {
 
     @Override
-    public URI apply(Map<String, ?> links) {
-        String link = (String) links.get("download");
+    public URI apply(final Map<String, ?> links) {
+        final String link = (String) links.get("download");
         if (link != null) {
             return URI.create(link);
         }

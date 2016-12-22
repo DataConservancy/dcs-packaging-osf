@@ -17,5 +17,7 @@
 /**
  * Provides enumerations of supported OWL properties, OWL classes, relevant RDF constants, and default transformers for
  * OWL annotations.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 package org.dataconservancy.cos.rdf.support;

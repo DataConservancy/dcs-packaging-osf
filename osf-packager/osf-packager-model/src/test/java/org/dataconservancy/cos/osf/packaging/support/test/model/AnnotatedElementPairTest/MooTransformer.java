@@ -19,11 +19,13 @@ import java.util.function.BiFunction;
 
 /**
  * A simple transformer.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class MooTransformer implements BiFunction<Foo, String, String> {
 
     @Override
-    public String apply(Foo enclosingObject, String idInstance) {
+    public String apply(final Foo enclosingObject, final String idInstance) {
         return "Moo!";
     }
 

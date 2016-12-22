@@ -1,12 +1,12 @@
 /*
  * Copyright 2016 Johns Hopkins University
- *  
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *  
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,6 +18,8 @@ package org.dataconservancy.cos.rdf.support;
 /**
  * Supported OSF OWL properties.  Java fields annotated with {@code org.dataconservancy.cos.rdf.annotations.OwlProperty}
  * may be mapped to the OWL properties enumerated here.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public enum OwlProperties {
 
@@ -90,7 +92,7 @@ public enum OwlProperties {
     OSF_HAS_CONTENT ("hasContent"),
 
     OSF_HAS_CONTENTTYPE ("hasContentType"),
-    
+
     OSF_IS_DASHBOARD ("isDashboard"),
 
     OSF_HAS_DATECREATED ("hasDateCreated"),
@@ -210,26 +212,26 @@ public enum OwlProperties {
     OSF_IN_REPLY_TO ("inReplyTo");
 
     private String ns = Rdf.Ns.OSF;
-    
-    private String localname;
-    
+
+    private final String localname;
+
     private boolean isObject = false;
-    
-    private OwlProperties(String localname) {
+
+    private OwlProperties(final String localname) {
         this.localname = localname;
     }
-    
-    private OwlProperties(String ns, String localname) {
+
+    private OwlProperties(final String ns, final String localname) {
         this.ns = ns;
         this.localname = localname;
     }
-    
-    private OwlProperties(String localname, boolean isObject) {
+
+    private OwlProperties(final String localname, final boolean isObject) {
         this.localname = localname;
         this.isObject = isObject;
     }
 
-    private OwlProperties(String ns, String localname, boolean isObject) {
+    private OwlProperties(final String ns, final String localname, final boolean isObject) {
         this.ns = ns;
         this.localname = localname;
         this.isObject = isObject;

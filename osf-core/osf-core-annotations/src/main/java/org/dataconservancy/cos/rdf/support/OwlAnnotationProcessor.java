@@ -41,6 +41,8 @@ import java.util.stream.Stream;
 
 /**
  * Provides utility methods for processing OWL annotations.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OwlAnnotationProcessor {
 
@@ -67,16 +69,20 @@ public class OwlAnnotationProcessor {
     private static final ConcurrentHashMap<Class<? extends BiFunction>, BiFunction> INDIVIDUAL_URI_TRANSFORMS =
             new ConcurrentHashMap<>();
 
+    private OwlAnnotationProcessor() {
+        // disallow construction
+    }
+
     /**
      * Instantiate an instance of the supplied {@code Function} class.
      *
      * @param functionClass the function to instantiate
      * @return an instance of the {@code Function} specified by {@code functionClass}
      */
-    private static Function newFunction(Class<? extends Function> functionClass) {
+    private static Function newFunction(final Class<? extends Function> functionClass) {
         try {
             return functionClass.newInstance();
-        } catch (InstantiationException|IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(String.format(
                     "Unable to instantiate Function class %s: %s", functionClass.getName(), e.getMessage()), e);
         }
@@ -88,29 +94,29 @@ public class OwlAnnotationProcessor {
      * @param functionClass the function to instantiate
      * @return an instance of the {@code Function} specified by {@code functionClass}
      */
-    private static BiFunction newBiFunction(Class<? extends BiFunction> functionClass) {
+    private static BiFunction newBiFunction(final Class<? extends BiFunction> functionClass) {
         try {
             return functionClass.newInstance();
-        } catch (InstantiationException|IllegalAccessException e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(String.format(
                     "Unable to instantiate BiFunction class %s: %s", functionClass.getName(), e.getMessage()), e);
         }
     }
 
     /**
-     * Creates single instances of the transformer {@code Function}s found on each annotated element, and caches them in static member
-     * fields according to their {@code TransformMode}.
+     * Creates single instances of the transformer {@code Function}s found on each annotated element, and caches them
+     * in static member fields according to their {@code TransformMode}.
      *
      * @param annotations a map annotated elements and their attributes
      */
-    private static void populateTransformers(Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
+    private static void populateTransformers(final Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
         annotations.keySet().stream()
                 .filter(pair -> pair.getAnnotationClass() == OwlProperty.class)
                 .forEach(pair -> {
-                    AnnotationAttributes attributes = annotations.get(pair);
-                    Class<? extends Function> transformFunction = attributes.getClass(OwlProperty.TRANSFORM);
+                    final AnnotationAttributes attributes = annotations.get(pair);
+                    final Class<? extends Function> transformFunction = attributes.getClass(OwlProperty.TRANSFORM);
 
-                    TransformMode mode = attributes.getEnum(OwlProperty.TRANSFORM_MODE);
+                    final TransformMode mode = attributes.getEnum(OwlProperty.TRANSFORM_MODE);
                     if (mode == TransformMode.FIELD) {
                         FIELD_TRANSFORMERS.putIfAbsent(transformFunction, newFunction(transformFunction));
                     } else {
@@ -121,8 +127,8 @@ public class OwlAnnotationProcessor {
         annotations.keySet().stream()
                 .filter(pair -> pair.getAnnotationClass() == IndividualUri.class)
                 .forEach(pair -> {
-                    AnnotationAttributes attributes = annotations.get(pair);
-                    Class<? extends BiFunction> transformFunction = attributes.getClass(IndividualUri.TRANSFORM);
+                    final AnnotationAttributes attributes = annotations.get(pair);
+                    final Class<? extends BiFunction> transformFunction = attributes.getClass(IndividualUri.TRANSFORM);
                     INDIVIDUAL_URI_TRANSFORMS.putIfAbsent(transformFunction, newBiFunction(transformFunction));
                 });
     }
@@ -138,22 +144,25 @@ public class OwlAnnotationProcessor {
      * {@code enclosingObject}
      * @return the transformed value for the field
      */
-    public static Object transform(Object enclosingObject, Field field, Object fieldValue, Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
-        OwlProperty property = getOwlProperty(field, annotations);
-        Function fieldTransformer = FIELD_TRANSFORMERS.get(property.transform());
-        Function classTransformer = CLASS_TRANSFORMERS.get(property.transform());
+    public static Object transform(final Object enclosingObject, final Field field, final Object fieldValue,
+                                   final Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
+        final OwlProperty property = getOwlProperty(field, annotations);
+        final Function fieldTransformer = FIELD_TRANSFORMERS.get(property.transform());
+        final Function classTransformer = CLASS_TRANSFORMERS.get(property.transform());
 
-        Object transformedValue;
+        final Object transformedValue;
 
-        String logMsg = "    Transforming %s %s with value %s using %s to %s";
+        final String logMsg = "    Transforming %s %s with value %s using %s to %s";
 
         if (fieldTransformer != null) {
             transformedValue = fieldTransformer.apply(fieldValue);
-            LOG.trace(String.format(logMsg, "field", field.getType(), fieldValue, fieldTransformer.getClass().getName(), transformedValue));
+            LOG.trace(String.format(logMsg, "field",
+                    field.getType(), fieldValue, fieldTransformer.getClass().getName(), transformedValue));
 
         } else {
             transformedValue = classTransformer.apply(enclosingObject);
-            LOG.trace(String.format(logMsg, "class", field.getType(), fieldValue, classTransformer.getClass().getName(), transformedValue));
+            LOG.trace(String.format(logMsg, "class",
+                    field.getType(), fieldValue, classTransformer.getClass().getName(), transformedValue));
 
         }
 
@@ -171,9 +180,10 @@ public class OwlAnnotationProcessor {
      * @return the transformed value for the field
      * @throws IllegalArgumentException if the value of {@code annotatedField} is {@code null}
      */
-    public static Object transformIndividualUri(Object outer, Object inner, Field annotatedField, Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
-        IndividualUri annotation = getIndividualUri(annotatedField, annotations);
-        BiFunction fieldTransformer = INDIVIDUAL_URI_TRANSFORMS.get(annotation.transform());
+    public static Object transformIndividualUri(final Object outer, final Object inner, final Field annotatedField,
+                                                final Map<AnnotatedElementPair, AnnotationAttributes> annotations) {
+        final IndividualUri annotation = getIndividualUri(annotatedField, annotations);
+        final BiFunction fieldTransformer = INDIVIDUAL_URI_TRANSFORMS.get(annotation.transform());
 
         return fieldTransformer.apply(outer, inner);
     }
@@ -184,7 +194,8 @@ public class OwlAnnotationProcessor {
      * @param object the object to obtain annotations for
      * @param result the results, populated by this method
      */
-    public static void getAnnotationsForInstance(Object object, AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result) {
+    public static void getAnnotationsForInstance(final Object object,
+                                    final AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result) {
         // If the class is in java.*, javax.*, sun.*, we ignore.  No need to process JDK classes.
         if (ignored(object.getClass())) {
             return;
@@ -198,10 +209,11 @@ public class OwlAnnotationProcessor {
 
         // Recurse through declared fields of the class and super-class, getting the annotations of each field.
         ReflectionUtils.doWithFields(object.getClass(), f -> {
-            LOG.debug("  Processing field level annotations for '{}' (a '{}' on class '{}')", f.getName(), f.getType(), object.getClass().getName());
+            LOG.debug("  Processing field level annotations for '{}' (a '{}' on class '{}')",
+                    f.getName(), f.getType(), object.getClass().getName());
             ReflectionUtils.makeAccessible(f);
             getAnnotations(f, result);
-            Object fieldValue;
+            final Object fieldValue;
             if ((fieldValue = f.get(object)) != null) {
                 result.seen(f);
                 getAnnotationsForInstance(fieldValue, result);
@@ -213,16 +225,17 @@ public class OwlAnnotationProcessor {
         // endless loop.
         ReflectionUtils.doWithFields(object.getClass(), f -> {
             ReflectionUtils.makeAccessible(f);
-            Object value = f.get(object);
+                    final Object value = f.get(object);
 
             if (value != null) {
                 // Unwrap fields that are Collection or Array types.
-                Stream<?> unwrappedValues = unwrap(f, value);
+                final Stream<?> unwrappedValues = unwrap(f, value);
                 try {
-                    Optional<?> element = unwrappedValues.findFirst();
+                    final Optional<?> element = unwrappedValues.findFirst();
                     // Obtain the annotations on first element found in the Collection or Array
                     if (element.isPresent()) {
-                        LOG.trace("Unwrapping and processing class '{}' field '{}' (field type '{}') for annotations.", object.getClass(), f.getName(), f.getType());
+                        LOG.trace("Unwrapping and processing class '{}' field '{}' (field type '{}') for annotations.",
+                                object.getClass(), f.getName(), f.getType());
                         getAnnotationsForInstance(element.get(), result);
                     }
                 } catch (NullPointerException e) {
@@ -231,7 +244,8 @@ public class OwlAnnotationProcessor {
                 }
             }
         },
-        f -> (isCollection(f.getType()) || isArray(f.getType())) && (!object.getClass().isEnum() && !isPrimitiveArray(f.getType())));
+        f -> (isCollection(f.getType()) ||
+                isArray(f.getType())) && (!object.getClass().isEnum() && !isPrimitiveArray(f.getType())));
 
         // Instantiate and cache any transformation functions that are present on the annotated elements
         populateTransformers(result);
@@ -243,13 +257,16 @@ public class OwlAnnotationProcessor {
      * @param annotatedElement the annotated element
      * @param result the results, populated by this method
      */
-    public static void getAnnotations(AnnotatedElement annotatedElement, Map<AnnotatedElementPair, AnnotationAttributes> result) {
+    public static void getAnnotations(final AnnotatedElement annotatedElement,
+                                      final Map<AnnotatedElementPair, AnnotationAttributes> result) {
         LOG.trace("  - Processing AnnotatedElement '{}' for annotations", annotatedElement);
-        Annotation[] annotations = annotatedElement.getDeclaredAnnotations();
+        final Annotation[] annotations = annotatedElement.getDeclaredAnnotations();
         Stream.of(annotations).forEach(annotation -> {
-                    AnnotatedElementPair aep = new AnnotatedElementPair(annotatedElement, annotation.annotationType());
+                    final AnnotatedElementPair aep =
+                            new AnnotatedElementPair(annotatedElement, annotation.annotationType());
                     result.put(aep, AnnotationUtils.getAnnotationAttributes(annotatedElement, annotation));
-                    LOG.debug("    - Created AnnotatedElementPair (AnnotatedElement: '{}', AnnotationClass: '{}')", aep.getAnnotatedElement(), aep.getAnnotationClass());
+                    LOG.debug("    - Created AnnotatedElementPair (AnnotatedElement: '{}', AnnotationClass: '{}')",
+                            aep.getAnnotatedElement(), aep.getAnnotationClass());
                 }
         );
     }
@@ -263,7 +280,8 @@ public class OwlAnnotationProcessor {
      * @throws IllegalArgumentException if the class of the Java object is not annotated by {@code OwlIndividual}, or if
      * the value of the {@code OwlIndividual} annotation is {@code null}
      */
-    public static OwlClasses getOwlClass(Object javaObject, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+    public static OwlClasses getOwlClass(final Object javaObject,
+                                         final Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
         return getOwlClass(javaObject.getClass(), attributesMap);
     }
 
@@ -276,19 +294,22 @@ public class OwlAnnotationProcessor {
      * @throws IllegalArgumentException if the Java class is not annotated by {@code OwlIndividual}, or if
      * the value of the {@code OwlIndividual} annotation is {@code null}
      */
-    public static OwlClasses getOwlClass(Class<?> javaClass, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
-        Class<OwlIndividual> annotationClass = OwlIndividual.class;
-        String valueAttr = "value";
+    public static OwlClasses getOwlClass(final Class<?> javaClass,
+                                         final Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+        final Class<OwlIndividual> annotationClass = OwlIndividual.class;
+        final String valueAttr = "value";
 
-        AnnotatedElementPair aep = AnnotatedElementPair.forPair(javaClass, annotationClass);
+        final AnnotatedElementPair aep = AnnotatedElementPair.forPair(javaClass, annotationClass);
         if (!attributesMap.containsKey(aep)) {
-            throw new IllegalArgumentException(String.format("Could not find annotation %s on %s", annotationClass.getSimpleName(), javaClass.getSimpleName()));
+            throw new IllegalArgumentException(String.format("Could not find annotation %s on %s",
+                    annotationClass.getSimpleName(), javaClass.getSimpleName()));
         }
 
-        AnnotationAttributes attrs = attributesMap.get(aep);
-        OwlClasses owlClass = attrs.getEnum(valueAttr);
+        final AnnotationAttributes attrs = attributesMap.get(aep);
+        final OwlClasses owlClass = attrs.getEnum(valueAttr);
         if (owlClass == null) {
-            throw new IllegalArgumentException(String.format("Annotation %s missing required attribute %s on class %s", annotationClass.getSimpleName(), valueAttr, javaClass.getSimpleName()));
+            throw new IllegalArgumentException(String.format("Annotation %s missing required attribute %s on class %s",
+                    annotationClass.getSimpleName(), valueAttr, javaClass.getSimpleName()));
         }
 
         return owlClass;
@@ -302,8 +323,9 @@ public class OwlAnnotationProcessor {
      * @return the {@code OwlProperty} instance
      * @throws IllegalArgumentException if the supplied field is not annotated by {@code OwlProperty}
      */
-    public static OwlProperty getOwlProperty(Field javaField, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
-        AnnotatedElementPair aep = AnnotatedElementPair.forPair(javaField, OwlProperty.class);
+    public static OwlProperty getOwlProperty(final Field javaField,
+                                             final Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+        final AnnotatedElementPair aep = AnnotatedElementPair.forPair(javaField, OwlProperty.class);
 
         if (!attributesMap.containsKey(aep)) {
             throw new IllegalArgumentException(String.format("Annotation %s not found on field named %s, type %s.",
@@ -321,8 +343,9 @@ public class OwlAnnotationProcessor {
      * @return the {@code IndividualUri} instance
      * @throws IllegalArgumentException if the supplied field is not annotated by {@code IndividualUri}
      */
-    public static IndividualUri getIndividualUri(Field javaField, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
-        AnnotatedElementPair aep = AnnotatedElementPair.forPair(javaField, IndividualUri.class);
+    public static IndividualUri getIndividualUri(final Field javaField,
+                                                 final Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+        final AnnotatedElementPair aep = AnnotatedElementPair.forPair(javaField, IndividualUri.class);
 
         if (!attributesMap.containsKey(aep)) {
             throw new IllegalArgumentException(String.format("Annotation %s not found on field named %s, type %s.",
@@ -345,12 +368,13 @@ public class OwlAnnotationProcessor {
      * @throws IllegalArgumentException if no field of object {@code individual} is found to be annotated with
      * {@code IndividualUri}, or if more than one field is annotated with {@code IndividualUri}
      */
-    public static <T, U, R> R getIndividualId(Object outer, Object individual, Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
-        Class<OwlIndividual> owlIndividualClass = OwlIndividual.class;
-        Class<IndividualUri> individualUriClass = IndividualUri.class;
+    public static <T, U, R> R getIndividualId(final Object outer, final Object individual,
+                                              final Map<AnnotatedElementPair, AnnotationAttributes> attributesMap) {
+        final Class<OwlIndividual> owlIndividualClass = OwlIndividual.class;
+        final Class<IndividualUri> individualUriClass = IndividualUri.class;
 
         // Fields annotated with {@code IndividualUri}
-        List<Field> annotatedFields = new ArrayList<>();
+        final List<Field> annotatedFields = new ArrayList<>();
 
         // Select fields that are annotated with {@code IndividualUri} and add them to the list
         ReflectionUtils.doWithFields(individual.getClass(),
@@ -361,17 +385,27 @@ public class OwlAnnotationProcessor {
             // The enclosing class may not be an OwlIndividual, therefore it wouldn't have an IndividualUri
 
             if (!attributesMap.containsKey(AnnotatedElementPair.forPair(individual.getClass(), owlIndividualClass))) {
-                throw new IllegalArgumentException(String.format("Annotation %s not found on %s.  Is %s an OwlIndividual?", individualUriClass.getSimpleName(), individual.getClass().getSimpleName(), individual.getClass().getSimpleName()));
+                throw new IllegalArgumentException(String.format(
+                        "Annotation %s not found on %s.  Is %s an OwlIndividual?",
+                        individualUriClass.getSimpleName(), individual.getClass().getSimpleName(),
+                        individual.getClass().getSimpleName()));
             }
 
-            throw new IllegalArgumentException(String.format("Missing required annotation %s on %s, an OwlIndividual.", individualUriClass.getSimpleName(), individual.getClass().getSimpleName()));
+            throw new IllegalArgumentException(String.format("Missing required annotation %s on %s, an OwlIndividual.",
+                    individualUriClass.getSimpleName(), individual.getClass().getSimpleName()));
         }
 
         if (annotatedFields.size() > 1) {
-            throw new IllegalArgumentException(String.format("Found %s fields (%s) on %s annotated with %s.  Only one field may be annotated with %s", annotatedFields.size(), annotatedFields.stream().map(Field::getName).collect(Collectors.joining(", ")), individual.getClass().getSimpleName(), individualUriClass.getSimpleName(), individualUriClass.getSimpleName()));
+            throw new IllegalArgumentException(String.format(
+                    "Found %s fields (%s) on %s annotated with %s.  Only one field may be annotated with %s",
+                    annotatedFields.size(), annotatedFields.stream().map(Field::getName)
+                            .collect(Collectors.joining(", ")),
+                                individual.getClass().getSimpleName(),
+                                individualUriClass.getSimpleName(),
+                                individualUriClass.getSimpleName()));
         }
 
-        Field annotatedField = annotatedFields.get(0);
+        final Field annotatedField = annotatedFields.get(0);
         return (R)transformIndividualUri(outer, individual, annotatedField, attributesMap);
     }
 
@@ -381,7 +415,7 @@ public class OwlAnnotationProcessor {
      * @param candidate the candidate class, which may be a Collection
      * @return true if the candidate class is a Collection, false otherwise
      */
-    public static boolean isCollection(Class<?> candidate) {
+    public static boolean isCollection(final Class<?> candidate) {
         return Collection.class.isAssignableFrom(candidate);
     }
 
@@ -391,7 +425,7 @@ public class OwlAnnotationProcessor {
      * @param candidate the candidate class, which may be an array type
      * @return true if the candidate class is an array type, false otherwise
      */
-    public static boolean isArray(Class<?> candidate) {
+    public static boolean isArray(final Class<?> candidate) {
         return candidate.isArray();
     }
 
@@ -404,7 +438,7 @@ public class OwlAnnotationProcessor {
      * @param fieldValue the value for the field
      * @return a stream of objects contained in the Collection or Array, or a stream containing the supplied value
      */
-    public static Stream<?> unwrap(Field field, Object fieldValue) {
+    public static Stream<?> unwrap(final Field field, final Object fieldValue) {
         if (fieldValue == null) {
             return Stream.empty();
         }
@@ -429,13 +463,13 @@ public class OwlAnnotationProcessor {
      * @param candidateToIgnore a class that may be ignored
      * @return true if the class is to be ignored for the purposes of annotation processing
      */
-    static boolean ignored(Class<?> candidateToIgnore) {
+    static boolean ignored(final Class<?> candidateToIgnore) {
         // Enum classes has a null package?
         if (candidateToIgnore.getPackage() == null) {
             return true;
         }
 
-        Stream<String> packagePrefixToIgnore = Stream.of("java", "javax", "sun", "org.joda");
+        final Stream<String> packagePrefixToIgnore = Stream.of("java", "javax", "sun", "org.joda");
         if (packagePrefixToIgnore.anyMatch(prefix -> candidateToIgnore.getPackage().getName().startsWith(prefix))) {
             return true;
         }
@@ -447,7 +481,7 @@ public class OwlAnnotationProcessor {
         return false;
     }
 
-    private static boolean isPrimitiveArray(Class<?> candidate) {
+    private static boolean isPrimitiveArray(final Class<?> candidate) {
         return isArray(candidate) && candidate.getComponentType().isPrimitive();
     }
 }

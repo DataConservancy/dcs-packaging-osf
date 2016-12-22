@@ -58,7 +58,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class PackageGenerationApp {
 
-    @Argument(multiValued = false, usage="URL to the registration to be packaged" )
+    @Argument(multiValued = false, usage = "URL to the registration to be packaged" )
     private static String registrationUrl;
 
      /** Request for help/usage documentation */
@@ -82,42 +82,47 @@ public class PackageGenerationApp {
     private static File bagMetadataFile;
 
     /** Requests the current version number of the cli application. */
-	@Option(name = "-v", aliases = { "-version", "--version" }, usage = "print version information")
-	private boolean version = false;
+    @Option(name = "-v", aliases = { "-version", "--version" }, usage = "print version information")
+    private boolean version = false;
 
-
-    public static void main(String[] args) {
+    /**
+     *
+     * @param args
+     */
+    public static void main(final String[] args) {
 
         final PackageGenerationApp application = new PackageGenerationApp();
 
-		CmdLineParser parser = new CmdLineParser(application);
-		parser.setUsageWidth(80);
+        final CmdLineParser parser = new CmdLineParser(application);
+        parser.setUsageWidth(80);
 
-		try {
-			parser.parseArgument(args);
+        try {
+            parser.parseArgument(args);
 
-			/* Handle general options such as help, version */
-			if (application.help) {
-				parser.printUsage(System.err);
-				System.err.println();
-				System.exit(0);
-			} else if (application.version) {
-				System.err.println(PackageGenerationApp.class.getPackage()
-						.getImplementationVersion());
-				System.exit(0);
-			}
+            /* Handle general options such as help, version */
+            if (application.help) {
+                parser.printUsage(System.err);
+                System.err.println();
+                System.exit(0);
+            } else if (application.version) {
+                System.err.println(PackageGenerationApp.class.getPackage()
+                        .getImplementationVersion());
+                System.exit(0);
+            }
 
-			Properties props = System.getProperties();
+            final Properties props = System.getProperties();
 
             if (confFile.exists() && confFile.isFile()) {
                 props.setProperty("osf.client.conf", confFile.toURI().toString());
             } else {
-                System.err.println("Supplied OSF Client Configuration File " + confFile.getCanonicalPath() + " does not exist or is not a file.");
+                System.err.println("Supplied OSF Client Configuration File " + confFile.getCanonicalPath() +
+                        " does not exist or is not a file.");
                 System.exit(1);
             }
 
             if (!outputLocation.exists() || !outputLocation.isDirectory()) {
-                System.err.println("Supplied output file directory " + outputLocation.getCanonicalPath() + " does not exist or is not a directory.");
+                System.err.println("Supplied output file directory " + outputLocation.getCanonicalPath() +
+                        " does not exist or is not a directory.");
                 System.exit(1);
             }
 
@@ -127,11 +132,12 @@ public class PackageGenerationApp {
             }
 
             if (bagMetadataFile != null && (!bagMetadataFile.exists() || !bagMetadataFile.isFile())) {
-                System.err.println("Supplied bag metadata file " + bagMetadataFile.getCanonicalPath() + " does not exist or is not a file.");
+                System.err.println("Supplied bag metadata file " + bagMetadataFile.getCanonicalPath() +
+                        " does not exist or is not a file.");
                 System.exit(1);
             }
 
-            Response response = new OkHttpClient().newCall(
+            final Response response = new OkHttpClient().newCall(
                                                             new Request.Builder()
                                                                     .head()
                                                                         .url(registrationUrl)
@@ -139,38 +145,40 @@ public class PackageGenerationApp {
                                                           ).execute();
 
             if (response.code() != 200 ) {
-                System.err.println("There was an error executing '" + registrationUrl + "', response code " + response.code() + " reason: '" + response.message() + "'");
+                System.err.println("There was an error executing '" + registrationUrl + "', response code " +
+                        response.code() + " reason: '" + response.message() + "'");
                 System.err.print("Please be sure you are using a valid API URL to a node or registration, ");
                 System.err.println("and have properly configured authorization credentials, if necessary.");
                 System.exit(1);
             }
 
             if (!response.header("Content-Type").contains("json")) {
-                System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" + response.header("Content-Type") + "')");
+                System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" +
+                        response.header("Content-Type") + "')");
                 System.err.println("Please be sure you are using a valid API URL to a node or registration.");
                 System.exit(1);
             }
 
-			/* Run the package generation application proper */
-			application.run();
+            /* Run the package generation application proper */
+            application.run();
 
-		} catch (CmdLineException e) {
-			/*
-			 * This is an error in command line args, just print out usage data
-			 * and description of the error.
-			 */
-			System.err.println(e.getMessage());
-			parser.printUsage(System.err);
-			System.err.println();
-			System.exit(1);
-		} catch (Exception e) {
+        } catch (CmdLineException e) {
+            /*
+             * This is an error in command line args, just print out usage data
+             * and description of the error.
+             */
+            System.err.println(e.getMessage());
+            parser.printUsage(System.err);
+            System.err.println();
+            System.exit(1);
+        } catch (Exception e) {
             System.err.println(e.getMessage());
             System.exit(1);
         }
     }
 
 
-   	private void run() throws Exception {
+       private void run() throws Exception {
         final ClassPathXmlApplicationContext cxt =
                 new ClassPathXmlApplicationContext(
                     "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
@@ -211,23 +219,23 @@ public class PackageGenerationApp {
 
         // Prepare content provider using package graph
         // TODO - Does this work without the lambda-specified resolver used in OsfContentProviderTest?
-        OsfContentProvider contentProvider = new OsfContentProvider(packageGraph);
+        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph);
 
         // Load the metadata file
-        InputStream metadataStream = new FileInputStream(bagMetadataFile);
+        final InputStream metadataStream = new FileInputStream(bagMetadataFile);
 
         // Create the package in the default location with the supplied name.
         // No package generation parameters are supplied.
-        IpmPackager ipmPackager = new IpmPackager();
+        final IpmPackager ipmPackager = new IpmPackager();
         ipmPackager.setPackageName(packageName);
         ipmPackager.setPackageLocation(outputLocation.getPath());
-        Package pkg = ipmPackager.buildPackage(contentProvider, metadataStream, null);
+        final Package pkg = ipmPackager.buildPackage(contentProvider, metadataStream, null);
 
         // Now just write the package out to a file in the output location
         // this must agree with the package root directory name according to our
         // dataconservancy bagit profile
-        File packageFile = new File(outputLocation.getAbsolutePath(), packageName + ".tar.gz");
-        FileOutputStream out;
+        final File packageFile = new File(outputLocation.getAbsolutePath(), packageName + ".tar.gz");
+        final FileOutputStream out;
         try {
             out = new FileOutputStream(packageFile);
             IOUtils.copy(pkg.serialize(), out);

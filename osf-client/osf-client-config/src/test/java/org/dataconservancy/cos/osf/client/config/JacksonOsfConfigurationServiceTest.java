@@ -23,14 +23,18 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Tests for the Jackson-based configuration service.  Note that the same configuration file can contain
  * both the Waterbutler and OSF configurations in separate JSON objects.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class JacksonOsfConfigurationServiceTest {
 
     @Test
     public void testOsf() throws Exception {
-        JacksonOsfConfigurationService underTest = new JacksonOsfConfigurationService("org/dataconservancy/cos/osf/client/config/osf-client-jacksontest.json");
+        final JacksonOsfConfigurationService underTest =
+                new JacksonOsfConfigurationService(
+                        "org/dataconservancy/cos/osf/client/config/osf-client-jacksontest.json");
 
-        OsfClientConfiguration config = underTest.getConfiguration();
+        final OsfClientConfiguration config = underTest.getConfiguration();
         assertNotNull(config);
 
         assertEquals("192.168.99.100", config.getHost());
@@ -41,9 +45,10 @@ public class JacksonOsfConfigurationServiceTest {
 
     @Test
     public void testWb() throws Exception {
-        JacksonWbConfigurationService underTest = new JacksonWbConfigurationService("org/dataconservancy/cos/osf/client/config/osf-client-jacksontest.json");
+        final JacksonWbConfigurationService underTest = new JacksonWbConfigurationService(
+                "org/dataconservancy/cos/osf/client/config/osf-client-jacksontest.json");
 
-        WbClientConfiguration config = underTest.getConfiguration();
+        final WbClientConfiguration config = underTest.getConfiguration();
         assertNotNull(config);
 
         assertEquals("192.168.99.100", config.getHost());

@@ -22,13 +22,15 @@ import org.junit.Test;
 import org.springframework.core.annotation.AnnotationAttributes;
 
 import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests concerning the behavior of {@code AnnotatedElementPair}
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class AnnotatedElementPairTest {
 
@@ -40,19 +42,20 @@ public class AnnotatedElementPairTest {
     @Test
     public void testPairUniqueness() throws Exception {
         // Note that Fields with the same name from different classes are not equal.
-        Object foo = new Foo();
-        Object bar = new Bar();
-        Field fooId = Foo.class.getDeclaredField("id");
-        Field barId = Bar.class.getDeclaredField("id");
+        final Object foo = new Foo();
+        final Object bar = new Bar();
+        final Field fooId = Foo.class.getDeclaredField("id");
+        final Field barId = Bar.class.getDeclaredField("id");
         assertFalse(fooId.equals(barId));
 
         // Therefore, the AnnotatedElementPair for the two fields are not equal
-        AnnotatedElementPair fooPair = AnnotatedElementPair.forPair(fooId, IndividualUri.class);
-        AnnotatedElementPair barPair = AnnotatedElementPair.forPair(barId, IndividualUri.class);
+        final AnnotatedElementPair fooPair = AnnotatedElementPair.forPair(fooId, IndividualUri.class);
+        final AnnotatedElementPair barPair = AnnotatedElementPair.forPair(barId, IndividualUri.class);
         assertFalse(fooPair.equals(barPair));
 
         // For collecting AnnotatedElementPairs off of our test classes.
-        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> attributesMap = new AnnotatedElementPairMap<>();
+        final AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> attributesMap =
+                new AnnotatedElementPairMap<>();
 
         // Collect AnnotatedElementPairs off of the Foo instance.
         OwlAnnotationProcessor.getAnnotationsForInstance(foo, attributesMap);

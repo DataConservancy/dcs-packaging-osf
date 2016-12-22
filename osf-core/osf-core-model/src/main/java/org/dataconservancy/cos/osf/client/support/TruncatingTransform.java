@@ -23,6 +23,7 @@ import java.util.stream.Stream;
 /**
  * Truncates strings to the specified limit, splitting on horizontal whitespace characters
  *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  * @see java.util.regex.Pattern
  */
 public class TruncatingTransform implements Function<String, String> {
@@ -50,7 +51,7 @@ public class TruncatingTransform implements Function<String, String> {
      *
      * @param limit specified number of "words" returned by this transformer
      */
-    public TruncatingTransform(int limit) {
+    public TruncatingTransform(final int limit) {
         this.limit = limit;
     }
 
@@ -66,21 +67,21 @@ public class TruncatingTransform implements Function<String, String> {
      * @see java.util.regex.Pattern#split(CharSequence)
      */
     @Override
-    public String apply(String s) {
+    public String apply(final String s) {
         if (limit < 1) {
             return s;
         }
 
         if (s != null && s.trim().length() > 0) {
-            String[] parts = s.split("\\h");
+            final String[] parts = s.split("\\h");
 
             if (parts.length < limit) {
                 return s;
             }
 
-            AtomicInteger count = new AtomicInteger(0);
+            final AtomicInteger count = new AtomicInteger(0);
 
-            String toReturn = Stream.of(parts)
+            final String toReturn = Stream.of(parts)
                     .filter((part) -> count.incrementAndGet() < limit)
                     .collect(Collectors.joining(" "));
 

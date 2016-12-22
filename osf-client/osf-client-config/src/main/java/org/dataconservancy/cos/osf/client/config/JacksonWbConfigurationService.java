@@ -31,6 +31,7 @@ import java.net.URL;
  * </p>
  *
  * @see DefaultWbJacksonConfigurer
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class JacksonWbConfigurationService extends AbstractJacksonConfigurationService
         implements WbConfigurationService {
@@ -51,11 +52,20 @@ public class JacksonWbConfigurationService extends AbstractJacksonConfigurationS
         }
     }
 
-    public JacksonWbConfigurationService(String configurationResource) {
+    /**
+     *
+     * @param configurationResource
+     */
+    public JacksonWbConfigurationService(final String configurationResource) {
         super(configurationResource);
     }
 
-    public JacksonWbConfigurationService(String configurationResource, ObjectMapper mapper) {
+    /**
+     *
+     * @param configurationResource
+     * @param mapper
+     */
+    public JacksonWbConfigurationService(final String configurationResource, final ObjectMapper mapper) {
         super(configurationResource, mapper);
     }
 
@@ -67,11 +77,12 @@ public class JacksonWbConfigurationService extends AbstractJacksonConfigurationS
      *                          reading the resource.
      */
     public WbClientConfiguration getConfiguration() {
-        URL configUrl = getConfigurationResource(configurationResource);
+        final URL configUrl = getConfigurationResource(configurationResource);
 
         try {
-            JsonNode config = mapper.readTree(IOUtils.toString(configUrl, "UTF-8"));
-            return new DefaultWbJacksonConfigurer<WbClientConfiguration>().configure(config, mapper, WbClientConfiguration.class);
+            final JsonNode config = mapper.readTree(IOUtils.toString(configUrl, "UTF-8"));
+            return new DefaultWbJacksonConfigurer<WbClientConfiguration>()
+                    .configure(config, mapper, WbClientConfiguration.class);
         } catch (IOException e) {
             throw new RuntimeException(
                     String.format(ERR_READING_RESOURCE, configurationResource, e.getMessage()), e);

@@ -155,22 +155,49 @@ public class Comment {
      */
     private String page;
 
+    /**
+     * String identifying this comment.
+     *
+     * @return the identifier
+     */
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    /**
+     * String identifying this comment.
+     *
+     * @param id the string identifying this comment
+     */
+    public void setId(final String id) {
         this.id = id;
     }
 
+    /**
+     * The textual content of the comment.
+     *
+     * @return the content
+     */
     public String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    /**
+     * The textual content of the comment.
+     *
+     * @param content the content
+     */
+    public void setContent(final String content) {
         this.content = content;
     }
 
+    /**
+     * The date the comment was created, may be {@code null}.  The date will be formatted according to the format
+     * string {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}, and be in the UTC time zone.  See also
+     * {@link JodaSupport#DATE_TIME_FORMATTER}.
+     *
+     * @return the date the comment was created
+     */
     public String getDate_created() {
         if (this.date_created != null) {
             return this.date_created.toString(DATE_TIME_FORMATTER);
@@ -179,7 +206,13 @@ public class Comment {
         }
     }
 
-    public void setDate_created(String date_created) {
+    /**
+     * The date the comment was created.  A variety of date time format strings are supported.
+     *
+     * @param date_created the date creation string
+     * @throws RuntimeException if the supplied {@code date_created} is not recognized as a dateTime
+     */
+    public void setDate_created(final String date_created) {
         if (date_created != null) {
             this.date_created = JodaSupport.parseDateTime(date_created);
         } else {
@@ -187,6 +220,13 @@ public class Comment {
         }
     }
 
+    /**
+     * The date the comment was modified, may be {@code null}.  The date will be formatted according to the format
+     * string {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}, and be in the UTC time zone.  See also
+     * {@link JodaSupport#DATE_TIME_FORMATTER}.
+     *
+     * @return the date the comment was modified
+     */
     public String getDate_modified() {
         if (this.date_modified != null) {
             return this.date_modified.toString(DATE_TIME_FORMATTER);
@@ -195,87 +235,179 @@ public class Comment {
         }
     }
 
-    public void setDate_modified(String date_modified) {
+    /**
+     * The date the comment was created, may be {@code null}.  The date will be formatted according to the format
+     * string {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}, and be in the UTC time zone.  See also
+     * {@link JodaSupport#DATE_TIME_FORMATTER}.
+     *
+     * @param date_modified the date creation string
+     * @throws RuntimeException if the supplied {@code date_modified} is not recognized as a dateTime
+     */
+    public void setDate_modified(final String date_modified) {
         if (date_modified != null) {
             this.date_modified = JodaSupport.parseDateTime(date_modified);
-        } else {
-            date_modified = null;
         }
     }
 
+    /**
+     * If the comment has been edited
+     *
+     * @return true if the content was modified
+     */
     public boolean isModified() {
         return isModified;
     }
 
-    public void setModified(Boolean isModified) {
+    /**
+     * If the comment has been edited
+     *
+     * @param isModified if the content was modified
+     */
+    public void setModified(final Boolean isModified) {
         this.isModified = isModified;
     }
 
+    /**
+     * If the comment has been deleted
+     *
+     * @return true if the comment was deleted
+     */
     public boolean isDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(Boolean isDeleted) {
+    /**
+     * If the comment has been deleted
+     *
+     * @param isDeleted if the comment was deleted
+     */
+    public void setDeleted(final Boolean isDeleted) {
         this.isDeleted = isDeleted;
     }
 
+    /**
+     * If the comment is abuse
+     *
+     * @return true if the comment is abuse
+     */
     public boolean isIs_abuse() {
         return is_abuse;
     }
 
-    public void setIs_abuse(Boolean is_abuse) {
+    /**
+     * If the comment is abuse
+     *
+     * @param is_abuse if the comment is abuse
+     */
+    public void setIs_abuse(final Boolean is_abuse) {
         this.is_abuse = is_abuse;
     }
 
+    /**
+     * If there are child comments
+     *
+     * @return true if this comment has child comments
+     */
     public boolean isHas_children() {
         return has_children;
     }
 
-    public void setHas_children(Boolean has_children) {
+    /**
+     * If there are child comments
+     *
+     * @param has_children if this comment has child comments
+     */
+    public void setHas_children(final Boolean has_children) {
         this.has_children = has_children;
     }
 
+    /**
+     * If this comment can be edited
+     *
+     * @return true if the comment can be edited
+     */
     public boolean isCan_edit() {
         return can_edit;
     }
 
-    public void setCan_edit(Boolean can_edit) {
+    /**
+     * If this comment can be edited
+     *
+     * @param can_edit if the comment can be edited
+     */
+    public void setCan_edit(final Boolean can_edit) {
         this.can_edit = can_edit;
     }
 
+    /**
+     *
+     * @return
+     */
     public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
         return pageLinks;
     }
 
+    /**
+     *
+     * @param pageLinks
+     */
     @JsonProperty("links")
-    public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
         this.pageLinks = pageLinks;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<String, ?> getLinks() {
         return links;
     }
 
-    public void setLinks(Map<String, ?> links) {
+    /**
+     *
+     * @param links
+     */
+    public void setLinks(final Map<String, ?> links) {
         this.links = links;
     }
 
+    /**
+     *
+     * @return
+     */
     public Node getNode() {
         return node;
     }
 
-    public void setNode(Node node) {
+    /**
+     *
+     * @param node
+     */
+    public void setNode(final Node node) {
         this.node = node;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getReplies() {
         return replies;
     }
 
-    public void setReplies(String replies) {
+    /**
+     *
+     * @param replies
+     */
+    public void setReplies(final String replies) {
         this.replies = replies;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTarget() {
         return target;
     }
@@ -288,11 +420,15 @@ public class Comment {
      *
      * @param target the URI of the thing being commented on
      */
-    public void setTarget(String target) {
+    public void setTarget(final String target) {
         this.target = target;
         setTargetUri(URI.create(target));
     }
 
+    /**
+     *
+     * @return
+     */
     public URI getTargetUri() {
         return targetUri;
     }
@@ -306,39 +442,71 @@ public class Comment {
      *
      * @param targetUri the URI of the thing being commented on
      */
-    public void setTargetUri(URI targetUri) {
+    public void setTargetUri(final URI targetUri) {
         this.targetUri = targetUri;
     }
 
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    /**
+     *
+     * @param user
+     */
+    public void setUser(final User user) {
         this.user = user;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean is_ham() {
         return is_ham;
     }
 
-    public void setIs_ham(boolean is_ham) {
+    /**
+     *
+     * @param is_ham
+     */
+    public void setIs_ham(final boolean is_ham) {
         this.is_ham = is_ham;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isHas_report() {
         return has_report;
     }
 
-    public void setHas_report(boolean has_report) {
+    /**
+     *
+     * @param has_report
+     */
+    public void setHas_report(final boolean has_report) {
         this.has_report = has_report;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPage() {
         return page;
     }
 
-    public void setPage(String page) {
+    /**
+     *
+     * @param page
+     */
+    public void setPage(final String page) {
         this.page = page;
     }
 }

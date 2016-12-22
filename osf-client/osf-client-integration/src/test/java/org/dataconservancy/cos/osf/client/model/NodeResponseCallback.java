@@ -36,22 +36,24 @@ import static org.mockserver.model.HttpStatusCode.OK_200;
  * Resolves and returns the content identified by the classpath resource contained in the
  * {@link NodeTest#X_RESPONSE_RESOURCE} header.  If the resource cannot be resolved, an {@code AssertionError} is
  * thrown.  If the {@code X_RESPONSE_RESOURCE} header is missing, an assertion error is also thrown.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class NodeResponseCallback implements ExpectationCallback {
 
     private static final Logger LOG = LoggerFactory.getLogger(NodeResponseCallback.class);
 
     @Override
-    public HttpResponse handle(HttpRequest req) {
+    public HttpResponse handle(final HttpRequest req) {
 
         if (!req.containsHeader(X_RESPONSE_RESOURCE)) {
             fail("Use of the " + NodeResponseCallback.class.getName() + " class requires the use of the " +
                     X_RESPONSE_RESOURCE + " HTTP header, but this header was not found in the request.");
         }
 
-        String resource = req.getFirstHeader(X_RESPONSE_RESOURCE);
+        final String resource = req.getFirstHeader(X_RESPONSE_RESOURCE);
         LOG.trace("Retrieving classpath resource: {}", resource);
-        byte[] responseContent = getResource(resource);
+        final byte[] responseContent = getResource(resource);
         assertNotNull("No classpath resource found for '" + resource + "'", responseContent);
         assertTrue("No classpath resource found for '" + resource + "', or resource is empty",
                 responseContent.length > 0);
@@ -62,8 +64,8 @@ public class NodeResponseCallback implements ExpectationCallback {
                 .withBody(responseContent);
     }
 
-    private byte[] getResource(String resource) {
-        URL resourceUrl = this.getClass().getResource(resource);
+    private byte[] getResource(final String resource) {
+        final URL resourceUrl = this.getClass().getResource(resource);
         if (resourceUrl == null) {
             return null;
         }

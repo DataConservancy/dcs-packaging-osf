@@ -35,6 +35,8 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 
 /**
  * Encapsulates an event in the OSF.  Events in the OSF are expressed as the JSON-API type "logs".
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @Type("logs")
 @OwlIndividual(OwlClasses.OSF_EVENT)
@@ -68,22 +70,42 @@ public class Event {
 
     private Map<String, ?> params;
 
+    /**
+     *
+     * @return
+     */
     public String getAction() {
         return action;
     }
 
-    public void setAction(String action) {
+    /**
+     *
+     * @param action
+     */
+    public void setAction(final String action) {
         this.action = action;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDate() {
         if (this.date != null) {
             return date.toString(DATE_TIME_FORMATTER);
@@ -91,47 +113,91 @@ public class Event {
         return null;
     }
 
-    public void setDate(String date) {
+    /**
+     *
+     * @param date
+     */
+    public void setDate(final String date) {
         this.date = JodaSupport.parseDateTime(date);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNode() {
         return node;
     }
 
-    public void setNode(String node) {
+    /**
+     *
+     * @param node
+     */
+    public void setNode(final String node) {
         this.node = node;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getOriginal_node() {
         return original_node;
     }
 
-    public void setOriginal_node(String original_node) {
+    /**
+     *
+     * @param original_node
+     */
+    public void setOriginal_node(final String original_node) {
         this.original_node = original_node;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getContributors() {
         return contributors;
     }
 
-    public void setContributors(String contributors) {
+    /**
+     *
+     * @param contributors
+     */
+    public void setContributors(final String contributors) {
         this.contributors = contributors;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    /**
+     *
+     * @param user
+     */
+    public void setUser(final String user) {
         this.user = user;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<String, ?> getParams() {
         return params;
     }
 
-    public void setParams(Map<String, ?> params) {
+    /**
+     *
+     * @param params
+     */
+    public void setParams(final Map<String, ?> params) {
         this.params = params;
     }
 }

@@ -24,6 +24,8 @@ import java.util.List;
 /**
  * Wraps an OkHttpClient providing getters and setters for Spring and any other frameworks that follow the JavaBean
  * standard.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class BeanAccessibleOkHttpClient extends OkHttpClient {
 
@@ -43,7 +45,7 @@ public class BeanAccessibleOkHttpClient extends OkHttpClient {
      *
      * @param interceptors interceptors to set on the client
      */
-    public void setInterceptors(List<Interceptor> interceptors) {
+    public void setInterceptors(final List<Interceptor> interceptors) {
         this.interceptors().clear();
         for (Interceptor toAdd : interceptors) {
             this.interceptors().add(toAdd);

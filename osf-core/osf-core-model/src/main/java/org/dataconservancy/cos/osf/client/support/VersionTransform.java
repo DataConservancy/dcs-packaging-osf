@@ -23,13 +23,15 @@ import java.util.function.Function;
 
 /**
  * Extracts a key named "version" from the supplied map.  If the key is not present, {@code null} is returned.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class VersionTransform implements Function<Map<String, ?>, Integer> {
 
     private static final Logger LOG = LoggerFactory.getLogger(VersionTransform.class);
 
     @Override
-    public Integer apply(Map<String, ?> map) {
+    public Integer apply(final Map<String, ?> map) {
         if (map.containsKey("version")) {
             try {
                 final Object val = map.get("version");
@@ -41,7 +43,7 @@ public class VersionTransform implements Function<Map<String, ?>, Integer> {
                 if (val != null && val instanceof Integer) {
                     return (Integer) val;
                 }
-            } catch (NumberFormatException|ClassCastException e) {
+            } catch (NumberFormatException | ClassCastException e) {
                 LOG.warn("Unable to parse the value of 'version' key into an integer.  " +
                         "Value was: '" + map.get("version") + "': " + e.getMessage(), e);
             }

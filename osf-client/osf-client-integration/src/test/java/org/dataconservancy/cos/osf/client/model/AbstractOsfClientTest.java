@@ -17,20 +17,22 @@ package org.dataconservancy.cos.osf.client.model;
 
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
 import org.dataconservancy.cos.osf.client.service.TestingOsfServiceFactory;
-import org.junit.Before;
 
 import java.net.URI;
 
 /**
  * Test fixture providing access to an {@link TestingOsfServiceFactory} and its configuration, to be used by tests
  * when accessing real or mocked instances of the OSF v2 API.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public abstract class AbstractOsfClientTest {
 
     /**
      * The default configuration of the OSF client, represented as a classpath resource.
      */
-    protected static final String DEFAULT_OSF_CONFIGURATION_RESOURCE = "org/dataconservancy/cos/osf/client/config/osf-client-local.json";
+    protected static final String DEFAULT_OSF_CONFIGURATION_RESOURCE =
+            "org/dataconservancy/cos/osf/client/config/osf-client-local.json";
 
     /**
      * Instance of the {@link TestingOsfServiceFactory} provided by this test fixture

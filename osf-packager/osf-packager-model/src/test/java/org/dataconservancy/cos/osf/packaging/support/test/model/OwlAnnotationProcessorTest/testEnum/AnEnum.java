@@ -19,7 +19,7 @@ import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
- * Created by esm on 6/9/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public enum AnEnum {
 
@@ -31,7 +31,7 @@ public enum AnEnum {
 
     private final String value;
 
-    private AnEnum(String value) {
+    private AnEnum(final String value) {
         this.value = value;
     }
 

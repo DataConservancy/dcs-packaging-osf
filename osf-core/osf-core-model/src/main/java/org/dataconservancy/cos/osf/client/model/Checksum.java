@@ -16,7 +16,7 @@
 package org.dataconservancy.cos.osf.client.model;
 
 /**
- * Created by esm on 5/2/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class Checksum {
 
@@ -25,19 +25,35 @@ public class Checksum {
         MD5
     }
 
-    private Algorithm algorithm;
+    private final Algorithm algorithm;
 
-    private String value;
+    private final String value;
 
-    public Checksum(Algorithm algorithm, String value) {
+    /**
+     * Constructs a new checksum composed of a checksum algorithm and a checksum value.
+     *
+     * @param algorithm the algorithm used to calculate the {@code value}
+     * @param value the checksum value
+     */
+    public Checksum(final Algorithm algorithm, final String value) {
         this.algorithm = algorithm;
         this.value = value;
     }
 
+    /**
+     * The algorithm used to calculate the {@link #getValue() value}.
+     *
+     * @return the algorithm
+     */
     public Algorithm getAlgorithm() {
         return algorithm;
     }
 
+    /**
+     * The checksum value.
+     *
+     * @return the checksum value
+     */
     public String getValue() {
         return value;
     }

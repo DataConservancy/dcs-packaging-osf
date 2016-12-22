@@ -30,6 +30,8 @@ import java.util.function.Function;
  * Annotates a field which will be mapped to an OWL property.  The subject of the property will be the enclosing
  * {@code @OwlIndividual}, and the object of the property will be the value of the annotated field (subject to any
  * transformation, described below).
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

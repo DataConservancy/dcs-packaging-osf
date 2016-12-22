@@ -25,17 +25,19 @@ import org.junit.Test;
 import java.io.IOException;
 import java.util.Collections;
 
-import static org.junit.Assert.*;
+import static junit.framework.TestCase.assertNotSame;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
 /**
- * Created by esm on 10/17/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class BeanAccessibleOkHttpClientTest {
 
     @Test
     public void testSetInterceptorsClearsExistingInterceptors() throws Exception {
-        BeanAccessibleOkHttpClient underTest = new BeanAccessibleOkHttpClient();
-        MockInterceptor initialInterceptor = new MockInterceptor();
+        final BeanAccessibleOkHttpClient underTest = new BeanAccessibleOkHttpClient();
+        final MockInterceptor initialInterceptor = new MockInterceptor();
 
         // Set an interceptor on the client
         underTest.setInterceptors(Collections.singletonList(initialInterceptor));
@@ -45,7 +47,7 @@ public class BeanAccessibleOkHttpClientTest {
         // When we call setInterceptors, the list of interceptors managed by
         // BeanAccessibleOkHttpClient should be cleared, and it should contain our new instance
 
-        MockInterceptor subsequentInterceptor = new MockInterceptor();
+        final MockInterceptor subsequentInterceptor = new MockInterceptor();
         assertNotSame(initialInterceptor, subsequentInterceptor);  // sanity
         underTest.setInterceptors(Collections.singletonList(subsequentInterceptor));
         assertEquals(1, underTest.getInterceptors().size());
@@ -55,7 +57,7 @@ public class BeanAccessibleOkHttpClientTest {
     private class MockInterceptor implements Interceptor {
 
         @Override
-        public Response intercept(Chain chain) throws IOException {
+        public Response intercept(final Chain chain) throws IOException {
             return null;
         }
     }

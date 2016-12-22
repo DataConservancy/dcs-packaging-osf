@@ -23,7 +23,9 @@ import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 import java.util.List;
 
-
+/**
+ * @author Elliot Metsger (emetsger@jhu.edu)
+ */
 public class Container extends AbstractContainer {
 
     @IndividualUri
@@ -40,7 +42,7 @@ public class Container extends AbstractContainer {
         return children;
     }
 
-    public void setChildren(List<Child> children) {
+    public void setChildren(final List<Child> children) {
         this.children = children;
     }
 }

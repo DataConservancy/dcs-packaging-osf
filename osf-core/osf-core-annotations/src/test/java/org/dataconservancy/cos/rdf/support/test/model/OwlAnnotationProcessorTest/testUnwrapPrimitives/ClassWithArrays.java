@@ -16,10 +16,15 @@
 package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testUnwrapPrimitives;
 
 /**
- * Created by esm on 6/28/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
+@SuppressWarnings("checkstyle:hideutilityclassconstructor")
 public class ClassWithArrays {
 
    public static int[] array_of_ints = new int[] { 0, 1, 2 };
+
+    public ClassWithArrays() {
+
+    }
 
 }

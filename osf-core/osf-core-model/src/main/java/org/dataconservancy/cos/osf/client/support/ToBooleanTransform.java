@@ -18,11 +18,11 @@ package org.dataconservancy.cos.osf.client.support;
 import java.util.function.Function;
 
 /**
- * Created by esm on 6/3/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ToBooleanTransform implements Function<String, Boolean> {
     @Override
-    public Boolean apply(String s) {
+    public Boolean apply(final String s) {
         return Boolean.parseBoolean(s);
     }
 }

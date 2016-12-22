@@ -35,11 +35,13 @@ import java.io.IOException;
  *   }
  * }
  * </pre>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class DefaultOsfJacksonConfigurer<T> implements JacksonConfigurer<T> {
 
     @Override
-    public T configure(JsonNode configRoot, ObjectMapper mapper, Class<T> configurationClass) {
+    public T configure(final JsonNode configRoot, final ObjectMapper mapper, final Class<T> configurationClass) {
         try {
             return mapper.treeToValue(configRoot.get("osf").get("v2"), configurationClass);
         } catch (IOException e) {

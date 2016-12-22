@@ -32,6 +32,7 @@ import java.util.Map;
 
 import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
 
+@SuppressWarnings("checkstyle:linelength")
 /**
  * Responsible for creating a package graph from OSF domain objects.
  * <p>
@@ -61,7 +62,7 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
  *
  * Registration osfRegistration = retrieveRegistration("abcde");  // implementation elided for brevity
  *
- * // Add the registration to the graph.  
+ * // Add the registration to the graph.
  * // Under the hood the Registration object will be converted to RDF and added to the underlying model
  *
  * &lt;Map&gt;String, Individual&lt; individuals = graph.add(osfRegistration);
@@ -69,6 +70,8 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
  * // The OWL individuals that are added to the graph are returned, and keyed by their identifier.  Note that the
  * // Map may contain anonymous OWL individuals.
  * </pre>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OsfPackageGraph extends PackageGraph {
 
@@ -103,7 +106,7 @@ public class OsfPackageGraph extends PackageGraph {
         }
 
         @Override
-        public boolean test(Statement statement) {
+        public boolean test(final Statement statement) {
             // if the subject of the statement has an 'rdf:type' in the OSF namespace, we want to keep the statement.
             // if the object of the statement is an anonymous 'rdf:type', then we do not want to keep it.
 
@@ -116,7 +119,7 @@ public class OsfPackageGraph extends PackageGraph {
      *
      * @param ontMgr the underlying ontology manager used to create and store RDF according to the OSF ontology
      */
-    public OsfPackageGraph(OntologyManager ontMgr) {
+    public OsfPackageGraph(final OntologyManager ontMgr) {
         super(ontMgr);
         this.processor = new AnnotationsProcessor(this);
     }
@@ -127,7 +130,7 @@ public class OsfPackageGraph extends PackageGraph {
      * @param registration the OSF Registration
      * @return a {@code Map} containing the URIs and OWL individuals added to the graph
      */
-    public Map<String, Individual> add(Registration registration) {
+    public Map<String, Individual> add(final Registration registration) {
         return processor.process(registration);
     }
 
@@ -137,7 +140,7 @@ public class OsfPackageGraph extends PackageGraph {
      * @param user the OSF user
      * @return a {@code Map} containing the URIs and OWL individuals added to the graph
      */
-    public Map<String, Individual> add(User user) {
+    public Map<String, Individual> add(final User user) {
         return processor.process(user);
     }
 
@@ -157,7 +160,7 @@ public class OsfPackageGraph extends PackageGraph {
      * @param statement the statement which may contain an rdf:type predicate with an anonymous node as an object
      * @return true if the statement contains an rdf:type predicate with an anonymous node as the object
      */
-    private boolean isAnonymousRdfType(Statement statement) {
+    private boolean isAnonymousRdfType(final Statement statement) {
         if (statement.getPredicate().equals(asProperty(Rdf.Ns.RDF + "type"))) {
             if (statement.getObject().isAnon()) {
                 return true;
@@ -186,15 +189,17 @@ public class OsfPackageGraph extends PackageGraph {
      *                  namespace
      * @return true if the statement's subject has an {@code rdf:type} from the OSF namespace
      */
-    private boolean hasOsfType(Statement statement) {
-        StringBuilder msg = new StringBuilder();
-        msg.append(String.format("Testing Statement: %s %s %s\n", statement.getSubject(), statement.getPredicate(), statement.getObject()));
-        msg.append(String.format("Does the subject %s have an rdf:type in the OSF namespace?\n", statement.getSubject()));
-        NodeIterator itr = ontMgr.getOntModel()
+    private boolean hasOsfType(final Statement statement) {
+        final StringBuilder msg = new StringBuilder();
+        msg.append(String.format("Testing Statement: %s %s %s\n",
+                statement.getSubject(), statement.getPredicate(), statement.getObject()));
+        msg.append(String.format("Does the subject %s have an rdf:type in the OSF namespace?\n",
+                statement.getSubject()));
+        final NodeIterator itr = ontMgr.getOntModel()
                 .listObjectsOfProperty(statement.getSubject(), asProperty(Rdf.Ns.RDF + "type"));
         boolean result = false;
         while (itr.hasNext()) {
-            RDFNode objectNode = itr.nextNode();
+            final RDFNode objectNode = itr.nextNode();
             msg.append(String.format("  - Testing rdf:type: %s\n", objectNode));
             if (!objectNode.isAnon()) {
                 result = objectNode.asResource().getURI().startsWith(Rdf.Ns.OSF);

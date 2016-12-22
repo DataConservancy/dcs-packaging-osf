@@ -22,6 +22,7 @@ import java.util.function.Function;
  * {@link Function#identity()} cannot be the target of an annotation attribute.
  *
  * @param <T> the type of the supplied and returned argument
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public final class IdentityTransform<T> implements Function<T, T> {
 
@@ -36,7 +37,7 @@ public final class IdentityTransform<T> implements Function<T, T> {
      * @return the supplied object, {@code t}
      */
     @Override
-    public T apply(T t) {
+    public T apply(final T t) {
         return Function.<T>identity().apply(t);
     }
 

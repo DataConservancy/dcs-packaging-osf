@@ -23,16 +23,12 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.github.jasminb.jsonapi.ResourceList;
-import com.github.jasminb.jsonapi.annotations.Type;
-import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import org.apache.commons.io.IOUtils;
-import org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.File;
@@ -42,10 +38,7 @@ import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.dataconservancy.cos.osf.client.service.RetrofitOsfServiceFactory;
 import org.dataconservancy.cos.osf.client.service.TestingOsfServiceFactory;
-import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
-import org.dataconservancy.cos.osf.client.support.LoggingInterceptor;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -99,13 +92,13 @@ public class TestClient {
     @Test
     public void testNodeApi() throws Exception {
 
-        OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
+        final OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
 
         //HashMap<String, String> params = new HashMap<>();
 //        params.put("filter[public]", "true");
-        Call<List<Node>> listCall = osfSvc.nodeList();
+        final Call<List<Node>> listCall = osfSvc.nodeList();
         assertNotNull(listCall);
-        Response<List<Node>> res = listCall.execute();
+        final Response<List<Node>> res = listCall.execute();
         assertNotNull(res);
 
         List<Node> nodes = null;
@@ -121,27 +114,30 @@ public class TestClient {
         assertNotNull(nodes);
 
         nodes.stream().forEach(n -> {
-            System.out.println("Node: id " + n.getId() + " category " + n.getCategory() + "; title " + n.getTitle() + "; public " + n.isPublic() + "; Rootpath: " + n.getRoot());
+            System.out.println("Node: id " + n.getId() + " category " + n.getCategory() + "; title " + n.getTitle() +
+                    "; public " + n.isPublic() + "; Rootpath: " + n.getRoot());
             System.out.println("Links: " + n.getPageLinks());
         });
 
         //String nodeWithFilesId = "v8x57";  //temp test id
-        String nodeWithFilesId = "fu8zc"; //temp test id
-        Node withFiles = osfSvc.node(nodeWithFilesId).execute().body();
+        final String nodeWithFilesId = "fu8zc"; //temp test id
+        final Node withFiles = osfSvc.node(nodeWithFilesId).execute().body();
         assertNotNull(withFiles);
         assertNotNull(withFiles.getFiles());
 
-        withFiles.getFiles().stream().forEach(provider -> System.err.println("Provider (" + provider.getNode() + "): " + provider.getProvider() + " path: " + provider.getPath()));
+        withFiles.getFiles().stream().forEach(provider -> System.err.println("Provider (" + provider.getNode() + "): "
+                + provider.getProvider() + " path: " + provider.getPath()));
 
-        File osfStorageProvider = withFiles.getFiles().get(0);
-        File osfStorage = osfStorageProvider.getFiles().get(0);
+        final File osfStorageProvider = withFiles.getFiles().get(0);
+        final File osfStorage = osfStorageProvider.getFiles().get(0);
 
         assertNotNull(osfStorage);
         assertNotNull(osfStorage.getFiles());
-        osfStorage.getFiles().stream().forEach(file -> System.err.println("File (" + file.getName() + "): " + file.getProvider()
+        osfStorage.getFiles().stream().forEach(file -> System.err.println("File (" + file.getName() + "): " +
+                file.getProvider()
                 + " path: " + file.getPath()));
 
-        List<Contributor> contributors = withFiles.getContributors();
+        final List<Contributor> contributors = withFiles.getContributors();
 
         assertNotNull(contributors);
         assertTrue(contributors.size() > 0);
@@ -149,13 +145,13 @@ public class TestClient {
         contributors.stream().forEach(contrib -> System.err.println("Contributor - " + contrib.getId()));
 
         //users
-        Call<List<User>> userListCall = osfSvc.userList();
+        final Call<List<User>> userListCall = osfSvc.userList();
         assertNotNull(userListCall);
-        Response<List<User>> usr = userListCall.execute();
+        final Response<List<User>> usr = userListCall.execute();
         assertNotNull(usr);
 
-        String userId = "km4wh"; //temp test id
-        User testUser = osfSvc.user(userId).execute().body();
+        final String userId = "km4wh"; //temp test id
+        final User testUser = osfSvc.user(userId).execute().body();
         assertNotNull(testUser);
         assertNotNull(testUser.getFull_name());
         System.err.println(testUser.getFull_name());
@@ -167,23 +163,24 @@ public class TestClient {
             System.out.println("Requesting: " + chain.request().urlString());
             return chain.proceed(chain.request());
         });
-        OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
-        ResourceList<Node> nodesPageOne = osfSvc.paginatedNodeList().execute().body();
+        final OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
+        final ResourceList<Node> nodesPageOne = osfSvc.paginatedNodeList().execute().body();
         assertNotNull(nodesPageOne);
         assertEquals(10, nodesPageOne.size());
         assertNotNull(nodesPageOne.getNext());
 
-        ResourceList<Node> nodesPageTwo = osfSvc.paginatedNodeList(nodesPageOne.getNext()).execute().body();
+        final ResourceList<Node> nodesPageTwo = osfSvc.paginatedNodeList(nodesPageOne.getNext()).execute().body();
         assertNotNull(nodesPageTwo);
         assertEquals(3, nodesPageTwo.size());
     }
 
     @Test
     public void testDownload() throws Exception {
-        String binaryUrl = "http://192.168.99.100:7777/v1/resources/ts6h8/providers/osfstorage/57435501d3a5520045b18098";
-        OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
+        final String binaryUrl = "http://192.168.99.100:7777/v1/resources/ts6h8/providers/osfstorage/" +
+                "57435501d3a5520045b18098";
+        final OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
 
-        byte[] content = IOUtils.toByteArray(osfSvc.stream(binaryUrl).execute().body().byteStream());
+        final byte[] content = IOUtils.toByteArray(osfSvc.stream(binaryUrl).execute().body().byteStream());
 
         assertNotNull(content);
         assertEquals(1514, content.length);
@@ -192,46 +189,47 @@ public class TestClient {
     @Test
     public void testRegistrationApi() throws Exception {
 
-    	// Create object mapper
-        ObjectMapper objectMapper = new ObjectMapper();
-        OkHttpClient client = new OkHttpClient();
+        // Create object mapper
+        final ObjectMapper objectMapper = new ObjectMapper();
+        final OkHttpClient client = new OkHttpClient();
 
-        ResourceConverter converter = new ResourceConverter(objectMapper, Registration.class, File.class, 
-        													FileVersion.class, Contributor.class, User.class, Node.class);
+        final ResourceConverter converter = new ResourceConverter(objectMapper, Registration.class, File.class,
+                                                            FileVersion.class, Contributor.class, User.class,
+                                                            Node.class);
         converter.setGlobalResolver(relUrl -> {
             System.err.println("Resolving " + relUrl);
-            com.squareup.okhttp.Call req = client.newCall(new Request.Builder().url(relUrl).build());
+            final com.squareup.okhttp.Call req = client.newCall(new Request.Builder().url(relUrl).build());
             try {
-                byte[] bytes = req.execute().body().bytes();
+                final byte[] bytes = req.execute().body().bytes();
                 System.err.println(IOUtils.toString(bytes, "UTF-8"));
                 return bytes;
             } catch (IOException e) {
                 throw new RuntimeException(e.getMessage(), e);
             }
         });
-        JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
+        final JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
 
-        Retrofit retrofit = new Retrofit.Builder()
+        final Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl.toString())
                 .addConverterFactory(converterFactory)
                 .client(client)
                 .build();
 
-        OsfService osfSvc = retrofit.create(OsfService.class);
+        final OsfService osfSvc = retrofit.create(OsfService.class);
 
-        HashMap<String, String> params = new HashMap<>();
+        final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        Call<List<Registration>> listCall = osfSvc.registrationList(params);
+        final Call<List<Registration>> listCall = osfSvc.registrationList(params);
         assertNotNull(listCall);
-        Response<List<Registration>> res = listCall.execute();
+        final Response<List<Registration>> res = listCall.execute();
         assertNotNull(res);
-        
+
         List<Registration> registrations = null;
         if (!res.isSuccess()) {
             assertNotNull(res.errorBody());
             System.err.println(res.errorBody().string());
         } else {
-        	registrations = res.body();
+            registrations = res.body();
             assertNotNull(registrations);
             assertFalse(registrations.isEmpty());
         }
@@ -239,67 +237,69 @@ public class TestClient {
         assertNotNull(registrations);
 
         registrations.stream().forEach(n -> {
-            System.out.println("Registrations: id " + n.getId() + " category " + n.getCategory() + "; title " + n.getTitle() + "; public " + n.isPublic() + "; Rootpath: "  + n.getRoot());
+            System.out.println("Registrations: id " + n.getId() + " category " + n.getCategory() + "; title " +
+                    n.getTitle() + "; public " + n.isPublic() + "; Rootpath: "  + n.getRoot());
         });
-               
-        String registrationId = "v28mf"; //temp test id
-        Registration testreg = osfSvc.registration(registrationId).execute().body();
+
+        final String registrationId = "v28mf"; //temp test id
+        final Registration testreg = osfSvc.registration(registrationId).execute().body();
         assertNotNull(testreg);
         assertNotNull(testreg.getChildren());
-       
-        testreg.getChildren().stream().forEach(child -> System.err.println("ChildReg (" + child.getId() + "): DateCreated: " + child.getDate_created() 
-        										+ " root: " + child.getRoot() + " title:" + child.getTitle()));
 
-        Map<String,?> links = testreg.getLinks();
-        
+        testreg.getChildren().stream().forEach(child -> System.err.println("ChildReg (" + child.getId() + "): " +
+                "DateCreated: " + child.getDate_created() + " root: " + child.getRoot() + " title:" +
+                child.getTitle()));
+
+        final Map<String,?> links = testreg.getLinks();
+
         assertNotNull(links);
-        assertTrue(links.size()>0);
-               
+        assertTrue(links.size() > 0);
+
     }
-    
+
 
     @Test
     public void testRegistrationIdList() throws Exception {
 
-    	// Create object mapper
-        ObjectMapper objectMapper = new ObjectMapper();
-        OkHttpClient client = new OkHttpClient();
+        // Create object mapper
+        final ObjectMapper objectMapper = new ObjectMapper();
+        final OkHttpClient client = new OkHttpClient();
 
-        ResourceConverter converter = new ResourceConverter(objectMapper, RegistrationId.class);
+        final ResourceConverter converter = new ResourceConverter(objectMapper, RegistrationId.class);
 
-        JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
+        final JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
 
-        Retrofit retrofit = new Retrofit.Builder()
+        final Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(baseUrl.toString())
                 .addConverterFactory(converterFactory)
                 .client(client)
                 .build();
 
-        OsfService osfSvc = retrofit.create(OsfService.class);
+        final OsfService osfSvc = retrofit.create(OsfService.class);
 
-        HashMap<String, String> params = new HashMap<>();
+        final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        Call<List<RegistrationId>> listCall = osfSvc.registrationIdList(params);
+        final Call<List<RegistrationId>> listCall = osfSvc.registrationIdList(params);
         assertNotNull(listCall);
-        Response<List<RegistrationId>> res = listCall.execute();
+        final Response<List<RegistrationId>> res = listCall.execute();
         assertNotNull(res);
-        
+
         List<RegistrationId> registrations = null;
         if (!res.isSuccess()) {
             assertNotNull(res.errorBody());
             System.err.println(res.errorBody().string());
         } else {
-        	registrations = res.body();
+            registrations = res.body();
         }
 
         assertNotNull(registrations);
-        assertTrue (registrations.size()>0);
+        assertTrue (registrations.size() > 0);
 
         registrations.stream().forEach(n -> {
             System.out.println("Registrations: id " + n.getId());
         });
-                         
+
     }
-    
+
 
 }

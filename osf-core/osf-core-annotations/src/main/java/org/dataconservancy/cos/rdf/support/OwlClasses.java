@@ -18,6 +18,8 @@ package org.dataconservancy.cos.rdf.support;
 /**
  * Supported OSF OWL classes.  Java classes annotated with {@code org.dataconservancy.cos.rdf.annotations.OwlIndividual}
  * may be mapped to the OWL classes enumerated here.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public enum OwlClasses {
 
@@ -56,12 +58,12 @@ public enum OwlClasses {
     OSF_COMMENT (Rdf.Ns.OSF, "Comment"),
 
     OSF_COMMENT_TARGET (Rdf.Ns.OSF, "CommentTarget");
-    
-    private String ns;
 
-    private String localname;
+    private final String ns;
 
-    private OwlClasses(String ns, String localname) {
+    private final String localname;
+
+    private OwlClasses(final String ns, final String localname) {
         this.ns = ns;
         this.localname = localname;
     }

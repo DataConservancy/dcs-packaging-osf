@@ -28,6 +28,8 @@ import java.util.function.BiFunction;
 /**
  * Annotates a field to be used as a resource identifier for an OWL individual.  Each Java class annotated as a
  * {@link OwlIndividual} is expected to have exactly one field annotated with {@code IndividualUri}.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

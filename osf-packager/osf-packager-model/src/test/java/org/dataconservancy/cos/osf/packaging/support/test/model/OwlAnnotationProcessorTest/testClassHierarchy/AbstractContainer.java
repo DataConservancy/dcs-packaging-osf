@@ -15,10 +15,8 @@
  */
 package org.dataconservancy.cos.osf.packaging.support.test.model.OwlAnnotationProcessorTest.testClassHierarchy;
 
-import org.dataconservancy.cos.rdf.annotations.IndividualUri;
-
 /**
- * Created by esm on 6/9/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class AbstractContainer {
 
@@ -28,7 +26,7 @@ public class AbstractContainer {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(final String id) {
         this.id = id;
     }
 }

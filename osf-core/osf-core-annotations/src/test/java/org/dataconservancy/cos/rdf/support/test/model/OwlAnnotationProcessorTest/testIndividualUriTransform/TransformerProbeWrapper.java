@@ -18,14 +18,14 @@ package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTes
 import java.util.function.BiFunction;
 
 /**
- * Created by esm on 6/29/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class TransformerProbeWrapper implements BiFunction<Object, AnOwlIndividual, String> {
 
     public static BiFunction<Object, AnOwlIndividual, String> transformerProbe;
 
     @Override
-    public String apply(Object outer, AnOwlIndividual individualInstance) {
+    public String apply(final Object outer, final AnOwlIndividual individualInstance) {
         return transformerProbe.apply(outer, individualInstance);
     }
 }

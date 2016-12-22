@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
+
 /**
  * Institution model for OSF
  * @author khanson
@@ -31,63 +32,103 @@ import com.github.jasminb.jsonapi.annotations.Type;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Institution {
 
-	/**unique institution identifier in the OSF*/
-	@Id
-	private String id;
-	
-	/**title of the institution*/
-	private String name;
-	
-	/**a path to the institution's static logo*/
-	private String logo_path;
+    /**unique institution identifier in the OSF*/
+    @Id
+    private String id;
+
+    /**title of the institution*/
+    private String name;
+
+    /**a path to the institution's static logo*/
+    private String logo_path;
 
     /**Gets other links found in data.links:{} section of JSON**/
-	@Links
-	Map<String, ?> links;       
-		
+    @Links
+    Map<String, ?> links;
+
     /**pagination links, applies when list is returned**/
     private org.dataconservancy.cos.osf.client.model.Links pageLinks;
-	
-	public String getId() {
-		return id;
-	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getName() {
+        return name;
+    }
 
-	public String getLogo_path() {
-		return logo_path;
-	}
+    /**
+     *
+     * @param name
+     */
+    public void setName(final String name) {
+        this.name = name;
+    }
 
-	public void setLogo_path(String logo_path) {
-		this.logo_path = logo_path;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getLogo_path() {
+        return logo_path;
+    }
 
-	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
-		return pageLinks;
-	}
+    /**
+     *
+     * @param logo_path
+     */
+    public void setLogo_path(final String logo_path) {
+        this.logo_path = logo_path;
+    }
 
+    /**
+     *
+     * @return
+     */
+    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+        return pageLinks;
+    }
+
+    /**
+     *
+     * @param pageLinks
+     */
     @JsonProperty("links")
-	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
-		this.pageLinks = pageLinks;
-	}
+    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+        this.pageLinks = pageLinks;
+    }
 
-	public Map<String, ?> getLinks() {
-		return links;
-	}
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getLinks() {
+        return links;
+    }
 
-	public void setLinks(Map<String, ?> links) {
-		this.links = links;
-	}
-	
-	
+    /**
+     *
+     * @param links
+     */
+    public void setLinks(final Map<String, ?> links) {
+        this.links = links;
+    }
+
+
 }

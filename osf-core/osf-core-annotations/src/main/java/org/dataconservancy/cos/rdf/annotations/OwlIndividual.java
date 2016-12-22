@@ -27,6 +27,8 @@ import java.lang.annotation.Target;
 /**
  * Annotates a class which will be mapped to an OWL individual.  Annotated classes are expected to have exactly one
  * member annotated with {@link IndividualUri}, used to provide the identifier of the RDF resource.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

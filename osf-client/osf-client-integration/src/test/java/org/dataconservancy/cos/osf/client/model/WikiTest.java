@@ -26,35 +26,37 @@ import org.junit.rules.TestName;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Ben Trumbore on 9/20/16.
+ * @author Ben Trumbore (wbt3@cornell.edu)
  */
 public class WikiTest extends AbstractMockServerTest {
 
     @Rule
-    public TestName testName = new TestName();
+    public TestName TEST_NAME = new TestName();
 
     private OsfService osfService;
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(testName, WikiTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, WikiTest.class, getBaseUri()));
         osfService = factory.getOsfService(OsfService.class);
     }
 
     @Test
     public void testWikiMapping() throws Exception {
-        String registrationId = "ng9em";
-        Registration registration = osfService.registration(registrationId).execute().body();
+        final String registrationId = "ng9em";
+        final Registration registration = osfService.registration(registrationId).execute().body();
         assertNotNull(registration);
 
-        List<Wiki> wikis = registration.getWikis();
+        final List<Wiki> wikis = registration.getWikis();
         assertNotNull(wikis);
         assertEquals(1, wikis.size());
 
-        Wiki pjnbm = wikis.stream()
+        final Wiki pjnbm = wikis.stream()
                 .filter(c -> c.getId().equals("pjnbm"))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Missing expected wiki pjnbm"));
@@ -62,7 +64,7 @@ public class WikiTest extends AbstractMockServerTest {
         assertTrue(pjnbm.getNode().endsWith("ng9em/"));
         assertTrue(pjnbm.getUser().getId().equals("3rty2"));
 
-        List<Comment> comments = pjnbm.getComments();
+        final List<Comment> comments = pjnbm.getComments();
         assertNotNull(comments);
         assertEquals(2, comments.size());
         comments.stream().filter(comment -> comment.getId().equals("3ben8mz4ugwp"))

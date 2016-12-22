@@ -23,6 +23,8 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Insures the various constants of {@link IndividualUri} work as expected.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class IndividualUriTest {
 
@@ -44,7 +46,8 @@ public class IndividualUriTest {
     }
 
     /**
-     * Asserts that the {@code transform()} can be retrieved via reflection using the {@link IndividualUri#TRANSFORM} constant.
+     * Asserts that the {@code transform()} can be retrieved via reflection using the
+     * {@link IndividualUri#TRANSFORM} constant.
      * @throws Exception
      */
     @Test

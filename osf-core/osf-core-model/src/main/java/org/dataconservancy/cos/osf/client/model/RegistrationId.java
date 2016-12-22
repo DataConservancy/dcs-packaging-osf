@@ -27,6 +27,6 @@ import com.github.jasminb.jsonapi.annotations.Type;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RegistrationId extends NodeId {
 
-	//all in NodeId
-	
+    //all in NodeId
+
 }

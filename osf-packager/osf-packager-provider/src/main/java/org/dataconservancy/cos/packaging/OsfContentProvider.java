@@ -53,7 +53,8 @@ import java.util.UUID;
 /**
  * Implementation of ContentProvider for OSF source data.
  * Adapted from previous implementation of IpmPackager in this project.
- * Created by Ben Trumbore on 12/1/2016.
+ *
+ * @author Ben Trumbore on 12/1/2016.
  */
 public class OsfContentProvider extends AbstractContentProvider {
 
@@ -61,7 +62,8 @@ public class OsfContentProvider extends AbstractContentProvider {
      * Jena Property instances used by the IpmPackager.
      */
     private static final class RdfProperties {
-        private static final Property OSF_FILE_NAME = ResourceFactory.createProperty(OwlProperties.OSF_HAS_NAME.fqname());
+        private static final Property OSF_FILE_NAME =
+                ResourceFactory.createProperty(OwlProperties.OSF_HAS_NAME.fqname());
 
         private static final Property OSF_BINARY_URI =
                 ResourceFactory.createProperty(OwlProperties.OSF_HAS_BINARYURI.fqname());
@@ -74,7 +76,7 @@ public class OsfContentProvider extends AbstractContentProvider {
         private static final Property RDF_TYPE = ResourceFactory.createProperty(Rdf.Ns.RDF, "type");
     }
 
-    private Logger                  LOG = LoggerFactory.getLogger(OsfContentProvider.class);
+    private Logger                  log = LoggerFactory.getLogger(OsfContentProvider.class);
     private RelationshipResolver    resolver;
     private Model                   domainObjects = null;
     private File                    temporaryDirectory;
@@ -89,7 +91,7 @@ public class OsfContentProvider extends AbstractContentProvider {
      * Construct a content provider from the given graph and a default relationship resolver.
      * @param graph The OSF package graph containing the package content.
      */
-    public OsfContentProvider(OsfPackageGraph graph) {
+    public OsfContentProvider(final OsfPackageGraph graph) {
         this(graph, cxt.getBean("jsonApiRelationshipResolver", RelationshipResolver.class));
     }
 
@@ -98,7 +100,7 @@ public class OsfContentProvider extends AbstractContentProvider {
      * @param graph The OSF package graph containing the package content.
      * @param resolver The relationship resolver to use when processing the package graph.
      */
-    public OsfContentProvider(OsfPackageGraph graph, RelationshipResolver resolver) {
+    public OsfContentProvider(final OsfPackageGraph graph, final RelationshipResolver resolver) {
         this.resolver = resolver;
 
         // Allocate a unique location for storing any binary content that will go into the package.
@@ -112,11 +114,11 @@ public class OsfContentProvider extends AbstractContentProvider {
         }
 
         // Initialize the domain objects
-        ByteArrayOutputStream sink = new ByteArrayOutputStream();
+        final ByteArrayOutputStream sink = new ByteArrayOutputStream();
         graph.serialize(sink, RDFFormat.TURTLE_PRETTY, graph.OSF_SELECTOR);
 
         try {
-            LOG.debug("Packaging graph:\n{}", IOUtils.toString(sink.toByteArray(), "UTF-8"));
+            log.debug("Packaging graph:\n{}", IOUtils.toString(sink.toByteArray(), "UTF-8"));
         } catch (IOException e) {
             // ignore
         }
@@ -144,7 +146,7 @@ public class OsfContentProvider extends AbstractContentProvider {
     public Node getIpmModel() {
 
         // Synthesize a root node to anchor the objects in the domain object graph
-        Node root = new Node(URI.create(UUID.randomUUID().toString()));
+        final  Node root = new Node(URI.create(UUID.randomUUID().toString()));
         root.setFileInfo(directory("root"));
         root.setIgnored(true);
 
@@ -154,27 +156,27 @@ public class OsfContentProvider extends AbstractContentProvider {
         domainObjects.listSubjects().forEachRemaining(subject -> {
 
             if (subject.isAnon()) {
-                LOG.debug("Skipping IPM node creation for anonymous resource '{}'", subject.getId().toString());
+                log.debug("Skipping IPM node creation for anonymous resource '{}'", subject.getId().toString());
                 return;
             }
 
-            URI u = URI.create(subject.getURI());
+            final URI u = URI.create(subject.getURI());
 
             // Hash URIs do not get their own node; they will be considered to be a single node.
             if (u.getFragment() != null) {
-                LOG.debug("Skipping IPM node creation for hash URI resource '{}'", subject.getURI());
+                log.debug("Skipping IPM node creation for hash URI resource '{}'", subject.getURI());
                 return;
             }
 
-            String msgFmt = "Creating %s IPM node named %s for domain object %s";
+            final String msgFmt = "Creating %s IPM node named %s for domain object %s";
 
-            Node n = new Node(u);
+            final Node n = new Node(u);
             n.setDomainObject(u);
 
             if (isFile(subject)) {
-                String binaryUri = getBinaryUri(subject);
-                String filename = getFileName(subject);
-                LOG.info(String.format(msgFmt, "binary file", filename, subject.getURI()));
+                final String binaryUri = getBinaryUri(subject);
+                final String filename = getFileName(subject);
+                log.info(String.format(msgFmt, "binary file", filename, subject.getURI()));
 
                 n.setFileInfo(
                         contentFromUrl(
@@ -182,14 +184,14 @@ public class OsfContentProvider extends AbstractContentProvider {
                                 binaryUri));
 
             } else {
-                String filename;
+                final String filename;
                 if (u.getPath() != null) {
-                    String[] pathElements = u.getPath().split("\\/");
+                    final String[] pathElements = u.getPath().split("\\/");
                     filename = escape(pathElements[pathElements.length - 1]);
                 } else {
                     filename = escape(subject.getURI());
                 }
-                LOG.info(String.format(msgFmt, "directory", filename, subject.getURI()));
+                log.info(String.format(msgFmt, "directory", filename, subject.getURI()));
                 n.setFileInfo(directory(filename));
             }
 
@@ -208,7 +210,7 @@ public class OsfContentProvider extends AbstractContentProvider {
         try {
             FileUtils.deleteDirectory(temporaryDirectory);
         } catch (IOException e) {
-            LOG.warn("Clean up of package download directory failed: " + e.getMessage(), e);
+            log.warn("Clean up of package download directory failed: " + e.getMessage(), e);
         }
     }
 
@@ -224,20 +226,21 @@ public class OsfContentProvider extends AbstractContentProvider {
      * @return populated FileInfo
      * @throws RuntimeException if the content cannot be downloaded or saved to a temporary file
      */
-    private FileInfo contentFromUrl(String filename, String contentUrl) {
-        LOG.debug("  Retrieving '{}' content from '{}'", filename, contentUrl);
+    private FileInfo contentFromUrl(final String filename, final String contentUrl) {
+        log.debug("  Retrieving '{}' content from '{}'", filename, contentUrl);
 
-        File outFile;
+        final File outFile;
         try {
             outFile = new File(temporaryDirectory, filename);
-            byte[] data = this.resolver.resolve(contentUrl);
+            final byte[] data = this.resolver.resolve(contentUrl);
             if (data == null || data.length == 0) {
                 // We actually don't know receiving zero bytes is an error, because the file to be retrieved at
                 // 'contentUrl' may be in actuality, a zero-length file.  The 'Content-Length' header would let us
                 // know this, but we don't have access to the HTTP headers.
-                OkHttpClient client = cxt.getBean("okHttpClient", OkHttpClient.class);
-                Request head = new Request.Builder().head().url(contentUrl).build();
-                Integer contentLength = Integer.parseInt(client.newCall(head).execute().header("Content-Length", "-1"));
+                final OkHttpClient client = cxt.getBean("okHttpClient", OkHttpClient.class);
+                final Request head = new Request.Builder().head().url(contentUrl).build();
+                final Integer contentLength = Integer.parseInt(
+                        client.newCall(head).execute().header("Content-Length", "-1"));
                 if (contentLength > 0) {
                     throw new RuntimeException("Unable to retrieve content from '" + contentUrl + "': Expected " +
                             contentLength + " bytes but received 0 bytes.");
@@ -249,7 +252,7 @@ public class OsfContentProvider extends AbstractContentProvider {
             throw new RuntimeException(e.getMessage(), e);
         }
 
-        FileInfo info = new FileInfo(outFile.toPath());
+        final FileInfo info = new FileInfo(outFile.toPath());
         info.setIsFile(true);
         return info;
     }
@@ -271,10 +274,12 @@ public class OsfContentProvider extends AbstractContentProvider {
             // suffixed to the original directory name
             tmpDir = new File(tmpDir.getParentFile(), tmpDir.getName() + "-dir");
             if (!tmpDir.mkdir()) {
-                throw new IOException("Unable to allocate temporary directory: failed to make the directory '" + tmpDir + "'");
+                throw new IOException("Unable to allocate temporary directory:" +
+                        "failed to make the directory '" + tmpDir + "'");
             }
         } else {
-            throw new IOException("Unable to allocate temporary directory: cannot delete the template file '" + tmpDir + "'");
+            throw new IOException("Unable to allocate temporary directory:" +
+                    "cannot delete the template file '" + tmpDir + "'");
         }
 
         return tmpDir;
@@ -291,7 +296,7 @@ public class OsfContentProvider extends AbstractContentProvider {
      * @param name Given directory name
      * @return FileInfo for a node corresponding to this directory.
      */
-    private FileInfo directory(String name) {
+    private FileInfo directory(final String name) {
         /*
          * DomainObjectResourceBuilder has a sanity check that files and
          * directories must exist. This check is not meaningful here, since
@@ -299,7 +304,7 @@ public class OsfContentProvider extends AbstractContentProvider {
          * or move that sanity check. In the meantime, just use cwd as a
          * workaround"
          */
-        FileInfo info = new FileInfo(Paths.get(".").toUri(), name);
+        final FileInfo info = new FileInfo(Paths.get(".").toUri(), name);
         info.setIsDirectory(true);
         return info;
     }
@@ -310,7 +315,7 @@ public class OsfContentProvider extends AbstractContentProvider {
      * @param candidateFilename a candidate filename that may contain characters to be escaped
      * @return the escaped filename
      */
-    private String escape(String candidateFilename) {
+    private String escape(final String candidateFilename) {
         return candidateFilename
                 .replace(":", "_")
                 .replace(" ", "_");
@@ -330,8 +335,9 @@ public class OsfContentProvider extends AbstractContentProvider {
      * @param subject a resource from the supplied {@code domainObjects} which may be an {@code osf:File}
      * @return true if the {@code subject} is a {@code osf:File}
      */
-    private boolean isFile(Resource subject) {
-        return domainObjects.contains(subject, OsfContentProvider.RdfProperties.RDF_TYPE, OsfContentProvider.RdfProperties.OSF_FILE);
+    private boolean isFile(final Resource subject) {
+        return domainObjects.contains(subject,
+                OsfContentProvider.RdfProperties.RDF_TYPE, OsfContentProvider.RdfProperties.OSF_FILE);
     }
 
     /**
@@ -349,13 +355,15 @@ public class OsfContentProvider extends AbstractContentProvider {
      * @param subject a resource from the supplied {@code domainObjects} which is an {@code osf:File}
      * @return a logical filename for the supplied {@code subject}
      */
-    private String getFileName(Resource subject) {
-        String baseName = escape(domainObjects.getProperty(subject, OsfContentProvider.RdfProperties.OSF_FILE_NAME).getObject().toString());
-        final Statement providerNameProperty = domainObjects.getProperty(subject, OsfContentProvider.RdfProperties.OSF_PROVIDER_NAME);
+    private String getFileName(final Resource subject) {
+        final String baseName = escape(domainObjects.getProperty(subject,
+                OsfContentProvider.RdfProperties.OSF_FILE_NAME).getObject().toString());
+        final Statement providerNameProperty = domainObjects.getProperty(subject,
+                OsfContentProvider.RdfProperties.OSF_PROVIDER_NAME);
         // TODO: correct model for wikis.  Either they are a File, and have a provider, or they are something else.
         // Currently wikis are very much like files, but they don't have a provider.  So this workaround supplies a
         // stand-in storage provider for now.
-        String providerName;
+        final String providerName;
         if (providerNameProperty != null) {
             providerName = providerNameProperty.getObject().toString();
         } else {
@@ -378,8 +386,9 @@ public class OsfContentProvider extends AbstractContentProvider {
      * @param subject a resource from the supplied {@code domainObjects} which is an {@code osf:File}
      * @return the value of the {@code osf:hasBinaryUri} predicate for the supplied {@code subject}
      */
-    private String getBinaryUri(Resource subject) {
-        return domainObjects.getProperty(subject, OsfContentProvider.RdfProperties.OSF_BINARY_URI).getObject().asLiteral().getString();
+    private String getBinaryUri(final Resource subject) {
+        return domainObjects.getProperty(subject,
+                OsfContentProvider.RdfProperties.OSF_BINARY_URI).getObject().asLiteral().getString();
     }
 
 }

@@ -22,11 +22,13 @@ import java.util.function.BiFunction;
 /**
  * File objects that represent an OSF storage provider will have identifiers in the form: {@code nodeId:providerId}.
  * This transform replaces the {@code :} with a {@code _} so that the id can be properly encoded as a URI.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ProviderIdTransform implements BiFunction<Object, File, String> {
 
     @Override
-    public String apply(Object o, File file) {
+    public String apply(final Object o, final File file) {
         if (file.getId().contains(":")) {
             return file.getId().replace(":", "_");
         }

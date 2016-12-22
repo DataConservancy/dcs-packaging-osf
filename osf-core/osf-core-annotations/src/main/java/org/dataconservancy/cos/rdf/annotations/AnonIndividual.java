@@ -27,6 +27,8 @@ import java.lang.annotation.Target;
 /**
  * Annotates a field which will be mapped to an anonymous OWL individual.   The subject of the individual will be the
  * enclosing {@code @OwlIndividual}, and the object of the property will be the value of the annotated field.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

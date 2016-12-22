@@ -29,6 +29,8 @@ import static org.junit.Assert.assertSame;
 
 /**
  * Tests behaviors of the Jena {@code OntModel}
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OntTest {
 
@@ -36,14 +38,14 @@ public class OntTest {
     @Test
     public void testFoo() throws Exception {
 
-        OntModel model = ModelFactory.createOntologyModel();
+        final OntModel model = ModelFactory.createOntologyModel();
 
-        Individual ind = model.createIndividual("someref", ResourceFactory.createResource());
+        final Individual ind = model.createIndividual("someref", ResourceFactory.createResource());
         assertNotNull(ind);
         assertNotNull(model.getIndividual("someref"));
         assertSame(ind, model.getIndividual("someref"));
 
-        Individual anonInd = model.createIndividual(ResourceFactory.createResource());
+        final Individual anonInd = model.createIndividual(ResourceFactory.createResource());
         assertNotNull(anonInd);
         // anonymous individuals have no uri
         assertNull(anonInd.getURI());
@@ -53,11 +55,11 @@ public class OntTest {
         // sad-face: can't get an anonymous individual from the model
         assertNull(model.getIndividual(anonInd.getId().toString()));
         // but can get it as a resource
-        Resource anonResource = model.getResource(anonInd.toString());
+        final Resource anonResource = model.getResource(anonInd.toString());
         assertNotNull(anonResource);
 
         // Try to retrieve the same Individual using the anonymous resource
-        Individual fromResource = model.createIndividual(anonResource);
+        final Individual fromResource = model.createIndividual(anonResource);
         assertNotNull(fromResource);
 
         // sad-face: they aren't the same

@@ -22,6 +22,8 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Tests covering the JodaSupport utility class.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class JodaSupportTest {
 

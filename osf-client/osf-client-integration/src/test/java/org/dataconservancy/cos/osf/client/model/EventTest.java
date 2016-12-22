@@ -30,33 +30,35 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Tests mapping between the JSON of a 'logs' document and the Java model for the Event class
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class EventTest extends AbstractMockServerTest {
 
     @Rule
-    public TestName testName = new TestName();
+    public TestName TEST_NAME = new TestName();
 
     private OsfService osfService;
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(testName, EventTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, EventTest.class, getBaseUri()));
         osfService = factory.getOsfService(OsfService.class);
     }
 
     @Test
     public void testEventMapping() throws Exception {
-        String registrationId = "eq7a4";
+        final String registrationId = "eq7a4";
 
-        Registration registration = osfService.registration(registrationId).execute().body();
+        final Registration registration = osfService.registration(registrationId).execute().body();
         assertNotNull(registration);
         assertNotNull(registration.getLogs());
 
-        ResourceList<Event> events = osfService.getLogs(registration.getLogs()).execute().body();
+        final ResourceList<Event> events = osfService.getLogs(registration.getLogs()).execute().body();
 
-        String eventId = "57570a06c7950c0045ac803e";
+        final String eventId = "57570a06c7950c0045ac803e";
 
-        Event event = events.stream()
+        final Event event = events.stream()
                 .filter(e -> e.getId().equals(eventId))
                 .findFirst()
                 .orElseThrow(
@@ -64,11 +66,11 @@ public class EventTest extends AbstractMockServerTest {
 
         // additional assertions
 
-        String expectedAction = "node_removed";
-        String expectedDate = "2016-06-07T17:52:19.617000";
-        String expectedNode = "eq7a4/";
-        String expectedOrigNode = "5w8q7/";
-        String expectedUser = "qmdz6/";
+        final String expectedAction = "node_removed";
+        final String expectedDate = "2016-06-07T17:52:19.617000";
+        final String expectedNode = "eq7a4/";
+        final String expectedOrigNode = "5w8q7/";
+        final String expectedUser = "qmdz6/";
 
         assertEquals(expectedAction, event.getAction());
         assertEquals(expectedDate, event.getDate());

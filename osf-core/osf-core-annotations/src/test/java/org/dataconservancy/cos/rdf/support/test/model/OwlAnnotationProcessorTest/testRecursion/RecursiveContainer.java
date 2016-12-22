@@ -20,6 +20,8 @@ import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
  * A test class which helps form a recursive loop between this class and {@link Recursive}.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class RecursiveContainer {
 

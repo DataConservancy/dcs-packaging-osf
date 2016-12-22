@@ -18,13 +18,13 @@ package org.dataconservancy.cos.osf.client.support;
 import java.util.function.Function;
 
 /**
- * Created by esm on 6/2/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class UrlToIdTransform implements Function<Object, String> {
 
     @Override
-    public String apply(Object o) {
-        String[] uriParts = o.toString().split("\\/");
+    public String apply(final Object o) {
+        final String[] uriParts = o.toString().split("\\/");
         return uriParts[uriParts.length - 1];
     }
 

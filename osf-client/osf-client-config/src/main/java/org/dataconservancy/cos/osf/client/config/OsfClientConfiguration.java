@@ -20,6 +20,8 @@ import java.net.URISyntaxException;
 
 /**
  * Encapsulates the configuration parameters needed by an HTTP-based OSF client.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class OsfClientConfiguration {
 
@@ -47,7 +49,7 @@ public class OsfClientConfiguration {
      *
      * @param host the v2 API host
      */
-    public void setHost(String host) {
+    public void setHost(final String host) {
         this.host = host;
     }
 
@@ -65,7 +67,7 @@ public class OsfClientConfiguration {
      *
      * @param port the v2 API port
      */
-    public void setPort(int port) {
+    public void setPort(final int port) {
         this.port = port;
     }
 
@@ -83,7 +85,7 @@ public class OsfClientConfiguration {
      *
      * @param basePath the base path of the v2 API
      */
-    public void setBasePath(String basePath) {
+    public void setBasePath(final String basePath) {
         this.basePath = basePath;
     }
 
@@ -103,7 +105,7 @@ public class OsfClientConfiguration {
      *
      * @param authHeader the authentication header
      */
-    public void setAuthHeader(String authHeader) {
+    public void setAuthHeader(final String authHeader) {
         this.authHeader = authHeader;
     }
 
@@ -121,7 +123,7 @@ public class OsfClientConfiguration {
      *
      * @param scheme the protocol scheme
      */
-    public void setScheme(String scheme) {
+    public void setScheme(final String scheme) {
         this.scheme = scheme;
     }
 

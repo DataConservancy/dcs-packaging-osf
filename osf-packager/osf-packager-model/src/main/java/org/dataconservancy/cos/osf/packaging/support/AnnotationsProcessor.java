@@ -21,7 +21,6 @@ import org.dataconservancy.cos.rdf.support.AnnotatedElementPair;
 import org.dataconservancy.cos.rdf.support.AnnotatedElementPairMap;
 import org.dataconservancy.cos.rdf.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.AnonIndividual;
-import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
@@ -36,7 +35,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -57,7 +55,7 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
  * <dl>
  *     <dt>{@link OwlIndividual}</dt>
  *     <dd>Class-level annotation defining a Java class as an OWL individual</dd>
- *     <dt>{@link IndividualUri}</dt>
+ *     <dt>{@link org.dataconservancy.cos.rdf.annotations.IndividualUri}</dt>
  *     <dd>Field-level annotation defining the value of the field as the identifier for an OWL individual</dd>
  *     <dt>{@link OwlProperty}</dt>
  *     <dd>Field-level annotation defining the value of the field as the object of the OWL property</dd>
@@ -85,6 +83,8 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
  * <ul>
  *   <li>I'm sure there are many</li>
  * </ul>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class AnnotationsProcessor {
 
@@ -101,7 +101,7 @@ public class AnnotationsProcessor {
      *
      * @param graph the graph that stores generated triples
      */
-    public AnnotationsProcessor(PackageGraph graph) {
+    public AnnotationsProcessor(final PackageGraph graph) {
         this.graph = graph;
     }
 
@@ -119,18 +119,19 @@ public class AnnotationsProcessor {
      * @param toProcess the object to map to OWL RDF
      * @return a map of individual identifiers to individuals that were created by this invocation.
      */
-    public Map<String, Individual> process(Object toProcess) {
+    public Map<String, Individual> process(final Object toProcess) {
 
-        Set<String> seen = new HashSet<>();
+        final Set<String> seen = new HashSet<>();
 
-        Map<String, Individual> createdIndividuals = new HashMap<>();
-        AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> annotations = new AnnotatedElementPairMap<>();
+        final Map<String, Individual> createdIndividuals = new HashMap<>();
+        final AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> annotations =
+                new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(toProcess, annotations);
 
-        OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(toProcess, annotations);
-        String id = OwlAnnotationProcessor.getIndividualId(null, toProcess, annotations);
+        final OwlClasses owlClass = OwlAnnotationProcessor.getOwlClass(toProcess, annotations);
+        final String id = OwlAnnotationProcessor.getIndividualId(null, toProcess, annotations);
 
-        Individual individual = graph.newIndividual(owlClass, id);
+        final Individual individual = graph.newIndividual(owlClass, id);
         createdIndividuals.put(individual.getURI(), individual);
         LOG.trace("Created individual with id {} for class {}", individual.getURI(), owlClass.fqname());
         seen.add(toProcess.getClass().getName());
@@ -143,11 +144,14 @@ public class AnnotationsProcessor {
      * Provides a recursive entry point to process objects.
      *
      * @param toProcess the object to map to OWL RDF
-     * @param enclosingIndividual the OWL individual that will be the subject of any triples added in this processing step
+     * @param enclosingIndividual the OWL individual that will be the subject of any triples added in this processing
+     *                            step
      * @param annotations all the annotations that appear in the Java object graph
      * @param createdIndividuals maintains a map of identifiers to OWL individuals that have been created thus far
      */
-    void process(Object toProcess, Individual enclosingIndividual, Map<AnnotatedElementPair, AnnotationAttributes> annotations, Map<String, Individual> createdIndividuals, Set<String> seen) {
+    void process(final Object toProcess, final Individual enclosingIndividual,
+                 final Map<AnnotatedElementPair, AnnotationAttributes> annotations,
+                 final Map<String, Individual> createdIndividuals, final Set<String> seen) {
         if (seen.contains(toProcess.getClass().getName())) {
             LOG.trace("Skipping seen class: {}", toProcess.getClass().getName());
         }
@@ -156,8 +160,13 @@ public class AnnotationsProcessor {
                 (field) -> annotations.containsKey(AnnotatedElementPair.forPair(field, OwlProperty.class)));
     }
 
-    private void process(Individual enclosingIndividual, Object enclosingObject, Field field, Map<AnnotatedElementPair, AnnotationAttributes> annotations, Map<String, Individual> createdIndividuals, Set<String> seen) {
-        LOG.trace("  Processing field '{}' (a {}) for OWL {} {}", field.getName(), field.getType(), (enclosingIndividual.isAnon() ? "anonymous individual" : "individual"), (enclosingIndividual.isAnon() ? enclosingIndividual.getId() : enclosingIndividual.getURI()));
+    private void process(final Individual enclosingIndividual, final Object enclosingObject,
+                         final Field field, final Map<AnnotatedElementPair, AnnotationAttributes> annotations,
+                         final Map<String, Individual> createdIndividuals, final Set<String> seen) {
+        LOG.trace("  Processing field '{}' (a {}) for OWL {} {}",
+                field.getName(), field.getType(),
+                (enclosingIndividual.isAnon() ? "anonymous individual" : "individual"),
+                (enclosingIndividual.isAnon() ? enclosingIndividual.getId() : enclosingIndividual.getURI()));
         // if the field is not annotated with @OwlProperty, then we have nothing to do.
         // the caller should be responsible for this.
         // The OwlProperty that will be used to add the field to the enclosing object
@@ -176,7 +185,8 @@ public class AnnotationsProcessor {
         } catch (IllegalAccessException e) {
             throw new RuntimeException(
                     String.format("Unable to access field %s (type %s, on class %s) for OWL property %s: %s",
-                            field.getName(), field.getType(), enclosingObject.getClass().getName(), owlProperty.fqname(), e.getMessage()), e);
+                            field.getName(), field.getType(), enclosingObject.getClass().getName(),
+                                owlProperty.fqname(), e.getMessage()), e);
         }
 
         // The annotated element pairs that apply to the supplied field
@@ -192,42 +202,62 @@ public class AnnotationsProcessor {
         objectsToProcess.forEach(objectToProcess -> {
             final Object value;
 
-            if ((value = OwlAnnotationProcessor.transform(enclosingObject, field, objectToProcess, annotations)) == null) {
-                LOG.trace("  Result of transformation was null.  Skipping processing of transformed null value on field {} for OWL property {}",
+            if ((value = OwlAnnotationProcessor.transform(
+                    enclosingObject, field, objectToProcess, annotations)) == null) {
+                LOG.trace("  Result of transformation was null.  " +
+                        "Skipping processing of transformed null value on field {} for OWL property {}",
                         field.getName(), owlProperty.localname());
                 return;
             }
 
             if (!owlProperty.object()) {
-                LOG.trace("  Adding literal {} with value '{}' to {} {}", owlProperty.localname(), value, (enclosingIndividual.isAnon() ? "anonymous individual" : "individual"), (enclosingIndividual.isAnon() ? enclosingIndividual.getId() : enclosingIndividual.getURI()));
+                LOG.trace("  Adding literal {} with value '{}' to {} {}",
+                        owlProperty.localname(), value,
+                        (enclosingIndividual.isAnon() ? "anonymous individual" : "individual"),
+                        (enclosingIndividual.isAnon() ? enclosingIndividual.getId() : enclosingIndividual.getURI()));
                 graph.addLiteral(enclosingIndividual, owlProperty.fqname(), value);
             } else {
-                // if anon individual, create the individual and recurse, processing the properties of the AnonIndividual class
+                // if anon individual, create the individual and recurse, processing the properties of the
+                // AnonIndividual class
                 if (fieldAnnotationPairs.contains(AnnotatedElementPair.forPair(field, AnonIndividual.class))) {
-                    OwlClasses targetOwlClass = annotations.get(AnnotatedElementPair.forPair(field, AnonIndividual.class)).getEnum("value");
-                    Individual anonIndividual = graph.newIndividual(targetOwlClass);
+                    final OwlClasses targetOwlClass = annotations.get(
+                            AnnotatedElementPair.forPair(field, AnonIndividual.class)).getEnum("value");
+                    final Individual anonIndividual = graph.newIndividual(targetOwlClass);
                     graph.addAnonIndividual(enclosingIndividual, owlProperty.fqname(), anonIndividual);
                     createdIndividuals.put(anonIndividual.getId().toString(), anonIndividual);
-                    LOG.trace("  Created anonymous individual with id {} for class {}", anonIndividual.getId(), targetOwlClass.fqname());
-                    AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> individualAnnotations = new AnnotatedElementPairMap<>();
+                    LOG.trace("  Created anonymous individual with id {} for class {}",
+                            anonIndividual.getId(), targetOwlClass.fqname());
+                    final AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> individualAnnotations =
+                            new AnnotatedElementPairMap<>();
                     OwlAnnotationProcessor.getAnnotationsForInstance(objectToProcess, individualAnnotations);
                     seen.add(objectToProcess.getClass().getName());
                     process(objectToProcess, anonIndividual, individualAnnotations, createdIndividuals, seen);
-                } else if (annotations.containsKey(AnnotatedElementPair.forPair(objectToProcess.getClass(), OwlIndividual.class))) {
-                    // if identified individual, create the individual and recurse, processing the properties of the OwlIndividual class
-                    String id = OwlAnnotationProcessor.getIndividualId(enclosingObject, objectToProcess, annotations);
-                    OwlClasses targetOwlClass = annotations.get(AnnotatedElementPair.forPair(objectToProcess.getClass(), OwlIndividual.class)).getEnum("value");
-                    Individual idIndividual = graph.newIndividual(targetOwlClass, id);
+                } else if (annotations.containsKey(
+                        AnnotatedElementPair.forPair(objectToProcess.getClass(), OwlIndividual.class))) {
+                    // if identified individual, create the individual and recurse, processing the properties of the
+                    // OwlIndividual class
+                    final String id = OwlAnnotationProcessor.getIndividualId(
+                            enclosingObject, objectToProcess, annotations);
+                    final OwlClasses targetOwlClass = annotations.get(
+                            AnnotatedElementPair.forPair(
+                                    objectToProcess.getClass(), OwlIndividual.class)).getEnum("value");
+                    final Individual idIndividual = graph.newIndividual(targetOwlClass, id);
                     graph.addIndividual(enclosingIndividual, owlProperty.fqname(), idIndividual.getURI());
                     createdIndividuals.put(idIndividual.getURI(), idIndividual);
-                    LOG.trace("  Created individual with id {} for class {}", idIndividual.getURI(), targetOwlClass.fqname());
-                    AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> individualAnnotations = new AnnotatedElementPairMap<>();
+                    LOG.trace("  Created individual with id {} for class {}",
+                            idIndividual.getURI(), targetOwlClass.fqname());
+                    final AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> individualAnnotations =
+                            new AnnotatedElementPairMap<>();
                     OwlAnnotationProcessor.getAnnotationsForInstance(objectToProcess, individualAnnotations);
                     seen.add(objectToProcess.getClass().getName());
                     process(objectToProcess, idIndividual, individualAnnotations, createdIndividuals, seen);
                 } else {
                     // resource
-                    LOG.trace("  Adding resource {} with value {} to {} {}", owlProperty.localname(), asResource(value.toString()), (enclosingIndividual.isAnon() ? "anonymous individual" : "individual"), (enclosingIndividual.isAnon() ? enclosingIndividual.getId() : enclosingIndividual.getURI()));
+                    LOG.trace("  Adding resource {} with value {} to {} {}",
+                            owlProperty.localname(), asResource(value.toString()),
+                            (enclosingIndividual.isAnon() ? "anonymous individual" : "individual"),
+                            (enclosingIndividual.isAnon() ?
+                                    enclosingIndividual.getId() : enclosingIndividual.getURI()));
                     graph.addResource(enclosingIndividual, owlProperty.fqname(), asResource(value.toString()));
                 }
             }

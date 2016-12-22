@@ -19,6 +19,8 @@ import java.util.function.Function;
 
 /**
  * Function that transforms its argument to a {@code String}
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public final class ToStringTransform implements Function<Object, String> {
 
@@ -32,7 +34,7 @@ public final class ToStringTransform implements Function<Object, String> {
      * @return the string form of {@code toTransform}
      */
     @Override
-    public String apply(Object toTransform) {
+    public String apply(final Object toTransform) {
         return toTransform.toString();
     }
 

@@ -24,7 +24,7 @@ import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
 import java.io.IOException;
 
 /**
- * Created by esm on 4/26/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class AuthInterceptor implements Interceptor {
 
@@ -32,16 +32,24 @@ public class AuthInterceptor implements Interceptor {
 
     private OsfConfigurationService osfConfigurationService;
 
-    public AuthInterceptor(OsfConfigurationService osfConfigurationService) {
+    /**
+     *
+     * @param osfConfigurationService
+     */
+    public AuthInterceptor(final OsfConfigurationService osfConfigurationService) {
         this.osfConfigurationService = osfConfigurationService;
     }
 
-    public AuthInterceptor(String authHeader) {
+    /**
+     *
+     * @param authHeader
+     */
+    public AuthInterceptor(final String authHeader) {
         this.authHeader = authHeader;
     }
 
     @Override
-    public Response intercept(Chain chain) throws IOException {
+    public Response intercept(final Chain chain) throws IOException {
 
         String localAuthheader = null;
 

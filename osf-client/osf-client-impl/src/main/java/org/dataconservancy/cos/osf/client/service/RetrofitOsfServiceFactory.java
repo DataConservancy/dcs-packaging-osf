@@ -112,6 +112,8 @@ import java.util.List;
  *     OsfService osfService = factory.getOsfService(OsfService.class);
  * </pre>
  * Other configuration exercises are left to the reader.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class RetrofitOsfServiceFactory {
 
@@ -170,18 +172,20 @@ public class RetrofitOsfServiceFactory {
      * @param jsonConfigurationResource classpath resource containing the JSON configuration for the OSF and Waterbutler
      *                                  HTTP endpoints
      */
-    public RetrofitOsfServiceFactory(String jsonConfigurationResource) {
+    public RetrofitOsfServiceFactory(final String jsonConfigurationResource) {
         try {
             this.osfConfigSvc = new JacksonOsfConfigurationService(jsonConfigurationResource);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
         }
         try {
             this.wbConfigSvc = new JacksonWbConfigurationService(jsonConfigurationResource);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
         }
         this.httpClient = new OkHttpClient();
         if (osfConfigSvc.getConfiguration().getAuthHeader() != null) {
@@ -189,17 +193,17 @@ public class RetrofitOsfServiceFactory {
         }
 
         // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
-        List<Class<?>> domainClasses = new ArrayList<>();
+        final List<Class<?>> domainClasses = new ArrayList<>();
 
         new FastClasspathScanner("org.dataconservancy.cos.osf.client.model")
                 .matchClassesWithAnnotation(Type.class, domainClasses::add)
                 .scan();
 
-        ResourceConverter resourceConverter = new ResourceConverter(new ObjectMapper(),
+        final ResourceConverter resourceConverter = new ResourceConverter(new ObjectMapper(),
                 domainClasses.toArray(new Class[]{}));
 
         resourceConverter.setGlobalResolver(relUrl -> {
-            com.squareup.okhttp.Call req = httpClient.newCall(new Request.Builder().url(relUrl).build());
+            final com.squareup.okhttp.Call req = httpClient.newCall(new Request.Builder().url(relUrl).build());
             try {
                 return req.execute().body().bytes();
             } catch (IOException e) {
@@ -226,7 +230,7 @@ public class RetrofitOsfServiceFactory {
      *
      * @param jsonApiConverterFactory the configured Retrofit {@code retrofit.Converter.Factory} to use
      */
-    public RetrofitOsfServiceFactory(JSONAPIConverterFactory jsonApiConverterFactory) {
+    public RetrofitOsfServiceFactory(final JSONAPIConverterFactory jsonApiConverterFactory) {
         if (jsonApiConverterFactory == null) {
             throw new IllegalArgumentException(String.format(NOT_NULL_IAE, JSONAPIConverterFactory.class.getName()));
         }
@@ -237,13 +241,15 @@ public class RetrofitOsfServiceFactory {
             this.osfConfigSvc = new JacksonOsfConfigurationService(DEFAULT_CONFIGURATION_RESOURCE);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
         }
         try {
             this.wbConfigSvc = new JacksonWbConfigurationService(DEFAULT_CONFIGURATION_RESOURCE);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
         }
         this.httpClient = new OkHttpClient();
         if (osfConfigSvc.getConfiguration().getAuthHeader() != null) {
@@ -263,7 +269,8 @@ public class RetrofitOsfServiceFactory {
      *                                  HTTP endpoints
      * @param jsonApiConverterFactory   the configured Retrofit {@code retrofit.Converter.Factory} to use
      */
-    public RetrofitOsfServiceFactory(String jsonConfigurationResource, JSONAPIConverterFactory jsonApiConverterFactory) {
+    public RetrofitOsfServiceFactory(final String jsonConfigurationResource,
+                                     final JSONAPIConverterFactory jsonApiConverterFactory) {
         if (jsonApiConverterFactory == null) {
             throw new IllegalArgumentException(String.format(NOT_NULL_IAE, JSONAPIConverterFactory.class.getName()));
         }
@@ -274,13 +281,15 @@ public class RetrofitOsfServiceFactory {
             this.osfConfigSvc = new JacksonOsfConfigurationService(jsonConfigurationResource);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
         }
         try {
             this.wbConfigSvc = new JacksonWbConfigurationService(jsonConfigurationResource);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
         }
         this.httpClient = new OkHttpClient();
         if (osfConfigSvc.getConfiguration().getAuthHeader() != null) {
@@ -297,7 +306,8 @@ public class RetrofitOsfServiceFactory {
      * @param httpClient              the OK HTTP Client
      * @param jsonApiConverterFactory the JSON API converter factory
      */
-    public RetrofitOsfServiceFactory(JSONAPIConverterFactory jsonApiConverterFactory, OkHttpClient httpClient) {
+    public RetrofitOsfServiceFactory(final JSONAPIConverterFactory jsonApiConverterFactory,
+                                     final OkHttpClient httpClient) {
         if (httpClient == null) {
             throw new IllegalArgumentException(String.format(NOT_NULL_IAE, OkHttpClient.class.getName()));
         }
@@ -310,13 +320,15 @@ public class RetrofitOsfServiceFactory {
             this.osfConfigSvc = new JacksonOsfConfigurationService(DEFAULT_CONFIGURATION_RESOURCE);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
         }
         try {
             this.wbConfigSvc = new JacksonWbConfigurationService(DEFAULT_CONFIGURATION_RESOURCE);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonWbConfigurationService.class.getName(), e.getMessage()), e);
         }
         this.jsonApiConverterFactory = jsonApiConverterFactory;
         this.httpClient = httpClient;
@@ -332,8 +344,8 @@ public class RetrofitOsfServiceFactory {
      * @param httpClient              the OK HTTP Client
      * @param jsonApiConverterFactory the JSON API converter factory
      */
-    public RetrofitOsfServiceFactory(OsfConfigurationService osfConfigSvc, OkHttpClient httpClient,
-                                     JSONAPIConverterFactory jsonApiConverterFactory) {
+    public RetrofitOsfServiceFactory(final OsfConfigurationService osfConfigSvc, final OkHttpClient httpClient,
+                                     final JSONAPIConverterFactory jsonApiConverterFactory) {
         if (osfConfigSvc == null) {
             throw new IllegalArgumentException(String.format(NOT_NULL_IAE, OsfConfigurationService.class.getName()));
         }
@@ -367,8 +379,8 @@ public class RetrofitOsfServiceFactory {
      * @param httpClient              the OK HTTP Client
      * @param jsonApiConverterFactory the JSON API converter factory
      */
-    public RetrofitOsfServiceFactory(WbConfigurationService wbConfigSvc, OkHttpClient httpClient,
-                                     JSONAPIConverterFactory jsonApiConverterFactory) {
+    public RetrofitOsfServiceFactory(final WbConfigurationService wbConfigSvc, final OkHttpClient httpClient,
+                                     final JSONAPIConverterFactory jsonApiConverterFactory) {
         if (wbConfigSvc == null) {
             throw new IllegalArgumentException(String.format(NOT_NULL_IAE, WbConfigurationService.class.getName()));
         }
@@ -385,7 +397,8 @@ public class RetrofitOsfServiceFactory {
             this.osfConfigSvc = new JacksonOsfConfigurationService(DEFAULT_CONFIGURATION_RESOURCE);
         } catch (Exception e) {
             throw new IllegalStateException(
-                    String.format(ERR_CONFIGURING_CLASS, JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
+                    String.format(ERR_CONFIGURING_CLASS,
+                            JacksonOsfConfigurationService.class.getName(), e.getMessage()), e);
         }
 
         this.wbConfigSvc = wbConfigSvc;
@@ -402,8 +415,9 @@ public class RetrofitOsfServiceFactory {
      * @param jsonApiConverterFactory the JSON API converter factory
      *
      */
-    public RetrofitOsfServiceFactory(OsfConfigurationService osfConfigSvc, WbConfigurationService wbConfigSvc,
-                                     OkHttpClient httpClient, JSONAPIConverterFactory jsonApiConverterFactory) {
+    public RetrofitOsfServiceFactory(final OsfConfigurationService osfConfigSvc,
+                                     final WbConfigurationService wbConfigSvc, final OkHttpClient httpClient,
+                                     final JSONAPIConverterFactory jsonApiConverterFactory) {
         if (osfConfigSvc == null) {
             throw new IllegalArgumentException(String.format(NOT_NULL_IAE, OsfConfigurationService.class.getName()));
         }
@@ -437,8 +451,8 @@ public class RetrofitOsfServiceFactory {
      * @param <T>        the Retrofit interface type
      * @return a configured Retrofit interface, ready to service requests.
      */
-    public <T> T getOsfService(Class<T> osfService) {
-        Retrofit retrofit = new Retrofit.Builder()
+    public <T> T getOsfService(final Class<T> osfService) {
+        final Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(osfConfigSvc.getConfiguration().getBaseUri().toString())
                 .addConverterFactory(jsonApiConverterFactory)
                 .client(httpClient)

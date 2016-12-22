@@ -44,105 +44,156 @@ import java.util.Map;
 @OwlIndividual(OwlClasses.OSF_CONTRIBUTOR)
 public class Contributor {
 
-	/** contributor ID - this corresponds to User ID*/
+    /**
+     * contributor ID - this corresponds to User ID
+     */
     @Id
-	@OwlProperty(value = OwlProperties.OSF_HAS_USER, transform = ContributorIdSplitter.class)
+    @OwlProperty(value = OwlProperties.OSF_HAS_USER, transform = ContributorIdSplitter.class)
     private String id;
 
-	/**
-	 * Form of Contributor ID used when generating RDF.
-	 */
-	@IndividualUri(transform = ContributorHashUriGenerator.class)
-	private String contributorIndividualId;
-    
+    /**
+     * Form of Contributor ID used when generating RDF.
+     */
+    @IndividualUri(transform = ContributorHashUriGenerator.class)
+    private String contributorIndividualId;
+
     /**Whether the user will be included in citations for this node. Default is true.*/
-	@OwlProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC)
+    @OwlProperty(OwlProperties.OSF_IS_BIBLIOGRAPHIC)
     private Boolean isBibliographic;
-    
+
     /**User permission level. Must be "read", "write", or "admin". Default is "write".*/
-	@OwlProperty(value = OwlProperties.OSF_HAS_PERMISSION, transform = ToStringTransform.class)
+    @OwlProperty(value = OwlProperties.OSF_HAS_PERMISSION, transform = ToStringTransform.class)
     private Permission permission;
-    	    
-	/**Gets other links found in data.links:{} section of JSON**/
-	@Links
-	Map<String, ?> links;        
-	
-	/**pagination links, applies when list is returned**/
-	private org.dataconservancy.cos.osf.client.model.Links pageLinks;
-    
-    //TODO: the user is embedded in the JSON and won't work as is.  We can use the ID to retrieve it since contribId=userId.
-	//TODO: this has been brought to the attention of Brian Geiger (bgeiger@cos.io), logged on the public OSF v2 API,
-	//TODO: and created a GitHub issue https://github.com/CenterForOpenScience/osf.io/issues/5590 which has been rolled
-	//TODO: into CoS' internal Jira
+
+    /**Gets other links found in data.links:{} section of JSON**/
+    @Links
+    Map<String, ?> links;
+
+    /**pagination links, applies when list is returned**/
+    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+
+    //TODO: the user is embedded in the JSON and won't work as is.
+    //TODO: We can use the ID to retrieve it since contribId=userId.
+    //TODO: this has been brought to the attention of Brian Geiger (bgeiger@cos.io), logged on the public OSF v2 API,
+    //TODO: and created a GitHub issue https://github.com/CenterForOpenScience/osf.io/issues/5590 which has been rolled
+    //TODO: into CoS' internal Jira
     //Commenting out for now.
 
-	@Relationship(value = "users", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-	private String userRel;
+    @Relationship(value = "users", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String userRel;
 
 
 
-	/**
-	 * The Contributor ID used when emitting RDF.
-	 * @return the RDF identifier of this contributor
+    /**
+     * The Contributor ID used when emitting RDF.
+     * @return the RDF identifier of this contributor
      */
-	public String getContributorIndividualId() {
-		return contributorIndividualId;
-	}
+    public String getContributorIndividualId() {
+        return contributorIndividualId;
+    }
 
-	/**
-	 * The Contributor ID used when emitting RDF.
-	 * @param contributorIndividualId the RDF identifier of this contributor
+    /**
+     * The Contributor ID used when emitting RDF.
+     * @param contributorIndividualId the RDF identifier of this contributor
      */
-	public void setContributorIndividualId(String contributorIndividualId) {
-		this.contributorIndividualId = contributorIndividualId;
-	}
+    public void setContributorIndividualId(final String contributorIndividualId) {
+        this.contributorIndividualId = contributorIndividualId;
+    }
 
-	public String getId() {
-		return id;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
-    
-	public Boolean isBibliographic() {
-		return isBibliographic;
-	}
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
 
-	public void setBibliographic(Boolean isBibliographic) {
-		this.isBibliographic = isBibliographic;
-	}
+    /**
+     *
+     * @return
+     */
+    public Boolean isBibliographic() {
+        return isBibliographic;
+    }
 
-	public Permission getPermission() {
-		return permission;
-	}
+    /**
+     *
+     * @param isBibliographic
+     */
+    public void setBibliographic(final Boolean isBibliographic) {
+        this.isBibliographic = isBibliographic;
+    }
 
-	public void setPermission(Permission permission) {
-		this.permission = permission;
-	}
+    /**
+     *
+     * @return
+     */
+    public Permission getPermission() {
+        return permission;
+    }
 
-	public Map<String, ?> getLinks() {
-		return links;
-	}
+    /**
+     *
+     * @param permission
+     */
+    public void setPermission(final Permission permission) {
+        this.permission = permission;
+    }
 
-	public void setLinks(Map<String, ?> links) {
-		this.links = links;
-	}
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getLinks() {
+        return links;
+    }
 
-	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
-		return pageLinks;
-	}
+    /**
+     *
+     * @param links
+     */
+    public void setLinks(final Map<String, ?> links) {
+        this.links = links;
+    }
 
-	@JsonProperty("links")
-	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
-		this.pageLinks = pageLinks;
-	}
+    /**
+     *
+     * @return
+     */
+    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+        return pageLinks;
+    }
 
-	public String getUserRel() {
-		return userRel;
-	}
+    /**
+     *
+     * @param pageLinks
+     */
+    @JsonProperty("links")
+    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+        this.pageLinks = pageLinks;
+    }
 
-	public void setUserRel(String userRel) {
-		this.userRel = userRel;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getUserRel() {
+        return userRel;
+    }
+
+    /**
+     *
+     * @param userRel
+     */
+    public void setUserRel(final String userRel) {
+        this.userRel = userRel;
+    }
 }

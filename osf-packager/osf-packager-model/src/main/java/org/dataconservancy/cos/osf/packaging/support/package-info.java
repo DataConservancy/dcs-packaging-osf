@@ -17,5 +17,7 @@
 /**
  * Provides utility classes for discovering, processing, and managing OWL-related annotations on Java classes and
  * fields.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 package org.dataconservancy.cos.osf.packaging.support;

@@ -26,10 +26,12 @@ import java.util.function.Function;
  * TODO: To calculate a file id, its node is required.  Unfortunately, only the first level of files
  * in a file hierarchy (the providers) carry a Node instance.  So this class does not work as intended.
  * </p>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class FileIdTransform implements Function<File, String> {
     @Override
-    public String apply(File file) {
+    public String apply(final File file) {
 //        if (file.getNode() != null) {
 //            return file.getId();
 //        }

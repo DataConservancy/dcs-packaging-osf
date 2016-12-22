@@ -20,7 +20,7 @@ import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 /**
- * Created by esm on 6/28/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @OwlIndividual(OwlClasses.OSF_BO)
 public class SomeOtherClass {

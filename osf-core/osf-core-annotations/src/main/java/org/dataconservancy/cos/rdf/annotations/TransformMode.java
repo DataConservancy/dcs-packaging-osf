@@ -18,6 +18,8 @@ package org.dataconservancy.cos.rdf.annotations;
 /**
  * The tranformation mode of a tranformation function that is specified by {@link IndividualUri#transform()} or
  * {@link OwlProperty#transform()}.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public enum TransformMode {
 

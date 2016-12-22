@@ -20,14 +20,24 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 
 /**
- * Created by esm on 6/1/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class Util {
 
     private static final String RELATIVE_ID_PREFIX = ":";
 
+    private Util() {
+        // prevent instantiation
+    }
 
-    public static String relativeId(String id) {
+    /**
+     * Prefixes the supplied identifier with a {@code :} to make it relative to the current resource.  If the identifier
+     * is already prefixed, it is returned unchanged.
+     *
+     * @param id the resource identifier
+     * @return the prefixed identifier
+     */
+    public static String relativeId(final String id) {
         if (id == null || id.trim().length() == 0) {
             throw new IllegalArgumentException("id must not be null or empty");
         }
@@ -38,14 +48,27 @@ public class Util {
         return RELATIVE_ID_PREFIX + id;
     }
 
-    public static Resource asResource(String uriRef) {
+    /**
+     * Returns the supplied uri as a {@code Resource}.
+     *
+     * @param uriRef the resource identifier
+     * @return the Resource
+     */
+    public static Resource asResource(final String uriRef) {
         if (uriRef == null || uriRef.trim().length() == 0) {
             throw new IllegalArgumentException("uriRef must not be null or empty");
         }
         return ResourceFactory.createResource(uriRef);
     }
 
-    public static Property asProperty(String uriRef) {
+
+    /**
+     * Returns the supplied uri as a {@code Property}.
+     *
+     * @param uriRef the properties identifier
+     * @return the Property
+     */
+    public static Property asProperty(final String uriRef) {
         if (uriRef == null || uriRef.trim().length() == 0) {
             throw new IllegalArgumentException("uriRef must not be null or empty");
         }

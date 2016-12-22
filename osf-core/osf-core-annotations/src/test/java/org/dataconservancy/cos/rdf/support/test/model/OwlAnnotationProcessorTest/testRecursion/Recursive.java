@@ -20,6 +20,8 @@ import org.dataconservancy.cos.rdf.support.OwlClasses;
 
 /**
  * A class which contains an instance of itself, and which references a class that contains this class as a member.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @OwlIndividual(OwlClasses.OSF_BO)
 public class Recursive {

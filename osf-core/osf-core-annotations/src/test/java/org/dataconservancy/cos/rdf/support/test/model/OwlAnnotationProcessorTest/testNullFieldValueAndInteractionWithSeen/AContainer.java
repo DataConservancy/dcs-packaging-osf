@@ -16,11 +16,11 @@
 package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTest.testNullFieldValueAndInteractionWithSeen;
 
 /**
- * Created by esm on 6/29/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class AContainer {
 
 
-    public YetAnotherClass a_field = null;
+    public YetAnotherClass A_FIELD = null;
 
 }

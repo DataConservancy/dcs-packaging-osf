@@ -29,31 +29,45 @@ import com.github.jasminb.jsonapi.annotations.Type;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NodeId  {
 
-	public NodeId(){}
-	
     /**node id*/
     @Id
     private String id;
-    
+
     /**pagination links, applies when list is returned**/
     private Links pageLinks;
-    
+
+    /**
+     *
+     * @return
+     */
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
         this.id = id;
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public Links getPageLinks() {
         return pageLinks;
     }
 
+    /**
+     *
+     * @param pageLinks
+     */
     @JsonProperty("links")
-    public void setPageLinks(Links pageLinks) {
+    public void setPageLinks(final Links pageLinks) {
         this.pageLinks = pageLinks;
     }
-    
-	
+
+
 }

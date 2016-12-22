@@ -20,6 +20,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Abstract base class for client configurations that use JSON.  This class provides a Jackson {@code ObjectMapper} to
  * concrete subclasses for reading JSON configurations.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public abstract class AbstractJacksonConfigurationService extends BaseConfigurationService {
 
@@ -42,7 +44,7 @@ public abstract class AbstractJacksonConfigurationService extends BaseConfigurat
      * @throws IllegalArgumentException if the default configuration resource is not found on the classpath, or any
      *                                  construction parameters are empty or {@code null}.
      */
-    public AbstractJacksonConfigurationService(String configurationResource) {
+    public AbstractJacksonConfigurationService(final String configurationResource) {
         if (configurationResource == null || configurationResource.trim().length() == 0) {
             throw new IllegalArgumentException("Configuration resource must not be empty or null.");
         }
@@ -68,7 +70,7 @@ public abstract class AbstractJacksonConfigurationService extends BaseConfigurat
      * @throws IllegalArgumentException if the default configuration resource is not found on the classpath, or any
      *                                  construction parameters are empty or {@code null}.
      */
-    public AbstractJacksonConfigurationService(String configurationResource, ObjectMapper mapper) {
+    public AbstractJacksonConfigurationService(final String configurationResource, final ObjectMapper mapper) {
         if (configurationResource == null || configurationResource.trim().length() == 0) {
             throw new IllegalArgumentException("Configuration resource must not be empty or null.");
         }

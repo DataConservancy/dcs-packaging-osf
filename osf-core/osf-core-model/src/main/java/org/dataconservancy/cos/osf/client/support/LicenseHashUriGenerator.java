@@ -23,6 +23,8 @@ import java.util.function.BiFunction;
 
 /**
  * Generates a unique has URI given the License's enclosing Node (or Registration).
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class LicenseHashUriGenerator implements BiFunction<NodeBase, License, String> {
 
@@ -31,7 +33,7 @@ public class LicenseHashUriGenerator implements BiFunction<NodeBase, License, St
     private static final String uriTemplate = "%s#license%s";
 
     @Override
-    public String apply(NodeBase nodeBase, License license) {
+    public String apply(final NodeBase nodeBase, final License license) {
         return String.format(uriTemplate, nodeBase.getId(), String.valueOf(ID.getAndIncrement()));
     }
 

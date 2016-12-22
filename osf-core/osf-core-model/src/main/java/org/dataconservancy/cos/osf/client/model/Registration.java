@@ -44,179 +44,281 @@ import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 @OwlIndividual(OwlClasses.OSF_REGISTRATION)
 public class Registration extends NodeBase  {
 
-	/**List of nodes that are children of this node.*/
-	@Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
-	@OwlProperty(OwlProperties.OSF_HAS_CHILD)
-	protected List<Registration> children;
+    /**List of nodes that are children of this node.*/
+    @Relationship(value = "children", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    @OwlProperty(OwlProperties.OSF_HAS_CHILD)
+    protected List<Registration> children;
 
-	/**Is this registered node visible on the user dashboard?**/
-	@OwlProperty(OwlProperties.OSF_IS_DASHBOARD)
-	private Boolean isDashboard;
-	
-	/**Has this registration been withdrawn?**/
-	@OwlProperty(OwlProperties.OSF_IS_WITHDRAWN)
-	private Boolean isWithdrawn;
+    /**Is this registered node visible on the user dashboard?**/
+    @OwlProperty(OwlProperties.OSF_IS_DASHBOARD)
+    private Boolean isDashboard;
 
-	/**	Timestamp that the registration was created */
-	@OwlProperty(value = OwlProperties.OSF_HAS_DATEREGISTERED, transform = DateTimeTransform.class)
-	private DateTime date_registered;
-	
-	/** When the embargo on this registration will be lifted (if applicable) */
-	@OwlProperty(value = OwlProperties.OSF_HAS_EMBARGOENDDATE, transform = DateTimeTransform.class)
-	private DateTime embargo_end_date;
-	
-	/**Reasons for withdrawing the registration*/
-	// TODO: @OwlProperty()
-	private String withdrawal_justification;
+    /**Has this registration been withdrawn?**/
+    @OwlProperty(OwlProperties.OSF_IS_WITHDRAWN)
+    private Boolean isWithdrawn;
 
-	/** Is this registration pending withdrawal?*/
-	@OwlProperty(OwlProperties.OSF_IS_PENDINGWITHDRAWL)
-	private Boolean isPending_withdrawal;
-	
-	/**Is this registration pending approval?*/
-	@OwlProperty(OwlProperties.OSF_IS_PENDINGREGISTRATIONAPPROVAL)
-	private Boolean isPending_registration_approval; 
-	
-	/** Is the associated Embargo awaiting approval by project admins? */
-	@OwlProperty(OwlProperties.OSF_IS_PENDINGEMBARGOAPPROVAL)
-	private Boolean isPending_embargo_approval;           
-	
-	/**registration supplementary information*/
-	// TODO @OwlProperty
-	private RegistrationMetadata registered_meta;
-	
-	/**registration template used*/
-	@OwlProperty(OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT)
-	private String registration_supplement;
-	
-	/**Node registered from who are contributors to this node. */
-	@Relationship(value = "registered_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-	@OwlProperty(value = OwlProperties.OSF_REGISTERED_FROM, transform = UrlToIdTransform.class)
-	private String registered_from;
+    /**    Timestamp that the registration was created */
+    @OwlProperty(value = OwlProperties.OSF_HAS_DATEREGISTERED, transform = DateTimeTransform.class)
+    private DateTime date_registered;
 
-	@Relationship(value = "registered_by", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-	@OwlProperty(value = OwlProperties.OSF_REGISTERED_BY, transform = UrlToIdTransform.class)
-	private String registered_by;
-	
-	public List<Registration> getChildren() {
-		return children;
-	}	
-	
-	public void setChildren(List<Registration> children) {
-		this.children = children;
-	}
-	
-	public Boolean isDashboard() {
-		return isDashboard;
-	}
+    /** When the embargo on this registration will be lifted (if applicable) */
+    @OwlProperty(value = OwlProperties.OSF_HAS_EMBARGOENDDATE, transform = DateTimeTransform.class)
+    private DateTime embargo_end_date;
 
-	public void setDashboard(Boolean isDashboard) {
-		this.isDashboard = isDashboard;
-	}
+    /**Reasons for withdrawing the registration*/
+    // TODO: @OwlProperty()
+    private String withdrawal_justification;
 
-	public Boolean isWithdrawn() {
-		return isWithdrawn;
-	}
+    /** Is this registration pending withdrawal?*/
+    @OwlProperty(OwlProperties.OSF_IS_PENDINGWITHDRAWL)
+    private Boolean isPending_withdrawal;
 
-	public void setWithdrawn(Boolean isWithdrawn) {
-		this.isWithdrawn = isWithdrawn;
-	}
-	
-	public String getDate_registered() {
-    	if (this.date_registered!=null) {
-    		return this.date_registered.toString(DATE_TIME_FORMATTER);
-    	} else {
-    		return null;
-    	}
-	}
+    /**Is this registration pending approval?*/
+    @OwlProperty(OwlProperties.OSF_IS_PENDINGREGISTRATIONAPPROVAL)
+    private Boolean isPending_registration_approval;
 
-	public void setDate_registered(String date_registered) {
-    	if (date_registered!=null){
-    		this.date_registered = JodaSupport.parseDateTime(date_registered);
-    	} else {
-    		this.date_registered = null;
-    	}
-	}
+    /** Is the associated Embargo awaiting approval by project admins? */
+    @OwlProperty(OwlProperties.OSF_IS_PENDINGEMBARGOAPPROVAL)
+    private Boolean isPending_embargo_approval;
 
-	public String getEmbargo_end_date() {
-    	if (this.embargo_end_date!=null) {
-    		return this.embargo_end_date.toString(DATE_TIME_FORMATTER);
-    	} else {
-    		return null;
-    	}
-	}
+    /**registration supplementary information*/
+    // TODO @OwlProperty
+    private RegistrationMetadata registered_meta;
 
-	public void setEmbargo_end_date(String embargo_end_date) {
-    	if (embargo_end_date!=null){
-    		this.embargo_end_date = JodaSupport.parseDateTime(embargo_end_date);
-    	} else {
-    		this.embargo_end_date = null;
-    	}
-	}
+    /**registration template used*/
+    @OwlProperty(OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT)
+    private String registration_supplement;
 
-	public String getWithdrawal_justification() {
-		return withdrawal_justification;
-	}
+    /**Node registered from who are contributors to this node. */
+    @Relationship(value = "registered_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    @OwlProperty(value = OwlProperties.OSF_REGISTERED_FROM, transform = UrlToIdTransform.class)
+    private String registered_from;
 
-	public void setWithdrawal_justification(String withdrawal_justification) {
-		this.withdrawal_justification = withdrawal_justification;
-	}
+    @Relationship(value = "registered_by", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    @OwlProperty(value = OwlProperties.OSF_REGISTERED_BY, transform = UrlToIdTransform.class)
+    private String registered_by;
 
-	public Boolean isPending_withdrawal() {
-		return isPending_withdrawal;
-	}
+    /**
+     *
+     * @return
+     */
+    public List<Registration> getChildren() {
+        return children;
+    }
 
-	public void setPending_withdrawal(Boolean isPending_withdrawal) {
-		this.isPending_withdrawal = isPending_withdrawal;
-	}
+    /**
+     *
+     * @param children
+     */
+    public void setChildren(final List<Registration> children) {
+        this.children = children;
+    }
 
-	public Boolean isPending_registration_approval() {
-		return isPending_registration_approval;
-	}
+    /**
+     *
+     * @return
+     */
+    public Boolean isDashboard() {
+        return isDashboard;
+    }
 
-	public void setPending_registration_approval(
-			Boolean isPending_registration_approval) {
-		this.isPending_registration_approval = isPending_registration_approval;
-	}
+    /**
+     *
+     * @param isDashboard
+     */
+    public void setDashboard(final Boolean isDashboard) {
+        this.isDashboard = isDashboard;
+    }
 
-	public Boolean isPending_embargo_approval() {
-		return isPending_embargo_approval;
-	}
+    /**
+     *
+     * @return
+     */
+    public Boolean isWithdrawn() {
+        return isWithdrawn;
+    }
 
-	public void setPending_embargo_approval(Boolean isPending_embargo_approval) {
-		this.isPending_embargo_approval = isPending_embargo_approval;
-	}
+    /**
+     *
+     * @param isWithdrawn
+     */
+    public void setWithdrawn(final Boolean isWithdrawn) {
+        this.isWithdrawn = isWithdrawn;
+    }
 
-	public RegistrationMetadata getRegistered_meta() {
-		return registered_meta;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getDate_registered() {
+        if (this.date_registered != null) {
+            return this.date_registered.toString(DATE_TIME_FORMATTER);
+        } else {
+            return null;
+        }
+    }
 
-	public void setRegistered_meta(RegistrationMetadata registered_meta) {
-		this.registered_meta = registered_meta;
-	}
+    /**
+     *
+     * @param date_registered
+     */
+    public void setDate_registered(final String date_registered) {
+        if (date_registered != null) {
+            this.date_registered = JodaSupport.parseDateTime(date_registered);
+        } else {
+            this.date_registered = null;
+        }
+    }
 
-	public String getRegistration_supplement() {
-		return registration_supplement;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getEmbargo_end_date() {
+        if (this.embargo_end_date != null) {
+            return this.embargo_end_date.toString(DATE_TIME_FORMATTER);
+        } else {
+            return null;
+        }
+    }
 
-	public void setRegistration_supplement(String registration_supplement) {
-		this.registration_supplement = registration_supplement;
-	}
+    /**
+     *
+     * @param embargo_end_date
+     */
+    public void setEmbargo_end_date(final String embargo_end_date) {
+        if (embargo_end_date != null) {
+            this.embargo_end_date = JodaSupport.parseDateTime(embargo_end_date);
+        } else {
+            this.embargo_end_date = null;
+        }
+    }
 
-	public String getRegistered_from() {
-		return registered_from;
-	}
+    /**
+     *
+     * @return
+     */
+    public String getWithdrawal_justification() {
+        return withdrawal_justification;
+    }
 
-	public void setRegistered_from(String registered_from) {
-		this.registered_from = registered_from;
-	}
+    /**
+     *
+     * @param withdrawal_justification
+     */
+    public void setWithdrawal_justification(final String withdrawal_justification) {
+        this.withdrawal_justification = withdrawal_justification;
+    }
 
+    /**
+     *
+     * @return
+     */
+    public Boolean isPending_withdrawal() {
+        return isPending_withdrawal;
+    }
 
-	public String getRegistered_by() {
-		return registered_by;
-	}
+    /**
+     *
+     * @param isPending_withdrawal
+     */
+    public void setPending_withdrawal(final Boolean isPending_withdrawal) {
+        this.isPending_withdrawal = isPending_withdrawal;
+    }
 
-	public void setRegistered_by(String registered_by) {
-		this.registered_by = registered_by;
-	}
+    /**
+     *
+     * @return
+     */
+    public Boolean isPending_registration_approval() {
+        return isPending_registration_approval;
+    }
+
+    /**
+     *
+     * @param isPending_registration_approval
+     */
+    public void setPending_registration_approval(final Boolean isPending_registration_approval) {
+        this.isPending_registration_approval = isPending_registration_approval;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Boolean isPending_embargo_approval() {
+        return isPending_embargo_approval;
+    }
+
+    /**
+     *
+     * @param isPending_embargo_approval
+     */
+    public void setPending_embargo_approval(final Boolean isPending_embargo_approval) {
+        this.isPending_embargo_approval = isPending_embargo_approval;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public RegistrationMetadata getRegistered_meta() {
+        return registered_meta;
+    }
+
+    /**
+     *
+     * @param registered_meta
+     */
+    public void setRegistered_meta(final RegistrationMetadata registered_meta) {
+        this.registered_meta = registered_meta;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getRegistration_supplement() {
+        return registration_supplement;
+    }
+
+    /**
+     *
+     * @param registration_supplement
+     */
+    public void setRegistration_supplement(final String registration_supplement) {
+        this.registration_supplement = registration_supplement;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getRegistered_from() {
+        return registered_from;
+    }
+
+    /**
+     *
+     * @param registered_from
+     */
+    public void setRegistered_from(final String registered_from) {
+        this.registered_from = registered_from;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getRegistered_by() {
+        return registered_by;
+    }
+
+    /**
+     *
+     * @param registered_by
+     */
+    public void setRegistered_by(final String registered_by) {
+        this.registered_by = registered_by;
+    }
 }

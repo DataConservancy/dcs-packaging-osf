@@ -26,33 +26,33 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class RegistrationMetadata {
 /*
  * Lots of fields
- * examples: 
+ * examples:
  * 
-	"registered_meta": {
-		"summary": {
-			"value": "This is the summary field for \"an open ended registration\" for a private project",
-			"comments": [],
+    "registered_meta": {
+        "summary": {
+            "value": "This is the summary field for \"an open ended registration\" for a private project",
+            "comments": [],
             "extra": {}
         }
-	},
-	
-	"registered_meta": {
-		"looked": {
-			"value": "Yes",
-			"comments": [],
-			"extra": {}
-			},
-		"datacompletion": {
-			"value": "Yes, data collection is underway or complete",
-			"comments": [],
-			"extra": {}
-		},
-		"comments": {
-			"value": "This is the other comments field for \"an OSF standard registration\" for a private project",
-			"comments": [],
-			"extra": {}
-		}
-	},
-	
+    },
+
+    "registered_meta": {
+        "looked": {
+            "value": "Yes",
+            "comments": [],
+            "extra": {}
+            },
+        "datacompletion": {
+            "value": "Yes, data collection is underway or complete",
+            "comments": [],
+            "extra": {}
+        },
+        "comments": {
+            "value": "This is the other comments field for \"an OSF standard registration\" for a private project",
+            "comments": [],
+            "extra": {}
+        }
+    },
+
  */
 }

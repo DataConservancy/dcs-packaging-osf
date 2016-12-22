@@ -17,6 +17,8 @@ package org.dataconservancy.cos.osf.client.config;
 
 /**
  * Factory responsible for returning populated instances of {@link OsfClientConfiguration}.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public interface OsfConfigurationService {
 

@@ -25,40 +25,41 @@ import org.junit.Test;
 import org.junit.rules.TestName;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 /**
- * Created by esm on 7/8/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ContributorTest extends AbstractMockServerTest {
 
     @Rule
-    public TestName testName = new TestName();
+    public TestName TEST_NAME = new TestName();
 
     private OsfService osfService;
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(testName, ContributorTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, ContributorTest.class, getBaseUri()));
         osfService = factory.getOsfService(OsfService.class);
     }
 
     @Test
     public void testResolveUser() throws Exception {
-        String contributorEndpoint = "https://api.osf.io/v2/registrations/0zqbo/contributors/";
-        List<Contributor> contributors = osfService.contributors(contributorEndpoint).execute().body();
+        final String contributorEndpoint = "https://api.osf.io/v2/registrations/0zqbo/contributors/";
+        final List<Contributor> contributors = osfService.contributors(contributorEndpoint).execute().body();
 
         assertNotNull(contributors);
         assertEquals(2, contributors.size());
 
-        Contributor cVni4p = contributors.stream()
+        final Contributor cVni4p = contributors.stream()
                 .filter(c -> c.getId().equals("0zqbo-vni4p"))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Missing expected contributor 0zqbo-vni4p"));
 
-        Contributor cJym4z = contributors.stream()
+        final Contributor cJym4z = contributors.stream()
                 .filter(c -> c.getId().equals("0zqbo-jym4z"))
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Missing expected contributor 0zqbo-jym4z"));

@@ -27,6 +27,8 @@ import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
  * Encapsulates a license for a OSF Node or Registration.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @Type("licenses")
 @OwlIndividual(value = OwlClasses.OSF_LICENSE)
@@ -42,19 +44,35 @@ public class License {
     @OwlProperty(OwlProperties.OSF_HAS_LICENSE_NAME)
     private String name;
 
+    /**
+     *
+     * @return
+     */
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
+    /**
+     *
+     * @param text
+     */
+    public void setText(final String text) {
         this.text = text;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     *
+     * @param name
+     */
+    public void setName(final String name) {
         this.name = name;
     }
 

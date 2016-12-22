@@ -17,7 +17,10 @@ package org.dataconservancy.cos.rdf.support.test.model.OwlAnnotationProcessorTes
 
 /**
  * Test class with fields that are arrays.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
+@SuppressWarnings("checkstyle:hideutilityclassconstructor")
 public class ClassWithEmptyArrays {
 
     /**
@@ -39,6 +42,10 @@ public class ClassWithEmptyArrays {
      * field of ClassFoo[] set to a array of length 1 (initialized with {@code null} values)
      */
     public static final ClassFoo[] ARRAY_OF_FOO_WITH_SIZE = new ClassFoo[1];
+
+    public ClassWithEmptyArrays() {
+
+    }
 
     public static class ClassFoo {
 

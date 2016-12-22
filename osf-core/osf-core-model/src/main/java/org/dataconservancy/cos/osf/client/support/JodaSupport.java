@@ -31,16 +31,22 @@ import java.util.List;
 public class JodaSupport {
 
     /**
-     * A Joda DateTimeFormatter which parses timezone-less strings as UTC using the pattern: {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}
+     * A Joda DateTimeFormatter which parses timezone-less strings as UTC using the pattern:
+     * {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}
      */
-    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS").withZoneUTC();
+    public static final DateTimeFormatter DATE_TIME_FORMATTER =
+            DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS").withZoneUTC();
 
-    //NOTE: dates on some of the API paths are formatted with the 'Z' at the end. Until they are consistent, there is this...
-    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    //NOTE: dates on some of the API paths are formatted with the 'Z' at the end.
+    // Until they are consistent, there is this...
+    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT =
+            DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
-    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_2 = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_2 =
+            DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
-    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_3 = DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss").withZoneUTC();
+    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_3 =
+            DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss").withZoneUTC();
 
 
     private static final List<DateTimeFormatter> DATE_TIME_FORMATTERS =
@@ -52,6 +58,11 @@ public class JodaSupport {
                     add(DATE_TIME_FORMATTER_ALT_3);
                 }
             };
+
+    private JodaSupport() {
+        // prevent instantiation
+    }
+
 
     /**
      * Parses a string timestamp into a Joda {@code DateTime} object.
@@ -68,7 +79,7 @@ public class JodaSupport {
      * @return the Joda {@code DateTime} for the timestamp
      * @throws RuntimeException if the string representing the timestamp cannot be parsed
      */
-    public static DateTime parseDateTime(String dateTime) {
+    public static DateTime parseDateTime(final String dateTime) {
         for (DateTimeFormatter formatter : DATE_TIME_FORMATTERS) {
             try {
                 return formatter.parseDateTime(dateTime);
@@ -76,7 +87,8 @@ public class JodaSupport {
                 // nothing we can do, try the next formatter in line, or error out below.
             }
         }
-        throw new RuntimeException("Unable to parse '" + dateTime + "' to a Joda DateTime object: Missing a DateTimeFormatter.");
+        throw new RuntimeException(
+                "Unable to parse '" + dateTime + "' to a Joda DateTime object: Missing a DateTimeFormatter.");
     }
 
 }

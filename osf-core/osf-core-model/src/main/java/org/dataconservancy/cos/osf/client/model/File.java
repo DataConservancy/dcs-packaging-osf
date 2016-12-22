@@ -17,15 +17,12 @@ package org.dataconservancy.cos.osf.client.model;
 
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
-import java.net.URI;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonSetter;
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.DownloadLinkTransform;
-import org.dataconservancy.cos.osf.client.support.FileIdTransform;
 import org.dataconservancy.cos.osf.client.support.JodaSupport;
 import org.dataconservancy.cos.osf.client.support.ProviderIdTransform;
 import org.dataconservancy.cos.rdf.annotations.IndividualUri;
@@ -59,33 +56,33 @@ public class File {
     @Id
     @IndividualUri(transform = ProviderIdTransform.class)
     private String id;
-    
+
     /**list of files down next level of file tree*/
     @Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     @OwlProperty(OwlProperties.OSF_HAS_FILE)
     private List<File> files;
 
-	/**list of versions associated with file*/
+    /**list of versions associated with file*/
     @Relationship(value = "versions", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<FileVersion> versions;
 
     /**list of comments associated with file*/
     @Relationship(value = "comments", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<Comment> comments;
-        
+
     /**Gets other links found in data.links:{} section of JSON**/
     @Links
     @OwlProperty(value = OwlProperties.OSF_HAS_BINARYURI, transform = DownloadLinkTransform.class)
-    Map<String, ?> links;        
-    
+    Map<String, ?> links;
+
     /**pagination links, applies when list is returned**/
     private org.dataconservancy.cos.osf.client.model.Links pageLinks;
-    
+
     /**name of the file or folder; used for display*/
     @OwlProperty(OwlProperties.OSF_HAS_NAME)
-    private String name;    
-        
-	/**"file" or "folder"*/
+    private String name;
+
+    /**"file" or "folder"*/
     @OwlProperty(OwlProperties.OSF_HAS_HASKIND)
     private String kind;
 
@@ -121,150 +118,276 @@ public class File {
     /**list of hashes of the hashes for the files*/
     private Set<Checksum> hashes;
 
+    /**
+     *
+     * @return
+     */
     public String getKind() {
         return kind;
     }
 
-    public void setKind(String kind) {
+    /**
+     *
+     * @param kind
+     */
+    public void setKind(final String kind) {
         this.kind = kind;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNode() {
-		return node;
-	}
+        return node;
+    }
 
-	public void setNode(String node) {
-		this.node = node;
-	}
-    
+    /**
+     *
+     * @param node
+     */
+    public void setNode(final String node) {
+        this.node = node;
+    }
+
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     *
+     * @param name
+     */
+    public void setName(final String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMaterialized_path() {
         return materialized_path;
     }
 
-    public void setMaterialized_path(String materialized_path) {
+    /**
+     *
+     * @param materialized_path
+     */
+    public void setMaterialized_path(final String materialized_path) {
         this.materialized_path = materialized_path;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDate_created() {
-    	if (this.date_created!=null) {
-    		return this.date_created.toString(DATE_TIME_FORMATTER_ALT);
-    	} else {
-    		return null;
-    	}
+        if (this.date_created != null) {
+            return this.date_created.toString(DATE_TIME_FORMATTER_ALT);
+        } else {
+            return null;
+        }
     }
 
-    public void setDate_created(String date_created) {
-    	if (date_created!=null){
-    		this.date_created = JodaSupport.parseDateTime(date_created);
-    	} else {
-    		this.date_created = null;
-    	}
+    /**
+     *
+     * @param date_created
+     */
+    public void setDate_created(final String date_created) {
+        if (date_created != null) {
+            this.date_created = JodaSupport.parseDateTime(date_created);
+        } else {
+            this.date_created = null;
+        }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDate_modified() {
-    	if (this.date_modified!=null) {
-    		return this.date_modified.toString(DATE_TIME_FORMATTER_ALT);
-    	} else {
-    		return null;
-    	}
+        if (this.date_modified != null) {
+            return this.date_modified.toString(DATE_TIME_FORMATTER_ALT);
+        } else {
+            return null;
+        }
     }
 
-    public void setDate_modified(String date_modified) {
-    	if (date_modified!=null){
-    		this.date_modified = JodaSupport.parseDateTime(date_modified);
-    	} else {
-    		date_modified=null;
-    	}
+    /**
+     *
+     * @param date_modified
+     */
+    public void setDate_modified(final String date_modified) {
+        if (date_modified != null) {
+            this.date_modified = JodaSupport.parseDateTime(date_modified);
+        }
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public String getProvider() {
         return provider;
     }
 
-    public void setProvider(String provider) {
+    /**
+     *
+     * @param provider
+     */
+    public void setProvider(final String provider) {
         this.provider = provider;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPath() {
         return path;
     }
 
-    public void setPath(String path) {
+    /**
+     *
+     * @param path
+     */
+    public void setPath(final String path) {
         this.path = path;
     }
 
+    /**
+     *
+     * @return
+     */
     public Integer getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    /**
+     *
+     * @param size
+     */
+    public void setSize(final Integer size) {
         this.size = size;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<File> getFiles() {
         return files;
     }
 
-    public void setFiles(List<File> files) {
+    /**
+     *
+     * @param files
+     */
+    public void setFiles(final List<File> files) {
         this.files = files;
     }
 
-	public Set<Checksum> getHashes() {
-		return hashes;
-	}
+    /**
+     *
+     * @return
+     */
+    public Set<Checksum> getHashes() {
+        return hashes;
+    }
 
-	public void setHashes(Set<Checksum> hashes) {
-		this.hashes = hashes;
-	}	
+    /**
+     *
+     * @param hashes
+     */
+    public void setHashes(final Set<Checksum> hashes) {
+        this.hashes = hashes;
+    }
 
+    /**
+     *
+     * @return
+     */
     public List<Comment> getComments() {
-		return comments;
-	}
+        return comments;
+    }
 
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
+    /**
+     *
+     * @param comments
+     */
+    public void setComments(final List<Comment> comments) {
+        this.comments = comments;
+    }
 
-	public List<FileVersion> getVersions() {
-		return versions;
-	}
+    /**
+     *
+     * @return
+     */
+    public List<FileVersion> getVersions() {
+        return versions;
+    }
 
-	public void setVersions(List<FileVersion> versions) {
-		this.versions = versions;
-	}
+    /**
+     *
+     * @param versions
+     */
+    public void setVersions(final List<FileVersion> versions) {
+        this.versions = versions;
+    }
 
-	public Map<String, ?> getLinks() {
-		return links;
-	}
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getLinks() {
+        return links;
+    }
 
-	public void setLinks(Map<String, ?> links) {
-		this.links = links;
-	}
+    /**
+     *
+     * @param links
+     */
+    public void setLinks(final Map<String, ?> links) {
+        this.links = links;
+    }
 
-	public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
-		return pageLinks;
-	}
+    /**
+     *
+     * @return
+     */
+    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+        return pageLinks;
+    }
 
+    /**
+     *
+     * @param pageLinks
+     */
     @JsonProperty("links")
-	public void setPageLinks(org.dataconservancy.cos.osf.client.model.Links pageLinks) {
-		this.pageLinks = pageLinks;
-	}
+    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+        this.pageLinks = pageLinks;
+    }
 
-    
+
 }

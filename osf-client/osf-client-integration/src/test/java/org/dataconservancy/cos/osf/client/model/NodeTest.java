@@ -15,7 +15,6 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.github.jasminb.jsonapi.ResourceList;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.service.OsfService;
@@ -27,8 +26,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.net.URI;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -38,14 +35,16 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.mockserver.model.HttpRequest.request;
 
 /**
  * Various tests against model classes:
  * <ul>
- *     <ol>Insuring that the JSON response documents from the OSF v2 API are properly deserialized into Java classes.</ol>
+ *     <ol>Insuring that the JSON response documents from the OSF v2 API are properly deserialized into
+ *         Java classes.</ol>
  *     <ol>Insuring that relationships represented in JSON response documents are properly navigated</ol>
  * </ul>
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class NodeTest extends AbstractMockServerTest {
 
@@ -54,14 +53,14 @@ public class NodeTest extends AbstractMockServerTest {
     private String baseUri = getBaseUri().toString();
 
     @Rule
-    public TestName testName = new TestName();
+    public TestName TEST_NAME = new TestName();
 
     /**
      * This is a basic sanity test, insuring a JSON response document is properly mapped into a Node.
      * <p>
-     * Retrieves a JSON document containing a node that has no relationships with {@link ResolutionStrategy#OBJECT}
-     * (which makes it easier in terms of setting HTTP expectations; there are no subsequent requests to retrieve
-     * additional objects).
+     * Retrieves a JSON document containing a node that has no relationships with
+     * {@link com.github.jasminb.jsonapi.ResolutionStrategy#OBJECT} (which makes it easier in terms of setting HTTP
+     * expectations; there are no subsequent requests to retrieve additional objects).
      * </p>
      *
      * @throws Exception
@@ -72,7 +71,7 @@ public class NodeTest extends AbstractMockServerTest {
                 chain.request().newBuilder().addHeader(X_RESPONSE_RESOURCE, "project-node-only-ref-rels.json").build()
         ));
 
-        Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
+        final Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
         assertNotNull(n);
 
         // These fields are null because they are not in the json response document
@@ -114,9 +113,9 @@ public class NodeTest extends AbstractMockServerTest {
     @Test
     public void testGetNodeObjectResolution() throws Exception {
 
-        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri()));
 
-        Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
+        final Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
         assertNotNull(n);
 
         // Only test the relationships that are object references; string refs and fields were tested earlier
@@ -126,7 +125,7 @@ public class NodeTest extends AbstractMockServerTest {
 
         // Contributors
         assertEquals(1, n.getContributors().size());
-        Contributor c = n.getContributors().get(0);
+        final Contributor c = n.getContributors().get(0);
         assertEquals("a3q2g", c.getId());
         assertTrue(c.isBibliographic());
         assertNotNull(c.getPermission());
@@ -135,7 +134,7 @@ public class NodeTest extends AbstractMockServerTest {
         // Files
         assertEquals(1, n.getFiles().size());
         // The fields in a File are covered in another test; we just verify the hierarchy is what we expect
-        File storageProvider = n.getFiles().get(0);
+        final File storageProvider = n.getFiles().get(0);
         assertEquals("v8x57:osfstorage", storageProvider.getId());
         assertEquals(2, storageProvider.getFiles().size());
 
@@ -144,9 +143,10 @@ public class NodeTest extends AbstractMockServerTest {
 
         // TODO store files in a Map keyed by name?
 
-        File f = getFile("porsche.jpg", storageProvider.getFiles());
+        final File f = getFile("porsche.jpg", storageProvider.getFiles());
         assertNotNull(f.getLinks());
-        assertEquals("http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5716311dcfa27c0045ec7cab", f.getLinks().get("download"));
+        assertEquals("http://localhost:7777/v1/resources/v8x57/providers/osfstorage/5716311dcfa27c0045ec7cab",
+                f.getLinks().get("download"));
 
 
 
@@ -161,13 +161,13 @@ public class NodeTest extends AbstractMockServerTest {
      */
     @Test
     public void testGetSubProjectFileFromParent() throws Exception {
-        String topLevel = "jp4tk";
-        String sub = "pd24n";
-        String fileName = "porsche.jpg";
+        final String topLevel = "jp4tk";
+        final String sub = "pd24n";
+        final String fileName = "porsche.jpg";
 
-        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri()));
 
-        Node topNode = factory.getOsfService(OsfService.class).node(topLevel).execute().body();
+        final Node topNode = factory.getOsfService(OsfService.class).node(topLevel).execute().body();
         assertNotNull(topNode);
 
         // the top node has only one file, the osfstorage provider.
@@ -181,7 +181,7 @@ public class NodeTest extends AbstractMockServerTest {
 
         // There's one child
         assertEquals(1, topNode.getChildren().size());
-        Node subNode = topNode.getChildren().get(0);
+        final Node subNode = topNode.getChildren().get(0);
         assertNotNull(subNode);
         assertEquals(sub, subNode.getId());
 
@@ -198,15 +198,15 @@ public class NodeTest extends AbstractMockServerTest {
 
     @Test
     public void testNodeListPagination() throws Exception {
-        AtomicInteger requestCount = new AtomicInteger(0);
+        final AtomicInteger requestCount = new AtomicInteger(0);
 //        factory.interceptors().add(chain -> {
 //            System.out.println("Requesting: " + chain.request().urlString());
 //            return chain.proceed(chain.request());
 //        });
-        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri(),
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri(),
                 (name, baseUri, reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
-                    String fsBase = resourceBase(testName);
+                    final String fsBase = resourceBase(TEST_NAME);
 
                     requestCount.incrementAndGet();
 
@@ -228,10 +228,10 @@ public class NodeTest extends AbstractMockServerTest {
                     return fsBase + "index-02.json";
         }));
 
-        OsfService osfService = factory.getOsfService(OsfService.class);
+        final OsfService osfService = factory.getOsfService(OsfService.class);
 
         // Retrieve the first page of results
-        ResourceList<Node> pageOne = osfService.paginatedNodeList().execute().body();
+        final ResourceList<Node> pageOne = osfService.paginatedNodeList().execute().body();
 
         // sanity
         assertEquals(31, requestCount.get());
@@ -253,7 +253,7 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(baseUri + "nodes/?page=2", pageOne.getNext());
 
         // Retrieve the second page of results.
-        ResourceList<Node> pageTwo = osfService.paginatedNodeList(pageOne.getNext()).execute().body();
+        final ResourceList<Node> pageTwo = osfService.paginatedNodeList(pageOne.getNext()).execute().body();
 
         // Sanity
         assertNotNull(pageTwo);
@@ -277,10 +277,10 @@ public class NodeTest extends AbstractMockServerTest {
 
     @Test
     public void testDownloadFile() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(testName, NodeTest.class, getBaseUri(),
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri(),
                 (name, base, req) -> {
                     // /json/NodeTest/testDownloadFile/
-                    String fsBase = resourceBase(testName);
+                    final String fsBase = resourceBase(TEST_NAME);
 
                     // We probably have a Waterbutler request (wb requests go to port 7777, typically)
                     if (req.getPort() != getBaseUri().getPort()) {
@@ -289,26 +289,26 @@ public class NodeTest extends AbstractMockServerTest {
                     }
 
                     // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-                    URI relativizedRequestUri = getBaseUri().relativize(req);
-                    String requestPath = relativizedRequestUri.getPath();
+                    final URI relativizedRequestUri = getBaseUri().relativize(req);
+                    final String requestPath = relativizedRequestUri.getPath();
 
                     // /json/NodeTest/testDownloadFile/nodes/v8x57/files/osfstorage/index.json
                     return fsBase + requestPath + "index.json";
                 }));
 
-        OsfService osfService = factory.getOsfService(OsfService.class);
-        Node nodeWithFile = osfService.node("pd24n").execute().body();
+        final OsfService osfService = factory.getOsfService(OsfService.class);
+        final Node nodeWithFile = osfService.node("pd24n").execute().body();
         assertNotNull(nodeWithFile);
-        File osfProvider = nodeWithFile.getFiles().get(0);
-        File binary = osfProvider.getFiles().get(0);
+        final File osfProvider = nodeWithFile.getFiles().get(0);
+        final File binary = osfProvider.getFiles().get(0);
         assertNotNull(binary);
         assertEquals("porsche.jpg", binary.getName());
 
-        String downloadUrl = (String)binary.getLinks().get("download");
+        final String downloadUrl = (String)binary.getLinks().get("download");
         assertNotNull(downloadUrl);
 
-        InputStream response = osfService.stream(downloadUrl).execute().body().byteStream();
-        byte[] content = IOUtils.toByteArray(response);
+        final InputStream response = osfService.stream(downloadUrl).execute().body().byteStream();
+        final byte[] content = IOUtils.toByteArray(response);
         assertNotNull(content);
         assertEquals(Long.valueOf(binary.getSize()), Long.valueOf(content.length));
     }
@@ -320,7 +320,7 @@ public class NodeTest extends AbstractMockServerTest {
      * @param name the name of the file to check for
      * @param files a collection of File objects
      */
-    private static void assertFilesContainsName(String name, Collection<File> files) {
+    private static void assertFilesContainsName(final String name, final Collection<File> files) {
         for (File f : files) {
             if (f.getName().equals(name)) {
                 return;
@@ -330,7 +330,7 @@ public class NodeTest extends AbstractMockServerTest {
         fail("Expected file named '" + name + "' was not found.");
     }
 
-    private File getFile(String name, Collection<File> files) {
+    private File getFile(final String name, final Collection<File> files) {
         for (File f : files) {
             if (f.getName().equals(name)) {
                 return f;

@@ -16,7 +16,6 @@
 package org.dataconservancy.cos.osf.client.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.jasminb.jsonapi.ResolutionStrategy;
 import com.squareup.okhttp.Interceptor;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -26,7 +25,6 @@ import org.dataconservancy.cos.osf.client.config.DefaultWbJacksonConfigurer;
 import org.dataconservancy.cos.osf.client.config.JacksonConfigurer;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
 import org.dataconservancy.cos.osf.client.config.WbClientConfiguration;
-import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.rules.TestName;
@@ -50,6 +48,8 @@ import static org.mockserver.model.HttpRequest.request;
 
 /**
  * Test fixture providing a {@link MockServerClient} used to configure HTTP expectations.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
@@ -75,21 +75,24 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
     static MockServerClient wbMockServer;
 
     /**
-     * Starts mock HTTP servers on the port specified by the OSF client configuration and the Waterbutler client configuration
+     * Starts mock HTTP servers on the port specified by the OSF client configuration and the Waterbutler client
+     * configuration
      */
     @Before
     public void startMockServer() throws Exception {
         final ObjectMapper mapper = new ObjectMapper();
 
-        JacksonConfigurer<OsfClientConfiguration> osfConfigurer = new DefaultOsfJacksonConfigurer<>();
-        JacksonConfigurer<WbClientConfiguration> wbConfigurer = new DefaultWbJacksonConfigurer<>();
+        final JacksonConfigurer<OsfClientConfiguration> osfConfigurer = new DefaultOsfJacksonConfigurer<>();
+        final JacksonConfigurer<WbClientConfiguration> wbConfigurer = new DefaultWbJacksonConfigurer<>();
 
-        ResourceLoader loader = new DefaultResourceLoader();
+        final ResourceLoader loader = new DefaultResourceLoader();
 
-        Resource configuration = loader.getResource(getOsfServiceConfigurationResource());
-        assertTrue("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'", configuration.exists());
+        final Resource configuration = loader.getResource(getOsfServiceConfigurationResource());
+        assertTrue("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'",
+                configuration.exists());
 
-//        assertNotNull("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'", configuration);
+// assertNotNull("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'",
+// configuration);
 
         mockServer = ClientAndServer.startClientAndServer(
                 osfConfigurer.configure(
@@ -140,15 +143,15 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         wbMockServer.stop();
     }
 
-    public static URI relativize(URI baseUri, URI requestUri) {
-        URI result = baseUri.relativize(requestUri);
+    public static URI relativize(final URI baseUri, final URI requestUri) {
+        final URI result = baseUri.relativize(requestUri);
         LOG.trace("Relativizing {} against {}: {}", baseUri, requestUri, result);
         return result;
     }
 
-    public static String resourceBase(TestName testName) {
+    public static String resourceBase(final TestName testName) {
         assertNotNull(testName);
-        StringBuilder base = new StringBuilder(JSON_ROOT);
+        final StringBuilder base = new StringBuilder(JSON_ROOT);
         base.append(NodeTest.class.getSimpleName()).append("/");
         base.append(testName.getMethodName()).append("/");
 
@@ -156,9 +159,9 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         return base.toString();
     }
 
-    public static String resourceBase(TestName testName, Class testClass) {
+    public static String resourceBase(final TestName testName, final Class testClass) {
         assertNotNull(testName);
-        StringBuilder base = new StringBuilder(JSON_ROOT);
+        final StringBuilder base = new StringBuilder(JSON_ROOT);
         base.append(testClass.getSimpleName()).append("/");
         base.append(testName.getMethodName()).append("/");
 
@@ -174,16 +177,17 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
      * @param requestUri the full request URI
      * @return a Path that identifies a classpath resource containing the JSON response document
      */
-    public static Path resolveResponseResource(TestName test, Class testClass, URI baseUri, URI requestUri) {
+    public static Path resolveResponseResource(final TestName test, final Class testClass, final URI baseUri,
+                                               final URI requestUri) {
         // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-        URI relativizedRequestUri = baseUri.relativize(requestUri);
-        Path requestPath = Paths.get(relativizedRequestUri.getPath());
+        final URI relativizedRequestUri = baseUri.relativize(requestUri);
+        final Path requestPath = Paths.get(relativizedRequestUri.getPath());
 
         // /json/NodeTest/testGetNodeObjectResolution/
-        Path fsBase = Paths.get(resourceBase(test, testClass));
+        final Path fsBase = Paths.get(resourceBase(test, testClass));
 
         // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
-        Path resolvedPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
+        final Path resolvedPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
 
         return resolvedPath;
     }
@@ -191,16 +195,18 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
     /**
      * Responsible for resolving the JSON response resource for OSF v2 API calls that are recursive.
      * <p>
-     * For example, the {@link ResolutionStrategy} for {@code Node} {@link Node#contributors contributors} says
-     * that when a {@code Node} is retrieved using the {@link OsfService}, the "contributors" relationship should be
-     * recursively retrieved in the same API call, and deserialized into a {@code List} of {@code Contributor}
-     * objects.  Once the {@code Node} is retrieved, the caller can iterate over the {@code Contributor} objects
-     * without issuing subsequent calls to {@link OsfService}.  This behavior is governed by the
-     * {@code ResolutionStrategy} annotations on the model classes.
+     * For example, the {@link com.github.jasminb.jsonapi.ResolutionStrategy} for {@code Node}
+     * {@link Node#contributors contributors} says that when a {@code Node} is retrieved using the
+     * {@link org.dataconservancy.cos.osf.client.service.OsfService}, the "contributors" relationship should be
+     * recursively retrieved in the same API call, and deserialized into a {@code List} of {@code Contributor} objects.
+     * Once the {@code Node} is retrieved, the caller can iterate over the {@code Contributor} objects without issuing
+     * subsequent calls to {@link org.dataconservancy.cos.osf.client.service.OsfService}.  This behavior is governed by
+     * the {@code ResolutionStrategy} annotations on the model classes.
      * </p>
      * <p>
      * This interceptor will map a response based on attributes of the request (and test name).  This insures that
-     * {@link OsfService} API calls which are recursive will result in proper responses.
+     * {@link org.dataconservancy.cos.osf.client.service.OsfService} API calls which are recursive will result in proper
+     * responses.
      * </p>
      */
     public static class RecursiveInterceptor implements Interceptor {
@@ -215,25 +221,25 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         private ResponseResolver resolver;
 
-        public RecursiveInterceptor(TestName testName, Class testClass, URI baseUri) {
+        public RecursiveInterceptor(final TestName testName, final Class testClass, final URI baseUri) {
             this.baseUri = baseUri;
             this.testName = testName;
             this.testClass = testClass;
 
             resolver = (name, base, req) -> {
                 // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-                URI relativizedRequestUri = baseUri.relativize(req);
-                String requestPath = relativizedRequestUri.getPath();
+                final URI relativizedRequestUri = baseUri.relativize(req);
+                final String requestPath = relativizedRequestUri.getPath();
 
                 // /json/NodeTest/testGetNodeObjectResolution/
-                String fsBase = resourceBase(testName, testClass);
+                final String fsBase = resourceBase(testName, testClass);
 
                 // If there's a "page" query parameter, use it to return 'index-0?.json'
                 if (req.getQuery() != null && req.getQuery().contains("page=")) {
-                    int startIndex = req.getQuery().indexOf("page=") + "page=".length();
+                    final int startIndex = req.getQuery().indexOf("page=") + "page=".length();
                     // HACK unlikely to have double-digit pages
-                    int page = Integer.parseInt(req.getQuery().substring(startIndex, startIndex + 1));
-                    String jsonFile = String.format("index-0%s.json", page);
+                    final int page = Integer.parseInt(req.getQuery().substring(startIndex, startIndex + 1));
+                    final String jsonFile = String.format("index-0%s.json", page);
                     LOG.trace("Request carried 'page' parameter, using JSON resource {}", jsonFile);
                     return fsBase + requestPath + jsonFile;
                 } else {
@@ -259,7 +265,8 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                     } else {
                         LOG.trace("  JSON resource '{}' does not exist.", jsonPath);
                         throw new IllegalArgumentException(
-                                String.format("Unable to resolve request '%s' to a classpath resource '%s'", req, jsonPath));
+                                String.format("Unable to resolve request '%s' to a classpath resource '%s'",
+                                        req, jsonPath));
                     }
                 } else {
                     // This is binary content, e.g.: /v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051
@@ -269,7 +276,8 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                     } else {
                         LOG.debug("  JSON resource '{}' does not exist.", jsonPath);
                         throw new IllegalArgumentException(
-                                String.format("Unable to resolve request '%s' to a classpath resource '%s'", req, jsonPath));
+                                String.format("Unable to resolve request '%s' to a classpath resource '%s'",
+                                        req, jsonPath));
                     }
                 }
 
@@ -278,7 +286,8 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             };
         }
 
-        public RecursiveInterceptor(TestName testName, Class testClass, URI baseUri, ResponseResolver resolver) {
+        public RecursiveInterceptor(final TestName testName, final Class testClass, final URI baseUri,
+                                    final ResponseResolver resolver) {
             this.testName = testName;
             this.testClass = testClass;
             this.baseUri = baseUri;
@@ -286,12 +295,12 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         }
 
         @Override
-        public Response intercept(Chain chain) throws IOException {
+        public Response intercept(final Chain chain) throws IOException {
             Request req = chain.request();
             LOG.debug("HTTP request: {}", req.urlString());
 
             // Resolve the request URI to a path on the filesystem.
-            String resourcePath = resolver.resolve(testName, baseUri, req.uri());
+            final String resourcePath = resolver.resolve(testName, baseUri, req.uri());
             LOG.debug("Response resource: {}", resourcePath);
 
             req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath).build();

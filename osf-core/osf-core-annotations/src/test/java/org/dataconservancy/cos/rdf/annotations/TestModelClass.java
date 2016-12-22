@@ -19,7 +19,7 @@ import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 
 /**
- * Created by esm on 6/21/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 @OwlIndividual(OwlClasses.OSF_BO)
 public class TestModelClass {

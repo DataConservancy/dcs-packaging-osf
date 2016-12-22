@@ -30,13 +30,27 @@ public enum Permission {
     ADMIN("admin");
 
     private final String value;
-    private Permission(String value) { this.value = value; }
-    
-    @JsonValue 
-    public String value() { return value; }
 
+    private Permission(final String value) {
+        this.value = value;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @JsonValue
+    public String value() {
+        return value;
+    }
+
+    /**
+     *
+     * @param value
+     * @return
+     */
     @JsonCreator
-	public static Permission forValue(String value) {
+    public static Permission forValue(final String value) {
         if (value != null) {
             for (Permission permission : Permission.values()) {
                 if (value.equals(permission.value())) {

@@ -20,10 +20,12 @@ package org.dataconservancy.cos.osf.client.support;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Insures proper behavior of the ContributorIdSplitter
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class ContributorIdSplitterTest {
 

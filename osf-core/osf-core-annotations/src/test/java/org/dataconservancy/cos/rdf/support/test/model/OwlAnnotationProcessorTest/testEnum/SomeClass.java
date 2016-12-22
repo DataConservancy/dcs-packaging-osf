@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by esm on 6/9/16.
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class SomeClass {
 

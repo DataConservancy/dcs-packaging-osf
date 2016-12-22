@@ -24,29 +24,40 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * @author khanson
  */
 public enum Category {
-	PROJECT("project"),
-	HYPOTHESIS("hypothesis"),
-	METHODS_AND_MEASURES("methods and measures"),
-	PROCEDURE("procedure"),
-	INSTRUMENTATION("instrumentation"),
-	DATA("data"),
-	ANALYSIS("analysis"),
-	COMMUNICATION("communication"),
-	SOFTWARE("software"),
-	OTHER("other");    
+    PROJECT("project"),
+    HYPOTHESIS("hypothesis"),
+    METHODS_AND_MEASURES("methods and measures"),
+    PROCEDURE("procedure"),
+    INSTRUMENTATION("instrumentation"),
+    DATA("data"),
+    ANALYSIS("analysis"),
+    COMMUNICATION("communication"),
+    SOFTWARE("software"),
+    OTHER("other");
 
     private final String value;
-    private Category(String value) { 
-    	this.value = value; 
-    	}
-    
-    @JsonValue 
-    public String value() { 
-    	return value; 
-    	}
+    private Category(final String value) {
+        this.value = value;
+    }
 
+    /**
+     * The value identifying the component as it would appear in the OSF JSON API.
+     *
+     * @return the value identifying the component
+     */
+    @JsonValue
+    public String value() {
+        return value;
+    }
+
+    /**
+     * The {@code Category} corresponding to the JSON API value
+     *
+     * @param value
+     * @return the {@code Category} identified for the value, or {@code null} if the value is not valid
+     */
     @JsonCreator
-	public static Category forValue(String value) {
+    public static Category forValue(final String value) {
         if (value != null) {
             for (Category category : Category.values()) {
                 if (value.equals(category.value())) {
@@ -56,6 +67,6 @@ public enum Category {
         }
         return null;
     }
-    
-    
+
+
 }

@@ -31,6 +31,7 @@ import java.net.URL;
  * </p>
  *
  * @see DefaultOsfJacksonConfigurer
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class JacksonOsfConfigurationService extends AbstractJacksonConfigurationService
         implements OsfConfigurationService {
@@ -51,11 +52,20 @@ public class JacksonOsfConfigurationService extends AbstractJacksonConfiguration
         }
     }
 
-    public JacksonOsfConfigurationService(String configurationResource) {
+    /**
+     *
+     * @param configurationResource
+     */
+    public JacksonOsfConfigurationService(final String configurationResource) {
         super(configurationResource);
     }
 
-    public JacksonOsfConfigurationService(String configurationResource, ObjectMapper mapper) {
+    /**
+     *
+     * @param configurationResource
+     * @param mapper
+     */
+    public JacksonOsfConfigurationService(final String configurationResource, final ObjectMapper mapper) {
         super(configurationResource, mapper);
     }
 
@@ -67,11 +77,12 @@ public class JacksonOsfConfigurationService extends AbstractJacksonConfiguration
      *                          reading the resource.
      */
     public OsfClientConfiguration getConfiguration() {
-        URL configUrl = getConfigurationResource(configurationResource);
+        final URL configUrl = getConfigurationResource(configurationResource);
 
         try {
-            JsonNode config = mapper.readTree(IOUtils.toString(configUrl, "UTF-8"));
-            return new DefaultOsfJacksonConfigurer<OsfClientConfiguration>().configure(config, mapper, OsfClientConfiguration.class);
+            final JsonNode config = mapper.readTree(IOUtils.toString(configUrl, "UTF-8"));
+            return new DefaultOsfJacksonConfigurer<OsfClientConfiguration>()
+                    .configure(config, mapper, OsfClientConfiguration.class);
         } catch (IOException e) {
             throw new RuntimeException(
                     String.format(ERR_READING_RESOURCE, configurationResource, e.getMessage()), e);

@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.github.jasminb.jsonapi.ResourceList;
-import com.squareup.okhttp.Response;
 import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
@@ -46,76 +45,195 @@ import retrofit.http.Url;
  */
 public interface OsfService {
 
+    /**
+     *
+     * @return
+     */
     @GET("nodes/")
     Call<List<Node>> nodeList();
 
+    /**
+     *
+     * @return
+     */
     @GET("nodes/")
     Call<ResourceList<Node>> paginatedNodeList();
 
+    /**
+     *
+     * @param url
+     * @return
+     */
     @GET
     Call<ResourceList<Node>> paginatedNodeList(@Url String url);
 
+    /**
+     *
+     * @param url
+     * @return
+     */
     @GET
     Call<ResourceList<Event>> getLogs(@Url String url);
 
+    /**
+     *
+     * @param url
+     * @return
+     */
     @GET
     Call<ResourceList<Comment>> getComments(@Url String url);
 
+    /**
+     *
+     * @param url
+     * @return
+     */
     @Streaming
     @GET
     Call<ResponseBody> stream(@Url String url);
 
+    /**
+     *
+     * @param params
+     * @return
+     */
     @GET("nodes/")
     Call<List<Node>> nodeList(@QueryMap Map<String, String> params);
 
+    /**
+     *
+     * @param page
+     * @param params
+     * @return
+     */
     @GET("nodes/")
     Call<List<Node>> nodeList(@Query("page") int page, @QueryMap Map<String, String> params);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GET("nodes/{id}/")
     Call<Node> node(@Path("id") String id);
 
+    /**
+     *
+     * @return
+     */
     @GET("registrations/")
     Call<List<Registration>> registrationList();
 
+    /**
+     *
+     * @param params
+     * @return
+     */
     @GET("registrations/")
     Call<List<Registration>> registrationList(@QueryMap Map<String, String> params);
 
+    /**
+     *
+     * @param page
+     * @param params
+     * @return
+     */
     @GET("registrations/")
     Call<List<Registration>> registrationList(@Query("page") int page, @QueryMap Map<String, String> params);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GET("registrations/{id}/")
     Call<Registration> registration(@Path("id") String id);
 
+    /**
+     *
+     * @param registrationUrl
+     * @return
+     */
     @GET
     Call<Registration> registrationByUrl(@Url String registrationUrl);
-    
+
+    /**
+     *
+     * @return
+     */
     @GET("registrations/")
     Call<List<RegistrationId>> registrationIdList();
 
+    /**
+     *
+     * @param params
+     * @return
+     */
     @GET("registrations/")
     Call<List<RegistrationId>> registrationIdList(@QueryMap Map<String, String> params);
 
+    /**
+     *
+     * @param page
+     * @param params
+     * @return
+     */
     @GET("registrations/")
     Call<List<RegistrationId>> registrationIdList(@Query("page") int page, @QueryMap Map<String, String> params);
-    
+
+    /**
+     *
+     * @return
+     */
     @GET("users/")
     Call<List<User>> userList();
 
+    /**
+     *
+     * @param params
+     * @return
+     */
     @GET("users/")
     Call<List<User>> userList(@QueryMap Map<String, String> params);
 
+    /**
+     *
+     * @param page
+     * @param params
+     * @return
+     */
     @GET("users/")
     Call<List<User>> userList(@Query("page") int page, @QueryMap Map<String, String> params);
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     @GET("users/{id}/")
     Call<User> user(@Path("id") String id);
 
+    /**
+     *
+     * @param userUrl
+     * @return
+     */
     @GET
     Call<User> userByUrl(@Url String userUrl);
 
+    /**
+     *
+     * @param url
+     * @return
+     */
     @GET
     Call<List<Contributor>> contributors(@Url String url);
 
+    /**
+     *
+     * @param url
+     * @return
+     */
     @GET
     Call<List<Wiki>> wikis(@Url String url);
 

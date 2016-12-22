@@ -41,7 +41,11 @@ import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
 
-
+/**
+ *
+ * @author Ben Trumbore (wbt3@cornell.edu)
+ * @author Elliot Metsger (emetsger@jhu.edu)
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Type("wikis")
 @OwlIndividual(OwlClasses.OSF_WIKI)
@@ -91,114 +95,219 @@ public class Wiki {
     @OwlProperty(OwlProperties.OSF_HAS_SIZE)
     private int size;
 
-
+    /**
+     *
+     * @return
+     */
     public String getKind() {
         return kind;
     }
 
-    public void setKind(String kind) {
+    /**
+     *
+     * @param kind
+     */
+    public void setKind(final String kind) {
         this.kind = kind;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNode() {
         return node;
     }
 
-    public void setNode(String node) {
+    /**
+     *
+     * @param node
+     */
+    public void setNode(final String node) {
         this.node = node;
     }
 
+    /**
+     *
+     * @return
+     */
     public User getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    /**
+     *
+     * @param user
+     */
+    public void setUser(final User user) {
         this.user = user;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     *
+     * @param name
+     */
+    public void setName(final String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getMaterialized_path() {
         return materialized_path;
     }
 
-    public void setMaterialized_path(String materialized_path) {
+    /**
+     *
+     * @param materialized_path
+     */
+    public void setMaterialized_path(final String materialized_path) {
         this.materialized_path = materialized_path;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDate_modified() {
-        if (this.date_modified!=null) {
+        if (this.date_modified != null) {
             return this.date_modified.toString(DATE_TIME_FORMATTER_ALT);
         } else {
             return null;
         }
     }
 
-    public void setDate_modified(String date_modified) {
-        if (date_modified!=null){
+    /**
+     *
+     * @param date_modified
+     */
+    public void setDate_modified(final String date_modified) {
+        if (date_modified != null) {
             this.date_modified = JodaSupport.parseDateTime(date_modified);
-        } else {
-            date_modified=null;
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPath() {
         return path;
     }
 
-    public void setPath(String path) {
+    /**
+     *
+     * @param path
+     */
+    public void setPath(final String path) {
         this.path = path;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getContent_type() {
         return content_type;
     }
 
-    public void setContent_type(String content_type) {
+    /**
+     *
+     * @param content_type
+     */
+    public void setContent_type(final String content_type) {
         this.content_type = content_type;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    /**
+     *
+     * @param size
+     */
+    public void setSize(final int size) {
         this.size = size;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<String, ?> getLinks() {
         return links;
     }
 
+    /**
+     *
+     * @param links
+     */
     @JsonProperty("links")
-    public void setLinks(Map<String, ?> links) {
+    public void setLinks(final Map<String, ?> links) {
         this.links = links;
     }
 
+    /**
+     *
+     * @return
+     */
     public Map<String, ?> getExtra() {
         return extra;
     }
 
-    public void setExtra(Map<String, ?> extra) { this.extra = extra; }
+    /**
+     *
+     * @param extra
+     */
+    public void setExtra(final Map<String, ?> extra) {
+        this.extra = extra;
+    }
 
+    /**
+     *
+     * @return
+     */
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
         this.id = id;
     }
 
-    public List<Comment> getComments() { return comments; }
+    /**
+     *
+     * @return
+     */
+    public List<Comment> getComments() {
+        return comments;
+    }
 
-    public void setComments(List<Comment> comments) {
+    /**
+     *
+     * @param comments
+     */
+    public void setComments(final List<Comment> comments) {
         this.comments = comments;
     }
-    
+
 }

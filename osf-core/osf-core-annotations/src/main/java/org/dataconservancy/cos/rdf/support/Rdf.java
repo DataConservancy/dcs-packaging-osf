@@ -20,6 +20,8 @@ import java.util.Map;
 
 /**
  * Maintains constants relating to the use of RDF.
+ *
+ * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class Rdf {
 
