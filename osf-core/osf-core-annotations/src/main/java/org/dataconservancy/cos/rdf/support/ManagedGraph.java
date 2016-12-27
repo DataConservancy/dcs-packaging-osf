@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging;
+package org.dataconservancy.cos.rdf.support;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Model;
@@ -25,9 +25,6 @@ import org.apache.jena.rdf.model.Selector;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.jena.riot.RDFFormat;
-import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
-import org.dataconservancy.cos.rdf.support.OwlClasses;
-import org.dataconservancy.cos.rdf.support.Rdf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,7 +40,7 @@ import java.util.Set;
  * properties from the underlying {@code OntologyManager}.
  * </p>
  * <p>
- * The {@link org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor} uses this class to create OWL
+ * The {@link AnnotationsProcessor} uses this class to create OWL
  * individuals and properties.
  * </p>
  * <p>
@@ -51,7 +48,7 @@ import java.util.Set;
  * to other classes in this package
  * </p>
  * <pre>
- * Jena OntModel &lt;-- OntologyManager &lt;-- Package Graph &lt;-- AnnotationsProcessor
+ * Jena OntModel &lt;-- OntologyManager &lt;-- Managed Graph &lt;-- AnnotationsProcessor
  *                                                                   /
  *                                       OwlAnnotationsProcessor &lt;--+
  * </pre>
@@ -63,9 +60,9 @@ import java.util.Set;
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class PackageGraph {
+public class ManagedGraph {
 
-    protected static final Logger LOG = LoggerFactory.getLogger(PackageGraph.class);
+    protected static final Logger LOG = LoggerFactory.getLogger(ManagedGraph.class);
 
     protected OntologyManager ontMgr;
 
@@ -104,7 +101,7 @@ public class PackageGraph {
      *
      * @param ontMgr the ontology manager
      */
-    public PackageGraph(final OntologyManager ontMgr) {
+    public ManagedGraph(final OntologyManager ontMgr) {
         this.ontMgr = ontMgr;
     }
 

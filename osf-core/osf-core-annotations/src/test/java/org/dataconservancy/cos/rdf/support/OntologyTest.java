@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging.support;
+package org.dataconservancy.cos.rdf.support;
 
 import org.apache.jena.ontology.DatatypeProperty;
 import org.apache.jena.ontology.ObjectProperty;
-import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -47,8 +46,8 @@ public class OntologyTest {
         assertNotNull(p);
 
         // Insure the newly created datatype property has the expected local name and namespace
-        assertEquals(OwlProperties.OSF_HAS_NAME.localname(), p.getLocalName());
-        assertEquals(OwlProperties.OSF_HAS_NAME.ns(), p.getNameSpace());
+        Assert.assertEquals(OwlProperties.OSF_HAS_NAME.localname(), p.getLocalName());
+        Assert.assertEquals(OwlProperties.OSF_HAS_NAME.ns(), p.getNameSpace());
     }
 
     @Test
@@ -58,7 +57,7 @@ public class OntologyTest {
         assertNotNull(p);
 
         // Insure the newly created object property has the expected local name and namespace
-        assertEquals(OwlProperties.OSF_HAS_ROOT.localname(), p.getLocalName());
-        assertEquals(OwlProperties.OSF_HAS_ROOT.ns(), p.getNameSpace());
+        Assert.assertEquals(OwlProperties.OSF_HAS_ROOT.localname(), p.getLocalName());
+        Assert.assertEquals(OwlProperties.OSF_HAS_ROOT.ns(), p.getNameSpace());
     }
 }

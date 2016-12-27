@@ -24,13 +24,14 @@ import org.apache.jena.rdf.model.Selector;
 import org.apache.jena.rdf.model.Statement;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
-import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
-import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
+import org.dataconservancy.cos.rdf.support.AnnotationsProcessor;
+import org.dataconservancy.cos.rdf.support.OntologyManager;
+import org.dataconservancy.cos.rdf.support.ManagedGraph;
 import org.dataconservancy.cos.rdf.support.Rdf;
 
 import java.util.Map;
 
-import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
+import static org.dataconservancy.cos.rdf.support.Util.asProperty;
 
 @SuppressWarnings("checkstyle:linelength")
 /**
@@ -42,7 +43,7 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
  * underlying {@code OntModel} (via {@code OntologyManager}).
  * </p>
  * <pre>
- * Jena OntModel &lt;-- OntologyManager &lt;-- Package Graph &lt;-- extends - OsfPackageGraph - creates --&gt; AnnotationsProcessor
+ * Jena OntModel &lt;-- OntologyManager &lt;-- Managed Graph &lt;-- extends - OsfPackageGraph - creates --&gt; AnnotationsProcessor
  *                                                /
  *                    OwlAnnotationsProcessor &lt;--+
  * </pre>
@@ -73,7 +74,7 @@ import static org.dataconservancy.cos.osf.packaging.support.Util.asProperty;
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class OsfPackageGraph extends PackageGraph {
+public class OsfPackageGraph extends ManagedGraph {
 
     /**
      * Used to process the annotations on OSF java objects

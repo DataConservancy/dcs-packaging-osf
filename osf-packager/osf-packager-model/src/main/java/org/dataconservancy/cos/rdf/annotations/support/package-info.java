@@ -13,18 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging.support.test.model.AnnotatedElementPairTest;
-
-import org.dataconservancy.cos.rdf.annotations.IndividualUri;
 
 /**
- * Test class sharing the name annotation and field name with the Foo test class.
+ * Provides utility classes for discovering, processing, and managing OWL-related annotations on Java classes and
+ * fields.
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class Bar {
-
-    @IndividualUri
-    String id = "bar";
-
-}
+package org.dataconservancy.cos.rdf.annotations.support;
