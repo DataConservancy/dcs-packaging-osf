@@ -1,80 +1,92 @@
-# COS OSF Proposal: Packages for import/export
+# OSF Command Line Interface 
+This module supplies a command line interface (CLI) for retrieving a registration from an OSF instance and writing it locally into a package which conforms to the Data Conservancy packaging specification.
 
-## Proposal 
-Develop external services (separate from OSF code base) to export OSF business objects and associated resources to DC Packages. (Import from DC packages to OSF is anticipated as a next step.)
-
-## Importance 
-
-If we envision DC as providing curation services to data in OSF, package import/export provides a basis for mechanisms of transfer of archivally-relevant materials between OSF and DC services.
-
-## Value add 
-
-Data Conservancy develops an RDF-based OSF data model, which could be leveraged for future use cases.  OSF would be able to include preservation and curation events in the OSF UI activity feeds.
-
-![Overview of the OSF packaging proposal][overview-img]
-
-## Key Business Concepts 
-
-* OSF is intended to be a part of a researcher's’ workflow
-* Many data curation activities are not a part of a researcher's’ workflow
-* Individual institutions may have data curation requirements not satisfied by the general OSF framework or individual OSF storage providers chosen by a researcher (e.g. figshare).
-* The OSF UI and model allows collaborators with different roles (e.g. curators) to contribute to a project in OSF
-Package export/import would be the basis for incorporation of curation activities that do not occur through the OSF user interface, including
-  * Automated activities (e.g. archiving, format migration, content type detection, etc)
-  * Activities that occur through specialized tooling (e.g. Package Tool GUI)
-
-## Key Technical Concepts
-
-* The [Bagit Spec][dc-bagit-profile] provides a mechanism for packaging and verifying digital content for transfer or archiving
-* The [DC Packaging spec][dc-packaging-spec] builds on BagIt, and provides:
-  * Mechanisms for distinguishing domain/business objects from binary content
-  * Mechanisms for handling link resolution between objects
-* The DC Packaging spec can be used to package data files in OSF as well as OSF business object(s) that describe the component that contains them, the provider they came from, metadata data which may establish provenance, etc.
-
-## Anticipated Future Use Cases
-
-Import/export of packages from OSF could be a building block of several kinds of use cases:
-* Pulling content into a tool for manual curation (e.g. the [Package tool GUI][dc-ptg])
-* Separately archiving or preserving content in OSF, regardless of its native provider (e.g. figshare, github, dropbox, etc)
-* Synchronizing locally modified (manual or automated) content with OSF content
-* Importing locally generated content into the OSF.
-* Specialized (local) indexing of content stored in OSF
-* Exposing OSF content as linked data (via the [Package Ingest Service][dc-pis])
-
-## Risks
-
-* In the DC Packaging spec, domain objects must have an RDF representation.  In theory, OSF uses JSON to represent to represent “its business objects”.   There could possibly be  json schemas available, but it is unclear where.  We’d need to ask.  
-* It’s unclear if they have a defined object model at all
-* We would need to confirm that the Django API supports everything that we need to do.
-
-# Developer Notes
-
-Currently Maven SNAPSHOT artifacts are not published to a reachable Maven repository.  However, our release artifacts are reachable.  We plan to publish SNAPSHOT artifacts to Sonatype; in the interim you may either check out and build a tag (which will pull publicly available release artifacts), or you may manually build and install SNAPSHOT dependencies.
-
-## Build Requirements
-
-* Java 8
-* Maven 3.3.x
-
-## Test Drive
-
-If you simply want give the CLI a test drive, the best way to do this right now is to clone this repository, check out the latest tag, and perform a `mvn install`.  The CLI will be compiled and assembled in the `osf-cli/target/osf-cli-<version>.jar`  The [README](osf-cli/README.md) contains further instructions on getting started with the CLI.
-
-## Snapshot Dependencies
-
-If you wish to build and install our SNAPSHOTs, read on.  You need three dependencies, installed in the following order:
-
-* The [jsonapi-converter](https://github.com/DataConservancy/jsonapi-converter)
-* Our home-grown (!) [RDF annotation framework](https://github.com/DataConservancy/osf-rdf)
-* Finally, the [OSF Java Client](https://github.com/DataConservancy/osf-client)
-
-After installing these dependencies locally (by running `mvn install` for each dependency), you ought to be able to perform a `mvn install` of this code repository.
+# How It Works
+The CLI uses functionality of the Java client in the [osf-client](../osf-client) module to attach to the OSF REST API on a running OSF instance specified by a configuration file whose location must be supplied by the user. Additional parameters will need to be supplied as indicated below. The packager code leverages a workflow from the Data Conservancy Package Tool GUI to construct the package once the content from the target registration has been retrieved. The package is then saved as a gzipped tar file into a directory specified by the user as a command line option.
 
 
+# Command Line Usage
+The CLI takes a single argument which is a URL pointing to the registration which is to be packaged (for example, `https://api.osf.io/v2/registrations/hejx2`
+This is preceded by a list of command line options as follows:
 
+```
+-c (-configuration, --configuration)  FILE   : path to the OSF Java client configuration
+-h (-help, --help)                           : print help message
+-m (-metadata, --metadata) FILE              : the path to the metadata properties file for additional bag metadata
+-n (-name, --name) VAL                       : the name for the package
+-o (-output, --output) FILE                  : path to the directory where the package will be written
+-v (-version, --version)                     : print version information
+```
+The `-c, -n` and `-o` options are required. The OSF Java client must be configured (`-c`) so that it knows which running OSF instance to attach to, and how to perform authentication to the instance.  The package name (`-n`) is used to both name the root directory for the package and the package file. Finally, the output location (`-o`) will tell the CLI where to write the package.
 
-[dc-bagit-profile]: http://dataconservancy.github.io/dc-packaging-spec/dc-bagit-profile-1.0.html "Data Conservancy BagIt Profile"
-[dc-packaging-spec]: http://dataconservancy.github.io/dc-packaging-spec/dc-packaging-spec-1.0.html "Data Conservancy Packaging Specification"
-[dc-ptg]: https://github.com/DataConservancy/dcs-packaging-tool "Data Conservancy Package Tool GUI"
-[dc-pis]: https://github.com/DataConservancy/dcs-package-ingest "Data Conservancy Package Ingest Tool"
-[overview-img]: https://github.com/DataConservancy/osf-packaging/blob/master/src/site/resources/images/osf-package-ingest.png "OSF Packaging Overview"
+The `-m` flag is optional. Additional metadata may be specified in a bag metadata properties file, and is used to describe the bag in accordance with the [Data Conservancy BagIt Profile](http://dataconservancy.github.io/dc-packaging-spec/dc-bagit-profile-1.0.html) . There are some [reserved metadata names and cardinality restrictions](http://dataconservancy.github.io/dc-packaging-spec/dc-bagit-profile-1.0.html#a2.2.1) .
+
+# OSF Java Client Configuration
+Configuration must be supplied for both the OSF API and Waterbutler endpoints, since both are needed to build the package.  An example is below:
+```
+{
+  "osf": {
+    "v2": {
+      "host": "api.osf.io",
+      "port": "443",
+      "basePath": "/v2/",
+      "authHeader": "Basic ZW138fTnZXJAZ21haWwu98wIOmZvb2JuU43heg==",
+      "scheme": "https"
+    }
+  },
+  "wb": {
+    "v1": {
+      "host": "files.osf.io",
+      "port": "443",
+      "basePath": "/v1/",
+      "scheme": "https"
+    }
+  }
+}
+```
+The absolute path to the file containing this configuration is what must be supplied as the value for the `-c` option.
+
+Be sure to configure an authHeader in the OSF v2 API configuration, which will be sent on every request to the API. You can do this by base64 encoding your login id concatenated to your password with a colon (on MacOS or Linux):
+
+```
+$ echo 'c3po@tatooine.com:excuseme' | base64
+YzNwb0B0YXRvb2luZS5jb206ZXhjdXNlbWUK
+$
+```
+
+## Bag Metadata File
+The `-m` option also takes an absolute path as its value. This file contains bag metadata which will conform to the Data Conservancy BagIt Profile specification. Metadata entries will consist of key - value pairs, separated by either a `=` or a `:` , one per line.
+## Output Directory
+The `-o` option takes an absolute path as its value. This path must point to an existing directory on the filesystem.
+
+## Bag Name
+The `-n` option takes a string value. This string will be used to name the root directory of the package as well as the package file.
+
+# Example
+A command line invocation might look something like this:
+
+```java -jar osf-cli-1.0.0-SNAPSHOT.jar -c /home/luser/OSF-Java-Client.conf -m /home/luser/bag.properties -n ImportantPackage -o /home/luser/packages https://api.osf.io/v2/registrations/hejx2 ```
+
+In this case, the command is executed in the working directory where the executable jar file osf-cli-1.0.0-SNAPSHOT.jar resides.
+
+# Current Status
+The first iteration of the CLI has some simplifying constraints in order to deliver some kind of useful functionality right away. Right now, only registrations may be processed. We also have limited some of the options which are available to the GUI tool. The following bag metadata and package generation parameters are supplied to the CLI internally:
+```
+#***************************************************
+# The following fields are REQUIRED to be supplied
+#***************************************************
+Package-Format-Id = BOREM
+BagIt-Profile-Identifier = http://dataconservancy.org/formats/data-conservancy-pkg-1.0
+
+#***************************************************
+# The following fields SHOULD be supplied
+#***************************************************
+#Options for Checksum algorimth are: md5, sha1
+Checksum-Algs = md5
+#Options for Archiving-format are: tar, zip, none
+Archiving-Format = tar
+#Options for Compression-format are: gz, none
+Compression-Format = gz
+#Options for ReM-Serialization-Format are: json, turtle, xml
+ReM-Serialization-Format = TURTLE
+```
