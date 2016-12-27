@@ -19,9 +19,9 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.dataconservancy.cos</groupId>
-  <artifactId>osf-core-annotations</artifactId>
+  <artifactId>osf-core-rdf</artifactId>
   <packaging>jar</packaging>
-  <name>RDF Annotations</name>
+  <name>RDF Annotations and processing</name>
   <description>Collection of annotations and utilities used to produce RDF instances
                of OSF java classes.</description>
 
