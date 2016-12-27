@@ -218,7 +218,7 @@
 
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
-        <artifactId>osf-core-annotations</artifactId>
+        <artifactId>osf-core-rdf</artifactId>
         <version>${osf-core.version}</version>
       </dependency>
 
