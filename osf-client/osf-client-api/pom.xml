@@ -21,7 +21,7 @@
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-client-api</artifactId>
     <packaging>jar</packaging>
-    <name>OSF client API</name>
+    <name>osf-client :: API</name>
     <description>OSF Client API, based on Retrofit and the jsonapi-converter</description>
 
     <parent>

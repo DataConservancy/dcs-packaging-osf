@@ -21,7 +21,7 @@
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-client-integration</artifactId>
     <packaging>jar</packaging>
-    <name>OSF client integration</name>
+    <name>osf-client :: Integration</name>
     <description>OSF client integration tests</description>
 
     <parent>

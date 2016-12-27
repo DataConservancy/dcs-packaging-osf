@@ -21,7 +21,7 @@
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-core-model</artifactId>
     <packaging>jar</packaging>
-    <name>OSF Java model</name>
+    <name>osf-core :: Java model</name>
     <description>Java model for the OSF</description>
 
     <parent>

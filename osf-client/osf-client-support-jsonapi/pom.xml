@@ -21,7 +21,7 @@
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-client-support-jsonapi</artifactId>
     <packaging>jar</packaging>
-    <name>OSF jsonapi support</name>
+    <name>osf-client :: JSON-API support</name>
     <description>jsonapi support classes</description>
 
     <parent>

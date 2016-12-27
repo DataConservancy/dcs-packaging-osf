@@ -21,7 +21,7 @@
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-client-config</artifactId>
     <packaging>jar</packaging>
-    <name>OSF client configuration service</name>
+    <name>osf-client :: configuration service</name>
     <description>Service and objects for configuring the OSF client</description>
 
     <parent>
