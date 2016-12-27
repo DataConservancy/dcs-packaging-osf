@@ -21,7 +21,7 @@
   <groupId>org.dataconservancy.cos</groupId>
   <artifactId>osf-packager-model</artifactId>
   <packaging>jar</packaging>
-  <name>OSF Models</name>
+  <name>osf-packager :: Package model</name>
   <description>Supporting model for importing and exporting content from
     the Center for Open Science Open Science Framework</description>
 

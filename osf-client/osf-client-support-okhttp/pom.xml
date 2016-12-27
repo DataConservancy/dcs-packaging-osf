@@ -21,7 +21,7 @@
     <groupId>org.dataconservancy.cos</groupId>
     <artifactId>osf-client-support-okhttp</artifactId>
     <packaging>jar</packaging>
-    <name>OSF OkHttp support</name>
+    <name>osf-client :: OkHttp support</name>
     <description>OkHttp support classes</description>
 
     <parent>

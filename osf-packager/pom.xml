@@ -21,7 +21,7 @@
   <groupId>org.dataconservancy.cos</groupId>
   <artifactId>osf-packager</artifactId>
   <packaging>pom</packaging>
-  <name>OSF Packaging</name>
+  <name>osf-packager :: Parent</name>
   <description>Supporting models and code for importing and exporting content from
     the Center for Open Science Open Science Framework
   </description>

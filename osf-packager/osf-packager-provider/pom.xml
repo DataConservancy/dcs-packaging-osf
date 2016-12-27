@@ -21,7 +21,7 @@
   <groupId>org.dataconservancy.cos</groupId>
   <artifactId>osf-packager-provider</artifactId>
   <packaging>jar</packaging>
-  <name>OSF Packager</name>
+  <name>osf-packager :: OSF content provider</name>
   <description>Prepares and serializes packages from OSF domain objects</description>
 
   <parent>
