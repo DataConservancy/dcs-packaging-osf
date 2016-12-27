@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.packaging.support;
+package org.dataconservancy.cos.rdf.support;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;

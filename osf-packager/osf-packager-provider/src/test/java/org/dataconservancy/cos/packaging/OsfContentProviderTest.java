@@ -26,7 +26,7 @@ import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
-import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
+import org.dataconservancy.cos.rdf.support.OntologyManager;
 import org.dataconservancy.packaging.shared.IpmPackager;
 import org.dataconservancy.packaging.tool.model.GeneralParameterNames;
 import org.dataconservancy.packaging.tool.model.PackageGenerationParameters;

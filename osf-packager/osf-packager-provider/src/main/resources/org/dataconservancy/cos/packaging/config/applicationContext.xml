@@ -36,7 +36,7 @@
     Facade providing access to a Jena model that enforces compliance with the OSF ontology.
      May *not* be shared as a singleton.
   -->
-  <bean id="ontologyManager" class="org.dataconservancy.cos.osf.packaging.support.OntologyManager" scope="prototype"/>
+  <bean id="ontologyManager" class="org.dataconservancy.cos.rdf.support.OntologyManager" scope="prototype"/>
 
   <!--
     Provides convenience methods for converting Java objects to RDF according to the OSF ontology.

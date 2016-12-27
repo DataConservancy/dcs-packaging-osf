@@ -33,14 +33,15 @@ import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.model.Wiki;
 import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.dataconservancy.cos.osf.packaging.support.AnnotationsProcessor;
-import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
+import org.dataconservancy.cos.rdf.support.AnnotationsProcessor;
+import org.dataconservancy.cos.rdf.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.AnnotatedElementPair;
 import org.dataconservancy.cos.rdf.support.AnnotatedElementPairMap;
 import org.dataconservancy.cos.rdf.support.OwlAnnotationProcessor;
 import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
+import org.dataconservancy.cos.rdf.support.ManagedGraph;
 import org.dataconservancy.cos.rdf.support.Rdf;
 import org.junit.Rule;
 import org.junit.Test;
@@ -59,8 +60,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static org.dataconservancy.cos.osf.packaging.support.Util.asResource;
-import static org.dataconservancy.cos.osf.packaging.support.Util.relativeId;
+import static org.dataconservancy.cos.rdf.support.Util.asResource;
+import static org.dataconservancy.cos.rdf.support.Util.relativeId;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -144,7 +145,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
     @Test
     public void testCreateRegistrationPackageAnnotation() throws Exception {
-        final PackageGraph packageGraph = new PackageGraph(ontologyManager);
+        final ManagedGraph managedGraph = new ManagedGraph(ontologyManager);
         factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class, getBaseUri()));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
@@ -206,7 +207,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         // Step 2: process the OWL-related annotations on each object, which will
         // produce RDF that is captured in the PackageGraph
 
-        final AnnotationsProcessor ap = new AnnotationsProcessor(packageGraph);
+        final AnnotationsProcessor ap = new AnnotationsProcessor(managedGraph);
 
         // Process the OWL annotations on the Registration, its super classes, and its fields
         final Map<String, Individual> createdIndividuals = ap.process(registration);
@@ -502,8 +503,8 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         r.setId("registration");
         r.setWikis(Collections.singletonList(w));
 
-        final PackageGraph packageGraph = new PackageGraph(ontologyManager);
-        final AnnotationsProcessor ap = new AnnotationsProcessor(packageGraph);
+        final ManagedGraph managedGraph = new ManagedGraph(ontologyManager);
+        final AnnotationsProcessor ap = new AnnotationsProcessor(managedGraph);
 
         // Process the OWL annotations on the Registration, its super classes, and its fields
         final Map<String, Individual> createdIndividuals = ap.process(r);

@@ -22,7 +22,7 @@ import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
-import org.dataconservancy.cos.osf.packaging.support.OntologyManager;
+import org.dataconservancy.cos.rdf.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.Rdf;
 
