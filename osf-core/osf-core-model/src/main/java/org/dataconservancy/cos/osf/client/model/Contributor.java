@@ -70,7 +70,7 @@ public class Contributor {
     Map<String, ?> links;
 
     /**pagination links, applies when list is returned**/
-    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+    private PageLinks pageLinks;
 
     //TODO: the user is embedded in the JSON and won't work as is.
     //TODO: We can use the ID to retrieve it since contribId=userId.
@@ -168,7 +168,7 @@ public class Contributor {
      *
      * @return
      */
-    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -177,7 +177,7 @@ public class Contributor {
      * @param pageLinks
      */
     @JsonProperty("links")
-    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+    public void setPageLinks(final PageLinks pageLinks) {
         this.pageLinks = pageLinks;
     }
 

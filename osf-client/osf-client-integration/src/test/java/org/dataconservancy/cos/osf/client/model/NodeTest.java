@@ -83,7 +83,6 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(baseUri + "nodes/r5s4u/", n.getRoot());
         assertEquals(baseUri + "nodes/r5s4u/", n.getParent());
         assertEquals(baseUri + "nodes/v8x57/registrations/", n.getRegistrations());
-        assertEquals(baseUri + "nodes/v8x57/node_links/", n.getNode_links());
         assertEquals(baseUri + "nodes/v8x57/logs/", n.getLogs());
         assertEquals(Category.DATA, n.getCategory());
         assertNull(n.getDescription());
@@ -106,7 +105,7 @@ public class NodeTest extends AbstractMockServerTest {
 
     /**
      * Insures that relationships present in the JSON response documents are properly navigated, specifically those
-     * using {@link ResolutionStrategy#OBJECT}.
+     * using {@code ResolutionStrategy#OBJECT}.
      *
      * @throws Exception
      */

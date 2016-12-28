@@ -34,7 +34,7 @@ public class NodeId  {
     private String id;
 
     /**pagination links, applies when list is returned**/
-    private Links pageLinks;
+    private PageLinks pageLinks;
 
     /**
      *
@@ -56,7 +56,7 @@ public class NodeId  {
      *
      * @return
      */
-    public Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -65,7 +65,7 @@ public class NodeId  {
      * @param pageLinks
      */
     @JsonProperty("links")
-    public void setPageLinks(final Links pageLinks) {
+    public void setPageLinks(final PageLinks pageLinks) {
         this.pageLinks = pageLinks;
     }
 

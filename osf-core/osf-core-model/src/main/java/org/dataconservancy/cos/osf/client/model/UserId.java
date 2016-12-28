@@ -34,13 +34,13 @@ public class UserId  {
     private String id;
 
     /**pagination links, applies when list is returned**/
-    private Links pageLinks;
+    private PageLinks pageLinks;
 
     /**
      *
      * @return
      */
-    public Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -49,7 +49,7 @@ public class UserId  {
      * @param pageLinks
      */
     @JsonProperty("links")
-    public void setPageLinks(final Links pageLinks) {
+    public void setPageLinks(final PageLinks pageLinks) {
         this.pageLinks = pageLinks;
     }
 
