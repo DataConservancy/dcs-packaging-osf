@@ -16,27 +16,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-  <!--
-    Configuration for connecting to OSF and Waterbutler
-      The services provide mutators for the configuration, but as long as we don't mutate the configuration they can
-      be safely shared as singletons.
-
-      These beans override beans of the same name from the osf-client-config module, in order to specify the location of
-      the client configuration.
-  -->
-  <bean id="osfConfigurationSvc" class="org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService">
-    <constructor-arg value="${osf.client.conf:org/dataconservancy/cos/packaging/config/osf-client.json}"/>
-  </bean>
-
-  <bean id="wbConfigurationSvc" class="org.dataconservancy.cos.osf.client.config.JacksonWbConfigurationService">
-    <constructor-arg value="${osf.client.conf:org/dataconservancy/cos/packaging/config/osf-client.json}"/>
-  </bean>
-
-  <!--
-    Facade providing access to a Jena model that enforces compliance with the OSF ontology.
-     May *not* be shared as a singleton.
-  -->
-  <bean id="ontologyManager" class="org.dataconservancy.cos.rdf.support.OntologyManager" scope="prototype"/>
 
   <!--
     Provides convenience methods for converting Java objects to RDF according to the OSF ontology.
