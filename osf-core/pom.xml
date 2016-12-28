@@ -41,7 +41,6 @@
     <!-- Build properties  ========================================== -->
 
     <properties>
-        <spring.version>4.2.6.RELEASE</spring.version>
         <github.global.server>github</github.global.server>
         <github.site.path>${project.version}</github.site.path>
     </properties>
