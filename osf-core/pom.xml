@@ -189,6 +189,7 @@
                             <exclude>**/.idea</exclude>
                             <exclude>**/*.sh</exclude>
                             <exclude>**/target/**</exclude>
+                            <exclude>**/catalog-v001.xml</exclude>
                         </excludes>
                     </configuration>
                 </plugin>
