@@ -21,7 +21,7 @@
       The services provide mutators for the configuration, but as long as we don't mutate the configuration they can
       be safely shared as singletons.
 
-      These beans override beans of the same name from the osf-client module, in order to specify the location of
+      These beans override beans of the same name from the osf-client-config module, in order to specify the location of
       the client configuration.
   -->
   <bean id="osfConfigurationSvc" class="org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService">
