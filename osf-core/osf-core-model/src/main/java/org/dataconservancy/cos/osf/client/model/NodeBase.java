@@ -83,10 +83,6 @@ public abstract class NodeBase {
     @OwlProperty(value = OwlProperties.OSF_FORKED_FROM, transform = UrlToIdTransform.class)
     private String forked_from;
 
-    /**Link to list of links to other Nodes.*/
-    @Relationship(value = "node_links", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    private String node_links;
-
     /**Link to list of logs for Node.*/
     @Relationship(value = "logs", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     // TODO: Logs class and annotation
@@ -105,7 +101,7 @@ public abstract class NodeBase {
     Map<String, ?> links;
 
     /**pagination links, applies when list is returned**/
-    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+    private PageLinks pageLinks;
 
     /**Node category, must be one of the allowed values.*/
     @OwlProperty(value = OwlProperties.OSF_HAS_CATEGORY, transform = ToStringTransform.class)
@@ -478,22 +474,6 @@ public abstract class NodeBase {
      *
      * @return
      */
-    public String getNode_links() {
-        return node_links;
-    }
-
-    /**
-     *
-     * @param node_links
-     */
-    public void setNode_links(final String node_links) {
-        this.node_links = node_links;
-    }
-
-    /**
-     *
-     * @return
-     */
     public String getLogs() {
         return logs;
     }
@@ -526,7 +506,7 @@ public abstract class NodeBase {
      *
      * @return
      */
-    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -535,7 +515,7 @@ public abstract class NodeBase {
      * @param pageLinks
      */
     @JsonProperty("links")
-    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+    public void setPageLinks(final PageLinks pageLinks) {
         this.pageLinks = pageLinks;
     }
 

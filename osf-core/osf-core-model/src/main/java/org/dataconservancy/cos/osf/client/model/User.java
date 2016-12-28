@@ -70,7 +70,7 @@ public class User {
     Map<String, ?> links;
 
     /**pagination links, applies when list is returned**/
-    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+    private PageLinks pageLinks;
 
     /** full name of the user; used for display*/
     @OwlProperty(OwlProperties.OSF_HAS_FULLNAME)
@@ -583,7 +583,7 @@ public class User {
      *
      * @return
      */
-    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -592,7 +592,7 @@ public class User {
      * @param pageLinks
      */
     @JsonProperty("links")
-    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+    public void setPageLinks(final PageLinks pageLinks) {
         this.pageLinks = pageLinks;
     }
 

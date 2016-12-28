@@ -44,7 +44,7 @@ public class FileVersion {
     Map<String, ?> links;
 
     /** pagination links for multiple records*/
-    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+    private PageLinks pageLinks;
 
     /**
      *
@@ -98,7 +98,7 @@ public class FileVersion {
      *
      * @return
      */
-    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -107,7 +107,7 @@ public class FileVersion {
      * @param links
      */
     @JsonProperty("links")
-    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links links) {
+    public void setPageLinks(final PageLinks links) {
         this.pageLinks = links;
     }
 

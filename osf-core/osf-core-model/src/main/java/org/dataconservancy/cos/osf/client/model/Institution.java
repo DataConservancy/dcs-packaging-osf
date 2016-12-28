@@ -47,7 +47,7 @@ public class Institution {
     Map<String, ?> links;
 
     /**pagination links, applies when list is returned**/
-    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+    private PageLinks pageLinks;
 
     /**
      *
@@ -101,7 +101,7 @@ public class Institution {
      *
      * @return
      */
-    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -110,7 +110,7 @@ public class Institution {
      * @param pageLinks
      */
     @JsonProperty("links")
-    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+    public void setPageLinks(final PageLinks pageLinks) {
         this.pageLinks = pageLinks;
     }
 

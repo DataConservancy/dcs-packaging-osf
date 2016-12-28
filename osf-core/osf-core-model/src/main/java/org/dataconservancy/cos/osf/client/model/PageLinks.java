@@ -18,7 +18,7 @@ package org.dataconservancy.cos.osf.client.model;
 /**
  * @author Elliot Metsger (emetsger@jhu.com)
  */
-public class Links {
+public class PageLinks {
     private String first;
 
     private String last;

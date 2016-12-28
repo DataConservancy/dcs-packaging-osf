@@ -111,7 +111,7 @@ public class Comment {
     /**
      * pagination links for multiple records
      */
-    private org.dataconservancy.cos.osf.client.model.Links pageLinks;
+    private PageLinks pageLinks;
 
     /**
      * the node this comment belongs to (distinct from the target)
@@ -343,7 +343,7 @@ public class Comment {
      *
      * @return
      */
-    public org.dataconservancy.cos.osf.client.model.Links getPageLinks() {
+    public PageLinks getPageLinks() {
         return pageLinks;
     }
 
@@ -352,7 +352,7 @@ public class Comment {
      * @param pageLinks
      */
     @JsonProperty("links")
-    public void setPageLinks(final org.dataconservancy.cos.osf.client.model.Links pageLinks) {
+    public void setPageLinks(final PageLinks pageLinks) {
         this.pageLinks = pageLinks;
     }
 
