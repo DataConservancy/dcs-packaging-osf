@@ -44,6 +44,7 @@
     <properties>
         <okhttp.version>2.5.0</okhttp.version>
         <spring.version>4.2.0.RELEASE</spring.version>
+        <dcs-packaging-shared.version>1.0.0-SNAPSHOT</dcs-packaging-shared.version>
     </properties>
 
     <!-- Build  ===================================================== -->
@@ -89,6 +90,12 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+              <groupId>org.dataconservancy.packaging.shared</groupId>
+              <artifactId>dcs-packaging-shared</artifactId>
+              <version>${dcs-packaging-shared.version}</version>
             </dependency>
 
         </dependencies>

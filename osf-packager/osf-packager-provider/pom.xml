@@ -52,6 +52,12 @@
 
     <dependency>
       <groupId>org.dataconservancy.cos</groupId>
+      <artifactId>osf-core-rdf</artifactId>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.dataconservancy.cos</groupId>
       <artifactId>osf-packager-model</artifactId>
       <scope>compile</scope>
     </dependency>
@@ -72,7 +78,6 @@
       <groupId>org.dataconservancy.packaging.shared</groupId>
       <artifactId>dcs-packaging-shared</artifactId>
       <scope>compile</scope>
-      <version>1.0.0-SNAPSHOT</version>
     </dependency>
 
     <dependency>
