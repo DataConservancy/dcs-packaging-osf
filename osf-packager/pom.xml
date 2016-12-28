@@ -46,7 +46,6 @@
   <properties>
     <osf-client.version>1.1.0-SNAPSHOT</osf-client.version>
     <osf-core.version>1.1.0-SNAPSHOT</osf-core.version>
-    <dcs-packaging-shared.version>1.0.0-SNAPSHOT</dcs-packaging-shared.version>
   </properties>
 
   <build>
@@ -145,12 +144,6 @@
   <dependencyManagement>
 
     <dependencies>
-
-      <dependency>
-          <groupId>org.dataconservancy.packaging.shared</groupId>
-          <artifactId>dcs-packaging-shared</artifactId>
-          <version>${dcs-packaging-shared.version}</version>
-      </dependency>
 
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
