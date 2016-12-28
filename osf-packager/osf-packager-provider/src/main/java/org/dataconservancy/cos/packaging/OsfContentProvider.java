@@ -82,8 +82,7 @@ public class OsfContentProvider extends AbstractContentProvider {
     private File                    temporaryDirectory;
 
     static final ClassPathXmlApplicationContext cxt = new ClassPathXmlApplicationContext(
-        "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
-        "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
+        "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml");
 
     private static final String missingProvider = "missing_storage_provider";
 

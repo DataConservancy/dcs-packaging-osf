@@ -182,8 +182,7 @@ public class PackageGenerationApp {
         final ClassPathXmlApplicationContext cxt =
                 new ClassPathXmlApplicationContext(
                     "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
-                    "classpath*:org/dataconservancy/cos/osf/client/service/applicationContext.xml",
-                    "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
+                    "classpath*:org/dataconservancy/cos/osf/client/service/applicationContext.xml");
 
         // Prepare the OSF registration and users information
         final OsfService osfService = cxt.getBean("osfService", OsfService.class);
