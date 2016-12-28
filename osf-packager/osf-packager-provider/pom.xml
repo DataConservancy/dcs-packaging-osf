@@ -76,19 +76,12 @@
     </dependency>
 
     <dependency>
-      <groupId>com.squareup.okhttp3</groupId>
+      <groupId>com.squareup.okhttp</groupId>
       <artifactId>okhttp</artifactId>
       <scope>compile</scope>
     </dependency>
 
   <!-- Runtime  ==================================================== -->
-
-    <dependency>
-      <groupId>org.dataconservancy.cos</groupId>
-      <artifactId>osf-client</artifactId>
-      <scope>compile</scope>
-      <version>1.0.3-SNAPSHOT</version>
-    </dependency>
 
     <dependency>
       <groupId>ch.qos.logback</groupId>

@@ -88,6 +88,12 @@
 
         <!-- Runtime  ==================================================== -->
 
+        <dependency>
+            <groupId>org.dataconservancy.cos</groupId>
+            <artifactId>osf-client-support-jsonapi</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
         <!-- Test ======================================================== -->
 
     </dependencies>
