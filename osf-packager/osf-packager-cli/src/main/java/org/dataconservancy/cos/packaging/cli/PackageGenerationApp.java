@@ -25,9 +25,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
 import org.apache.commons.io.IOUtils;
 
 import org.dataconservancy.cos.osf.client.model.Registration;
@@ -182,6 +182,7 @@ public class PackageGenerationApp {
         final ClassPathXmlApplicationContext cxt =
                 new ClassPathXmlApplicationContext(
                     "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
+                    "classpath*:org/dataconservancy/cos/osf/client/service/applicationContext.xml",
                     "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
 
         // Prepare the OSF registration and users information

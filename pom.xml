@@ -39,6 +39,12 @@
         <module>osf-packager</module>
     </modules>
 
+    <!-- Build Properties =========================================== -->
+
+    <properties>
+        <okhttp.version>2.5.0</okhttp.version>
+    </properties>
+
     <!-- Build  ===================================================== -->
 
     <build>
@@ -53,6 +59,22 @@
         </plugins>
 
     </build>
+
+    <!-- Dependency Management ====================================== -->
+
+    <dependencyManagement>
+
+        <dependencies>
+
+            <dependency>
+                <groupId>com.squareup.okhttp</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
 
     <!-- Repositories =============================================== -->
 

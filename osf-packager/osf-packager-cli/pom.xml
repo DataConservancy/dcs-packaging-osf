@@ -132,8 +132,19 @@
         </dependency>
 
         <dependency>
+            <groupId>org.dataconservancy.cos</groupId>
+            <artifactId>osf-client-api</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.dataconservancy.packaging.shared</groupId>
             <artifactId>dcs-packaging-shared</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.dataconservancy.cos</groupId>
+            <artifactId>osf-client-impl</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
     </dependencies>
