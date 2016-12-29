@@ -16,7 +16,6 @@
 
 package org.dataconservancy.cos.packaging;
 
-import com.github.jasminb.jsonapi.RelationshipResolver;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import org.apache.commons.io.FileUtils;
@@ -40,7 +39,6 @@ import org.dataconservancy.packaging.tool.model.ipm.Node;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -77,31 +75,20 @@ public class OsfContentProvider extends AbstractContentProvider {
     }
 
     private Logger                  log = LoggerFactory.getLogger(OsfContentProvider.class);
-    private RelationshipResolver    resolver;
+    private OsfContentResolver      contentResolver;
     private Model                   domainObjects = null;
     private File                    temporaryDirectory;
-
-    static final ClassPathXmlApplicationContext cxt = new ClassPathXmlApplicationContext(
-        "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
-        "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
 
     private static final String missingProvider = "missing_storage_provider";
 
     /**
-     * Construct a content provider from the given graph and a default relationship resolver.
-     * @param graph The OSF package graph containing the package content.
+     * Construct a content provider from the given graph and content resolver.
+     *
+     * @param graph the OSF package graph containing the package content.
+     * @param resolver the resolver to use when resolving URIs in the package graph
      */
-    public OsfContentProvider(final OsfPackageGraph graph) {
-        this(graph, cxt.getBean("jsonApiRelationshipResolver", RelationshipResolver.class));
-    }
-
-    /**
-     * Construct a content provider from the given graph and relationship resolver.
-     * @param graph The OSF package graph containing the package content.
-     * @param resolver The relationship resolver to use when processing the package graph.
-     */
-    public OsfContentProvider(final OsfPackageGraph graph, final RelationshipResolver resolver) {
-        this.resolver = resolver;
+    public OsfContentProvider(final OsfPackageGraph graph, final OsfContentResolver resolver) {
+        this.contentResolver = resolver;
 
         // Allocate a unique location for storing any binary content that will go into the package.
         // If another thread or JVM is running simultaneously, content will go into unique directory,
@@ -125,6 +112,24 @@ public class OsfContentProvider extends AbstractContentProvider {
 
         domainObjects = ModelFactory.createDefaultModel()
                 .read(new ByteArrayInputStream(sink.toByteArray()), null, "TTL");
+    }
+
+    /**
+     * Construct a content provider from the given graph and HTTP client.  The HTTP client will be wrapped as a
+     * simplified {@link OsfContentResolver}.
+     *
+     * @param graph the OSF package graph containing the package content.
+     * @param httpClient The http client to use when resolving URIs in the package graph
+     */
+    public OsfContentProvider(final OsfPackageGraph graph, final OkHttpClient httpClient) {
+        this(graph, (uri) -> {
+            final Request get = new Request.Builder().get().url(uri).build();
+            try {
+                return httpClient.newCall(get).execute().body().byteStream();
+            } catch (IOException e) {
+                throw new RuntimeException("Unable to resolve or retrieve '" + uri + "': " + e.getMessage(), e);
+            }
+        });
     }
 
     /**
@@ -232,22 +237,7 @@ public class OsfContentProvider extends AbstractContentProvider {
         final File outFile;
         try {
             outFile = new File(temporaryDirectory, filename);
-            final byte[] data = this.resolver.resolve(contentUrl);
-            if (data == null || data.length == 0) {
-                // We actually don't know receiving zero bytes is an error, because the file to be retrieved at
-                // 'contentUrl' may be in actuality, a zero-length file.  The 'Content-Length' header would let us
-                // know this, but we don't have access to the HTTP headers.
-                final OkHttpClient client = cxt.getBean("okHttpClient", OkHttpClient.class);
-                final Request head = new Request.Builder().head().url(contentUrl).build();
-                final Integer contentLength = Integer.parseInt(
-                        client.newCall(head).execute().header("Content-Length", "-1"));
-                if (contentLength > 0) {
-                    throw new RuntimeException("Unable to retrieve content from '" + contentUrl + "': Expected " +
-                            contentLength + " bytes but received 0 bytes.");
-                }
-            }
-            IOUtils.write(data,
-                    new FileOutputStream(outFile));
+            IOUtils.copy(contentResolver.resolve(contentUrl), new FileOutputStream(outFile));
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);
         }

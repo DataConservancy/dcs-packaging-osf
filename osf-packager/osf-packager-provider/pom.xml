@@ -63,18 +63,6 @@
     </dependency>
 
     <dependency>
-      <groupId>org.dataconservancy.pkgtool</groupId>
-      <artifactId>dcs-packaging-tool-model-builder-properties</artifactId>
-      <scope>compile</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.dataconservancy.pkgtool</groupId>
-      <artifactId>dcs-packaging-tool-impl</artifactId>
-      <scope>compile</scope>
-    </dependency>
-
-    <dependency>
       <groupId>org.dataconservancy.packaging.shared</groupId>
       <artifactId>dcs-packaging-shared</artifactId>
       <scope>compile</scope>
@@ -87,12 +75,6 @@
     </dependency>
 
   <!-- Runtime  ==================================================== -->
-
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <scope>runtime</scope>
-    </dependency>
 
   <!-- Test ======================================================== -->
 
@@ -119,6 +101,12 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
       <scope>test</scope>
     </dependency>
 
