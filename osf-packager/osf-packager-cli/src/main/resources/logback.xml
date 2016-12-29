@@ -28,7 +28,7 @@
     and wire traffic -->
   <logger name="org.mockserver" level="OFF"/>
 
-  <logger name="org.dataconservancy" level="DEBUG"/>
+  <logger name="org.dataconservancy" level="WARN"/>
 
   <root level="WARN">
     <appender-ref ref="STDOUT" />
