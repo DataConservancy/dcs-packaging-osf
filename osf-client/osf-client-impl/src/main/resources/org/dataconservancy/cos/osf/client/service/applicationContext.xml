@@ -100,4 +100,10 @@
     <constructor-arg value="org.dataconservancy.cos.osf.client.service.OsfService"/>
   </bean>
 
+  <!--
+    Facade providing access to a Jena model that enforces compliance with the OSF ontology.
+     May *not* be shared as a singleton.
+  -->
+  <bean id="ontologyManager" class="org.dataconservancy.cos.rdf.support.OntologyManager" scope="prototype"/>
+
 </beans>
