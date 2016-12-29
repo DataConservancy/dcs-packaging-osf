@@ -28,6 +28,10 @@
     and wire traffic -->
   <logger name="org.mockserver" level="OFF"/>
 
+  <!-- Set level to "DEBUG" or "INFO" to get more information
+    on Spring bean wiring -->
+  <logger name="org.springframework.context" level="OFF"/>
+
   <logger name="org.dataconservancy" level="WARN"/>
 
   <root level="WARN">
