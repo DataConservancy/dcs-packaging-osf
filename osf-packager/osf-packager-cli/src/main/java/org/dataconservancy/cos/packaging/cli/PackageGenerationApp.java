@@ -172,7 +172,14 @@ public class PackageGenerationApp {
             System.err.println();
             System.exit(1);
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            if (e.getMessage() == null || e.getMessage().equals("null")) {
+                System.err.println("There was an unrecoverable error:");
+                e.printStackTrace(System.err);
+            } else {
+                System.err.println("There was an unrecoverable error: " + e.getMessage());
+                e.printStackTrace(System.err);
+            }
+
             System.exit(1);
         }
     }
