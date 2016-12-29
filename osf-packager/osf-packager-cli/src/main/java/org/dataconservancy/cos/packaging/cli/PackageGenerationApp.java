@@ -220,7 +220,8 @@ public class PackageGenerationApp {
 
         // Prepare content provider using package graph
         // TODO - Does this work without the lambda-specified resolver used in OsfContentProviderTest?
-        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph);
+        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph,
+                cxt.getBean("okHttpClient", OkHttpClient.class));
 
         // Load the metadata file
         final InputStream metadataStream = new FileInputStream(bagMetadataFile);

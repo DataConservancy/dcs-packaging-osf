@@ -20,7 +20,6 @@ import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Request;
 import org.apache.jena.riot.RDFFormat;
 
-import org.dataconservancy.cos.osf.client.config.WbConfigurationService;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
@@ -40,8 +39,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * Simple test exercising the IpmPackager
@@ -84,10 +81,10 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
         // Prepare content provider using package graph
-        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (String url) -> {
+        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (url) -> {
             final Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
             try {
-                return req.execute().body().bytes();
+                return req.execute().body().byteStream();
             } catch (IOException e) {
                 throw new RuntimeException(e.getMessage(), e);
             }
@@ -137,10 +134,10 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         //List<Wiki> wikis = osfService.wikis("http://localhost:8000/v2/registrations/ng9em/wikis/").execute().body();
         packageGraph.serialize(System.err, RDFFormat.TURTLE_PRETTY, packageGraph.OSF_SELECTOR);
 
-        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (String url) -> {
+        final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph, (url) -> {
             final Call req = factory.getHttpClient().newCall(new Request.Builder().url(url).build());
             try {
-                return req.execute().body().bytes();
+                return req.execute().body().byteStream();
             } catch (IOException e) {
                 throw new RuntimeException(e.getMessage(), e);
             }
@@ -155,18 +152,4 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         contentProvider.close();
     }
 
-    /**
-     * Insures that the system property, {@code osf.client.conf}, is honored by Spring when constructing the application
-     * context.
-     *
-     * @throws Exception Thrown when the configuration service cannot be found.
-     */
-    @Test
-    public void testIpmManagerConfigurationResolutionWithSpring() throws Exception {
-        System.setProperty("osf.client.conf",
-                "classpath:/org/dataconservancy/cos/packaging/TestSpringClientConfiguration-classpath.json");
-        final WbConfigurationService configSvc =
-                OsfContentProvider.cxt.getBean("wbConfigurationSvc", WbConfigurationService.class);
-        assertEquals("test-host", configSvc.getConfiguration().getHost());
-    }
 }
