@@ -20,7 +20,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
@@ -230,15 +229,19 @@ public class PackageGenerationApp {
         final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph,
                 cxt.getBean("okHttpClient", OkHttpClient.class));
 
-        // Load the metadata file
-        final InputStream metadataStream = new FileInputStream(bagMetadataFile);
-
         // Create the package in the default location with the supplied name.
         // No package generation parameters are supplied.
         final IpmPackager ipmPackager = new IpmPackager();
         ipmPackager.setPackageName(packageName);
         ipmPackager.setPackageLocation(outputLocation.getPath());
-        final Package pkg = ipmPackager.buildPackage(contentProvider, metadataStream, null);
+        final Package pkg;
+        if (bagMetadataFile == null) {
+            pkg = ipmPackager.buildPackage(contentProvider, null, null);
+        } else {
+            try (final FileInputStream metadataStream = new FileInputStream(bagMetadataFile)) {
+                pkg = ipmPackager.buildPackage(contentProvider, metadataStream, null);
+            }
+        }
 
         // Now just write the package out to a file in the output location
         // this must agree with the package root directory name according to our
