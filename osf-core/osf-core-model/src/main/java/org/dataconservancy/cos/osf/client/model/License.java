@@ -25,6 +25,8 @@ import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 
+import java.util.List;
+
 /**
  * Encapsulates a license for a OSF Node or Registration.
  *
@@ -43,6 +45,8 @@ public class License {
 
     @OwlProperty(OwlProperties.OSF_HAS_LICENSE_NAME)
     private String name;
+
+    private List<String> required_fields;
 
     /**
      *
@@ -76,4 +80,19 @@ public class License {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
+    public List<String> getRequired_fields() {
+        return required_fields;
+    }
+
+    /**
+     *
+     * @param required_fields
+     */
+    public void setRequired_fields(final List<String> required_fields) {
+        this.required_fields = required_fields;
+    }
 }
