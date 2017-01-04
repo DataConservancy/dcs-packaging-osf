@@ -38,8 +38,6 @@ import org.springframework.core.io.ResourceLoader;
 
 import java.io.IOException;
 import java.net.URI;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -143,12 +141,6 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         wbMockServer.stop();
     }
 
-    public static URI relativize(final URI baseUri, final URI requestUri) {
-        final URI result = baseUri.relativize(requestUri);
-        LOG.trace("Relativizing {} against {}: {}", baseUri, requestUri, result);
-        return result;
-    }
-
     public static String resourceBase(final TestName testName) {
         assertNotNull(testName);
         final StringBuilder base = new StringBuilder(JSON_ROOT);
@@ -167,29 +159,6 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         LOG.trace("Test resource base path: {}", base);
         return base.toString();
-    }
-
-    /**
-     * Responsible for resolving the JSON response resource.
-     *
-     * @param test contains metadata about the current test method.
-     * @param baseUri the baseUri of the OSF V2 API
-     * @param requestUri the full request URI
-     * @return a Path that identifies a classpath resource containing the JSON response document
-     */
-    public static Path resolveResponseResource(final TestName test, final Class testClass, final URI baseUri,
-                                               final URI requestUri) {
-        // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-        final URI relativizedRequestUri = baseUri.relativize(requestUri);
-        final Path requestPath = Paths.get(relativizedRequestUri.getPath());
-
-        // /json/NodeTest/testGetNodeObjectResolution/
-        final Path fsBase = Paths.get(resourceBase(test, testClass));
-
-        // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
-        final Path resolvedPath = Paths.get(fsBase.toString(), requestPath.toString(), "index.json");
-
-        return resolvedPath;
     }
 
     /**
