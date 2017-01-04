@@ -44,6 +44,7 @@ public class JodaSupportTest {
         assertNotNull(JodaSupport.parseDateTime("2016-07-29T14:35:29Z"));
         assertNotNull(JodaSupport.parseDateTime("2016-09-06T16:47:59.791429"));
         assertNotNull(JodaSupport.parseDateTime("2016-07-29T14:35:29Z"));
+        assertNotNull(JodaSupport.parseDateTime("2016-12-05T21:29:01.463000Z"));
     }
 
     @Test
