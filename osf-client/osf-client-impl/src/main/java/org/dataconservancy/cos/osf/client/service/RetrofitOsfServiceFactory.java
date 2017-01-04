@@ -26,6 +26,7 @@ import org.dataconservancy.cos.osf.client.config.JacksonOsfConfigurationService;
 import org.dataconservancy.cos.osf.client.config.JacksonWbConfigurationService;
 import org.dataconservancy.cos.osf.client.config.OsfConfigurationService;
 import org.dataconservancy.cos.osf.client.config.WbConfigurationService;
+import org.dataconservancy.cos.osf.client.support.ApiVersionInterceptor;
 import org.dataconservancy.cos.osf.client.support.AuthInterceptor;
 import retrofit.Retrofit;
 
@@ -191,6 +192,9 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getAuthHeader() != null) {
             httpClient.interceptors().add(new AuthInterceptor(osfConfigSvc.getConfiguration().getAuthHeader()));
         }
+        if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
+            httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
+        }
 
         // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
         final List<Class<?>> domainClasses = new ArrayList<>();
@@ -255,6 +259,9 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getAuthHeader() != null) {
             httpClient.interceptors().add(new AuthInterceptor(osfConfigSvc.getConfiguration().getAuthHeader()));
         }
+        if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
+            httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
+        }
     }
 
     /**
@@ -294,6 +301,9 @@ public class RetrofitOsfServiceFactory {
         this.httpClient = new OkHttpClient();
         if (osfConfigSvc.getConfiguration().getAuthHeader() != null) {
             httpClient.interceptors().add(new AuthInterceptor(osfConfigSvc.getConfiguration().getAuthHeader()));
+        }
+        if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
+            httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
         }
     }
 
