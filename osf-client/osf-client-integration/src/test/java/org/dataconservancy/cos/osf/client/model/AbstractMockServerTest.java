@@ -162,6 +162,21 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
     }
 
     /**
+     * Adds an interceptor to the OSF service factory which adds a {@code X_RESPONSE_RESOURCE} header to the HTTP
+     * request.  Test classes can use this instead of the {@link RecursiveInterceptor}/{@link ResponseResolver}
+     * combination if the tests do not need to resolve relationships.
+     *
+     * @param resourcePath the resource to resolve and return in the response.
+     */
+    protected void addResponseInterceptor(final String resourcePath) {
+        factory.interceptors().add(chain ->
+                chain.proceed(chain.request()
+                        .newBuilder()
+                        .addHeader(X_RESPONSE_RESOURCE, resourcePath)
+                        .build()));
+    }
+
+    /**
      * Responsible for resolving the JSON response resource for OSF v2 API calls that are recursive.
      * <p>
      * For example, the {@link com.github.jasminb.jsonapi.ResolutionStrategy} for {@code Node}
