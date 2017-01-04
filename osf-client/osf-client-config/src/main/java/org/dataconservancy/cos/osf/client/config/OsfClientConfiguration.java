@@ -25,6 +25,8 @@ import java.net.URISyntaxException;
  */
 public class OsfClientConfiguration {
 
+    private static final String DEFAULT_API_VERSION = "2.2";
+
     private String host;
 
     private int port;
@@ -34,6 +36,8 @@ public class OsfClientConfiguration {
     private String basePath;
 
     private String authHeader;
+
+    private String apiVersion = DEFAULT_API_VERSION;
 
     /**
      * The host of the OSF v2 API; may be a DNS name or a dotted-quad IP.
@@ -139,4 +143,23 @@ public class OsfClientConfiguration {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Specified version of the OSF API to use (e.g. {@code 2.2})
+     *
+     * @return the API version, defaults to "2.2"
+     */
+    public String getApiVersion() {
+        return apiVersion;
+    }
+
+    /**
+     * Specified version of the OSF API to use (e.g. {@code 2.2})
+     *
+     * @param apiVersion the API version
+     */
+    public void setApiVersion(final String apiVersion) {
+        this.apiVersion = apiVersion;
+    }
+
 }

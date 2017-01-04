@@ -31,6 +31,9 @@
         <bean class="org.dataconservancy.cos.osf.client.support.AuthInterceptor">
           <constructor-arg ref="osfConfigurationSvc"/>
         </bean>
+        <bean class="org.dataconservancy.cos.osf.client.support.ApiVersionInterceptor">
+          <constructor-arg ref="osfConfigurationSvc"/>
+        </bean>
       </list>
     </property>
   </bean>
