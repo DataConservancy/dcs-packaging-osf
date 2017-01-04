@@ -99,8 +99,9 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(baseUri + "nodes/v8x57/", n.getLinks().get("self"));
         assertEquals("http://localhost:5000/v8x57/", n.getLinks().get("html"));
         assertNull(n.getPageLinks());
-        assertEquals("2016-05-10T13:53:07.886000", n.getDate_modified());
-        assertEquals("2016-04-19T13:08:24.039000", n.getDate_created());
+        // Note: not equal to '2016-05-10T13:53:07.886000Z' because we normalize date times with Joda
+        assertEquals("2016-05-10T13:53:07.886Z", n.getDate_modified());
+        assertEquals("2016-04-19T13:08:24.039Z", n.getDate_created());
     }
 
     /**

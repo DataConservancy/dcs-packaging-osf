@@ -15,7 +15,7 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 import java.util.List;
 import java.util.Map;
@@ -146,6 +146,10 @@ public abstract class NodeBase {
     @OwlProperty(OwlProperties.OSF_IS_COLLECTION)
     private Boolean isCollection;
 
+    private Boolean isPreprint;
+
+    private NodeLicense node_license;
+
 
     /**Link to primary institution for node.
      * TODO: doesn't appear to work yet - commenting out to prevent error*/
@@ -270,7 +274,7 @@ public abstract class NodeBase {
      */
     public String getDate_created() {
         if (this.date_created != null) {
-            return this.date_created.toString(DATE_TIME_FORMATTER);
+            return this.date_created.toString(DATE_TIME_FORMATTER_ALT);
         } else {
             return null;
         }
@@ -294,7 +298,7 @@ public abstract class NodeBase {
      */
     public String getDate_modified() {
         if (this.date_modified != null) {
-            return this.date_modified.toString(DATE_TIME_FORMATTER);
+            return this.date_modified.toString(DATE_TIME_FORMATTER_ALT);
         } else {
             return null;
         }
@@ -549,5 +553,38 @@ public abstract class NodeBase {
      */
     public void setWikis(final List<Wiki> wikis) {
         this.wikis = wikis;
+    }
+
+    /**
+     * Whether or not this node represents a preprint.
+     *
+     * @return
+     */
+    public Boolean isPreprint() {
+        return isPreprint;
+    }
+
+    /**
+     *
+     * @param isPreprint
+     */
+    public void setPreprint(final Boolean isPreprint) {
+        this.isPreprint = isPreprint;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public NodeLicense getNode_license() {
+        return node_license;
+    }
+
+    /**
+     *
+     * @param node_license
+     */
+    public void setNode_license(final NodeLicense node_license) {
+        this.node_license = node_license;
     }
 }

@@ -1,0 +1,49 @@
+{
+  "data": {
+    "links": {
+      "self": "http://localhost:8000/v2/registrations/5nua2/",
+      "html": "https://osf.io/5nua2/"
+    },
+    "attributes": {
+      "registration_supplement": "Open-Ended Registration",
+      "pending_embargo_approval": false,
+      "registration": true,
+      "embargo_end_date": null,
+      "withdrawn": false,
+      "withdrawal_justification": null,
+      "category": "project",
+      "preprint": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "title": "Test Project",
+      "registered_meta": {
+        "summary": {
+          "value": "test",
+          "comments": [],
+          "extra": {}
+        }
+      },
+      "public": true,
+      "fork": false,
+      "description": "foo project description.",
+      "tags": [],
+      "collection": false,
+      "current_user_can_comment": false,
+      "pending_registration_approval": false,
+      "date_modified": "2016-08-01T19:15:56.126000Z",
+      "date_registered": "2016-08-09T04:35:20.557000Z",
+      "date_created": "2016-03-16T17:58:47.353000Z",
+      "pending_withdrawal": false,
+      "node_license": {
+        "copyright_holders": [
+          "Elliot Metsger",
+          "all rights reserved."
+        ],
+        "year": "2016"
+      }
+    },
+    "type": "registrations",
+    "id": "5nua2"
+  }
+}
