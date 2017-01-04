@@ -17,6 +17,9 @@ package org.dataconservancy.cos.osf.client.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.List;
+import java.util.Map;
+
 /**
  * Model for extra OSF Registration metadata
  * @author khanson
@@ -55,4 +58,58 @@ public class RegistrationMetadata {
     },
 
  */
+
+    private String value;
+
+    private List<String> comments;
+
+    private Map<String, ?> extra;
+
+    /**
+     *
+     * @return
+     */
+    public String getValue() {
+        return value;
+    }
+
+    /**
+     *
+     * @param value
+     */
+    public void setValue(final String value) {
+        this.value = value;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<String> getComments() {
+        return comments;
+    }
+
+    /**
+     *
+     * @param comments
+     */
+    public void setComments(final List<String> comments) {
+        this.comments = comments;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getExtra() {
+        return extra;
+    }
+
+    /**
+     *
+     * @param extra
+     */
+    public void setExtra(final Map<String, ?> extra) {
+        this.extra = extra;
+    }
 }
