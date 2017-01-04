@@ -310,4 +310,13 @@ public class Wiki {
         this.comments = comments;
     }
 
+    /**
+     * Return the version of the Wiki page.
+     *
+     * @return the version
+     */
+    public int getVersion() {
+        return Integer.parseInt(extra.get("version").toString());
+    }
+
 }

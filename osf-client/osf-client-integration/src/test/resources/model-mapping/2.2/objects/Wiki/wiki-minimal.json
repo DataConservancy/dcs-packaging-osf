@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "links": {
+        "info": "http://localhost:8000/v2/wikis/4b26r/",
+        "download": "http://localhost:8000/v2/wikis/4b26r/content/",
+        "self": "http://localhost:8000/v2/wikis/4b26r/"
+      },
+      "attributes": {
+        "kind": "file",
+        "name": "Examples",
+        "date_modified": "2016-12-05T21:29:01.463000Z",
+        "extra": {
+          "version": 5
+        },
+        "content_type": "text/markdown",
+        "path": "/4b26r",
+        "current_user_can_comment": false,
+        "materialized_path": "/4b26r",
+        "size": 7168
+      },
+      "type": "wikis",
+      "id": "4b26r"
+    }
+  ]
+}
