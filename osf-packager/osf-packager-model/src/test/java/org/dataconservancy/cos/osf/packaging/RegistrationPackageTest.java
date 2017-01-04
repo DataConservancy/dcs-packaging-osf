@@ -43,6 +43,7 @@ import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
 import org.dataconservancy.cos.rdf.support.ManagedGraph;
 import org.dataconservancy.cos.rdf.support.Rdf;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -82,6 +83,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     @Rule
     public TestName TEST_HAME = new TestName();
 
+    @Ignore("Pending resolution of 'extra' being an array or an object.")
     @Test
     public void testCreateRegistrationPackage() throws Exception {
         factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class, getBaseUri()));
@@ -441,6 +443,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
     }
 
+    @Ignore("Pending resolution of 'extra' being an array or an object.")
     @Test
     public void testGetAnnotations() throws Exception {
         factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class, getBaseUri()));

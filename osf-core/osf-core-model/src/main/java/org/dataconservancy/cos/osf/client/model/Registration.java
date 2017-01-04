@@ -16,9 +16,10 @@
 
 package org.dataconservancy.cos.osf.client.model;
 
-import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 import java.util.List;
+import java.util.Map;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.JodaSupport;
@@ -83,7 +84,7 @@ public class Registration extends NodeBase  {
 
     /**registration supplementary information*/
     // TODO @OwlProperty
-    private RegistrationMetadata registered_meta;
+    private Map<String, RegistrationMetadata> registered_meta;
 
     /**registration template used*/
     @OwlProperty(OwlProperties.OSF_HAS_REGISTRATIONSUPPLEMENT)
@@ -152,7 +153,7 @@ public class Registration extends NodeBase  {
      */
     public String getDate_registered() {
         if (this.date_registered != null) {
-            return this.date_registered.toString(DATE_TIME_FORMATTER);
+            return this.date_registered.toString(DATE_TIME_FORMATTER_ALT);
         } else {
             return null;
         }
@@ -176,7 +177,7 @@ public class Registration extends NodeBase  {
      */
     public String getEmbargo_end_date() {
         if (this.embargo_end_date != null) {
-            return this.embargo_end_date.toString(DATE_TIME_FORMATTER);
+            return this.embargo_end_date.toString(DATE_TIME_FORMATTER_ALT);
         } else {
             return null;
         }
@@ -262,7 +263,7 @@ public class Registration extends NodeBase  {
      *
      * @return
      */
-    public RegistrationMetadata getRegistered_meta() {
+    public Map<String, RegistrationMetadata> getRegistered_meta() {
         return registered_meta;
     }
 
@@ -270,7 +271,7 @@ public class Registration extends NodeBase  {
      *
      * @param registered_meta
      */
-    public void setRegistered_meta(final RegistrationMetadata registered_meta) {
+    public void setRegistered_meta(final Map<String, RegistrationMetadata> registered_meta) {
         this.registered_meta = registered_meta;
     }
 
@@ -320,5 +321,13 @@ public class Registration extends NodeBase  {
      */
     public void setRegistered_by(final String registered_by) {
         this.registered_by = registered_by;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public RegistrationMetadata getRegistrationMetadataSummary() {
+        return registered_meta.get("summary");
     }
 }
