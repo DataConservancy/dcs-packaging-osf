@@ -48,6 +48,12 @@ public class JodaSupport {
     public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_3 =
             DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss").withZoneUTC();
 
+    /**
+     * A Joda DateTimeFormatter which parses strings using the pattern:
+     * {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'}
+     */
+    public static final DateTimeFormatter DATE_TIME_FORMATTER_ALT_4 =
+            DateTimeFormat.forPattern("yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'");
 
     private static final List<DateTimeFormatter> DATE_TIME_FORMATTERS =
             new ArrayList<DateTimeFormatter>() {
@@ -56,6 +62,7 @@ public class JodaSupport {
                     add(DATE_TIME_FORMATTER_ALT);
                     add(DATE_TIME_FORMATTER_ALT_2);
                     add(DATE_TIME_FORMATTER_ALT_3);
+                    add(DATE_TIME_FORMATTER_ALT_4);
                 }
             };
 
@@ -71,6 +78,7 @@ public class JodaSupport {
      * </p>
      * <ul>
      *   <li>yyyy-MM-dd'T'HH:mm:ss.SSSSSS</li>
+     *   <li>yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'</li>
      *   <li>yyyy-MM-dd'T'HH:mm:ss.SSS'Z'</li>
      *   <li>yyyy-MM-dd'T'HH:mm:ss'Z'</li>
      * </ul>
