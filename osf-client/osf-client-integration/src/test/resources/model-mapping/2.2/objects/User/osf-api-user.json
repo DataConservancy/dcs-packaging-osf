@@ -1,0 +1,44 @@
+{
+  "data": {
+    "relationships": {
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "https://api.osf.io/v2/users/typ46/nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "institutions": {
+        "links": {
+          "self": {
+            "href": "https://api.osf.io/v2/users/typ46/relationships/institutions/",
+            "meta": {}
+          },
+          "related": {
+            "href": "https://api.osf.io/v2/users/typ46/institutions/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "https://api.osf.io/v2/users/typ46/",
+      "html": "https://osf.io/typ46/",
+      "profile_image": "https://secure.gravatar.com/avatar/3dd8757ba100b8406413706886243811?d=identicon"
+    },
+    "attributes": {
+      "family_name": "Geiger",
+      "suffix": "",
+      "locale": "en_us",
+      "date_registered": "2014-03-18T19:11:57.252000Z",
+      "middle_names": "J.",
+      "given_name": "Brian",
+      "full_name": "Brian J. Geiger",
+      "active": true,
+      "timezone": "America/New_York"
+    },
+    "type": "users",
+    "id": "typ46"
+  }
+}

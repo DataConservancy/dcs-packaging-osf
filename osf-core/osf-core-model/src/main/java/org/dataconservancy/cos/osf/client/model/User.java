@@ -16,7 +16,7 @@
 
 package org.dataconservancy.cos.osf.client.model;
 
-import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 import java.util.List;
 import java.util.Map;
@@ -259,7 +259,7 @@ public class User {
      */
     public String getDate_registered() {
         if (date_registered != null) {
-            return date_registered.toString(DATE_TIME_FORMATTER);
+            return date_registered.toString(DATE_TIME_FORMATTER_ALT);
         } else {
             return null;
         }
