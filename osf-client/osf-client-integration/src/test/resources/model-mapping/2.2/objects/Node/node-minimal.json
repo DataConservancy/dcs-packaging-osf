@@ -1,0 +1,34 @@
+{
+  "data": {
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/xug4a/",
+      "html": "https://osf.io/xug4a/"
+    },
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "preprint": false,
+      "description": "foo project description.",
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_modified": "2017-01-04T22:41:12.000000Z",
+      "title": "Test Project",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-03-16T17:58:47.353000Z",
+      "current_user_can_comment": false,
+      "node_license": {
+        "copyright_holders": [
+          "Elliot Metsger",
+          "all rights reserved."
+        ],
+        "year": "2016"
+      },
+      "public": true,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "xug4a"
+  }
+}

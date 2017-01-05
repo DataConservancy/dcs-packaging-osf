@@ -119,6 +119,14 @@ public interface OsfService {
 
     /**
      *
+     * @param nodeUrl
+     * @return
+     */
+    @GET
+    Call<Node> nodeByUrl(@Url String nodeUrl);
+
+    /**
+     *
      * @return
      */
     @GET("registrations/")

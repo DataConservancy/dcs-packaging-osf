@@ -1,0 +1,180 @@
+{
+  "data": {
+    "relationships": {
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/files/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/comments/?filter%5Btarget%5D=xug4a",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/relationships/linked_nodes/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/wikis/",
+            "meta": {}
+          }
+        }
+      },
+      "affiliated_institutions": {
+        "links": {
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/relationships/institutions/",
+            "meta": {}
+          },
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/children/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/draft_registrations/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/xug4a/",
+      "html": "https://osf.io/xug4a/"
+    },
+    "attributes": {
+      "category": "project",
+      "fork": false,
+      "preprint": false,
+      "description": "foo project description.",
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_modified": "2017-01-04T22:41:12.000000Z",
+      "title": "Test Project",
+      "collection": false,
+      "registration": false,
+      "date_created": "2016-03-16T17:58:47.353000Z",
+      "current_user_can_comment": false,
+      "node_license": {
+        "copyright_holders": [
+          "Elliot Metsger",
+          "all rights reserved."
+        ],
+        "year": "2016"
+      },
+      "public": true,
+      "tags": []
+    },
+    "type": "nodes",
+    "id": "xug4a"
+  }
+}

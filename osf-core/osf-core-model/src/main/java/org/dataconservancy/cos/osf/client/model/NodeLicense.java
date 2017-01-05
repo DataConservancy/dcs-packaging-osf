@@ -59,4 +59,31 @@ public class NodeLicense {
     public void setYear(final String year) {
         this.year = year;
     }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        final NodeLicense that = (NodeLicense) o;
+
+        if (copyright_holders != null ?
+                !copyright_holders.equals(that.copyright_holders) : that.copyright_holders != null) {
+            return false;
+        }
+
+        return year != null ? year.equals(that.year) : that.year == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = copyright_holders != null ? copyright_holders.hashCode() : 0;
+        result = 31 * result + (year != null ? year.hashCode() : 0);
+        return result;
+    }
 }
