@@ -246,6 +246,14 @@ public interface OsfService {
      * @return
      */
     @GET
+    Call<Contributor> contributor(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
     Call<List<Wiki>> wikis(@Url String url);
 
     /**
