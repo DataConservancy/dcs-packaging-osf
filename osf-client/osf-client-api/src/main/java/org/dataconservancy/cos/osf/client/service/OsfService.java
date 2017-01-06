@@ -91,6 +91,14 @@ public interface OsfService {
      * @param url
      * @return
      */
+    @GET
+    Call<Comment> comment(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
     @Streaming
     @GET
     Call<ResponseBody> stream(@Url String url);
