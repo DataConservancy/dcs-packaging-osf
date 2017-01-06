@@ -1,0 +1,561 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/busara/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/busara/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/busara/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/busara/"
+      },
+      "attributes": {
+        "auth_url": null,
+        "logo_path": "/static/img/institutions/shields/busara-shield.png",
+        "name": "Busara Center for Behavioral Economics",
+        "description": "The <a href=\"http://www.busaracenter.org/\">Busara Center</a> for Behavioral Economics"
+      },
+      "type": "institutions",
+      "id": "busara"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/colorado/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/colorado/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/colorado/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/colorado/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=https%3A%2F%2Ffedauth.colorado.edu%2Fidp%2Fshibboleth",
+        "logo_path": "/static/img/institutions/shields/colorado-shield.png",
+        "name": "University of Colorado Boulder",
+        "description": "This service is supported by the Center for Research Data and Digital Scholarship, which is led by <a href=\"https://www.rc.colorado.edu/\">Research Computing</a> and the <a href=\"http://www.colorado.edu/libraries/\">University Libraries</a>."
+      },
+      "type": "institutions",
+      "id": "colorado"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/cos/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/cos/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/cos/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/cos/"
+      },
+      "attributes": {
+        "auth_url": null,
+        "logo_path": "/static/img/institutions/shields/cos-shield.png",
+        "name": "Center For Open Science",
+        "description": "COS is a non-profit technology company providing free and open services to increase inclusivity and transparency of research. Find out more at <a href=\"https://cos.io\">cos.io</a>."
+      },
+      "type": "institutions",
+      "id": "cos"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/esip/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/esip/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/esip/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/esip/"
+      },
+      "attributes": {
+        "auth_url": null,
+        "logo_path": "/static/img/institutions/shields/esip-shield.png",
+        "name": "Federation of Earth Science Information Partners (ESIP)",
+        "description": "<a href=\"http://www.esipfed.org/\">ESIP's</a> mission is to support the networking and data dissemination needs of our members and the global Earth science data community by linking the functional sectors of observation, research, application, education and use of Earth science."
+      },
+      "type": "institutions",
+      "id": "esip"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/jhu/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/jhu/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/jhu/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/jhu/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Ajohnshopkins.edu",
+        "logo_path": "/static/img/institutions/shields/jhu-shield.png",
+        "name": "Johns Hopkins University",
+        "description": "A research data service provided by the <a href=\"https://www.library.jhu.edu/\">Sheridan Libraries</a>."
+      },
+      "type": "institutions",
+      "id": "jhu"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ljaf/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ljaf/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ljaf/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/ljaf/"
+      },
+      "attributes": {
+        "auth_url": null,
+        "logo_path": "/static/img/institutions/shields/ljaf-shield.png",
+        "name": "Laura and John Arnold Foundation",
+        "description": "Projects listed below are for grants awarded by the Foundation. Please see the <a href=\"http://www.arnoldfoundation.org/wp-content/uploads/Guidelines-for-Investments-in-Research.pdf\">LJAF Guidelines for Investments in Research</a> for more information and requirements."
+      },
+      "type": "institutions",
+      "id": "ljaf"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nd/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nd/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nd/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/nd/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=https%3A%2F%2Flogin.nd.edu%2Fidp%2Fshibboleth",
+        "logo_path": "/static/img/institutions/shields/nd-shield.png",
+        "name": "University of Notre Dame",
+        "description": "In <a href=\"https://research.nd.edu/news/64035-notre-dame-center-for-open-science-partner-to-advance-open-science-initiatives/\">partnership</a> with the <a href=\"https://crc.nd.edu\">Center for Research Computing</a>, <a href=\"http://esc.nd.edu\">Engineering &amp; Science Computing</a>, and the <a href=\"https://library.nd.edu\">Hesburgh Libraries</a>"
+      },
+      "type": "institutions",
+      "id": "nd"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nyu/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nyu/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nyu/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/nyu/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Anyu.edu",
+        "logo_path": "/static/img/institutions/shields/nyu-shield.png",
+        "name": "New York University",
+        "description": "A Research Project and File Management Tool for the NYU Community: <a href=\"https://www.nyu.edu/research.html\">Research at NYU</a> | <a href=\"http://guides.nyu.edu/data_management\">Research Data Management Planning</a> | <a href=\"https://library.nyu.edu/services/research/\">NYU Library Research Services</a> | <a href=\"https://nyu.qualtrics.com/jfe6/form/SV_8dFc5TpA1FgLUMd\">Get Help</a>"
+      },
+      "type": "institutions",
+      "id": "nyu"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/okstate/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/okstate/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/okstate/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/okstate/"
+      },
+      "attributes": {
+        "auth_url": null,
+        "logo_path": "/static/img/institutions/shields/okstate-shield.png",
+        "name": "Oklahoma State University",
+        "description": "<a href=\"http://www.library.okstate.edu/research-support/research-data-services/\">OSU Library Research Data Services</a>"
+      },
+      "type": "institutions",
+      "id": "okstate"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ucr/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ucr/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ucr/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/ucr/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Aucr.edu",
+        "logo_path": "/static/img/institutions/shields/ucr-shield.png",
+        "name": "University of California Riverside",
+        "description": "Policy prohibits storing PII or HIPAA data on this site, please see C&amp;C's <a href=\"http://cnc.ucr.edu/security/researchers.html\">security site</a> for more information."
+      },
+      "type": "institutions",
+      "id": "ucr"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ucsd/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ucsd/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/ucsd/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/ucsd/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Aucsd.edu",
+        "logo_path": "/static/img/institutions/shields/ucsd-shield.png",
+        "name": "University of California San Diego",
+        "description": "This service is supported on campus by the UC San Diego Library for our research community. Do not use this service to store or transfer personally identifiable information, personal health information, or any other controlled unclassified information. For assistance please contact the Library's Research Data Curation Program at <a href=\"mailto:research-data-curation@ucsd.edu\">research-data-curation@ucsd.edu</a>."
+      },
+      "type": "institutions",
+      "id": "ucsd"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/usc/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/usc/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/usc/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/usc/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Ausc.edu",
+        "logo_path": "/static/img/institutions/shields/usc-shield.png",
+        "name": "University of Southern California",
+        "description": "Projects must abide by <a href=\"http://policy.usc.edu/info-security/\">USC's Information Security Policy</a>. Data stored for human subject research repositories must abide by <a href=\"http://policy.usc.edu/biorepositories/\">USC's Biorepository Policy</a>. The OSF may not be used for storage of Personal Health Information that is subject to <a href=\"http://policy.usc.edu/hipaa/\">HIPPA regulations</a>."
+      },
+      "type": "institutions",
+      "id": "usc"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/uva/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/uva/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/uva/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/uva/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Avirginia.edu",
+        "logo_path": "/static/img/institutions/shields/uva-shield.png",
+        "name": "University of Virginia",
+        "description": "In partnership with the <a href=\"http://www.virginia.edu/vpr/\">Vice President for Research</a>, <a href=\"http://dsi.virginia.edu\">Data Science Institute</a>, <a href=\"https://www.hsl.virginia.edu\">Health Sciences Library</a>, and <a href=\"http://data.library.virginia.edu\">University Library</a>. Learn more about <a href=\"http://cadre.virginia.edu\">UVA resources for computational and data-driven research</a>. Projects must abide by the <a href=\"http://www.virginia.edu/informationpolicy/security.html\">University Security and Data Protection Policies</a>."
+      },
+      "type": "institutions",
+      "id": "uva"
+    },
+    {
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/vcu/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/vcu/users/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/vcu/registrations/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/vcu/"
+      },
+      "attributes": {
+        "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=https%3A%2F%2Fshibboleth.vcu.edu%2Fidp%2Fshibboleth",
+        "logo_path": "/static/img/institutions/shields/vcu-shield.png",
+        "name": "Virginia Commonwealth University",
+        "description": "This service is supported by the VCU Libraries and the VCU Office of Research and Innovation for our research community. Do not use this service to store or transfer personally identifiable information (PII), personal health information (PHI), or any other controlled unclassified information (CUI). VCU's policy entitled \"<a href=\"http://www.policy.vcu.edu/sites/default/files/Research%20Data%20Ownership,%20Retention,%20Access%20and%20Securty.pdf\">Research Data Ownership, Retention, Access and Security</a>\" applies. For assistance please contact the <a href=\"https://www.library.vcu.edu/services/data/\">VCU Libraries Research Data Management Program</a>."
+      },
+      "type": "institutions",
+      "id": "vcu"
+    }
+  ],
+  "meta": {
+    "total": 14,
+    "per_page": 1000
+  },
+  "links": {
+    "self": "http://localhost:8000/v2/institutions/",
+    "first": null,
+    "last": null,
+    "prev": null,
+    "next": null
+  }
+}

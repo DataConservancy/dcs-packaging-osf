@@ -49,6 +49,10 @@ public class Institution {
     /**pagination links, applies when list is returned**/
     private PageLinks pageLinks;
 
+    private String auth_url;
+
+    private String description;
+
     /**
      *
      * @return
@@ -130,5 +134,36 @@ public class Institution {
         this.links = links;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getAuth_url() {
+        return auth_url;
+    }
+
+    /**
+     *
+     * @param auth_url
+     */
+    public void setAuth_url(final String auth_url) {
+        this.auth_url = auth_url;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     *
+     * @param description
+     */
+    public void setDescription(final String description) {
+        this.description = description;
+    }
 
 }

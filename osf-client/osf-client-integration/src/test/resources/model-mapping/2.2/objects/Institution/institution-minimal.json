@@ -1,0 +1,15 @@
+{
+  "data": {
+    "links": {
+      "self": "http://localhost:8000/v2/institutions/jhu/"
+    },
+    "attributes": {
+      "auth_url": "https://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Ajohnshopkins.edu",
+      "logo_path": "/static/img/institutions/shields/jhu-shield.png",
+      "name": "Johns Hopkins University",
+      "description": "A research data service provided by the <a href=\"https://www.library.jhu.edu/\">Sheridan Libraries</a>."
+    },
+    "type": "institutions",
+    "id": "jhu"
+  }
+}
