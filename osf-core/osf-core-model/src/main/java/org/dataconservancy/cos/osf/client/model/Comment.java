@@ -15,7 +15,7 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 import java.net.URI;
 import java.util.Map;
@@ -193,17 +193,17 @@ public class Comment {
 
     /**
      * The date the comment was created, may be {@code null}.  The date will be formatted according to the format
-     * string {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}, and be in the UTC time zone.  See also
+     * string {@code yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}, and be in the UTC time zone.  See also
      * {@link JodaSupport#DATE_TIME_FORMATTER}.
      *
      * @return the date the comment was created
      */
     public String getDate_created() {
         if (this.date_created != null) {
-            return this.date_created.toString(DATE_TIME_FORMATTER);
-        } else {
-            return null;
+            return this.date_created.toString(DATE_TIME_FORMATTER_ALT);
         }
+
+        return null;
     }
 
     /**
@@ -215,24 +215,22 @@ public class Comment {
     public void setDate_created(final String date_created) {
         if (date_created != null) {
             this.date_created = JodaSupport.parseDateTime(date_created);
-        } else {
-            this.date_created = null;
         }
     }
 
     /**
      * The date the comment was modified, may be {@code null}.  The date will be formatted according to the format
-     * string {@code yyyy-MM-dd'T'HH:mm:ss.SSSSSS}, and be in the UTC time zone.  See also
+     * string {@code yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}, and be in the UTC time zone.  See also
      * {@link JodaSupport#DATE_TIME_FORMATTER}.
      *
      * @return the date the comment was modified
      */
     public String getDate_modified() {
         if (this.date_modified != null) {
-            return this.date_modified.toString(DATE_TIME_FORMATTER);
-        } else {
-            return null;
+            return this.date_modified.toString(DATE_TIME_FORMATTER_ALT);
         }
+
+        return null;
     }
 
     /**

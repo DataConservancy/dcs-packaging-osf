@@ -1,0 +1,66 @@
+{
+  "data": {
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=j68y7",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/j68y7/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/typ46/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/comments/j68y7/"
+    },
+    "attributes": {
+      "can_edit": false,
+      "date_modified": "2016-04-01T04:45:44.038000Z",
+      "deleted": false,
+      "is_ham": false,
+      "has_children": false,
+      "modified": true,
+      "content": "API Keys are not implemented just yet. If you want to do authenticated things, you can set up an OSF account on staging2 and use Basic Auth using your account's credentials.\n\nOnce we get the JSON API 1.0 spec formatting done (which should be fairly soon now), then we will get OAUTH2 in. After that, we'll figure out what we want to do for non OAUTH2 token (or we'll simplify our procedure so it works well outside of a web browser's context, which our OAUTH2 workflow isn't at the moment).",
+      "has_report": false,
+      "is_abuse": false,
+      "date_created": "2015-08-06T13:14:03.793000Z",
+      "page": "node"
+    },
+    "type": "comments",
+    "id": "j68y7"
+  }
+}
