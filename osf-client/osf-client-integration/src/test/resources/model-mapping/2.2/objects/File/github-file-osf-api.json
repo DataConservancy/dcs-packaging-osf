@@ -1,0 +1,62 @@
+{
+  "data": {
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/comments/?filter%5Btarget%5D=8pdf3",
+            "meta": {}
+          }
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/files/56eac5d6b83f6901bbe90db3/versions/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "info": "http://localhost:8000/v2/files/56eac5d6b83f6901bbe90db3/",
+      "self": "http://localhost:8000/v2/files/56eac5d6b83f6901bbe90db3/",
+      "move": "https://files.osf.io/v1/resources/xug4a/providers/github/README.md",
+      "upload": "https://files.osf.io/v1/resources/xug4a/providers/github/README.md",
+      "download": "https://files.osf.io/v1/resources/xug4a/providers/github/README.md",
+      "delete": "https://files.osf.io/v1/resources/xug4a/providers/github/README.md"
+    },
+    "attributes": {
+      "extra": {
+        "hashes": {
+          "sha256": null,
+          "md5": null
+        }
+      },
+      "kind": "file",
+      "name": "README.md",
+      "last_touched": "2017-01-06T17:36:56.073000Z",
+      "materialized_path": "/README.md",
+      "date_modified": "2017-01-04T22:41:12.000000Z",
+      "current_version": 7,
+      "date_created": "2016-03-17T14:33:11.000000Z",
+      "provider": "github",
+      "path": "/README.md",
+      "current_user_can_comment": false,
+      "guid": "8pdf3",
+      "checkout": null,
+      "tags": [],
+      "size": 83
+    },
+    "type": "files",
+    "id": "56eac5d6b83f6901bbe90db3"
+  }
+}

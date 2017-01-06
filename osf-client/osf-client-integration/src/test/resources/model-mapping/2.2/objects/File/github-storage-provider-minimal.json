@@ -1,0 +1,18 @@
+{
+  "data": {
+      "links": {
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "https://files.osf.io/v1/resources/xug4a/providers/github/",
+        "new_folder": "https://files.osf.io/v1/resources/xug4a/providers/github/?kind=folder"
+      },
+      "attributes": {
+        "node": "xug4a",
+        "path": "/",
+        "kind": "folder",
+        "name": "github",
+        "provider": "github"
+      },
+      "type": "files",
+      "id": "xug4a:github"
+    }
+}

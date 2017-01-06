@@ -21,7 +21,7 @@ package org.dataconservancy.cos.osf.client.model;
 public class Checksum {
 
     enum Algorithm {
-        SHA_256,
+        SHA256,
         MD5
     }
 

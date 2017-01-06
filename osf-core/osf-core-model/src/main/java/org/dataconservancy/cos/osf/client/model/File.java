@@ -15,11 +15,13 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
+import static java.util.function.Function.identity;
 import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.DownloadLinkTransform;
@@ -117,6 +119,16 @@ public class File {
 
     /**list of hashes of the hashes for the files*/
     private Set<Checksum> hashes;
+
+    private DateTime last_touched;
+
+    private int current_version;
+
+    private String guid;
+
+    private List<String> tags;
+
+    private Map<String, ?> extra;
 
     /**
      *
@@ -232,6 +244,28 @@ public class File {
      *
      * @return
      */
+    public String getLast_touched() {
+        if (this.last_touched != null) {
+            return this.last_touched.toString(DATE_TIME_FORMATTER_ALT);
+        }
+
+        return null;
+    }
+
+    /**
+     *
+     * @param last_touched
+     */
+    public void setLast_touched(final String last_touched) {
+        if (last_touched != null) {
+            this.last_touched = JodaSupport.parseDateTime(last_touched);
+        }
+    }
+
+    /**
+     *
+     * @return
+     */
     public String getProvider() {
         return provider;
     }
@@ -310,14 +344,6 @@ public class File {
 
     /**
      *
-     * @return
-     */
-    public Set<Checksum> getHashes() {
-        return hashes;
-    }
-
-    /**
-     *
      * @param hashes
      */
     public void setHashes(final Set<Checksum> hashes) {
@@ -389,5 +415,85 @@ public class File {
         this.pageLinks = pageLinks;
     }
 
+    /**
+     *
+     * @return
+     */
+    public int getCurrent_version() {
+        return current_version;
+    }
 
+    /**
+     *
+     * @param current_version
+     */
+    public void setCurrent_version(final int current_version) {
+        this.current_version = current_version;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getGuid() {
+        return guid;
+    }
+
+    /**
+     *
+     * @param guid
+     */
+    public void setGuid(final String guid) {
+        this.guid = guid;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<String> getTags() {
+        return tags;
+    }
+
+    /**
+     *
+     * @param tags
+     */
+    public void setTags(final List<String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getExtra() {
+        return extra;
+    }
+
+    /**
+     *
+     * @param extra
+     */
+    public void setExtra(final Map<String, ?> extra) {
+        this.extra = extra;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Map<String, Checksum> getHashes() {
+        if (this.extra != null && this.extra.containsKey("hashes")) {
+            return ((Map<String, String>)this.extra.get("hashes"))
+                    .entrySet()
+                    .stream()
+                    .map((entry) ->
+                            new Checksum(Checksum.Algorithm.valueOf(entry.getKey().toUpperCase()), entry.getValue()))
+                    .collect(Collectors.toMap(
+                            (checksum) -> checksum.getAlgorithm().name().toLowerCase(), identity()));
+        }
+
+        return null;
+    }
 }
