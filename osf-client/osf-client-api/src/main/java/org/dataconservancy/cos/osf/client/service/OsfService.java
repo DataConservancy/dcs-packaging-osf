@@ -24,6 +24,7 @@ import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.Event;
+import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Institution;
 import org.dataconservancy.cos.osf.client.model.License;
 import org.dataconservancy.cos.osf.client.model.Node;
@@ -262,5 +263,15 @@ public interface OsfService {
      */
     @GET
     Call<Institution> institution(@Url String institutionUrl);
+
+    /**
+     *
+     * @param fileUrl
+     * @return
+     */
+    @GET
+    Call<File> file(@Url String fileUrl);
+
+
 
 }
