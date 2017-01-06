@@ -1,0 +1,17 @@
+{
+  "data": {
+    "links": {
+      "self": "https://api.osf.io/v2/licenses/563c1cf88c5e4a3877f9e965/"
+    },
+    "attributes": {
+      "text": "Copyright {{year}} {{copyrightHolders}}",
+      "required_fields": [
+        "year",
+        "copyrightHolders"
+      ],
+      "name": "No license"
+    },
+    "type": "licenses",
+    "id": "563c1cf88c5e4a3877f9e965"
+  }
+}

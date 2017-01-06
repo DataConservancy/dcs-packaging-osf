@@ -24,6 +24,7 @@ import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.Event;
+import org.dataconservancy.cos.osf.client.model.License;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
@@ -244,6 +245,14 @@ public interface OsfService {
      */
     @GET
     Call<List<Wiki>> wikis(@Url String url);
+
+    /**
+     *
+     * @param licenseUrl
+     * @return
+     */
+    @GET
+    Call<License> license(@Url String licenseUrl);
 
     //Call<List<NodeFile>> listFiles(@Path(""))
 }

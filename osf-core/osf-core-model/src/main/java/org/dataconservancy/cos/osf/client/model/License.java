@@ -16,6 +16,7 @@
 package org.dataconservancy.cos.osf.client.model;
 
 import com.github.jasminb.jsonapi.annotations.Id;
+import com.github.jasminb.jsonapi.annotations.Links;
 import com.github.jasminb.jsonapi.annotations.Type;
 import org.dataconservancy.cos.osf.client.support.LicenseHashUriGenerator;
 import org.dataconservancy.cos.osf.client.support.TruncatingTransform;
@@ -24,6 +25,9 @@ import org.dataconservancy.cos.rdf.annotations.OwlIndividual;
 import org.dataconservancy.cos.rdf.annotations.OwlProperty;
 import org.dataconservancy.cos.rdf.support.OwlClasses;
 import org.dataconservancy.cos.rdf.support.OwlProperties;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Encapsulates a license for a OSF Node or Registration.
@@ -43,6 +47,27 @@ public class License {
 
     @OwlProperty(OwlProperties.OSF_HAS_LICENSE_NAME)
     private String name;
+
+    private List<String> required_fields;
+
+    @Links
+    private Map<String, ?> links;
+
+    /**
+     *
+     * @return
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
 
     /**
      *
@@ -74,6 +99,38 @@ public class License {
      */
     public void setName(final String name) {
         this.name = name;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<String> getRequired_fields() {
+        return required_fields;
+    }
+
+    /**
+     *
+     * @param required_fields
+     */
+    public void setRequired_fields(final List<String> required_fields) {
+        this.required_fields = required_fields;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Map<String, ?> getLinks() {
+        return links;
+    }
+
+    /**
+     *
+     * @param links
+     */
+    public void setLinks(final Map<String, ?> links) {
+        this.links = links;
     }
 
 }
