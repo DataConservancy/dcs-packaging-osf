@@ -82,7 +82,12 @@ public class Contributor {
     @Relationship(value = "users", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String userRel;
 
+    private int index;
 
+    /**
+     * Contributor's assigned name if contributor hasn't yet claimed account
+     */
+    private String unregistered_contributor;
 
     /**
      * The Contributor ID used when emitting RDF.
@@ -196,4 +201,37 @@ public class Contributor {
     public void setUserRel(final String userRel) {
         this.userRel = userRel;
     }
+
+    /**
+     *
+     * @return
+     */
+    public int getIndex() {
+        return index;
+    }
+
+    /**
+     *
+     * @param index
+     */
+    public void setIndex(final int index) {
+        this.index = index;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getUnregistered_contributor() {
+        return unregistered_contributor;
+    }
+
+    /**
+     *
+     * @param unregistered_contributor
+     */
+    public void setUnregistered_contributor(final String unregistered_contributor) {
+        this.unregistered_contributor = unregistered_contributor;
+    }
+
 }

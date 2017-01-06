@@ -1,0 +1,79 @@
+{
+  "data": {
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/",
+            "meta": {}
+          }
+        }
+      },
+      "users": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9vw8x/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "http://localhost:8000/v2/nodes/xug4a/contributors/9vw8x/"
+    },
+    "embeds": {
+      "users": {
+        "data": {
+          "relationships": {
+            "nodes": {
+              "links": {
+                "related": {
+                  "href": "http://localhost:8000/v2/users/9vw8x/nodes/",
+                  "meta": {}
+                }
+              }
+            },
+            "institutions": {
+              "links": {
+                "self": {
+                  "href": "http://localhost:8000/v2/users/9vw8x/relationships/institutions/",
+                  "meta": {}
+                },
+                "related": {
+                  "href": "http://localhost:8000/v2/users/9vw8x/institutions/",
+                  "meta": {}
+                }
+              }
+            }
+          },
+          "links": {
+            "self": "http://localhost:8000/v2/users/9vw8x/",
+            "html": "https://osf.io/9vw8x/",
+            "profile_image": "https://secure.gravatar.com/avatar/f15bbb5eb2e137c9cd04386eeab58693?d=identicon"
+          },
+          "attributes": {
+            "family_name": "Martino",
+            "suffix": "",
+            "locale": "en_US",
+            "date_registered": "2016-03-17T18:11:27.871000Z",
+            "middle_names": "",
+            "given_name": "James",
+            "full_name": "James Martino",
+            "active": true,
+            "timezone": "America/New_York"
+          },
+          "type": "users",
+          "id": "9vw8x"
+        }
+      }
+    },
+    "attributes": {
+      "index": 1,
+      "unregistered_contributor": null,
+      "bibliographic": true,
+      "permission": "write"
+    },
+    "type": "contributors",
+    "id": "xug4a-9vw8x"
+  }
+}
