@@ -23,7 +23,7 @@ import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
-import org.dataconservancy.cos.osf.client.model.Event;
+import org.dataconservancy.cos.osf.client.model.Log;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Institution;
 import org.dataconservancy.cos.osf.client.model.License;
@@ -76,7 +76,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<ResourceList<Event>> getLogs(@Url String url);
+    Call<ResourceList<Log>> getLogs(@Url String url);
 
     /**
      *

@@ -141,24 +141,24 @@
         <jsonapi:relName>children</jsonapi:relName>            
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&osfbom;hasEventAgent">
-        <rdfs:label xml:lang="en">hasEventAgent</rdfs:label>
+    <owl:ObjectProperty rdf:about="&osfbom;hasLogAgent">
+        <rdfs:label xml:lang="en">hasLogAgent</rdfs:label>
         <rdfs:comment xml:lang="en">The agent responsible for performing the action</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:domain rdf:resource="&osfbom;Log"/>
         <rdfs:range rdf:resource="&foaf;Agent"/>
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&osfbom;hasEventTarget">
-        <rdfs:label xml:lang="en">hasEventTarget</rdfs:label>
+    <owl:ObjectProperty rdf:about="&osfbom;hasLogTarget">
+        <rdfs:label xml:lang="en">hasLogTarget</rdfs:label>
         <rdfs:comment xml:lang="en">The OSF Node, User, ... that was the target of the action.</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:domain rdf:resource="&osfbom;Log"/>
         <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
     </owl:ObjectProperty>
     
-    <owl:ObjectProperty rdf:about="&osfbom;hasEventSource">
-        <rdfs:label xml:lang="en">hasEventSource</rdfs:label>
+    <owl:ObjectProperty rdf:about="&osfbom;hasLogSource">
+        <rdfs:label xml:lang="en">hasLogSource</rdfs:label>
         <rdfs:comment xml:lang="en">The OSF Node, User, ... that was the source of the action.</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Event"/>
+        <rdfs:domain rdf:resource="&osfbom;Log"/>
         <rdfs:range rdf:resource="&osfbom;OSFBusinessObject"/>
     </owl:ObjectProperty>
 
@@ -768,17 +768,17 @@
         <rdfs:subProperyOf rdf:resource="&dcterms;subject"/>
     </owl:DatatypeProperty>
     
-    <owl:DatatypeProperty rdf:about="&osfbom;hasEventDate">
-        <rdfs:label xml:lang="en">hasEventDate</rdfs:label>
-        <rdfs:comment xml:lang="en">Date the event occurred</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Event"/>
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLogDate">
+        <rdfs:label xml:lang="en">hasLogDate</rdfs:label>
+        <rdfs:comment xml:lang="en">Date the log event occurred</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Log"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
     
-    <owl:DatatypeProperty rdf:about="&osfbom;hasEventAction">
-        <rdfs:label xml:lang="en">hasEventAction</rdfs:label>
-        <rdfs:comment xml:lang="en">The action that was taken on the event target</rdfs:comment>
-        <rdfs:domain rdf:resource="&osfbom;Event"/>
+    <owl:DatatypeProperty rdf:about="&osfbom;hasLogAction">
+        <rdfs:label xml:lang="en">hasLogAction</rdfs:label>
+        <rdfs:comment xml:lang="en">The action that was taken on the Log target</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Log"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
@@ -872,10 +872,10 @@
       </rdfs:comment>
     </owl:Class>
     
-    <!-- http://www.dataconservancy.org/osf-business-object-model#Event -->    
+    <!-- http://www.dataconservancy.org/osf-business-object-model#Log -->
     
-    <owl:Class rdf:about="&osfbom;Event">
-        <rdfs:label xml:lang="en">Event</rdfs:label>
+    <owl:Class rdf:about="&osfbom;Log">
+        <rdfs:label xml:lang="en">Log</rdfs:label>
         <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
         <owl:disjointWith rdf:resource="&osfbom;NodeBase"/>
         <owl:disjointWith rdf:resource="&osfbom;Collection"/>
