@@ -49,11 +49,11 @@ public enum OwlProperties {
 
     OSF_HAS_USER ("hasUser", true),
 
-    OSF_HAS_EVENT_AGENT ("hasEventAgent", true),
+    OSF_HAS_LOG_AGENT("hasLogAgent", true),
 
-    OSF_HAS_EVENT_SOURCE ("hasEventTarget", true),
+    OSF_HAS_LOG_SOURCE("hasLogSource", true),
 
-    OSF_HAS_EVENT_TARGET ("hasEventTarget", true),
+    OSF_HAS_LOG_TARGET("hasLogTarget", true),
 
     OSF_HAS_LICENSE ("hasLicense", true),
 
@@ -193,9 +193,9 @@ public enum OwlProperties {
 
     OSF_HAS_WITHDRAW_JUSTIFICATION ("hasWithdrawJustification"),
 
-    OSF_HAS_EVENT_DATE ("hasEventDate"),
+    OSF_HAS_LOG_DATE("hasLogDate"),
 
-    OSF_HAS_EVENT_ACTION ("hasEventAction"),
+    OSF_HAS_LOG_ACTION("hasLogAction"),
 
     OSF_HAS_LICENSE_NAME ("hasLicenseName"),
 

@@ -29,11 +29,11 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Tests mapping between the JSON of a 'logs' document and the Java model for the Event class
+ * Tests mapping between the JSON of a 'logs' document and the Java model for the Log class
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class EventTest extends AbstractMockServerTest {
+public class LogTest extends AbstractMockServerTest {
 
     @Rule
     public TestName TEST_NAME = new TestName();
@@ -42,27 +42,27 @@ public class EventTest extends AbstractMockServerTest {
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, EventTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, LogTest.class, getBaseUri()));
         osfService = factory.getOsfService(OsfService.class);
     }
 
     @Test
-    public void testEventMapping() throws Exception {
+    public void testLogMapping() throws Exception {
         final String registrationId = "eq7a4";
 
         final Registration registration = osfService.registration(registrationId).execute().body();
         assertNotNull(registration);
         assertNotNull(registration.getLogs());
 
-        final ResourceList<Event> events = osfService.getLogs(registration.getLogs()).execute().body();
+        final ResourceList<Log> logs = osfService.getLogs(registration.getLogs()).execute().body();
 
         final String eventId = "57570a06c7950c0045ac803e";
 
-        final Event event = events.stream()
+        final Log log = logs.stream()
                 .filter(e -> e.getId().equals(eventId))
                 .findFirst()
                 .orElseThrow(
-                        () -> new RuntimeException("Expected event stream to contain event id " + eventId));
+                        () -> new RuntimeException("Expected log stream to contain log id " + eventId));
 
         // additional assertions
 
@@ -72,15 +72,15 @@ public class EventTest extends AbstractMockServerTest {
         final String expectedOrigNode = "5w8q7/";
         final String expectedUser = "qmdz6/";
 
-        assertEquals(expectedAction, event.getAction());
-        assertEquals(expectedDate, event.getDate());
-        assertTrue(event.getNode().endsWith(expectedNode));
-        assertTrue(event.getOriginal_node().endsWith(expectedOrigNode));
-        assertTrue(event.getUser().endsWith(expectedUser));
+        assertEquals(expectedAction, log.getAction());
+        assertEquals(expectedDate, log.getDate());
+        assertTrue(log.getNode().endsWith(expectedNode));
+        assertTrue(log.getOriginal_node().endsWith(expectedOrigNode));
+        assertTrue(log.getUser().endsWith(expectedUser));
 
-        assertTrue(event.getParams().containsKey("params_node"));
-        assertTrue(event.getParams().containsKey("params_project"));
-        assertTrue(((Map) event.getParams().get("params_node")).get("id").equals("5w8q7"));
-        assertTrue(((Map) event.getParams().get("params_node")).get("title").equals("Workflow Execution"));
+        assertTrue(log.getParams().containsKey("params_node"));
+        assertTrue(log.getParams().containsKey("params_project"));
+        assertTrue(((Map) log.getParams().get("params_node")).get("id").equals("5w8q7"));
+        assertTrue(((Map) log.getParams().get("params_node")).get("title").equals("Workflow Execution"));
     }
 }

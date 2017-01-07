@@ -40,23 +40,23 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
  */
 @Type("logs")
 @OwlIndividual(OwlClasses.OSF_EVENT)
-public class Event {
+public class Log {
 
     @Id
     @IndividualUri
     private String id;
 
-    @OwlProperty(value = OwlProperties.OSF_HAS_EVENT_DATE, transform = DateTimeTransform.class)
+    @OwlProperty(value = OwlProperties.OSF_HAS_LOG_DATE, transform = DateTimeTransform.class)
     private DateTime date;
 
     // TODO: verify that osf:eventTarget is the correct semantics for 'node'
     @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    @OwlProperty(OwlProperties.OSF_HAS_EVENT_TARGET)
+    @OwlProperty(OwlProperties.OSF_HAS_LOG_TARGET)
     private String node;
 
     // TODO: verify that osf:eventSource is the correct semantics for 'original_node'
     @Relationship(value = "original_node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    @OwlProperty(OwlProperties.OSF_HAS_EVENT_SOURCE)
+    @OwlProperty(OwlProperties.OSF_HAS_LOG_SOURCE)
     private String original_node;
 
     @Relationship(value = "contributors", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
@@ -65,7 +65,7 @@ public class Event {
     @Relationship(value = "user", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String user;
 
-    @OwlProperty(OwlProperties.OSF_HAS_EVENT_ACTION)
+    @OwlProperty(OwlProperties.OSF_HAS_LOG_ACTION)
     private String action;
 
     private Map<String, ?> params;
