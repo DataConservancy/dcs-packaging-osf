@@ -31,7 +31,7 @@ import org.joda.time.DateTime;
 
 import java.util.Map;
 
-import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER;
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 /**
  * Encapsulates an event in the OSF.  Events in the OSF are expressed as the JSON-API type "logs".
@@ -108,7 +108,7 @@ public class Log {
      */
     public String getDate() {
         if (this.date != null) {
-            return date.toString(DATE_TIME_FORMATTER);
+            return date.toString(DATE_TIME_FORMATTER_ALT);
         }
         return null;
     }
@@ -118,7 +118,9 @@ public class Log {
      * @param date
      */
     public void setDate(final String date) {
-        this.date = JodaSupport.parseDateTime(date);
+        if (date != null) {
+            this.date = JodaSupport.parseDateTime(date);
+        }
     }
 
     /**

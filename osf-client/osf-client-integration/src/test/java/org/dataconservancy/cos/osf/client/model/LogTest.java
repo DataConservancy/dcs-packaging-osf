@@ -67,7 +67,7 @@ public class LogTest extends AbstractMockServerTest {
         // additional assertions
 
         final String expectedAction = "node_removed";
-        final String expectedDate = "2016-06-07T17:52:19.617000";
+        final String expectedDate = "2016-06-07T17:52:19.617Z";
         final String expectedNode = "eq7a4/";
         final String expectedOrigNode = "5w8q7/";
         final String expectedUser = "qmdz6/";

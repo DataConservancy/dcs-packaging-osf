@@ -1,0 +1,25 @@
+{
+  "data": {
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587009ac9ad5a102008b06e5/"
+      },
+      "attributes": {
+        "date": "2017-01-06T21:18:36.829000Z",
+        "action": "wiki_updated",
+        "params": {
+          "contributors": [],
+          "params_project": null,
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "version": "6",
+          "preprint_provider": null,
+          "page_id": "934e3",
+          "page": "Typical Workflow"
+        }
+      },
+      "type": "logs",
+      "id": "587009ac9ad5a102008b06e5"
+    }
+}
