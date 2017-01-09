@@ -1,0 +1,14 @@
+{
+  "data": {
+    "links": {
+      "self": "http://localhost:8000/v2/files/56eac5d6b83f6901bbe90db3/versions/b07e10171449cd03df6362c280410ce68b393e34/",
+      "html": "https://osf.io/xug4a/files/github/README.md?ref=b07e10171449cd03df6362c280410ce68b393e34"
+    },
+    "attributes": {
+      "content_type": null,
+      "size": 10
+    },
+    "type": "file_versions",
+    "id": "b07e10171449cd03df6362c280410ce68b393e34"
+  }
+}
