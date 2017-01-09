@@ -29,7 +29,8 @@ import java.util.function.Function;
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class ContributorIdSplitter implements Function<String, String> {
+public class
+ContributorIdSplitter implements Function<String, String> {
 
     @Override
     public String apply(final String contributorId) {

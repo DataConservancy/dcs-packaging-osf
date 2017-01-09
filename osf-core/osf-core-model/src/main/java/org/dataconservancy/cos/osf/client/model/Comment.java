@@ -145,6 +145,9 @@ public class Comment {
     @OwlProperty(OwlProperties.OSF_HAS_USER)
     private User user;
 
+    @Relationship(value = "reports", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String reports;
+
     /**
      * whether or not this comment is ham
      */
