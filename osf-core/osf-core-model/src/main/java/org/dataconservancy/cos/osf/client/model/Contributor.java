@@ -82,6 +82,9 @@ public class Contributor {
     @Relationship(value = "users", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String userRel;
 
+    @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String nodeRel;
+
     private int index;
 
     /**

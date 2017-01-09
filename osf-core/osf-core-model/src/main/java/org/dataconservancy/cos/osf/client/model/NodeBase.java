@@ -72,11 +72,6 @@ public abstract class NodeBase {
     @OwlProperty(value = OwlProperties.OSF_HAS_PARENT, transform = UrlToIdTransform.class)
     private String parent;
 
-    /**Link to list of registrations related to the current node*/
-    @Relationship(value = "registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    // TODO: @OwlProperty(....)
-    private String registrations;
-
     /**If this node was forked from another node, the canonical endpoint of the node that was
      * forked from will be available in the /forked_from/links/related/href key. Otherwise, it will be null.*/
     @Relationship(value = "forked_from", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
@@ -95,6 +90,24 @@ public abstract class NodeBase {
     @Relationship(value = "wikis", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     @OwlProperty(OwlProperties.OSF_HAS_WIKI)
     private List<Wiki> wikis;
+
+    @Relationship(value = "affiliated_institutions", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    private List<Institution> affiliated_institutions;
+
+    @Relationship(value = "forks", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String forks;
+
+    @Relationship(value = "citation", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String citation;
+
+    @Relationship(value = "registration_schema", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String registration_schema;
+
+    @Relationship(value = "identifiers", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String identifiers;
+
+    @Relationship(value = "comments", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String comments;
 
     /**Gets other links found in data.links:{} section of JSON**/
     @Links
@@ -149,21 +162,6 @@ public abstract class NodeBase {
     private Boolean isPreprint;
 
     private NodeLicense node_license;
-
-
-    /**Link to primary institution for node.
-     * TODO: doesn't appear to work yet - commenting out to prevent error*/
-    //@Relationship(value = "primary_institution", resolve = true, relType = RelType.RELATED,
-    //  strategy = ResolutionStrategy.OBJECT)
-    //private Institution primary_institution;
-
-    /*public Institution getPrimary_institution() {
-        return primary_institution;
-    }
-
-    public void setPrimary_institution(Institution primary_institution) {
-        this.primary_institution = primary_institution;
-    }*/
 
     /**
      *
@@ -456,22 +454,6 @@ public abstract class NodeBase {
      */
     public void setForked_from(final String forked_from) {
         this.forked_from = forked_from;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getRegistrations() {
-        return registrations;
-    }
-
-    /**
-     *
-     * @param registrations
-     */
-    public void setRegistrations(final String registrations) {
-        this.registrations = registrations;
     }
 
     /**

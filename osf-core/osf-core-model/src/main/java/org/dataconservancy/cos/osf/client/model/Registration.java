@@ -99,6 +99,9 @@ public class Registration extends NodeBase  {
     @OwlProperty(value = OwlProperties.OSF_REGISTERED_BY, transform = UrlToIdTransform.class)
     private String registered_by;
 
+    @Relationship(value = "linked_registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String linked_registrations;
+
     /**
      *
      * @return

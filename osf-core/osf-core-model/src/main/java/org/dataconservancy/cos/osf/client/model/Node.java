@@ -44,6 +44,22 @@ public class Node extends NodeBase {
     @OwlProperty(OwlProperties.OSF_HAS_CHILD)
     protected List<Node> children;
 
+    @Relationship(value = "linked_nodes", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String linked_nodes;
+
+    /**Link to list of registrations related to the current node*/
+    @Relationship(value = "registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    // TODO: @OwlProperty(....)
+    private String registrations;
+
+    /**Link to list of registrations related to the current node*/
+    @Relationship(value = "draft_registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String draft_registrations;
+
+    /**Link to list of registrations related to the current node*/
+    @Relationship(value = "preprints", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String preprints;
+
     /**
      *
      * @return
@@ -59,4 +75,21 @@ public class Node extends NodeBase {
     public void setChildren(final List<Node> children) {
         this.children = children;
     }
+
+    /**
+     *
+     * @return
+     */
+    public String getRegistrations() {
+        return registrations;
+    }
+
+    /**
+     *
+     * @param registrations
+     */
+    public void setRegistrations(final String registrations) {
+        this.registrations = registrations;
+    }
+
 }

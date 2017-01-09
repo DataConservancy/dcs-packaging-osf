@@ -15,13 +15,17 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import java.util.Map;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Links;
+import com.github.jasminb.jsonapi.annotations.Relationship;
 import com.github.jasminb.jsonapi.annotations.Type;
+
+import java.util.Map;
+
+import static com.github.jasminb.jsonapi.RelType.RELATED;
+import static com.github.jasminb.jsonapi.ResolutionStrategy.REF;
 
 /**
  * Institution model for OSF
@@ -52,6 +56,15 @@ public class Institution {
     private String auth_url;
 
     private String description;
+
+    @Relationship(value = "nodes", resolve = true, relType = RELATED, strategy = REF)
+    private String nodes;
+
+    @Relationship(value = "users", resolve = true, relType = RELATED, strategy = REF)
+    private String users;
+
+    @Relationship(value = "registrations", resolve = true, relType = RELATED, strategy = REF)
+    private String registrations;
 
     /**
      *

@@ -72,6 +72,9 @@ public class File {
     @Relationship(value = "comments", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     private List<Comment> comments;
 
+    @Relationship(value = "node", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String nodeRel;
+
     /**Gets other links found in data.links:{} section of JSON**/
     @Links
     @OwlProperty(value = OwlProperties.OSF_HAS_BINARYURI, transform = DownloadLinkTransform.class)
