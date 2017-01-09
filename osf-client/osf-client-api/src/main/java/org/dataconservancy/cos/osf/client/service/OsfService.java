@@ -23,6 +23,7 @@ import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
+import org.dataconservancy.cos.osf.client.model.FileVersion;
 import org.dataconservancy.cos.osf.client.model.Log;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Institution;
@@ -296,6 +297,12 @@ public interface OsfService {
     @GET
     Call<Log> log(@Url String logUrl);
 
-
+    /**
+     *
+     * @param fileVersionUrl
+     * @return
+     */
+    @GET
+    Call<FileVersion> fileversion(@Url String fileVersionUrl);
 
 }
