@@ -1,0 +1,22 @@
+{
+  "data": {
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586d5f2ab83f6901f9174e5d/"
+      },
+      "attributes": {
+        "date": "2017-01-04T20:46:34.610000Z",
+        "action": "comment_added",
+        "params": {
+          "preprint_provider": null,
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "contributors": []
+        }
+      },
+      "type": "logs",
+      "id": "586d5f2ab83f6901f9174e5d"
+    }
+}

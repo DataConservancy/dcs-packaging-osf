@@ -288,6 +288,14 @@ public interface OsfService {
     @GET
     Call<File> file(@Url String fileUrl);
 
+    /**
+     *
+     * @param logUrl
+     * @return
+     */
+    @GET
+    Call<Log> log(@Url String logUrl);
+
 
 
 }

@@ -1,0 +1,27 @@
+{
+  "data": {
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58700eaab83f6901ff065e43/"
+      },
+      "attributes": {
+        "date": "2017-01-06T21:39:54.374000Z",
+        "action": "osf_storage_file_added",
+        "params": {
+          "contributors": [],
+          "params_project": null,
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "urls": {
+            "download": "/project/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a/?action=download",
+            "view": "/project/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a/"
+          },
+          "preprint_provider": null,
+          "path": "/typical osf workflow wiki examples.py"
+        }
+      },
+      "type": "logs",
+      "id": "58700eaab83f6901ff065e43"
+    }
+}    
