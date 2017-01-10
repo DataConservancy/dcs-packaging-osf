@@ -25,7 +25,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
-import java.net.URI;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -196,13 +195,15 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(fileName, subNode.getFiles().get(0).getFiles().get(0).getName());
     }
 
+    /**
+     * TODO: re-examine pagination tests
+     *
+     * @throws Exception
+     */
     @Test
     public void testNodeListPagination() throws Exception {
         final AtomicInteger requestCount = new AtomicInteger(0);
-//        factory.interceptors().add(chain -> {
-//            System.out.println("Requesting: " + chain.request().urlString());
-//            return chain.proceed(chain.request());
-//        });
+
         factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri(),
                 (name, baseUri, reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
@@ -277,24 +278,7 @@ public class NodeTest extends AbstractMockServerTest {
 
     @Test
     public void testDownloadFile() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri(),
-                (name, base, req) -> {
-                    // /json/NodeTest/testDownloadFile/
-                    final String fsBase = resourceBase(TEST_NAME, "/json/");
-
-                    // We probably have a Waterbutler request (wb requests go to port 7777, typically)
-                    if (req.getPort() != getBaseUri().getPort()) {
-                        // req.getPath() = v1/resources/pd24n/providers/osfstorage/
-                        return fsBase + req.getPath();
-                    }
-
-                    // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-                    final URI relativizedRequestUri = getBaseUri().relativize(req);
-                    final String requestPath = relativizedRequestUri.getPath();
-
-                    // /json/NodeTest/testDownloadFile/nodes/v8x57/files/osfstorage/index.json
-                    return fsBase + requestPath + "index.json";
-                }));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri()));
 
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final Node nodeWithFile = osfService.node("pd24n").execute().body();
