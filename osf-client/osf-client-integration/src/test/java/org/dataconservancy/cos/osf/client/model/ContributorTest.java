@@ -42,7 +42,7 @@ public class ContributorTest extends AbstractMockServerTest {
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, ContributorTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, ContributorTest.class));
         osfService = factory.getOsfService(OsfService.class);
     }
 
