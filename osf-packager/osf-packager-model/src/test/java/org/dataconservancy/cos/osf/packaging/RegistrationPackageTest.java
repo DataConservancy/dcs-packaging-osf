@@ -84,7 +84,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
     @Test
     public void testCreateRegistrationPackage() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class));
 
         final Registration r = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
         assertNotNull(r);
@@ -146,7 +146,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     @Test
     public void testCreateRegistrationPackageAnnotation() throws Exception {
         final ManagedGraph managedGraph = new ManagedGraph(ontologyManager);
-        factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
         final String childRegistrationId = "vae86";
@@ -443,7 +443,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
     @Test
     public void testGetAnnotations() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class));
         final Registration r = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
         assertNotNull(r);
 

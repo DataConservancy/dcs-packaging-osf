@@ -37,7 +37,7 @@ public class CommentTest extends AbstractMockServerTest {
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, CommentTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, CommentTest.class));
         osfService = factory.getOsfService(OsfService.class);
     }
 

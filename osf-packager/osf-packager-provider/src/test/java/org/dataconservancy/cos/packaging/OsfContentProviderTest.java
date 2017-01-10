@@ -59,7 +59,7 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
     @Test
     public void testCreatePackageSimple() throws Exception {
         // Prepare the OSF registration and users information
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfContentProviderTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfContentProviderTest.class));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
         final Registration registration = osfService.registration(registrationId).execute().body();
@@ -104,7 +104,7 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
     @Test
     public void testCreatePackageWithWiki() throws Exception {
         final OsfPackageGraph packageGraph = new OsfPackageGraph(ontologyManager);
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfContentProviderTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfContentProviderTest.class));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "ng9em";
 

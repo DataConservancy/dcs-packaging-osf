@@ -209,28 +209,21 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         private static final Logger LOG = LoggerFactory.getLogger(RecursiveInterceptor.class);
 
-        private final String jsonRoot;
-
-        private final URI baseUri;
-
         private final TestName testName;
 
         private final Class testClass;
 
         private ResponseResolver resolver;
 
-        public RecursiveInterceptor(final TestName testName, final Class testClass, final URI baseUri) {
-            this(testName, testClass, baseUri, "/json/");
+        public RecursiveInterceptor(final TestName testName, final Class testClass) {
+            this(testName, testClass, "/json/");
         }
 
-        public RecursiveInterceptor(final TestName testName, final Class testClass, final URI baseUri,
-                                    final String jsonRoot) {
-            this.baseUri = baseUri;
+        public RecursiveInterceptor(final TestName testName, final Class testClass, final String jsonRoot) {
             this.testName = testName;
             this.testClass = testClass;
-            this.jsonRoot = jsonRoot;
 
-            resolver = (name, base, req) -> {
+            resolver = (name, req) -> {
                 // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ ->
                 // localhost/8000/v2/nodes/v8x57/files/osfstorage/
                 final String requestPath = httpUriToPath(req) + "/";
@@ -287,13 +280,11 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             };
         }
 
-        public RecursiveInterceptor(final TestName testName, final Class testClass, final URI baseUri,
+        public RecursiveInterceptor(final TestName testName, final Class testClass,
                                     final ResponseResolver resolver) {
             this.testName = testName;
             this.testClass = testClass;
-            this.baseUri = baseUri;
             this.resolver = resolver;
-            this.jsonRoot = null;
         }
 
         @Override
@@ -302,7 +293,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             LOG.debug("HTTP request: {}", req.urlString());
 
             // Resolve the request URI to a path on the filesystem.
-            final String resourcePath = resolver.resolve(testName, baseUri, req.uri());
+            final String resourcePath = resolver.resolve(testName, req.uri());
             LOG.debug("Response resource: {}", resourcePath);
 
             req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath).build();
@@ -322,11 +313,10 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
          * executed.  This method should return a classpath resource containing the JSON for the HTTP response body.
          *
          * @param testName contains metadata about the current test method.
-         * @param baseUri the baseUri of the OSF V2 API
          * @param requestUri the full request URI
          * @return a Path that identifies a classpath resource containing the JSON response document
          */
-        String resolve(TestName testName, URI baseUri, URI requestUri);
+        String resolve(TestName testName, URI requestUri);
 
     }
 }

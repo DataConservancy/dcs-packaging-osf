@@ -42,7 +42,7 @@ public class LogTest extends AbstractMockServerTest {
 
     @Before
     public void setUp() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, LogTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, LogTest.class));
         osfService = factory.getOsfService(OsfService.class);
     }
 

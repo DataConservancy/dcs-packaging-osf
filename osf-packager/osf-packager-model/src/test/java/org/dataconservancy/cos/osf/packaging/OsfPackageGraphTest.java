@@ -80,7 +80,7 @@ public class OsfPackageGraphTest extends AbstractMockServerTest {
     @Test
     public void testCreatePackageGraph() throws Exception {
         final OsfPackageGraph packageGraph = new OsfPackageGraph(ontologyManager);
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfPackageGraphTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfPackageGraphTest.class));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
 

@@ -112,7 +112,7 @@ public class NodeTest extends AbstractMockServerTest {
     @Test
     public void testGetNodeObjectResolution() throws Exception {
 
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class));
 
         final Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
         assertNotNull(n);
@@ -164,7 +164,7 @@ public class NodeTest extends AbstractMockServerTest {
         final String sub = "pd24n";
         final String fileName = "porsche.jpg";
 
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class));
 
         final Node topNode = factory.getOsfService(OsfService.class).node(topLevel).execute().body();
         assertNotNull(topNode);
@@ -204,8 +204,8 @@ public class NodeTest extends AbstractMockServerTest {
     public void testNodeListPagination() throws Exception {
         final AtomicInteger requestCount = new AtomicInteger(0);
 
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri(),
-                (name, baseUri, reqUri) -> {
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class,
+                (name, reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
                     final String fsBase = resourceBase(TEST_NAME, "/json/");
 
@@ -278,7 +278,7 @@ public class NodeTest extends AbstractMockServerTest {
 
     @Test
     public void testDownloadFile() throws Exception {
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri()));
+        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class));
 
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final Node nodeWithFile = osfService.node("pd24n").execute().body();
