@@ -158,6 +158,21 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         return base.toString();
     }
 
+    public static String httpUriToPath(final URI uri) {
+        if (!uri.getScheme().startsWith("http")) {
+            throw new IllegalArgumentException("Only operates on http or https schemes." +
+                    "  Scheme was: " + uri.getScheme());
+        }
+
+        if (uri.getPort() < 0) {
+            return new java.io.File(uri.getHost(), uri.getPath()).getPath();
+        }
+
+        final java.io.File path = new java.io.File(uri.getHost(), String.valueOf(uri.getPort()));
+
+        return new java.io.File(path, uri.getPath()).getPath();
+    }
+
     /**
      * Adds an interceptor to the OSF service factory which adds a {@code X_RESPONSE_RESOURCE} header to the HTTP
      * request.  Test classes can use this instead of the {@link RecursiveInterceptor}/{@link ResponseResolver}
@@ -216,9 +231,9 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             this.jsonRoot = jsonRoot;
 
             resolver = (name, base, req) -> {
-                // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
-                final URI relativizedRequestUri = baseUri.relativize(req);
-                final String requestPath = relativizedRequestUri.getPath();
+                // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ ->
+                // localhost/8000/v2/nodes/v8x57/files/osfstorage/
+                final String requestPath = httpUriToPath(req) + "/";
 
                 // /json/NodeTest/testGetNodeObjectResolution/
                 final String fsBase = resourceBase(testName, testClass, jsonRoot);
@@ -240,7 +255,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
                 String jsonPath = fsBase + requestPath + "index.json";
                 if (req.getPath().endsWith("/")) {
-                    // /json/NodeTest/testGetNodeObjectResolution/nodes/v8x57/files/osfstorage/index.json
+                    // /json/NodeTest/testGetNodeObjectResolution/localhost/8000/nodes/v8x57/files/osfstorage/index.json
                     if (testClass.getResource(jsonPath) != null) {
                         return jsonPath;
                     } else {
