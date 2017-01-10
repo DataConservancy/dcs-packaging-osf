@@ -206,7 +206,7 @@ public class NodeTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri(),
                 (name, baseUri, reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
-                    final String fsBase = resourceBase(TEST_NAME);
+                    final String fsBase = resourceBase(TEST_NAME, "/json/");
 
                     requestCount.incrementAndGet();
 
@@ -280,7 +280,7 @@ public class NodeTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class, getBaseUri(),
                 (name, base, req) -> {
                     // /json/NodeTest/testDownloadFile/
-                    final String fsBase = resourceBase(TEST_NAME);
+                    final String fsBase = resourceBase(TEST_NAME, "/json/");
 
                     // We probably have a Waterbutler request (wb requests go to port 7777, typically)
                     if (req.getPort() != getBaseUri().getPort()) {
