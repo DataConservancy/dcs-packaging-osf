@@ -52,15 +52,12 @@ import static org.mockserver.model.HttpRequest.request;
 public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(AbstractMockServerTest.class);
+
     /**
      * Custom HTTP header sent by a test request, used to tell the {@code MockServer} what JSON document
      * to return.  The values are interpreted as classpath resources.
      */
     public static final String X_RESPONSE_RESOURCE = "X-Response-Resource";
-    /**
-     * Base path of the file system hierarchy containing JSON response documents
-     */
-    public static final String JSON_ROOT = "/json/";
 
     /**
      * Set by {@link #startMockServer()}.
@@ -141,9 +138,9 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         wbMockServer.stop();
     }
 
-    public static String resourceBase(final TestName testName) {
+    public static String resourceBase(final TestName testName, final String jsonRoot) {
         assertNotNull(testName);
-        final StringBuilder base = new StringBuilder(JSON_ROOT);
+        final StringBuilder base = new StringBuilder(jsonRoot);
         base.append(NodeTest.class.getSimpleName()).append("/");
         base.append(testName.getMethodName()).append("/");
 
@@ -151,9 +148,9 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         return base.toString();
     }
 
-    public static String resourceBase(final TestName testName, final Class testClass) {
+    public static String resourceBase(final TestName testName, final Class testClass, final String jsonRoot) {
         assertNotNull(testName);
-        final StringBuilder base = new StringBuilder(JSON_ROOT);
+        final StringBuilder base = new StringBuilder(jsonRoot);
         base.append(testClass.getSimpleName()).append("/");
         base.append(testName.getMethodName()).append("/");
 
@@ -197,6 +194,8 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         private static final Logger LOG = LoggerFactory.getLogger(RecursiveInterceptor.class);
 
+        private final String jsonRoot;
+
         private final URI baseUri;
 
         private final TestName testName;
@@ -206,9 +205,15 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         private ResponseResolver resolver;
 
         public RecursiveInterceptor(final TestName testName, final Class testClass, final URI baseUri) {
+            this(testName, testClass, baseUri, "/json/");
+        }
+
+        public RecursiveInterceptor(final TestName testName, final Class testClass, final URI baseUri,
+                                    final String jsonRoot) {
             this.baseUri = baseUri;
             this.testName = testName;
             this.testClass = testClass;
+            this.jsonRoot = jsonRoot;
 
             resolver = (name, base, req) -> {
                 // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ -> nodes/v8x57/files/osfstorage/
@@ -216,7 +221,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                 final String requestPath = relativizedRequestUri.getPath();
 
                 // /json/NodeTest/testGetNodeObjectResolution/
-                final String fsBase = resourceBase(testName, testClass);
+                final String fsBase = resourceBase(testName, testClass, jsonRoot);
 
                 // If there's a "page" query parameter, use it to return 'index-0?.json'
                 if (req.getQuery() != null && req.getQuery().contains("page=")) {
@@ -264,9 +269,6 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                                         req, jsonPath));
                     }
                 }
-
-
-
             };
         }
 
@@ -276,6 +278,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             this.testClass = testClass;
             this.baseUri = baseUri;
             this.resolver = resolver;
+            this.jsonRoot = null;
         }
 
         @Override
