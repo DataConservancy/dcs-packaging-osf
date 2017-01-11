@@ -1,0 +1,200 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "project",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2013-10-22T20:12:08.914000Z",
+        "date_modified": "2016-02-03T16:37:38.189000Z",
+        "date_registered": "2016-03-02T20:59:19.487000Z",
+        "description": null,
+        "embargo_end_date": null,
+        "fork": false,
+        "node_license": null,
+        "pending_embargo_approval": false,
+        "pending_registration_approval": false,
+        "pending_withdrawal": false,
+        "preprint": false,
+        "public": true,
+        "registered_meta": {
+          "comments": {
+            "comments": [],
+            "extra": {},
+            "value": ""
+          },
+          "datacompletion": {
+            "comments": [],
+            "extra": {},
+            "value": "No, data collection has not begun"
+          },
+          "looked": {
+            "comments": [],
+            "extra": {},
+            "value": "No"
+          }
+        },
+        "registration": true,
+        "registration_supplement": "OSF-Standard Pre-Data Collection Registration",
+        "tags": [],
+        "title": "Study 16: Ward et al. 2010, Cancer Cell",
+        "withdrawal_justification": null,
+        "withdrawn": false
+      },
+      "id": "t873r",
+      "links": {
+        "html": "http://osf.io/t873r/",
+        "self": "http://localhost:8000/v2/registrations/t873r/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/comments/P2ZpbHRlciU1QnRhcmdldCU1RD10ODczcg==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/t873r/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8l4ea/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c0/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/t873r/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "registrations"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/8l4ea/registrations/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

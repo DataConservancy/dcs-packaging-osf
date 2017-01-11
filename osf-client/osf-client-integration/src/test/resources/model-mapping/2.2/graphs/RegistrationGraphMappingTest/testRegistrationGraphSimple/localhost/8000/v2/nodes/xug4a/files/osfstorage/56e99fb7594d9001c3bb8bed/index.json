@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-07-20T17:26:05.072000Z",
+        "date_modified": "2016-07-20T17:26:05.072000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "ffff1dcabea163fc2de3b22268d84cad",
+            "sha256": "0e181c6853b1e0b17de1d640433a3c01c196e08ee45008bc23c3bff90ca480bc"
+          }
+        },
+        "guid": "j965c",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Project Folder Renamed/43405f284d653b533acc958efcda5789.jpg",
+        "name": "43405f284d653b533acc958efcda5789.jpg",
+        "path": "/578fb42d594d9001f825cf85",
+        "provider": "osfstorage",
+        "size": 5497,
+        "tags": []
+      },
+      "id": "578fb42d594d9001f825cf85",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/578fb42d594d9001f825cf85",
+        "download": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/578fb42d594d9001f825cf85",
+        "info": "http://localhost:8000/v2/files/578fb42d594d9001f825cf85/",
+        "move": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/578fb42d594d9001f825cf85",
+        "self": "http://localhost:8000/v2/files/578fb42d594d9001f825cf85/",
+        "upload": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/578fb42d594d9001f825cf85"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1qOTY1Yw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/578fb42d594d9001f825cf85/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-16T18:03:01.733000Z",
+        "date_modified": "2016-03-16T18:03:01.733000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "7de1390464af3e5348644be8f7564f80",
+            "sha256": "ca733ad6d24bbfa26e106d8d063a18fda68f97019219fe74577cb5d1d34e78b4"
+          }
+        },
+        "guid": "eu7ck",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Project Folder Renamed/delicate-arch-sunrise.jpg",
+        "name": "delicate-arch-sunrise.jpg",
+        "path": "/56e99fd5594d9001c0bb8d4a",
+        "provider": "osfstorage",
+        "size": 18509871,
+        "tags": []
+      },
+      "id": "56e99fd5594d9001c0bb8d4a",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fd5594d9001c0bb8d4a",
+        "download": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fd5594d9001c0bb8d4a",
+        "info": "http://localhost:8000/v2/files/56e99fd5594d9001c0bb8d4a/",
+        "move": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fd5594d9001c0bb8d4a",
+        "self": "http://localhost:8000/v2/files/56e99fd5594d9001c0bb8d4a/",
+        "upload": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fd5594d9001c0bb8d4a"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1ldTdjaw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56e99fd5594d9001c0bb8d4a/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/xug4a/files/osfstorage/56e99fb7594d9001c3bb8bed/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

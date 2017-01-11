@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "auth_url": null,
+        "description": "COS is a non-profit technology company providing free and open services to increase inclusivity and transparency of research. Find out more at <a href=\"http://cos.io\">cos.io</a>.",
+        "logo_path": "/static/img/institutions/shields/cos-shield.png",
+        "name": "Center For Open Science"
+      },
+      "id": "cos",
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/cos/"
+      },
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/cos/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/cos/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/cos/users/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "institutions"
+    },
+    {
+      "attributes": {
+        "auth_url": null,
+        "description": "<a href=\"http://www.esipfed.org/\">ESIP's</a> mission is to support the networking and data dissemination needs of our members and the global Earth science data community by linking the functional sectors of observation, research, application, education and use of Earth science.",
+        "logo_path": "/static/img/institutions/shields/esip-shield.png",
+        "name": "Federation of Earth Science Information Partners (ESIP)"
+      },
+      "id": "esip",
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/esip/"
+      },
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/esip/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/esip/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/esip/users/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "institutions"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/users/5ynfj/institutions/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Any news on this? The swagger docs were really helpful and I kind of need them to develop the prerequisites  for the `osfr` webinar. If there is a copy somewhere, perfectly fine as well.\r\n",
+        "date_created": "2016-10-26T18:30:01.571000Z",
+        "date_modified": "2016-10-26T18:30:01.580000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "uj9a7fa22zwz",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/uj9a7fa22zwz/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD11ajlhN2ZhMjJ6d3o=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/uj9a7fa22zwz/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/zykzwrmt6rv4/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5fukm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=zykzwrmt6rv4"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

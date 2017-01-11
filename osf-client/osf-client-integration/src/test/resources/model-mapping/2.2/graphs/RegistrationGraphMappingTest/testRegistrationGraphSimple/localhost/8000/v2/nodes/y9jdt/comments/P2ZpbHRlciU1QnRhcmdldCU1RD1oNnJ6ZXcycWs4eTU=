@@ -1,0 +1,143 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "This was broken with a recent upgrade to the filtering code. The fix has been found and should be usable next week. Sorry for the trouble.\r\n",
+        "date_created": "2016-08-24T19:09:46.726000Z",
+        "date_modified": "2016-08-24T19:09:46.734000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "nrs4atq8vbu6",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/nrs4atq8vbu6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1ucnM0YXRxOHZidTY=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/nrs4atq8vbu6/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/h6rzew2qk8y5/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "That is definitely a bug. It's meant to be somewhat robust with the date handling, and it *definitely* should not be giving a 500 series error. So we'll get that fixed, thank you.\r\n",
+        "date_created": "2016-08-24T11:48:15.333000Z",
+        "date_modified": "2016-08-24T11:48:15.345000Z",
+        "deleted": false,
+        "has_children": false,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "anh4df9pz5gx",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/anh4df9pz5gx/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1hbmg0ZGY5cHo1Z3g=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/anh4df9pz5gx/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/h6rzew2qk8y5/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=h6rzew2qk8y5"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

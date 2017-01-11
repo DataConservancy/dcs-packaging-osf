@@ -1,0 +1,188 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "project",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2014-11-14T17:28:36.434000Z",
+        "date_modified": "2016-07-01T19:49:26.513000Z",
+        "description": "Slides and notes for the COS - Dataverse API presentation for Dataverse 2015 Community Workshop",
+        "fork": true,
+        "forked_date": "2015-05-26T18:08:18.288000Z",
+        "node_license": null,
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [],
+        "title": "Dataverse COS Ambassador Presentation"
+      },
+      "id": "26i3n",
+      "links": {
+        "html": "http://osf.io/26i3n/",
+        "self": "http://localhost:8000/v2/nodes/26i3n/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0yNmkzbg==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forked_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/26i3n/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/bs23x/forks/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

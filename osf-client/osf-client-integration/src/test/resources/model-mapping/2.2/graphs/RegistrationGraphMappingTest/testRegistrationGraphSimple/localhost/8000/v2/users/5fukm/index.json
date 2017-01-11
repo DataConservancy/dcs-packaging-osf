@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2013-03-25T12:12:12.947000Z",
+      "family_name": "Hartgerink",
+      "full_name": "C.H.J. Hartgerink",
+      "given_name": "Chris",
+      "locale": "en_US",
+      "middle_names": "Hubertus Joseph",
+      "suffix": "",
+      "timezone": "Europe/Berlin"
+    },
+    "id": "5fukm",
+    "links": {
+      "html": "http://osf.io/5fukm/",
+      "profile_image": "http://secure.gravatar.com/avatar/5af72480349c433cd8e05f7c08d85644?d=identicon",
+      "self": "http://localhost:8000/v2/users/5fukm/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/5fukm/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/5fukm/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/5fukm/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

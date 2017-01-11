@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-04T15:42:19.833000Z",
+        "extra": {
+          "version": 3
+        },
+        "kind": "file",
+        "materialized_path": "/ny9jt",
+        "name": "home",
+        "path": "/ny9jt",
+        "size": 1640
+      },
+      "id": "ny9jt",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/ny9jt/content/",
+        "info": "http://localhost:8000/v2/wikis/ny9jt/",
+        "self": "http://localhost:8000/v2/wikis/ny9jt/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/gp9fn/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1ueTlqdA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/gp9fn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/yc53f/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/gp9fn/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

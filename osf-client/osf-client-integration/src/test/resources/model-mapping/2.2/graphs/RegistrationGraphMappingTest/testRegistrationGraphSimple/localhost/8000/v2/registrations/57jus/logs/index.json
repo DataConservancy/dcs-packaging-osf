@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-08-01T19:10:18.944000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "James Martino",
+              "given_name": "James",
+              "id": "9vw8x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "a49gq",
+            "title": "YAC"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "579f9ee0594d9001fe2fd157",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9ee0594d9001fe2fd157/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/57jus/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/a49gq/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-08-01T19:10:18.354000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "a49gq",
+            "title": "YAC"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "579f9ee0594d9001fe2fd156",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9ee0594d9001fe2fd156/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/57jus/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/a49gq/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/57jus/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

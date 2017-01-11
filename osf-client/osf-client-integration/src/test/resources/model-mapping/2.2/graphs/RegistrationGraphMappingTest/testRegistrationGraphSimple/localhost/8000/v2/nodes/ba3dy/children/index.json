@@ -1,0 +1,359 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "data",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-03-22T17:03:20.940000Z",
+        "date_modified": "2016-12-23T05:10:36.895000Z",
+        "description": null,
+        "fork": false,
+        "node_license": null,
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [],
+        "title": "Technical Requirements"
+      },
+      "id": "vpyq4",
+      "links": {
+        "html": "http://osf.io/vpyq4/",
+        "self": "http://localhost:8000/v2/nodes/vpyq4/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/comments/P2ZpbHRlciU1QnRhcmdldCU1RD12cHlxNA==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    },
+    {
+      "attributes": {
+        "category": "hypothesis",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-03-22T17:17:15.608000Z",
+        "date_modified": "2016-06-02T15:28:26.950000Z",
+        "description": null,
+        "fork": false,
+        "node_license": null,
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [],
+        "title": "Benefits"
+      },
+      "id": "yd6v7",
+      "links": {
+        "html": "http://osf.io/yd6v7/",
+        "self": "http://localhost:8000/v2/nodes/yd6v7/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/comments/P2ZpbHRlciU1QnRhcmdldCU1RD15ZDZ2Nw==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yd6v7/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/ba3dy/children/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2016-03-17T18:11:27.871000Z",
+      "family_name": "Martino",
+      "full_name": "James Martino",
+      "given_name": "James",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "9vw8x",
+    "links": {
+      "html": "http://osf.io/9vw8x/",
+      "profile_image": "http://secure.gravatar.com/avatar/f15bbb5eb2e137c9cd04386eeab58693?d=identicon",
+      "self": "http://localhost:8000/v2/users/9vw8x/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9vw8x/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/9vw8x/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9vw8x/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Nosek",
+          "given": "Brian A"
+        },
+        {
+          "family": "Alter",
+          "given": "George"
+        },
+        {
+          "family": "Banks",
+          "given": "George C"
+        },
+        {
+          "family": "Borsboom",
+          "given": "Denny"
+        },
+        {
+          "family": "Bowman",
+          "given": "Sara D"
+        },
+        {
+          "family": "Breckler",
+          "given": "Steven J"
+        },
+        {
+          "family": "Buck",
+          "given": "Stuart"
+        },
+        {
+          "family": "Chambers",
+          "given": "Chris"
+        },
+        {
+          "family": "Chin",
+          "given": "Gilbert"
+        },
+        {
+          "family": "Christensen",
+          "given": "Garret"
+        },
+        {
+          "family": "Contestabile",
+          "given": "Monica"
+        },
+        {
+          "family": "Dafoe",
+          "given": "Allan"
+        },
+        {
+          "family": "Eich",
+          "given": "Eric"
+        },
+        {
+          "family": "Freese",
+          "given": "Jeremy"
+        },
+        {
+          "family": "Glennerster",
+          "given": "Rachel"
+        },
+        {
+          "family": "Goroff",
+          "given": "Daniel L"
+        },
+        {
+          "family": "Green",
+          "given": "Don"
+        },
+        {
+          "family": "Hesse",
+          "given": "Bradford W"
+        },
+        {
+          "family": "Humphreys",
+          "given": "Macartan"
+        },
+        {
+          "family": "Ishiyama",
+          "given": "John"
+        },
+        {
+          "family": "Karlan",
+          "given": "Dean"
+        },
+        {
+          "family": "Kraut",
+          "given": "Alan"
+        },
+        {
+          "family": "Lupia",
+          "given": "Arthur"
+        },
+        {
+          "family": "Mabry",
+          "given": "Patricia L"
+        },
+        {
+          "family": "Madon",
+          "given": "Temina"
+        },
+        {
+          "family": "malhotra",
+          "given": "neil"
+        },
+        {
+          "family": "Mayo-Wilson",
+          "given": "Evan"
+        },
+        {
+          "family": "McNutt",
+          "given": "Marcia"
+        },
+        {
+          "family": "Miguel",
+          "given": "Edward"
+        },
+        {
+          "family": "Paluck",
+          "given": "Elizabeth L"
+        },
+        {
+          "family": "Simonsohn",
+          "given": "Uri"
+        },
+        {
+          "family": "Soderberg",
+          "given": "Courtney K"
+        },
+        {
+          "family": "Spellman",
+          "given": "Bobbie"
+        },
+        {
+          "family": "Turitto",
+          "given": "James"
+        },
+        {
+          "family": "VandenBos",
+          "given": "Gary"
+        },
+        {
+          "family": "Vazire",
+          "given": "Simine"
+        },
+        {
+          "family": "Wagenmakers",
+          "given": "Eric-Jan"
+        },
+        {
+          "family": "Wilson",
+          "given": "Rick K"
+        },
+        {
+          "family": "Yarkoni",
+          "given": "Tal"
+        },
+        {
+          "family": "Stodden",
+          "given": "Victoria"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Transparency and Openness Promotion (TOP) Guidelines",
+      "type": "webpage"
+    },
+    "id": "9f6gx",
+    "links": {
+      "self": "osf.io/9f6gx"
+    },
+    "type": "node-citation"
+  }
+}

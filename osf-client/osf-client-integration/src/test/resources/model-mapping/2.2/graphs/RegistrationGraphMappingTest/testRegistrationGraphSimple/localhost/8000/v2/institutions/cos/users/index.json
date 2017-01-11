@@ -1,0 +1,435 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-04-07T20:13:05.955000Z",
+        "family_name": "Booth",
+        "full_name": "Abram Booth",
+        "given_name": "Abram",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/Detroit"
+      },
+      "id": "345bg",
+      "links": {
+        "html": "http://osf.io/345bg/",
+        "profile_image": "http://secure.gravatar.com/avatar/c625088ca28b2fd38e5883930224fd26?d=identicon",
+        "self": "http://localhost:8000/v2/users/345bg/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/345bg/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/345bg/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/345bg/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2015-02-09T16:53:57.542000Z",
+        "family_name": "Gorges",
+        "full_name": "Bryan Gorges",
+        "given_name": "Bryan",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "3n6eh",
+      "links": {
+        "html": "http://osf.io/3n6eh/",
+        "profile_image": "http://secure.gravatar.com/avatar/489e5f2d3158bb511bc28adf871c3757?d=identicon",
+        "self": "http://localhost:8000/v2/users/3n6eh/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/3n6eh/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/3n6eh/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/3n6eh/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-06-27T14:31:34.715000Z",
+        "family_name": "Schiller",
+        "full_name": "Allison Schiller",
+        "given_name": "Allison",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "3npvs",
+      "links": {
+        "html": "http://osf.io/3npvs/",
+        "profile_image": "http://secure.gravatar.com/avatar/f44bd037ff228935b5ed880405caa741?d=identicon",
+        "self": "http://localhost:8000/v2/users/3npvs/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/3npvs/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/3npvs/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/3npvs/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-12-12T19:53:53.524000Z",
+        "family_name": "Rosenblatt",
+        "full_name": "Rebecca Rosenblatt",
+        "given_name": "Rebecca",
+        "locale": "en_us",
+        "middle_names": "P.",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "45fsd",
+      "links": {
+        "html": "http://osf.io/45fsd/",
+        "profile_image": "http://secure.gravatar.com/avatar/49eda97a447ff554d60e15fea9bf18e7?d=identicon",
+        "self": "http://localhost:8000/v2/users/45fsd/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/45fsd/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/45fsd/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/45fsd/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-05-04T18:03:47.530000Z",
+        "family_name": "tester",
+        "full_name": "OSF User B tester",
+        "given_name": "OSF",
+        "locale": "en_US",
+        "middle_names": "User B",
+        "suffix": "",
+        "timezone": "Etc/UTC"
+      },
+      "id": "4fvuh",
+      "links": {
+        "html": "http://osf.io/4fvuh/",
+        "profile_image": "http://secure.gravatar.com/avatar/104575922e6c51cd73fa3d114a82eed3?d=identicon",
+        "self": "http://localhost:8000/v2/users/4fvuh/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/4fvuh/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/4fvuh/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/4fvuh/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-03-04T04:14:14.977000Z",
+        "family_name": "Bowers",
+        "full_name": "Allison Bowers",
+        "given_name": "Allison",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "4h3mn",
+      "links": {
+        "html": "http://osf.io/4h3mn/",
+        "profile_image": "http://secure.gravatar.com/avatar/6fe5be85723b01b33318471c2d7fdacc?d=identicon",
+        "self": "http://localhost:8000/v2/users/4h3mn/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/4h3mn/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/4h3mn/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/4h3mn/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2014-03-18T20:21:49.234000Z",
+        "family_name": "Chrisinger",
+        "full_name": "Sam Chrisinger",
+        "given_name": "Sam",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "4ur7b",
+      "links": {
+        "html": "http://osf.io/4ur7b/",
+        "profile_image": "http://secure.gravatar.com/avatar/474539e4281a2712b321cd5c433fe2f9?d=identicon",
+        "self": "http://localhost:8000/v2/users/4ur7b/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/4ur7b/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/4ur7b/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/4ur7b/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-06-01T17:23:47.271000Z",
+        "family_name": "DeHaven",
+        "full_name": "Alexander DeHaven",
+        "given_name": "Alexander",
+        "locale": "en_US",
+        "middle_names": "Carl",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "5k3hq",
+      "links": {
+        "html": "http://osf.io/5k3hq/",
+        "profile_image": "http://secure.gravatar.com/avatar/28222c487487cd4999d0044b142b38ab?d=identicon",
+        "self": "http://localhost:8000/v2/users/5k3hq/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5k3hq/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/5k3hq/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5k3hq/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-04-01T13:37:15.193000Z",
+        "family_name": "",
+        "full_name": "tom",
+        "given_name": "tom",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "5v243",
+      "links": {
+        "html": "http://osf.io/5v243/",
+        "profile_image": "http://secure.gravatar.com/avatar/d12b09073a474e0ee720433ee92d3252?d=identicon",
+        "self": "http://localhost:8000/v2/users/5v243/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5v243/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/5v243/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5v243/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-04-07T20:16:50.899000Z",
+        "family_name": "Liscouski",
+        "full_name": "Amanda Liscouski",
+        "given_name": "Amanda",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "5ynfj",
+      "links": {
+        "html": "http://osf.io/5ynfj/",
+        "profile_image": "http://secure.gravatar.com/avatar/42ecc33b81b1e78ccbcf44aab5b18d27?d=identicon",
+        "self": "http://localhost:8000/v2/users/5ynfj/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5ynfj/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/5ynfj/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5ynfj/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/institutions/cos/users/?page=8",
+    "next": "http://localhost:8000/v2/institutions/cos/users/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/institutions/cos/users/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 75
+  }
+}

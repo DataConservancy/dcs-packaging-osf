@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Test Project 2",
+      "type": "webpage"
+    },
+    "id": "4rjba",
+    "links": {
+      "self": "osf.io/4rjba"
+    },
+    "type": "node-citation"
+  }
+}

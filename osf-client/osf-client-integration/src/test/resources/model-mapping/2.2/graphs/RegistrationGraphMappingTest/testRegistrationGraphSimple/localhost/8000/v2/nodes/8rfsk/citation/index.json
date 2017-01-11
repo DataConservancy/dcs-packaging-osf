@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Axt",
+          "given": "Jordan"
+        },
+        {
+          "family": "Nguyen",
+          "given": "Helen"
+        },
+        {
+          "family": "Nosek",
+          "given": "Brian A"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Online Supplements",
+      "type": "webpage"
+    },
+    "id": "8rfsk",
+    "links": {
+      "self": "osf.io/8rfsk"
+    },
+    "type": "node-citation"
+  }
+}

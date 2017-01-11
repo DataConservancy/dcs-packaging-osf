@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "Hi!  I just opened an issue with regard to supporting JSON-API 1.0 Compound Documents: http://github.com/CenterForOpenScience/osf.io/issues/5590\n\nI'm not sure if it's appropriate to open a GitHub issue first, or provide feedback first, but I did both :)\n\nIf the OSF V2 API could support JSON-API 1.0 Compound Documents, then existing JSON-API clients could be used to consume the OSF V2 endpoints with minimal coding by developers.",
+      "date_created": "2016-05-02T19:17:43.927000Z",
+      "date_modified": "2016-05-02T19:17:43.935000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "g2q8a4btcev6",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/g2q8a4btcev6/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1nMnE4YTRidGNldjY=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/g2q8a4btcev6/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/gb6f3/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

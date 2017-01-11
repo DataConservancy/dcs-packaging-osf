@@ -1,0 +1,503 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-06T21:42:01.805000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "path": "/typical osf workflow wiki examples.py",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a/?action=download",
+            "view": "/project/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a/"
+          }
+        }
+      },
+      "id": "58700f29b83f6901ff065e47",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58700f29b83f6901ff065e47/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-06T21:39:54.374000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "path": "/typical osf workflow wiki examples.py",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a/?action=download",
+            "view": "/project/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a/"
+          }
+        }
+      },
+      "id": "58700eaab83f6901ff065e43",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58700eaab83f6901ff065e43/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-06T21:18:36.829000Z",
+        "params": {
+          "contributors": [],
+          "page": "Typical Workflow",
+          "page_id": "934e3",
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "6"
+        }
+      },
+      "id": "587009ac9ad5a102008b06e5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587009ac9ad5a102008b06e5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-06T21:02:32.136000Z",
+        "params": {
+          "contributors": [],
+          "page": "Typical Workflow",
+          "page_id": "zpxk2",
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "5"
+        }
+      },
+      "id": "587005e89ad5a102028b05c1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587005e89ad5a102028b05c1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-06T21:00:24.991000Z",
+        "params": {
+          "contributors": [],
+          "page": "Typical Workflow",
+          "page_id": "tk9xk",
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "4"
+        }
+      },
+      "id": "587005696c613b01ffac5dc9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587005696c613b01ffac5dc9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-06T19:01:07.660000Z",
+        "params": {
+          "contributors": [],
+          "page": "Typical Workflow",
+          "page_id": "xuf86",
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "3"
+        }
+      },
+      "id": "586fe9736c613b01feac61c9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586fe9736c613b01feac61c9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-06T16:29:28.497000Z",
+        "params": {
+          "contributors": [],
+          "page": "Typical Workflow",
+          "page_id": "tnu8d",
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "586fc5e8594d9001fb01f32c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586fc5e8594d9001fb01f32c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-06T16:18:26.731000Z",
+        "params": {
+          "contributors": [],
+          "page": "Typical Workflow",
+          "page_id": "pmb8y",
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "586fc3529ad5a102008b061e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586fc3529ad5a102008b061e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2017-01-04T20:46:34.610000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "586d5f2ab83f6901f9174e5d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586d5f2ab83f6901f9174e5d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/b9th8/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2017-01-04T20:38:48.414000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "586d5d58594d9002093aee60",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586d5d58594d9002093aee60/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/y9jdt/logs/?page=19",
+    "next": "http://localhost:8000/v2/nodes/y9jdt/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 190
+  }
+}

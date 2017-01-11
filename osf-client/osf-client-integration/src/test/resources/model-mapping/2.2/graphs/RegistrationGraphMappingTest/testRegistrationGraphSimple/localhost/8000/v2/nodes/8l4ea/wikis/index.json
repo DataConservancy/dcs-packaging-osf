@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2014-02-11T14:55:31.550000Z",
+        "extra": {
+          "version": 2
+        },
+        "kind": "file",
+        "materialized_path": "/sjwpy",
+        "name": "home",
+        "path": "/sjwpy",
+        "size": 7572
+      },
+      "id": "sjwpy",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/sjwpy/content/",
+        "info": "http://localhost:8000/v2/wikis/sjwpy/",
+        "self": "http://localhost:8000/v2/wikis/sjwpy/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8l4ea/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1zandweQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8l4ea/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/8l4ea/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Mellor",
+          "given": "David T"
+        },
+        {
+          "family": "Esposito",
+          "given": "Jolene"
+        },
+        {
+          "family": "Hardwicke",
+          "given": "Tom E"
+        },
+        {
+          "family": "Nosek",
+          "given": "Brian A"
+        },
+        {
+          "family": "Cohoon",
+          "given": "Johanna"
+        },
+        {
+          "family": "Soderberg",
+          "given": "Courtney K"
+        },
+        {
+          "family": "Kidwell",
+          "given": "Mallory"
+        },
+        {
+          "family": "Clyburne-Sherin",
+          "given": "April"
+        },
+        {
+          "family": "Buck",
+          "given": "Stuart"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Preregistration Challenge: Plan, Test, Discover",
+      "type": "webpage"
+    },
+    "id": "x5w7h",
+    "links": {
+      "self": "osf.io/x5w7h"
+    },
+    "type": "node-citation"
+  }
+}

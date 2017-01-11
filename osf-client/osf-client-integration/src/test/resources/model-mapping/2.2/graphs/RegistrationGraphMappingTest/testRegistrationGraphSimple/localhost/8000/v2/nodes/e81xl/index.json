@@ -1,0 +1,171 @@
+{
+  "data": {
+    "attributes": {
+      "category": "project",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2013-10-08T23:31:56.153000Z",
+      "date_modified": "2017-01-03T18:56:54.667000Z",
+      "description": "We are conducting a study to investigate the replicability of cancer biology studies. Selected results from a substantial number of high-profile papers in the field of cancer biology published between 2010-2012 are being replicated by the Science Exchange network.",
+      "fork": false,
+      "node_license": null,
+      "preprint": false,
+      "public": true,
+      "registration": false,
+      "tags": [
+        "cancer biology",
+        "reproducibility",
+        "replication",
+        "open science"
+      ],
+      "title": "Reproducibility Project: Cancer Biology"
+    },
+    "id": "e81xl",
+    "links": {
+      "html": "http://osf.io/e81xl/",
+      "self": "http://localhost:8000/v2/nodes/e81xl/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1lODF4bA==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/draft_registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/e81xl/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "nodes"
+  }
+}

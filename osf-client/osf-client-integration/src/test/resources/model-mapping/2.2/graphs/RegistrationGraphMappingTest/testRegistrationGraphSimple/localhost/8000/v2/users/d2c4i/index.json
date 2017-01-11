@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2014-11-07T19:01:56.327000Z",
+      "family_name": "Frazier",
+      "full_name": "Matthew Frazier",
+      "given_name": "Matthew",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "d2c4i",
+    "links": {
+      "html": "http://osf.io/d2c4i/",
+      "profile_image": "http://secure.gravatar.com/avatar/b3b181aa11a0cb33b32b17823ec81005?d=identicon",
+      "self": "http://localhost:8000/v2/users/d2c4i/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d2c4i/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/d2c4i/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d2c4i/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "osfstorage",
+        "node": "d7ngy",
+        "path": "/",
+        "provider": "osfstorage"
+      },
+      "id": "d7ngy:osfstorage",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/d7ngy/providers/osfstorage/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/d7ngy/providers/osfstorage/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/files/osfstorage/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/d7ngy/files/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

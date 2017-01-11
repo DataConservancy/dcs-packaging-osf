@@ -1,0 +1,77 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T13:58:16.323000Z",
+        "date_modified": "2016-03-17T13:58:16.323000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 2,
+          "hashes": {
+            "md5": "d2bb52b830221d3daf438a6f513acdce",
+            "sha256": "b79e2bb56fba26e488020838c5a79b9efd69d876c8ac41ccad5b6653f26eb0ec"
+          }
+        },
+        "guid": "j3r4s",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/DSC_3916.NEF",
+        "name": "DSC_3916.NEF",
+        "path": "/56eab7f8b83f6901bde90d8a",
+        "provider": "osfstorage",
+        "size": 42521709,
+        "tags": []
+      },
+      "id": "56eab7f8b83f6901bde90d8a",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/4rjba/providers/osfstorage/56eab7f8b83f6901bde90d8a",
+        "download": "http://files.osf.io/v1/resources/4rjba/providers/osfstorage/56eab7f8b83f6901bde90d8a",
+        "info": "http://localhost:8000/v2/files/56eab7f8b83f6901bde90d8a/",
+        "move": "http://files.osf.io/v1/resources/4rjba/providers/osfstorage/56eab7f8b83f6901bde90d8a",
+        "self": "http://localhost:8000/v2/files/56eab7f8b83f6901bde90d8a/",
+        "upload": "http://files.osf.io/v1/resources/4rjba/providers/osfstorage/56eab7f8b83f6901bde90d8a"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/4rjba/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1qM3I0cw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/4rjba/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eab7f8b83f6901bde90d8a/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/4rjba/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

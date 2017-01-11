@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "please sign me up!",
+        "date_created": "2016-05-11T19:28:53.766000Z",
+        "date_modified": "2016-05-11T19:28:53.778000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "ekjvnmdqhcxt",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/ekjvnmdqhcxt/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1la2p2bm1kcWhjeHQ=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/ekjvnmdqhcxt/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/84dxj3rufqwn/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=84dxj3rufqwn"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}
