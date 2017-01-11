@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Thorpe",
+          "given": "Brandon"
+        },
+        {
+          "family": "Soderberg",
+          "given": "Courtney K"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "NGS2 Sample Project",
+      "type": "webpage"
+    },
+    "id": "gp9fn",
+    "links": {
+      "self": "osf.io/gp9fn"
+    },
+    "type": "node-citation"
+  }
+}

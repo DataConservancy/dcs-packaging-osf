@@ -1,0 +1,191 @@
+{
+  "data": {
+    "attributes": {
+      "category": "project",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2016-03-16T17:58:47.353000Z",
+      "date_modified": "2016-07-29T16:54:13.349000Z",
+      "date_registered": "2016-03-17T15:17:04.584000Z",
+      "description": "foo project description.",
+      "embargo_end_date": "2016-03-31T00:00:00",
+      "fork": false,
+      "node_license": {
+        "copyright_holders": [
+          "Elliot Metsger",
+          "all rights reserved."
+        ],
+        "year": "2016"
+      },
+      "pending_embargo_approval": false,
+      "pending_registration_approval": false,
+      "pending_withdrawal": false,
+      "preprint": false,
+      "public": true,
+      "registered_meta": {
+        "summary": {
+          "comments": [],
+          "extra": {},
+          "value": "Test registration."
+        }
+      },
+      "registration": true,
+      "registration_supplement": "Open-Ended Registration",
+      "tags": [],
+      "title": "Test Project",
+      "withdrawal_justification": null,
+      "withdrawn": false
+    },
+    "id": "tgzhk",
+    "links": {
+      "html": "http://osf.io/tgzhk/",
+      "self": "http://localhost:8000/v2/registrations/tgzhk/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/comments/P2ZpbHRlciU1QnRhcmdldCU1RD10Z3poaw==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_by": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/gb6f3/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_from": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/",
+            "meta": {}
+          }
+        }
+      },
+      "registration_schema": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/tgzhk/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "registrations"
+  }
+}

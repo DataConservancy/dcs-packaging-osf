@@ -1,0 +1,542 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T23:19:18.971000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudy.Materials.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ia3dc/files/osfstorage/58756bf1594d9001faf85e09/?action=download",
+            "view": "/project/ia3dc/files/osfstorage/58756bf1594d9001faf85e09/"
+          }
+        }
+      },
+      "id": "58756bf6594d900200f85e08",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58756bf6594d900200f85e08/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-06-28T13:01:29.624000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "cos",
+            "name": "Center For Open Science"
+          },
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "577275296c613b02142cb507",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/577275296c613b02142cb507/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-06-28T13:01:14.232000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "uva",
+            "name": "University of Virginia"
+          },
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5772751a594d9002247db823",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5772751a594d9002247db823/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-06-15T02:39:36.478000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5760bfe8594d90022617f8d7",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5760bfe8594d90022617f8d7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-05T15:02:25.068000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study1aMaterials.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ia3dc/files/osfstorage/558abc298c5e4a2cd71a7efc/?action=download",
+            "view": "/project/ia3dc/files/osfstorage/558abc298c5e4a2cd71a7efc/"
+          }
+        }
+      },
+      "id": "57543f01b83f690203e119b5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57543f01b83f690203e119b5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-05T15:02:24.549000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study5Materials.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ia3dc/files/osfstorage/56813ec88c5e4a0c59e42fc7/?action=download",
+            "view": "/project/ia3dc/files/osfstorage/56813ec88c5e4a0c59e42fc7/"
+          }
+        }
+      },
+      "id": "57543f00b83f690204e119d7",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57543f00b83f690204e119d7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-05T15:02:24.359000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study1bMaterials.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ia3dc/files/osfstorage/558acaee8c5e4a6c9e183718/?action=download",
+            "view": "/project/ia3dc/files/osfstorage/558acaee8c5e4a6c9e183718/"
+          }
+        }
+      },
+      "id": "57543f006c613b0209bb2d83",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57543f006c613b0209bb2d83/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-05T15:02:24.300000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study1cMaterials.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ia3dc/files/osfstorage/571383b06c613b01e2d9ce99/?action=download",
+            "view": "/project/ia3dc/files/osfstorage/571383b06c613b01e2d9ce99/"
+          }
+        }
+      },
+      "id": "57543f00594d90020ea42769",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57543f00594d90020ea42769/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-05T15:02:24.220000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study1dMaterials.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ia3dc/files/osfstorage/57543c599ad5a1021185c161/?action=download",
+            "view": "/project/ia3dc/files/osfstorage/57543c599ad5a1021185c161/"
+          }
+        }
+      },
+      "id": "57543f006c613b0209bb2d82",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57543f006c613b0209bb2d82/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-05T14:57:58.350000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ia3dc",
+            "title": "Materials"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study2bMaterials.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ia3dc/files/osfstorage/567ef8be8c5e4a0c55e42d80/?action=download",
+            "view": "/project/ia3dc/files/osfstorage/567ef8be8c5e4a0c55e42d80/"
+          }
+        }
+      },
+      "id": "57543df69ad5a1021385c165",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57543df69ad5a1021385c165/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ia3dc/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/ia3dc/logs/?page=4",
+    "next": "http://localhost:8000/v2/nodes/ia3dc/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/ia3dc/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 34
+  }
+}

@@ -1,0 +1,655 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Does version 2 of the API support file uploads to osf_storage, and if so, can you post an example?\r\n",
+        "date_created": "2017-01-04T19:58:27.702000Z",
+        "date_modified": "2017-01-04T19:58:27.710000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "2eg28wm3x3c9",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/2eg28wm3x3c9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0yZWcyOHdtM3gzYzk=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/2eg28wm3x3c9/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/b9th8/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Brian, sorry to bother you again. I find the Waterbutler docs a bit vague for moving files. Could you help me out and explain what is meant by the \"OSF path\" in the moving JSON body? I.e., `\"path\":     {path_attribute_of_target_folder}`. I've tried several things but am unable to get it to work.\r\n",
+        "date_created": "2016-11-08T20:21:15.617000Z",
+        "date_modified": "2016-11-08T20:21:15.625000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "8snn6dthqeuw",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/8snn6dthqeuw/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD04c25uNmR0aHFldXc=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/8snn6dthqeuw/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5fukm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Swagger documentation is down, so all documentation is through the [Browsable API](http://localhost:8000/v2/). We're looking into either getting it working again or providing the most important parts of that documentation in another way.\r\n",
+        "date_created": "2016-10-24T13:33:58.355000Z",
+        "date_modified": "2016-10-24T13:33:58.401000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "zykzwrmt6rv4",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/zykzwrmt6rv4/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD16eWt6d3JtdDZydjQ=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/zykzwrmt6rv4/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "There have been a lot of changes to the API recently, the most important of which being versioning. With a custom header or query parameter, you can get changes to the API that include breaking changes. To document these, there's a [changelog wiki page](http://osf.io/y9jdt/wiki/Changelog/) including some upcoming changes. You will also find deprecation notices if you use features that we have removed or changed in released versions. The deprecation notices will show up in the response meta.\r\n",
+        "date_created": "2016-10-24T13:31:38.431000Z",
+        "date_modified": "2016-10-24T13:31:38.438000Z",
+        "deleted": false,
+        "has_children": false,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "7c5d7jss2x5y",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/7c5d7jss2x5y/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD03YzVkN2pzczJ4NXk=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/7c5d7jss2x5y/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "I am trying to query the nodes based on date-created, but the filter does not accept shortened `iso8601` strings such as `2016-08-23`. It requires the full `2016-08-23T00:00:00` but I am trying to get the nodes created on a specific date. Am I simply doing it wrong or did I stumble on a limitation of the API?\r\n\r\n[This](http://localhost:8000/v2/nodes/?filter[tags]=psyarxiv&amp;filter[date_created]=2016-08-23T16:54:54.732000) works, but if I remove `T` and beyond it does not.\r\n",
+        "date_created": "2016-08-24T09:54:29.343000Z",
+        "date_modified": "2016-08-24T09:54:29.351000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "h6rzew2qk8y5",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/h6rzew2qk8y5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1oNnJ6ZXcycWs4eTU=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/h6rzew2qk8y5/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5fukm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Hi all, I just opened an issue [0] regarding the spec-compliance of the top-level links object when representing paginated results.  The `meta` element in the `links` object should probably be a top-level member of the response (i.e. a sibling of `data` and `links`) rather than a member of `links`.  Thanks!\n\n\n[0]: http://github.com/CenterForOpenScience/osf.io/issues/5653",
+        "date_created": "2016-05-13T19:45:24.057000Z",
+        "date_modified": "2016-05-13T19:45:24.063000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "6v43u7jypzaw",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/6v43u7jypzaw/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD02djQzdTdqeXB6YXc=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/6v43u7jypzaw/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "If you want to subscribe to notifications of comments, reply to this and I will add you to the project. Then you can go to the project settings to subscribe. This will give you emails when we're doing things like breaking changes of the API.",
+        "date_created": "2016-05-11T15:09:15.040000Z",
+        "date_modified": "2016-05-11T15:09:15.048000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "84dxj3rufqwn",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/84dxj3rufqwn/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD04NGR4ajNydWZxd24=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/84dxj3rufqwn/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "There is a breaking change coming to the API, but hopefully a minor one. The Files Provider view `/v2/nodes/[node_id]/files/` is not JSON API compliant because its type is the same as the files below it but it uses a different serializer. We're going to change the type to be something new such as `file-providers`. There'll be another comment when this goes live. Let me know if this is going to ruin anything, but my guess is that people who are using the type field will probably mostly be helped.",
+        "date_created": "2016-05-11T14:54:37.056000Z",
+        "date_modified": "2016-05-11T14:54:37.065000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "j2uwct8g3s49",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/j2uwct8g3s49/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1qMnV3Y3Q4ZzNzNDk=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/j2uwct8g3s49/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Hi!  I just opened an issue with regard to supporting JSON-API 1.0 Compound Documents: http://github.com/CenterForOpenScience/osf.io/issues/5590\n\nI'm not sure if it's appropriate to open a GitHub issue first, or provide feedback first, but I did both :)\n\nIf the OSF V2 API could support JSON-API 1.0 Compound Documents, then existing JSON-API clients could be used to consume the OSF V2 endpoints with minimal coding by developers.",
+        "date_created": "2016-05-02T19:17:43.927000Z",
+        "date_modified": "2016-05-02T19:17:43.935000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "g2q8a4btcev6",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/g2q8a4btcev6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1nMnE4YTRidGNldjY=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/g2q8a4btcev6/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Is there any way possible to add a part to the API that allows a file to be approached by its osf.io/XXXX link? I now try to download private files, but cannot authenticate with the PAT. Having to search the node, associated files, etc, will be too tedious for users. It would be great if there were the possibility of specifying `v2/files/{node_id}` or something (where `{node_id}` = `XXXX` from `osf.io/XXXX`).\n\nIs this remotely feasible?",
+        "date_created": "2016-04-29T18:05:46.718000Z",
+        "date_modified": "2016-04-29T18:05:46.726000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "fq5u9cz8sjba",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/fq5u9cz8sjba/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1mcTV1OWN6OHNqYmE=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/fq5u9cz8sjba/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5fukm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=y9jdt&page=5",
+    "next": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=y9jdt&page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=y9jdt"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 48
+  }
+}

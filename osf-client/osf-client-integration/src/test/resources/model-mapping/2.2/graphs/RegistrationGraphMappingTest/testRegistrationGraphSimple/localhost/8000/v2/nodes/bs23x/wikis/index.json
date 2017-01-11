@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-08-10T19:44:23.041000Z",
+        "extra": {
+          "version": 10
+        },
+        "kind": "file",
+        "materialized_path": "/h8492",
+        "name": "home",
+        "path": "/h8492",
+        "size": 6632
+      },
+      "id": "h8492",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/h8492/content/",
+        "info": "http://localhost:8000/v2/wikis/h8492/",
+        "self": "http://localhost:8000/v2/wikis/h8492/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1oODQ5Mg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/bs23x/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

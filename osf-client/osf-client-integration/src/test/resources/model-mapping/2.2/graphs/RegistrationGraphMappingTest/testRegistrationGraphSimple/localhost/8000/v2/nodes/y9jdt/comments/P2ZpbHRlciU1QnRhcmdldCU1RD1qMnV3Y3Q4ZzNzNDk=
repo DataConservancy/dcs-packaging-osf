@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "This is interesting because the files provider carries file-like semantics: the files provider endpoint acts as the mount point of a filesystem, with a name, kind, provider, and path (attributes shared by files that are not storage providers).  Will the new view simply re-type the file provider and leave the rest of the serialization alone, or will there be new attributes added that are unique to the provider type?",
+        "date_created": "2016-05-11T19:37:50.425000Z",
+        "date_modified": "2016-05-11T19:37:50.436000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "f9amyzs7w6ne",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/f9amyzs7w6ne/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1mOWFteXpzN3c2bmU=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/f9amyzs7w6ne/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/j2uwct8g3s49/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=j2uwct8g3s49"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

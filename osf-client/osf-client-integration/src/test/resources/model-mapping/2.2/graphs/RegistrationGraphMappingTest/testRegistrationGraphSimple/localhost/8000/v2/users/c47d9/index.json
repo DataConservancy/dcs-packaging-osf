@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-04-11T18:31:50.182000Z",
+      "family_name": "Crusoe",
+      "full_name": "Michael R. Crusoe",
+      "given_name": "Michael",
+      "locale": "ro",
+      "middle_names": "Robin",
+      "suffix": "",
+      "timezone": "Europe/Bucharest"
+    },
+    "id": "c47d9",
+    "links": {
+      "html": "http://osf.io/c47d9/",
+      "profile_image": "http://secure.gravatar.com/avatar/524651b4730bdf6f44968757a9264028?d=identicon",
+      "self": "http://localhost:8000/v2/users/c47d9/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/c47d9/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/c47d9/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/c47d9/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

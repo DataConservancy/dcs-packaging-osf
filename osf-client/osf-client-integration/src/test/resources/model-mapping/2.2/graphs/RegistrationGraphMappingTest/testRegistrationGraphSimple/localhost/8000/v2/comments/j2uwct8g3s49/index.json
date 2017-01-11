@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "There is a breaking change coming to the API, but hopefully a minor one. The Files Provider view `/v2/nodes/[node_id]/files/` is not JSON API compliant because its type is the same as the files below it but it uses a different serializer. We're going to change the type to be something new such as `file-providers`. There'll be another comment when this goes live. Let me know if this is going to ruin anything, but my guess is that people who are using the type field will probably mostly be helped.",
+      "date_created": "2016-05-11T14:54:37.056000Z",
+      "date_modified": "2016-05-11T14:54:37.065000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "j2uwct8g3s49",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/j2uwct8g3s49/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1qMnV3Y3Q4ZzNzNDk=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/j2uwct8g3s49/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/typ46/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

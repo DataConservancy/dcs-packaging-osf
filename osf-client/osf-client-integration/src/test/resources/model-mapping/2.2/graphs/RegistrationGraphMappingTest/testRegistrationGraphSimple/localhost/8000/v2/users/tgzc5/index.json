@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-01-29T17:57:57.277000Z",
+      "family_name": "Boughton",
+      "full_name": "Andrew Boughton",
+      "given_name": "Andrew",
+      "locale": "en_US",
+      "middle_names": "Patrick",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "tgzc5",
+    "links": {
+      "html": "http://osf.io/tgzc5/",
+      "profile_image": "http://secure.gravatar.com/avatar/20b6e510c429f495173fa0f53814d17c?d=identicon",
+      "self": "http://localhost:8000/v2/users/tgzc5/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/tgzc5/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/tgzc5/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/tgzc5/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "date_created": "2016-10-05T15:21:58.030000Z",
+        "date_modified": "2016-10-05T15:21:58.030000Z",
+        "date_published": "2016-10-05T15:21:58.030000Z",
+        "doi": "10.1126/science.aab2374",
+        "is_preprint_orphan": false,
+        "is_published": true,
+        "license_record": null,
+        "subjects": [
+          [
+            {
+              "id": "584240da54be81056cecac48",
+              "text": "Social and Behavioral Sciences"
+            },
+            {
+              "id": "584240da54be81056cecaab8",
+              "text": "Public Affairs, Public Policy and Public Administration"
+            },
+            {
+              "id": "584240d954be81056cecaa10",
+              "text": "Science and Technology Policy"
+            }
+          ]
+        ]
+      },
+      "id": "vj54c",
+      "links": {
+        "doi": "http://dx.doi.org/10.1126/science.aab2374",
+        "html": "http://osf.io/vj54c/",
+        "self": "http://localhost:8000/v2/preprints/vj54c/"
+      },
+      "relationships": {
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/preprints/vj54c/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/9f6gx/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_file": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/558e93a78c5e4a5e3c2b4838/",
+              "meta": {}
+            }
+          }
+        },
+        "provider": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/preprint_providers/osf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "preprints"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/9f6gx/preprints/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

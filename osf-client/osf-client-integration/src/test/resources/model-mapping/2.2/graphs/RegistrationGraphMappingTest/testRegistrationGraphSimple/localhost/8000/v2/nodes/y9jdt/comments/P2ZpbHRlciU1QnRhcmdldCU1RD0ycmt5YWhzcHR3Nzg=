@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "That is great! Just implemented it, but I get a 403 when trying to access a file and pass the authorization header? It does not matter whether the file is public or private (if it *is* private and I do not pass the authorization header, I get a 401 error).\n\nIt says: \n&gt;\"The user has not authorized access to this view.\"\n\nBut AFAIK I cannot specify this. Might this mean at the API end?",
+        "date_created": "2016-04-29T19:42:29.956000Z",
+        "date_modified": "2016-04-29T19:42:29.966000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "4dtpgc8fnuhk",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/4dtpgc8fnuhk/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD00ZHRwZ2M4Zm51aGs=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/4dtpgc8fnuhk/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/2rkyahsptw78/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5fukm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=2rkyahsptw78"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

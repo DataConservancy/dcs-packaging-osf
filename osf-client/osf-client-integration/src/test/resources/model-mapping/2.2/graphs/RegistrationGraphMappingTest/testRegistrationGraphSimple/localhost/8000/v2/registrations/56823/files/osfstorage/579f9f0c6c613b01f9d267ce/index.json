@@ -1,0 +1,231 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-01T19:12:14.142000Z",
+        "date_modified": "2016-08-01T19:12:14.142000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 1,
+          "hashes": {
+            "md5": "cba4ccaa5e46eb7bc8ad6f31f207457c",
+            "sha256": "b56c758a6bcbbb672ae4d4ca12e4956c404aaaf1fff0018bf52a3bf9ec19d7d6"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: emetsger-osf-test/README.md",
+        "name": "README.md",
+        "path": "/579f9f0e6c613b01fdd26a82",
+        "provider": "osfstorage",
+        "size": 83,
+        "tags": []
+      },
+      "id": "579f9f0e6c613b01fdd26a82",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e6c613b01fdd26a82",
+        "download": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e6c613b01fdd26a82",
+        "info": "http://localhost:8000/v2/files/579f9f0e6c613b01fdd26a82/",
+        "move": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e6c613b01fdd26a82",
+        "self": "http://localhost:8000/v2/files/579f9f0e6c613b01fdd26a82/",
+        "upload": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e6c613b01fdd26a82"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/579f9f0e6c613b01fdd26a82/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-01T19:12:16.726000Z",
+        "date_modified": "2016-08-01T19:12:16.726000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 3,
+          "hashes": {
+            "md5": "64a29652c1af5b819161d68b4e563e2a",
+            "sha256": "b336d30c7d725b54bd235166cb0f19054075e93cb89d2831403ae1ad9e6cbd4e"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: emetsger-osf-test/Screen Shot 2016-03-04 at 2.21.20 PM.png",
+        "name": "Screen Shot 2016-03-04 at 2.21.20 PM.png",
+        "path": "/579f9f109ad5a101f4f90f4a",
+        "provider": "osfstorage",
+        "size": 3368079,
+        "tags": []
+      },
+      "id": "579f9f109ad5a101f4f90f4a",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f109ad5a101f4f90f4a",
+        "download": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f109ad5a101f4f90f4a",
+        "info": "http://localhost:8000/v2/files/579f9f109ad5a101f4f90f4a/",
+        "move": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f109ad5a101f4f90f4a",
+        "self": "http://localhost:8000/v2/files/579f9f109ad5a101f4f90f4a/",
+        "upload": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f109ad5a101f4f90f4a"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/579f9f109ad5a101f4f90f4a/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-01T19:12:14.127000Z",
+        "date_modified": "2016-08-01T19:12:14.127000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 3,
+          "hashes": {
+            "md5": "cba4ccaa5e46eb7bc8ad6f31f207457c",
+            "sha256": "b56c758a6bcbbb672ae4d4ca12e4956c404aaaf1fff0018bf52a3bf9ec19d7d6"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: emetsger-osf-test/TEST.md",
+        "name": "TEST.md",
+        "path": "/579f9f0eb83f6901ff72292e",
+        "provider": "osfstorage",
+        "size": 83,
+        "tags": []
+      },
+      "id": "579f9f0eb83f6901ff72292e",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0eb83f6901ff72292e",
+        "download": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0eb83f6901ff72292e",
+        "info": "http://localhost:8000/v2/files/579f9f0eb83f6901ff72292e/",
+        "move": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0eb83f6901ff72292e",
+        "self": "http://localhost:8000/v2/files/579f9f0eb83f6901ff72292e/",
+        "upload": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0eb83f6901ff72292e"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/579f9f0eb83f6901ff72292e/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-01T19:12:14.146000Z",
+        "date_modified": "2016-08-01T19:12:14.146000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 3,
+          "hashes": {
+            "md5": "2a513687192279dfe64383e1ca3fe794",
+            "sha256": "551d40ea47ad245f306bb89894521240d5e1883b18f64a08c8facd71869653a8"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: emetsger-osf-test/lonesome-dove.jpeg",
+        "name": "lonesome-dove.jpeg",
+        "path": "/579f9f0e594d9002002fcffe",
+        "provider": "osfstorage",
+        "size": 71700,
+        "tags": []
+      },
+      "id": "579f9f0e594d9002002fcffe",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e594d9002002fcffe",
+        "download": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e594d9002002fcffe",
+        "info": "http://localhost:8000/v2/files/579f9f0e594d9002002fcffe/",
+        "move": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e594d9002002fcffe",
+        "self": "http://localhost:8000/v2/files/579f9f0e594d9002002fcffe/",
+        "upload": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9f0e594d9002002fcffe"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/579f9f0e594d9002002fcffe/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/56823/files/osfstorage/579f9f0c6c613b01f9d267ce/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 4
+  }
+}

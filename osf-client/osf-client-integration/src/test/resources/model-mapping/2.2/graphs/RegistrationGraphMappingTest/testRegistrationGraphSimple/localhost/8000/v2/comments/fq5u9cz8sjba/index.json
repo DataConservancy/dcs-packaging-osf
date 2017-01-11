@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "Is there any way possible to add a part to the API that allows a file to be approached by its osf.io/XXXX link? I now try to download private files, but cannot authenticate with the PAT. Having to search the node, associated files, etc, will be too tedious for users. It would be great if there were the possibility of specifying `v2/files/{node_id}` or something (where `{node_id}` = `XXXX` from `osf.io/XXXX`).\n\nIs this remotely feasible?",
+      "date_created": "2016-04-29T18:05:46.718000Z",
+      "date_modified": "2016-04-29T18:05:46.726000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "fq5u9cz8sjba",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/fq5u9cz8sjba/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1mcTV1OWN6OHNqYmE=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/fq5u9cz8sjba/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/5fukm/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

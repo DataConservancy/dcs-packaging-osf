@@ -1,0 +1,17 @@
+{
+  "data": {
+    "attributes": {
+      "name": "No license",
+      "required_fields": [
+        "year",
+        "copyrightHolders"
+      ],
+      "text": "Copyright {{year}} {{copyrightHolders}}"
+    },
+    "id": "563c1cf88c5e4a3877f9e965",
+    "links": {
+      "self": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/"
+    },
+    "type": "licenses"
+  }
+}

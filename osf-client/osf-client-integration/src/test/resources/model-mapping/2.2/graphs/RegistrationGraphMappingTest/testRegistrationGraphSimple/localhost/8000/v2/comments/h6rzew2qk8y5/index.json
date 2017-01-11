@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "I am trying to query the nodes based on date-created, but the filter does not accept shortened `iso8601` strings such as `2016-08-23`. It requires the full `2016-08-23T00:00:00` but I am trying to get the nodes created on a specific date. Am I simply doing it wrong or did I stumble on a limitation of the API?\r\n\r\n[This](http://localhost:8000/v2/nodes/?filter[tags]=psyarxiv&amp;filter[date_created]=2016-08-23T16:54:54.732000) works, but if I remove `T` and beyond it does not.\r\n",
+      "date_created": "2016-08-24T09:54:29.343000Z",
+      "date_modified": "2016-08-24T09:54:29.351000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "h6rzew2qk8y5",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/h6rzew2qk8y5/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1oNnJ6ZXcycWs4eTU=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/h6rzew2qk8y5/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/5fukm/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

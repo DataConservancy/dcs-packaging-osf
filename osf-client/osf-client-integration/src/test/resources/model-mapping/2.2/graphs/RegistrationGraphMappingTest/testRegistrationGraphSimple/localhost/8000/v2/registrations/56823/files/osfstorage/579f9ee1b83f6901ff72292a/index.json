@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Archive of OSF Storage/Project Folder Renamed/",
+        "name": "Project Folder Renamed",
+        "path": "/579f9ee1b83f6901ff72292b/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "579f9ee1b83f6901ff72292b",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9ee1b83f6901ff72292b/",
+        "info": "http://localhost:8000/v2/files/579f9ee1b83f6901ff72292b/",
+        "move": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9ee1b83f6901ff72292b/",
+        "new_folder": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9ee1b83f6901ff72292b/?kind=folder",
+        "self": "http://localhost:8000/v2/files/579f9ee1b83f6901ff72292b/",
+        "upload": "http://files.osf.io/v1/resources/56823/providers/osfstorage/579f9ee1b83f6901ff72292b/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/files/osfstorage/579f9ee1b83f6901ff72292b/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/56823/files/osfstorage/579f9ee1b83f6901ff72292a/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Archive of OSF Storage/Project Folder Renamed/",
+        "name": "Project Folder Renamed",
+        "path": "/57a95db59ad5a101f4f75b45/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "57a95db59ad5a101f4f75b45",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b45/",
+        "info": "http://localhost:8000/v2/files/57a95db59ad5a101f4f75b45/",
+        "move": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b45/",
+        "new_folder": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b45/?kind=folder",
+        "self": "http://localhost:8000/v2/files/57a95db59ad5a101f4f75b45/",
+        "upload": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b45/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/files/osfstorage/57a95db59ad5a101f4f75b45/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/5nua2/files/osfstorage/57a95db59ad5a101f4f75b44/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

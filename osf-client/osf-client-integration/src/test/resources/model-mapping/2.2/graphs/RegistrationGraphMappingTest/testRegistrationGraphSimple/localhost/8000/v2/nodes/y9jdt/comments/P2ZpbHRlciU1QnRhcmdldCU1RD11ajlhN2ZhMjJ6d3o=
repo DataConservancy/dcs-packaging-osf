@@ -1,0 +1,143 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "I've uploaded a copy of the json file for the swagger docs on the files tab. The fastest way of getting up and running again, which is not the most convenient way, is to download that and install a copy of the swagger-ui locally and point it to that file. In the meantime, I'm looking into alternatives. You won't be able to 'try it out', but you can see the list and docs.\r\n",
+        "date_created": "2016-10-26T21:01:03.161000Z",
+        "date_modified": "2016-10-26T21:01:03.169000Z",
+        "deleted": false,
+        "has_children": false,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "un28z2h3xmq3",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/un28z2h3xmq3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD11bjI4ejJoM3htcTM=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/un28z2h3xmq3/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/uj9a7fa22zwz/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "I'll see if I can get you a copy. If you have a moment, can you give me the things that you are most missing from swagger that the browseable api doesn't provide?\r\n",
+        "date_created": "2016-10-26T20:22:26.530000Z",
+        "date_modified": "2016-10-26T20:22:26.539000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "g3cd4d933bbe",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/g3cd4d933bbe/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1nM2NkNGQ5MzNiYmU=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/g3cd4d933bbe/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/uj9a7fa22zwz/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=uj9a7fa22zwz"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

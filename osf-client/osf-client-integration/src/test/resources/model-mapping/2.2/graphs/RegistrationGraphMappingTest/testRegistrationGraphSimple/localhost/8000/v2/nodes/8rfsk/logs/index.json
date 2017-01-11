@@ -1,0 +1,555 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-11T14:37:17.523000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.Study1dWriteup.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/575210ec594d900229876177/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/575210ec594d900229876177/"
+          }
+        }
+      },
+      "id": "5876431d9ad5a1020eae22b9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5876431d9ad5a1020eae22b9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_removed",
+        "date": "2017-01-11T14:36:49.222000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study1dWriteup.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/5875476a6c613b01fbac661c/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/5875476a6c613b01fbac661c/"
+          }
+        }
+      },
+      "id": "587643016c613b01fe71b500",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587643016c613b01fe71b500/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-11T14:36:18.229000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.Study4Correlations.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/575b0c8a9ad5a1020758aad5/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/575b0c8a9ad5a1020758aad5/"
+          }
+        }
+      },
+      "id": "587642e26c613b020271b472",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587642e26c613b020271b472/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_removed",
+        "date": "2017-01-11T14:06:25.533000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudy.Writeup.docx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/58756b926c613b020271b395/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/58756b926c613b020271b395/"
+          }
+        }
+      },
+      "id": "58763be1b83f6901fff8564b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58763be1b83f6901fff8564b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-11T14:06:20.816000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudy.Writeup.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/58763bd7b83f6901fdf85625/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/58763bd7b83f6901fdf85625/"
+          }
+        }
+      },
+      "id": "58763bdc9ad5a1020eae228c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58763bdc9ad5a1020eae228c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-11T14:04:50.424000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.Study1aGender.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/58763b7c594d9001fdf85f04/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/58763b7c594d9001fdf85f04/"
+          }
+        }
+      },
+      "id": "58763b82594d9001f9f85efa",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58763b82594d9001f9f85efa/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T23:17:43.796000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudy.Writeup.docx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/58756b926c613b020271b395/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/58756b926c613b020271b395/"
+          }
+        }
+      },
+      "id": "58756b976c613b01fe71b3ac",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58756b976c613b01fe71b3ac/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T20:43:28.678000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study1dWriteup.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/5875476a6c613b01fbac661c/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/5875476a6c613b01fbac661c/"
+          }
+        }
+      },
+      "id": "58754770594d9001fd01fc22",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58754770594d9001fd01fc22/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T19:07:57.689000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.Study2bWriteup.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/587531056c613b0200ac6a63/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/587531056c613b0200ac6a63/"
+          }
+        }
+      },
+      "id": "5875310d594d9001fd01fbfb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5875310d594d9001fd01fbfb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T19:07:57.484000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "8rfsk",
+            "title": "Online Supplements"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.Study1cWriteup.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/8rfsk/files/osfstorage/58753105594d9001fc01fc44/?action=download",
+            "view": "/project/8rfsk/files/osfstorage/58753105594d9001fc01fc44/"
+          }
+        }
+      },
+      "id": "5875310d9ad5a102008b13dc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5875310d9ad5a102008b13dc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8rfsk/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/8rfsk/logs/?page=4",
+    "next": "http://localhost:8000/v2/nodes/8rfsk/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/8rfsk/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 33
+  }
+}

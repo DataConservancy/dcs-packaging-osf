@@ -1,0 +1,143 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "To move something from one node to the top level of another node, you'd use the move link for the item you want to move and POST:\r\n\r\n```\r\n{\n    \"action\":  \"move\",\n    \"path\":     \"/\",\n    \"conflict\": \"replace\", \n    \"provider\": \"osfstorage\",\n    \"resource\": \"{{node_id}}\"\n}\r\n```\r\n\r\nThe path would be just a more or less unix-style path of the folder structure you'd want to move it to. Replace might not be the conflict resolution you want, but it was in the sample I copied from.\r\n",
+        "date_created": "2016-11-08T20:48:22.544000Z",
+        "date_modified": "2016-11-08T20:51:06.986000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": true,
+        "page": "node"
+      },
+      "id": "gm9fubp4skm5",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/gm9fubp4skm5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1nbTlmdWJwNHNrbTU=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/gm9fubp4skm5/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/8snn6dthqeuw/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    },
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Can you give me an example of how you want to move a file? Like \"into a subfolder on the same node\" or \"to the top level of another node\" or similar?\r\n",
+        "date_created": "2016-11-08T20:27:31.645000Z",
+        "date_modified": "2016-11-08T20:27:31.654000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "w4jcq6j33qt7",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/w4jcq6j33qt7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD13NGpjcTZqMzNxdDc=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/w4jcq6j33qt7/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/8snn6dthqeuw/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=8snn6dthqeuw"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

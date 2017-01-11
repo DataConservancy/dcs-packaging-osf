@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2015-09-29T00:13:02.884000Z",
+        "extra": {
+          "version": 4
+        },
+        "kind": "file",
+        "materialized_path": "/wcm5g",
+        "name": "home",
+        "path": "/wcm5g",
+        "size": 7952
+      },
+      "id": "wcm5g",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/wcm5g/content/",
+        "info": "http://localhost:8000/v2/wikis/wcm5g/",
+        "self": "http://localhost:8000/v2/wikis/wcm5g/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/comments/P2ZpbHRlciU1QnRhcmdldCU1RD13Y201Zw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/c47d9/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/t6f97/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

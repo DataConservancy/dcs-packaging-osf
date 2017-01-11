@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "github",
+        "node": "veyxj",
+        "path": "/",
+        "provider": "github"
+      },
+      "id": "veyxj:github",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/veyxj/providers/github/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/veyxj/providers/github/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/files/github/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "osfstorage",
+        "node": "veyxj",
+        "path": "/",
+        "provider": "osfstorage"
+      },
+      "id": "veyxj:osfstorage",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/veyxj/providers/osfstorage/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/veyxj/providers/osfstorage/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/files/osfstorage/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/veyxj/files/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

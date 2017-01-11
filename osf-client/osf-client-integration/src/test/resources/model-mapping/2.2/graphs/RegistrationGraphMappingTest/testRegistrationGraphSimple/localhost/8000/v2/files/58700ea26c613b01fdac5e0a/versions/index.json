@@ -1,0 +1,39 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "application/octet-stream",
+        "size": 2864
+      },
+      "id": "1",
+      "links": {
+        "html": "http://osf.io/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a?revision=1",
+        "self": "http://localhost:8000/v2/files/58700ea26c613b01fdac5e0a/versions/1/"
+      },
+      "type": "file_versions"
+    },
+    {
+      "attributes": {
+        "content_type": "application/octet-stream",
+        "size": 3133
+      },
+      "id": "2",
+      "links": {
+        "html": "http://osf.io/y9jdt/files/osfstorage/58700ea26c613b01fdac5e0a?revision=2",
+        "self": "http://localhost:8000/v2/files/58700ea26c613b01fdac5e0a/versions/2/"
+      },
+      "type": "file_versions"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/files/58700ea26c613b01fdac5e0a/versions/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

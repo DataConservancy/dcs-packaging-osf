@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2012-09-28T12:59:53.907000Z",
+      "family_name": "Arslan",
+      "full_name": "Ruben C. Arslan",
+      "given_name": "Ruben",
+      "locale": "en_US",
+      "middle_names": "C.",
+      "suffix": "",
+      "timezone": "Europe/Berlin"
+    },
+    "id": "dryyc",
+    "links": {
+      "html": "http://osf.io/dryyc/",
+      "profile_image": "http://secure.gravatar.com/avatar/1e7619ab3f578535fc4801cdbb44fe37?d=identicon",
+      "self": "http://localhost:8000/v2/users/dryyc/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/dryyc/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/dryyc/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/dryyc/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

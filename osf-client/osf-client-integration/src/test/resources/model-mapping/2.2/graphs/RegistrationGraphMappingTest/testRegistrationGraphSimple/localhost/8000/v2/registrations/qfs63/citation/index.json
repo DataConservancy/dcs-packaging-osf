@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        },
+        {
+          "family": "Martino",
+          "given": "James"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Data Component",
+      "type": "webpage"
+    },
+    "id": "qfs63",
+    "links": {
+      "self": "osf.io/qfs63"
+    },
+    "type": "node-citation"
+  }
+}

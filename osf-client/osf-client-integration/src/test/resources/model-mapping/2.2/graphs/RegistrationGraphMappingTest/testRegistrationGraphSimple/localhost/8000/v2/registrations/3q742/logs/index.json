@@ -1,0 +1,102 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-03-31T04:00:10.037000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3q742",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "tgzhk",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "56fca0ca8c5e4a0ef9ca9559",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/56fca0ca8c5e4a0ef9ca9559/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3q742/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3q742/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-03-16T18:01:19.541000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57188f349ad5a1035aeead0e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57188f349ad5a1035aeead0e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3q742/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/3q742/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

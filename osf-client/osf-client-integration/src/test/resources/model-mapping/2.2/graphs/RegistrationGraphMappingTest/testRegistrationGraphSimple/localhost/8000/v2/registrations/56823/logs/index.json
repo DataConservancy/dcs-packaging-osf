@@ -1,0 +1,533 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-08-01T19:10:18.944000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "James Martino",
+              "given_name": "James",
+              "id": "9vw8x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "a49gq",
+            "title": "YAC"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "579f9ee0594d9001fe2fd157",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9ee0594d9001fe2fd157/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/57jus/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/a49gq/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-08-01T19:10:18.354000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "a49gq",
+            "title": "YAC"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "579f9ee0594d9001fe2fd156",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9ee0594d9001fe2fd156/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/57jus/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/a49gq/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_file_updated",
+        "date": "2016-07-29T18:41:17.463000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "path": "/quinoa recipie.rtf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xug4a/files/s3/quinoa%20recipie.rtf/?action=download",
+            "view": "/project/xug4a/files/s3/quinoa%20recipie.rtf/"
+          }
+        }
+      },
+      "id": "579f9edf594d9001fe2fd12c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd12c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_file_added",
+        "date": "2016-07-29T18:41:01.106000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "path": "/quinoa recipie.rtf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xug4a/files/s3/quinoa%20recipie.rtf/?action=download",
+            "view": "/project/xug4a/files/s3/quinoa%20recipie.rtf/"
+          }
+        }
+      },
+      "id": "579f9edf594d9001fe2fd12b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd12b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_file_updated",
+        "date": "2016-07-29T18:39:27.311000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "path": "/docker osf build.rtf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xug4a/files/s3/docker%20osf%20build.rtf/?action=download",
+            "view": "/project/xug4a/files/s3/docker%20osf%20build.rtf/"
+          }
+        }
+      },
+      "id": "579f9edf594d9001fe2fd12a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd12a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_file_updated",
+        "date": "2016-07-29T18:35:41.477000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "path": "/docker osf build.rtf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xug4a/files/s3/docker%20osf%20build.rtf/?action=download",
+            "view": "/project/xug4a/files/s3/docker%20osf%20build.rtf/"
+          }
+        }
+      },
+      "id": "579f9edf594d9001fe2fd129",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd129/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_file_updated",
+        "date": "2016-07-29T18:33:22.491000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "path": "/docker osf build.rtf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xug4a/files/s3/docker%20osf%20build.rtf/?action=download",
+            "view": "/project/xug4a/files/s3/docker%20osf%20build.rtf/"
+          }
+        }
+      },
+      "id": "579f9edf594d9001fe2fd128",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd128/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_file_added",
+        "date": "2016-07-29T18:32:59.946000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "path": "/docker osf build.rtf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xug4a/files/s3/docker%20osf%20build.rtf/?action=download",
+            "view": "/project/xug4a/files/s3/docker%20osf%20build.rtf/"
+          }
+        }
+      },
+      "id": "579f9edf594d9001fe2fd127",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd127/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_file_added",
+        "date": "2016-07-29T18:30:32.260000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "path": "/13466033_1043016415748198_5124386205965081046_n.jpg",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xug4a/files/s3/13466033_1043016415748198_5124386205965081046_n.jpg/?action=download",
+            "view": "/project/xug4a/files/s3/13466033_1043016415748198_5124386205965081046_n.jpg/"
+          }
+        }
+      },
+      "id": "579f9edf594d9001fe2fd126",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd126/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "s3_bucket_linked",
+        "date": "2016-07-29T18:30:19.392000Z",
+        "params": {
+          "bucket": "osf",
+          "contributors": [],
+          "folder": "osf",
+          "folder_name": "osf",
+          "params_node": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "579f9edf594d9001fe2fd125",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9edf594d9001fe2fd125/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/56823/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/registrations/56823/logs/?page=7",
+    "next": "http://localhost:8000/v2/registrations/56823/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/56823/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 68
+  }
+}

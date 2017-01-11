@@ -1,0 +1,207 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-06T21:18:36.829000Z",
+        "extra": {
+          "version": 6
+        },
+        "kind": "file",
+        "materialized_path": "/934e3",
+        "name": "Typical Workflow",
+        "path": "/934e3",
+        "size": 45920
+      },
+      "id": "934e3",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/934e3/content/",
+        "info": "http://localhost:8000/v2/wikis/934e3/",
+        "self": "http://localhost:8000/v2/wikis/934e3/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD05MzRlMw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-12-05T21:29:01.463000Z",
+        "extra": {
+          "version": 5
+        },
+        "kind": "file",
+        "materialized_path": "/4b26r",
+        "name": "Examples",
+        "path": "/4b26r",
+        "size": 7168
+      },
+      "id": "4b26r",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/4b26r/content/",
+        "info": "http://localhost:8000/v2/wikis/4b26r/",
+        "self": "http://localhost:8000/v2/wikis/4b26r/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD00YjI2cg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-11-23T15:05:15.640000Z",
+        "extra": {
+          "version": 7
+        },
+        "kind": "file",
+        "materialized_path": "/wktjc",
+        "name": "Changelog",
+        "path": "/wktjc",
+        "size": 2480
+      },
+      "id": "wktjc",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/wktjc/content/",
+        "info": "http://localhost:8000/v2/wikis/wktjc/",
+        "self": "http://localhost:8000/v2/wikis/wktjc/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD13a3RqYw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-11-01T13:32:31.558000Z",
+        "extra": {
+          "version": 23
+        },
+        "kind": "file",
+        "materialized_path": "/2fx2m",
+        "name": "home",
+        "path": "/2fx2m",
+        "size": 17468
+      },
+      "id": "2fx2m",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/2fx2m/content/",
+        "info": "http://localhost:8000/v2/wikis/2fx2m/",
+        "self": "http://localhost:8000/v2/wikis/2fx2m/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0yZngybQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 4
+  }
+}

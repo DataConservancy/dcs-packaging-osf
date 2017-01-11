@@ -1,0 +1,159 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-04-18T18:08:17.867000Z",
+        "extra": {
+          "version": 19
+        },
+        "kind": "file",
+        "materialized_path": "/r7cjg",
+        "name": "Guidelines",
+        "path": "/r7cjg",
+        "size": 206208
+      },
+      "id": "r7cjg",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/r7cjg/content/",
+        "info": "http://localhost:8000/v2/wikis/r7cjg/",
+        "self": "http://localhost:8000/v2/wikis/r7cjg/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/9f6gx/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1yN2NqZw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/9f6gx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2015-10-24T18:47:12.158000Z",
+        "extra": {
+          "version": 3
+        },
+        "kind": "file",
+        "materialized_path": "/6vhqa",
+        "name": "Sample Implementations",
+        "path": "/6vhqa",
+        "size": 10272
+      },
+      "id": "6vhqa",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/6vhqa/content/",
+        "info": "http://localhost:8000/v2/wikis/6vhqa/",
+        "self": "http://localhost:8000/v2/wikis/6vhqa/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/9f6gx/comments/P2ZpbHRlciU1QnRhcmdldCU1RD02dmhxYQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/9f6gx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d9ehg/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2015-10-24T18:39:06.972000Z",
+        "extra": {
+          "version": 33
+        },
+        "kind": "file",
+        "materialized_path": "/rsn9x",
+        "name": "home",
+        "path": "/rsn9x",
+        "size": 6568
+      },
+      "id": "rsn9x",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/rsn9x/content/",
+        "info": "http://localhost:8000/v2/wikis/rsn9x/",
+        "self": "http://localhost:8000/v2/wikis/rsn9x/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/9f6gx/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1yc245eA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/9f6gx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d9ehg/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/9f6gx/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 3
+  }
+}

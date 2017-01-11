@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2014-05-27T23:15:34.503000Z",
+      "family_name": "LeBel",
+      "full_name": "Etienne P. LeBel",
+      "given_name": "Etienne",
+      "locale": "en_US",
+      "middle_names": "P.",
+      "suffix": "",
+      "timezone": "America/Toronto"
+    },
+    "id": "2z47w",
+    "links": {
+      "html": "http://osf.io/2z47w/",
+      "profile_image": "http://secure.gravatar.com/avatar/5da0d602c9141bdf4e823b3bff445785?d=identicon",
+      "self": "http://localhost:8000/v2/users/2z47w/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/2z47w/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/2z47w/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/2z47w/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

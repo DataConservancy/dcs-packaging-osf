@@ -1,0 +1,542 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-10T23:17:26.760000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudyData.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/s2r6u/files/osfstorage/587543726c613b01fdac6881/?action=download",
+            "view": "/project/s2r6u/files/osfstorage/587543726c613b01fdac6881/"
+          }
+        }
+      },
+      "id": "58756b869ad5a1020bae21ac",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58756b869ad5a1020bae21ac/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T20:26:32.714000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudyData.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/s2r6u/files/osfstorage/587543726c613b01fdac6881/?action=download",
+            "view": "/project/s2r6u/files/osfstorage/587543726c613b01fdac6881/"
+          }
+        }
+      },
+      "id": "58754378594d9001fe021a75",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58754378594d9001fe021a75/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_removed",
+        "date": "2017-01-10T20:26:05.154000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudyData.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/s2r6u/files/osfstorage/587542e2594d9001fd01fc19/?action=download",
+            "view": "/project/s2r6u/files/osfstorage/587542e2594d9001fd01fc19/"
+          }
+        }
+      },
+      "id": "5875435d594d9001f901fecf",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5875435d594d9001f901fecf/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T20:24:08.892000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/OnlineSupplement.EncodingStudyData.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/s2r6u/files/osfstorage/587542e2594d9001fd01fc19/?action=download",
+            "view": "/project/s2r6u/files/osfstorage/587542e2594d9001fd01fc19/"
+          }
+        }
+      },
+      "id": "587542e86c613b01f9ac6789",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587542e86c613b01f9ac6789/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-09T19:51:53.505000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study1aData.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/s2r6u/files/osfstorage/558aca778c5e4a549dcfb628/?action=download",
+            "view": "/project/s2r6u/files/osfstorage/558aca778c5e4a549dcfb628/"
+          }
+        }
+      },
+      "id": "5873e9d99ad5a101fb8b0f23",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5873e9d99ad5a101fb8b0f23/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-06-28T13:01:29.601000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "cos",
+            "name": "Center For Open Science"
+          },
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "577275296c613b02142cb506",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/577275296c613b02142cb506/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-06-28T13:01:14.206000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "uva",
+            "name": "University of Virginia"
+          },
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5772751a594d9002247db822",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5772751a594d9002247db822/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-06-15T02:39:36.522000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5760bfe8594d90022617f8d8",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5760bfe8594d90022617f8d8/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-14T21:03:09.160000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study2bData.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/s2r6u/files/osfstorage/56a19826594d90017e9b0cb0/?action=download",
+            "view": "/project/s2r6u/files/osfstorage/56a19826594d90017e9b0cb0/"
+          }
+        }
+      },
+      "id": "5760710d9ad5a10216cc6895",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5760710d9ad5a10216cc6895/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-06-14T21:03:09.145000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "s2r6u",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "u2mbx",
+            "title": "The Judgment Bias Task: A reliable, flexible method for assessing individual differences in social judgment biases"
+          },
+          "path": "/Study5Data.zip",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/s2r6u/files/osfstorage/5681828d8c5e4a4739506108/?action=download",
+            "view": "/project/s2r6u/files/osfstorage/5681828d8c5e4a4739506108/"
+          }
+        }
+      },
+      "id": "5760710d594d9002108b11af",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5760710d594d9002108b11af/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/s2r6u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ztdnp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/s2r6u/logs/?page=5",
+    "next": "http://localhost:8000/v2/nodes/s2r6u/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/s2r6u/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 50
+  }
+}

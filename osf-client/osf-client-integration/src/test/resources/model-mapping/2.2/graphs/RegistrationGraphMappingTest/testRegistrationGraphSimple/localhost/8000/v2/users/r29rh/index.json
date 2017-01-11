@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": false,
+      "date_registered": "2017-01-06T20:12:08.089000Z",
+      "family_name": "Brown",
+      "full_name": "Charlie Brown",
+      "given_name": "Charlie",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Etc/UTC"
+    },
+    "id": "r29rh",
+    "links": {
+      "html": "http://osf.io/r29rh/",
+      "profile_image": "http://secure.gravatar.com/avatar/bb33aea13e0a8ed73e6a6475d98fd9b8?d=identicon",
+      "self": null
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/r29rh/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/r29rh/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/r29rh/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}
