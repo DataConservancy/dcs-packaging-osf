@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        },
+        {
+          "family": "Martino",
+          "given": "James"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Test Project",
+      "type": "webpage"
+    },
+    "id": "56823",
+    "links": {
+      "self": "osf.io/56823"
+    },
+    "type": "node-citation"
+  }
+}

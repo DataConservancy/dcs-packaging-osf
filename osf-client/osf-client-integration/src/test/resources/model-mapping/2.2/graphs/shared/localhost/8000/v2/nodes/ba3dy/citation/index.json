@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Spitzer",
+          "given": "Matthew"
+        },
+        {
+          "family": "Esposito",
+          "given": "Jolene"
+        },
+        {
+          "family": "Bowman",
+          "given": "Sara D"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "OSF Institutions",
+      "type": "webpage"
+    },
+    "id": "ba3dy",
+    "links": {
+      "self": "osf.io/ba3dy"
+    },
+    "type": "node-citation"
+  }
+}

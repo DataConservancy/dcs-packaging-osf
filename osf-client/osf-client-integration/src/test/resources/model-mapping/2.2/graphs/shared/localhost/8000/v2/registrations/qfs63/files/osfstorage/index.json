@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: emetsger-dcs/",
+        "name": "Archive of GitHub: emetsger-dcs",
+        "path": "/579f9f9cb83f6901ff722930/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "579f9f9cb83f6901ff722930",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/qfs63/providers/osfstorage/579f9f9cb83f6901ff722930/",
+        "info": "http://localhost:8000/v2/files/579f9f9cb83f6901ff722930/",
+        "move": "http://files.osf.io/v1/resources/qfs63/providers/osfstorage/579f9f9cb83f6901ff722930/",
+        "new_folder": "http://files.osf.io/v1/resources/qfs63/providers/osfstorage/579f9f9cb83f6901ff722930/?kind=folder",
+        "self": "http://localhost:8000/v2/files/579f9f9cb83f6901ff722930/",
+        "upload": "http://files.osf.io/v1/resources/qfs63/providers/osfstorage/579f9f9cb83f6901ff722930/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/qfs63/files/osfstorage/579f9f9cb83f6901ff722930/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/qfs63/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/qfs63/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

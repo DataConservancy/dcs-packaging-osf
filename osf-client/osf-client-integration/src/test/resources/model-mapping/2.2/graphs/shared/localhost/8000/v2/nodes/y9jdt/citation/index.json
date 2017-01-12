@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Geiger",
+          "given": "Brian J"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "OSF Public API Feedback",
+      "type": "webpage"
+    },
+    "id": "y9jdt",
+    "links": {
+      "self": "osf.io/y9jdt"
+    },
+    "type": "node-citation"
+  }
+}

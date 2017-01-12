@@ -1,0 +1,170 @@
+{
+  "data": {
+    "attributes": {
+      "category": "project",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2014-08-12T17:22:09.236000Z",
+      "date_modified": "2017-01-10T20:52:23.119000Z",
+      "description": "The Transparency and Openness Promotion (TOP) Committee met in November 2014 to address one important element of the incentive systems - journals’ procedures and  policies for publication. The outcome of the effort is the TOP Guidelines. There are eight standards in the TOP guidelines; each move scientific communication toward greater openness.  These standards are modular, facilitating adoption in whole or in part. However, they also complement each other, in that commitment to one standard may facilitate adoption of others. Moreover, the guidelines are sensitive to barriers to openness by articulating, for example, a process for exceptions to sharing because of ethical issues, intellectual property concerns, or availability of necessary resources.",
+      "fork": false,
+      "node_license": null,
+      "preprint": true,
+      "public": true,
+      "registration": false,
+      "tags": [
+        "journals",
+        "author guidelines",
+        "reproducibility"
+      ],
+      "title": "Transparency and Openness Promotion (TOP) Guidelines"
+    },
+    "id": "9f6gx",
+    "links": {
+      "html": "http://osf.io/9f6gx/",
+      "self": "http://localhost:8000/v2/nodes/9f6gx/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/comments/P2ZpbHRlciU1QnRhcmdldCU1RD05ZjZneA==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/draft_registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/9f6gx/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "nodes"
+  }
+}

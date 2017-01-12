@@ -1,0 +1,333 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "project_registered",
+        "date": "2016-08-01T19:15:56.178000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "37a5n",
+            "title": "Software Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d8ab83f6901f6539af1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d8ab83f6901f6539af1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/37a5n/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-07-29T14:39:24.085000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "37a5n",
+            "title": "Software Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d8ab83f6901f6539af0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d8ab83f6901f6539af0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/37a5n/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-17T18:14:04.028000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "James Martino",
+              "given_name": "James",
+              "id": "9vw8x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "37a5n",
+            "title": "Software Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d8ab83f6901f6539aef",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d8ab83f6901f6539aef/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/37a5n/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_removed",
+        "date": "2016-03-17T18:13:46.833000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "David Jim Martino",
+              "given_name": "David",
+              "id": "qubhz",
+              "middle_names": "Jim",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "37a5n",
+            "title": "Software Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d8ab83f6901f6539aee",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d8ab83f6901f6539aee/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/37a5n/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-17T18:13:18.753000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "David Jim Martino",
+              "given_name": "David",
+              "id": "qubhz",
+              "middle_names": "Jim",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "37a5n",
+            "title": "Software Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d8ab83f6901f6539aed",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d8ab83f6901f6539aed/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/37a5n/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-03-16T18:01:46.326000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "37a5n",
+            "title": "Software Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d8ab83f6901f6539aec",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d8ab83f6901f6539aec/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/37a5n/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/x32t4/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 6
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2017-01-06T20:12:08.281000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Brown",
+              "full_name": "Charlie Brown",
+              "given_name": "Charlie",
+              "id": "r29rh",
+              "middle_names": "",
+              "unregistered_name": "Charlie Brown"
+            }
+          ],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "586ffa189ad5a102028b05b9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586ffa189ad5a102028b05b9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/01-idea-preferences.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/01-idea-preferences.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/01-idea-preferences.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bc8",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bc8/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/02-browse-repos.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/02-browse-repos.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/02-browse-repos.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bc9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bc9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/03-checkstyle-repo.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/03-checkstyle-repo.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/03-checkstyle-repo.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bca",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bca/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/04-checkstyle-plugin-configuration.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/04-checkstyle-plugin-configuration.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/04-checkstyle-plugin-configuration.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bcb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bcb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/05-configure-checkstyle-rules.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/05-configure-checkstyle-rules.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/05-configure-checkstyle-rules.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bcc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bcc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/06-configure-checkstyle-suppressions.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/06-configure-checkstyle-suppressions.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/06-configure-checkstyle-suppressions.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bcd",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bcd/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/07-checkstyle-config-validated.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/07-checkstyle-config-validated.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/07-checkstyle-config-validated.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bce",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bce/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_added",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/src/site/images/idea/08-checkstyle-activate-config.png",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/08-checkstyle-activate-config.png/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/src/site/images/idea/08-checkstyle-activate-config.png/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bcf",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bcf/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_updated",
+        "date": "2016-12-14T01:26:12.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "maven/checkstyle-resources/README.md",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/veyxj/files/github/maven/checkstyle-resources/README.md/?action=download&ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4",
+            "view": "/project/veyxj/files/github/maven/checkstyle-resources/README.md/?ref=6a6ee66a7a22a522d68bbd550f2d304910ff96a4"
+          }
+        }
+      },
+      "id": "58509fbab83f69020af66bd0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58509fbab83f69020af66bd0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/veyxj/logs/?page=26",
+    "next": "http://localhost:8000/v2/nodes/veyxj/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/veyxj/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 253
+  }
+}

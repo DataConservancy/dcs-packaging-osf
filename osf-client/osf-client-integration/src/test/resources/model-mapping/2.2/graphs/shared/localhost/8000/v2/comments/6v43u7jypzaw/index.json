@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "Hi all, I just opened an issue [0] regarding the spec-compliance of the top-level links object when representing paginated results.  The `meta` element in the `links` object should probably be a top-level member of the response (i.e. a sibling of `data` and `links`) rather than a member of `links`.  Thanks!\n\n\n[0]: http://github.com/CenterForOpenScience/osf.io/issues/5653",
+      "date_created": "2016-05-13T19:45:24.057000Z",
+      "date_modified": "2016-05-13T19:45:24.063000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "6v43u7jypzaw",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/6v43u7jypzaw/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD02djQzdTdqeXB6YXc=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/6v43u7jypzaw/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/gb6f3/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

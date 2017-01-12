@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:56.465000Z",
+        "date_modified": "2016-03-17T15:21:56.465000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "51e8bdf6facf802bd1538ea89635c0f0",
+            "sha256": "24873ada837b1067d869ed157c7a65dd6ecec847e8d3f736c49a4b5457a3044b"
+          }
+        },
+        "guid": "kuvcz",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: osf-test/README.md",
+        "name": "README.md",
+        "path": "/56eacb949ad5a101b23fe6c9",
+        "provider": "osfstorage",
+        "size": 10,
+        "tags": []
+      },
+      "id": "56eacb949ad5a101b23fe6c9",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb949ad5a101b23fe6c9",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb949ad5a101b23fe6c9",
+        "info": "http://localhost:8000/v2/files/56eacb949ad5a101b23fe6c9/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb949ad5a101b23fe6c9",
+        "self": "http://localhost:8000/v2/files/56eacb949ad5a101b23fe6c9/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb949ad5a101b23fe6c9"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1rdXZjeg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb949ad5a101b23fe6c9/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:57.315000Z",
+        "date_modified": "2016-03-17T15:21:57.315000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "64a29652c1af5b819161d68b4e563e2a",
+            "sha256": "b336d30c7d725b54bd235166cb0f19054075e93cb89d2831403ae1ad9e6cbd4e"
+          }
+        },
+        "guid": "dw27g",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: osf-test/Screen Shot 2016-03-04 at 2.21.20 PM.png",
+        "name": "Screen Shot 2016-03-04 at 2.21.20 PM.png",
+        "path": "/56eacb959ad5a101b540b715",
+        "provider": "osfstorage",
+        "size": 3368079,
+        "tags": []
+      },
+      "id": "56eacb959ad5a101b540b715",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb959ad5a101b540b715",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb959ad5a101b540b715",
+        "info": "http://localhost:8000/v2/files/56eacb959ad5a101b540b715/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb959ad5a101b540b715",
+        "self": "http://localhost:8000/v2/files/56eacb959ad5a101b540b715/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb959ad5a101b540b715"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1kdzI3Zw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb959ad5a101b540b715/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb926c613b01a5650b8d/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

@@ -1,0 +1,478 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2015-09-29T00:13:12.946000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "t6f97",
+            "title": "Fork of OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5609d7988c5e4a386b0ad530",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5609d7988c5e4a386b0ad530/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/c47d9/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2015-09-29T00:13:02.884000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "wcm5g",
+          "params_node": {
+            "id": "t6f97",
+            "title": "Fork of OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "4"
+        }
+      },
+      "id": "5609d78e8c5e4a386f0ad545",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5609d78e8c5e4a386f0ad545/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/c47d9/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "node_forked",
+        "date": "2015-09-29T00:10:58.694000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5609d7128c5e4a38710ad5e0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5609d7128c5e4a38710ad5e0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/c47d9/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2015-09-22T18:33:05.380000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "571894609ad5a1035af35b8a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/571894609ad5a1035af35b8a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2015-09-22T00:34:26.247000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "571894609ad5a1035af35b89",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/571894609ad5a1035af35b89/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2015-09-21T23:44:52.475000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "571894609ad5a1035af35b88",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/571894609ad5a1035af35b88/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/c47d9/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2015-09-16T19:53:52.016000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "571894609ad5a1035af35b87",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/571894609ad5a1035af35b87/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2015-09-16T19:52:04.628000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "571894609ad5a1035af35b86",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/571894609ad5a1035af35b86/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2015-09-03T13:24:46.128000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "571894609ad5a1035af35b85",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/571894609ad5a1035af35b85/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2015-09-02T19:37:41.645000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9jdt",
+            "title": "OSF Public API Feedback"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "571894609ad5a1035af35b84",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/571894609ad5a1035af35b84/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/t6f97/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/typ46/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/t6f97/logs/?page=3",
+    "next": "http://localhost:8000/v2/nodes/t6f97/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/t6f97/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 26
+  }
+}

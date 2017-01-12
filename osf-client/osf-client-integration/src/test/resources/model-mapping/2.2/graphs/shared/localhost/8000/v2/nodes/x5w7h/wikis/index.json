@@ -1,0 +1,351 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-10T18:23:58.607000Z",
+        "extra": {
+          "version": 10
+        },
+        "kind": "file",
+        "materialized_path": "/7sy7y",
+        "name": "03 Supplemental material",
+        "path": "/7sy7y",
+        "size": 16640
+      },
+      "id": "7sy7y",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/7sy7y/content/",
+        "info": "http://localhost:8000/v2/wikis/7sy7y/",
+        "self": "http://localhost:8000/v2/wikis/7sy7y/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/comments/P2ZpbHRlciU1QnRhcmdldCU1RD03c3k3eQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-08-05T14:20:31.233000Z",
+        "extra": {
+          "version": 7
+        },
+        "kind": "file",
+        "materialized_path": "/9rnyz",
+        "name": "00 Steps to Earn a Prize",
+        "path": "/9rnyz",
+        "size": 140
+      },
+      "id": "9rnyz",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/9rnyz/content/",
+        "info": "http://localhost:8000/v2/wikis/9rnyz/",
+        "self": "http://localhost:8000/v2/wikis/9rnyz/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/comments/P2ZpbHRlciU1QnRhcmdldCU1RD05cm55eg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-05-02T20:24:15.245000Z",
+        "extra": {
+          "version": 68
+        },
+        "kind": "file",
+        "materialized_path": "/kugth",
+        "name": "home",
+        "path": "/kugth",
+        "size": 2376
+      },
+      "id": "kugth",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/kugth/content/",
+        "info": "http://localhost:8000/v2/wikis/kugth/",
+        "self": "http://localhost:8000/v2/wikis/kugth/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1rdWd0aA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2015-10-28T15:25:43.410000Z",
+        "extra": {
+          "version": 2
+        },
+        "kind": "file",
+        "materialized_path": "/z9hns",
+        "name": "05 Journal Engagement",
+        "path": "/z9hns",
+        "size": 11520
+      },
+      "id": "z9hns",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/z9hns/content/",
+        "info": "http://localhost:8000/v2/wikis/z9hns/",
+        "self": "http://localhost:8000/v2/wikis/z9hns/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/comments/P2ZpbHRlciU1QnRhcmdldCU1RD16OWhucw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2015-10-28T13:58:25.515000Z",
+        "extra": {
+          "version": 42
+        },
+        "kind": "file",
+        "materialized_path": "/3g7rp",
+        "name": "01 FAQ",
+        "path": "/3g7rp",
+        "size": 66504
+      },
+      "id": "3g7rp",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/3g7rp/content/",
+        "info": "http://localhost:8000/v2/wikis/3g7rp/",
+        "self": "http://localhost:8000/v2/wikis/3g7rp/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0zZzdycA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2015-10-28T12:55:47.086000Z",
+        "extra": {
+          "version": 14
+        },
+        "kind": "file",
+        "materialized_path": "/9pn5s",
+        "name": "04 Eligibility Requirements",
+        "path": "/9pn5s",
+        "size": 9736
+      },
+      "id": "9pn5s",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/9pn5s/content/",
+        "info": "http://localhost:8000/v2/wikis/9pn5s/",
+        "self": "http://localhost:8000/v2/wikis/9pn5s/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/comments/P2ZpbHRlciU1QnRhcmdldCU1RD05cG41cw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2015-10-12T18:51:08.810000Z",
+        "extra": {
+          "version": 2
+        },
+        "kind": "file",
+        "materialized_path": "/8d9bg",
+        "name": "02 Departures from Preregistered Plan",
+        "path": "/8d9bg",
+        "size": 7576
+      },
+      "id": "8d9bg",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/8d9bg/content/",
+        "info": "http://localhost:8000/v2/wikis/8d9bg/",
+        "self": "http://localhost:8000/v2/wikis/8d9bg/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/comments/P2ZpbHRlciU1QnRhcmdldCU1RD04ZDliZw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x5w7h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/x5w7h/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 7
+  }
+}

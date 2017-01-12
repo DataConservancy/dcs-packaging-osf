@@ -1,0 +1,185 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-09T04:36:07.822000Z",
+        "date_modified": "2016-08-09T04:36:07.822000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "eaab694b97da9c057a00cfeacc74ff70",
+            "sha256": "5eef0061611303acb552813df88d4ac9c441d9318e9bacb004d3c9acac037476"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Amazon S3: osf (US Standard)/13466033_1043016415748198_5124386205965081046_n.jpg",
+        "name": "13466033_1043016415748198_5124386205965081046_n.jpg",
+        "path": "/57a95db76c613b01efd162cb",
+        "provider": "osfstorage",
+        "size": 32215,
+        "tags": []
+      },
+      "id": "57a95db76c613b01efd162cb",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162cb",
+        "download": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162cb",
+        "info": "http://localhost:8000/v2/files/57a95db76c613b01efd162cb/",
+        "move": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162cb",
+        "self": "http://localhost:8000/v2/files/57a95db76c613b01efd162cb/",
+        "upload": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162cb"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/57a95db76c613b01efd162cb/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-09T04:36:07.270000Z",
+        "date_modified": "2016-08-09T04:36:07.270000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 4,
+          "hashes": {
+            "md5": "5c1285f5958beeb75e25bd98f684bbf9",
+            "sha256": "7036b6cb400f5cbbb8e5fd5c67211909eb811d99b42b3879d421568d0bc962e4"
+          }
+        },
+        "guid": "hys9s",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Amazon S3: osf (US Standard)/docker osf build.rtf",
+        "name": "docker osf build.rtf",
+        "path": "/57a95db7b83f6901f4539c4c",
+        "provider": "osfstorage",
+        "size": 1438,
+        "tags": []
+      },
+      "id": "57a95db7b83f6901f4539c4c",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7b83f6901f4539c4c",
+        "download": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7b83f6901f4539c4c",
+        "info": "http://localhost:8000/v2/files/57a95db7b83f6901f4539c4c/",
+        "move": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7b83f6901f4539c4c",
+        "self": "http://localhost:8000/v2/files/57a95db7b83f6901f4539c4c/",
+        "upload": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7b83f6901f4539c4c"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1oeXM5cw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/57a95db7b83f6901f4539c4c/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-09T04:36:07.452000Z",
+        "date_modified": "2016-08-09T04:36:07.452000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "8507318eb87d1fc83c50e82e5589e1d9",
+            "sha256": "c7177a151759eee54c87f18c8ec9f5a1026181a303144f8d0bc9407dbec9bad6"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Amazon S3: osf (US Standard)/quinoa recipie.rtf",
+        "name": "quinoa recipie.rtf",
+        "path": "/57a95db76c613b01efd162c9",
+        "provider": "osfstorage",
+        "size": 4372,
+        "tags": []
+      },
+      "id": "57a95db76c613b01efd162c9",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162c9",
+        "download": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162c9",
+        "info": "http://localhost:8000/v2/files/57a95db76c613b01efd162c9/",
+        "move": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162c9",
+        "self": "http://localhost:8000/v2/files/57a95db76c613b01efd162c9/",
+        "upload": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db76c613b01efd162c9"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/57a95db76c613b01efd162c9/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/5nua2/files/osfstorage/57a95db56c613b01edd1623d/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 3
+  }
+}

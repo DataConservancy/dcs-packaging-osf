@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        },
+        {
+          "family": "Martino",
+          "given": "James"
+        },
+        {
+          "family": "Brown",
+          "given": "Charlie"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Data Component",
+      "type": "webpage"
+    },
+    "id": "veyxj",
+    "links": {
+      "self": "osf.io/veyxj"
+    },
+    "type": "node-citation"
+  }
+}

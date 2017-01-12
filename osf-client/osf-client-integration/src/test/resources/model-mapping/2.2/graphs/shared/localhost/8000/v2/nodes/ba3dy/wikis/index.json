@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-12-21T14:42:44.084000Z",
+        "extra": {
+          "version": 33
+        },
+        "kind": "file",
+        "materialized_path": "/uvc5w",
+        "name": "home",
+        "path": "/uvc5w",
+        "size": 17764
+      },
+      "id": "uvc5w",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/uvc5w/content/",
+        "info": "http://localhost:8000/v2/wikis/uvc5w/",
+        "self": "http://localhost:8000/v2/wikis/uvc5w/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/comments/P2ZpbHRlciU1QnRhcmdldCU1RD11dmM1dw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/ba3dy/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

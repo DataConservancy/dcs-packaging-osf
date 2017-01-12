@@ -1,0 +1,174 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Archive of Amazon S3: osf (US Standard)/",
+        "name": "Archive of Amazon S3: osf (US Standard)",
+        "path": "/57a95db56c613b01edd1623d/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "57a95db56c613b01edd1623d",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db56c613b01edd1623d/",
+        "info": "http://localhost:8000/v2/files/57a95db56c613b01edd1623d/",
+        "move": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db56c613b01edd1623d/",
+        "new_folder": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db56c613b01edd1623d/?kind=folder",
+        "self": "http://localhost:8000/v2/files/57a95db56c613b01edd1623d/",
+        "upload": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db56c613b01edd1623d/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/files/osfstorage/57a95db56c613b01edd1623d/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Archive of GitHub: emetsger-osf-test/",
+        "name": "Archive of GitHub: emetsger-osf-test",
+        "path": "/57a95db7594d9001f6913b94/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "57a95db7594d9001f6913b94",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7594d9001f6913b94/",
+        "info": "http://localhost:8000/v2/files/57a95db7594d9001f6913b94/",
+        "move": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7594d9001f6913b94/",
+        "new_folder": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7594d9001f6913b94/?kind=folder",
+        "self": "http://localhost:8000/v2/files/57a95db7594d9001f6913b94/",
+        "upload": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db7594d9001f6913b94/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/files/osfstorage/57a95db7594d9001f6913b94/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Archive of OSF Storage/",
+        "name": "Archive of OSF Storage",
+        "path": "/57a95db59ad5a101f4f75b44/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "57a95db59ad5a101f4f75b44",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b44/",
+        "info": "http://localhost:8000/v2/files/57a95db59ad5a101f4f75b44/",
+        "move": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b44/",
+        "new_folder": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b44/?kind=folder",
+        "self": "http://localhost:8000/v2/files/57a95db59ad5a101f4f75b44/",
+        "upload": "http://files.osf.io/v1/resources/5nua2/providers/osfstorage/57a95db59ad5a101f4f75b44/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/files/osfstorage/57a95db59ad5a101f4f75b44/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/5nua2/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 3
+  }
+}

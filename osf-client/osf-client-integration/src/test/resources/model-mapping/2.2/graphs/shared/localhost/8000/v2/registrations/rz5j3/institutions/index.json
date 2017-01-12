@@ -1,0 +1,14 @@
+{
+  "data": [],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/rz5j3/institutions/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 0
+  }
+}

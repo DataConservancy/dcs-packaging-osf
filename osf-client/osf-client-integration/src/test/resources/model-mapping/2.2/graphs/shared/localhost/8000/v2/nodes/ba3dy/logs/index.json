@@ -1,0 +1,520 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-10T20:42:28.827000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "path": "/COS_2016_Poster.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ba3dy/files/osfstorage/587547286c613b01fcac65ea/?action=download",
+            "view": "/project/ba3dy/files/osfstorage/587547286c613b01fcac65ea/"
+          }
+        }
+      },
+      "id": "587547346c613b01ffac68cd",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587547346c613b01ffac68cd/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-23T05:10:36.895000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "3asbt",
+          "params_node": {
+            "id": "vpyq4",
+            "title": "Technical Requirements"
+          },
+          "params_project": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "preprint_provider": null,
+          "version": "5"
+        }
+      },
+      "id": "585cb1cc9ad5a1020aba6800",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585cb1cc9ad5a1020aba6800/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-21T14:42:44.084000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "uvc5w",
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "33"
+        }
+      },
+      "id": "585a94e49ad5a10204ba64cf",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585a94e49ad5a10204ba64cf/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "googledrive_file_added",
+        "date": "2016-12-20T16:27:06.574000Z",
+        "params": {
+          "contributors": [],
+          "folder": "/Community/OSF%20for%20Institutions/OSF%20Institutions%20SHARED",
+          "params_node": {
+            "id": "vpyq4",
+            "title": "Technical Requirements"
+          },
+          "params_project": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "path": "COS_onepager_2016-11.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/vpyq4/files/googledrive/COS_onepager_2016-11.pdf/?action=download",
+            "view": "/project/vpyq4/files/googledrive/COS_onepager_2016-11.pdf/"
+          }
+        }
+      },
+      "id": "58595bda9ad5a10208ba640c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58595bda9ad5a10208ba640c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vpyq4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-12-20T16:26:44.543000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "path": "/OSF4I_OverviewSlides.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ba3dy/files/osfstorage/57235fec6c613b01e44b56cf/?action=download",
+            "view": "/project/ba3dy/files/osfstorage/57235fec6c613b01e44b56cf/"
+          }
+        }
+      },
+      "id": "58595bc46c613b01f9e99ffe",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58595bc46c613b01f9e99ffe/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-12-20T16:25:33.023000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "path": "/OSFInstitutions.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ba3dy/files/osfstorage/58174b7b594d9001ec357a7e/?action=download",
+            "view": "/project/ba3dy/files/osfstorage/58174b7b594d9001ec357a7e/"
+          }
+        }
+      },
+      "id": "58595b7d594d9001fda443eb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58595b7d594d9001fda443eb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-13T19:14:00.882000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "b8kwc",
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "32"
+        }
+      },
+      "id": "58504878b83f690208f66a31",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58504878b83f690208f66a31/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-13T18:50:32.970000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "v94qg",
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "31"
+        }
+      },
+      "id": "585042f96c613b021400aa54",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585042f96c613b021400aa54/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-13T18:45:06.826000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "zs4ca",
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "30"
+        }
+      },
+      "id": "585041b29ad5a10046ba0ede",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585041b29ad5a10046ba0ede/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-13T18:44:21.022000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "44r2q",
+          "params_node": {
+            "id": "ba3dy",
+            "title": "OSF Institutions"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "29"
+        }
+      },
+      "id": "58504185b83f69020ef66a2f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58504185b83f69020ef66a2f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ba3dy/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8kcwm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/ba3dy/logs/?page=11",
+    "next": "http://localhost:8000/v2/nodes/ba3dy/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/ba3dy/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 110
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Showalter",
+          "given": "Megan"
+        },
+        {
+          "family": "Fiehn",
+          "given": "Oliver"
+        },
+        {
+          "family": "Iorns",
+          "given": "Elizabeth"
+        },
+        {
+          "family": "Denis",
+          "given": "Alex"
+        },
+        {
+          "family": "Perfito",
+          "given": "Nicole"
+        },
+        {
+          "family": "Errington",
+          "given": "Timothy M"
+        },
+        {
+          "family": "Cajka",
+          "given": "Tomas"
+        },
+        {
+          "family": "Hatakeyama",
+          "given": "Jason"
+        },
+        {
+          "family": "Vandervorst",
+          "given": "Kacey"
+        },
+        {
+          "family": "Carraway",
+          "given": "Kermit L"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Study 16: Replication of Ward et al., 2010 (Cancer Cell)",
+      "type": "webpage"
+    },
+    "id": "8l4ea",
+    "links": {
+      "self": "osf.io/8l4ea"
+    },
+    "type": "node-citation"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "data": {
+    "attributes": {
+      "name": "Open-Ended Registration",
+      "schema": {
+        "description": "You will be asked to provide a narrative summary of what is contained in your project. There is no minimum character length. This registration form is not a valid submission for the Pre-registration Prize.",
+        "name": "Open-Ended Registration",
+        "pages": [
+          {
+            "id": "page1",
+            "questions": [
+              {
+                "description": "Provide a narrative summary of what is contained in this registration, or how it differs from prior registrations.",
+                "format": "textarea",
+                "nav": "Summary",
+                "qid": "summary",
+                "title": "Summary",
+                "type": "string"
+              }
+            ],
+            "title": "Summary"
+          }
+        ],
+        "title": "Open-Ended Registration",
+        "version": 2
+      },
+      "schema_version": 2
+    },
+    "id": "564d31db8c5e4a7c9694b2be",
+    "links": {
+      "self": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/"
+    },
+    "type": "metaschemas"
+  }
+}

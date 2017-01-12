@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Crusoe",
+          "given": "Michael R"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Fork of OSF Public API Feedback",
+      "type": "webpage"
+    },
+    "id": "t6f97",
+    "links": {
+      "self": "osf.io/t6f97"
+    },
+    "type": "node-citation"
+  }
+}

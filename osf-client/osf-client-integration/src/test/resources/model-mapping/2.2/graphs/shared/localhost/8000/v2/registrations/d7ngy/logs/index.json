@@ -1,0 +1,485 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "project_registered",
+        "date": "2016-08-01T19:15:56.141000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad8",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad8/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-07-29T14:39:24.043000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad7",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_repo_linked",
+        "date": "2016-07-27T15:35:27.210000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "dcs",
+          "github_user": "emetsger",
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad6",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_node_authorized",
+        "date": "2016-07-27T15:35:20.900000Z",
+        "params": {
+          "contributors": [],
+          "folder": null,
+          "folder_name": null,
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "addon_added",
+        "date": "2016-07-27T15:35:13.310000Z",
+        "params": {
+          "addon": "GitHub",
+          "contributors": [],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad4",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad4/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-17T18:14:03.947000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "James Martino",
+              "given_name": "James",
+              "id": "9vw8x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad3",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_removed",
+        "date": "2016-03-17T18:13:46.758000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "David Jim Martino",
+              "given_name": "David",
+              "id": "qubhz",
+              "middle_names": "Jim",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad2",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad2/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-17T18:13:18.713000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "David Jim Martino",
+              "given_name": "David",
+              "id": "qubhz",
+              "middle_names": "Jim",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-03-16T18:00:31.859000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "veyxj",
+            "title": "Data Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57a95d89b83f6901f6539ad0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a95d89b83f6901f6539ad0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/d7ngy/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 9
+  }
+}
