@@ -1,0 +1,111 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-07-20T18:45:31.637000Z",
+        "extra": {
+          "version": 4
+        },
+        "kind": "file",
+        "materialized_path": "/5t9xm",
+        "name": "home",
+        "path": "/5t9xm",
+        "size": 1364
+      },
+      "id": "5t9xm",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/5t9xm/content/",
+        "info": "http://localhost:8000/v2/wikis/5t9xm/",
+        "self": "http://localhost:8000/v2/wikis/5t9xm/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/comments/P2ZpbHRlciU1QnRhcmdldCU1RD01dDl4bQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-07-20T17:41:16.080000Z",
+        "extra": {
+          "version": 2
+        },
+        "kind": "file",
+        "materialized_path": "/23tm4",
+        "name": "Another project wiki page",
+        "path": "/23tm4",
+        "size": 124
+      },
+      "id": "23tm4",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/23tm4/content/",
+        "info": "http://localhost:8000/v2/wikis/23tm4/",
+        "self": "http://localhost:8000/v2/wikis/23tm4/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0yM3RtNA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/5nua2/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

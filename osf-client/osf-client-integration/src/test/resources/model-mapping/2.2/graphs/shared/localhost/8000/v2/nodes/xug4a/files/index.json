@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "github",
+        "node": "xug4a",
+        "path": "/",
+        "provider": "github"
+      },
+      "id": "xug4a:github",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/xug4a/providers/github/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/xug4a/providers/github/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/files/github/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "osfstorage",
+        "node": "xug4a",
+        "path": "/",
+        "provider": "osfstorage"
+      },
+      "id": "xug4a:osfstorage",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/files/osfstorage/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/xug4a/files/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2017-01-06T20:12:08.317000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Brown",
+              "full_name": "Charlie Brown",
+              "given_name": "Charlie",
+              "id": "r29rh",
+              "middle_names": "",
+              "unregistered_name": "Charlie Brown"
+            }
+          ],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "586ffa189ad5a102028b05ba",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586ffa189ad5a102028b05ba/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_registered",
+        "date": "2016-08-09T04:56:36.504000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57a96284594d9001f2913c01",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57a96284594d9001f2913c01/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_registered",
+        "date": "2016-08-01T19:15:56.158000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "579f9fec9ad5a101f5f90d30",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579f9fec9ad5a101f5f90d30/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-07-29T14:39:23.998000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "579b6a9b594d9001fa87deea",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/579b6a9b594d9001fa87deea/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-17T18:14:03.991000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "James Martino",
+              "given_name": "James",
+              "id": "9vw8x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "56eaf3eb9ad5a101b33fe741",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/56eaf3eb9ad5a101b33fe741/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_removed",
+        "date": "2016-03-17T18:13:46.800000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "David Jim Martino",
+              "given_name": "David",
+              "id": "qubhz",
+              "middle_names": "Jim",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "56eaf3da9ad5a101b13fe728",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/56eaf3da9ad5a101b13fe728/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-17T18:13:18.734000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Martino",
+              "full_name": "David Jim Martino",
+              "given_name": "David",
+              "id": "qubhz",
+              "middle_names": "Jim",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "56eaf3be594d9001c0bb8eca",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/56eaf3be594d9001c0bb8eca/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-03-16T18:01:19.541000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "56e99f6f9ad5a101ae3fe69d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/56e99f6f9ad5a101ae3fe69d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/xmnkz/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 8
+  }
+}

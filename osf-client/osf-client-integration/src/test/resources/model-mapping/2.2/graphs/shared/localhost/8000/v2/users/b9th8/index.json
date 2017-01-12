@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2014-06-01T22:50:27.047000Z",
+      "family_name": "Suchow",
+      "full_name": "Jordan Suchow",
+      "given_name": "Jordan",
+      "locale": "en_US",
+      "middle_names": "W",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "b9th8",
+    "links": {
+      "html": "http://osf.io/b9th8/",
+      "profile_image": "http://secure.gravatar.com/avatar/607be22cd6cdfb03c4ad0155936278a0?d=identicon",
+      "self": "http://localhost:8000/v2/users/b9th8/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/b9th8/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/b9th8/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/b9th8/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

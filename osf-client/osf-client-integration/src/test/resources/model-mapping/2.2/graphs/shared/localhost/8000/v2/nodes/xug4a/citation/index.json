@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        },
+        {
+          "family": "Martino",
+          "given": "James"
+        },
+        {
+          "family": "Brown",
+          "given": "Charlie"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Test Project",
+      "type": "webpage"
+    },
+    "id": "xug4a",
+    "links": {
+      "self": "osf.io/xug4a"
+    },
+    "type": "node-citation"
+  }
+}

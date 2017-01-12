@@ -1,0 +1,803 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "analysis",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-08-01T19:10:18.354000Z",
+        "date_modified": "2016-08-01T19:15:56.205000Z",
+        "date_registered": "2016-08-09T04:35:22.363000Z",
+        "description": "Yet Another Component",
+        "embargo_end_date": null,
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            "Elliot Metsger",
+            "all rights reserved."
+          ],
+          "year": "2016"
+        },
+        "pending_embargo_approval": false,
+        "pending_registration_approval": false,
+        "pending_withdrawal": false,
+        "preprint": false,
+        "public": true,
+        "registered_meta": {
+          "summary": {
+            "comments": [],
+            "extra": [],
+            "value": "test"
+          }
+        },
+        "registration": true,
+        "registration_supplement": "Open-Ended Registration",
+        "tags": [],
+        "title": "YAC",
+        "withdrawal_justification": null,
+        "withdrawn": false
+      },
+      "id": "rz5j3",
+      "links": {
+        "html": "http://osf.io/rz5j3/",
+        "self": "http://localhost:8000/v2/registrations/rz5j3/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1yejVqMw==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/a49gq/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rz5j3/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "registrations"
+    },
+    {
+      "attributes": {
+        "category": "software",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-03-16T18:01:46.326000Z",
+        "date_modified": "2016-08-01T19:15:56.178000Z",
+        "date_registered": "2016-08-09T04:35:22.187000Z",
+        "description": null,
+        "embargo_end_date": null,
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            "Elliot Metsger",
+            "all rights reserved."
+          ],
+          "year": "2016"
+        },
+        "pending_embargo_approval": false,
+        "pending_registration_approval": false,
+        "pending_withdrawal": false,
+        "preprint": false,
+        "public": true,
+        "registered_meta": {
+          "summary": {
+            "comments": [],
+            "extra": [],
+            "value": "test"
+          }
+        },
+        "registration": true,
+        "registration_supplement": "Open-Ended Registration",
+        "tags": [],
+        "title": "Software Component",
+        "withdrawal_justification": null,
+        "withdrawn": false
+      },
+      "id": "x32t4",
+      "links": {
+        "html": "http://osf.io/x32t4/",
+        "self": "http://localhost:8000/v2/registrations/x32t4/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/comments/P2ZpbHRlciU1QnRhcmdldCU1RD14MzJ0NA==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/37a5n/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/x32t4/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "registrations"
+    },
+    {
+      "attributes": {
+        "category": "other",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-03-16T18:01:19.541000Z",
+        "date_modified": "2016-08-01T19:15:56.158000Z",
+        "date_registered": "2016-08-09T04:35:22.029000Z",
+        "description": null,
+        "embargo_end_date": null,
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            "Elliot Metsger",
+            "all rights reserved."
+          ],
+          "year": "2016"
+        },
+        "pending_embargo_approval": false,
+        "pending_registration_approval": false,
+        "pending_withdrawal": false,
+        "preprint": false,
+        "public": true,
+        "registered_meta": {
+          "summary": {
+            "comments": [],
+            "extra": [],
+            "value": "test"
+          }
+        },
+        "registration": true,
+        "registration_supplement": "Open-Ended Registration",
+        "tags": [],
+        "title": "Other Component",
+        "withdrawal_justification": null,
+        "withdrawn": false
+      },
+      "id": "mgjch",
+      "links": {
+        "html": "http://osf.io/mgjch/",
+        "self": "http://localhost:8000/v2/registrations/mgjch/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1tZ2pjaA==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/mgjch/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "registrations"
+    },
+    {
+      "attributes": {
+        "category": "data",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-03-16T18:00:31.859000Z",
+        "date_modified": "2016-08-01T19:15:56.141000Z",
+        "date_registered": "2016-08-09T04:35:21.819000Z",
+        "description": null,
+        "embargo_end_date": null,
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            "Elliot Metsger",
+            "all rights reserved."
+          ],
+          "year": "2016"
+        },
+        "pending_embargo_approval": false,
+        "pending_registration_approval": false,
+        "pending_withdrawal": false,
+        "preprint": false,
+        "public": true,
+        "registered_meta": {
+          "summary": {
+            "comments": [],
+            "extra": [],
+            "value": "test"
+          }
+        },
+        "registration": true,
+        "registration_supplement": "Open-Ended Registration",
+        "tags": [],
+        "title": "Data Component",
+        "withdrawal_justification": null,
+        "withdrawn": false
+      },
+      "id": "d7ngy",
+      "links": {
+        "html": "http://osf.io/d7ngy/",
+        "self": "http://localhost:8000/v2/registrations/d7ngy/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1kN25neQ==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/veyxj/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/5nua2/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/d7ngy/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "registrations"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/5nua2/children/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 4
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Other Component",
+      "type": "webpage"
+    },
+    "id": "3q742",
+    "links": {
+      "self": "osf.io/3q742"
+    },
+    "type": "node-citation"
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:38.905000Z",
+        "date_modified": "2016-03-17T15:21:38.905000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "a26d640961bf98d4e0fcb4112bd8f2ae",
+            "sha256": "d320c0c679fd4b04f09de92c0855bf64655e1f9ae26d9cdb832ee9b571203bbd"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Elliot/Fitzroy & Cerro Torre.jpg",
+        "name": "Fitzroy & Cerro Torre.jpg",
+        "path": "/56eacb82594d9001c6bb8d3d",
+        "provider": "osfstorage",
+        "size": 31195846,
+        "tags": []
+      },
+      "id": "56eacb82594d9001c6bb8d3d",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c6bb8d3d",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c6bb8d3d",
+        "info": "http://localhost:8000/v2/files/56eacb82594d9001c6bb8d3d/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c6bb8d3d",
+        "self": "http://localhost:8000/v2/files/56eacb82594d9001c6bb8d3d/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c6bb8d3d"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb82594d9001c6bb8d3d/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:40.224000Z",
+        "date_modified": "2016-03-17T15:21:40.224000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 2,
+          "hashes": {
+            "md5": "91c0954937a1642298c0e26bf63fee09",
+            "sha256": "76d32182164f95a296c98468b035c6ff47b28842c26f4c7194229d2bef7a2bf5"
+          }
+        },
+        "guid": "bh48k",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Elliot/Glacier Grey Mirador.jpg",
+        "name": "Glacier Grey Mirador.jpg",
+        "path": "/56eacb84b83f6901b9e90fc8",
+        "provider": "osfstorage",
+        "size": 16969689,
+        "tags": []
+      },
+      "id": "56eacb84b83f6901b9e90fc8",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb84b83f6901b9e90fc8",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb84b83f6901b9e90fc8",
+        "info": "http://localhost:8000/v2/files/56eacb84b83f6901b9e90fc8/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb84b83f6901b9e90fc8",
+        "self": "http://localhost:8000/v2/files/56eacb84b83f6901b9e90fc8/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb84b83f6901b9e90fc8"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1iaDQ4aw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb84b83f6901b9e90fc8/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:38.058000Z",
+        "date_modified": "2016-03-17T15:21:38.058000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "91d45c15b0112e8e036e9a4b57e664a3",
+            "sha256": "16937f4bae36463ed4045e4e16a3161941aa28a6ca12574ad1b3d553a01d3f3b"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Elliot/Moonset over Glacier Grey.jpg",
+        "name": "Moonset over Glacier Grey.jpg",
+        "path": "/56eacb82594d9001c0bb8e7d",
+        "provider": "osfstorage",
+        "size": 45308397,
+        "tags": []
+      },
+      "id": "56eacb82594d9001c0bb8e7d",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c0bb8e7d",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c0bb8e7d",
+        "info": "http://localhost:8000/v2/files/56eacb82594d9001c0bb8e7d/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c0bb8e7d",
+        "self": "http://localhost:8000/v2/files/56eacb82594d9001c0bb8e7d/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb82594d9001c0bb8e7d"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb82594d9001c0bb8e7d/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:49.893000Z",
+        "date_modified": "2016-03-17T15:21:49.893000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "398346eecc97e1c15c64356f906faed7",
+            "sha256": "f3a6085fd130a58d60d5a7a22f2007960e96c1fbfb2c597ec92d5f11581e2753"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Elliot/Penguin Bros.jpg",
+        "name": "Penguin Bros.jpg",
+        "path": "/56eacb8d6c613b01a4650dba",
+        "provider": "osfstorage",
+        "size": 20448851,
+        "tags": []
+      },
+      "id": "56eacb8d6c613b01a4650dba",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb8d6c613b01a4650dba",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb8d6c613b01a4650dba",
+        "info": "http://localhost:8000/v2/files/56eacb8d6c613b01a4650dba/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb8d6c613b01a4650dba",
+        "self": "http://localhost:8000/v2/files/56eacb8d6c613b01a4650dba/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb8d6c613b01a4650dba"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb8d6c613b01a4650dba/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:41.494000Z",
+        "date_modified": "2016-03-17T15:21:41.494000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "ff3fc12182611de71c5fa21348c40d1f",
+            "sha256": "547ac11ce56b4f722084b4bf5f95fb7a698c6ee7d8f4cc68b450a5311ada65c0"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Elliot/Staring Contest.jpg",
+        "name": "Staring Contest.jpg",
+        "path": "/56eacb859ad5a101b23fe6c7",
+        "provider": "osfstorage",
+        "size": 10887155,
+        "tags": []
+      },
+      "id": "56eacb859ad5a101b23fe6c7",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb859ad5a101b23fe6c7",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb859ad5a101b23fe6c7",
+        "info": "http://localhost:8000/v2/files/56eacb859ad5a101b23fe6c7/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb859ad5a101b23fe6c7",
+        "self": "http://localhost:8000/v2/files/56eacb859ad5a101b23fe6c7/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb859ad5a101b23fe6c7"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb859ad5a101b23fe6c7/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:35.528000Z",
+        "date_modified": "2016-03-17T15:21:35.528000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "d0a6bab417b75ae4260090ed4ace421c",
+            "sha256": "ddaf3a18fcbee8cc7f07036f70721ec33b37a3d7fdb7d4795a663c66e964c7e6"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Elliot/The Cuernos del Paine.jpg",
+        "name": "The Cuernos del Paine.jpg",
+        "path": "/56eacb7f6c613b01a9650b08",
+        "provider": "osfstorage",
+        "size": 27018561,
+        "tags": []
+      },
+      "id": "56eacb7f6c613b01a9650b08",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb7f6c613b01a9650b08",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb7f6c613b01a9650b08",
+        "info": "http://localhost:8000/v2/files/56eacb7f6c613b01a9650b08/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb7f6c613b01a9650b08",
+        "self": "http://localhost:8000/v2/files/56eacb7f6c613b01a9650b08/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb7f6c613b01a9650b08"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb7f6c613b01a9650b08/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:52.302000Z",
+        "date_modified": "2016-03-17T15:21:52.302000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "b6252bec835db50e33e8f0c6425cfbe8",
+            "sha256": "b2ae0a7e072ccd0e3357649d32a333bc12253c3b7479d015a863f6c9e5ce0b14"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Elliot/pmglacier.jpg",
+        "name": "pmglacier.jpg",
+        "path": "/56eacb90594d9001c5bbbc82",
+        "provider": "osfstorage",
+        "size": 16051201,
+        "tags": []
+      },
+      "id": "56eacb90594d9001c5bbbc82",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb90594d9001c5bbbc82",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb90594d9001c5bbbc82",
+        "info": "http://localhost:8000/v2/files/56eacb90594d9001c5bbbc82/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb90594d9001c5bbbc82",
+        "self": "http://localhost:8000/v2/files/56eacb90594d9001c5bbbc82/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb90594d9001c5bbbc82"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb90594d9001c5bbbc82/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb76594d9001c5bbbc81/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 7
+  }
+}

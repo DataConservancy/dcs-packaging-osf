@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 2,
+        "date_created": "2016-10-30T15:16:09.096000Z",
+        "date_modified": "2016-10-30T16:19:20.874000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 4,
+          "hashes": {
+            "md5": "f327df29def869ae536ae6480acc035f",
+            "sha256": "d9bafe7f5b36bc0f2496277769971aa6331c6ad6cc9617d2b77d04890c134024"
+          }
+        },
+        "guid": "3egfe",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Get+counts+of+nodes+with+more+than+one+file+from+tags.ipynb",
+        "name": "Get+counts+of+nodes+with+more+than+one+file+from+tags.ipynb",
+        "path": "/58160eb9594d9001ed357733",
+        "provider": "osfstorage",
+        "size": 6025,
+        "tags": [
+          "apiv2",
+          "example script"
+        ]
+      },
+      "id": "58160eb9594d9001ed357733",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58160eb9594d9001ed357733",
+        "download": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58160eb9594d9001ed357733",
+        "info": "http://localhost:8000/v2/files/58160eb9594d9001ed357733/",
+        "move": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58160eb9594d9001ed357733",
+        "self": "http://localhost:8000/v2/files/58160eb9594d9001ed357733/",
+        "upload": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58160eb9594d9001ed357733"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0zZWdmZQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/58160eb9594d9001ed357733/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-10-26T20:36:56.297000Z",
+        "date_modified": "2016-10-26T20:36:56.297000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 9,
+          "hashes": {
+            "md5": "f306a1e447dd43819fcc17a345badbdc",
+            "sha256": "ed9d7a02d03ebddf3ceccc7289b798d8bfbe5d01bab7a427e232a708fb84c347"
+          }
+        },
+        "guid": "c2v2t",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/osf-v2-api-95.json",
+        "name": "osf-v2-api-95.json",
+        "path": "/581113e8b83f6901e542c234",
+        "provider": "osfstorage",
+        "size": 758019,
+        "tags": []
+      },
+      "id": "581113e8b83f6901e542c234",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/581113e8b83f6901e542c234",
+        "download": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/581113e8b83f6901e542c234",
+        "info": "http://localhost:8000/v2/files/581113e8b83f6901e542c234/",
+        "move": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/581113e8b83f6901e542c234",
+        "self": "http://localhost:8000/v2/files/581113e8b83f6901e542c234/",
+        "upload": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/581113e8b83f6901e542c234"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1jMnYydA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/581113e8b83f6901e542c234/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 2,
+        "date_created": "2017-01-06T21:39:46.271000Z",
+        "date_modified": "2017-01-06T21:41:55.872000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "17b036520985109b35cae2256daf27b6",
+            "sha256": "114f50f1645a0c75497cdad8279d58b20437dd59d42555ccb8d9ebad95ec537b"
+          }
+        },
+        "guid": "b4fk7",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/typical osf workflow wiki examples.py",
+        "name": "typical osf workflow wiki examples.py",
+        "path": "/58700ea26c613b01fdac5e0a",
+        "provider": "osfstorage",
+        "size": 3133,
+        "tags": []
+      },
+      "id": "58700ea26c613b01fdac5e0a",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58700ea26c613b01fdac5e0a",
+        "download": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58700ea26c613b01fdac5e0a",
+        "info": "http://localhost:8000/v2/files/58700ea26c613b01fdac5e0a/",
+        "move": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58700ea26c613b01fdac5e0a",
+        "self": "http://localhost:8000/v2/files/58700ea26c613b01fdac5e0a/",
+        "upload": "http://files.osf.io/v1/resources/y9jdt/providers/osfstorage/58700ea26c613b01fdac5e0a"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1iNGZrNw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/58700ea26c613b01fdac5e0a/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 3
+  }
+}

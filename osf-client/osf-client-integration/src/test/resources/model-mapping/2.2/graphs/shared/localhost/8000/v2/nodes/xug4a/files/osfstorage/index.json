@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Project Folder Renamed/",
+        "name": "Project Folder Renamed",
+        "path": "/56e99fb7594d9001c3bb8bed/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "56e99fb7594d9001c3bb8bed",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fb7594d9001c3bb8bed/",
+        "info": "http://localhost:8000/v2/files/56e99fb7594d9001c3bb8bed/",
+        "move": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fb7594d9001c3bb8bed/",
+        "new_folder": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fb7594d9001c3bb8bed/?kind=folder",
+        "self": "http://localhost:8000/v2/files/56e99fb7594d9001c3bb8bed/",
+        "upload": "http://files.osf.io/v1/resources/xug4a/providers/osfstorage/56e99fb7594d9001c3bb8bed/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/files/osfstorage/56e99fb7594d9001c3bb8bed/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xug4a/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/xug4a/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

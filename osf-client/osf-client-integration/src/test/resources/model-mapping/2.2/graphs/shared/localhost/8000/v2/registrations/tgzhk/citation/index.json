@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Test Project",
+      "type": "webpage"
+    },
+    "id": "tgzhk",
+    "links": {
+      "self": "osf.io/tgzhk"
+    },
+    "type": "node-citation"
+  }
+}

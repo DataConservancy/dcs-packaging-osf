@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2016-04-07T20:13:05.955000Z",
+      "family_name": "Booth",
+      "full_name": "Abram Booth",
+      "given_name": "Abram",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/Detroit"
+    },
+    "id": "345bg",
+    "links": {
+      "html": "http://osf.io/345bg/",
+      "profile_image": "http://secure.gravatar.com/avatar/c625088ca28b2fd38e5883930224fd26?d=identicon",
+      "self": "http://localhost:8000/v2/users/345bg/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/345bg/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/345bg/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/345bg/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

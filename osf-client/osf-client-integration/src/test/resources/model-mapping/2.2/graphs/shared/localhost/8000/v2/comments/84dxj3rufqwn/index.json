@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "If you want to subscribe to notifications of comments, reply to this and I will add you to the project. Then you can go to the project settings to subscribe. This will give you emails when we're doing things like breaking changes of the API.",
+      "date_created": "2016-05-11T15:09:15.040000Z",
+      "date_modified": "2016-05-11T15:09:15.048000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "84dxj3rufqwn",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/84dxj3rufqwn/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD04NGR4ajNydWZxd24=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/84dxj3rufqwn/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/typ46/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

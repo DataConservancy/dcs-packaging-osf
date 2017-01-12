@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        },
+        {
+          "family": "Martino",
+          "given": "James"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Software Component",
+      "type": "webpage"
+    },
+    "id": "g43ba",
+    "links": {
+      "self": "osf.io/g43ba"
+    },
+    "type": "node-citation"
+  }
+}

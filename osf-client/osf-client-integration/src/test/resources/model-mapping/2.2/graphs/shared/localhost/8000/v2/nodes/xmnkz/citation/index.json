@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        },
+        {
+          "family": "Martino",
+          "given": "James"
+        },
+        {
+          "family": "Brown",
+          "given": "Charlie"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Other Component",
+      "type": "webpage"
+    },
+    "id": "xmnkz",
+    "links": {
+      "self": "osf.io/xmnkz"
+    },
+    "type": "node-citation"
+  }
+}

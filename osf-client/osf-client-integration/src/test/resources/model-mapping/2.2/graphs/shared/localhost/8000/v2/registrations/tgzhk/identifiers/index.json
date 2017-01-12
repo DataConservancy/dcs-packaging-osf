@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "doi",
+        "value": "10.17605/OSF.IO/TGZHK"
+      },
+      "id": "579b8a35594d9001fa2fccf9",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/579b8a35594d9001fa2fccf9/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    },
+    {
+      "attributes": {
+        "category": "ark",
+        "value": "c7605/osf.io/tgzhk"
+      },
+      "id": "579b8a35594d9001fa2fccfa",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/579b8a35594d9001fa2fccfa/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/tgzhk/identifiers/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

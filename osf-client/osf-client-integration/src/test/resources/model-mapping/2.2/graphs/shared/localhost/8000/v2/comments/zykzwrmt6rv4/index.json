@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "Swagger documentation is down, so all documentation is through the [Browsable API](http://localhost:8000/v2/). We're looking into either getting it working again or providing the most important parts of that documentation in another way.\r\n",
+      "date_created": "2016-10-24T13:33:58.355000Z",
+      "date_modified": "2016-10-24T13:33:58.401000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "zykzwrmt6rv4",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/zykzwrmt6rv4/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD16eWt6d3JtdDZydjQ=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/zykzwrmt6rv4/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/typ46/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

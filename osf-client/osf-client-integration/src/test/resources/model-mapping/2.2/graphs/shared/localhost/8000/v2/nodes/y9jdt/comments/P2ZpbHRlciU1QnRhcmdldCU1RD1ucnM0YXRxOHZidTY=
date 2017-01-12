@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "Not a problem. Happy to hear it was easily fixed. Thanks for the prompt responses time and again Brian. I will be visiting COS in Nov. Hope to meet you then! I'll buy you a beer for your patience. :-)\r\n",
+        "date_created": "2016-08-25T08:00:42.771000Z",
+        "date_modified": "2016-08-25T08:00:42.779000Z",
+        "deleted": false,
+        "has_children": false,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "n9esmh3jqr5x",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/n9esmh3jqr5x/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1uOWVzbWgzanFyNXg=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/n9esmh3jqr5x/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/nrs4atq8vbu6/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5fukm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=nrs4atq8vbu6"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

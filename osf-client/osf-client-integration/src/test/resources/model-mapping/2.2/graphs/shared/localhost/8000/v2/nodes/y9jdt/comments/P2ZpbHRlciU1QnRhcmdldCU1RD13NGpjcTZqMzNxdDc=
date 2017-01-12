@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "I'm trying to move a file to a node regardless of whether it's sub or not. Pretty much specify a file id (osf.io/xxxx) that has to moved/copied to a node id (osf.io/xxxx again). So it can be both a child, a parent, or unrelated node (as long as write access is available).\r\n",
+        "date_created": "2016-11-08T20:41:45.166000Z",
+        "date_modified": "2016-11-08T20:41:45.175000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "ha35yuchf2f7",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/ha35yuchf2f7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1oYTM1eXVjaGYyZjc=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/ha35yuchf2f7/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/w4jcq6j33qt7/",
+              "meta": {
+                "type": "comments"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5fukm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=w4jcq6j33qt7"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

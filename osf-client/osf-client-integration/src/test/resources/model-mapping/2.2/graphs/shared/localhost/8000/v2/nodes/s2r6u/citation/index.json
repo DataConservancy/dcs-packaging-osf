@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Axt",
+          "given": "Jordan"
+        },
+        {
+          "family": "Nosek",
+          "given": "Brian A"
+        },
+        {
+          "family": "Nguyen",
+          "given": "Helen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Data",
+      "type": "webpage"
+    },
+    "id": "s2r6u",
+    "links": {
+      "self": "osf.io/s2r6u"
+    },
+    "type": "node-citation"
+  }
+}

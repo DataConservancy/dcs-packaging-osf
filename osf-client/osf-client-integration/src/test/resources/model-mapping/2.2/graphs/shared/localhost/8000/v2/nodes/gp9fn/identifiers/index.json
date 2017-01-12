@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "doi",
+        "value": "10.17605/OSF.IO/GP9FN"
+      },
+      "id": "586d53ab594d9001f901ec6a",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/586d53ab594d9001f901ec6a/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/gp9fn/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    },
+    {
+      "attributes": {
+        "category": "ark",
+        "value": "c7605/osf.io/gp9fn"
+      },
+      "id": "586d53ab594d9001f901ec6b",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/586d53ab594d9001f901ec6b/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/gp9fn/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/gp9fn/identifiers/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

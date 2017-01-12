@@ -1,0 +1,14 @@
+{
+  "data": [],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/x32t4/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 0
+  }
+}

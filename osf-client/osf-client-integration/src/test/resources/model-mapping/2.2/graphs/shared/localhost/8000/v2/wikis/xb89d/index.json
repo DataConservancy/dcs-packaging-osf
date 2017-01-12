@@ -1,0 +1,50 @@
+{
+  "data": {
+    "attributes": {
+      "content_type": "text/markdown",
+      "current_user_can_comment": false,
+      "date_modified": "2016-07-20T18:45:31.637000Z",
+      "extra": {
+        "version": 4
+      },
+      "kind": "file",
+      "materialized_path": "/xb89d",
+      "name": "home",
+      "path": "/xb89d",
+      "size": 1364
+    },
+    "id": "xb89d",
+    "links": {
+      "download": "http://localhost:8000/v2/wikis/xb89d/content/",
+      "info": "http://localhost:8000/v2/wikis/xb89d/",
+      "self": "http://localhost:8000/v2/wikis/xb89d/"
+    },
+    "relationships": {
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/comments/P2ZpbHRlciU1QnRhcmdldCU1RD14Yjg5ZA==",
+            "meta": {}
+          }
+        }
+      },
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xug4a/",
+            "meta": {}
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/gb6f3/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "wikis"
+  }
+}

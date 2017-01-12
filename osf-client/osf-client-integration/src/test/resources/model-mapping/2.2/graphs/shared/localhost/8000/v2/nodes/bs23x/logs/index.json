@@ -1,0 +1,575 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2017-01-05T16:41:56.491000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Broek",
+              "full_name": "Jantine",
+              "given_name": "Jantine",
+              "id": "vb6yg",
+              "middle_names": "A.C.",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "586e77546c613b01feac5dce",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586e77546c613b01feac5dce/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-19T16:12:15.338000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Contaxis",
+              "full_name": "Nicole Contaxis",
+              "given_name": "Nicole",
+              "id": "2bwyk",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585806df6c613b0042b19cba",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585806df6c613b0042b19cba/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T13:40:47.650000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chongo",
+              "full_name": "Beatriz Manuel Chongo",
+              "given_name": "Beatriz",
+              "id": "cz3qd",
+              "middle_names": "Manuel",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584ab45f9ad5a1020a0cd417",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab45f9ad5a1020a0cd417/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T13:40:23.683000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Otsuji",
+              "full_name": "Reid Otsuji",
+              "given_name": "Reid",
+              "id": "v9bej",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584ab447b83f6901f4ad2716",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab447b83f6901f4ad2716/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T13:40:00.637000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Dennis",
+              "full_name": "Tim Dennis",
+              "given_name": "Tim",
+              "id": "gq8pb",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584ab4306c613b02015e453a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab4306c613b02015e453a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T13:39:24.107000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Minor",
+              "full_name": "David Minor",
+              "given_name": "David",
+              "id": "8ey9c",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584ab40c594d9001fc5604dc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab40c594d9001fc5604dc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T13:38:27.900000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Noble",
+              "full_name": "Daniel Noble",
+              "given_name": "Daniel",
+              "id": "afsqg",
+              "middle_names": "W.A.",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584ab3d3594d9001fb560600",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab3d3594d9001fb560600/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T13:37:50.401000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Nakagawa",
+              "full_name": "Shinichi Nakagawa",
+              "given_name": "Shinichi",
+              "id": "wnyrk",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584ab3ae6c613b01fc5e4524",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab3ae6c613b01fc5e4524/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-02T20:03:23.771000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Johnson",
+              "full_name": "Andrew Johnson",
+              "given_name": "Andrew",
+              "id": "t5r3q",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5841d38b594d900207c9f9c7",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5841d38b594d900207c9f9c7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-01T18:11:41.087000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Potterbusch",
+              "full_name": "Megan Potterbusch",
+              "given_name": "Megan",
+              "id": "7jwh6",
+              "middle_names": "R",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "bs23x",
+            "title": "COS Ambassadors"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584067dd9ad5a102051359fa",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584067dd9ad5a102051359fa/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/bs23x/logs/?page=15",
+    "next": "http://localhost:8000/v2/nodes/bs23x/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/bs23x/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 142
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "data": {
+    "attributes": {
+      "category": "analysis",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2016-08-01T19:10:18.354000Z",
+      "date_modified": "2016-08-01T19:10:18.944000Z",
+      "date_registered": "2016-08-01T19:11:27.991000Z",
+      "description": "Yet Another Component",
+      "embargo_end_date": null,
+      "fork": false,
+      "node_license": {
+        "copyright_holders": [
+          "Elliot Metsger",
+          "all rights reserved."
+        ],
+        "year": "2016"
+      },
+      "pending_embargo_approval": false,
+      "pending_registration_approval": false,
+      "pending_withdrawal": false,
+      "preprint": false,
+      "public": true,
+      "registered_meta": {
+        "summary": {
+          "comments": [],
+          "extra": [],
+          "value": "Another Registration."
+        }
+      },
+      "registration": true,
+      "registration_supplement": "Open-Ended Registration",
+      "tags": [],
+      "title": "YAC",
+      "withdrawal_justification": null,
+      "withdrawn": false
+    },
+    "id": "57jus",
+    "links": {
+      "html": "http://osf.io/57jus/",
+      "self": "http://localhost:8000/v2/registrations/57jus/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/comments/P2ZpbHRlciU1QnRhcmdldCU1RD01N2p1cw==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e965/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/registrations/57jus/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/56823/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_by": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/gb6f3/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_from": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/a49gq/",
+            "meta": {}
+          }
+        }
+      },
+      "registration_schema": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/56823/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/57jus/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "registrations"
+  }
+}

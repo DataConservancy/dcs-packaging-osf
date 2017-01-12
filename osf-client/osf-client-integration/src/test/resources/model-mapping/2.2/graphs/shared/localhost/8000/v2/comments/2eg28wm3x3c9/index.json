@@ -1,0 +1,66 @@
+{
+  "data": {
+    "attributes": {
+      "can_edit": false,
+      "content": "Does version 2 of the API support file uploads to osf_storage, and if so, can you post an example?\r\n",
+      "date_created": "2017-01-04T19:58:27.702000Z",
+      "date_modified": "2017-01-04T19:58:27.710000Z",
+      "deleted": false,
+      "has_children": true,
+      "has_report": false,
+      "is_abuse": false,
+      "is_ham": false,
+      "modified": false,
+      "page": "node"
+    },
+    "id": "2eg28wm3x3c9",
+    "links": {
+      "self": "http://localhost:8000/v2/comments/2eg28wm3x3c9/"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {}
+          }
+        }
+      },
+      "replies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0yZWcyOHdtM3gzYzk=",
+            "meta": {}
+          }
+        }
+      },
+      "reports": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/comments/2eg28wm3x3c9/reports/",
+            "meta": {}
+          }
+        }
+      },
+      "target": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/y9jdt/",
+            "meta": {
+              "type": "nodes"
+            }
+          }
+        }
+      },
+      "user": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/b9th8/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "comments"
+  }
+}

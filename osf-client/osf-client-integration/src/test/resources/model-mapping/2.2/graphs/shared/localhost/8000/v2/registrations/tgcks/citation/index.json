@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "M",
+          "given": "Elliot S"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Software Component",
+      "type": "webpage"
+    },
+    "id": "tgcks",
+    "links": {
+      "self": "osf.io/tgcks"
+    },
+    "type": "node-citation"
+  }
+}

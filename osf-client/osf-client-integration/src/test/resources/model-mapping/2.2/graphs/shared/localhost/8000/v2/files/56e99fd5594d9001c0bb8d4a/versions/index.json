@@ -1,0 +1,27 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "application/octet-stream",
+        "size": 18509871
+      },
+      "id": "1",
+      "links": {
+        "html": "http://osf.io/xug4a/files/osfstorage/56e99fd5594d9001c0bb8d4a?revision=1",
+        "self": "http://localhost:8000/v2/files/56e99fd5594d9001c0bb8d4a/versions/1/"
+      },
+      "type": "file_versions"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/files/56e99fd5594d9001c0bb8d4a/versions/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}
