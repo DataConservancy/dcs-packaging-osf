@@ -569,4 +569,100 @@ public abstract class NodeBase {
     public void setNode_license(final NodeLicense node_license) {
         this.node_license = node_license;
     }
+
+    /**
+     *
+     * @return
+     */
+    public List<Institution> getAffiliated_institutions() {
+        return affiliated_institutions;
+    }
+
+    /**
+     *
+     * @param affiliated_institutions
+     */
+    public void setAffiliated_institutions(final List<Institution> affiliated_institutions) {
+        this.affiliated_institutions = affiliated_institutions;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getForks() {
+        return forks;
+    }
+
+    /**
+     *
+     * @param forks
+     */
+    public void setForks(final String forks) {
+        this.forks = forks;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getCitation() {
+        return citation;
+    }
+
+    /**
+     *
+     * @param citation
+     */
+    public void setCitation(final String citation) {
+        this.citation = citation;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getRegistration_schema() {
+        return registration_schema;
+    }
+
+    /**
+     *
+     * @param registration_schema
+     */
+    public void setRegistration_schema(final String registration_schema) {
+        this.registration_schema = registration_schema;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getIdentifiers() {
+        return identifiers;
+    }
+
+    /**
+     *
+     * @param identifiers
+     */
+    public void setIdentifiers(final String identifiers) {
+        this.identifiers = identifiers;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getComments() {
+        return comments;
+    }
+
+    /**
+     *
+     * @param comments
+     */
+    public void setComments(final String comments) {
+        this.comments = comments;
+    }
 }

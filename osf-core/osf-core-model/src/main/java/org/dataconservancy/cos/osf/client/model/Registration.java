@@ -333,4 +333,20 @@ public class Registration extends NodeBase  {
     public RegistrationMetadata getRegistrationMetadataSummary() {
         return registered_meta.get("summary");
     }
+
+    /**
+     *
+     * @return
+     */
+    public String getLinked_registrations() {
+        return linked_registrations;
+    }
+
+    /**
+     *
+     * @param linked_registrations
+     */
+    public void setLinked_registrations(final String linked_registrations) {
+        this.linked_registrations = linked_registrations;
+    }
 }
