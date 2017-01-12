@@ -46,6 +46,15 @@ import static org.mockserver.model.HttpRequest.request;
 
 /**
  * Test fixture providing a {@link MockServerClient} used to configure HTTP expectations.
+ * <p>
+ * Starts two HTTP servers that typically listen on port 8000 and 7777, respectively the OSF API and Waterbutler
+ * endpoints.  The HTTP server does not use the HTTP request URI to respond to requests.  Instead, it expects a
+ * {@link #X_RESPONSE_RESOURCE HTTP header} to carry a resource path that is used for the response.
+ * </p>
+ * <p>
+ * An OkHttp {@code Interceptor} is used to add the header to the request, and a MockServer callback is used to resolve
+ * the resource path in the header to a HTTP response.
+ * </p>
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
@@ -54,8 +63,11 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(AbstractMockServerTest.class);
 
     /**
-     * Custom HTTP header sent by a test request, used to tell the {@code MockServer} what JSON document
-     * to return.  The values are interpreted as classpath resources.
+     * Custom HTTP header sent by a test HTTP request, used to tell the {@code MockServer} what JSON document
+     * to return.  Header values are interpreted as classpath resources.
+     *
+     * @see RecursiveInterceptor
+     * @see NodeResponseCallback
      */
     public static final String X_RESPONSE_RESOURCE = "X-Response-Resource";
 
@@ -85,9 +97,6 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         final Resource configuration = loader.getResource(getOsfServiceConfigurationResource());
         assertTrue("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'",
                 configuration.exists());
-
-// assertNotNull("Unable to resolve configuration resource: '" + getOsfServiceConfigurationResource() + "'",
-// configuration);
 
         mockServer = ClientAndServer.startClientAndServer(
                 osfConfigurer.configure(
@@ -138,19 +147,21 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         wbMockServer.stop();
     }
 
-    public static String resourceBase(final TestName testName, final String jsonRoot) {
+    /**
+     * Constructs a resource path by appending the supplied {@code prefix} to the name of the test class and the name
+     * of the test method.  For example, given a prefix of {@code /prefix/}, a test named {@code FooTest}, and a test
+     * method named {@code myTestMethod}, the resource path {@code /prefix/FooTest/myTestMethod/} would be returned.
+     * Note the returned resource path will always end with a forward slash.  If the supplied prefix is absolute (e.g.
+     * begins with a forward slash), the returned resource path with also be absolute.
+     *
+     * @param testName used to obtain the name of the test method
+     * @param testClass used to obtain the name of the test class
+     * @param prefix prefixes the resource path
+     * @return the resource path ending with a forward slash
+     */
+    public static String resourcePathFrom(final TestName testName, final Class testClass, final String prefix) {
         assertNotNull(testName);
-        final StringBuilder base = new StringBuilder(jsonRoot);
-        base.append(NodeTest.class.getSimpleName()).append("/");
-        base.append(testName.getMethodName()).append("/");
-
-        LOG.trace("Test resource base path: {}", base);
-        return base.toString();
-    }
-
-    public static String resourceBase(final TestName testName, final Class testClass, final String jsonRoot) {
-        assertNotNull(testName);
-        final StringBuilder base = new StringBuilder(jsonRoot);
+        final StringBuilder base = new StringBuilder(prefix);
         base.append(testClass.getSimpleName()).append("/");
         base.append(testName.getMethodName()).append("/");
 
@@ -158,7 +169,15 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         return base.toString();
     }
 
-    public static String httpUriToPath(final URI uri) {
+    /**
+     * Constructs a resource path from a HTTP uri.  Given a uri {@code http://localhost:8000/v2/nodes/abc123/}, this
+     * method returns a resource path {@code localhost/8000/v2/nodes/abc123}.  Note the absence of forward slashes at
+     * the beginning and end of the resource path.
+     *
+     * @param uri the URI used to form a resource path
+     * @return the resource path, with no preceeding or trailing slashes
+     */
+    public static String resourcePathFrom(final URI uri) {
         if (!uri.getScheme().startsWith("http")) {
             throw new IllegalArgumentException("Only operates on http or https schemes." +
                     "  Scheme was: " + uri.getScheme());
@@ -209,27 +228,57 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
 
         private static final Logger LOG = LoggerFactory.getLogger(RecursiveInterceptor.class);
 
-        private final TestName testName;
-
-        private final Class testClass;
-
         private ResponseResolver resolver;
 
+        /**
+         * Constructs an interceptor that will look for test resources under the resource path formed by the class
+         * name and the test method name.  This constructor hard-codes a prefix of {@code /json/} to the resource path
+         * formed by the test method and test class; effectively this constructor is the same as calling
+         * {@link RecursiveInterceptor#RecursiveInterceptor(TestName, Class, String)} with the string {@code /json/}.
+         * <p>
+         * Classpath resources will be resolved using the {@code testClass} class loader.
+         * </p>
+         *
+         * @param testName used to obtain the test method being executed
+         * @param testClass the test being executed
+         * @see {@link #RecursiveInterceptor(TestName, Class, String)}
+         */
+        @Deprecated
         public RecursiveInterceptor(final TestName testName, final Class testClass) {
             this(testName, testClass, "/json/");
         }
 
+        /**
+         * Constructs an interceptor that will look for test resources under the resource path formed by the class
+         * name and the test method name.  The string {@code jsonRoot} will be prefixed to the resource path formed by
+         * the test method and test class.
+         * <p>
+         * Classpath resources will be resolved using the {@code testClass} class loader.
+         * </p>
+         *
+         * @param testName used to obtain the test method being executed
+         * @param testClass the test being executed
+         * @param jsonRoot string prefixed to the resource path
+         */
         public RecursiveInterceptor(final TestName testName, final Class testClass, final String jsonRoot) {
-            this.testName = testName;
-            this.testClass = testClass;
+            this(resourcePathFrom(testName, testClass, jsonRoot), testClass);
+        }
 
-            resolver = (name, req) -> {
+        /**
+         * Constructs an interceptor that will look for test resources under the resource path specified by
+         * {@code resourceBase}.
+         * <p>
+         * Classpath resources will be resolved using the {@code testClass} class loader.
+         * </p>
+         *
+         * @param resourceBase the base classpath resource used to resolve responses
+         * @param testClass the test being executed
+         */
+        public RecursiveInterceptor(final String resourceBase, final Class<?> testClass) {
+            resolver = (req) -> {
                 // http://localhost:8000/v2/nodes/v8x57/files/osfstorage/ ->
                 // localhost/8000/v2/nodes/v8x57/files/osfstorage/
-                final String requestPath = httpUriToPath(req) + "/";
-
-                // /json/NodeTest/testGetNodeObjectResolution/
-                final String fsBase = resourceBase(testName, testClass, jsonRoot);
+                final String requestPath = resourcePathFrom(req) + "/";
 
                 // If there's a "page" query parameter, use it to return 'index-0?.json'
                 if (req.getQuery() != null && req.getQuery().contains("page=")) {
@@ -238,7 +287,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                     final int page = Integer.parseInt(req.getQuery().substring(startIndex, startIndex + 1));
                     final String jsonFile = String.format("index-0%s.json", page);
                     LOG.trace("Request carried 'page' parameter, using JSON resource {}", jsonFile);
-                    return fsBase + requestPath + jsonFile;
+                    return resourceBase + requestPath + jsonFile;
                 } else {
                     LOG.trace("  Request did not carry 'page' parameter.");
                 }
@@ -246,7 +295,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                 // If there is no "page" query parameter, and the request ends in a "/", and there is
                 // no 'index.json' file, then see if there is an 'index-01.json' file, and return that.
 
-                String jsonPath = fsBase + requestPath + "index.json";
+                String jsonPath = resourceBase + requestPath + "index.json";
                 if (req.getPath().endsWith("/")) {
                     // /json/NodeTest/testGetNodeObjectResolution/localhost/8000/nodes/v8x57/files/osfstorage/index.json
                     if (testClass.getResource(jsonPath) != null) {
@@ -256,7 +305,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                     }
 
                     // If there's no 'index.json' file, then perhaps the request is for a paginated response
-                    jsonPath = fsBase + requestPath + "index-01.json";
+                    jsonPath = resourceBase + requestPath + "index-01.json";
                     if (testClass.getResource(jsonPath) != null) {
                         return jsonPath;
                     } else {
@@ -267,7 +316,7 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
                     }
                 } else {
                     // This is binary content, e.g.: /v1/resources/vae86/providers/osfstorage/57570a07c7950c0045ac8051
-                    jsonPath = fsBase + requestPath;
+                    jsonPath = resourceBase + requestPath;
                     if (testClass.getResource(jsonPath) != null) {
                         return jsonPath;
                     } else {
@@ -280,20 +329,33 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
             };
         }
 
-        public RecursiveInterceptor(final TestName testName, final Class testClass,
-                                    final ResponseResolver resolver) {
-            this.testName = testName;
-            this.testClass = testClass;
+        /**
+         * Constructs an interceptor with all resolution logic contained in the supplied {@code resolver}.
+         *
+         * @param resolver responsible for resolving test resources
+         */
+        public RecursiveInterceptor(final ResponseResolver resolver) {
             this.resolver = resolver;
         }
 
+        /**
+         * {@inheritDoc}
+         * <p>
+         * Implementation notes: adds a HTTP header {@code X-Response-Resource} to the request with a value obtained by
+         * invoking {@link ResponseResolver#resolve(URI)}.  The mock HTTP server will treat the value of the header as
+         * a classpath resource, resolving the resource and returning it in the response.
+         * </p>
+         * @param chain {@inheritDoc}
+         * @return {@inheritDoc}
+         * @throws IOException {@inheritDoc}
+         */
         @Override
         public Response intercept(final Chain chain) throws IOException {
             Request req = chain.request();
             LOG.debug("HTTP request: {}", req.urlString());
 
             // Resolve the request URI to a path on the filesystem.
-            final String resourcePath = resolver.resolve(testName, req.uri());
+            final String resourcePath = resolver.resolve(req.uri());
             LOG.debug("Response resource: {}", resourcePath);
 
             req = req.newBuilder().addHeader(X_RESPONSE_RESOURCE, resourcePath).build();
@@ -309,14 +371,13 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
     public static interface ResponseResolver {
 
         /**
-         * Resolves a JSON response document based on properties of the OSF API, the HTTP request, and the test being
-         * executed.  This method should return a classpath resource containing the JSON for the HTTP response body.
+         * Resolves a JSON response document based on the HTTP request.  This method returns a classpath resource
+         * containing the JSON for the HTTP response body.
          *
-         * @param testName contains metadata about the current test method.
          * @param requestUri the full request URI
-         * @return a Path that identifies a classpath resource containing the JSON response document
+         * @return a classpath resource containing the JSON response document
          */
-        String resolve(TestName testName, URI requestUri);
+        String resolve(URI requestUri);
 
     }
 }

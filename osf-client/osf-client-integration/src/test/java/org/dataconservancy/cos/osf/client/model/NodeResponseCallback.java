@@ -36,6 +36,9 @@ import static org.mockserver.model.HttpStatusCode.OK_200;
  * Resolves and returns the content identified by the classpath resource contained in the
  * {@link NodeTest#X_RESPONSE_RESOURCE} header.  If the resource cannot be resolved, an {@code AssertionError} is
  * thrown.  If the {@code X_RESPONSE_RESOURCE} header is missing, an assertion error is also thrown.
+ * <p>
+ * Resources are resolved using the class loader of this {@code Class}.
+ * </p>
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
