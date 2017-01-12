@@ -19,7 +19,7 @@ import org.junit.Test;
 
 import java.net.URI;
 
-import static org.dataconservancy.cos.osf.client.model.AbstractMockServerTest.httpUriToPath;
+import static org.dataconservancy.cos.osf.client.model.AbstractMockServerTest.resourcePathFrom;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -30,9 +30,12 @@ public class AbstractMockServerTestTest {
     @Test
     public void testHttpUriToPath() throws Exception {
         assertEquals("localhost/8080/v2/nodes/abc123",
-                httpUriToPath(URI.create("http://localhost:8080/v2/nodes/abc123/")));
+                resourcePathFrom(URI.create("http://localhost:8080/v2/nodes/abc123/")));
 
         assertEquals("localhost/v2/nodes/abc123",
-                httpUriToPath(URI.create("http://localhost/v2/nodes/abc123/")));
+                resourcePathFrom(URI.create("http://localhost/v2/nodes/abc123/")));
+
+        assertEquals("localhost/v2/nodes/abc123/foo.txt",
+                resourcePathFrom(URI.create("http://localhost/v2/nodes/abc123/foo.txt")));
     }
 }

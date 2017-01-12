@@ -204,10 +204,10 @@ public class NodeTest extends AbstractMockServerTest {
     public void testNodeListPagination() throws Exception {
         final AtomicInteger requestCount = new AtomicInteger(0);
 
-        factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class,
-                (name, reqUri) -> {
+        factory.interceptors().add(new RecursiveInterceptor(
+                (reqUri) -> {
                     // /json/NodeTest/testNodeListPagination/
-                    final String fsBase = resourceBase(TEST_NAME, "/json/");
+                    final String fsBase = resourcePathFrom(TEST_NAME, NodeTest.class, "/json/");
 
                     requestCount.incrementAndGet();
 
