@@ -33,18 +33,18 @@ function download() {
   if [ $? != 0 ] ;
   then
     echo $url >> seen
-    wget -q --header="$ACCEPT_HEADER" -w 1 --random-wait -r --default-page=$filename $url
+    wget -nc -q --header="$ACCEPT_HEADER" -w 1 --random-wait -r --default-page=$filename $url
   fi
 }
 
 #
 # Removes files related to a harvest operation.  This includes the files that
-# were originally downloaded as part of a harvest, any URLs that were seen, and
-# files produced after processing harvested files.
+# were originally downloaded as part of a harvest and any URLs that were seen.
+# It will not remove files produced after processing harvested files.
 #
 if [ "$1" == "--clean" ] ;
 then
-  rm -rf seen api.osf.io localhost
+  rm -rf seen api.osf.io
   exit 0;
 fi
 
