@@ -28,6 +28,7 @@ import org.dataconservancy.cos.osf.client.model.Log;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Institution;
 import org.dataconservancy.cos.osf.client.model.License;
+import org.dataconservancy.cos.osf.client.model.MetaSchema;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
@@ -304,5 +305,13 @@ public interface OsfService {
      */
     @GET
     Call<FileVersion> fileversion(@Url String fileVersionUrl);
+
+    /**
+     *
+     * @param metaSchemaUrl
+     * @return
+     */
+    @GET
+    Call<MetaSchema> metaschema(@Url String metaSchemaUrl);
 
 }
