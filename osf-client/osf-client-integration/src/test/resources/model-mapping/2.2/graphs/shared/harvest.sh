@@ -20,6 +20,9 @@ function seen() {
 # not been seen, its contents are downloaded and saved as described, and the
 # URL is marked as being seen.
 #
+# If the file to be downloaded already exists on the filesystem, it will not
+# be overwritten.
+#
 function download() {
   local url="$1"
   local filename="index.json"
@@ -53,6 +56,12 @@ fi
 # of the harvested content, and storing processed files in a new directory
 # structure that their new URLs dictate.
 #
+# This will:
+# - re-write all URLs in JSON documents to use localhost:8000 instead of 
+#   api.osf.io
+# - re-write all URLs in JSON documents that carry query parameters by
+#   base64 encoding the query parameters
+#
 if [ "$1" == "--process" ] ;
 then
   for f in `find api.osf.io/v2 -type f` ;
@@ -71,6 +80,10 @@ then
 
   for f in `find localhost -type f` ;
   do
+    # Unfortunately, wget appends query parameters to
+    # saved filenames, even when we supply one.  So this
+    # hack checks the filename to see if it contains
+    # query parameters, and truncates them. 
     converted=`echo $f | cut -f 1 -d '?'`
     echo "$f $converted"
     if [ "$converted" != "$f" ] ;
@@ -78,7 +91,12 @@ then
       mv $f $converted
       f="$converted"
     fi
+
+    # re-write URLs from api.osf.io to localhost:8000
     sed -f urlconvert.sed $f > $f.tmp
+
+    # re-write URLs containing query parameters by base64
+    # the parameters.
     jq -f urlconvert.jq $f.tmp > $f
     rm $f.tmp
   done
@@ -92,6 +110,10 @@ then
   download $URL
   for rel in `curl -sH "$ACCEPT_HEADER" $URL | jq -r "$JQ_FILTER" | grep -v view_only_links` ;
   do
+    # If the relationship URL has query parameters, base64 encode them, and use the base64
+    # query parameters as the name of the file to be downloaded.  Wget still appends query
+    # parameters to the provided filename, which is unfortunate.  This is dealt with in the
+    # process phase.
     filename=`echo $rel | jq -rR 'rindex("?") as $r | if $r then (.[$r:] | @base64) else "" end'`
     download $rel $filename
   done
@@ -104,6 +126,8 @@ then
     then
       for rel in `jq -r "$JQ_FILTER" < $source | grep -v view_only_links | grep -v localhost` ;
       do
+        # If the relationship URL has query parameters, base64 encode them, and use the base64
+        # query parameters as the name of the file to be downloaded.
         filename=`echo $rel | jq -rR 'rindex("?") as $r | if $r then (.[$r:] | @base64) else "" end'`
         download $rel $filename
       done
