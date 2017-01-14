@@ -1,14 +1,26 @@
 language: java
 install: true
+sudo: true
 cache:
   directories:
     - $HOME/.m2
 before_script:
   - echo "MAVEN_OPTS='-Xmx1024m'" > ~/.mavenrc
-  - true ; [[ $TRAVIS_PULL_REQUEST == "false" ]] && openssl aes-256-cbc -K $encrypted_51906dfef45a_key -iv $encrypted_51906dfef45a_iv -in settings.tar.enc -out settings.tar -d && tar -xf settings.tar && cat known_hosts >> ~/.ssh/known_hosts || true
+  - true ; if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then openssl aes-256-cbc -K $encrypted_51906dfef45a_key -iv $encrypted_51906dfef45a_iv -in settings.tar.enc -out settings.tar -d && tar -xf settings.tar && cat known_hosts >> ~/.ssh/known_hosts ; else true ; fi
+  - sudo service mysql stop
+  - sudo service postgresql stop
+  - sudo service acpid stop
+  - sudo service atd stop
+  - sudo service cron stop
+  - sudo service memcached stop
+  - sudo service ntp stop
+  - sudo service rabbitmq-server stop
+  - sudo service resolvconf stop
+  - sudo service sshguard stop
+  - sudo service ssh stop
 script:
-  - true ; [[ $TRAVIS_PULL_REQUEST != "false" ]] && mvn verify || true
-  - true ; [[ $TRAVIS_PULL_REQUEST == "false" ]] && mvn -s ./settings.xml deploy || true
+  - true ; if [ "$TRAVIS_PULL_REQUEST" != "false" ] ; then mvn verify ; else true ; fi
+  - true ; if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then mvn -s ./settings.xml deploy ; else true ; fi
 jdk:
   - oraclejdk8
 notifications:
