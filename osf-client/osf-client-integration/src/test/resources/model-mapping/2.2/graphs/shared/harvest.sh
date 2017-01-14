@@ -36,7 +36,12 @@ function download() {
   if [ $? != 0 ] ;
   then
     echo $url >> seen
-    wget -nc -q --header="$ACCEPT_HEADER" -w 1 --random-wait -r --default-page=$filename $url
+    wget -nc --header="$ACCEPT_HEADER" -w 1 --random-wait -r --default-page=$filename $url
+    local rc=$?
+    if [ $rc != 0 ] ;
+    then
+      echo "Error downloading $url: $rc"
+    fi
   fi
 }
 
@@ -57,7 +62,7 @@ fi
 # structure that their new URLs dictate.
 #
 # This will:
-# - re-write all URLs in JSON documents to use localhost:8000 instead of 
+# - re-write all URLs in JSON documents to use localhost:8000 instead of
 #   api.osf.io
 # - re-write all URLs in JSON documents that carry query parameters by
 #   base64 encoding the query parameters
@@ -83,7 +88,7 @@ then
     # Unfortunately, wget appends query parameters to
     # saved filenames, even when we supply one.  So this
     # hack checks the filename to see if it contains
-    # query parameters, and truncates them. 
+    # query parameters, and truncates them.
     converted=`echo $f | cut -f 1 -d '?'`
     echo "$f $converted"
     if [ "$converted" != "$f" ] ;
