@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-10-26T16:41:44.832000Z",
+      "family_name": "Chiu",
+      "full_name": "Chen Chiu",
+      "given_name": "Chen",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "5kx6m",
+    "links": {
+      "html": "http://osf.io/5kx6m/",
+      "profile_image": "http://secure.gravatar.com/avatar/b7a5f6ccf1aee74695181d2a9f279287?d=identicon",
+      "self": "http://localhost:8000/v2/users/5kx6m/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/5kx6m/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/5kx6m/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/5kx6m/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

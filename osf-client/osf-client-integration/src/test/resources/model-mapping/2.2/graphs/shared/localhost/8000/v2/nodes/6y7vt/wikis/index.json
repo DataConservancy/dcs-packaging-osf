@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-12-09T18:12:24.441000Z",
+        "extra": {
+          "version": 2
+        },
+        "kind": "file",
+        "materialized_path": "/tt2tu",
+        "name": "home",
+        "path": "/tt2tu",
+        "size": 2824
+      },
+      "id": "tt2tu",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/tt2tu/content/",
+        "info": "http://localhost:8000/v2/wikis/tt2tu/",
+        "self": "http://localhost:8000/v2/wikis/tt2tu/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6y7vt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD10dDJ0dQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6y7vt/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/6y7vt/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

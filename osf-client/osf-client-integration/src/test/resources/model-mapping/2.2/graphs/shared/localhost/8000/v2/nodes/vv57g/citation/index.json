@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Announcements and Updates",
+      "type": "webpage"
+    },
+    "id": "vv57g",
+    "links": {
+      "self": "osf.io/vv57g"
+    },
+    "type": "node-citation"
+  }
+}

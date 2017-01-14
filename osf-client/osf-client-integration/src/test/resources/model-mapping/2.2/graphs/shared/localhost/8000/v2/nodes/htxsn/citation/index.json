@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "OSF Step-by-Step Guides",
+      "type": "webpage"
+    },
+    "id": "htxsn",
+    "links": {
+      "self": "osf.io/htxsn"
+    },
+    "type": "node-citation"
+  }
+}

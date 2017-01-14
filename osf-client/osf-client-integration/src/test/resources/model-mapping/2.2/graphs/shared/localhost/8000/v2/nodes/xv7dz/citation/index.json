@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Tutorials and Guides from the OSF",
+      "type": "webpage"
+    },
+    "id": "xv7dz",
+    "links": {
+      "self": "osf.io/xv7dz"
+    },
+    "type": "node-citation"
+  }
+}

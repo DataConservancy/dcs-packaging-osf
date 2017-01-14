@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "US Cattle Traceability Information - State Government Web Information Resource Analysis",
+      "type": "webpage"
+    },
+    "id": "tp6k7",
+    "links": {
+      "self": "osf.io/tp6k7"
+    },
+    "type": "node-citation"
+  }
+}

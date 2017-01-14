@@ -179,4 +179,51 @@ public class Institution {
         this.description = description;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getNodes() {
+        return nodes;
+    }
+
+    /**
+     *
+     * @param nodes
+     */
+    public void setNodes(final String nodes) {
+        this.nodes = nodes;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getUsers() {
+        return users;
+    }
+
+    /**
+     *
+     * @param users
+     */
+    public void setUsers(final String users) {
+        this.users = users;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getRegistrations() {
+        return registrations;
+    }
+
+    /**
+     *
+     * @param registrations
+     */
+    public void setRegistrations(final String registrations) {
+        this.registrations = registrations;
+    }
 }

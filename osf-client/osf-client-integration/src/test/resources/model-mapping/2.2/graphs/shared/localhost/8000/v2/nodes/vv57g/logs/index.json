@@ -1,0 +1,528 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-16T15:52:31.391000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "params_project": {
+            "id": "6y7vt",
+            "title": "JHU OSF Researcher Road Map"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58540dbf9ad5a100432bd314",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58540dbf9ad5a100432bd314/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-16T15:52:31.057000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58540dbf9ad5a100432bd312",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58540dbf9ad5a100432bd312/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-12T21:24:04.034000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584f15746c613b01f8296749",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f15746c613b01f8296749/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-12T21:24:03.863000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chiu",
+              "full_name": "Chen Chiu",
+              "given_name": "Chen",
+              "id": "5kx6m",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "584f15739ad5a10204820bea",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f15739ad5a10204820bea/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-12-12T21:24:03.413000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584f15739ad5a10204820be9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f15739ad5a10204820be9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-12T21:20:09.688000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "y2es6",
+          "params_node": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "params_project": {
+            "id": "6y7vt",
+            "title": "JHU OSF Researcher Road Map"
+          },
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "584f14899ad5a102050cd9e4",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f14899ad5a102050cd9e4/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-12-09T19:06:06.723000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "news for researchers"
+        }
+      },
+      "id": "584b009e9ad5a102080cd4b5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584b009e9ad5a102080cd4b5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-09T19:05:34.117000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "9cu4d",
+          "params_node": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "params_project": {
+            "id": "6y7vt",
+            "title": "JHU OSF Researcher Road Map"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "584b007e6c613b02015e45d6",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584b007e6c613b02015e45d6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-09T18:15:54.950000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584af4da6c613b01f7296699",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584af4da6c613b01f7296699/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T18:15:54.856000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chiu",
+              "full_name": "Chen Chiu",
+              "given_name": "Chen",
+              "id": "5kx6m",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "params_project": {
+            "id": "6y7vt",
+            "title": "JHU OSF Researcher Road Map"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "584af4da9ad5a10202820b2d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584af4da9ad5a10202820b2d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vv57g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/vv57g/logs/?page=2",
+    "next": "http://localhost:8000/v2/nodes/vv57g/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/vv57g/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 11
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "auth_url": "http://accounts.osf.io/Shibboleth.sso/Login?entityID=urn%3Amace%3Aincommon%3Ajohnshopkins.edu",
+        "description": "A research data service provided by the <a href=\"http://www.library.jhu.edu/\">Sheridan Libraries</a>.",
+        "logo_path": "/static/img/institutions/shields/jhu-shield.png",
+        "name": "Johns Hopkins University"
+      },
+      "id": "jhu",
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/jhu/"
+      },
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/jhu/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/jhu/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/jhu/users/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "institutions"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/users/39bsp/institutions/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

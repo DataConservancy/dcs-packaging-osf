@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Ideas and Examples",
+      "type": "webpage"
+    },
+    "id": "sva3p",
+    "links": {
+      "self": "osf.io/sva3p"
+    },
+    "type": "node-citation"
+  }
+}

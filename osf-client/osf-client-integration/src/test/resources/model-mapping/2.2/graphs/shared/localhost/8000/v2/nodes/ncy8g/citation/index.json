@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Attachments and supplementary documents",
+      "type": "webpage"
+    },
+    "id": "ncy8g",
+    "links": {
+      "self": "osf.io/ncy8g"
+    },
+    "type": "node-citation"
+  }
+}

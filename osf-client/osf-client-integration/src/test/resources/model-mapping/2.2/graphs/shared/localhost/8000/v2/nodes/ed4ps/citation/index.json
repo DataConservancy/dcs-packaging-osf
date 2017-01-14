@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "JHU Lab Organization Template",
+      "type": "webpage"
+    },
+    "id": "ed4ps",
+    "links": {
+      "self": "osf.io/ed4ps"
+    },
+    "type": "node-citation"
+  }
+}

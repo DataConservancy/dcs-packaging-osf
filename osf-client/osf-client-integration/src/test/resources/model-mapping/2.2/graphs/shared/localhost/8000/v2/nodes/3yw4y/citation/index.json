@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "OSF Online Instructional Videos and Webinars",
+      "type": "webpage"
+    },
+    "id": "3yw4y",
+    "links": {
+      "self": "osf.io/3yw4y"
+    },
+    "type": "node-citation"
+  }
+}

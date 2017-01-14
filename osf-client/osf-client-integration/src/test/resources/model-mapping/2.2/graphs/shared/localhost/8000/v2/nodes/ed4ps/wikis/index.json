@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-12-09T15:46:55.153000Z",
+        "extra": {
+          "version": 4
+        },
+        "kind": "file",
+        "materialized_path": "/5tg8d",
+        "name": "home",
+        "path": "/5tg8d",
+        "size": 3976
+      },
+      "id": "5tg8d",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/5tg8d/content/",
+        "info": "http://localhost:8000/v2/wikis/5tg8d/",
+        "self": "http://localhost:8000/v2/wikis/5tg8d/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ed4ps/comments/P2ZpbHRlciU1QnRhcmdldCU1RD01dGc4ZA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ed4ps/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/ed4ps/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

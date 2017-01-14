@@ -1,0 +1,219 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-16T15:52:31.057000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58540dbf9ad5a100432bd312",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58540dbf9ad5a100432bd312/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-12T21:24:04.034000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584f15746c613b01f8296749",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f15746c613b01f8296749/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-12T21:24:03.863000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chiu",
+              "full_name": "Chen Chiu",
+              "given_name": "Chen",
+              "id": "5kx6m",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": {
+            "id": "vv57g",
+            "title": "Announcements and Updates"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "584f15739ad5a10204820bea",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f15739ad5a10204820bea/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-12-12T21:24:03.413000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ncy8g",
+            "title": "Attachments and supplementary documents"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584f15739ad5a10204820be9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f15739ad5a10204820be9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ncy8g/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/ncy8g/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 4
+  }
+}
