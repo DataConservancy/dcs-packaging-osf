@@ -503,4 +503,21 @@ public class File {
         }
         return -1;
     }
+
+    /**
+     * 
+     * @return
+     */
+    public String getNodeRel() {
+        return nodeRel;
+    }
+
+    /**
+     *
+     * @param nodeRel
+     */
+    public void setNodeRel(final String nodeRel) {
+        this.nodeRel = nodeRel;
+
+    }
 }
