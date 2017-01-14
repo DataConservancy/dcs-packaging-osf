@@ -40,6 +40,7 @@ public class RegistrationGraphMappingTest extends BaseGraphMappingTest {
         assertEquals(null, reg.getLinked_registrations());
         assertEquals("http://localhost:8000/v2/nodes/xug4a/", reg.getRegistered_from());
         assertEquals("http://localhost:8000/v2/users/gb6f3/", reg.getRegistered_by());
+        assertEquals("http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/", reg.getRegistration_schema());
         assertEquals(3, reg.getChildren().size());
         reg.getChildren().stream().filter(r -> r.getId().equals("ur6jx")).findFirst()
                 .orElseThrow(() -> new RuntimeException("Missing child ur6jx"));
@@ -92,9 +93,6 @@ public class RegistrationGraphMappingTest extends BaseGraphMappingTest {
 
         // Citation
         assertEquals("http://localhost:8000/v2/registrations/tgzhk/citation/", reg.getCitation());
-
-        // Registration Schema
-        assertEquals("http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/", reg.getRegistration_schema());
 
         // Identifiers
         assertEquals("http://localhost:8000/v2/registrations/tgzhk/identifiers/", reg.getIdentifiers());
