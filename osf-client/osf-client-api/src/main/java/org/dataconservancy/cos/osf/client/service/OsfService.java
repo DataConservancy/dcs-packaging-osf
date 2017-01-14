@@ -268,6 +268,14 @@ public interface OsfService {
 
     /**
      *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<Wiki> wiki(@Url String url);
+
+    /**
+     *
      * @param licenseUrl
      * @return
      */
