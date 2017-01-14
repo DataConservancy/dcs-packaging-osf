@@ -1,0 +1,512 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-21T19:55:59.737000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "585ade4f9ad5a1020acadcee",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ade4f9ad5a1020acadcee/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-21T19:06:15.352000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "rwc4w",
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null,
+          "version": "4"
+        }
+      },
+      "id": "585ad2a7594d9001faa44674",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ad2a7594d9001faa44674/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "edit_title",
+        "date": "2016-12-21T19:05:51.883000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "title_new": "OSF Online Instructional Videos and Webinars",
+          "title_original": "OSF YouTube Instructional Videos and Webinars"
+        }
+      },
+      "id": "585ad28f6c613b01f3e9a39c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ad28f6c613b01f3e9a39c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-12-21T19:00:41.558000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "YouTube"
+        }
+      },
+      "id": "585ad159b83f6901fd456e4c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ad159b83f6901fd456e4c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-12-21T19:00:33.752000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "video list"
+        }
+      },
+      "id": "585ad151594d900201a4477e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ad151594d900201a4477e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-21T19:00:05.073000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "g8r4h",
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null,
+          "version": "3"
+        }
+      },
+      "id": "585ad1356c613b01f7e9a242",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ad1356c613b01f7e9a242/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-21T18:38:41.162000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "j28xx",
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "585acc31594d900201a44762",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585acc31594d900201a44762/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-21T17:00:13.167000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "vtgyf",
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "585ab51d9ad5a1020bba652e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ab51d9ad5a1020bba652e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "addon_added",
+        "date": "2016-12-21T16:34:20.835000Z",
+        "params": {
+          "addon": "Wiki",
+          "contributors": [],
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "585aaf0c9ad5a10209ba65d5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585aaf0c9ad5a10209ba65d5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "edit_title",
+        "date": "2016-12-21T16:31:07.227000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3yw4y",
+            "title": "OSF Online Instructional Videos and Webinars"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "title_new": "OSF YouTube Instructional Videos and Webinars",
+          "title_original": "OSF YouTube Channel by Center for Open Science"
+        }
+      },
+      "id": "585aae4b594d90020893b265",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585aae4b594d90020893b265/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3yw4y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/3yw4y/logs/?page=3",
+    "next": "http://localhost:8000/v2/nodes/3yw4y/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/3yw4y/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 22
+  }
+}

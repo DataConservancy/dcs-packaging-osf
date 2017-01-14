@@ -1,0 +1,331 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-21T19:55:18.281000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "cmdnx",
+          "params_node": {
+            "id": "sva3p",
+            "title": "Ideas and Examples"
+          },
+          "params_project": {
+            "id": "6y7vt",
+            "title": "JHU OSF Researcher Road Map"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "585ade269ad5a10205ba665c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ade269ad5a10205ba665c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-16T15:52:30.787000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "sva3p",
+            "title": "Ideas and Examples"
+          },
+          "params_project": {
+            "id": "6y7vt",
+            "title": "JHU OSF Researcher Road Map"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58540dbe9ad5a100432bd311",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58540dbe9ad5a100432bd311/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "pointer_created",
+        "date": "2016-12-12T21:24:48.263000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "sva3p",
+            "title": "Ideas and Examples"
+          },
+          "params_project": null,
+          "pointer": {
+            "category": "project",
+            "id": "ed4ps",
+            "title": "JHU Lab Organization Template",
+            "url": "/ed4ps/"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "584f15a0594d9001fb560d1b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584f15a0594d9001fb560d1b/"
+      },
+      "relationships": {
+        "linked_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ed4ps/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-09T18:26:22.586000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "sva3p",
+            "title": "Ideas and Examples"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584af74e6c613b01f62966d0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584af74e6c613b01f62966d0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-09T18:26:22.495000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chiu",
+              "full_name": "Chen Chiu",
+              "given_name": "Chen",
+              "id": "5kx6m",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "sva3p",
+            "title": "Ideas and Examples"
+          },
+          "params_project": {
+            "id": "6y7vt",
+            "title": "JHU OSF Researcher Road Map"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "584af74e9ad5a10202820b32",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584af74e9ad5a10202820b32/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-12-09T18:26:22.180000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "sva3p",
+            "title": "Ideas and Examples"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "584af74e9ad5a10202820b31",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584af74e9ad5a10202820b31/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/sva3p/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/sva3p/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 6
+  }
+}

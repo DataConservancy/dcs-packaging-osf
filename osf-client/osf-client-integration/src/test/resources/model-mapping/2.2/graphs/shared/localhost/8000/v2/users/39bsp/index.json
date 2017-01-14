@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-08-11T17:59:49.872000Z",
+      "family_name": "Boehm",
+      "full_name": "Reid Boehm",
+      "given_name": "Reid",
+      "locale": "en_US",
+      "middle_names": "Isaac",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "39bsp",
+    "links": {
+      "html": "http://osf.io/39bsp/",
+      "profile_image": "http://secure.gravatar.com/avatar/e8133c35a091812d5de9e9133e43b780?d=identicon",
+      "self": "http://localhost:8000/v2/users/39bsp/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/39bsp/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/39bsp/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/39bsp/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

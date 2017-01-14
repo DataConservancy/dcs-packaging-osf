@@ -1,0 +1,219 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-21T19:55:59.246000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3ws3u",
+            "title": "Using the OSF at JHU - a guide to getting started (Coming soon...)"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "585ade4f9ad5a1020acadceb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585ade4f9ad5a1020acadceb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-21T16:02:40.044000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "3ws3u",
+            "title": "Using the OSF at JHU - a guide to getting started (Coming soon...)"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585aa7a0594d90020893b262",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585aa7a0594d90020893b262/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-21T16:02:39.960000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chiu",
+              "full_name": "Chen Chiu",
+              "given_name": "Chen",
+              "id": "5kx6m",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "3ws3u",
+            "title": "Using the OSF at JHU - a guide to getting started (Coming soon...)"
+          },
+          "params_project": {
+            "id": "xv7dz",
+            "title": "Tutorials and Guides from the OSF"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "585aa79f594d90020893b261",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585aa79f594d90020893b261/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-12-21T16:02:39.790000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3ws3u",
+            "title": "Using the OSF at JHU - a guide to getting started (Coming soon...)"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585aa79f594d90020893b260",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585aa79f594d90020893b260/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3ws3u/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/3ws3u/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 4
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "JHU OSF Researcher Road Map",
+      "type": "webpage"
+    },
+    "id": "6y7vt",
+    "links": {
+      "self": "osf.io/6y7vt"
+    },
+    "type": "node-citation"
+  }
+}
