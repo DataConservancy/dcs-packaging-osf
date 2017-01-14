@@ -300,6 +300,14 @@ public interface OsfService {
 
     /**
      *
+     * @param filesUrl
+     * @return
+     */
+    @GET
+    Call<List<File>> files(@Url String filesUrl);
+
+    /**
+     *
      * @param logUrl
      * @return
      */
