@@ -56,10 +56,6 @@ public class Node extends NodeBase {
     @Relationship(value = "draft_registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String draft_registrations;
 
-    /**Link to list of registrations related to the current node*/
-    @Relationship(value = "preprints", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    private String preprints;
-
     /**
      *
      * @return
@@ -92,4 +88,35 @@ public class Node extends NodeBase {
         this.registrations = registrations;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getDraft_registrations() {
+        return draft_registrations;
+    }
+
+    /**
+     *
+     * @param draft_registrations
+     */
+    public void setDraft_registrations(final String draft_registrations) {
+        this.draft_registrations = draft_registrations;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getLinked_nodes() {
+        return linked_nodes;
+    }
+
+    /**
+     *
+     * @param linked_nodes
+     */
+    public void setLinked_nodes(final String linked_nodes) {
+        this.linked_nodes = linked_nodes;
+    }
 }

@@ -102,6 +102,9 @@ public class Registration extends NodeBase  {
     @Relationship(value = "linked_registrations", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String linked_registrations;
 
+    @Relationship(value = "registration_schema", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String registration_schema;
+
     /**
      *
      * @return
@@ -348,5 +351,21 @@ public class Registration extends NodeBase  {
      */
     public void setLinked_registrations(final String linked_registrations) {
         this.linked_registrations = linked_registrations;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getRegistration_schema() {
+        return registration_schema;
+    }
+
+    /**
+     *
+     * @param registration_schema
+     */
+    public void setRegistration_schema(final String registration_schema) {
+        this.registration_schema = registration_schema;
     }
 }

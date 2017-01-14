@@ -100,9 +100,6 @@ public abstract class NodeBase {
     @Relationship(value = "citation", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String citation;
 
-    @Relationship(value = "registration_schema", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    private String registration_schema;
-
     @Relationship(value = "identifiers", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String identifiers;
 
@@ -162,6 +159,9 @@ public abstract class NodeBase {
     private Boolean isPreprint;
 
     private NodeLicense node_license;
+
+    @Relationship(value = "preprints", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
+    private String preprints;
 
     /**
      *
@@ -622,22 +622,6 @@ public abstract class NodeBase {
      *
      * @return
      */
-    public String getRegistration_schema() {
-        return registration_schema;
-    }
-
-    /**
-     *
-     * @param registration_schema
-     */
-    public void setRegistration_schema(final String registration_schema) {
-        this.registration_schema = registration_schema;
-    }
-
-    /**
-     *
-     * @return
-     */
     public String getIdentifiers() {
         return identifiers;
     }
@@ -664,5 +648,21 @@ public abstract class NodeBase {
      */
     public void setComments(final String comments) {
         this.comments = comments;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getPreprints() {
+        return preprints;
+    }
+
+    /**
+     *
+     * @param preprints
+     */
+    public void setPreprints(final String preprints) {
+        this.preprints = preprints;
     }
 }
