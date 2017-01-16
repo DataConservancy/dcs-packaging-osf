@@ -20,7 +20,6 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
@@ -119,9 +118,6 @@ public class File {
     /**size of file in bytes, null for folders*/
     @OwlProperty(OwlProperties.OSF_HAS_SIZE)
     private Integer size;
-
-    /**list of hashes of the hashes for the files*/
-    private Set<Checksum> hashes;
 
     private DateTime last_touched;
 
@@ -347,14 +343,6 @@ public class File {
 
     /**
      *
-     * @param hashes
-     */
-    public void setHashes(final Set<Checksum> hashes) {
-        this.hashes = hashes;
-    }
-
-    /**
-     *
      * @return
      */
     public List<Comment> getComments() {
@@ -498,5 +486,21 @@ public class File {
         }
 
         return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getDownloads() {
+        if (this.extra != null && this.extra.containsKey("downloads")) {
+            final Integer value = (Integer) this.extra.get("downloads");
+            if (value == null) {
+                return -1;
+            }
+
+            return value;
+        }
+        return -1;
     }
 }
