@@ -10,6 +10,7 @@
     },
     "attributes": {
       "extra": {
+        "downloads": 3,
         "hashes": {
           "sha256": "a",
           "md5": "b"

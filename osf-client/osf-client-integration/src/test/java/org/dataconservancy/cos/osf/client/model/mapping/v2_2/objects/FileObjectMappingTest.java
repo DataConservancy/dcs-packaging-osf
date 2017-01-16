@@ -79,6 +79,7 @@ public class FileObjectMappingTest extends AbstractMockServerTest {
         assertNotNull(file.getExtra());
         assertEquals("a", file.getHashes().get("sha256").getValue());
         assertEquals("b", file.getHashes().get("md5").getValue());
+        assertEquals(3, file.getDownloads());
         assertEquals("http://localhost:8000/v2/files/56eac5d6b83f6901bbe90db3/",
                 file.getLinks().get("info"));
         assertEquals("http://localhost:8000/v2/files/56eac5d6b83f6901bbe90db3/",
