@@ -510,4 +510,20 @@ public class Comment {
     public void setPage(final String page) {
         this.page = page;
     }
+
+    /**
+     *
+     * @return
+     */
+    public String getReports() {
+        return reports;
+    }
+
+    /**
+     *
+     * @param reports
+     */
+    public void setReports(final String reports) {
+        this.reports = reports;
+    }
 }
