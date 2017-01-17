@@ -1,10 +1,12 @@
-## Lightweight RDF Annotations
+# Java Object Model
 
-The [osf-core-annotations module](rdf-annotations) provides support for mapping Java classes and member fields to OWL RDF.  
+The [osf-core-model](osf-core-model/) provides a Java object model representing most concepts presented by the OSF JSON API.  Where possible, inheritance is used in the Java model to share concepts between closely related types in the JSON API (e.g. `Registration` and `Node` inherit from `NodeBase`, because they share a number of concepts between them).  In our experience, the OSF model evolves rapidly; sometimes the evolution produces incompatibilities between elements of the Java model.  While the OSF has taken steps to version their APIs, this was not the case when this Java model began.  Therefore there were some design choices that were made then that may not have been made today.
 
-## Shortcomings
+Classes in the Java model are heavily annotated to facilitate mapping between JSON and RDF.  While this dramatically reduces the amount of code needed to produce equivalent serializations between model instances, the downside is that there are compile-time couplings to the various annotation libraries used which bring in extra dependencies into the runtime dependency tree.  The implementation of the model is also affected by the limitations of the annotation-processing libraries that map instances of the Java model.  For example, some member fields in the the Java model will use a URI to refer to a concept, when an instance of a domain object may be preferred for practical reasons.  For that reason, some members are typed as Strings instead of some other subclass of Object.
 
-This library is a work-in-progress, and does not cover every imaginable use case when mapping Java domain models to RDF.  Furthermore, this library supports a specific domain model and is not generally applicable to arbitrary domains.  Finally, if the developer does not have access to the source code of the model being annotated, this annotation module is not very useful at this point, due to limitations on where the annotated elements may appear (e.g. a `@OwlIndividual` is a class-level annotation only).
+# RDF Annotations
+
+The [osf-core-annotations module](osf-core-annotations/) provides support for mapping Java classes and member fields to OWL RDF.  This is a home-grown, experimental, library used to map from an instance of a Java model to an RDF model.
 
 ## Annotations
 

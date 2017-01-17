@@ -1,29 +1,69 @@
-## OSF Client
+# OSF Java Client
 
-This is a prototype client for interacting with the OSF v2 JSON-API.  
-
-It provides a interface for making HTTP calls to the OSF API, and a model for interacting with the data returned by the API.  Currently the client is read-only; writes to the OSF API are not supported.
+This is a prototype client for interacting with the OSF v2 JSON-API.  It provides an API in the form of a Java interface for making HTTP calls to the OSF API.  Currently the client is read-only; writes to the OSF API are not supported.
 
 The client is comprised of:
 
 * a [Retrofit-based](http://square.github.io/retrofit/) interface `OsfService` in the `org.dataconservancy.cos.osf.client.service` package
     * This is the entrance point into the OSF API. 
-* a Java model representing the types and relationships presented by the OSF JSON-API
-    * e.g., a `Node`, `Registration`, `User`, `Contributor`, etc.
 * Spring wiring for those who wish to use Spring to configure or inject `OsfService` instances
 
-### Installation
+It depends on the [core Java model](../osf-core/) which provides:
+* a representation of the types and relationships presented by the OSF JSON-API
+    * e.g., a `Node`, `Registration`, `User`, `Contributor`, etc.
 
-1. Express a dependency on the Maven artifact in your pom, or [download the jar](http://maven.dataconservancy.org/public/snapshots/org/dataconservancy/cos/osf-client/) and place it on your classpath
+# Installation
+
+1) Express dependencies on the Maven artifacts in your pom:
+
 ```xml
 <dependency>
   <groupId>org.dataconservancy.cos</groupId>
-  <artifactId>osf-client</artifactId>
+  <artifactId>osf-client-api</artifactId>
   <scope>compile</scope>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.1.0-SNAPSHOT</version>
 </dependency>
+
+<dependency>
+  <groupId>org.dataconservancy.cos</groupId>
+  <artifactId>osf-client-impl</artifactId>
+  <scope>runtime</scope>
+  <version>1.1.0-SNAPSHOT</version>
+</dependency>
+``` 
+
+Because our artifacts are not deployed to Maven Central, you will need to add a `repositories` element to your POM, telling Maven where to get the `osf-client-api` and `osf-client-impl` artifacts:
+```xml
+<repositories>
+    <repository>
+        <id>dc.maven.releases</id>
+        <name>Data Conservancy Public Maven 2 Repository (releases)</name>
+        <layout>default</layout>
+        <url>http://maven.dataconservancy.org/public/releases/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
+
+    <repository>
+        <id>dc.maven.snapshots</id>
+        <name>Data Conservancy Public Maven 2 Repository (snapshots)</name>
+        <layout>default</layout>
+        <url>http://maven.dataconservancy.org/public/snapshots/</url>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
 ```
-2. Configure the client and store the configuration.  The default location of the configuration resource is `/org/dataconservancy/cos/osf/client/config/osf-client.json`, but this can be overridden by specifying an alternate location using the `osf.client.conf` system property.
+
+2) Configure the client and store the configuration.  The default location of the configuration resource is `/org/dataconservancy/cos/osf/client/config/osf-client.json`, but this can be overridden by specifying an alternate location using the `osf.client.conf` system property.
 ```json
 {
   "osf": {
@@ -59,20 +99,20 @@ The client is comprised of:
     $
 </pre>
 
-### Example Usage
+# Example Usage
 
-#### Typical usage
+## Typical usage
 ```java
     RetrofitOsfServiceFactory factory = new RetrofitOsfServiceFactory();
     // default configuration resolves to classpath resource /org/dataconservancy/cos/osf/client/config/osf-client.json
     OsfService osfService = factory.getOsfService(OsfService.class);
 ```
-#### Custom configuration resource
+## Custom configuration resource
 ```java
     RetrofitOsfServiceFactory factory = new RetrofitOsfServiceFactory("file:///path/to/custom-client-config.json");
     OsfService osfService = factory.getOsfService(OsfService.class);
 ```
-#### Usage with Spring
+## Usage with Spring
 
 The OSF client comes with with pre-wired beans for use with Spring-based applications.  These beans are defined in the classpath resource [org/dataconservancy/cos/osf/client/config/applicationContext.xml](src/main/resources/org/dataconservancy/cos/osf/client/config/applicationContext.xml).  
 
@@ -91,9 +131,9 @@ Once you have an instance of an `ApplicationContext`, you ought to be able to re
 OsfService osfService = cxt.getBean("osfService", OsfService.class);
 Registration registration = osfService.registrationByUrl("https://api.osf.io/v2/registrations/0zqbo/").execute().body();
 ```
-### Advanced Usages
+# Advanced Usages
 
-#### Custom JSONAPIConverter
+## Custom JSONAPIConverter
 ```java
     List<Class<?>> domainClasses = new ArrayList<>();
     // Add classes annotated with @Type, indicating their participation in the JSON-API Converter framework
@@ -130,9 +170,9 @@ Registration registration = osfService.registrationByUrl("https://api.osf.io/v2/
     // default configuration resolves to /org/dataconservancy/cos/osf/client/config/osf-client.json
     OsfService osfService = factory.getOsfService(OsfService.class);
 ```
-### Known Issues
+# Known Issues
 
-#### Polymorphic relationships
+## Polymorphic relationships
 Polymorphic relationships are not supported.  What do we mean by polymorphic relationships?  This is the case where we want a relationship (expressed as a `relationships` object in the JSON) to deserialize as a concrete Java subclass of an abstract type. 
 
 Given a class hierarchy where two concrete classes extend a common base class:
