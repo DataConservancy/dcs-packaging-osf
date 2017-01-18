@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.github.jasminb.jsonapi.ResourceList;
 import org.dataconservancy.cos.osf.client.support.DateTimeTransform;
 import org.dataconservancy.cos.osf.client.support.DownloadLinkTransform;
 import org.dataconservancy.cos.osf.client.support.JodaSupport;
@@ -61,7 +62,7 @@ public class File {
     /**list of files down next level of file tree*/
     @Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     @OwlProperty(OwlProperties.OSF_HAS_FILE)
-    private List<File> files;
+    private ResourceList<File> files;
 
     /**list of versions associated with file*/
     @Relationship(value = "versions", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
@@ -329,7 +330,7 @@ public class File {
      *
      * @return
      */
-    public List<File> getFiles() {
+    public ResourceList<File> getFiles() {
         return files;
     }
 
@@ -337,7 +338,7 @@ public class File {
      *
      * @param files
      */
-    public void setFiles(final List<File> files) {
+    public void setFiles(final ResourceList<File> files) {
         this.files = files;
     }
 
