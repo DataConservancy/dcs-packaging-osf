@@ -69,18 +69,32 @@ fi
 #
 if [ "$1" == "--process" ] ;
 then
+  if [ "$2" == "--overwrite" ] ;
+  then
+      overwrite="true"
+  fi
   for f in `find api.osf.io/v2 -type f` ;
   do
     i=`echo $f | cut -f 2- -d "/"`
     mkdir -p localhost/8000/`dirname $i`
-    cp -n $f localhost/8000/`dirname $i`
+    if [ -z $overwrite ] ;
+    then
+        cp -n $f localhost/8000/`dirname $i`
+    else
+        cp $f localhost/8000/`dirname $i`
+    fi
   done
 
   for f in `find api.osf.io/v1 -type f` ;
   do
     i=`echo $f | cut -f 2- -d "/"`
     mkdir -p localhost/7777/`dirname $i`
-    cp -n $f localhost/7777/`dirname $i`
+    if [ -z $overwrite ] ;
+    then
+        cp -n $f localhost/7777/`dirname $i`
+    else
+        cp $f localhost/7777/`dirname $i`
+    fi
   done
 
   for f in `find localhost -type f` ;
@@ -142,5 +156,5 @@ then
   exit $?;
 fi
 
-echo "Usage $0 [ --process | --clean | --harvest  <url> ]"
+echo "Usage $0 [ --process [ --overwrite ] | --clean | --harvest  <url> ]"
 exit 1
