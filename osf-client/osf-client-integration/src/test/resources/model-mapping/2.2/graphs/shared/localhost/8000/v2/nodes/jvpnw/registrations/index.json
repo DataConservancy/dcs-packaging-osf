@@ -1,0 +1,194 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "project",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2013-10-22T20:23:49.268000Z",
+        "date_modified": "2014-12-18T19:02:25.826000Z",
+        "date_registered": "2014-12-18T20:09:23.111000Z",
+        "description": null,
+        "embargo_end_date": null,
+        "fork": false,
+        "node_license": null,
+        "pending_embargo_approval": false,
+        "pending_registration_approval": false,
+        "pending_withdrawal": false,
+        "preprint": false,
+        "public": true,
+        "registered_meta": {
+          "comments": {
+            "value": ""
+          },
+          "datacompletion": {
+            "value": "No"
+          },
+          "looked": {
+            "value": "No"
+          }
+        },
+        "registration": true,
+        "registration_supplement": "OSF-Standard Pre-Data Collection Registration",
+        "tags": [],
+        "title": "Study 44: Berger et al. 2012, Nature",
+        "withdrawal_justification": null,
+        "withdrawn": false
+      },
+      "id": "rvyg5",
+      "links": {
+        "html": "http://osf.io/rvyg5/",
+        "self": "http://localhost:8000/v2/registrations/rvyg5/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1ydnlnNQ==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ebq8h/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c0/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/rvyg5/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "registrations"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/jvpnw/registrations/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

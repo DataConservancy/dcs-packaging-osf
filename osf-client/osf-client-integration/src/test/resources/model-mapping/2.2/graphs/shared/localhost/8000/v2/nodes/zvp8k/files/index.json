@@ -1,0 +1,67 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "osfstorage",
+        "node": "zvp8k",
+        "path": "/",
+        "provider": "osfstorage"
+      },
+      "id": "zvp8k:osfstorage",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/zvp8k/providers/osfstorage/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/zvp8k/providers/osfstorage/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/files/osfstorage/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "googledrive",
+        "node": "zvp8k",
+        "path": "/",
+        "provider": "googledrive"
+      },
+      "id": "zvp8k:googledrive",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/zvp8k/providers/googledrive/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/zvp8k/providers/googledrive/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/files/googledrive/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/zvp8k/files/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

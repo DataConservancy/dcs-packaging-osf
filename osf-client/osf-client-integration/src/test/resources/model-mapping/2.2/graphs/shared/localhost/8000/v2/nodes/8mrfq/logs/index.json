@@ -1,0 +1,654 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T20:46:12.500000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "ycrws",
+          "params_node": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "8"
+        }
+      },
+      "id": "587fd414ad3c4800454d7ec6",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fd414ad3c4800454d7ec6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8mrfq/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8mrfq/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T04:10:45.272000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "5qve9",
+          "params_node": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "7"
+        }
+      },
+      "id": "587eeac59ad5a1021fa76138",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587eeac59ad5a1021fa76138/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8mrfq/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8mrfq/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.852000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "xxwmf",
+            "title": "RFIs of Interest"
+          },
+          "params_project": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197b3",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197b3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xxwmf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xxwmf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.789000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "rzgsf",
+            "title": "Creating Partnerships with Journals and Publishers"
+          },
+          "params_project": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197b2",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197b2/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rzgsf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rzgsf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.727000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "6amdw",
+            "title": "Understanding the capabilities of the OSF for research tracking and reporting"
+          },
+          "params_project": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197b1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197b1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6amdw/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6amdw/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.666000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "4hy8y",
+            "title": "Managing Grants"
+          },
+          "params_project": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197b0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197b0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/4hy8y/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/4hy8y/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.603000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "p3gjm",
+            "title": "Grant Agreement Panel and Workshop"
+          },
+          "params_project": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197af",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197af/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/p3gjm/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/p3gjm/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.535000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "5kqkw",
+            "title": "Evaluating Proposals"
+          },
+          "params_project": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197ae",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197ae/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5kqkw/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5kqkw/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.473000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "ujq2k",
+            "title": "Resources"
+          },
+          "params_project": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197ad",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197ad/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ujq2k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ujq2k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-16T19:11:24.396000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bader",
+              "full_name": "Maya Bader",
+              "given_name": "Maya",
+              "id": "ymzga",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Abdullah",
+              "full_name": "Sylvia Abdullah",
+              "given_name": "Sylvia",
+              "id": "33b2u",
+              "middle_names": "",
+              "unregistered_name": "Sylvia Abdullah"
+            }
+          ],
+          "params_node": {
+            "id": "8mrfq",
+            "title": "Maximizing Research Impact"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58543c5c6c613b0042b197ac",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58543c5c6c613b0042b197ac/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8mrfq/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/8mrfq/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/8mrfq/logs/?page=23",
+    "next": "http://localhost:8000/v2/nodes/8mrfq/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/8mrfq/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 227
+  }
+}

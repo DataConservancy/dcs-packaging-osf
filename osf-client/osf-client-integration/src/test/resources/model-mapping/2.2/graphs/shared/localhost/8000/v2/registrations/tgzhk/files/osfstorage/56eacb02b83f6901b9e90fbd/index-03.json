@@ -1,0 +1,447 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:10.390000Z",
+        "date_modified": "2016-03-17T15:20:10.390000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "e8d1d52e5bac69e6cfc4b88939e4883d",
+            "sha256": "bc75aa13d400795c1ab37559633ed7d1744244940f7521bac9564cfc54a78c26"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Pontificating on who to F,M,K.jpg",
+        "name": "Pontificating on who to F,M,K.jpg",
+        "path": "/56eacb2a594d9001c0bb8e75",
+        "provider": "osfstorage",
+        "size": 19286194,
+        "tags": []
+      },
+      "id": "56eacb2a594d9001c0bb8e75",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2a594d9001c0bb8e75",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2a594d9001c0bb8e75",
+        "info": "http://localhost:8000/v2/files/56eacb2a594d9001c0bb8e75/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2a594d9001c0bb8e75",
+        "self": "http://localhost:8000/v2/files/56eacb2a594d9001c0bb8e75/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2a594d9001c0bb8e75"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb2a594d9001c0bb8e75/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:29.956000Z",
+        "date_modified": "2016-03-17T15:20:29.956000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "c2cc32353326e33676c1fc2698390761",
+            "sha256": "53ba8a6f531a93325e7e35bbe72462bc60f6ef64ec4f6c7206f4b701801a8be3"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Snogging Penguins.jpg",
+        "name": "Snogging Penguins.jpg",
+        "path": "/56eacb3d9ad5a101b43fe776",
+        "provider": "osfstorage",
+        "size": 24203582,
+        "tags": []
+      },
+      "id": "56eacb3d9ad5a101b43fe776",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3d9ad5a101b43fe776",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3d9ad5a101b43fe776",
+        "info": "http://localhost:8000/v2/files/56eacb3d9ad5a101b43fe776/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3d9ad5a101b43fe776",
+        "self": "http://localhost:8000/v2/files/56eacb3d9ad5a101b43fe776/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3d9ad5a101b43fe776"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb3d9ad5a101b43fe776/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:19:52.394000Z",
+        "date_modified": "2016-03-17T15:19:52.394000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "8848ad36e6ba2af5ae45827ee7e2d7c1",
+            "sha256": "3d389bf9ccf12f63ecefc34fd37af8ac42025e2d41e08ec6c7f567488373ee79"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/The long hike.jpg",
+        "name": "The long hike.jpg",
+        "path": "/56eacb186c613b01a9650b00",
+        "provider": "osfstorage",
+        "size": 38774504,
+        "tags": []
+      },
+      "id": "56eacb186c613b01a9650b00",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb186c613b01a9650b00",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb186c613b01a9650b00",
+        "info": "http://localhost:8000/v2/files/56eacb186c613b01a9650b00/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb186c613b01a9650b00",
+        "self": "http://localhost:8000/v2/files/56eacb186c613b01a9650b00/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb186c613b01a9650b00"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb186c613b01a9650b00/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:17.013000Z",
+        "date_modified": "2016-03-17T15:20:17.013000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "c88b7097dc0cb57d018586db01dd45c5",
+            "sha256": "0987736d17bc8e80cf8d28f66c978dd88d78852f7c02dbb8cc47f3cc1d8cf9ad"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Valentines Day.jpg",
+        "name": "Valentines Day.jpg",
+        "path": "/56eacb30b83f6901b7e90daa",
+        "provider": "osfstorage",
+        "size": 2879647,
+        "tags": []
+      },
+      "id": "56eacb30b83f6901b7e90daa",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30b83f6901b7e90daa",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30b83f6901b7e90daa",
+        "info": "http://localhost:8000/v2/files/56eacb30b83f6901b7e90daa/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30b83f6901b7e90daa",
+        "self": "http://localhost:8000/v2/files/56eacb30b83f6901b7e90daa/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30b83f6901b7e90daa"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb30b83f6901b7e90daa/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:27.253000Z",
+        "date_modified": "2016-03-17T15:20:27.253000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "ade65bb8fd0473ad46ee73b9611b2df3",
+            "sha256": "b38097a08a73c7dd818be5f70c7e3df9aa80fdb2c552924e60f7550e51eafae6"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/We are here.jpg",
+        "name": "We are here.jpg",
+        "path": "/56eacb3bb83f6901bce90d46",
+        "provider": "osfstorage",
+        "size": 33867864,
+        "tags": []
+      },
+      "id": "56eacb3bb83f6901bce90d46",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3bb83f6901bce90d46",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3bb83f6901bce90d46",
+        "info": "http://localhost:8000/v2/files/56eacb3bb83f6901bce90d46/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3bb83f6901bce90d46",
+        "self": "http://localhost:8000/v2/files/56eacb3bb83f6901bce90d46/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb3bb83f6901bce90d46"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb3bb83f6901bce90d46/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:16.499000Z",
+        "date_modified": "2016-03-17T15:20:16.499000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "1e28c69ad512ef436764b928a2f820e2",
+            "sha256": "a8c1520ab103537b029486a0203ede72fe33b4eaa6c9272200148e2401a8daa9"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Welcome to Chile.jpg",
+        "name": "Welcome to Chile.jpg",
+        "path": "/56eacb30594d9001c0bb8e77",
+        "provider": "osfstorage",
+        "size": 292912,
+        "tags": []
+      },
+      "id": "56eacb30594d9001c0bb8e77",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30594d9001c0bb8e77",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30594d9001c0bb8e77",
+        "info": "http://localhost:8000/v2/files/56eacb30594d9001c0bb8e77/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30594d9001c0bb8e77",
+        "self": "http://localhost:8000/v2/files/56eacb30594d9001c0bb8e77/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb30594d9001c0bb8e77"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb30594d9001c0bb8e77/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:11.401000Z",
+        "date_modified": "2016-03-17T15:20:11.401000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "7ce6f84fd97a9a24f146f91978b05c05",
+            "sha256": "2b6a05d0df0225e65ca383e3cb7083d1f8b36a87178de41f227c50328002d593"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Wide angle == distortion.jpg",
+        "name": "Wide angle == distortion.jpg",
+        "path": "/56eacb2bb83f6901b9e90fc2",
+        "provider": "osfstorage",
+        "size": 32908163,
+        "tags": []
+      },
+      "id": "56eacb2bb83f6901b9e90fc2",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2bb83f6901b9e90fc2",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2bb83f6901b9e90fc2",
+        "info": "http://localhost:8000/v2/files/56eacb2bb83f6901b9e90fc2/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2bb83f6901b9e90fc2",
+        "self": "http://localhost:8000/v2/files/56eacb2bb83f6901b9e90fc2/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb2bb83f6901b9e90fc2"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb2bb83f6901b9e90fc2/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:04.139000Z",
+        "date_modified": "2016-03-17T15:20:04.139000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "ebcfc8279be570ce17e96e63efa78373",
+            "sha256": "d9b8a81ed07eaa3bb8950ddeb14dc52ef82e77f9e28b033b72e67444afbe7aa7"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/Zero effs given.jpg",
+        "name": "Zero effs given.jpg",
+        "path": "/56eacb24594d9001c4bb8bf5",
+        "provider": "osfstorage",
+        "size": 887614,
+        "tags": []
+      },
+      "id": "56eacb24594d9001c4bb8bf5",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb24594d9001c4bb8bf5",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb24594d9001c4bb8bf5",
+        "info": "http://localhost:8000/v2/files/56eacb24594d9001c4bb8bf5/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb24594d9001c4bb8bf5",
+        "self": "http://localhost:8000/v2/files/56eacb24594d9001c4bb8bf5/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb24594d9001c4bb8bf5"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb24594d9001c4bb8bf5/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb02b83f6901b9e90fbd/",
+    "last": null,
+    "next": null,
+    "prev": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb02b83f6901b9e90fbd/?page=2",
+    "self": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb02b83f6901b9e90fbd/?page=3"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 28
+  }
+}

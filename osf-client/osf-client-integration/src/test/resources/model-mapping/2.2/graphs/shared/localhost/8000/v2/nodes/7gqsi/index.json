@@ -1,0 +1,187 @@
+{
+  "data": {
+    "attributes": {
+      "category": "project",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2015-04-19T16:31:11.822000Z",
+      "date_modified": "2016-07-12T19:30:13.215000Z",
+      "description": null,
+      "fork": false,
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "preprint": false,
+      "public": true,
+      "registration": false,
+      "tags": [],
+      "title": "Online Materials"
+    },
+    "id": "7gqsi",
+    "links": {
+      "html": "http://osf.io/7gqsi/",
+      "self": "http://localhost:8000/v2/nodes/7gqsi/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/comments/P2ZpbHRlciU1QnRhcmdldCU1RD03Z3FzaQ==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/draft_registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/adkj4/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/adkj4/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/7gqsi/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "nodes"
+  }
+}

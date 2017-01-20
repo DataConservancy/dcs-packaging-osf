@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        },
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Announcements",
+      "type": "webpage"
+    },
+    "id": "2nqcf",
+    "links": {
+      "self": "osf.io/2nqcf"
+    },
+    "type": "node-citation"
+  }
+}

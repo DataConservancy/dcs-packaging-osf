@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-12-05T17:55:37.547000Z",
+        "extra": {
+          "version": 12
+        },
+        "kind": "file",
+        "materialized_path": "/yx7ay",
+        "name": "home",
+        "path": "/yx7ay",
+        "size": 6336
+      },
+      "id": "yx7ay",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/yx7ay/content/",
+        "info": "http://localhost:8000/v2/wikis/yx7ay/",
+        "self": "http://localhost:8000/v2/wikis/yx7ay/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/svje2/comments/P2ZpbHRlciU1QnRhcmdldCU1RD15eDdheQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/svje2/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/svje2/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

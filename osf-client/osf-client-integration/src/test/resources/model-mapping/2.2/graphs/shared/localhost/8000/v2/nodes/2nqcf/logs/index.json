@@ -1,0 +1,476 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-12-09T15:56:03.880000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "news"
+        }
+      },
+      "id": "584ad413594d9001fd56057f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ad413594d9001fd56057f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-12-09T15:55:57.332000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "current events"
+        }
+      },
+      "id": "584ad40d594d90020056059a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ad40d594d90020056059a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-09T15:46:23.984000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "m7kyh",
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": {
+            "id": "ed4ps",
+            "title": "JHU Lab Organization Template"
+          },
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "584ad1cfb83f6901f2ad2775",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ad1cfb83f6901f2ad2775/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-09T13:38:47.716000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "um389",
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": {
+            "id": "ed4ps",
+            "title": "JHU Lab Organization Template"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "584ab3e7b83f6901f3ad26d9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab3e7b83f6901f3ad26d9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-09T13:38:36.517000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": {
+            "id": "ed4ps",
+            "title": "JHU Lab Organization Template"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "584ab3dc594d90020b050109",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab3dc594d90020b050109/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-08T14:32:35.759000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58496f03b83f6901f81dc679",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58496f03b83f6901f81dc679/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5kx6m/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-08T14:32:35.669000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Boehm",
+              "full_name": "Reid Boehm",
+              "given_name": "Reid",
+              "id": "39bsp",
+              "middle_names": "Isaac",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": {
+            "id": "ed4ps",
+            "title": "JHU Lab Organization Template"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58496f03594d900206d55c3c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58496f03594d900206d55c3c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5kx6m/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-08T14:32:35.659000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Boehm",
+              "full_name": "Reid Boehm",
+              "given_name": "Reid",
+              "id": "39bsp",
+              "middle_names": "Isaac",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": {
+            "id": "ed4ps",
+            "title": "JHU Lab Organization Template"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58496f03594d900206d55c3b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58496f03594d900206d55c3b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5kx6m/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-12-08T14:32:35.335000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "2nqcf",
+            "title": "Announcements"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58496f03594d900206d55c3a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58496f03594d900206d55c3a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/5kx6m/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/2nqcf/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 9
+  }
+}

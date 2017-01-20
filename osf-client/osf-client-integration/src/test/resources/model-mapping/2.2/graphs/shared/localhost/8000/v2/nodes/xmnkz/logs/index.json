@@ -2,159 +2,8 @@
   "data": [
     {
       "attributes": {
-        "action": "contributor_added",
-        "date": "2017-01-06T20:12:08.317000Z",
-        "params": {
-          "contributors": [
-            {
-              "active": false,
-              "family_name": "Brown",
-              "full_name": "Charlie Brown",
-              "given_name": "Charlie",
-              "id": "r29rh",
-              "middle_names": "",
-              "unregistered_name": "Charlie Brown"
-            }
-          ],
-          "params_node": {
-            "id": "xmnkz",
-            "title": "Other Component"
-          },
-          "params_project": {
-            "id": "xug4a",
-            "title": "Test Project"
-          },
-          "preprint_provider": null
-        }
-      },
-      "id": "586ffa189ad5a102028b05ba",
-      "links": {
-        "self": "http://localhost:8000/v2/logs/586ffa189ad5a102028b05ba/"
-      },
-      "relationships": {
-        "node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "original_node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "user": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/users/gb6f3/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "logs"
-    },
-    {
-      "attributes": {
-        "action": "project_registered",
-        "date": "2016-08-09T04:56:36.504000Z",
-        "params": {
-          "contributors": [],
-          "params_node": {
-            "id": "xmnkz",
-            "title": "Other Component"
-          },
-          "params_project": null,
-          "preprint_provider": null
-        }
-      },
-      "id": "57a96284594d9001f2913c01",
-      "links": {
-        "self": "http://localhost:8000/v2/logs/57a96284594d9001f2913c01/"
-      },
-      "relationships": {
-        "node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "original_node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "user": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/users/gb6f3/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "logs"
-    },
-    {
-      "attributes": {
-        "action": "project_registered",
-        "date": "2016-08-01T19:15:56.158000Z",
-        "params": {
-          "contributors": [],
-          "params_node": {
-            "id": "xmnkz",
-            "title": "Other Component"
-          },
-          "params_project": null,
-          "preprint_provider": null
-        }
-      },
-      "id": "579f9fec9ad5a101f5f90d30",
-      "links": {
-        "self": "http://localhost:8000/v2/logs/579f9fec9ad5a101f5f90d30/"
-      },
-      "relationships": {
-        "node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "original_node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "user": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/users/gb6f3/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "logs"
-    },
-    {
-      "attributes": {
-        "action": "made_public",
-        "date": "2016-07-29T14:39:23.998000Z",
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:36.527000Z",
         "params": {
           "contributors": [],
           "params_node": {
@@ -165,12 +14,17 @@
             "id": "xug4a",
             "title": "Test Project"
           },
-          "preprint_provider": null
+          "path": "/11_eleven.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf666c613b0043f2c804/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf666c613b0043f2c804/"
+          }
         }
       },
-      "id": "579b6a9b594d9001fa87deea",
+      "id": "587fdf6c6c613b0045f2c71e",
       "links": {
-        "self": "http://localhost:8000/v2/logs/579b6a9b594d9001fa87deea/"
+        "self": "http://localhost:8000/v2/logs/587fdf6c6c613b0045f2c71e/"
       },
       "relationships": {
         "node": {
@@ -202,198 +56,461 @@
     },
     {
       "attributes": {
-        "action": "contributor_added",
-        "date": "2016-03-17T18:14:03.991000Z",
-        "params": {
-          "contributors": [
-            {
-              "active": true,
-              "family_name": "Martino",
-              "full_name": "James Martino",
-              "given_name": "James",
-              "id": "9vw8x",
-              "middle_names": "",
-              "unregistered_name": null
-            }
-          ],
-          "params_node": {
-            "id": "xmnkz",
-            "title": "Other Component"
-          },
-          "params_project": {
-            "id": "xug4a",
-            "title": "Test Project"
-          },
-          "preprint_provider": null
-        }
-      },
-      "id": "56eaf3eb9ad5a101b33fe741",
-      "links": {
-        "self": "http://localhost:8000/v2/logs/56eaf3eb9ad5a101b33fe741/"
-      },
-      "relationships": {
-        "node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "original_node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "user": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/users/gb6f3/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "logs"
-    },
-    {
-      "attributes": {
-        "action": "contributor_removed",
-        "date": "2016-03-17T18:13:46.800000Z",
-        "params": {
-          "contributors": [
-            {
-              "active": true,
-              "family_name": "Martino",
-              "full_name": "David Jim Martino",
-              "given_name": "David",
-              "id": "qubhz",
-              "middle_names": "Jim",
-              "unregistered_name": null
-            }
-          ],
-          "params_node": {
-            "id": "xmnkz",
-            "title": "Other Component"
-          },
-          "params_project": {
-            "id": "xug4a",
-            "title": "Test Project"
-          },
-          "preprint_provider": null
-        }
-      },
-      "id": "56eaf3da9ad5a101b13fe728",
-      "links": {
-        "self": "http://localhost:8000/v2/logs/56eaf3da9ad5a101b13fe728/"
-      },
-      "relationships": {
-        "node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "original_node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "user": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/users/gb6f3/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "logs"
-    },
-    {
-      "attributes": {
-        "action": "contributor_added",
-        "date": "2016-03-17T18:13:18.734000Z",
-        "params": {
-          "contributors": [
-            {
-              "active": true,
-              "family_name": "Martino",
-              "full_name": "David Jim Martino",
-              "given_name": "David",
-              "id": "qubhz",
-              "middle_names": "Jim",
-              "unregistered_name": null
-            }
-          ],
-          "params_node": {
-            "id": "xmnkz",
-            "title": "Other Component"
-          },
-          "params_project": {
-            "id": "xug4a",
-            "title": "Test Project"
-          },
-          "preprint_provider": null
-        }
-      },
-      "id": "56eaf3be594d9001c0bb8eca",
-      "links": {
-        "self": "http://localhost:8000/v2/logs/56eaf3be594d9001c0bb8eca/"
-      },
-      "relationships": {
-        "node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "original_node": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/xmnkz/",
-              "meta": {}
-            }
-          }
-        },
-        "user": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/users/gb6f3/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "logs"
-    },
-    {
-      "attributes": {
-        "action": "project_created",
-        "date": "2016-03-16T18:01:19.541000Z",
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:31.000000Z",
         "params": {
           "contributors": [],
           "params_node": {
             "id": "xmnkz",
             "title": "Other Component"
           },
-          "params_project": null,
-          "preprint_provider": null
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/08_eight.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf5a9ad5a10053b83547/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf5a9ad5a10053b83547/"
+          }
         }
       },
-      "id": "56e99f6f9ad5a101ae3fe69d",
+      "id": "587fdf67ad3c4800464d7f19",
       "links": {
-        "self": "http://localhost:8000/v2/logs/56e99f6f9ad5a101ae3fe69d/"
+        "self": "http://localhost:8000/v2/logs/587fdf67ad3c4800464d7f19/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:30.967000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/06_six.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf5aad3c4800414d7ee3/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf5aad3c4800414d7ee3/"
+          }
+        }
+      },
+      "id": "587fdf66ad3c4800434d7ecb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf66ad3c4800434d7ecb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:30.471000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/10_ten.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf5a594d900044569d6f/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf5a594d900044569d6f/"
+          }
+        }
+      },
+      "id": "587fdf66ad3c4800484d7fb3",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf66ad3c4800484d7fb3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:30.148000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/09_nine.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf5a6c613b0048f2c6e8/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf5a6c613b0048f2c6e8/"
+          }
+        }
+      },
+      "id": "587fdf66594d900048569ccf",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf66594d900048569ccf/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:29.156000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/07_seven.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf5ab83f69004bf14d0d/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf5ab83f69004bf14d0d/"
+          }
+        }
+      },
+      "id": "587fdf65b83f69004df14ca5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf65b83f69004df14ca5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:17.190000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/04_four.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf4ab83f690047f14c9c/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf4ab83f690047f14c9c/"
+          }
+        }
+      },
+      "id": "587fdf599ad5a10051b835ad",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf599ad5a10051b835ad/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:17.187000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/01_one.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf4bad3c4800474d7eb3/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf4bad3c4800474d7eb3/"
+          }
+        }
+      },
+      "id": "587fdf596c613b0047f2c684",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf596c613b0047f2c684/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:17.115000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/05_five.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf4a6c5ee6004a8166c4/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf4a6c5ee6004a8166c4/"
+          }
+        }
+      },
+      "id": "587fdf59594d900048569cce",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf59594d900048569cce/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xmnkz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/gb6f3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-18T21:34:17.112000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xmnkz",
+            "title": "Other Component"
+          },
+          "params_project": {
+            "id": "xug4a",
+            "title": "Test Project"
+          },
+          "path": "/02_two.txt",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/xmnkz/files/osfstorage/587fdf4a6c5ee6004b816737/?action=download",
+            "view": "/project/xmnkz/files/osfstorage/587fdf4a6c5ee6004b816737/"
+          }
+        }
+      },
+      "id": "587fdf59b83f69004bf14d0c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fdf59b83f69004bf14d0c/"
       },
       "relationships": {
         "node": {
@@ -426,13 +543,13 @@
   ],
   "links": {
     "first": null,
-    "last": null,
-    "next": null,
+    "last": "http://localhost:8000/v2/nodes/xmnkz/logs/?page=2",
+    "next": "http://localhost:8000/v2/nodes/xmnkz/logs/?page=2",
     "prev": null,
     "self": "http://localhost:8000/v2/nodes/xmnkz/logs/"
   },
   "meta": {
     "per_page": 10,
-    "total": 8
+    "total": 19
   }
 }

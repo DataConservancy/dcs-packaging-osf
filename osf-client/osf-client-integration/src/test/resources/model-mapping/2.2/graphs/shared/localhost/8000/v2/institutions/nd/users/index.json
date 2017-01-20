@@ -1,0 +1,435 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-09-03T12:09:27.888000Z",
+        "family_name": "",
+        "full_name": "Matt VanderWerf",
+        "given_name": "",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "2c6tq",
+      "links": {
+        "html": "http://osf.io/2c6tq/",
+        "profile_image": "http://secure.gravatar.com/avatar/81cef2d31dd92a6ae08e034f66cc0783?d=identicon",
+        "self": "http://localhost:8000/v2/users/2c6tq/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/2c6tq/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/2c6tq/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/2c6tq/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-05-19T12:16:59.318000Z",
+        "family_name": "Tillman",
+        "full_name": "Ruth Kitchin Tillman",
+        "given_name": "Ruth",
+        "locale": "en_US",
+        "middle_names": "Kitchin",
+        "suffix": "",
+        "timezone": "America/Indianapolis"
+      },
+      "id": "7tmeb",
+      "links": {
+        "html": "http://osf.io/7tmeb/",
+        "profile_image": "http://secure.gravatar.com/avatar/a97fa377d96694aaf208e1c253989fde?d=identicon",
+        "self": "http://localhost:8000/v2/users/7tmeb/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7tmeb/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/7tmeb/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7tmeb/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-10-04T19:29:27.324000Z",
+        "family_name": "",
+        "full_name": "Nathan Rose",
+        "given_name": "",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "9k8n4",
+      "links": {
+        "html": "http://osf.io/9k8n4/",
+        "profile_image": "http://secure.gravatar.com/avatar/14424ac56cae29b4c222dc265f60ccf6?d=identicon",
+        "self": "http://localhost:8000/v2/users/9k8n4/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9k8n4/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/9k8n4/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9k8n4/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2015-09-08T13:06:17.799000Z",
+        "family_name": "Suhovecky",
+        "full_name": "Mark Suhovecky",
+        "given_name": "Mark",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/Indianapolis"
+      },
+      "id": "9qeg4",
+      "links": {
+        "html": "http://osf.io/9qeg4/",
+        "profile_image": "http://secure.gravatar.com/avatar/790b2f144fe208e1be2635a29080454e?d=identicon",
+        "self": "http://localhost:8000/v2/users/9qeg4/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/9qeg4/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2015-02-18T20:48:49.095000Z",
+        "family_name": "Meyers",
+        "full_name": "Natalie Meyers",
+        "given_name": "Natalie",
+        "locale": "en_US",
+        "middle_names": "K",
+        "suffix": "",
+        "timezone": "America/Indianapolis"
+      },
+      "id": "a45nu",
+      "links": {
+        "html": "http://osf.io/a45nu/",
+        "profile_image": "http://secure.gravatar.com/avatar/89b4cfe4617a5e7d330989ba93d6fce1?d=identicon",
+        "self": "http://localhost:8000/v2/users/a45nu/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/a45nu/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-10-04T14:19:06.150000Z",
+        "family_name": "",
+        "full_name": "Pete Hlabse",
+        "given_name": "",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "c2m6p",
+      "links": {
+        "html": "http://osf.io/c2m6p/",
+        "profile_image": "http://secure.gravatar.com/avatar/67b8fca08627ff73fedaa430562dcd1a?d=identicon",
+        "self": "http://localhost:8000/v2/users/c2m6p/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/c2m6p/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/c2m6p/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/c2m6p/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2015-06-12T13:04:33.855000Z",
+        "family_name": "Vecchio",
+        "full_name": "Julie Vecchio",
+        "given_name": "Julie",
+        "locale": "en_US",
+        "middle_names": "Christine",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "czvh7",
+      "links": {
+        "html": "http://osf.io/czvh7/",
+        "profile_image": "http://secure.gravatar.com/avatar/1a2b4828642430c84ef780966295ad8d?d=identicon",
+        "self": "http://localhost:8000/v2/users/czvh7/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/czvh7/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/czvh7/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/czvh7/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-09-27T15:18:36.163000Z",
+        "family_name": "",
+        "full_name": "Jan Maxwell",
+        "given_name": "",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "czwm4",
+      "links": {
+        "html": "http://osf.io/czwm4/",
+        "profile_image": "http://secure.gravatar.com/avatar/2b49156595d7983c7bc102a807038fd2?d=identicon",
+        "self": "http://localhost:8000/v2/users/czwm4/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/czwm4/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/czwm4/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/czwm4/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-03-08T17:34:14.376000Z",
+        "family_name": "Gesing",
+        "full_name": "Sandra Gesing",
+        "given_name": "Sandra",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "d7eqj",
+      "links": {
+        "html": "http://osf.io/d7eqj/",
+        "profile_image": "http://secure.gravatar.com/avatar/c1f1d415c90796f3450ddc2cf2c4f041?d=identicon",
+        "self": "http://localhost:8000/v2/users/d7eqj/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d7eqj/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/d7eqj/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d7eqj/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "active": true,
+        "date_registered": "2016-06-06T17:18:59.593000Z",
+        "family_name": "Berta",
+        "full_name": "Margaret Berta",
+        "given_name": "Margaret",
+        "locale": "en_US",
+        "middle_names": "",
+        "suffix": "",
+        "timezone": "America/New_York"
+      },
+      "id": "ds4cw",
+      "links": {
+        "html": "http://osf.io/ds4cw/",
+        "profile_image": "http://secure.gravatar.com/avatar/12ea3e4bb7900a8cba9970aca5bac7ba?d=identicon",
+        "self": "http://localhost:8000/v2/users/ds4cw/"
+      },
+      "relationships": {
+        "institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ds4cw/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/users/ds4cw/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ds4cw/nodes/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "users"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/institutions/nd/users/?page=3",
+    "next": "http://localhost:8000/v2/institutions/nd/users/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/institutions/nd/users/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 24
+  }
+}

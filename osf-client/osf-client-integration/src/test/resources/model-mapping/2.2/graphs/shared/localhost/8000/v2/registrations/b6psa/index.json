@@ -1,0 +1,217 @@
+{
+  "data": {
+    "attributes": {
+      "category": "project",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2016-09-06T13:43:55.705000Z",
+      "date_modified": "2016-09-06T13:45:35.726000Z",
+      "date_registered": "2016-09-06T13:52:06.592000Z",
+      "description": "",
+      "embargo_end_date": null,
+      "fork": false,
+      "node_license": null,
+      "pending_embargo_approval": false,
+      "pending_registration_approval": false,
+      "pending_withdrawal": false,
+      "preprint": false,
+      "public": true,
+      "registered_meta": {
+        "item29": {
+          "comments": [],
+          "extra": [],
+          "value": "OSFNDNonINStProj1"
+        },
+        "item30": {
+          "comments": [],
+          "extra": [],
+          "value": ""
+        },
+        "item31": {
+          "comments": [],
+          "extra": [],
+          "value": ""
+        },
+        "item32": {
+          "comments": [],
+          "extra": [],
+          "value": "not significantly different from the original effect size"
+        },
+        "item33": {
+          "comments": [],
+          "extra": [],
+          "value": "inconclusive"
+        },
+        "item34": {
+          "comments": [],
+          "extra": [],
+          "value": "This a TEST dataset of Registration Only"
+        },
+        "item35": {
+          "comments": [],
+          "extra": [],
+          "value": ""
+        },
+        "item36": {
+          "comments": [],
+          "extra": [],
+          "value": ""
+        },
+        "item37": {
+          "comments": [],
+          "extra": [],
+          "value": "Trivial"
+        }
+      },
+      "registration": true,
+      "registration_supplement": "Replication Recipe (Brandt et al., 2013): Post-Completion",
+      "tags": [],
+      "title": "OSFNonInstProj1",
+      "withdrawal_justification": null,
+      "withdrawn": false
+    },
+    "id": "b6psa",
+    "links": {
+      "html": "http://osf.io/b6psa/",
+      "self": "http://localhost:8000/v2/registrations/b6psa/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1iNnBzYQ==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_by": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/qpru8/",
+            "meta": {}
+          }
+        }
+      },
+      "registered_from": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/ymt9w/",
+            "meta": {}
+          }
+        }
+      },
+      "registration_schema": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c4/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/registrations/b6psa/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "registrations"
+  }
+}

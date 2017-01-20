@@ -1,0 +1,561 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-07-10T23:29:45.546000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Brake",
+              "full_name": "Daniel Brake",
+              "given_name": "Daniel",
+              "id": "dj3wm",
+              "middle_names": "",
+              "unregistered_name": "Daniel Brake"
+            }
+          ],
+          "params_node": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5782da69594d9001f1437748",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5782da69594d9001f1437748/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-07-10T23:29:31.898000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5782da5b6c613b01f0f16967",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5782da5b6c613b01f0f16967/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_removed",
+        "date": "2016-06-22T14:26:14.704000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "576aa006594d900044ad295b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/576aa006594d900044ad295b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "comment_added",
+        "date": "2016-06-22T14:25:42.046000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "576a9fe6b83f690047c2505f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/576a9fe6b83f690047c2505f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-06-08T23:22:38.749000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "nd",
+            "name": "University of Notre Dame"
+          },
+          "params_node": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5758a8beb83f69020c077bf5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5758a8beb83f69020c077bf5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-05-25T21:18:45.762000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "talk"
+        }
+      },
+      "id": "574616b5b83f6901ea6d01bd",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/574616b5b83f6901ea6d01bd/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-19T16:10:10.205000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Thain",
+              "full_name": "Douglas Thain",
+              "given_name": "Douglas",
+              "id": "na2rw",
+              "middle_names": "",
+              "unregistered_name": "Douglas Thain"
+            }
+          ],
+          "params_node": {
+            "id": "7jp2h",
+            "title": "HEP Use Case"
+          },
+          "params_project": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573de5629ad5a101ff6ff33f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573de5629ad5a101ff6ff33f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-19T16:09:30.692000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Vyushkov",
+              "full_name": "Alexander Vyushkov",
+              "given_name": "Alexander",
+              "id": "kh4n3",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "7jp2h",
+            "title": "HEP Use Case"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573de53a594d9001f9c21d30",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573de53a594d9001f9c21d30/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-19T16:09:30.684000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Meyers",
+              "full_name": "Natalie Meyers",
+              "given_name": "Natalie",
+              "id": "a45nu",
+              "middle_names": "K",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "7jp2h",
+            "title": "HEP Use Case"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573de53a594d9001f9c21d2f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573de53a594d9001f9c21d2f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-19T16:09:15.125000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Meng",
+              "full_name": "Haiyan Meng",
+              "given_name": "Haiyan",
+              "id": "w8g7u",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Vyushkov",
+              "full_name": "Alexander Vyushkov",
+              "given_name": "Alexander",
+              "id": "kh4n3",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "7jp2h",
+            "title": "HEP Use Case"
+          },
+          "params_project": {
+            "id": "adcjz",
+            "title": "Workshop Use Case 1: Umbrella"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573de52bb83f6901e05ae4f9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573de52bb83f6901e05ae4f9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7jp2h/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/adcjz/logs/?page=6",
+    "next": "http://localhost:8000/v2/nodes/adcjz/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/adcjz/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 52
+  }
+}

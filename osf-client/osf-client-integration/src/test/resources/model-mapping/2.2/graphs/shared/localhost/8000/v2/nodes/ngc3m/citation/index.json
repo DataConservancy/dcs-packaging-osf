@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Suhovecky",
+          "given": "Mark"
+        },
+        {
+          "family": "",
+          "given": "CurateND"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "JHUTest3",
+      "type": "webpage"
+    },
+    "id": "ngc3m",
+    "links": {
+      "self": "osf.io/ngc3m"
+    },
+    "type": "node-citation"
+  }
+}

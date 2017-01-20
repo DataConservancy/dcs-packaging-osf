@@ -1,0 +1,32 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "zhou",
+          "given": "faren"
+        },
+        {
+          "family": "Courville",
+          "given": "Pascal"
+        },
+        {
+          "family": "Sampey",
+          "given": "Darryl"
+        },
+        {
+          "family": "Cai",
+          "given": "Steve"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Data",
+      "type": "webpage"
+    },
+    "id": "vsxed",
+    "links": {
+      "self": "osf.io/vsxed"
+    },
+    "type": "node-citation"
+  }
+}

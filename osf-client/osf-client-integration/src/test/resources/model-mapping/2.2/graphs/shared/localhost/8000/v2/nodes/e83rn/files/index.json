@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "kind": "folder",
+        "name": "osfstorage",
+        "node": "e83rn",
+        "path": "/",
+        "provider": "osfstorage"
+      },
+      "id": "e83rn:osfstorage",
+      "links": {
+        "new_folder": "http://files.osf.io/v1/resources/e83rn/providers/osfstorage/?kind=folder",
+        "storage_addons": "http://localhost:8000/v2/addons/?filter%5Bcategories%5D=storage",
+        "upload": "http://files.osf.io/v1/resources/e83rn/providers/osfstorage/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/files/osfstorage/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/e83rn/files/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

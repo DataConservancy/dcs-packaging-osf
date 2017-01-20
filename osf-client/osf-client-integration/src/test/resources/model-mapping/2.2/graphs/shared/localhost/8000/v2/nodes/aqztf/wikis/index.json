@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-05-19T13:05:13.050000Z",
+        "extra": {
+          "version": 11
+        },
+        "kind": "file",
+        "materialized_path": "/s8zbr",
+        "name": "home",
+        "path": "/s8zbr",
+        "size": 9240
+      },
+      "id": "s8zbr",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/s8zbr/content/",
+        "info": "http://localhost:8000/v2/wikis/s8zbr/",
+        "self": "http://localhost:8000/v2/wikis/s8zbr/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1zOHpicg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/aqztf/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

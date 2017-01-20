@@ -1,0 +1,189 @@
+{
+  "data": {
+    "attributes": {
+      "category": "communication",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2016-12-05T20:10:31.121000Z",
+      "date_modified": "2016-12-09T15:36:37.523000Z",
+      "description": "This section is for keeping meeting notes from regular lab meetings. Each file is named as  ",
+      "fork": false,
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "preprint": false,
+      "public": true,
+      "registration": false,
+      "tags": [
+        "meetings"
+      ],
+      "title": "Meeting Notes"
+    },
+    "id": "f88by",
+    "links": {
+      "html": "http://osf.io/f88by/",
+      "self": "http://localhost:8000/v2/nodes/f88by/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/f88by/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1mODhieQ==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/draft_registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96c/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/f88by/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/ed4ps/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/ed4ps/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/f88by/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "nodes"
+  }
+}

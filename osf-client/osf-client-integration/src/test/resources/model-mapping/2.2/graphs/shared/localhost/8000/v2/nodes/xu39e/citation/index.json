@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Malawski",
+          "given": "Maciej"
+        },
+        {
+          "family": "Steeves",
+          "given": "Vicky"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Maciej Malawski: Hyperflow",
+      "type": "webpage"
+    },
+    "id": "xu39e",
+    "links": {
+      "self": "osf.io/xu39e"
+    },
+    "type": "node-citation"
+  }
+}

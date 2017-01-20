@@ -1,0 +1,56 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "Sallans",
+          "given": "Andrew"
+        },
+        {
+          "family": "Brower",
+          "given": "Donald"
+        },
+        {
+          "family": "Vyushkov",
+          "given": "Alexander"
+        },
+        {
+          "family": "Russell",
+          "given": "Tanya L"
+        },
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Soderberg",
+          "given": "Courtney K"
+        },
+        {
+          "family": "Pfeiffer",
+          "given": "Nicole"
+        },
+        {
+          "family": "espinoza",
+          "given": "carlos"
+        },
+        {
+          "family": "morris",
+          "given": "Jeff"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "External Link to daspos",
+      "type": "webpage"
+    },
+    "id": "nr8ku",
+    "links": {
+      "self": "osf.io/nr8ku"
+    },
+    "type": "node-citation"
+  }
+}

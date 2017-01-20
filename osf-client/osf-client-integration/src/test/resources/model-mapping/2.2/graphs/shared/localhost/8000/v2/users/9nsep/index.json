@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2014-05-16T20:44:11.624000Z",
+      "family_name": "Christensen",
+      "full_name": "Garret Christensen",
+      "given_name": "Garret",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/Los_Angeles"
+    },
+    "id": "9nsep",
+    "links": {
+      "html": "http://osf.io/9nsep/",
+      "profile_image": "http://secure.gravatar.com/avatar/8a39fd62c515d45bfa25e664d260200f?d=identicon",
+      "self": "http://localhost:8000/v2/users/9nsep/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9nsep/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/9nsep/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9nsep/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

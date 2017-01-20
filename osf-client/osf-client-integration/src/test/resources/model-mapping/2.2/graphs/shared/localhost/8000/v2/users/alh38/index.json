@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2013-10-11T18:42:20.133000Z",
+      "family_name": "Errington",
+      "full_name": "Tim Errington",
+      "given_name": "Timothy",
+      "locale": "en_us",
+      "middle_names": "M.",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "alh38",
+    "links": {
+      "html": "http://osf.io/alh38/",
+      "profile_image": "http://secure.gravatar.com/avatar/20937c7cc6bf128d50569282d8daecb0?d=identicon",
+      "self": "http://localhost:8000/v2/users/alh38/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/alh38/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/alh38/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/alh38/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

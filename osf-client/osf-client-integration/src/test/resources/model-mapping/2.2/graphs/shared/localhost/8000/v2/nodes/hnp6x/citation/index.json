@@ -1,0 +1,36 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Mellor",
+          "given": "David T"
+        },
+        {
+          "family": "Spitzer",
+          "given": "Matthew"
+        },
+        {
+          "family": "DeHaven",
+          "given": "Alexander C"
+        },
+        {
+          "family": "Esposito",
+          "given": "Jolene"
+        },
+        {
+          "family": "Thorpe",
+          "given": "Brandon"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Open Science Community Outreach",
+      "type": "webpage"
+    },
+    "id": "hnp6x",
+    "links": {
+      "self": "osf.io/hnp6x"
+    },
+    "type": "node-citation"
+  }
+}

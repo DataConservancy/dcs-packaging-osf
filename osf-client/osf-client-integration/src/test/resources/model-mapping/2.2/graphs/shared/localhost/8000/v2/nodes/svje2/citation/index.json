@@ -1,0 +1,36 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Bowman",
+          "given": "Sara D"
+        },
+        {
+          "family": "Sallans",
+          "given": "Andrew"
+        },
+        {
+          "family": "Cain",
+          "given": "Katherine E"
+        },
+        {
+          "family": "Esposito",
+          "given": "Jolene"
+        },
+        {
+          "family": "Dayton",
+          "given": "Hunter"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "OSF Case Studies",
+      "type": "webpage"
+    },
+    "id": "svje2",
+    "links": {
+      "self": "osf.io/svje2"
+    },
+    "type": "node-citation"
+  }
+}

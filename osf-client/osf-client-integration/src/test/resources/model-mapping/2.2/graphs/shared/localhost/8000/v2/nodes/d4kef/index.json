@@ -1,0 +1,187 @@
+{
+  "data": {
+    "attributes": {
+      "category": "communication",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2016-07-18T13:56:35.043000Z",
+      "date_modified": "2016-11-30T17:53:52.268000Z",
+      "description": "This is a review of the state of software preservation and sharing as it relates to research software. An overview of the challenges and current state of solutions is presented, while also touching on cultural heritage software, the preservation of which has many parallels to research software. Topics include technical approaches to preservation, describing and sharing software, citation/attribution, repositories, and a brief overview of issues in publishing, policy, and legal matters.\n\nNote \"The Pathways of Research Software Preservation: An Educational and Planning Resource for Service Development\" (http://doi.org/10.1045/july2016-rios) can be seen as a companion to this review.\n\nThis work was done while part of the Data Management Services group at Johns Hopkins University (JHU). Any opinions or views contained within are the author's own and are not endorsed by JHU.\n",
+      "fork": false,
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "preprint": false,
+      "public": true,
+      "registration": false,
+      "tags": [
+        "software preservation",
+        "reproducibility",
+        "software citation",
+        "open science",
+        "research software",
+        "digital preservation",
+        "data management"
+      ],
+      "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+    },
+    "id": "d4kef",
+    "links": {
+      "html": "http://osf.io/d4kef/",
+      "self": "http://localhost:8000/v2/nodes/d4kef/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1kNGtlZg==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/draft_registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d4kef/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "nodes"
+  }
+}

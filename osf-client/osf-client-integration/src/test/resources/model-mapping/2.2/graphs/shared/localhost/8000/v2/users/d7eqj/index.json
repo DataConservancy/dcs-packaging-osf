@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2016-03-08T17:34:14.376000Z",
+      "family_name": "Gesing",
+      "full_name": "Sandra Gesing",
+      "given_name": "Sandra",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "d7eqj",
+    "links": {
+      "html": "http://osf.io/d7eqj/",
+      "profile_image": "http://secure.gravatar.com/avatar/c1f1d415c90796f3450ddc2cf2c4f041?d=identicon",
+      "self": "http://localhost:8000/v2/users/d7eqj/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d7eqj/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/d7eqj/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d7eqj/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

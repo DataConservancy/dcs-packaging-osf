@@ -1,0 +1,528 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "external_ids_added",
+        "date": "2016-11-21T16:37:12.942000Z",
+        "params": {
+          "contributors": [],
+          "identifiers": {
+            "ark": "c7605/osf.io/aqztf",
+            "doi": "10.17605/OSF.IO/AQZTF"
+          },
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "583322b8b83f6901fc77f6bb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/583322b8b83f6901fc77f6bb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "googledrive_node_authorized",
+        "date": "2016-11-10T16:07:26.545000Z",
+        "params": {
+          "contributors": [],
+          "folder": null,
+          "folder_name": null,
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58249b3e9ad5a102061cf959",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58249b3e9ad5a102061cf959/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "addon_added",
+        "date": "2016-11-10T16:07:03.710000Z",
+        "params": {
+          "addon": "Google Drive",
+          "contributors": [],
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58249b279ad5a1020a1cf94a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58249b279ad5a1020a1cf94a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-07-10T23:32:39.596000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Brake",
+              "full_name": "Daniel Brake",
+              "given_name": "Daniel",
+              "id": "dj3wm",
+              "middle_names": "",
+              "unregistered_name": "Daniel Brake"
+            }
+          ],
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5782db179ad5a101f26b5194",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5782db179ad5a101f26b5194/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-07-10T23:32:39.587000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Suhovecky",
+              "full_name": "Mark Suhovecky",
+              "given_name": "Mark",
+              "id": "9qeg4",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5782db179ad5a101f26b5193",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5782db179ad5a101f26b5193/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-06-08T22:54:14.000000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "nd",
+            "name": "University of Notre Dame"
+          },
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5758a2166c613b0208682df8",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5758a2166c613b0208682df8/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-05-25T21:18:20.132000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "talk"
+        }
+      },
+      "id": "5746169cb83f6901e86d01fc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5746169cb83f6901e86d01fc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-05-19T18:31:32.291000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "path": "/2016-05-19 DASPOS ReproZip Talk + Demo.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/aqztf/files/osfstorage/573db1f3594d9001ed499f58/?action=download",
+            "view": "/project/aqztf/files/osfstorage/573db1f3594d9001ed499f58/"
+          }
+        }
+      },
+      "id": "573e0684594d9001fbc21d7a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e0684594d9001fbc21d7a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/947ky/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "license_changed",
+        "date": "2016-05-19T17:07:59.271000Z",
+        "params": {
+          "contributors": [],
+          "license": "CC-By Attribution 4.0 International",
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573df2ef594d9001fac21d36",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573df2ef594d9001fac21d36/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-19T13:05:13.050000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "s8zbr",
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "11"
+        }
+      },
+      "id": "573dba099ad5a101f1b38a5c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573dba099ad5a101f1b38a5c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/aqztf/logs/?page=8",
+    "next": "http://localhost:8000/v2/nodes/aqztf/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/aqztf/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 78
+  }
+}

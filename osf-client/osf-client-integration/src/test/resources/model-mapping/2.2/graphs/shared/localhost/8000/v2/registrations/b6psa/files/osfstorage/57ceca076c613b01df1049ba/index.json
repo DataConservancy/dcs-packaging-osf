@@ -1,0 +1,131 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-09-06T13:44:21.808000Z",
+        "date_modified": "2016-09-06T13:44:21.808000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 7,
+          "hashes": {
+            "md5": "69b3a9f941da06b84d9020ba3efb4742",
+            "sha256": "95a07f47fe6f9f243f0847c7a796cdd75bac869f94a2e26f8ae5692ff62874b1"
+          }
+        },
+        "guid": "s79rx",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of OSF Storage/conrad_taylor2011.pdf",
+        "name": "conrad_taylor2011.pdf",
+        "path": "/57ceca076c613b01df1049bb",
+        "provider": "osfstorage",
+        "size": 3524114,
+        "tags": []
+      },
+      "id": "57ceca076c613b01df1049bb",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bb",
+        "download": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bb",
+        "info": "http://localhost:8000/v2/files/57ceca076c613b01df1049bb/",
+        "move": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bb",
+        "self": "http://localhost:8000/v2/files/57ceca076c613b01df1049bb/",
+        "upload": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bb"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1zNzlyeA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/57ceca076c613b01df1049bb/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-09-06T13:45:25.299000Z",
+        "date_modified": "2016-09-06T13:45:25.299000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 8,
+          "hashes": {
+            "md5": "fc3d8d0f334e587e5f9abd5eb74dd447",
+            "sha256": "7017489f7c4d36792ffba8ebf6310457125feebaeb3d34f1e12e339a626788cc"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of OSF Storage/osf-cli-1.0.1-SNAPSHOT.jar",
+        "name": "osf-cli-1.0.1-SNAPSHOT.jar",
+        "path": "/57ceca076c613b01df1049bc",
+        "provider": "osfstorage",
+        "size": 30673293,
+        "tags": []
+      },
+      "id": "57ceca076c613b01df1049bc",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bc",
+        "download": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bc",
+        "info": "http://localhost:8000/v2/files/57ceca076c613b01df1049bc/",
+        "move": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bc",
+        "self": "http://localhost:8000/v2/files/57ceca076c613b01df1049bc/",
+        "upload": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049bc"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/57ceca076c613b01df1049bc/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/b6psa/files/osfstorage/57ceca076c613b01df1049ba/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

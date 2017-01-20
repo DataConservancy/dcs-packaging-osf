@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-11-07T21:51:09.177000Z",
+        "extra": {
+          "version": 16
+        },
+        "kind": "file",
+        "materialized_path": "/pz69g",
+        "name": "home",
+        "path": "/pz69g",
+        "size": 7248
+      },
+      "id": "pz69g",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/pz69g/content/",
+        "info": "http://localhost:8000/v2/wikis/pz69g/",
+        "self": "http://localhost:8000/v2/wikis/pz69g/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1wejY5Zw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/r53z8/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

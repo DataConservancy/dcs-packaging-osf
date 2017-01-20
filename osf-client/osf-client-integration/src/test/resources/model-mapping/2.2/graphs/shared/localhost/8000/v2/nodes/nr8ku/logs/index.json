@@ -1,0 +1,591 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-11-10T16:23:36.503000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "morris",
+              "full_name": "Jeff morris",
+              "given_name": "Jeff",
+              "id": "qckhk",
+              "middle_names": "",
+              "unregistered_name": "Jeff morris"
+            }
+          ],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58249f089ad5a1020b1cf8f8",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58249f089ad5a1020b1cf8f8/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-11-10T16:23:07.338000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "espinoza",
+              "full_name": "carlos espinoza",
+              "given_name": "carlos",
+              "id": "ctg7j",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58249eeb9ad5a102051cf938",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58249eeb9ad5a102051cf938/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-10-20T20:13:21.717000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Pfeiffer",
+              "full_name": "Nicole Pfeiffer",
+              "given_name": "Nicole",
+              "id": "nsx26",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "580925616c613b01ec3b9075",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/580925616c613b01ec3b9075/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-09-28T16:12:36.805000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ebebf4594d900205ab7fe3",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ebebf4594d900205ab7fe3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-09-28T16:01:26.127000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Soderberg",
+              "full_name": "Courtney Soderberg",
+              "given_name": "Courtney",
+              "id": "hsey5",
+              "middle_names": "Karin",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ebe9566c613b01ef13c288",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ebe9566c613b01ef13c288/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "forward_url_changed",
+        "date": "2016-09-28T15:57:18.396000Z",
+        "params": {
+          "contributors": [],
+          "forward_url": "http://www.daspos.org",
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ebe85e6c613b01f113c1a5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ebe85e6c613b01f113c1a5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "addon_added",
+        "date": "2016-09-28T15:57:00.985000Z",
+        "params": {
+          "addon": "External Link",
+          "contributors": [],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ebe84c594d9001f591a6bf",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ebe84c594d9001f591a6bf/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-09-28T15:56:06.656000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "nd",
+            "name": "University of Notre Dame"
+          },
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ebe8169ad5a101fb8493c1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ebe8169ad5a101fb8493c1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-09-28T15:56:06.573000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Sallans",
+              "full_name": "Andrew Sallans",
+              "given_name": "Andrew",
+              "id": "ruiy4",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Brower",
+              "full_name": "Donald Brower",
+              "given_name": "Donald",
+              "id": "fm6na",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Vyushkov",
+              "full_name": "Alexander Vyushkov",
+              "given_name": "Alexander",
+              "id": "kh4n3",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Russell",
+              "full_name": "Tanya Russell",
+              "given_name": "Tanya",
+              "id": "e8rsg",
+              "middle_names": "Louise",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Boehm",
+              "full_name": "Reid Boehm",
+              "given_name": "Reid",
+              "id": "39bsp",
+              "middle_names": "Isaac",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": {
+            "id": "zxgt4",
+            "title": "Demo for Testing"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ebe8166c613b01f2054285",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ebe8166c613b01f2054285/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-09-28T15:56:06.224000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nr8ku",
+            "title": "External Link to daspos"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ebe8166c613b01f2054284",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ebe8166c613b01f2054284/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nr8ku/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/nr8ku/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 10
+  }
+}

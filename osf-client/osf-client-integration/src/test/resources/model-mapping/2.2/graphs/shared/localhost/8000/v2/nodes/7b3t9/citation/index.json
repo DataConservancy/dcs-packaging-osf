@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Suhovecky",
+          "given": "Mark"
+        },
+        {
+          "family": "",
+          "given": "CurateND"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Data",
+      "type": "webpage"
+    },
+    "id": "7b3t9",
+    "links": {
+      "self": "osf.io/7b3t9"
+    },
+    "type": "node-citation"
+  }
+}

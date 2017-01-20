@@ -4,27 +4,27 @@
       "attributes": {
         "content_type": "text/markdown",
         "current_user_can_comment": false,
-        "date_modified": "2016-12-21T14:42:44.084000Z",
+        "date_modified": "2017-01-13T16:45:18.639000Z",
         "extra": {
-          "version": 33
+          "version": 34
         },
         "kind": "file",
-        "materialized_path": "/uvc5w",
+        "materialized_path": "/pu5nr",
         "name": "home",
-        "path": "/uvc5w",
-        "size": 17764
+        "path": "/pu5nr",
+        "size": 18336
       },
-      "id": "uvc5w",
+      "id": "pu5nr",
       "links": {
-        "download": "http://localhost:8000/v2/wikis/uvc5w/content/",
-        "info": "http://localhost:8000/v2/wikis/uvc5w/",
-        "self": "http://localhost:8000/v2/wikis/uvc5w/"
+        "download": "http://localhost:8000/v2/wikis/pu5nr/content/",
+        "info": "http://localhost:8000/v2/wikis/pu5nr/",
+        "self": "http://localhost:8000/v2/wikis/pu5nr/"
       },
       "relationships": {
         "comments": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/ba3dy/comments/P2ZpbHRlciU1QnRhcmdldCU1RD11dmM1dw==",
+              "href": "http://localhost:8000/v2/nodes/ba3dy/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1wdTVucg==",
               "meta": {}
             }
           }

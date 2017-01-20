@@ -1,0 +1,170 @@
+{
+  "data": {
+    "attributes": {
+      "category": "project",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2016-05-31T00:09:23.817000Z",
+      "date_modified": "2017-01-20T22:04:39.315000Z",
+      "description": "The goal is to collaboratively design an interoperable and repository agnostic Data and\nSoftware Preservation Quality Tool.",
+      "fork": false,
+      "node_license": null,
+      "preprint": false,
+      "public": true,
+      "registration": false,
+      "tags": [
+        "IMLS",
+        "software preservation",
+        "data quality"
+      ],
+      "title": "Data and Software Preservation Quality Tool Planning Project"
+    },
+    "id": "d3jx7",
+    "links": {
+      "html": "http://osf.io/d3jx7/",
+      "self": "http://localhost:8000/v2/nodes/d3jx7/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1kM2p4Nw==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/draft_registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/d3jx7/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "nodes"
+  }
+}

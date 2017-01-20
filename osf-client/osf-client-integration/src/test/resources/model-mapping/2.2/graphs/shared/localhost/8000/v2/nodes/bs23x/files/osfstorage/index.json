@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2014-11-14T17:29:28.996000Z",
+        "date_modified": "2014-11-14T17:29:28.996000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 3,
+          "hashes": {
+            "md5": "d9a3db1786473f8639c72ee871a84a2d",
+            "sha256": "d6053ce46f839693a72dc5fac782fb2b1f30902d3a4fb6aaa063a2f9f413a1b6"
+          }
+        },
+        "guid": "zg73i",
+        "kind": "file",
+        "last_touched": "2015-09-18T01:11:16.328000Z",
+        "materialized_path": "/OSF_in_the_lab_Erica.pdf",
+        "name": "OSF_in_the_lab_Erica.pdf",
+        "path": "/553e610d8c5e4a219919c877",
+        "provider": "osfstorage",
+        "size": 714237,
+        "tags": []
+      },
+      "id": "553e610d8c5e4a219919c877",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c877",
+        "download": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c877",
+        "info": "http://localhost:8000/v2/files/553e610d8c5e4a219919c877/",
+        "move": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c877",
+        "self": "http://localhost:8000/v2/files/553e610d8c5e4a219919c877/",
+        "upload": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c877"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/comments/P2ZpbHRlciU1QnRhcmdldCU1RD16ZzczaQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/553e610d8c5e4a219919c877/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2014-11-14T17:29:40.711000Z",
+        "date_modified": "2014-11-14T17:29:40.711000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 32,
+          "hashes": {
+            "md5": "ab00fa2637afc26a62bf1c45279165a7",
+            "sha256": "ce874015b534d49493a66b33d1dcfa54362f28f8c69bd5e5dc1095d08bfd192b"
+          }
+        },
+        "guid": "ymads",
+        "kind": "file",
+        "last_touched": "2015-09-18T01:11:16.328000Z",
+        "materialized_path": "/services_for_journals.pdf",
+        "name": "services_for_journals.pdf",
+        "path": "/553e610d8c5e4a219919c875",
+        "provider": "osfstorage",
+        "size": 587704,
+        "tags": []
+      },
+      "id": "553e610d8c5e4a219919c875",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c875",
+        "download": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c875",
+        "info": "http://localhost:8000/v2/files/553e610d8c5e4a219919c875/",
+        "move": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c875",
+        "self": "http://localhost:8000/v2/files/553e610d8c5e4a219919c875/",
+        "upload": "http://files.osf.io/v1/resources/bs23x/providers/osfstorage/553e610d8c5e4a219919c875"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/comments/P2ZpbHRlciU1QnRhcmdldCU1RD15bWFkcw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/553e610d8c5e4a219919c875/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/bs23x/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

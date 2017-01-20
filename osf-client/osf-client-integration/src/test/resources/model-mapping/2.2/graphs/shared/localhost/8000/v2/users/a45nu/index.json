@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-02-18T20:48:49.095000Z",
+      "family_name": "Meyers",
+      "full_name": "Natalie Meyers",
+      "given_name": "Natalie",
+      "locale": "en_US",
+      "middle_names": "K",
+      "suffix": "",
+      "timezone": "America/Indianapolis"
+    },
+    "id": "a45nu",
+    "links": {
+      "html": "http://osf.io/a45nu/",
+      "profile_image": "http://secure.gravatar.com/avatar/89b4cfe4617a5e7d330989ba93d6fce1?d=identicon",
+      "self": "http://localhost:8000/v2/users/a45nu/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/a45nu/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/a45nu/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/a45nu/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

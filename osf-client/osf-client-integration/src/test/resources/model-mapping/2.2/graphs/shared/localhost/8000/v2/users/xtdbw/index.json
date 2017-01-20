@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": false,
+      "date_registered": "2016-04-05T16:18:48.486000Z",
+      "family_name": "altman",
+      "full_name": "micah altman",
+      "given_name": "micah",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Etc/UTC"
+    },
+    "id": "xtdbw",
+    "links": {
+      "html": "http://osf.io/xtdbw/",
+      "profile_image": "http://secure.gravatar.com/avatar/757c3eadbbce8ba4d6d9d6a04754546c?d=identicon",
+      "self": null
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/xtdbw/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/xtdbw/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/xtdbw/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Elliott",
+          "given": "Fitz"
+        },
+        {
+          "family": "Pfeiffer",
+          "given": "Nicole"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Reading List",
+      "type": "webpage"
+    },
+    "id": "kpmjx",
+    "links": {
+      "self": "osf.io/kpmjx"
+    },
+    "type": "node-citation"
+  }
+}

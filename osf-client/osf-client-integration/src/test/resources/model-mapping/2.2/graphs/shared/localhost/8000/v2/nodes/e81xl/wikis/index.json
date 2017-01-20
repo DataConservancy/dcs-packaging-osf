@@ -1,0 +1,351 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-18T20:46:11.076000Z",
+        "extra": {
+          "version": 92
+        },
+        "kind": "file",
+        "materialized_path": "/92y2u",
+        "name": "home",
+        "path": "/92y2u",
+        "size": 35480
+      },
+      "id": "92y2u",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/92y2u/content/",
+        "info": "http://localhost:8000/v2/wikis/92y2u/",
+        "self": "http://localhost:8000/v2/wikis/92y2u/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD05MnkydQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-18T20:05:50.738000Z",
+        "extra": {
+          "version": 13
+        },
+        "kind": "file",
+        "materialized_path": "/bysvp",
+        "name": "Funding and Supporting Organizations",
+        "path": "/bysvp",
+        "size": 5708
+      },
+      "id": "bysvp",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/bysvp/content/",
+        "info": "http://localhost:8000/v2/wikis/bysvp/",
+        "self": "http://localhost:8000/v2/wikis/bysvp/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1ieXN2cA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/dnhrw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-18T19:58:05.535000Z",
+        "extra": {
+          "version": 23
+        },
+        "kind": "file",
+        "materialized_path": "/n9v3h",
+        "name": "Studies",
+        "path": "/n9v3h",
+        "size": 12396
+      },
+      "id": "n9v3h",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/n9v3h/content/",
+        "info": "http://localhost:8000/v2/wikis/n9v3h/",
+        "self": "http://localhost:8000/v2/wikis/n9v3h/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1uOXYzaA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-18T19:50:00.679000Z",
+        "extra": {
+          "version": 15
+        },
+        "kind": "file",
+        "materialized_path": "/2ct5u",
+        "name": "Frequently Asked Questions (FAQ)",
+        "path": "/2ct5u",
+        "size": 3468
+      },
+      "id": "2ct5u",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/2ct5u/content/",
+        "info": "http://localhost:8000/v2/wikis/2ct5u/",
+        "self": "http://localhost:8000/v2/wikis/2ct5u/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0yY3Q1dQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-17T19:58:35.545000Z",
+        "extra": {
+          "version": 13
+        },
+        "kind": "file",
+        "materialized_path": "/u6zga",
+        "name": "Press",
+        "path": "/u6zga",
+        "size": 2172
+      },
+      "id": "u6zga",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/u6zga/content/",
+        "info": "http://localhost:8000/v2/wikis/u6zga/",
+        "self": "http://localhost:8000/v2/wikis/u6zga/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD11NnpnYQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-17T01:49:04.723000Z",
+        "extra": {
+          "version": 20
+        },
+        "kind": "file",
+        "materialized_path": "/u9dj8",
+        "name": "Core Project Team",
+        "path": "/u9dj8",
+        "size": 12812
+      },
+      "id": "u9dj8",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/u9dj8/content/",
+        "info": "http://localhost:8000/v2/wikis/u9dj8/",
+        "self": "http://localhost:8000/v2/wikis/u9dj8/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD11OWRqOA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    },
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-03T18:56:54.667000Z",
+        "extra": {
+          "version": 4
+        },
+        "kind": "file",
+        "materialized_path": "/qdkw8",
+        "name": "Advisory Board",
+        "path": "/qdkw8",
+        "size": 27820
+      },
+      "id": "qdkw8",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/qdkw8/content/",
+        "info": "http://localhost:8000/v2/wikis/qdkw8/",
+        "self": "http://localhost:8000/v2/wikis/qdkw8/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1xZGt3OA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/e81xl/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 7
+  }
+}

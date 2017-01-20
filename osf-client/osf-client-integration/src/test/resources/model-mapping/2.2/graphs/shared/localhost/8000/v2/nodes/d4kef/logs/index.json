@@ -1,0 +1,492 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-11-30T17:53:52.268000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "583f1230b83f6902121726f9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/583f1230b83f6902121726f9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_registered",
+        "date": "2016-09-08T16:23:32.694000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57d19084594d9001e7d4e034",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57d19084594d9001e7d4e034/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "registration_approved",
+        "date": "2016-09-08T16:23:32.627000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57d19084594d9001e7d4e033",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57d19084594d9001e7d4e033/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "registration_initiated",
+        "date": "2016-09-08T16:22:04.961000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57d1902c594d9001ecd4e06f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57d1902c594d9001ecd4e06f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_updated",
+        "date": "2016-08-18T12:57:47.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "software-preservation-review-report",
+          "github_user": "zoidy",
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "path": "report.tex",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/d4kef/files/github/report.tex/?action=download&ref=9f84f730517a60089f95e6ab17d54bfd97abf8a9",
+            "view": "/project/d4kef/files/github/report.tex/?ref=9f84f730517a60089f95e6ab17d54bfd97abf8a9"
+          }
+        }
+      },
+      "id": "57b5b0d4594d9001ebcceff1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57b5b0d4594d9001ebcceff1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_updated",
+        "date": "2016-08-18T12:57:47.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "software-preservation-review-report",
+          "github_user": "zoidy",
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "path": "research.bib",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/d4kef/files/github/research.bib/?action=download&ref=9f84f730517a60089f95e6ab17d54bfd97abf8a9",
+            "view": "/project/d4kef/files/github/research.bib/?ref=9f84f730517a60089f95e6ab17d54bfd97abf8a9"
+          }
+        }
+      },
+      "id": "57b5b0d4594d9001ebcceff2",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57b5b0d4594d9001ebcceff2/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-08-18T12:55:26.235000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "path": "/Rios2016 - [v1.4] Preserving and Sharing Research Software Review.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/d4kef/files/osfstorage/57b5ac1bb83f6901ded4ffd9/?action=download",
+            "view": "/project/d4kef/files/osfstorage/57b5ac1bb83f6901ded4ffd9/"
+          }
+        }
+      },
+      "id": "57b5b03eb83f6901ddd5001c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57b5b03eb83f6901ddd5001c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-08-18T12:53:29.391000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "path": "/Rios2016 - [v1.4] Preserving and Sharing Research Software Review.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/d4kef/files/osfstorage/57b5ac1bb83f6901ded4ffd9/?action=download",
+            "view": "/project/d4kef/files/osfstorage/57b5ac1bb83f6901ded4ffd9/"
+          }
+        }
+      },
+      "id": "57b5afc96c613b01de53dbe0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57b5afc96c613b01de53dbe0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-08-18T12:43:05.362000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "fh963",
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "4"
+        }
+      },
+      "id": "57b5ad596c613b01e453d91c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57b5ad596c613b01e453d91c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_repo_linked",
+        "date": "2016-08-18T12:40:34.444000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "software-preservation-review-report",
+          "github_user": "zoidy",
+          "params_node": {
+            "id": "d4kef",
+            "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57b5acc29ad5a101e7227f91",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57b5acc29ad5a101e7227f91/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/d4kef/logs/?page=4",
+    "next": "http://localhost:8000/v2/nodes/d4kef/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/d4kef/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 40
+  }
+}

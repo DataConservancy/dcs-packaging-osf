@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-03-22T22:38:00.500000Z",
+      "family_name": "Esposito",
+      "full_name": "Jolene Esposito",
+      "given_name": "Jolene",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Asia/Bangkok"
+    },
+    "id": "wmp4n",
+    "links": {
+      "html": "http://osf.io/wmp4n/",
+      "profile_image": "http://secure.gravatar.com/avatar/fad2bfd671bcacc58e6df431c59494ec?d=identicon",
+      "self": "http://localhost:8000/v2/users/wmp4n/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/wmp4n/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/wmp4n/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/wmp4n/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "data": {
+    "attributes": {
+      "category": "communication",
+      "collection": false,
+      "current_user_can_comment": false,
+      "current_user_permissions": [
+        "read"
+      ],
+      "date_created": "2016-12-08T14:32:35.335000Z",
+      "date_modified": "2016-12-09T15:56:03.880000Z",
+      "description": "To share upcoming news and events",
+      "fork": false,
+      "node_license": {
+        "copyright_holders": [
+          ""
+        ],
+        "year": "2016"
+      },
+      "preprint": false,
+      "public": true,
+      "registration": false,
+      "tags": [
+        "current events",
+        "news"
+      ],
+      "title": "Announcements"
+    },
+    "id": "2nqcf",
+    "links": {
+      "html": "http://osf.io/2nqcf/",
+      "self": "http://localhost:8000/v2/nodes/2nqcf/"
+    },
+    "relationships": {
+      "affiliated_institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "children": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/children/",
+            "meta": {}
+          }
+        }
+      },
+      "citation": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/citation/",
+            "meta": {}
+          }
+        }
+      },
+      "comments": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0ybnFjZg==",
+            "meta": {}
+          }
+        }
+      },
+      "contributors": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/contributors/",
+            "meta": {}
+          }
+        }
+      },
+      "draft_registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/draft_registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "files": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/files/",
+            "meta": {}
+          }
+        }
+      },
+      "forks": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/forks/",
+            "meta": {}
+          }
+        }
+      },
+      "identifiers": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/identifiers/",
+            "meta": {}
+          }
+        }
+      },
+      "license": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96c/",
+            "meta": {}
+          }
+        }
+      },
+      "linked_nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/linked_nodes/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/relationships/linked_nodes/",
+            "meta": {}
+          }
+        }
+      },
+      "logs": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/logs/",
+            "meta": {}
+          }
+        }
+      },
+      "parent": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/ed4ps/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "registrations": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/registrations/",
+            "meta": {}
+          }
+        }
+      },
+      "root": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/ed4ps/",
+            "meta": {}
+          }
+        }
+      },
+      "view_only_links": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/view_only_links/",
+            "meta": {}
+          }
+        }
+      },
+      "wikis": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/2nqcf/wikis/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "nodes"
+  }
+}

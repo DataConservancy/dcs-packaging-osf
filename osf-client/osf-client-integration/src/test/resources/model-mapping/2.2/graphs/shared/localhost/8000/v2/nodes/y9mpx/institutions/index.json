@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "auth_url": "http://accounts.osf.io/Shibboleth.sso/Login?entityID=http%3A%2F%2Flogin.nd.edu%2Fidp%2Fshibboleth",
+        "description": "In <a href=\"http://research.nd.edu/news/64035-notre-dame-center-for-open-science-partner-to-advance-open-science-initiatives/\">partnership</a> with the <a href=\"http://crc.nd.edu\">Center for Research Computing</a>, <a href=\"http://esc.nd.edu\">Engineering &amp; Science Computing</a>, and the <a href=\"http://library.nd.edu\">Hesburgh Libraries</a>",
+        "logo_path": "/static/img/institutions/shields/nd-shield.png",
+        "name": "University of Notre Dame"
+      },
+      "id": "nd",
+      "links": {
+        "self": "http://localhost:8000/v2/institutions/nd/"
+      },
+      "relationships": {
+        "nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nd/nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nd/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/institutions/nd/users/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "institutions"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9mpx/institutions/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

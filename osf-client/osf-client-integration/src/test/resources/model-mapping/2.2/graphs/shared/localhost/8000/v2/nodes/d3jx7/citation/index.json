@@ -1,0 +1,32 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Wang",
+          "given": "John"
+        },
+        {
+          "family": "Gesing",
+          "given": "Sandra"
+        },
+        {
+          "family": "Johnson",
+          "given": "Richard P"
+        },
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Data and Software Preservation Quality Tool Planning Project",
+      "type": "webpage"
+    },
+    "id": "d3jx7",
+    "links": {
+      "self": "osf.io/d3jx7"
+    },
+    "type": "node-citation"
+  }
+}

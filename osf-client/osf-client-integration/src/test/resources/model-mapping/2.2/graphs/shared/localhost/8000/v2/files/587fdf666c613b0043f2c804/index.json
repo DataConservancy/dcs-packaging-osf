@@ -1,0 +1,56 @@
+{
+  "data": {
+    "attributes": {
+      "checkout": null,
+      "current_user_can_comment": false,
+      "current_version": 1,
+      "date_created": "2017-01-18T21:34:30.519000Z",
+      "date_modified": "2017-01-18T21:34:30.519000Z",
+      "delete_allowed": true,
+      "extra": {
+        "downloads": 0,
+        "hashes": {
+          "md5": "d41d8cd98f00b204e9800998ecf8427e",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "guid": null,
+      "kind": "file",
+      "last_touched": null,
+      "materialized_path": "/11_eleven.txt",
+      "name": "11_eleven.txt",
+      "path": "/587fdf666c613b0043f2c804",
+      "provider": "osfstorage",
+      "size": 0,
+      "tags": []
+    },
+    "id": "587fdf666c613b0043f2c804",
+    "links": {
+      "delete": "http://files.osf.io/v1/resources/xmnkz/providers/osfstorage/587fdf666c613b0043f2c804",
+      "download": "http://files.osf.io/v1/resources/xmnkz/providers/osfstorage/587fdf666c613b0043f2c804",
+      "info": "http://localhost:8000/v2/files/587fdf666c613b0043f2c804/",
+      "move": "http://files.osf.io/v1/resources/xmnkz/providers/osfstorage/587fdf666c613b0043f2c804",
+      "self": "http://localhost:8000/v2/files/587fdf666c613b0043f2c804/",
+      "upload": "http://files.osf.io/v1/resources/xmnkz/providers/osfstorage/587fdf666c613b0043f2c804"
+    },
+    "relationships": {
+      "node": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/nodes/xmnkz/",
+            "meta": {}
+          }
+        }
+      },
+      "versions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/files/587fdf666c613b0043f2c804/versions/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "files"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "doi",
+        "value": "10.17605/OSF.IO/JVPNW"
+      },
+      "id": "57ebe989594d9001ef91a653",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/57ebe989594d9001ef91a653/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    },
+    {
+      "attributes": {
+        "category": "ark",
+        "value": "c7605/osf.io/jvpnw"
+      },
+      "id": "57ebe989594d9001ef91a654",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/57ebe989594d9001ef91a654/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/jvpnw/identifiers/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

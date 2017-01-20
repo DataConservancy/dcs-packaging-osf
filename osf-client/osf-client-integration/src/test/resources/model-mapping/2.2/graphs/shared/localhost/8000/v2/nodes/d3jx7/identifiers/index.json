@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "doi",
+        "value": "10.17605/OSF.IO/D3JX7"
+      },
+      "id": "57e85a7f6c613b01ec13b2ec",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/57e85a7f6c613b01ec13b2ec/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d3jx7/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    },
+    {
+      "attributes": {
+        "category": "ark",
+        "value": "c7605/osf.io/d3jx7"
+      },
+      "id": "57e85a7f6c613b01ec13b2ed",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/57e85a7f6c613b01ec13b2ed/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d3jx7/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/d3jx7/identifiers/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

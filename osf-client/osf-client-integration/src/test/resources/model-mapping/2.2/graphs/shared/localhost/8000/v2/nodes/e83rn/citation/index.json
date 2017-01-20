@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "Taylor",
+          "given": "Ian"
+        },
+        {
+          "family": "Nabrzyski",
+          "given": "Jaroslaw"
+        },
+        {
+          "family": "O'Connell",
+          "given": "Kallie"
+        },
+        {
+          "family": "Suhovecky",
+          "given": "Mark"
+        },
+        {
+          "family": "Gesing",
+          "given": "Sandra"
+        },
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Open Notes from Breakout",
+      "type": "webpage"
+    },
+    "id": "e83rn",
+    "links": {
+      "self": "osf.io/e83rn"
+    },
+    "type": "node-citation"
+  }
+}

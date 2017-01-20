@@ -1,0 +1,551 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-17T14:06:14.972000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "ht7z3",
+          "params_node": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "params_project": {
+            "id": "7gqsi",
+            "title": "Online Materials"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "573b25569ad5a101e7b1525d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573b25569ad5a101e7b1525d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-05-16T16:14:12.951000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "params_project": {
+            "id": "7gqsi",
+            "title": "Online Materials"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5739f1d4594d9001f11192cc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5739f1d4594d9001f11192cc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-05-16T16:14:12.891000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "x7qdn",
+            "title": "Data files"
+          },
+          "params_project": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5739f1d4594d9001f11192cb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5739f1d4594d9001f11192cb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x7qdn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x7qdn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-05-10T19:21:24.624000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "cos",
+            "name": "Center For Open Science"
+          },
+          "params_node": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "previous_institution": {
+            "id": null,
+            "name": "None"
+          }
+        }
+      },
+      "id": "573234b4594d9001ef3f7519",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573234b4594d9001ef3f7519/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-10T18:51:07.989000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Spitzer",
+              "full_name": "Matthew Spitzer",
+              "given_name": "Matthew",
+              "id": "8kcwm",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "x7qdn",
+            "title": "Data files"
+          },
+          "params_project": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57322d9b6c613b01e07abf4e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57322d9b6c613b01e07abf4e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x7qdn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x7qdn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-10T18:51:07.959000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Spitzer",
+              "full_name": "Matthew Spitzer",
+              "given_name": "Matthew",
+              "id": "8kcwm",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "params_project": {
+            "id": "7gqsi",
+            "title": "Online Materials"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57322d9b6c613b01e07abf4d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57322d9b6c613b01e07abf4d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_updated",
+        "date": "2016-04-07T21:00:21.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "OSF-Curriculum",
+          "github_user": "csoderberg",
+          "params_node": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "params_project": {
+            "id": "7gqsi",
+            "title": "Online Materials"
+          },
+          "path": "For Instructors/Workshop FAQ.md",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/d5erx/files/github/For%20Instructors/Workshop%20FAQ.md/?action=download&ref=48da6ca50a4dcb595bccb37158534cd7d5fd602f",
+            "view": "/project/d5erx/files/github/For%20Instructors/Workshop%20FAQ.md/?ref=48da6ca50a4dcb595bccb37158534cd7d5fd602f"
+          }
+        }
+      },
+      "id": "5706ca659ad5a101ba0f4114",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5706ca659ad5a101ba0f4114/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "github_file_updated",
+        "date": "2016-04-07T21:00:03.000000Z",
+        "params": {
+          "contributors": [],
+          "github_repo": "OSF-Curriculum",
+          "github_user": "csoderberg",
+          "params_node": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "params_project": {
+            "id": "7gqsi",
+            "title": "Online Materials"
+          },
+          "path": "For Instructors/Workshop FAQ.md",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/d5erx/files/github/For%20Instructors/Workshop%20FAQ.md/?action=download&ref=3ae72d989302d22956347e50df6ecc296d295963",
+            "view": "/project/d5erx/files/github/For%20Instructors/Workshop%20FAQ.md/?ref=3ae72d989302d22956347e50df6ecc296d295963"
+          }
+        }
+      },
+      "id": "5706ca536c613b01b56459bd",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5706ca536c613b01b56459bd/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-29T19:01:48.590000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Clyburne-Sherin",
+              "full_name": "April Clyburne-Sherin",
+              "given_name": "April",
+              "id": "ajiyt",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "x7qdn",
+            "title": "Data files"
+          },
+          "params_project": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "56fad11c9ad5a10049cd64c6",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/56fad11c9ad5a10049cd64c6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x7qdn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/x7qdn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-03-29T19:01:48.037000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Clyburne-Sherin",
+              "full_name": "April Clyburne-Sherin",
+              "given_name": "April",
+              "id": "ajiyt",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "d5erx",
+            "title": "OSF Curriculum"
+          },
+          "params_project": {
+            "id": "7gqsi",
+            "title": "Online Materials"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "56fad11c9ad5a10049cd64c5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/56fad11c9ad5a10049cd64c5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5erx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/d5erx/logs/?page=31",
+    "next": "http://localhost:8000/v2/nodes/d5erx/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/d5erx/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 307
+  }
+}

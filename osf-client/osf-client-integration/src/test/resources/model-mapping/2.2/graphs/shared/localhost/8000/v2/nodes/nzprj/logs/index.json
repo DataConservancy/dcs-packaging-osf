@@ -1,0 +1,421 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "edit_description",
+        "date": "2016-12-14T18:42:43.120000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585192a39ad5a10044ba1303",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585192a39ad5a10044ba1303/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-14T18:41:54.313000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Spies",
+              "full_name": "Jeffrey R. Spies",
+              "given_name": "Jeffrey",
+              "id": "jk5cv",
+              "middle_names": "Robert",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Johnson",
+              "full_name": "Rick Johnson",
+              "given_name": "Richard",
+              "id": "uswv3",
+              "middle_names": "P.",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "altman",
+              "full_name": "micah altman",
+              "given_name": "micah",
+              "id": "xtdbw",
+              "middle_names": "",
+              "unregistered_name": "Micah Altman"
+            }
+          ],
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585192726c613b021300add7",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585192726c613b021300add7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2016-12-14T18:38:05.400000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "path": "/CNI2016f_AltmanJohnsonRiosSpies_ResearchSoftware.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/nzprj/files/osfstorage/585191839ad5a10048ba12ad/?action=download",
+            "view": "/project/nzprj/files/osfstorage/585191839ad5a10048ba12ad/"
+          }
+        }
+      },
+      "id": "5851918db83f690209f66e87",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5851918db83f690209f66e87/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-12-14T18:37:53.183000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "talk"
+        }
+      },
+      "id": "585191816c613b021100b0af",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585191816c613b021100b0af/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-12-14T18:37:53.171000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "CNI2016FALL"
+        }
+      },
+      "id": "585191816c613b021100b0ae",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585191816c613b021100b0ae/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-14T18:37:53.135000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585191816c613b021100b0ad",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585191816c613b021100b0ad/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-14T18:37:53.076000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "wrwpw",
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "585191816c613b021100b0ac",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585191816c613b021100b0ac/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-12-14T18:37:52.685000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nzprj",
+            "title": "Building Tools and Services to Support Research Software Preservation and Sharing"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585191816c613b021100b0ab",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585191816c613b021100b0ab/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/nzprj/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 8
+  }
+}

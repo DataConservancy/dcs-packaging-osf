@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Courville",
+          "given": "Pascal"
+        },
+        {
+          "family": "Sampey",
+          "given": "Darryl"
+        },
+        {
+          "family": "Iorns",
+          "given": "Elizabeth"
+        },
+        {
+          "family": "Denis",
+          "given": "Alex"
+        },
+        {
+          "family": "Williams",
+          "given": "Stephen R"
+        },
+        {
+          "family": "Perfito",
+          "given": "Nicole"
+        },
+        {
+          "family": "Errington",
+          "given": "Timothy M"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Plasmid quality control data",
+      "type": "webpage"
+    },
+    "id": "dhch3",
+    "links": {
+      "self": "osf.io/dhch3"
+    },
+    "type": "node-citation"
+  }
+}

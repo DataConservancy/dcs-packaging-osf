@@ -1,0 +1,57 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "doi",
+        "value": "10.17605/OSF.IO/3E69D"
+      },
+      "id": "57d1908f9ad5a101f6e54fcf",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/57d1908f9ad5a101f6e54fcf/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    },
+    {
+      "attributes": {
+        "category": "ark",
+        "value": "c7605/osf.io/3e69d"
+      },
+      "id": "57d1908f9ad5a101f6e54fd0",
+      "links": {
+        "self": "http://localhost:8000/v2/identifiers/57d1908f9ad5a101f6e54fd0/"
+      },
+      "relationships": {
+        "referent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "identifiers"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/3e69d/identifiers/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

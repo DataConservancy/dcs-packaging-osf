@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": "[@David Mellor](http://osf.io/qthsf/) Thanks for uploading your slides from last week's meeting - glad I could follow along remotely!\r\n",
+        "date_created": "2016-07-25T21:20:55.410000Z",
+        "date_modified": "2016-07-25T21:20:55.526000Z",
+        "deleted": false,
+        "has_children": true,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": false,
+        "page": "node"
+      },
+      "id": "uh2s4kyzxr3q",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/uh2s4kyzxr3q/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/comments/P2ZpbHRlciU1QnRhcmdldCU1RD11aDJzNGt5enhyM3E=",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/uh2s4kyzxr3q/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d9ehg/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/zvp8k/comments/?filter%5Btarget%5D=zvp8k"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

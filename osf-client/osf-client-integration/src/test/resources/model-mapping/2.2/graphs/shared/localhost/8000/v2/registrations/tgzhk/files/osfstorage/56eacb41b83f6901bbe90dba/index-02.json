@@ -1,0 +1,555 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:10.375000Z",
+        "date_modified": "2016-03-17T15:21:10.375000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "c0e51357377253df88362e82fa17dd61",
+            "sha256": "0c49861f6488c6cad2857ec81b986824dd3861bece5ff0f283d17923c893c6b2"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2030174.JPG",
+        "name": "P2030174.JPG",
+        "path": "/56eacb666c613b01a9650b04",
+        "provider": "osfstorage",
+        "size": 599405,
+        "tags": []
+      },
+      "id": "56eacb666c613b01a9650b04",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb666c613b01a9650b04",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb666c613b01a9650b04",
+        "info": "http://localhost:8000/v2/files/56eacb666c613b01a9650b04/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb666c613b01a9650b04",
+        "self": "http://localhost:8000/v2/files/56eacb666c613b01a9650b04/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb666c613b01a9650b04"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb666c613b01a9650b04/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:08.328000Z",
+        "date_modified": "2016-03-17T15:21:08.328000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "3d84dcab9b2e6fdbfb853649f82898a4",
+            "sha256": "e84e4fbbafdb7fbd04603ba56f3dcc0a15f02aae48456d81fa0ae2e0278ff899"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2030195.JPG",
+        "name": "P2030195.JPG",
+        "path": "/56eacb64b83f6901bce90d4a",
+        "provider": "osfstorage",
+        "size": 565730,
+        "tags": []
+      },
+      "id": "56eacb64b83f6901bce90d4a",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64b83f6901bce90d4a",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64b83f6901bce90d4a",
+        "info": "http://localhost:8000/v2/files/56eacb64b83f6901bce90d4a/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64b83f6901bce90d4a",
+        "self": "http://localhost:8000/v2/files/56eacb64b83f6901bce90d4a/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64b83f6901bce90d4a"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb64b83f6901bce90d4a/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:44.841000Z",
+        "date_modified": "2016-03-17T15:20:44.841000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "b144f9c3287f8168edc08bb7dfcc836f",
+            "sha256": "7a8c891b6f5dfcf1e08e511e18936630f19006115f5457c82be9d94c3ed84443"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2040214.JPG",
+        "name": "P2040214.JPG",
+        "path": "/56eacb4c9ad5a101ae3fe772",
+        "provider": "osfstorage",
+        "size": 648369,
+        "tags": []
+      },
+      "id": "56eacb4c9ad5a101ae3fe772",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4c9ad5a101ae3fe772",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4c9ad5a101ae3fe772",
+        "info": "http://localhost:8000/v2/files/56eacb4c9ad5a101ae3fe772/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4c9ad5a101ae3fe772",
+        "self": "http://localhost:8000/v2/files/56eacb4c9ad5a101ae3fe772/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4c9ad5a101ae3fe772"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb4c9ad5a101ae3fe772/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:43.142000Z",
+        "date_modified": "2016-03-17T15:20:43.142000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "4db00402536264c3843c3cb45d872fea",
+            "sha256": "4e93d5c2e5b754f959aaba0fcee28839e56d110ccb19a68dbbc167997d49d28e"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2050235.JPG",
+        "name": "P2050235.JPG",
+        "path": "/56eacb4b594d9001bfbb8bee",
+        "provider": "osfstorage",
+        "size": 665228,
+        "tags": []
+      },
+      "id": "56eacb4b594d9001bfbb8bee",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b594d9001bfbb8bee",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b594d9001bfbb8bee",
+        "info": "http://localhost:8000/v2/files/56eacb4b594d9001bfbb8bee/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b594d9001bfbb8bee",
+        "self": "http://localhost:8000/v2/files/56eacb4b594d9001bfbb8bee/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b594d9001bfbb8bee"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb4b594d9001bfbb8bee/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:07.508000Z",
+        "date_modified": "2016-03-17T15:21:07.508000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "211806b2604e26c3f228cfbacbafb328",
+            "sha256": "fe855cc8f050228a7f761743daf1b6f46262448555c94b5620b0edd16461fd50"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2050236.JPG",
+        "name": "P2050236.JPG",
+        "path": "/56eacb63b83f6901b6e90e0b",
+        "provider": "osfstorage",
+        "size": 659156,
+        "tags": []
+      },
+      "id": "56eacb63b83f6901b6e90e0b",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb63b83f6901b6e90e0b",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb63b83f6901b6e90e0b",
+        "info": "http://localhost:8000/v2/files/56eacb63b83f6901b6e90e0b/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb63b83f6901b6e90e0b",
+        "self": "http://localhost:8000/v2/files/56eacb63b83f6901b6e90e0b/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb63b83f6901b6e90e0b"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb63b83f6901b6e90e0b/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:37.523000Z",
+        "date_modified": "2016-03-17T15:20:37.523000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "d4b9a5a5d31737c88dc907abb163c69f",
+            "sha256": "0a0b668a3330c825ced2e345fac9cb39edc939e2c377bb9a1738067566ffe8e0"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2050250.JPG",
+        "name": "P2050250.JPG",
+        "path": "/56eacb459ad5a101b33fe70e",
+        "provider": "osfstorage",
+        "size": 601131,
+        "tags": []
+      },
+      "id": "56eacb459ad5a101b33fe70e",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb459ad5a101b33fe70e",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb459ad5a101b33fe70e",
+        "info": "http://localhost:8000/v2/files/56eacb459ad5a101b33fe70e/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb459ad5a101b33fe70e",
+        "self": "http://localhost:8000/v2/files/56eacb459ad5a101b33fe70e/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb459ad5a101b33fe70e"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb459ad5a101b33fe70e/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:37.102000Z",
+        "date_modified": "2016-03-17T15:20:37.102000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "b4d844de95b408b099e5d7d4c157aea7",
+            "sha256": "e0d343fa2df21333dd84efca5877dfee310b2ff62a7c0c948a7b5d48b8769841"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2050253.JPG",
+        "name": "P2050253.JPG",
+        "path": "/56eacb456c613b01aa650bee",
+        "provider": "osfstorage",
+        "size": 547732,
+        "tags": []
+      },
+      "id": "56eacb456c613b01aa650bee",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb456c613b01aa650bee",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb456c613b01aa650bee",
+        "info": "http://localhost:8000/v2/files/56eacb456c613b01aa650bee/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb456c613b01aa650bee",
+        "self": "http://localhost:8000/v2/files/56eacb456c613b01aa650bee/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb456c613b01aa650bee"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb456c613b01aa650bee/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:20:43.750000Z",
+        "date_modified": "2016-03-17T15:20:43.750000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "c4146ca2539f00e4ea9643affce8ccb2",
+            "sha256": "992dfc97b5797cd48c69a2df3d752cdefaa8b44048dba3231b89e4fe961f0c7b"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2050258.JPG",
+        "name": "P2050258.JPG",
+        "path": "/56eacb4b6c613b01a5650b88",
+        "provider": "osfstorage",
+        "size": 638700,
+        "tags": []
+      },
+      "id": "56eacb4b6c613b01a5650b88",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b6c613b01a5650b88",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b6c613b01a5650b88",
+        "info": "http://localhost:8000/v2/files/56eacb4b6c613b01a5650b88/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b6c613b01a5650b88",
+        "self": "http://localhost:8000/v2/files/56eacb4b6c613b01a5650b88/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb4b6c613b01a5650b88"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb4b6c613b01a5650b88/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:08.486000Z",
+        "date_modified": "2016-03-17T15:21:08.486000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "37d2c3d3dbde1ab27ae979c9061e0f50",
+            "sha256": "49169afd3af621ae6fff4cb205ca79fd33a8f51935b29c19f950df799a25b766"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2060264.JPG",
+        "name": "P2060264.JPG",
+        "path": "/56eacb64594d9001c3bb8cba",
+        "provider": "osfstorage",
+        "size": 663396,
+        "tags": []
+      },
+      "id": "56eacb64594d9001c3bb8cba",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64594d9001c3bb8cba",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64594d9001c3bb8cba",
+        "info": "http://localhost:8000/v2/files/56eacb64594d9001c3bb8cba/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64594d9001c3bb8cba",
+        "self": "http://localhost:8000/v2/files/56eacb64594d9001c3bb8cba/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb64594d9001c3bb8cba"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb64594d9001c3bb8cba/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-03-17T15:21:02.880000Z",
+        "date_modified": "2016-03-17T15:21:02.880000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 0,
+          "hashes": {
+            "md5": "7cb99ed506aba6200692d89f739ab7fc",
+            "sha256": "24d14d0e564ba498c8e1ed059ab51ed0714824ab8caf136fa2a7316eb18f45c1"
+          }
+        },
+        "guid": null,
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Archive of Google Drive: Chile/NatALIE/P2060289.JPG",
+        "name": "P2060289.JPG",
+        "path": "/56eacb5eb83f6901bae90f2b",
+        "provider": "osfstorage",
+        "size": 3168761,
+        "tags": []
+      },
+      "id": "56eacb5eb83f6901bae90f2b",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb5eb83f6901bae90f2b",
+        "download": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb5eb83f6901bae90f2b",
+        "info": "http://localhost:8000/v2/files/56eacb5eb83f6901bae90f2b/",
+        "move": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb5eb83f6901bae90f2b",
+        "self": "http://localhost:8000/v2/files/56eacb5eb83f6901bae90f2b/",
+        "upload": "http://files.osf.io/v1/resources/tgzhk/providers/osfstorage/56eacb5eb83f6901bae90f2b"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tgzhk/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/56eacb5eb83f6901bae90f2b/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb41b83f6901bbe90dba/",
+    "last": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb41b83f6901bbe90dba/?page=3",
+    "next": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb41b83f6901bbe90dba/?page=3",
+    "prev": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb41b83f6901bbe90dba/",
+    "self": "http://localhost:8000/v2/registrations/tgzhk/files/osfstorage/56eacb41b83f6901bbe90dba/?page=2"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 28
+  }
+}
