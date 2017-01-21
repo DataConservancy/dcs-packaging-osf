@@ -15,12 +15,13 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import com.github.jasminb.jsonapi.ResourceList;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -43,7 +44,7 @@ public class CommentTest extends AbstractMockServerTest {
 
     @Test
     public void testSimpleMapping() throws Exception {
-        final ResourceList<Comment> comments = osfService.getComments("http://localhost:8000/v2/nodes/u9dc7/comments/")
+        final List<Comment> comments = osfService.getComments("http://localhost:8000/v2/nodes/u9dc7/comments/")
                 .execute()
                 .body();
 

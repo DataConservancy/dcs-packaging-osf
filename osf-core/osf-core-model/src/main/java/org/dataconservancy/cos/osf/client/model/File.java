@@ -62,7 +62,7 @@ public class File {
     /**list of files down next level of file tree*/
     @Relationship(value = "files", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
     @OwlProperty(OwlProperties.OSF_HAS_FILE)
-    private ResourceList<File> files;
+    private List<File> files;
 
     /**list of versions associated with file*/
     @Relationship(value = "versions", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
@@ -330,7 +330,7 @@ public class File {
      *
      * @return
      */
-    public ResourceList<File> getFiles() {
+    public List<File> getFiles() {
         return files;
     }
 
