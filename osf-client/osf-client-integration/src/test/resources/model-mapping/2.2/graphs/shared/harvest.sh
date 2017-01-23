@@ -134,6 +134,7 @@ then
     # parameters to the provided filename, which is unfortunate.  This is dealt with in the
     # process phase.
     filename=`echo $rel | jq -rR 'rindex("?") as $r | if $r then (.[$r:] | @base64) else "" end'`
+    sleep 1
     download $rel $filename
   done
 
@@ -148,6 +149,7 @@ then
         # If the relationship URL has query parameters, base64 encode them, and use the base64
         # query parameters as the name of the file to be downloaded.
         filename=`echo $rel | jq -rR 'rindex("?") as $r | if $r then (.[$r:] | @base64) else "" end'`
+        sleep 1
         download $rel $filename
       done
     fi
