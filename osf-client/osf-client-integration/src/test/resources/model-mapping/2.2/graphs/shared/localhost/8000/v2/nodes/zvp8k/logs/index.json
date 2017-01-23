@@ -1,0 +1,560 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-13T16:40:17.350000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Soderberg.IARPA.1.9.17.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/587902eab83f6901fb173414/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/587902eab83f6901fb173414/"
+          }
+        }
+      },
+      "id": "587902f16c613b01f96d1632",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587902f16c613b01f96d1632/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/hsey5/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-12T22:24:58.047000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Mellor_eJournalPress_Feb_1_2017.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/587801ca9ad5a10202a1a3cd/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/587801ca9ad5a10202a1a3cd/"
+          }
+        }
+      },
+      "id": "5878023a9ad5a10201a1a974",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5878023a9ad5a10201a1a974/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-12T22:23:12.543000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Mellor_eJournalPress_Feb_1_2017.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/587801ca9ad5a10202a1a3cd/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/587801ca9ad5a10202a1a3cd/"
+          }
+        }
+      },
+      "id": "587801d09ad5a10201a1a96e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587801d09ad5a10201a1a96e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2017-01-12T17:18:28.618000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Tordoff",
+              "full_name": "John Tordoff",
+              "given_name": "John",
+              "id": "pbjqt",
+              "middle_names": "Edward",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5877ba646c613b01fc6d1116",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5877ba646c613b01fc6d1116/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/dvx4k/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-04T16:40:34.850000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Mellor_2017_01_04_Prereg_Webinar.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/586d25239ad5a102018b0016/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/586d25239ad5a102018b0016/"
+          }
+        }
+      },
+      "id": "586d2582594d9001fc01ec6e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586d2582594d9001fc01ec6e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2017-01-04T16:39:08.161000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Mellor_2017_01_04_Prereg_Webinar.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/586d25239ad5a102018b0016/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/586d25239ad5a102018b0016/"
+          }
+        }
+      },
+      "id": "586d252c9ad5a102018b0019",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/586d252c9ad5a102018b0019/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qthsf/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2016-12-16T21:45:15.165000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Nosek.GatesFdn.2016.12.16.share.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/58546062594d9000441a2388/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/58546062594d9000441a2388/"
+          }
+        }
+      },
+      "id": "5854606b594d9000481a2353",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5854606b594d9000481a2353/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2016-12-09T13:37:29.623000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/COS.LunchTalk.ReviewCompensation.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/584ab393594d900200560521/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/584ab393594d900200560521/"
+          }
+        }
+      },
+      "id": "584ab399b83f6901f1ad26e4",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/584ab399b83f6901f1ad26e4/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2016-12-05T03:25:46.013000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Nosek.FunderForum.2016.12.05.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/5844ddd7b83f6900448240bc/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/5844ddd7b83f6900448240bc/"
+          }
+        }
+      },
+      "id": "5844de3a6c613b004361c62c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5844de3a6c613b004361c62c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2016-12-05T03:24:14.772000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "zvp8k",
+            "title": "Presentations"
+          },
+          "params_project": {
+            "id": "api6f",
+            "title": "Center for Open Science"
+          },
+          "path": "/Nosek.FunderForum.2016.12.05.pptx",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/zvp8k/files/osfstorage/5844ddd7b83f6900448240bc/?action=download",
+            "view": "/project/zvp8k/files/osfstorage/5844ddd7b83f6900448240bc/"
+          }
+        }
+      },
+      "id": "5844dddeb83f6900478240a8",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5844dddeb83f6900478240a8/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/cdi38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/zvp8k/logs/?page=33",
+    "next": "http://localhost:8000/v2/nodes/zvp8k/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/zvp8k/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 324
+  }
+}

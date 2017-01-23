@@ -1,0 +1,360 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Mellor",
+          "given": "David T"
+        },
+        {
+          "family": "Nosek",
+          "given": "Brian A"
+        },
+        {
+          "family": "Benjamin",
+          "given": "Melanie"
+        },
+        {
+          "family": "Soderberg",
+          "given": "Courtney K"
+        },
+        {
+          "family": "Errington",
+          "given": "Timothy M"
+        },
+        {
+          "family": "Spitzer",
+          "given": "Matthew"
+        },
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "Esposito",
+          "given": "Jolene"
+        },
+        {
+          "family": "King",
+          "given": "Jonathan W"
+        },
+        {
+          "family": "Laster",
+          "given": "Amy"
+        },
+        {
+          "family": "Halladay",
+          "given": "Alycia"
+        },
+        {
+          "family": "Eames",
+          "given": "Matthew"
+        },
+        {
+          "family": "Escobar Alvarez",
+          "given": "Sindy"
+        },
+        {
+          "family": "Hasenkamp",
+          "given": "Wendy"
+        },
+        {
+          "family": "Fetzer",
+          "given": "Bruce"
+        },
+        {
+          "family": "Zauderer",
+          "given": "Ashley"
+        },
+        {
+          "family": "Orland",
+          "given": "Belinda"
+        },
+        {
+          "family": "Moughon",
+          "given": "Micah"
+        },
+        {
+          "family": "Gordon",
+          "given": "Ruthanna"
+        },
+        {
+          "family": "Thakur",
+          "given": "Neil"
+        },
+        {
+          "family": "Collier",
+          "given": "Elaine"
+        },
+        {
+          "family": "Jackson",
+          "given": "Liz"
+        },
+        {
+          "family": "McHenry",
+          "given": "Jonathan"
+        },
+        {
+          "family": "Wood",
+          "given": "Benjamim"
+        },
+        {
+          "family": "La Rosa",
+          "given": "Salvatore"
+        },
+        {
+          "family": "Bauer-Wu",
+          "given": "Susan"
+        },
+        {
+          "family": "Dieguez",
+          "given": "Dario"
+        },
+        {
+          "family": "Olster",
+          "given": "Deborah"
+        },
+        {
+          "family": "Rieber",
+          "given": "Steven"
+        },
+        {
+          "family": "Matt",
+          "given": "Ina"
+        },
+        {
+          "family": "Obits",
+          "given": "Catherine"
+        },
+        {
+          "family": "Wissinger",
+          "given": "Whitney"
+        },
+        {
+          "family": "Peters",
+          "given": "Nadine"
+        },
+        {
+          "family": "Clement",
+          "given": "Sarah"
+        },
+        {
+          "family": "Chambers",
+          "given": "Chris"
+        },
+        {
+          "family": "Moscou-Jackson",
+          "given": "Gyasi"
+        },
+        {
+          "family": "Ware",
+          "given": "Jennifer"
+        },
+        {
+          "family": "Franko",
+          "given": "Maryrose"
+        },
+        {
+          "family": "Areiqat",
+          "given": "Enas"
+        },
+        {
+          "family": "Potgieter",
+          "given": "Dawid"
+        },
+        {
+          "family": "Gerson",
+          "given": "Jason"
+        },
+        {
+          "family": "Noble",
+          "given": "Simon"
+        },
+        {
+          "family": "Garner",
+          "given": "Lynne"
+        },
+        {
+          "family": "Korns",
+          "given": "Debra"
+        },
+        {
+          "family": "Koschnitzky",
+          "given": "Jenna"
+        },
+        {
+          "family": "Campbell",
+          "given": "Russ"
+        },
+        {
+          "family": "Upton",
+          "given": "Denise"
+        },
+        {
+          "family": "Frohlich",
+          "given": "Dean"
+        },
+        {
+          "family": "Kelley",
+          "given": "Perrinne"
+        },
+        {
+          "family": "Marchiolo",
+          "given": "Eryn"
+        },
+        {
+          "family": "Massey",
+          "given": "Lauren"
+        },
+        {
+          "family": "Aizenberg",
+          "given": "Rhonda"
+        },
+        {
+          "family": "Daniels",
+          "given": "Elvan"
+        },
+        {
+          "family": "Meyers",
+          "given": "Michelle"
+        },
+        {
+          "family": "Breckler",
+          "given": "Steven J"
+        },
+        {
+          "family": "Strawn",
+          "given": "George"
+        },
+        {
+          "family": "McPhail",
+          "given": "Meredith"
+        },
+        {
+          "family": "Galindo",
+          "given": "Magda"
+        },
+        {
+          "family": "Boom",
+          "given": "Freyja V D"
+        },
+        {
+          "family": "Baylor",
+          "given": "Amy"
+        },
+        {
+          "family": "Farahani",
+          "given": "Keyvan"
+        },
+        {
+          "family": "Lake",
+          "given": "Sherry"
+        },
+        {
+          "family": "Riddle",
+          "given": "Melissa W"
+        },
+        {
+          "family": "Gibson",
+          "given": "Nicholas J S"
+        },
+        {
+          "family": "Hewitt",
+          "given": "Judith"
+        },
+        {
+          "family": "Farley",
+          "given": "Ashley"
+        },
+        {
+          "family": "Buck",
+          "given": "Stuart"
+        },
+        {
+          "family": "Guyenet",
+          "given": "Stephan"
+        },
+        {
+          "family": "Sloane",
+          "given": "Barry"
+        },
+        {
+          "family": "Page",
+          "given": "Louise"
+        },
+        {
+          "family": "Witsaman",
+          "given": "Rachel"
+        },
+        {
+          "family": "Hotchkiss",
+          "given": "Lia"
+        },
+        {
+          "family": "Fitzmier",
+          "given": "Stephen"
+        },
+        {
+          "family": "Schwetz",
+          "given": "Tara A"
+        },
+        {
+          "family": "Solomon",
+          "given": "Scott"
+        },
+        {
+          "family": "Cosgriff",
+          "given": "Karla"
+        },
+        {
+          "family": "Calvo",
+          "given": "Roque"
+        },
+        {
+          "family": "Holmes",
+          "given": "Archie"
+        },
+        {
+          "family": "Sheehy",
+          "given": "Michael"
+        },
+        {
+          "family": "Kanki",
+          "given": "John"
+        },
+        {
+          "family": "White",
+          "given": "Emily"
+        },
+        {
+          "family": "Regli",
+          "given": "William"
+        },
+        {
+          "family": "Yess",
+          "given": "Mary"
+        },
+        {
+          "family": "Wynn",
+          "given": "Amber"
+        },
+        {
+          "family": "Bader",
+          "given": "Maya"
+        },
+        {
+          "family": "Abdullah",
+          "given": "Sylvia"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Maximizing Research Impact",
+      "type": "webpage"
+    },
+    "id": "8mrfq",
+    "links": {
+      "self": "osf.io/8mrfq"
+    },
+    "type": "node-citation"
+  }
+}

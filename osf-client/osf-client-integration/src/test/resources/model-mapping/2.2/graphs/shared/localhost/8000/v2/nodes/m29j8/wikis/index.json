@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-05-26T15:46:19.491000Z",
+        "extra": {
+          "version": 23
+        },
+        "kind": "file",
+        "materialized_path": "/msjpy",
+        "name": "home",
+        "path": "/msjpy",
+        "size": 171824
+      },
+      "id": "msjpy",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/msjpy/content/",
+        "info": "http://localhost:8000/v2/wikis/msjpy/",
+        "self": "http://localhost:8000/v2/wikis/msjpy/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1tc2pweQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/947ky/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/m29j8/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

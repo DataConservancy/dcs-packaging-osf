@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2012-10-08T20:22:32.112000Z",
+      "family_name": "Lakens",
+      "full_name": "Daniel Lakens",
+      "given_name": "Daniel",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Europe/Berlin"
+    },
+    "id": "pct7w",
+    "links": {
+      "html": "http://osf.io/pct7w/",
+      "profile_image": "http://secure.gravatar.com/avatar/e89fa11e15aec1caadf4bf4e5d6453f9?d=identicon",
+      "self": "http://localhost:8000/v2/users/pct7w/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/pct7w/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/pct7w/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/pct7w/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

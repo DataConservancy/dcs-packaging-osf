@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Gross",
+          "given": "Steven"
+        },
+        {
+          "family": "Flombaum",
+          "given": "Jonathan I"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes",
+      "type": "webpage"
+    },
+    "id": "5edn4",
+    "links": {
+      "self": "osf.io/5edn4"
+    },
+    "type": "node-citation"
+  }
+}

@@ -1,0 +1,786 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "bibliographic": false,
+        "index": 0,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2014-03-19T17:37:44.674000Z",
+              "family_name": "Bowman",
+              "full_name": "Sara Bowman",
+              "given_name": "Sara",
+              "locale": "en_US",
+              "middle_names": "D.",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "d9ehg",
+            "links": {
+              "html": "http://osf.io/d9ehg/",
+              "profile_image": "http://secure.gravatar.com/avatar/897cc7db063d509c2d385534d27b1a51?d=identicon",
+              "self": "http://localhost:8000/v2/users/d9ehg/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d9ehg/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/d9ehg/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d9ehg/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-d9ehg",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/d9ehg/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d9ehg/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 1,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2016-03-08T17:34:14.376000Z",
+              "family_name": "Gesing",
+              "full_name": "Sandra Gesing",
+              "given_name": "Sandra",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "d7eqj",
+            "links": {
+              "html": "http://osf.io/d7eqj/",
+              "profile_image": "http://secure.gravatar.com/avatar/c1f1d415c90796f3450ddc2cf2c4f041?d=identicon",
+              "self": "http://localhost:8000/v2/users/d7eqj/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d7eqj/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/d7eqj/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d7eqj/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-d7eqj",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/d7eqj/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d7eqj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 2,
+        "permission": "write",
+        "unregistered_contributor": "Michael Hildreth"
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": false,
+              "date_registered": "2016-05-05T17:08:50.207000Z",
+              "family_name": "Hildreth",
+              "full_name": "Michael Hildreth",
+              "given_name": "Michael",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "Etc/UTC"
+            },
+            "id": "d72aq",
+            "links": {
+              "html": "http://osf.io/d72aq/",
+              "profile_image": "http://secure.gravatar.com/avatar/668f672c420463425227ed7d99d9dbd7?d=identicon",
+              "self": null
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d72aq/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/d72aq/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d72aq/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-d72aq",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/d72aq/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d72aq/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 3,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2015-06-08T19:41:29.098000Z",
+              "family_name": "Johnson",
+              "full_name": "Rick Johnson",
+              "given_name": "Richard",
+              "locale": "en_US",
+              "middle_names": "P.",
+              "suffix": "",
+              "timezone": "America/Indianapolis"
+            },
+            "id": "uswv3",
+            "links": {
+              "html": "http://osf.io/uswv3/",
+              "profile_image": "http://secure.gravatar.com/avatar/545797116ce4005fe1611ef585cccd82?d=identicon",
+              "self": "http://localhost:8000/v2/users/uswv3/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/uswv3/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/uswv3/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/uswv3/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-uswv3",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/uswv3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/uswv3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 4,
+        "permission": "admin",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2015-02-18T20:48:49.095000Z",
+              "family_name": "Meyers",
+              "full_name": "Natalie Meyers",
+              "given_name": "Natalie",
+              "locale": "en_US",
+              "middle_names": "K",
+              "suffix": "",
+              "timezone": "America/Indianapolis"
+            },
+            "id": "a45nu",
+            "links": {
+              "html": "http://osf.io/a45nu/",
+              "profile_image": "http://secure.gravatar.com/avatar/89b4cfe4617a5e7d330989ba93d6fce1?d=identicon",
+              "self": "http://localhost:8000/v2/users/a45nu/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/a45nu/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/a45nu/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/a45nu/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-a45nu",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/a45nu/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 5,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2016-03-29T19:48:40.991000Z",
+              "family_name": "Nabrzyski",
+              "full_name": "Jaroslaw Nabrzyski",
+              "given_name": "Jaroslaw",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/Indianapolis"
+            },
+            "id": "srbkj",
+            "links": {
+              "html": "http://osf.io/srbkj/",
+              "profile_image": "http://secure.gravatar.com/avatar/ee95318ad7ea16b858ca5cd2bd34937a?d=identicon",
+              "self": "http://localhost:8000/v2/users/srbkj/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/srbkj/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/srbkj/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/srbkj/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-srbkj",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/srbkj/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/srbkj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 6,
+        "permission": "admin",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2015-09-08T13:06:17.799000Z",
+              "family_name": "Suhovecky",
+              "full_name": "Mark Suhovecky",
+              "given_name": "Mark",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/Indianapolis"
+            },
+            "id": "9qeg4",
+            "links": {
+              "html": "http://osf.io/9qeg4/",
+              "profile_image": "http://secure.gravatar.com/avatar/790b2f144fe208e1be2635a29080454e?d=identicon",
+              "self": "http://localhost:8000/v2/users/9qeg4/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/9qeg4/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/9qeg4/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/9qeg4/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-9qeg4",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/9qeg4/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 7,
+        "permission": "admin",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2015-10-23T15:22:34.220000Z",
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "7mj2q",
+            "links": {
+              "html": "http://osf.io/7mj2q/",
+              "profile_image": "http://secure.gravatar.com/avatar/6478f492e809aa8364ac9f443e34b08e?d=identicon",
+              "self": "http://localhost:8000/v2/users/7mj2q/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/7mj2q/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/7mj2q/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/7mj2q/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-7mj2q",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/7mj2q/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 8,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2015-09-10T13:29:01.535000Z",
+              "family_name": "Taylor",
+              "full_name": "Ian Taylor",
+              "given_name": "Ian",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "ufhbc",
+            "links": {
+              "html": "http://osf.io/ufhbc/",
+              "profile_image": "http://secure.gravatar.com/avatar/959afa332cdf858b8a331523feee9d2e?d=identicon",
+              "self": "http://localhost:8000/v2/users/ufhbc/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/ufhbc/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/ufhbc/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/ufhbc/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-ufhbc",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/ufhbc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ufhbc/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 9,
+        "permission": "write",
+        "unregistered_contributor": "Douglas Thain"
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": false,
+              "date_registered": "2016-05-05T16:22:39.640000Z",
+              "family_name": "Thain",
+              "full_name": "Douglas Thain",
+              "given_name": "Douglas",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "Etc/UTC"
+            },
+            "id": "na2rw",
+            "links": {
+              "html": "http://osf.io/na2rw/",
+              "profile_image": "http://secure.gravatar.com/avatar/bab71c85fc036e0aa68dc4a9b0d86078?d=identicon",
+              "self": null
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/na2rw/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/na2rw/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/na2rw/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "y9mpx-na2rw",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/na2rw/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/na2rw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/y9mpx/contributors/?page=5",
+    "next": "http://localhost:8000/v2/nodes/y9mpx/contributors/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9mpx/contributors/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 49,
+    "total_bibliographic": 44
+  }
+}

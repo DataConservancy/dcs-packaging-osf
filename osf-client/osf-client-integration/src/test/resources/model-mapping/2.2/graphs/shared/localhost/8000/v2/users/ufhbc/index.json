@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-09-10T13:29:01.535000Z",
+      "family_name": "Taylor",
+      "full_name": "Ian Taylor",
+      "given_name": "Ian",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "ufhbc",
+    "links": {
+      "html": "http://osf.io/ufhbc/",
+      "profile_image": "http://secure.gravatar.com/avatar/959afa332cdf858b8a331523feee9d2e?d=identicon",
+      "self": "http://localhost:8000/v2/users/ufhbc/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/ufhbc/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/ufhbc/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/ufhbc/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

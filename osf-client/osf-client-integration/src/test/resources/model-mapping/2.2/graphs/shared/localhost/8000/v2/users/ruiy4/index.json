@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2014-03-31T02:51:26.443000Z",
+      "family_name": "Sallans",
+      "full_name": "Andrew Sallans",
+      "given_name": "Andrew",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "ruiy4",
+    "links": {
+      "html": "http://osf.io/ruiy4/",
+      "profile_image": "http://secure.gravatar.com/avatar/36a8e5c3555550bb7684b657a7f6e39d?d=identicon",
+      "self": "http://localhost:8000/v2/users/ruiy4/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/ruiy4/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/ruiy4/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/ruiy4/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

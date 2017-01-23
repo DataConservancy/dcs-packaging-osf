@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Steeves",
+          "given": "Vicky"
+        },
+        {
+          "family": "Rampin",
+          "given": "Remi"
+        },
+        {
+          "family": "Chirigati",
+          "given": "Fernando"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Workshop Use Case 2: ReproZip",
+      "type": "webpage"
+    },
+    "id": "aqztf",
+    "links": {
+      "self": "osf.io/aqztf"
+    },
+    "type": "node-citation"
+  }
+}

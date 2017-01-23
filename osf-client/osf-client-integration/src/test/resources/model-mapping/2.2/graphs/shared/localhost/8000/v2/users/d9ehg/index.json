@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2014-03-19T17:37:44.674000Z",
+      "family_name": "Bowman",
+      "full_name": "Sara Bowman",
+      "given_name": "Sara",
+      "locale": "en_US",
+      "middle_names": "D.",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "d9ehg",
+    "links": {
+      "html": "http://osf.io/d9ehg/",
+      "profile_image": "http://secure.gravatar.com/avatar/897cc7db063d509c2d385534d27b1a51?d=identicon",
+      "self": "http://localhost:8000/v2/users/d9ehg/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d9ehg/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/d9ehg/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d9ehg/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

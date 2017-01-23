@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2012-10-11T22:09:28.427000Z",
+      "family_name": "IJzerman",
+      "full_name": "Hans IJzerman",
+      "given_name": "Hans",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Europe/Amsterdam"
+    },
+    "id": "3hsfj",
+    "links": {
+      "html": "http://osf.io/3hsfj/",
+      "profile_image": "http://secure.gravatar.com/avatar/05233cb84957b5c73b0bd6c8f2c73c73?d=identicon",
+      "self": "http://localhost:8000/v2/users/3hsfj/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/3hsfj/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/3hsfj/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/3hsfj/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

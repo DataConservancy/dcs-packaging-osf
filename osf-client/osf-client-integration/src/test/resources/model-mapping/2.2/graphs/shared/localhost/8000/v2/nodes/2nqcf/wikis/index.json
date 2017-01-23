@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-12-09T15:46:23.984000Z",
+        "extra": {
+          "version": 2
+        },
+        "kind": "file",
+        "materialized_path": "/m7kyh",
+        "name": "home",
+        "path": "/m7kyh",
+        "size": 1048
+      },
+      "id": "m7kyh",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/m7kyh/content/",
+        "info": "http://localhost:8000/v2/wikis/m7kyh/",
+        "self": "http://localhost:8000/v2/wikis/m7kyh/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1tN2t5aA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/2nqcf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/2nqcf/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

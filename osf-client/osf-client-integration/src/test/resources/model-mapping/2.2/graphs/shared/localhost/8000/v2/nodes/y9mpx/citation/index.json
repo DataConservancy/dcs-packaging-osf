@@ -1,0 +1,192 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Gesing",
+          "given": "Sandra"
+        },
+        {
+          "family": "Hildreth",
+          "given": "Michael"
+        },
+        {
+          "family": "Johnson",
+          "given": "Richard P"
+        },
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "Nabrzyski",
+          "given": "Jaroslaw"
+        },
+        {
+          "family": "Suhovecky",
+          "given": "Mark"
+        },
+        {
+          "family": "Steeves",
+          "given": "Vicky"
+        },
+        {
+          "family": "Taylor",
+          "given": "Ian"
+        },
+        {
+          "family": "Thain",
+          "given": "Douglas"
+        },
+        {
+          "family": "Vardeman",
+          "given": "Charles F"
+        },
+        {
+          "family": "Vyushkov",
+          "given": "Alexander"
+        },
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "brake",
+          "given": "daniel"
+        },
+        {
+          "family": "Brower",
+          "given": "Donald"
+        },
+        {
+          "family": "Bryant",
+          "given": "Lincoln"
+        },
+        {
+          "family": "Chamberlain",
+          "given": "Ryan"
+        },
+        {
+          "family": "Cochrane",
+          "given": "Euan"
+        },
+        {
+          "family": "de Waard",
+          "given": "Anita"
+        },
+        {
+          "family": "Havert",
+          "given": "Mandy"
+        },
+        {
+          "family": "Heinrich",
+          "given": "Lukas A"
+        },
+        {
+          "family": "Hodgson",
+          "given": "Kolin"
+        },
+        {
+          "family": "Hudson",
+          "given": "Cole"
+        },
+        {
+          "family": "Janée",
+          "given": "Greg"
+        },
+        {
+          "family": "Long",
+          "given": "Elisabeth"
+        },
+        {
+          "family": "Malawski",
+          "given": "Maciej"
+        },
+        {
+          "family": "Malik",
+          "given": "Tanu"
+        },
+        {
+          "family": "Metsger",
+          "given": "Elliot"
+        },
+        {
+          "family": "Miller",
+          "given": "Chreston"
+        },
+        {
+          "family": "Minvielle",
+          "given": "Robert"
+        },
+        {
+          "family": "Nijim",
+          "given": "Imad"
+        },
+        {
+          "family": "Nijim",
+          "given": "Sharif"
+        },
+        {
+          "family": "O'Connell",
+          "given": "Kallie"
+        },
+        {
+          "family": "Owens",
+          "given": "Derek"
+        },
+        {
+          "family": "Rampin",
+          "given": "Remi"
+        },
+        {
+          "family": "Schrader",
+          "given": "John"
+        },
+        {
+          "family": "Shields",
+          "given": "Andrew"
+        },
+        {
+          "family": "Ferreira da Silva",
+          "given": "Rafael"
+        },
+        {
+          "family": "Smith",
+          "given": "James"
+        },
+        {
+          "family": "Summers",
+          "given": "Sean"
+        },
+        {
+          "family": "Tao",
+          "given": "Jian"
+        },
+        {
+          "family": "Tillman",
+          "given": "Ruth K"
+        },
+        {
+          "family": "Turk",
+          "given": "Matthew J"
+        },
+        {
+          "family": "Vukotic",
+          "given": "Ilija"
+        },
+        {
+          "family": "Williams",
+          "given": "Charles L"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Container Strategies for Data and Software Preservation Workshop",
+      "type": "webpage"
+    },
+    "id": "y9mpx",
+    "links": {
+      "self": "osf.io/y9mpx"
+    },
+    "type": "node-citation"
+  }
+}

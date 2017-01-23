@@ -1,0 +1,324 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 0,
+        "permission": "admin",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2016-02-08T13:21:59.781000Z",
+              "family_name": "Rios",
+              "full_name": "Fernando Rios",
+              "given_name": "Fernando",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "8qm9w",
+            "links": {
+              "html": "http://osf.io/8qm9w/",
+              "profile_image": "http://secure.gravatar.com/avatar/172894df41a622c6f61da10bdd13746b?d=identicon",
+              "self": "http://localhost:8000/v2/users/8qm9w/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/8qm9w/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/8qm9w/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/8qm9w/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "nzprj-8qm9w",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/nzprj/contributors/8qm9w/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 1,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2012-05-31T05:28:20.477000Z",
+              "family_name": "Spies",
+              "full_name": "Jeffrey R. Spies",
+              "given_name": "Jeffrey",
+              "locale": "en_US",
+              "middle_names": "Robert",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "jk5cv",
+            "links": {
+              "html": "http://osf.io/jk5cv/",
+              "profile_image": "http://secure.gravatar.com/avatar/8ad36fcba4e0b9ee410d00136c307d52?d=identicon",
+              "self": "http://localhost:8000/v2/users/jk5cv/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/jk5cv/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/jk5cv/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/jk5cv/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "nzprj-jk5cv",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/nzprj/contributors/jk5cv/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/jk5cv/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 2,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2015-06-08T19:41:29.098000Z",
+              "family_name": "Johnson",
+              "full_name": "Rick Johnson",
+              "given_name": "Richard",
+              "locale": "en_US",
+              "middle_names": "P.",
+              "suffix": "",
+              "timezone": "America/Indianapolis"
+            },
+            "id": "uswv3",
+            "links": {
+              "html": "http://osf.io/uswv3/",
+              "profile_image": "http://secure.gravatar.com/avatar/545797116ce4005fe1611ef585cccd82?d=identicon",
+              "self": "http://localhost:8000/v2/users/uswv3/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/uswv3/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/uswv3/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/uswv3/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "nzprj-uswv3",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/nzprj/contributors/uswv3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/uswv3/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 3,
+        "permission": "write",
+        "unregistered_contributor": "Micah Altman"
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": false,
+              "date_registered": "2016-04-05T16:18:48.486000Z",
+              "family_name": "altman",
+              "full_name": "micah altman",
+              "given_name": "micah",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "Etc/UTC"
+            },
+            "id": "xtdbw",
+            "links": {
+              "html": "http://osf.io/xtdbw/",
+              "profile_image": "http://secure.gravatar.com/avatar/757c3eadbbce8ba4d6d9d6a04754546c?d=identicon",
+              "self": null
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/xtdbw/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/xtdbw/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/xtdbw/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "nzprj-xtdbw",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/nzprj/contributors/xtdbw/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/xtdbw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/nzprj/contributors/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 4,
+    "total_bibliographic": 4
+  }
+}

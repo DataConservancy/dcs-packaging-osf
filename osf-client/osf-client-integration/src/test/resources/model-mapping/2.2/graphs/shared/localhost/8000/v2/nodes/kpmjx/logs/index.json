@@ -1,0 +1,577 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "mendeley_node_deauthorized",
+        "date": "2016-10-27T18:25:21.456000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "581246916c613b01e7a7f8dc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581246916c613b01e7a7f8dc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-10-27T15:43:23.371000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Pfeiffer",
+              "full_name": "Nicole Pfeiffer",
+              "given_name": "Nicole",
+              "id": "nsx26",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5812209b6c613b01e6a7f999",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5812209b6c613b01e6a7f999/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-10-27T15:42:57.835000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Elliott",
+              "full_name": "Fitz Elliott",
+              "given_name": "Fitz",
+              "id": "rzs6x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "58122081b83f6901e342c467",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58122081b83f6901e342c467/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_registered",
+        "date": "2016-08-11T14:42:34.494000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8eda6c613b01ef0dbf2b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8eda6c613b01ef0dbf2b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "registration_approved",
+        "date": "2016-08-11T14:42:34.474000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8eda6c613b01ef0dbf2a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8eda6c613b01ef0dbf2a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "registration_initiated",
+        "date": "2016-08-11T14:41:54.957000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8eb2b83f6901ecf72cd5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8eb2b83f6901ecf72cd5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-08-11T14:40:12.852000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bowman",
+              "full_name": "Sara Bowman",
+              "given_name": "Sara",
+              "id": "d9ehg",
+              "middle_names": "D.",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "O'Connell",
+              "full_name": "Kallie O'Connell",
+              "given_name": "Kallie",
+              "id": "zcdsa",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Taylor",
+              "full_name": "Ian Taylor",
+              "given_name": "Ian",
+              "id": "ufhbc",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8e4cb83f6901ebf72c8d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8e4cb83f6901ebf72c8d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-08-11T14:39:27.347000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Suhovecky",
+              "full_name": "Mark Suhovecky",
+              "given_name": "Mark",
+              "id": "9qeg4",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8e1fb83f6901edf72cdc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8e1fb83f6901edf72cdc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-08-11T14:39:04.903000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chirigati",
+              "full_name": "Fernando Chirigati",
+              "given_name": "Fernando",
+              "id": "nva5x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8e086c613b01eb0dbf3f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8e086c613b01eb0dbf3f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-08-11T14:39:04.895000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Rampin",
+              "full_name": "Remi Rampin",
+              "given_name": "Remi",
+              "id": "947ky",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "kpmjx",
+            "title": "Reading List"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8e086c613b01eb0dbf3e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8e086c613b01eb0dbf3e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/kpmjx/logs/?page=9",
+    "next": "http://localhost:8000/v2/nodes/kpmjx/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/kpmjx/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 83
+  }
+}

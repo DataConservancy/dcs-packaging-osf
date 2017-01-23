@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-03-31T08:38:31.274000Z",
+      "family_name": "Zargar",
+      "full_name": "Mahmood Zargar",
+      "given_name": "Mahmood",
+      "locale": "en_us",
+      "middle_names": "S",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "vix6c",
+    "links": {
+      "html": "http://osf.io/vix6c/",
+      "profile_image": "http://secure.gravatar.com/avatar/ce984bc233cd2af11bf66dfcf57183f9?d=identicon",
+      "self": "http://localhost:8000/v2/users/vix6c/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/vix6c/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/vix6c/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/vix6c/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

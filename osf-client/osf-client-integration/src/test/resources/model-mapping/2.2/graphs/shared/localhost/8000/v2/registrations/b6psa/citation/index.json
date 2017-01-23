@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Suhovecky",
+          "given": "Mark"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "OSFNonInstProj1",
+      "type": "webpage"
+    },
+    "id": "b6psa",
+    "links": {
+      "self": "osf.io/b6psa"
+    },
+    "type": "node-citation"
+  }
+}

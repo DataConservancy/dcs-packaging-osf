@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-05-15T23:56:22.166000Z",
+        "extra": {
+          "version": 1
+        },
+        "kind": "file",
+        "materialized_path": "/bx2gf",
+        "name": "home",
+        "path": "/bx2gf",
+        "size": 1108
+      },
+      "id": "bx2gf",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/bx2gf/content/",
+        "info": "http://localhost:8000/v2/wikis/bx2gf/",
+        "self": "http://localhost:8000/v2/wikis/bx2gf/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1ieDJnZg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/kpmjx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/kpmjx/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

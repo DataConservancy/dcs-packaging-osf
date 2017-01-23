@@ -1,0 +1,52 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "zhou",
+          "given": "faren"
+        },
+        {
+          "family": "Cai",
+          "given": "Steve"
+        },
+        {
+          "family": "Courville",
+          "given": "Pascal"
+        },
+        {
+          "family": "Sampey",
+          "given": "Darryl"
+        },
+        {
+          "family": "Iorns",
+          "given": "Elizabeth"
+        },
+        {
+          "family": "Denis",
+          "given": "Alex"
+        },
+        {
+          "family": "Williams",
+          "given": "Stephen R"
+        },
+        {
+          "family": "Perfito",
+          "given": "Nicole"
+        },
+        {
+          "family": "Errington",
+          "given": "Timothy M"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes",
+      "type": "webpage"
+    },
+    "id": "r53z8",
+    "links": {
+      "self": "osf.io/r53z8"
+    },
+    "type": "node-citation"
+  }
+}

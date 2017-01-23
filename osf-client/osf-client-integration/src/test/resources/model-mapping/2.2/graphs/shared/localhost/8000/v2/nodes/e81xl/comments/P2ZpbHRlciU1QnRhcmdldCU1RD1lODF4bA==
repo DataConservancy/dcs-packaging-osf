@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "can_edit": false,
+        "content": null,
+        "date_created": "2014-03-14T14:39:16.111000Z",
+        "date_modified": "2016-04-01T04:45:46.834000Z",
+        "deleted": true,
+        "has_children": false,
+        "has_report": false,
+        "is_abuse": false,
+        "is_ham": false,
+        "modified": null,
+        "page": "node"
+      },
+      "id": "t7j4p",
+      "links": {
+        "self": "http://localhost:8000/v2/comments/t7j4p/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "replies": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD10N2o0cA==",
+              "meta": {}
+            }
+          }
+        },
+        "reports": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/comments/t7j4p/reports/",
+              "meta": {}
+            }
+          }
+        },
+        "target": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {
+                "type": "nodes"
+              }
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "comments"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/e81xl/comments/?filter%5Btarget%5D=e81xl"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

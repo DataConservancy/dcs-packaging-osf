@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2014-06-10T17:19:33.317000Z",
+      "family_name": "Baranski",
+      "full_name": "Erica Baranski",
+      "given_name": "Erica",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/Los_Angeles"
+    },
+    "id": "gqx2h",
+    "links": {
+      "html": "http://osf.io/gqx2h/",
+      "profile_image": "http://secure.gravatar.com/avatar/7f2994bfa0332012e59fedda8cd17196?d=identicon",
+      "self": "http://localhost:8000/v2/users/gqx2h/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/gqx2h/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/gqx2h/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/gqx2h/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

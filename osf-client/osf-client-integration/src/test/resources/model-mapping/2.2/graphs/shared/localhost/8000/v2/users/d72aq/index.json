@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": false,
+      "date_registered": "2016-05-05T17:08:50.207000Z",
+      "family_name": "Hildreth",
+      "full_name": "Michael Hildreth",
+      "given_name": "Michael",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Etc/UTC"
+    },
+    "id": "d72aq",
+    "links": {
+      "html": "http://osf.io/d72aq/",
+      "profile_image": "http://secure.gravatar.com/avatar/668f672c420463425227ed7d99d9dbd7?d=identicon",
+      "self": null
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d72aq/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/d72aq/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/d72aq/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

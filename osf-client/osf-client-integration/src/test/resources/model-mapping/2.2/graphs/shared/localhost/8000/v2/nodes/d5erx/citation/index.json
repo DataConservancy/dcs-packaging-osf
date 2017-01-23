@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Soderberg",
+          "given": "Courtney K"
+        },
+        {
+          "family": "Clyburne-Sherin",
+          "given": "April"
+        },
+        {
+          "family": "Spitzer",
+          "given": "Matthew"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "OSF Curriculum",
+      "type": "webpage"
+    },
+    "id": "d5erx",
+    "links": {
+      "self": "osf.io/d5erx"
+    },
+    "type": "node-citation"
+  }
+}

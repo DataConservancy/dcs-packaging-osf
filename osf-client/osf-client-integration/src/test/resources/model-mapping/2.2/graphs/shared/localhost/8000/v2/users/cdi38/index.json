@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2012-05-31T05:29:01.320000Z",
+      "family_name": "Nosek",
+      "full_name": "Brian A. Nosek",
+      "given_name": "Brian",
+      "locale": "en_US",
+      "middle_names": "A.",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "cdi38",
+    "links": {
+      "html": "http://osf.io/cdi38/",
+      "profile_image": "http://secure.gravatar.com/avatar/37fc491096861dae49fe23ba665af56b?d=identicon",
+      "self": "http://localhost:8000/v2/users/cdi38/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/cdi38/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/cdi38/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/cdi38/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

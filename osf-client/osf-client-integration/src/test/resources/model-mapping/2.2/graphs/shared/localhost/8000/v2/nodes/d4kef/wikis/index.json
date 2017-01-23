@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-08-18T12:43:05.362000Z",
+        "extra": {
+          "version": 4
+        },
+        "kind": "file",
+        "materialized_path": "/fh963",
+        "name": "home",
+        "path": "/fh963",
+        "size": 3444
+      },
+      "id": "fh963",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/fh963/content/",
+        "info": "http://localhost:8000/v2/wikis/fh963/",
+        "self": "http://localhost:8000/v2/wikis/fh963/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1maDk2Mw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/d4kef/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

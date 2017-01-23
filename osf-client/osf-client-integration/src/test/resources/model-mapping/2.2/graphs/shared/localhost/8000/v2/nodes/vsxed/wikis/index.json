@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-11-03T13:36:48.811000Z",
+        "extra": {
+          "version": 3
+        },
+        "kind": "file",
+        "materialized_path": "/b2m44",
+        "name": "home",
+        "path": "/b2m44",
+        "size": 1428
+      },
+      "id": "b2m44",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/b2m44/content/",
+        "info": "http://localhost:8000/v2/wikis/b2m44/",
+        "self": "http://localhost:8000/v2/wikis/b2m44/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1iMm00NA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/vsxed/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

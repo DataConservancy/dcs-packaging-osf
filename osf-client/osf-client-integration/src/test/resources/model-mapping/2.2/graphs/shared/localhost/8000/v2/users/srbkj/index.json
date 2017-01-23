@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2016-03-29T19:48:40.991000Z",
+      "family_name": "Nabrzyski",
+      "full_name": "Jaroslaw Nabrzyski",
+      "given_name": "Jaroslaw",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/Indianapolis"
+    },
+    "id": "srbkj",
+    "links": {
+      "html": "http://osf.io/srbkj/",
+      "profile_image": "http://secure.gravatar.com/avatar/ee95318ad7ea16b858ca5cd2bd34937a?d=identicon",
+      "self": "http://localhost:8000/v2/users/srbkj/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/srbkj/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/srbkj/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/srbkj/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

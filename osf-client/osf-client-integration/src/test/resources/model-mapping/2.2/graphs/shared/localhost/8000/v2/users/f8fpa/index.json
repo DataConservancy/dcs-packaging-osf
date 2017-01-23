@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": false,
+      "date_registered": "2016-12-08T17:51:44.569000Z",
+      "family_name": "Gross",
+      "full_name": "Steven Gross",
+      "given_name": "Steven",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Etc/UTC"
+    },
+    "id": "f8fpa",
+    "links": {
+      "html": "http://osf.io/f8fpa/",
+      "profile_image": "http://secure.gravatar.com/avatar/755c2f50d48973b33788df4b97463277?d=identicon",
+      "self": null
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/f8fpa/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/f8fpa/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/f8fpa/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

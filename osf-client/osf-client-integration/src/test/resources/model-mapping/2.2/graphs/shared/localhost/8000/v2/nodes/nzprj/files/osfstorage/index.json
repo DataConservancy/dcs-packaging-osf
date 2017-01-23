@@ -1,0 +1,77 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-12-14T18:37:55.180000Z",
+        "date_modified": "2016-12-14T18:37:55.180000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 5,
+          "hashes": {
+            "md5": "d3f61dbdc5c5502c011cbfe147cac49a",
+            "sha256": "696701bdab60f1eae3924c2f28b90b9870456648bfbe2a00b71d9afa4554a9cc"
+          }
+        },
+        "guid": "b8txn",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/CNI2016f_AltmanJohnsonRiosSpies_ResearchSoftware.pdf",
+        "name": "CNI2016f_AltmanJohnsonRiosSpies_ResearchSoftware.pdf",
+        "path": "/585191839ad5a10048ba12ad",
+        "provider": "osfstorage",
+        "size": 7277467,
+        "tags": []
+      },
+      "id": "585191839ad5a10048ba12ad",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/nzprj/providers/osfstorage/585191839ad5a10048ba12ad",
+        "download": "http://files.osf.io/v1/resources/nzprj/providers/osfstorage/585191839ad5a10048ba12ad",
+        "info": "http://localhost:8000/v2/files/585191839ad5a10048ba12ad/",
+        "move": "http://files.osf.io/v1/resources/nzprj/providers/osfstorage/585191839ad5a10048ba12ad",
+        "self": "http://localhost:8000/v2/files/585191839ad5a10048ba12ad/",
+        "upload": "http://files.osf.io/v1/resources/nzprj/providers/osfstorage/585191839ad5a10048ba12ad"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1iOHR4bg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nzprj/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/585191839ad5a10048ba12ad/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/nzprj/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-05-19T19:53:16.413000Z",
+        "extra": {
+          "version": 4
+        },
+        "kind": "file",
+        "materialized_path": "/6hm5p",
+        "name": "home",
+        "path": "/6hm5p",
+        "size": 12492
+      },
+      "id": "6hm5p",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/6hm5p/content/",
+        "info": "http://localhost:8000/v2/wikis/6hm5p/",
+        "self": "http://localhost:8000/v2/wikis/6hm5p/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/qjbgm/comments/P2ZpbHRlciU1QnRhcmdldCU1RD02aG01cA==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/qjbgm/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/qjbgm/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

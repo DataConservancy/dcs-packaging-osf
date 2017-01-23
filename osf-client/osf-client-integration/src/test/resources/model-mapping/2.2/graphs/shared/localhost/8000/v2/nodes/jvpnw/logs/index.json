@@ -1,0 +1,505 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:42.667000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "evf2d",
+            "title": "Methods"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5aa6c613b0043980e45",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5aa6c613b0043980e45/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/evf2d/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/evf2d/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:42.448000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "w52c7",
+            "title": "Statistical Analyses"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5aa6c613b0043980e44",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5aa6c613b0043980e44/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/w52c7/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/w52c7/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:42.272000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "pqyks",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "anf2s",
+            "title": "Generation of tumor xenografts expressing PREX2 isoforms and evaluation of tumor free survival and tumor growth"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5aa6c613b0043980e43",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5aa6c613b0043980e43/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pqyks/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pqyks/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:41.973000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "me37j",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a96c613b0043980e42",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a96c613b0043980e42/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/me37j/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/me37j/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:41.790000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a96c613b0043980e41",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a96c613b0043980e41/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:41.296000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "z9mhg",
+            "title": "Statistical Analyses"
+          },
+          "params_project": {
+            "id": "anf2s",
+            "title": "Generation of tumor xenografts expressing PREX2 isoforms and evaluation of tumor free survival and tumor growth"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a96c613b0043980e40",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a96c613b0043980e40/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/z9mhg/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/z9mhg/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:40.891000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "jvpnw",
+            "title": "Study 44: Replication of Berger et al., 2012 (Nature)"
+          },
+          "params_project": {
+            "id": "p7ayb",
+            "title": "Replication Studies"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a86c613b0043980e3f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a86c613b0043980e3f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:40.712000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "vsxed",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a86c613b0043980e3e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a86c613b0043980e3e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:40.542000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "nm2jv",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a86c613b0043980e3d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a86c613b0043980e3d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nm2jv/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/nm2jv/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:40.255000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "jvra5",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "anf2s",
+            "title": "Generation of tumor xenografts expressing PREX2 isoforms and evaluation of tumor free survival and tumor growth"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a86c613b0043980e3c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a86c613b0043980e3c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvra5/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvra5/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/jvpnw/logs/?page=149",
+    "next": "http://localhost:8000/v2/nodes/jvpnw/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/jvpnw/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1484
+  }
+}

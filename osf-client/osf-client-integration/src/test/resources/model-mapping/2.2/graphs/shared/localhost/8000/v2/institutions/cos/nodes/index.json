@@ -2,862 +2,6 @@
   "data": [
     {
       "attributes": {
-        "category": "",
-        "collection": false,
-        "current_user_can_comment": false,
-        "current_user_permissions": [
-          "read"
-        ],
-        "date_created": "2016-04-17T13:08:27.752000Z",
-        "date_modified": "2017-01-11T14:37:17.523000Z",
-        "description": null,
-        "fork": false,
-        "node_license": null,
-        "preprint": false,
-        "public": true,
-        "registration": false,
-        "tags": [],
-        "title": "Online Supplements"
-      },
-      "id": "8rfsk",
-      "links": {
-        "html": "http://osf.io/8rfsk/",
-        "self": "http://localhost:8000/v2/nodes/8rfsk/"
-      },
-      "relationships": {
-        "affiliated_institutions": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/institutions/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/relationships/institutions/",
-              "meta": {}
-            }
-          }
-        },
-        "children": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/children/",
-              "meta": {}
-            }
-          }
-        },
-        "citation": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/citation/",
-              "meta": {}
-            }
-          }
-        },
-        "comments": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/comments/P2ZpbHRlciU1QnRhcmdldCU1RD04cmZzaw==",
-              "meta": {}
-            }
-          }
-        },
-        "contributors": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/contributors/",
-              "meta": {}
-            }
-          }
-        },
-        "draft_registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/draft_registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "files": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/files/",
-              "meta": {}
-            }
-          }
-        },
-        "forks": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/forks/",
-              "meta": {}
-            }
-          }
-        },
-        "identifiers": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/identifiers/",
-              "meta": {}
-            }
-          }
-        },
-        "linked_nodes": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/linked_nodes/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/relationships/linked_nodes/",
-              "meta": {}
-            }
-          }
-        },
-        "logs": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/logs/",
-              "meta": {}
-            }
-          }
-        },
-        "parent": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/u2mbx/",
-              "meta": {}
-            }
-          }
-        },
-        "preprints": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/preprints/",
-              "meta": {}
-            }
-          }
-        },
-        "registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "root": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/u2mbx/",
-              "meta": {}
-            }
-          }
-        },
-        "view_only_links": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/view_only_links/",
-              "meta": {}
-            }
-          }
-        },
-        "wikis": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8rfsk/wikis/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "nodes"
-    },
-    {
-      "attributes": {
-        "category": "project",
-        "collection": false,
-        "current_user_can_comment": false,
-        "current_user_permissions": [
-          "read"
-        ],
-        "date_created": "2013-10-22T20:12:08.914000Z",
-        "date_modified": "2017-01-11T14:22:02.830000Z",
-        "description": null,
-        "fork": false,
-        "node_license": null,
-        "preprint": false,
-        "public": true,
-        "registration": false,
-        "tags": [],
-        "title": "Study 16: Replication of Ward et al., 2010 (Cancer Cell)"
-      },
-      "id": "8l4ea",
-      "links": {
-        "html": "http://osf.io/8l4ea/",
-        "self": "http://localhost:8000/v2/nodes/8l4ea/"
-      },
-      "relationships": {
-        "affiliated_institutions": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/institutions/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/relationships/institutions/",
-              "meta": {}
-            }
-          }
-        },
-        "children": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/children/",
-              "meta": {}
-            }
-          }
-        },
-        "citation": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/citation/",
-              "meta": {}
-            }
-          }
-        },
-        "comments": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/comments/P2ZpbHRlciU1QnRhcmdldCU1RD04bDRlYQ==",
-              "meta": {}
-            }
-          }
-        },
-        "contributors": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/contributors/",
-              "meta": {}
-            }
-          }
-        },
-        "draft_registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/draft_registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "files": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/files/",
-              "meta": {}
-            }
-          }
-        },
-        "forks": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/forks/",
-              "meta": {}
-            }
-          }
-        },
-        "identifiers": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/identifiers/",
-              "meta": {}
-            }
-          }
-        },
-        "linked_nodes": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/linked_nodes/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/relationships/linked_nodes/",
-              "meta": {}
-            }
-          }
-        },
-        "logs": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/logs/",
-              "meta": {}
-            }
-          }
-        },
-        "parent": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/p7ayb/",
-              "meta": {}
-            }
-          }
-        },
-        "preprints": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/preprints/",
-              "meta": {}
-            }
-          }
-        },
-        "registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "root": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/e81xl/",
-              "meta": {}
-            }
-          }
-        },
-        "view_only_links": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/view_only_links/",
-              "meta": {}
-            }
-          }
-        },
-        "wikis": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/8l4ea/wikis/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "nodes"
-    },
-    {
-      "attributes": {
-        "category": "methods and measures",
-        "collection": false,
-        "current_user_can_comment": false,
-        "current_user_permissions": [
-          "read"
-        ],
-        "date_created": "2015-04-14T15:37:59.818000Z",
-        "date_modified": "2017-01-10T23:19:18.971000Z",
-        "description": null,
-        "fork": false,
-        "node_license": null,
-        "preprint": false,
-        "public": true,
-        "registration": false,
-        "tags": [],
-        "title": "Materials"
-      },
-      "id": "ia3dc",
-      "links": {
-        "html": "http://osf.io/ia3dc/",
-        "self": "http://localhost:8000/v2/nodes/ia3dc/"
-      },
-      "relationships": {
-        "affiliated_institutions": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/institutions/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/relationships/institutions/",
-              "meta": {}
-            }
-          }
-        },
-        "children": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/children/",
-              "meta": {}
-            }
-          }
-        },
-        "citation": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/citation/",
-              "meta": {}
-            }
-          }
-        },
-        "comments": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1pYTNkYw==",
-              "meta": {}
-            }
-          }
-        },
-        "contributors": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/contributors/",
-              "meta": {}
-            }
-          }
-        },
-        "draft_registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/draft_registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "files": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/files/",
-              "meta": {}
-            }
-          }
-        },
-        "forks": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/forks/",
-              "meta": {}
-            }
-          }
-        },
-        "identifiers": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/identifiers/",
-              "meta": {}
-            }
-          }
-        },
-        "linked_nodes": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/linked_nodes/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/relationships/linked_nodes/",
-              "meta": {}
-            }
-          }
-        },
-        "logs": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/logs/",
-              "meta": {}
-            }
-          }
-        },
-        "parent": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/u2mbx/",
-              "meta": {}
-            }
-          }
-        },
-        "preprints": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/preprints/",
-              "meta": {}
-            }
-          }
-        },
-        "registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "root": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/u2mbx/",
-              "meta": {}
-            }
-          }
-        },
-        "view_only_links": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/view_only_links/",
-              "meta": {}
-            }
-          }
-        },
-        "wikis": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/ia3dc/wikis/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "nodes"
-    },
-    {
-      "attributes": {
-        "category": "data",
-        "collection": false,
-        "current_user_can_comment": false,
-        "current_user_permissions": [
-          "read"
-        ],
-        "date_created": "2015-04-14T15:37:41.592000Z",
-        "date_modified": "2017-01-10T23:17:26.760000Z",
-        "description": null,
-        "fork": false,
-        "node_license": null,
-        "preprint": false,
-        "public": true,
-        "registration": false,
-        "tags": [],
-        "title": "Data"
-      },
-      "id": "s2r6u",
-      "links": {
-        "html": "http://osf.io/s2r6u/",
-        "self": "http://localhost:8000/v2/nodes/s2r6u/"
-      },
-      "relationships": {
-        "affiliated_institutions": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/institutions/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/relationships/institutions/",
-              "meta": {}
-            }
-          }
-        },
-        "children": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/children/",
-              "meta": {}
-            }
-          }
-        },
-        "citation": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/citation/",
-              "meta": {}
-            }
-          }
-        },
-        "comments": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1zMnI2dQ==",
-              "meta": {}
-            }
-          }
-        },
-        "contributors": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/contributors/",
-              "meta": {}
-            }
-          }
-        },
-        "draft_registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/draft_registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "files": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/files/",
-              "meta": {}
-            }
-          }
-        },
-        "forks": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/forks/",
-              "meta": {}
-            }
-          }
-        },
-        "identifiers": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/identifiers/",
-              "meta": {}
-            }
-          }
-        },
-        "linked_nodes": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/linked_nodes/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/relationships/linked_nodes/",
-              "meta": {}
-            }
-          }
-        },
-        "logs": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/logs/",
-              "meta": {}
-            }
-          }
-        },
-        "parent": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/u2mbx/",
-              "meta": {}
-            }
-          }
-        },
-        "preprints": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/preprints/",
-              "meta": {}
-            }
-          }
-        },
-        "registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "root": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/u2mbx/",
-              "meta": {}
-            }
-          }
-        },
-        "view_only_links": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/view_only_links/",
-              "meta": {}
-            }
-          }
-        },
-        "wikis": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/s2r6u/wikis/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "nodes"
-    },
-    {
-      "attributes": {
-        "category": "project",
-        "collection": false,
-        "current_user_can_comment": false,
-        "current_user_permissions": [
-          "read"
-        ],
-        "date_created": "2014-08-12T17:22:09.236000Z",
-        "date_modified": "2017-01-10T20:52:23.119000Z",
-        "description": "The Transparency and Openness Promotion (TOP) Committee met in November 2014 to address one important element of the incentive systems - journals’ procedures and  policies for publication. The outcome of the effort is the TOP Guidelines. There are eight standards in the TOP guidelines; each move scientific communication toward greater openness.  These standards are modular, facilitating adoption in whole or in part. However, they also complement each other, in that commitment to one standard may facilitate adoption of others. Moreover, the guidelines are sensitive to barriers to openness by articulating, for example, a process for exceptions to sharing because of ethical issues, intellectual property concerns, or availability of necessary resources.",
-        "fork": false,
-        "node_license": null,
-        "preprint": true,
-        "public": true,
-        "registration": false,
-        "tags": [
-          "journals",
-          "author guidelines",
-          "reproducibility"
-        ],
-        "title": "Transparency and Openness Promotion (TOP) Guidelines"
-      },
-      "id": "9f6gx",
-      "links": {
-        "html": "http://osf.io/9f6gx/",
-        "self": "http://localhost:8000/v2/nodes/9f6gx/"
-      },
-      "relationships": {
-        "affiliated_institutions": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/institutions/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/relationships/institutions/",
-              "meta": {}
-            }
-          }
-        },
-        "children": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/children/",
-              "meta": {}
-            }
-          }
-        },
-        "citation": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/citation/",
-              "meta": {}
-            }
-          }
-        },
-        "comments": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/comments/P2ZpbHRlciU1QnRhcmdldCU1RD05ZjZneA==",
-              "meta": {}
-            }
-          }
-        },
-        "contributors": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/contributors/",
-              "meta": {}
-            }
-          }
-        },
-        "draft_registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/draft_registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "files": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/files/",
-              "meta": {}
-            }
-          }
-        },
-        "forks": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/forks/",
-              "meta": {}
-            }
-          }
-        },
-        "identifiers": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/identifiers/",
-              "meta": {}
-            }
-          }
-        },
-        "linked_nodes": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/linked_nodes/",
-              "meta": {}
-            },
-            "self": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/relationships/linked_nodes/",
-              "meta": {}
-            }
-          }
-        },
-        "logs": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/logs/",
-              "meta": {}
-            }
-          }
-        },
-        "preprints": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/preprints/",
-              "meta": {}
-            }
-          }
-        },
-        "registrations": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/registrations/",
-              "meta": {}
-            }
-          }
-        },
-        "root": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/",
-              "meta": {}
-            }
-          }
-        },
-        "view_only_links": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/view_only_links/",
-              "meta": {}
-            }
-          }
-        },
-        "wikis": {
-          "links": {
-            "related": {
-              "href": "http://localhost:8000/v2/nodes/9f6gx/wikis/",
-              "meta": {}
-            }
-          }
-        }
-      },
-      "type": "nodes"
-    },
-    {
-      "attributes": {
         "category": "project",
         "collection": false,
         "current_user_can_comment": false,
@@ -865,7 +9,7 @@
           "read"
         ],
         "date_created": "2016-03-10T22:21:43.648000Z",
-        "date_modified": "2017-01-10T20:42:28.827000Z",
+        "date_modified": "2017-01-20T20:52:50.669000Z",
         "description": "OSF Institutions is a free scholarly web tool that enhances transparency, fosters collaboration, and increases the visibility of research outputs at the institutional level.",
         "fork": false,
         "node_license": null,
@@ -1040,7 +184,7 @@
           "read"
         ],
         "date_created": "2015-04-20T17:58:49.786000Z",
-        "date_modified": "2017-01-10T18:23:58.607000Z",
+        "date_modified": "2017-01-19T19:52:35.513000Z",
         "description": "Register your research study and analysis plans prior to data collection. Then write up your findings regardless of outcome (any additional  analyses can be included in an \"exploratory\" section) and be eligible for a $1,000 prize once published. Complete details, eligibility requirements, and guidelines will be announced as they become available. In the meantime, follow this project for updates, and read about the reproducibility crisis and how pre-registration can help in the articles and wiki included in this project.",
         "fork": false,
         "node_license": {
@@ -1221,31 +365,36 @@
         "current_user_permissions": [
           "read"
         ],
-        "date_created": "2015-05-28T15:47:08.527000Z",
-        "date_modified": "2017-01-06T21:42:01.805000Z",
-        "description": "A place for people to comment on the public OSF API.",
+        "date_created": "2016-06-04T18:48:10.853000Z",
+        "date_modified": "2017-01-19T19:50:11.334000Z",
+        "description": "This project is a clearinghouse of information resources for coordinating a grassroots, community outreach effort to promote Open Science. Below are links to resources, example outreach materials, and contact information for relevant persons.",
         "fork": false,
-        "node_license": null,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
         "preprint": false,
         "public": true,
         "registration": false,
         "tags": [],
-        "title": "OSF Public API Feedback"
+        "title": "Open Science Community Outreach"
       },
-      "id": "y9jdt",
+      "id": "hnp6x",
       "links": {
-        "html": "http://osf.io/y9jdt/",
-        "self": "http://localhost:8000/v2/nodes/y9jdt/"
+        "html": "http://osf.io/hnp6x/",
+        "self": "http://localhost:8000/v2/nodes/hnp6x/"
       },
       "relationships": {
         "affiliated_institutions": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/institutions/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/institutions/",
               "meta": {}
             },
             "self": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/relationships/institutions/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/relationships/institutions/",
               "meta": {}
             }
           }
@@ -1253,7 +402,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/children/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/children/",
               "meta": {}
             }
           }
@@ -1261,7 +410,7 @@
         "citation": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/citation/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/citation/",
               "meta": {}
             }
           }
@@ -1269,7 +418,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/comments/P2ZpbHRlciU1QnRhcmdldCU1RD15OWpkdA==",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1obnA2eA==",
               "meta": {}
             }
           }
@@ -1277,7 +426,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/contributors/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/contributors/",
               "meta": {}
             }
           }
@@ -1285,7 +434,7 @@
         "draft_registrations": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/draft_registrations/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/draft_registrations/",
               "meta": {}
             }
           }
@@ -1293,7 +442,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/files/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/files/",
               "meta": {}
             }
           }
@@ -1301,7 +450,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/forks/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/forks/",
               "meta": {}
             }
           }
@@ -1309,7 +458,15 @@
         "identifiers": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/identifiers/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
               "meta": {}
             }
           }
@@ -1317,11 +474,11 @@
         "linked_nodes": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/linked_nodes/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/linked_nodes/",
               "meta": {}
             },
             "self": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/relationships/linked_nodes/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/relationships/linked_nodes/",
               "meta": {}
             }
           }
@@ -1329,7 +486,7 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/logs/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/logs/",
               "meta": {}
             }
           }
@@ -1337,7 +494,7 @@
         "preprints": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/preprints/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/preprints/",
               "meta": {}
             }
           }
@@ -1345,7 +502,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/registrations/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/registrations/",
               "meta": {}
             }
           }
@@ -1353,7 +510,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/",
               "meta": {}
             }
           }
@@ -1361,7 +518,7 @@
         "view_only_links": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/view_only_links/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/view_only_links/",
               "meta": {}
             }
           }
@@ -1369,7 +526,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/y9jdt/wikis/",
+              "href": "http://localhost:8000/v2/nodes/hnp6x/wikis/",
               "meta": {}
             }
           }
@@ -1385,35 +542,36 @@
         "current_user_permissions": [
           "read"
         ],
-        "date_created": "2014-11-14T17:28:36.434000Z",
-        "date_modified": "2017-01-05T16:41:56.491000Z",
-        "description": "A collection of materials and resources for COS ambassadors.",
+        "date_created": "2016-11-29T18:45:52.683000Z",
+        "date_modified": "2017-01-18T20:46:12.500000Z",
+        "description": "December 2016 Meeting: How Promoting Open and Reproducible Research Helps Funding Organizations Meet Their Mission",
         "fork": false,
-        "node_license": null,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
         "preprint": false,
         "public": true,
         "registration": false,
-        "tags": [
-          "OpenScience",
-          "OSF",
-          "Ambassadors"
-        ],
-        "title": "COS Ambassadors"
+        "tags": [],
+        "title": "Maximizing Research Impact"
       },
-      "id": "bs23x",
+      "id": "8mrfq",
       "links": {
-        "html": "http://osf.io/bs23x/",
-        "self": "http://localhost:8000/v2/nodes/bs23x/"
+        "html": "http://osf.io/8mrfq/",
+        "self": "http://localhost:8000/v2/nodes/8mrfq/"
       },
       "relationships": {
         "affiliated_institutions": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/institutions/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/institutions/",
               "meta": {}
             },
             "self": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/relationships/institutions/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/relationships/institutions/",
               "meta": {}
             }
           }
@@ -1421,7 +579,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/children/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/children/",
               "meta": {}
             }
           }
@@ -1429,7 +587,7 @@
         "citation": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/citation/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/citation/",
               "meta": {}
             }
           }
@@ -1437,7 +595,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1iczIzeA==",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/comments/P2ZpbHRlciU1QnRhcmdldCU1RD04bXJmcQ==",
               "meta": {}
             }
           }
@@ -1445,7 +603,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/contributors/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/contributors/",
               "meta": {}
             }
           }
@@ -1453,7 +611,7 @@
         "draft_registrations": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/draft_registrations/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/draft_registrations/",
               "meta": {}
             }
           }
@@ -1461,7 +619,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/files/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/files/",
               "meta": {}
             }
           }
@@ -1469,7 +627,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/forks/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/forks/",
               "meta": {}
             }
           }
@@ -1477,7 +635,15 @@
         "identifiers": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/identifiers/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
               "meta": {}
             }
           }
@@ -1485,11 +651,11 @@
         "linked_nodes": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/linked_nodes/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/linked_nodes/",
               "meta": {}
             },
             "self": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/relationships/linked_nodes/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/relationships/linked_nodes/",
               "meta": {}
             }
           }
@@ -1497,7 +663,7 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/logs/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/logs/",
               "meta": {}
             }
           }
@@ -1505,7 +671,7 @@
         "preprints": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/preprints/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/preprints/",
               "meta": {}
             }
           }
@@ -1513,7 +679,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/registrations/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/registrations/",
               "meta": {}
             }
           }
@@ -1521,7 +687,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/",
               "meta": {}
             }
           }
@@ -1529,7 +695,7 @@
         "view_only_links": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/view_only_links/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/view_only_links/",
               "meta": {}
             }
           }
@@ -1537,7 +703,7 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/bs23x/wikis/",
+              "href": "http://localhost:8000/v2/nodes/8mrfq/wikis/",
               "meta": {}
             }
           }
@@ -1553,34 +719,36 @@
         "current_user_permissions": [
           "read"
         ],
-        "date_created": "2016-12-19T19:40:58.709000Z",
-        "date_modified": "2017-01-04T19:58:08.846000Z",
-        "description": "See the Wiki!",
+        "date_created": "2013-10-08T23:31:56.153000Z",
+        "date_modified": "2017-01-18T20:46:11.076000Z",
+        "description": "We are conducting a study to investigate the replicability of cancer biology studies. Selected results from a substantial number of high-profile papers in the field of cancer biology published between 2010-2012 are being replicated by the Science Exchange network.",
         "fork": false,
         "node_license": null,
         "preprint": false,
         "public": true,
         "registration": false,
         "tags": [
-          "NGS2",
-          "Next Generation Social Science"
+          "cancer biology",
+          "reproducibility",
+          "replication",
+          "open science"
         ],
-        "title": "NGS2 Sample Project"
+        "title": "Reproducibility Project: Cancer Biology"
       },
-      "id": "gp9fn",
+      "id": "e81xl",
       "links": {
-        "html": "http://osf.io/gp9fn/",
-        "self": "http://localhost:8000/v2/nodes/gp9fn/"
+        "html": "http://osf.io/e81xl/",
+        "self": "http://localhost:8000/v2/nodes/e81xl/"
       },
       "relationships": {
         "affiliated_institutions": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/institutions/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/institutions/",
               "meta": {}
             },
             "self": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/relationships/institutions/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/relationships/institutions/",
               "meta": {}
             }
           }
@@ -1588,7 +756,7 @@
         "children": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/children/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/children/",
               "meta": {}
             }
           }
@@ -1596,7 +764,7 @@
         "citation": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/citation/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/citation/",
               "meta": {}
             }
           }
@@ -1604,7 +772,7 @@
         "comments": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1ncDlmbg==",
+              "href": "http://localhost:8000/v2/nodes/e81xl/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1lODF4bA==",
               "meta": {}
             }
           }
@@ -1612,7 +780,7 @@
         "contributors": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/contributors/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/contributors/",
               "meta": {}
             }
           }
@@ -1620,7 +788,7 @@
         "draft_registrations": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/draft_registrations/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/draft_registrations/",
               "meta": {}
             }
           }
@@ -1628,7 +796,7 @@
         "files": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/files/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/files/",
               "meta": {}
             }
           }
@@ -1636,7 +804,7 @@
         "forks": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/forks/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/forks/",
               "meta": {}
             }
           }
@@ -1644,7 +812,7 @@
         "identifiers": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/identifiers/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/identifiers/",
               "meta": {}
             }
           }
@@ -1652,11 +820,11 @@
         "linked_nodes": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/linked_nodes/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/linked_nodes/",
               "meta": {}
             },
             "self": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/relationships/linked_nodes/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/relationships/linked_nodes/",
               "meta": {}
             }
           }
@@ -1664,7 +832,7 @@
         "logs": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/logs/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/logs/",
               "meta": {}
             }
           }
@@ -1672,7 +840,7 @@
         "preprints": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/preprints/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/preprints/",
               "meta": {}
             }
           }
@@ -1680,7 +848,7 @@
         "registrations": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/registrations/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/registrations/",
               "meta": {}
             }
           }
@@ -1688,7 +856,7 @@
         "root": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
               "meta": {}
             }
           }
@@ -1696,7 +864,7 @@
         "view_only_links": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/view_only_links/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/view_only_links/",
               "meta": {}
             }
           }
@@ -1704,7 +872,939 @@
         "wikis": {
           "links": {
             "related": {
-              "href": "http://localhost:8000/v2/nodes/gp9fn/wikis/",
+              "href": "http://localhost:8000/v2/nodes/e81xl/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    },
+    {
+      "attributes": {
+        "category": "",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-07-18T21:04:02.838000Z",
+        "date_modified": "2017-01-18T19:44:41.790000Z",
+        "description": "",
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [],
+        "title": "Figures"
+      },
+      "id": "rgcxn",
+      "links": {
+        "html": "http://osf.io/rgcxn/",
+        "self": "http://localhost:8000/v2/nodes/rgcxn/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1yZ2N4bg==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    },
+    {
+      "attributes": {
+        "category": "project",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2013-10-22T20:23:49.268000Z",
+        "date_modified": "2017-01-18T19:44:40.891000Z",
+        "description": null,
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [
+          "Reproducibility Project: Cancer Biology",
+          "replication",
+          "metascience",
+          "reproducibility",
+          "melanoma",
+          "driver mutation"
+        ],
+        "title": "Study 44: Replication of Berger et al., 2012 (Nature)"
+      },
+      "id": "jvpnw",
+      "links": {
+        "html": "http://osf.io/jvpnw/",
+        "self": "http://localhost:8000/v2/nodes/jvpnw/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1qdnBudw==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/p7ayb/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    },
+    {
+      "attributes": {
+        "category": "data",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-07-07T19:09:29.042000Z",
+        "date_modified": "2017-01-18T19:44:40.712000Z",
+        "description": "",
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [],
+        "title": "Data"
+      },
+      "id": "vsxed",
+      "links": {
+        "html": "http://osf.io/vsxed/",
+        "self": "http://localhost:8000/v2/nodes/vsxed/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/comments/P2ZpbHRlciU1QnRhcmdldCU1RD12c3hlZA==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/vsxed/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    },
+    {
+      "attributes": {
+        "category": "",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-11-02T20:34:13.371000Z",
+        "date_modified": "2017-01-18T19:44:40.073000Z",
+        "description": "",
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [],
+        "title": "Plasmid quality control data"
+      },
+      "id": "dhch3",
+      "links": {
+        "html": "http://osf.io/dhch3/",
+        "self": "http://localhost:8000/v2/nodes/dhch3/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1kaGNoMw==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/4c8tu/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "nodes"
+    },
+    {
+      "attributes": {
+        "category": "data",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-07-07T19:08:15.958000Z",
+        "date_modified": "2017-01-18T19:44:39.691000Z",
+        "description": "Sanger sequencing of PREX2 cDNA from NRASG12D melanocytes",
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "preprint": false,
+        "public": true,
+        "registration": false,
+        "tags": [],
+        "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+      },
+      "id": "r53z8",
+      "links": {
+        "html": "http://osf.io/r53z8/",
+        "self": "http://localhost:8000/v2/nodes/r53z8/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/institutions/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/relationships/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1yNTN6OA==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "draft_registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/draft_registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/jvpnw/",
+              "meta": {}
+            }
+          }
+        },
+        "preprints": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/preprints/",
+              "meta": {}
+            }
+          }
+        },
+        "registrations": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/registrations/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/r53z8/wikis/",
               "meta": {}
             }
           }
@@ -1715,13 +1815,13 @@
   ],
   "links": {
     "first": null,
-    "last": "http://localhost:8000/v2/institutions/cos/nodes/?page=17",
+    "last": "http://localhost:8000/v2/institutions/cos/nodes/?page=21",
     "next": "http://localhost:8000/v2/institutions/cos/nodes/?page=2",
     "prev": null,
     "self": "http://localhost:8000/v2/institutions/cos/nodes/"
   },
   "meta": {
     "per_page": 10,
-    "total": 169
+    "total": 207
   }
 }

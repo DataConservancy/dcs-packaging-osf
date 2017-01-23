@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Taylor",
+          "given": "Ian"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Workshop Use Case 3: Researcher Dashboard",
+      "type": "webpage"
+    },
+    "id": "qjbgm",
+    "links": {
+      "self": "osf.io/qjbgm"
+    },
+    "type": "node-citation"
+  }
+}

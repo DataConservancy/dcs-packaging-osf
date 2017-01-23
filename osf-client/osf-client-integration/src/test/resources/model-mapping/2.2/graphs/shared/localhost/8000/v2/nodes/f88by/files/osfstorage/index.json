@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Meeting Notes 2017/",
+        "name": "Meeting Notes 2017",
+        "path": "/5845ca376c613b004461c7a0/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "5845ca376c613b004461c7a0",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/f88by/providers/osfstorage/5845ca376c613b004461c7a0/",
+        "info": "http://localhost:8000/v2/files/5845ca376c613b004461c7a0/",
+        "move": "http://files.osf.io/v1/resources/f88by/providers/osfstorage/5845ca376c613b004461c7a0/",
+        "new_folder": "http://files.osf.io/v1/resources/f88by/providers/osfstorage/5845ca376c613b004461c7a0/?kind=folder",
+        "self": "http://localhost:8000/v2/files/5845ca376c613b004461c7a0/",
+        "upload": "http://files.osf.io/v1/resources/f88by/providers/osfstorage/5845ca376c613b004461c7a0/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/f88by/files/osfstorage/5845ca376c613b004461c7a0/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/f88by/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/f88by/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

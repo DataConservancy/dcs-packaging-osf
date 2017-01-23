@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-09-08T13:06:17.799000Z",
+      "family_name": "Suhovecky",
+      "full_name": "Mark Suhovecky",
+      "given_name": "Mark",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/Indianapolis"
+    },
+    "id": "9qeg4",
+    "links": {
+      "html": "http://osf.io/9qeg4/",
+      "profile_image": "http://secure.gravatar.com/avatar/790b2f144fe208e1be2635a29080454e?d=identicon",
+      "self": "http://localhost:8000/v2/users/9qeg4/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9qeg4/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/9qeg4/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/9qeg4/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

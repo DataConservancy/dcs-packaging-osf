@@ -1,0 +1,551 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_folder_created",
+        "date": "2017-01-11T16:27:39.565000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "path": "/craft_admin/",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/y9mpx/files/osfstorage/58765cfb6c613b01ff6d0af8//?action=download",
+            "view": "/project/y9mpx/files/osfstorage/58765cfb6c613b01ff6d0af8//"
+          }
+        }
+      },
+      "id": "58765cfb9ad5a101fca19db7",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58765cfb9ad5a101fca19db7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ufhbc/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "external_ids_added",
+        "date": "2017-01-10T01:49:47.776000Z",
+        "params": {
+          "contributors": [],
+          "identifiers": {
+            "ark": "c7605/osf.io/y9mpx",
+            "doi": "10.17605/OSF.IO/Y9MPX"
+          },
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58743dbb9ad5a102008b10e6",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58743dbb9ad5a102008b10e6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-12-19T18:34:39.088000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bowman",
+              "full_name": "Sara Bowman",
+              "given_name": "Sara",
+              "id": "d9ehg",
+              "middle_names": "D.",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5858283fb83f69004496e171",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5858283fb83f69004496e171/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-12-19T18:34:13.632000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Taylor",
+              "full_name": "Ian Taylor",
+              "given_name": "Ian",
+              "id": "ufhbc",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58582825b83f69004296dfeb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58582825b83f69004296dfeb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-12-19T18:33:52.613000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "O'Connell",
+              "full_name": "Kallie O'Connell",
+              "given_name": "Kallie",
+              "id": "zcdsa",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58582810594d9000451a25d7",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58582810594d9000451a25d7/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-12-19T18:33:37.142000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Elliott",
+              "full_name": "Fitz Elliott",
+              "given_name": "Fitz",
+              "id": "rzs6x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58582801b83f69004596e258",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58582801b83f69004596e258/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-12-19T18:33:28.282000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Pfeiffer",
+              "full_name": "Nicole Pfeiffer",
+              "given_name": "Nicole",
+              "id": "nsx26",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585827f8b83f6900479700be",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585827f8b83f6900479700be/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-12-19T18:33:11.051000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Brower",
+              "full_name": "Donald Brower",
+              "given_name": "Donald",
+              "id": "fm6na",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "585827e76c613b0041b199ee",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/585827e76c613b0041b199ee/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-06T17:58:52.720000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "3dhmx",
+            "title": "Transcripts"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5846fc5cb83f6901fe0a27d1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5846fc5cb83f6901fe0a27d1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3dhmx/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/3dhmx/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "external_ids_added",
+        "date": "2016-11-21T16:37:12.942000Z",
+        "params": {
+          "contributors": [],
+          "identifiers": {
+            "ark": "c7605/osf.io/aqztf",
+            "doi": "10.17605/OSF.IO/AQZTF"
+          },
+          "params_node": {
+            "id": "aqztf",
+            "title": "Workshop Use Case 2: ReproZip"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "583322b8b83f6901fc77f6bb",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/583322b8b83f6901fc77f6bb/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/aqztf/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/y9mpx/logs/?page=63",
+    "next": "http://localhost:8000/v2/nodes/y9mpx/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9mpx/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 621
+  }
+}

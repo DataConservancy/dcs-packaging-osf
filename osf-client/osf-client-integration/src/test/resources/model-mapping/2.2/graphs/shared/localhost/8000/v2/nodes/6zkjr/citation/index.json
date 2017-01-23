@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Suhovecky",
+          "given": "Mark"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "FileTest6Giga",
+      "type": "webpage"
+    },
+    "id": "6zkjr",
+    "links": {
+      "self": "osf.io/6zkjr"
+    },
+    "type": "node-citation"
+  }
+}
