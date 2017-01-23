@@ -137,7 +137,7 @@ function processurls() {
   if [ "$converted" != "$file" ] ;
   then
     mv $file $converted
-    f="$converted"
+    file="$converted"
   fi
 
   # re-write URLs from api.osf.io to localhost:8000
