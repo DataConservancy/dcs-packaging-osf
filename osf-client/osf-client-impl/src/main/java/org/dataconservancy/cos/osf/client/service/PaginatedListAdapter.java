@@ -26,8 +26,10 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 import java.util.Spliterator;
 import java.util.Spliterators;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
@@ -42,17 +44,19 @@ import java.util.stream.StreamSupport;
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class PaginatedListAdapter<T> implements PaginatedList<T> {
+public class PaginatedListAdapter<E> implements PaginatedList<E> {
 
     private static final Logger LOG = LoggerFactory.getLogger(PaginatedListAdapter.class);
 
-    private final ResourceList<T> resources;
+    private static final String READ_ONLY = "This list is read-only.";
+
+    private final ResourceList<E> resources;
 
     private final OkHttpClient okHttp;
 
     private final ResourceConverter resourceConverter;
 
-    private final Class<T> clazz;
+    private final Class<E> clazz;
 
     /**
      * Adapts the supplied {@code ResourceList} as a {@code PaginatedList}.  The supplied {@code ResourceList}
@@ -67,7 +71,7 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
      * @param resources the first page of a response, which may have additional pages
      */
     public PaginatedListAdapter(final OkHttpClient okHttp, final ResourceConverter resourceConverter,
-                                final Class<T> clazz, final ResourceList<T> resources) {
+                                final Class<E> clazz, final ResourceList<E> resources) {
         if (okHttp == null) {
             throw new IllegalArgumentException("OkHttpClient must not be null.");
         }
@@ -137,13 +141,13 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<E> iterator() {
         return new PagingIterator<>(okHttp, resourceConverter, resources, clazz);
     }
 
     @Override
-    public Spliterator<T> spliterator() {
-        final PagingIterator<T> iterator = new PagingIterator<>(okHttp, resourceConverter, resources, clazz);
+    public Spliterator<E> spliterator() {
+        final PagingIterator<E> iterator = new PagingIterator<>(okHttp, resourceConverter, resources, clazz);
         final int flags = Spliterator.ORDERED | Spliterator.NONNULL;
         if (resources.getMeta() != null && resources.getMeta().get("total") != null) {
             final Integer total = (Integer) resources.getMeta().get("total");
@@ -156,28 +160,23 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     }
 
     @Override
-    public Stream<T> stream() {
+    public Stream<E> stream() {
         return StreamSupport.stream(spliterator(), false);
     }
 
     @Override
-    public Stream<T> parallelStream() {
+    public Stream<E> parallelStream() {
         return stream();
     }
 
     @Override
-    public void forEach(final Consumer<? super T> action) {
-        resources.forEach(action);
-    }
-
-    @Override
-    public boolean removeIf(final Predicate<? super T> filter) {
-        return resources.removeIf(filter);
+    public void forEach(final Consumer<? super E> action) {
+        stream().forEach(action);
     }
 
     @Override
     public int size() {
-        return resources.size();
+        return total();
     }
 
     @Override
@@ -187,27 +186,17 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
 
     @Override
     public boolean contains(final Object o) {
-        return resources.contains(o);
+        return stream().anyMatch(e -> (o == null ? e == null : o.equals(e)));
     }
 
     @Override
     public Object[] toArray() {
-        return resources.toArray();
+        return stream().toArray();
     }
 
     @Override
-    public <T1> T1[] toArray(final T1[] a) {
-        return resources.toArray(a);
-    }
-
-    @Override
-    public boolean add(final T t) {
-        return resources.add(t);
-    }
-
-    @Override
-    public boolean remove(final Object o) {
-        return resources.remove(o);
+    public <T> T[] toArray(final T[] a) {
+        if (a.length >= )
     }
 
     @Override
@@ -216,53 +205,39 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     }
 
     @Override
-    public boolean addAll(final Collection<? extends T> c) {
-        return resources.addAll(c);
-    }
+    public E get(final int index) {
+        if (index < 0) {
+            throw new IllegalArgumentException("Index must be a positive integer");
+        }
 
-    @Override
-    public boolean addAll(final int index, final Collection<? extends T> c) {
-        return resources.addAll(index, c);
-    }
+        // if size is supported, check the upper bounds of the index
+        if (size() > -1 && index > size()) {
+            throw new IndexOutOfBoundsException();
+        }
 
-    @Override
-    public boolean removeAll(final Collection<?> c) {
-        return resources.removeAll(c);
-    }
-
-    @Override
-    public boolean retainAll(final Collection<?> c) {
-        return resources.retainAll(c);
-    }
-
-    @Override
-    public void clear() {
-        resources.clear();
-    }
-
-    @Override
-    public T get(final int index) {
-        return resources.get(index);
-    }
-
-    @Override
-    public T set(final int index, final T element) {
-        return resources.set(index, element);
-    }
-
-    @Override
-    public void add(final int index, final T element) {
-        resources.add(index, element);
-    }
-
-    @Override
-    public T remove(final int index) {
-        return resources.remove(index);
+        try {
+            return this.stream().skip(index).findFirst().orElseThrow(() ->
+                    new NoSuchElementException("Unable to retrieve element at index " + index));
+        } catch (RuntimeException e) {
+            LOG.debug("Error retrieving element at index '{}'", index, e);
+            throw e;
+        }
     }
 
     @Override
     public int indexOf(final Object o) {
-        return resources.indexOf(o);
+        if (size() == 0) {
+            return -1;
+        }
+        final AtomicInteger i = new AtomicInteger(0);
+        stream().forEach(e -> {
+            if (o == null ? e == null : o.equals(e)) {
+                return;
+            }
+            i.getAndIncrement();
+        });
+
+        return i.get();
     }
 
     @Override
@@ -271,38 +246,83 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     }
 
     @Override
-    public ListIterator<T> listIterator() {
+    public ListIterator<E> listIterator() {
         return resources.listIterator();
     }
 
     @Override
-    public ListIterator<T> listIterator(final int index) {
+    public ListIterator<E> listIterator(final int index) {
         return resources.listIterator(index);
     }
 
     @Override
-    public List<T> subList(final int fromIndex, final int toIndex) {
+    public List<E> subList(final int fromIndex, final int toIndex) {
         return resources.subList(fromIndex, toIndex);
     }
 
     @Override
-    public void replaceAll(final UnaryOperator<T> operator) {
-        resources.replaceAll(operator);
+    public void replaceAll(final UnaryOperator<E> operator) {
+        throw new UnsupportedOperationException(READ_ONLY);
     }
 
     @Override
-    public void sort(final Comparator<? super T> c) {
+    public void sort(final Comparator<? super E> c) {
         resources.sort(c);
     }
 
     @Override
-    public boolean equals(final Object o) {
-        return resources.equals(o);
+    public boolean addAll(final Collection<? extends E> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
     }
 
     @Override
-    public int hashCode() {
-        return resources.hashCode();
+    public boolean addAll(final int index, final Collection<? extends E> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public boolean removeAll(final Collection<?> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public boolean retainAll(final Collection<?> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public E set(final int index, final E element) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public void add(final int index, final E element) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public E remove(final int index) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public boolean add(final E e) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public boolean remove(final Object o) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    @Override
+    public boolean removeIf(final Predicate<? super E> filter) {
+        throw new UnsupportedOperationException(READ_ONLY);
     }
 
 }
