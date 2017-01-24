@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.github.jasminb.jsonapi.ResourceList;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
 import org.dataconservancy.cos.osf.client.model.Contributor;
@@ -38,6 +37,7 @@ import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.service.PaginatedList;
 import org.dataconservancy.cos.osf.client.service.TestingOsfServiceFactory;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -96,9 +96,9 @@ public class TestClient {
 
         //HashMap<String, String> params = new HashMap<>();
 //        params.put("filter[public]", "true");
-        final Call<List<Node>> listCall = osfSvc.nodeList();
+        final Call<PaginatedList<Node>> listCall = osfSvc.nodeList();
         assertNotNull(listCall);
-        final Response<List<Node>> res = listCall.execute();
+        final Response<PaginatedList<Node>> res = listCall.execute();
         assertNotNull(res);
 
         List<Node> nodes = null;
@@ -145,9 +145,9 @@ public class TestClient {
         contributors.stream().forEach(contrib -> System.err.println("Contributor - " + contrib.getId()));
 
         //users
-        final Call<List<User>> userListCall = osfSvc.userList();
+        final Call<PaginatedList<User>> userListCall = osfSvc.userList();
         assertNotNull(userListCall);
-        final Response<List<User>> usr = userListCall.execute();
+        final Response<PaginatedList<User>> usr = userListCall.execute();
         assertNotNull(usr);
 
         final String userId = "km4wh"; //temp test id
@@ -155,23 +155,6 @@ public class TestClient {
         assertNotNull(testUser);
         assertNotNull(testUser.getFull_name());
         System.err.println(testUser.getFull_name());
-    }
-
-    @Test
-    public void testPagination() throws Exception {
-        osfServiceFactory.interceptors().add(chain -> {
-            System.out.println("Requesting: " + chain.request().urlString());
-            return chain.proceed(chain.request());
-        });
-        final OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
-        final ResourceList<Node> nodesPageOne = osfSvc.paginatedNodeList().execute().body();
-        assertNotNull(nodesPageOne);
-        assertEquals(10, nodesPageOne.size());
-        assertNotNull(nodesPageOne.getNext());
-
-        final ResourceList<Node> nodesPageTwo = osfSvc.paginatedNodeList(nodesPageOne.getNext()).execute().body();
-        assertNotNull(nodesPageTwo);
-        assertEquals(3, nodesPageTwo.size());
     }
 
     @Test
@@ -219,9 +202,9 @@ public class TestClient {
 
         final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        final Call<List<Registration>> listCall = osfSvc.registrationList(params);
+        final Call<PaginatedList<Registration>> listCall = osfSvc.registrationList(params);
         assertNotNull(listCall);
-        final Response<List<Registration>> res = listCall.execute();
+        final Response<PaginatedList<Registration>> res = listCall.execute();
         assertNotNull(res);
 
         List<Registration> registrations = null;
@@ -279,9 +262,9 @@ public class TestClient {
 
         final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        final Call<List<RegistrationId>> listCall = osfSvc.registrationIdList(params);
+        final Call<PaginatedList<RegistrationId>> listCall = osfSvc.registrationIdList(params);
         assertNotNull(listCall);
-        final Response<List<RegistrationId>> res = listCall.execute();
+        final Response<PaginatedList<RegistrationId>> res = listCall.execute();
         assertNotNull(res);
 
         List<RegistrationId> registrations = null;
