@@ -49,6 +49,11 @@ public class CommentTest extends AbstractMockServerTest {
                 .body();
 
         assertNotNull(comments);
+
+        // The JSON used by this test has the 'meta' element containing pagination information in the wrong place.
+        // I think this was a bug with an older version of the OSF API.  With the implementation of pagination support,
+        // the List returned from the API is no longer a ResourceList, but a PaginatedList, and so size() is now
+        // retrieved from the
         assertEquals(2, comments.size());
 
         comments.stream().filter(comment -> comment.getId().equals("kam4y2f7xvu8"))

@@ -21,16 +21,20 @@ import com.squareup.okhttp.OkHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 import java.util.Spliterator;
 import java.util.Spliterators;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -40,19 +44,38 @@ import java.util.stream.StreamSupport;
  * to stream elements from all result pages, in encounter order, without having to explicitly request additional pages
  * from the API.
  *
+ * Implementation notes:
+ * <ul>
+ *     <li>Sequential access only, parallel access is not supported</li>
+ *     <li>Instances are read only; methods that attempt to modify the list throw
+ *         {@code UnsupportedOperationException}</li>
+ *     <li>List methods that would be complex or difficult to implement efficiently when limited to
+ *         sequential access of the OSF API also throw {@code UnsupportedOperationException}</li>
+ * </ul>
+ *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class PaginatedListAdapter<T> implements PaginatedList<T> {
+public class PaginatedListAdapter<E> implements PaginatedList<E> {
 
     private static final Logger LOG = LoggerFactory.getLogger(PaginatedListAdapter.class);
 
-    private final ResourceList<T> resources;
+    private static final String READ_ONLY = "This list is read-only.";
+
+    private static final String SORT_NOT_SUPPORTED = "Stream the elements of this List into a new List before sorting.";
+
+    private static final String LIST_ITR_NOT_SUPPORTED = "Stream the elements of this List into a new List before " +
+            "obtaining a ListIterator.";
+
+    private static final String CONTAINS_ALL_NOT_SUPPORTED = "Stream the elements of this List into a new List before" +
+            " performing Collection.containsAll(Collection).";
+
+    private final ResourceList<E> resources;
 
     private final OkHttpClient okHttp;
 
     private final ResourceConverter resourceConverter;
 
-    private final Class<T> clazz;
+    private final Class<E> clazz;
 
     /**
      * Adapts the supplied {@code ResourceList} as a {@code PaginatedList}.  The supplied {@code ResourceList}
@@ -67,7 +90,7 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
      * @param resources the first page of a response, which may have additional pages
      */
     public PaginatedListAdapter(final OkHttpClient okHttp, final ResourceConverter resourceConverter,
-                                final Class<T> clazz, final ResourceList<T> resources) {
+                                final Class<E> clazz, final ResourceList<E> resources) {
         if (okHttp == null) {
             throw new IllegalArgumentException("OkHttpClient must not be null.");
         }
@@ -114,7 +137,7 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     public int total() {
         if (resources.getMeta() != null && resources.getMeta().get("total") != null) {
             try {
-                return (Integer)resources.getMeta().get("total");
+                return (Integer) resources.getMeta().get("total");
             } catch (Exception e) {
                 LOG.debug("Error parsing 'total' value as an Integer: '{}'", resources.getMeta().get("total"), e);
             }
@@ -127,7 +150,7 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     public int perPage() {
         if (resources.getMeta() != null && resources.getMeta().get("per_page") != null) {
             try {
-                return (Integer)resources.getMeta().get("per_page");
+                return (Integer) resources.getMeta().get("per_page");
             } catch (Exception e) {
                 LOG.debug("Error parsing 'per_page' value as an Integer: '{}'", resources.getMeta().get("per_page"), e);
             }
@@ -137,47 +160,67 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<E> iterator() {
         return new PagingIterator<>(okHttp, resourceConverter, resources, clazz);
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Implementation note: returns a Spliterator that is ORDERED and NONNULL.  If the total size of the collection is
+     * known, it will also carry the SIZED and SUBSIZED characteristics.
+     * </p>
+     *
+     * @return {@inheritDoc}
+     */
     @Override
-    public Spliterator<T> spliterator() {
-        final PagingIterator<T> iterator = new PagingIterator<>(okHttp, resourceConverter, resources, clazz);
+    public Spliterator<E> spliterator() {
+        final PagingIterator<E> iterator = new PagingIterator<>(okHttp, resourceConverter, resources, clazz);
         final int flags = Spliterator.ORDERED | Spliterator.NONNULL;
-        if (resources.getMeta() != null && resources.getMeta().get("total") != null) {
-            final Integer total = (Integer) resources.getMeta().get("total");
-            if (total > -1) {
-                return Spliterators.spliterator(iterator, total, flags);
-            }
+
+        if (total() > -1) {
+            return Spliterators.spliterator(iterator, total(), flags);
         }
 
         return Spliterators.spliteratorUnknownSize(iterator, flags);
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Implementation note: provides sequential access to the collection by requesting additional elements in the
+     * background.  Therefore, access to elements of the stream may block as new elements are requested by this
+     * implementation.  Callers are advised to catch {@code RuntimeException} when processing the stream.  This
+     * implementation does not hold any resources, so explicitly (via {@link Stream#close()}) or implicitly (via
+     * {@link AutoCloseable}) closing this stream is not required.
+     * </p>
+     * @return
+     */
     @Override
-    public Stream<T> stream() {
+    public Stream<E> stream() {
         return StreamSupport.stream(spliterator(), false);
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Implementation note: simply returns a sequential stream; parallel streams are not supported.
+     * </p>
+     * @return
+     */
     @Override
-    public Stream<T> parallelStream() {
+    public Stream<E> parallelStream() {
         return stream();
     }
 
     @Override
-    public void forEach(final Consumer<? super T> action) {
-        resources.forEach(action);
-    }
-
-    @Override
-    public boolean removeIf(final Predicate<? super T> filter) {
-        return resources.removeIf(filter);
+    public void forEach(final Consumer<? super E> action) {
+        stream().forEach(action);
     }
 
     @Override
     public int size() {
-        return resources.size();
+        return total();
     }
 
     @Override
@@ -186,123 +229,352 @@ public class PaginatedListAdapter<T> implements PaginatedList<T> {
     }
 
     @Override
-    public boolean contains(final Object o) {
-        return resources.contains(o);
-    }
-
-    @Override
     public Object[] toArray() {
-        return resources.toArray();
+        return stream().toArray();
     }
 
     @Override
-    public <T1> T1[] toArray(final T1[] a) {
-        return resources.toArray(a);
+    public <T> T[] toArray(final T[] a) {
+        final Object[] elements = toArray();
+
+        if (a.length < elements.length) {
+            return (T[]) Arrays.copyOf(elements, elements.length, a.getClass());
+        }
+
+        System.arraycopy(elements, 0, a, 0, elements.length);
+        if (a.length > elements.length) {
+            a[elements.length] = null;
+        }
+
+        return a;
     }
 
     @Override
-    public boolean add(final T t) {
-        return resources.add(t);
+    public E get(final int index) {
+        if (index < 0) {
+            throw new IllegalArgumentException("Index must be a positive integer");
+        }
+
+        // if size is supported, check the upper bounds of the index
+        if (size() > -1 && index > size()) {
+            throw new IndexOutOfBoundsException("Supplied index '" + index + "' was greater than the list size '" +
+                    size() + "'");
+        }
+
+        try {
+            return stream().skip(index).findFirst().orElseThrow(() ->
+                    new NoSuchElementException("Unable to retrieve element at index " + index));
+        } catch (RuntimeException e) {
+            LOG.debug("Error retrieving element at index '{}'", index, e);
+            throw e;
+        }
     }
 
     @Override
-    public boolean remove(final Object o) {
-        return resources.remove(o);
-    }
-
-    @Override
-    public boolean containsAll(final Collection<?> c) {
-        return resources.containsAll(c);
-    }
-
-    @Override
-    public boolean addAll(final Collection<? extends T> c) {
-        return resources.addAll(c);
-    }
-
-    @Override
-    public boolean addAll(final int index, final Collection<? extends T> c) {
-        return resources.addAll(index, c);
-    }
-
-    @Override
-    public boolean removeAll(final Collection<?> c) {
-        return resources.removeAll(c);
-    }
-
-    @Override
-    public boolean retainAll(final Collection<?> c) {
-        return resources.retainAll(c);
-    }
-
-    @Override
-    public void clear() {
-        resources.clear();
-    }
-
-    @Override
-    public T get(final int index) {
-        return resources.get(index);
-    }
-
-    @Override
-    public T set(final int index, final T element) {
-        return resources.set(index, element);
-    }
-
-    @Override
-    public void add(final int index, final T element) {
-        resources.add(index, element);
-    }
-
-    @Override
-    public T remove(final int index) {
-        return resources.remove(index);
+    public boolean contains(final Object o) {
+        return indexOfInternal(o, true) > -1;
     }
 
     @Override
     public int indexOf(final Object o) {
-        return resources.indexOf(o);
+        return indexOfInternal(o, true);
     }
 
     @Override
     public int lastIndexOf(final Object o) {
-        return resources.lastIndexOf(o);
+        return indexOfInternal(o, false);
     }
 
-    @Override
-    public ListIterator<T> listIterator() {
-        return resources.listIterator();
+    /**
+     * Advances sequentially through the stream, stopping at the first matching object if {@code shortCircuit} is
+     * {@code true}.  Will scan the entire stream if {@code shortCircuit} is {@code false}.  It may make sense to
+     * start at the end of the results and work backward if this implementation is too inefficient.
+     *
+     * @param o the object to match
+     * @param shortCircuit {@code true} to stop at the first match, will scan the entire stream otherwise
+     * @return the first ({@code shortCircuit} = {@code true}) or last ({@code shortCircuit} = {@code false}) index of
+     *         {@code o} in the list.  Returns {@code -1} if {@code o} is not found.
+     */
+    private int indexOfInternal(final Object o, final boolean shortCircuit) {
+        if (size() <= 0) {
+            return -1;
+        }
+
+        // current position in the list
+        final AtomicInteger i = new AtomicInteger(0);
+
+        // position of the most recently matched object
+        final AtomicInteger j = new AtomicInteger(-1);
+
+        final Stream<E> stream = stream().filter(e -> {
+            if (o == null ? e == null : o.equals(e)) {
+                j.set(i.getAndIncrement());
+                return true;
+            }
+            i.getAndIncrement();
+            return false;
+        });
+
+        if (shortCircuit) {
+            stream.findFirst();
+        } else {
+            // any terminal operation will work
+            stream.count();
+        }
+
+        // will contain the first index found (short-circuit = true) or the last index found (short-circuit = false)
+        return j.get();
     }
 
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param c {@inheritDoc}
+     * @return {@inheritDoc}
+     */
     @Override
-    public ListIterator<T> listIterator(final int index) {
-        return resources.listIterator(index);
+    public boolean containsAll(final Collection<?> c) {
+        throw new UnsupportedOperationException(CONTAINS_ALL_NOT_SUPPORTED);
     }
 
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @return {@inheritDoc}
+     */
     @Override
-    public List<T> subList(final int fromIndex, final int toIndex) {
-        return resources.subList(fromIndex, toIndex);
+    public ListIterator<E> listIterator() {
+        throw new UnsupportedOperationException(LIST_ITR_NOT_SUPPORTED);
     }
 
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param index {@inheritDoc}
+     * @return {@inheritDoc}
+     */
     @Override
-    public void replaceAll(final UnaryOperator<T> operator) {
-        resources.replaceAll(operator);
+    public ListIterator<E> listIterator(final int index) {
+        throw new UnsupportedOperationException(LIST_ITR_NOT_SUPPORTED);
     }
 
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param fromIndex {@inheritDoc}
+     * @param toIndex {@inheritDoc}
+     * @return {@inheritDoc}
+     */
     @Override
-    public void sort(final Comparator<? super T> c) {
-        resources.sort(c);
+    public List<E> subList(final int fromIndex, final int toIndex) {
+        if (fromIndex >= toIndex) {
+            throw new IllegalArgumentException("fromIndex must be less than toIndex");
+        }
+
+        if (fromIndex < 0) {
+            throw new IllegalArgumentException("fromIndex must be a positive integer");
+        }
+
+        if (size() > -1 && toIndex > size()) {
+            throw new IllegalArgumentException("toIndex '" + toIndex + "' must be less than or equal to the size of" +
+                    "this List '" + size() + "'");
+        }
+
+        return stream()
+                .skip(fromIndex)
+                .limit(fromIndex - toIndex)
+                .collect(Collectors.toList());
     }
 
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param c {@inheritDoc}
+     */
     @Override
-    public boolean equals(final Object o) {
-        return resources.equals(o);
+    public void sort(final Comparator<? super E> c) {
+        throw new UnsupportedOperationException(SORT_NOT_SUPPORTED);
     }
 
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param operator {@inheritDoc}
+     */
     @Override
-    public int hashCode() {
-        return resources.hashCode();
+    public void replaceAll(final UnaryOperator<E> operator) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param c {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public boolean addAll(final Collection<? extends E> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param index {@inheritDoc}
+     * @param c {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public boolean addAll(final int index, final Collection<? extends E> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param c {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public boolean removeAll(final Collection<?> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param c {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public boolean retainAll(final Collection<?> c) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     */
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param index {@inheritDoc}
+     * @param element {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public E set(final int index, final E element) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param index {@inheritDoc}
+     * @param element {@inheritDoc}
+     */
+    @Override
+    public void add(final int index, final E element) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param index {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public E remove(final int index) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param e {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public boolean add(final E e) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param o {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public boolean remove(final Object o) {
+        throw new UnsupportedOperationException(READ_ONLY);
+    }
+
+    /**
+     * <p>
+     * Implementation note: throws {@code UnsupportedOperationException}
+     * </p>
+     * {@inheritDoc}
+     *
+     * @param filter {@inheritDoc}
+     * @return {@inheritDoc}
+     */
+    @Override
+    public boolean removeIf(final Predicate<? super E> filter) {
+        throw new UnsupportedOperationException(READ_ONLY);
     }
 
 }
