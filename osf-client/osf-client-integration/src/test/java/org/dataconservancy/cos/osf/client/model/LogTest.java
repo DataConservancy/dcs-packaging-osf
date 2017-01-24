@@ -15,13 +15,13 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import com.github.jasminb.jsonapi.ResourceList;
 import org.dataconservancy.cos.osf.client.service.OsfService;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
 
+import java.util.List;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
@@ -54,7 +54,7 @@ public class LogTest extends AbstractMockServerTest {
         assertNotNull(registration);
         assertNotNull(registration.getLogs());
 
-        final ResourceList<Log> logs = osfService.getLogs(registration.getLogs()).execute().body();
+        final List<Log> logs = osfService.getLogs(registration.getLogs()).execute().body();
 
         final String eventId = "57570a06c7950c0045ac803e";
 

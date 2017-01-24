@@ -89,7 +89,8 @@
     <constructor-arg ref="wbConfigurationSvc"/>
     <constructor-arg ref="okHttpClient"/>
     <constructor-arg>
-      <bean class="com.github.jasminb.jsonapi.retrofit.JSONAPIConverterFactory">
+      <bean class="org.dataconservancy.cos.osf.client.service.PaginatedConverterFactory">
+        <constructor-arg ref="okHttpClient"/>
         <constructor-arg ref="resourceConverter"/>
       </bean>
     </constructor-arg>

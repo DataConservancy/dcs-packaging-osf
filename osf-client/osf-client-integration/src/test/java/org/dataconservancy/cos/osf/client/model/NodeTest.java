@@ -15,9 +15,9 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import com.github.jasminb.jsonapi.ResourceList;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.service.PaginatedList;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -232,7 +232,7 @@ public class NodeTest extends AbstractMockServerTest {
         final OsfService osfService = factory.getOsfService(OsfService.class);
 
         // Retrieve the first page of results
-        final ResourceList<Node> pageOne = osfService.paginatedNodeList().execute().body();
+        final PaginatedList<Node> pageOne = osfService.paginatedNodeList().execute().body();
 
         // sanity
         assertEquals(31, requestCount.get());
@@ -254,7 +254,7 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(baseUri + "nodes/?page=2", pageOne.getNext());
 
         // Retrieve the second page of results.
-        final ResourceList<Node> pageTwo = osfService.paginatedNodeList(pageOne.getNext()).execute().body();
+        final PaginatedList<Node> pageTwo = osfService.paginatedNodeList(pageOne.getNext()).execute().body();
 
         // Sanity
         assertNotNull(pageTwo);
