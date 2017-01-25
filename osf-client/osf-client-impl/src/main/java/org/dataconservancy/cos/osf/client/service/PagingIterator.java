@@ -47,9 +47,9 @@ class PagingIterator<T> implements Iterator<T> {
 
     private final Class<T> type;
 
-    private ResourceList<T> currentList;
+    ResourceList<T> currentList;
 
-    private Iterator<T> currentItr;
+    Iterator<T> currentItr;
 
     /**
      * @param okHttp
@@ -119,8 +119,11 @@ class PagingIterator<T> implements Iterator<T> {
 
     /**
      * Manages the state of {@code currentList} and {@code currentItr}
+     *
+     *
+     * @throws IOException
      */
-    private boolean getNextInternal() {
+    boolean getNextInternal() {
         final String next = currentList.getNext();
         if (next == null) {
             currentList = null;
@@ -135,7 +138,7 @@ class PagingIterator<T> implements Iterator<T> {
             currentItr = currentList.iterator();
             return true;
         } catch (IOException | RuntimeException e) {
-            LOG.info("Error retrieving results page '{}'", next, e);
+            LOG.info("Error retrieving results page '{}': {}", next, e.getMessage(), e);
             currentList = null;
             currentItr = null;
         }

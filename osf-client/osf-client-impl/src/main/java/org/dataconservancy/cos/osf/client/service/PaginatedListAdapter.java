@@ -27,7 +27,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.NoSuchElementException;
 import java.util.Spliterator;
 import java.util.Spliterators;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -143,7 +142,16 @@ public class PaginatedListAdapter<E> implements PaginatedList<E> {
             }
         }
 
-        return -1;
+        // If there is no total, but there is a "next" link, then pagination is possible, but the size of the result
+        // is unknown, so it is proper to return -1.
+        //
+        // Note that OSF API versions prior to 2.2 will exhibit this behavior
+        if (resources.getNext() != null) {
+            return -1;
+        }
+
+        // If there is no "next" link, pagination is not possible, so simply use the size if the underlying ResourceList
+        return resources.size();
     }
 
     @Override
@@ -266,13 +274,8 @@ public class PaginatedListAdapter<E> implements PaginatedList<E> {
                     size() + "'");
         }
 
-        try {
-            return stream().skip(index).findFirst().orElseThrow(() ->
-                    new NoSuchElementException("Unable to retrieve element at index " + index));
-        } catch (RuntimeException e) {
-            LOG.debug("Error retrieving element at index '{}'", index, e);
-            throw e;
-        }
+        return stream().skip(index).findFirst().orElseThrow(() ->
+                new IndexOutOfBoundsException("Unable to retrieve element at index " + index));
     }
 
     @Override
@@ -332,9 +335,6 @@ public class PaginatedListAdapter<E> implements PaginatedList<E> {
     }
 
     /**
-     * <p>
-     * Implementation note: throws {@code UnsupportedOperationException}
-     * </p>
      * {@inheritDoc}
      *
      * @param fromIndex {@inheritDoc}
@@ -343,8 +343,8 @@ public class PaginatedListAdapter<E> implements PaginatedList<E> {
      */
     @Override
     public List<E> subList(final int fromIndex, final int toIndex) {
-        if (fromIndex >= toIndex) {
-            throw new IllegalArgumentException("fromIndex must be less than toIndex");
+        if (fromIndex > toIndex) {
+            throw new IllegalArgumentException("fromIndex must be less than or equal toIndex");
         }
 
         if (fromIndex < 0) {
@@ -358,7 +358,7 @@ public class PaginatedListAdapter<E> implements PaginatedList<E> {
 
         return stream()
                 .skip(fromIndex)
-                .limit(fromIndex - toIndex)
+                .limit(toIndex - fromIndex)
                 .collect(Collectors.toList());
     }
 

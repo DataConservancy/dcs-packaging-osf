@@ -238,9 +238,15 @@ public class NodeTest extends AbstractMockServerTest {
         assertEquals(31, requestCount.get());
         assertNotNull(pageOne);
 
-        // The list should contain 10 results because that is the number of resource objects in the 'index-01.json'
-        // response document
-        assertEquals(10, pageOne.size());
+        // The location of the 'meta' object in index-01.json is in the incorrect place according to the JSONAPI
+        // specification (meta should be a top-level object, not a part of the 'links' objet.  Unfortunately, there was
+        // a bug in the JSONAPI-converter library that supported this incorrect behavior, and it has been since fixed.
+        // So JSON documents that have pagination metadata in the incorrect place will no longer return the proper
+        // value for 'size()'.  Instead, the size of the collection is unknown.
+        //
+        // Pagination may still occur successfully using iteration or streams, but the total size of the collection is
+        // unknown for these malformed documents.
+        assertEquals(-1, pageOne.size());
 
         // First is 'null', which is arguably incorrect, but that is the way the OSF JSON-API implementation works.
         assertNull(pageOne.getFirst());
