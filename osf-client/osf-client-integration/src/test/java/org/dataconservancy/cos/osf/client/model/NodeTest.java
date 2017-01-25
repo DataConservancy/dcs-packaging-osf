@@ -17,7 +17,6 @@ package org.dataconservancy.cos.osf.client.model;
 
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.dataconservancy.cos.osf.client.service.PaginatedList;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -26,7 +25,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.util.Collection;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -193,93 +191,6 @@ public class NodeTest extends AbstractMockServerTest {
         // the osfstorage provider contains one file
         assertEquals(1, subNode.getFiles().get(0).getFiles().size());
         assertEquals(fileName, subNode.getFiles().get(0).getFiles().get(0).getName());
-    }
-
-    /**
-     * TODO: re-examine pagination tests
-     *
-     * @throws Exception
-     */
-    @Test
-    public void testNodeListPagination() throws Exception {
-        final AtomicInteger requestCount = new AtomicInteger(0);
-
-        factory.interceptors().add(new RecursiveInterceptor(
-                (reqUri) -> {
-                    // /json/NodeTest/testNodeListPagination/
-                    final String fsBase = resourcePathFrom(TEST_NAME, NodeTest.class, "/json/");
-
-                    requestCount.incrementAndGet();
-
-                    // First request will be the first page of nodes
-                    if (requestCount.get() == 1) {
-                        return fsBase + "index-01.json";
-                    }
-
-                    // Subsequent requests without a query path are requests for resolving relationships
-                    if (requestCount.get() > 1 && (reqUri.getQuery() == null || reqUri.getQuery().trim().equals(""))) {
-                        // the request is for a relationship, which for this test we don't care about.
-                        // just return a valid, but empty, json response.
-
-                        // /json/NodeTest/testNodeListPagination/empty-response.json
-                        return fsBase + "empty-response.json";
-                    }
-
-                    // Subsequent requests that carry a query path will be for the next page
-                    return fsBase + "index-02.json";
-        }));
-
-        final OsfService osfService = factory.getOsfService(OsfService.class);
-
-        // Retrieve the first page of results
-        final PaginatedList<Node> pageOne = osfService.paginatedNodeList().execute().body();
-
-        // sanity
-        assertEquals(31, requestCount.get());
-        assertNotNull(pageOne);
-
-        // The location of the 'meta' object in index-01.json is in the incorrect place according to the JSONAPI
-        // specification (meta should be a top-level object, not a part of the 'links' objet.  Unfortunately, there was
-        // a bug in the JSONAPI-converter library that supported this incorrect behavior, and it has been since fixed.
-        // So JSON documents that have pagination metadata in the incorrect place will no longer return the proper
-        // value for 'size()'.  Instead, the size of the collection is unknown.
-        //
-        // Pagination may still occur successfully using iteration or streams, but the total size of the collection is
-        // unknown for these malformed documents.
-        assertEquals(-1, pageOne.size());
-
-        // First is 'null', which is arguably incorrect, but that is the way the OSF JSON-API implementation works.
-        assertNull(pageOne.getFirst());
-
-        // Previous should be 'null', which is correct.  We're looking at the first page of results so there shouldn't
-        // be a previous link.
-        assertNull(pageOne.getPrevious());
-
-        // Insure the urls for last and next are what we expect.
-        assertEquals(baseUri + "nodes/?page=2", pageOne.getLast());
-        assertEquals(baseUri + "nodes/?page=2", pageOne.getNext());
-
-        // Retrieve the second page of results.
-        final PaginatedList<Node> pageTwo = osfService.paginatedNodeList(pageOne.getNext()).execute().body();
-
-        // Sanity
-        assertNotNull(pageTwo);
-        assertEquals(59, requestCount.get());
-
-        // The list should contain 9 results because that is the number of resource objects in the 'index-02.json'
-        // response document
-        assertEquals(9, pageTwo.size());
-
-        // Next should be null
-        assertNull(pageTwo.getNext());
-
-        // Verify expectations for first, prev, and last
-        assertEquals(baseUri + "nodes/", pageTwo.getFirst());
-        assertEquals(baseUri + "nodes/", pageTwo.getPrevious());
-
-        // Last is 'null', which is arguably incorrect, but this is the way the OSF JSON-API implementation works.
-        assertNull(pageTwo.getLast());
-
     }
 
     @Test

@@ -37,7 +37,6 @@ import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.service.OsfService;
-import org.dataconservancy.cos.osf.client.service.PaginatedList;
 import org.dataconservancy.cos.osf.client.service.TestingOsfServiceFactory;
 import org.junit.Before;
 import org.junit.Ignore;
@@ -96,9 +95,9 @@ public class TestClient {
 
         //HashMap<String, String> params = new HashMap<>();
 //        params.put("filter[public]", "true");
-        final Call<PaginatedList<Node>> listCall = osfSvc.nodeList();
+        final Call<List<Node>> listCall = osfSvc.nodeList();
         assertNotNull(listCall);
-        final Response<PaginatedList<Node>> res = listCall.execute();
+        final Response<List<Node>> res = listCall.execute();
         assertNotNull(res);
 
         List<Node> nodes = null;
@@ -145,9 +144,9 @@ public class TestClient {
         contributors.stream().forEach(contrib -> System.err.println("Contributor - " + contrib.getId()));
 
         //users
-        final Call<PaginatedList<User>> userListCall = osfSvc.userList();
+        final Call<List<User>> userListCall = osfSvc.userList();
         assertNotNull(userListCall);
-        final Response<PaginatedList<User>> usr = userListCall.execute();
+        final Response<List<User>> usr = userListCall.execute();
         assertNotNull(usr);
 
         final String userId = "km4wh"; //temp test id
@@ -202,9 +201,9 @@ public class TestClient {
 
         final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        final Call<PaginatedList<Registration>> listCall = osfSvc.registrationList(params);
+        final Call<List<Registration>> listCall = osfSvc.registrationList(params);
         assertNotNull(listCall);
-        final Response<PaginatedList<Registration>> res = listCall.execute();
+        final Response<List<Registration>> res = listCall.execute();
         assertNotNull(res);
 
         List<Registration> registrations = null;
@@ -262,9 +261,9 @@ public class TestClient {
 
         final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        final Call<PaginatedList<RegistrationId>> listCall = osfSvc.registrationIdList(params);
+        final Call<List<RegistrationId>> listCall = osfSvc.registrationIdList(params);
         assertNotNull(listCall);
-        final Response<PaginatedList<RegistrationId>> res = listCall.execute();
+        final Response<List<RegistrationId>> res = listCall.execute();
         assertNotNull(res);
 
         List<RegistrationId> registrations = null;

@@ -56,25 +56,12 @@ public class PaginationTest extends AbstractMockServerTest {
                 .execute().body();
 
         final String logsRel = r.getLogs();
-        PaginatedList<Log> resultsPage = osfService.getLogs(logsRel).execute().body();
+        final List<Log> resultsPage = osfService.getLogs(logsRel).execute().body();
 
         // A stream will automatically retrieve pages of results transparently in the background
         assertEquals(20, resultsPage.stream().count());
 
         assertEquals(20, resultsPage.size());
-        assertEquals(10, resultsPage.perPage());
-        assertEquals(20, resultsPage.total());
-        assertEquals(null, resultsPage.getFirst());
-        assertEquals(null, resultsPage.getPrevious());
-        assertEquals("http://localhost:8000/v2/registrations/tgzhk/logs/?page=2", resultsPage.getNext());
-        assertEquals("http://localhost:8000/v2/registrations/tgzhk/logs/?page=2", resultsPage.getLast());
-
-        resultsPage = osfService.getLogs(resultsPage.getNext()).execute().body();
-
-        assertEquals("http://localhost:8000/v2/registrations/tgzhk/logs/", resultsPage.getFirst());
-        assertEquals("http://localhost:8000/v2/registrations/tgzhk/logs/", resultsPage.getPrevious());
-        assertEquals(null, resultsPage.getNext());
-        assertEquals(null, resultsPage.getLast());
 
         // TODO these assertions fail even though the meta section is present in the second page of results.
 //        assertEquals(20, resultsPage.size());

@@ -16,6 +16,7 @@
 
 package org.dataconservancy.cos.osf.client.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.squareup.okhttp.ResponseBody;
@@ -53,14 +54,14 @@ public interface OsfService {
      * @return
      */
     @GET("nodes/")
-    Call<PaginatedList<Node>> nodeList();
+    Call<List<Node>> nodeList();
 
     /**
      *
      * @return
      */
     @GET("nodes/")
-    Call<PaginatedList<Node>> paginatedNodeList();
+    Call<List<Node>> paginatedNodeList();
 
     /**
      *
@@ -68,7 +69,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<PaginatedList<Node>> paginatedNodeList(@Url String url);
+    Call<List<Node>> paginatedNodeList(@Url String url);
 
     /**
      *
@@ -76,7 +77,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<PaginatedList<Log>> getLogs(@Url String url);
+    Call<List<Log>> getLogs(@Url String url);
 
     /**
      *
@@ -84,7 +85,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<PaginatedList<Comment>> getComments(@Url String url);
+    Call<List<Comment>> getComments(@Url String url);
 
     /**
      *
@@ -100,7 +101,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<PaginatedList<Comment>> comments(@Url String url);
+    Call<List<Comment>> comments(@Url String url);
 
     /**
      *
@@ -117,7 +118,7 @@ public interface OsfService {
      * @return
      */
     @GET("nodes/")
-    Call<PaginatedList<Node>> nodeList(@QueryMap Map<String, String> params);
+    Call<List<Node>> nodeList(@QueryMap Map<String, String> params);
 
     /**
      *
@@ -126,7 +127,7 @@ public interface OsfService {
      * @return
      */
     @GET("nodes/")
-    Call<PaginatedList<Node>> nodeList(@Query("page") int page, @QueryMap Map<String, String> params);
+    Call<List<Node>> nodeList(@Query("page") int page, @QueryMap Map<String, String> params);
 
     /**
      *
@@ -149,7 +150,7 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<PaginatedList<Registration>> registrationList();
+    Call<List<Registration>> registrationList();
 
     /**
      *
@@ -157,7 +158,7 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<PaginatedList<Registration>> registrationList(@QueryMap Map<String, String> params);
+    Call<List<Registration>> registrationList(@QueryMap Map<String, String> params);
 
     /**
      *
@@ -166,7 +167,7 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<PaginatedList<Registration>> registrationList(@Query("page") int page, @QueryMap Map<String, String> params);
+    Call<List<Registration>> registrationList(@Query("page") int page, @QueryMap Map<String, String> params);
 
     /**
      *
@@ -189,7 +190,7 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<PaginatedList<RegistrationId>> registrationIdList();
+    Call<List<RegistrationId>> registrationIdList();
 
     /**
      *
@@ -197,7 +198,7 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<PaginatedList<RegistrationId>> registrationIdList(@QueryMap Map<String, String> params);
+    Call<List<RegistrationId>> registrationIdList(@QueryMap Map<String, String> params);
 
     /**
      *
@@ -206,7 +207,7 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<PaginatedList<RegistrationId>> registrationIdList(
+    Call<List<RegistrationId>> registrationIdList(
             @Query("page") int page, @QueryMap Map<String, String> params);
 
     /**
@@ -214,7 +215,7 @@ public interface OsfService {
      * @return
      */
     @GET("users/")
-    Call<PaginatedList<User>> userList();
+    Call<List<User>> userList();
 
     /**
      *
@@ -222,7 +223,7 @@ public interface OsfService {
      * @return
      */
     @GET("users/")
-    Call<PaginatedList<User>> userList(@QueryMap Map<String, String> params);
+    Call<List<User>> userList(@QueryMap Map<String, String> params);
 
     /**
      *
@@ -231,7 +232,7 @@ public interface OsfService {
      * @return
      */
     @GET("users/")
-    Call<PaginatedList<User>> userList(@Query("page") int page, @QueryMap Map<String, String> params);
+    Call<List<User>> userList(@Query("page") int page, @QueryMap Map<String, String> params);
 
     /**
      *
@@ -255,7 +256,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<PaginatedList<Contributor>> contributors(@Url String url);
+    Call<List<Contributor>> contributors(@Url String url);
 
     /**
      *
@@ -271,7 +272,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<PaginatedList<Wiki>> wikis(@Url String url);
+    Call<List<Wiki>> wikis(@Url String url);
 
     /**
      *
