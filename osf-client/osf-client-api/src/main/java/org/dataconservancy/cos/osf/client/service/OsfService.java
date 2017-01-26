@@ -58,21 +58,6 @@ public interface OsfService {
 
     /**
      *
-     * @return
-     */
-    @GET("nodes/")
-    Call<List<Node>> paginatedNodeList();
-
-    /**
-     *
-     * @param url
-     * @return
-     */
-    @GET
-    Call<List<Node>> paginatedNodeList(@Url String url);
-
-    /**
-     *
      * @param url
      * @return
      */
