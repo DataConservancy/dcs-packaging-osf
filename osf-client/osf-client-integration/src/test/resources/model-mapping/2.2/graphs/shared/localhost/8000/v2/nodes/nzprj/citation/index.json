@@ -1,0 +1,32 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Rios",
+          "given": "Fernando"
+        },
+        {
+          "family": "Spies",
+          "given": "Jeffrey R"
+        },
+        {
+          "family": "Johnson",
+          "given": "Richard P"
+        },
+        {
+          "family": "altman",
+          "given": "micah"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Building Tools and Services to Support Research Software Preservation and Sharing",
+      "type": "webpage"
+    },
+    "id": "nzprj",
+    "links": {
+      "self": "osf.io/nzprj"
+    },
+    "type": "node-citation"
+  }
+}

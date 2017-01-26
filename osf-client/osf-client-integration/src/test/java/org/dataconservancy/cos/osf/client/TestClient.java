@@ -27,7 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.github.jasminb.jsonapi.ResourceList;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
 import org.dataconservancy.cos.osf.client.model.Contributor;
@@ -155,23 +154,6 @@ public class TestClient {
         assertNotNull(testUser);
         assertNotNull(testUser.getFull_name());
         System.err.println(testUser.getFull_name());
-    }
-
-    @Test
-    public void testPagination() throws Exception {
-        osfServiceFactory.interceptors().add(chain -> {
-            System.out.println("Requesting: " + chain.request().urlString());
-            return chain.proceed(chain.request());
-        });
-        final OsfService osfSvc = osfServiceFactory.getOsfService(OsfService.class);
-        final ResourceList<Node> nodesPageOne = osfSvc.paginatedNodeList().execute().body();
-        assertNotNull(nodesPageOne);
-        assertEquals(10, nodesPageOne.size());
-        assertNotNull(nodesPageOne.getNext());
-
-        final ResourceList<Node> nodesPageTwo = osfSvc.paginatedNodeList(nodesPageOne.getNext()).execute().body();
-        assertNotNull(nodesPageTwo);
-        assertEquals(3, nodesPageTwo.size());
     }
 
     @Test

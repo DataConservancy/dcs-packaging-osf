@@ -1,0 +1,106 @@
+{
+  "data": {
+    "attributes": {
+      "name": "Replication Recipe (Brandt et al., 2013): Post-Completion",
+      "schema": {
+        "description": "Replication Recipe: Post-Completion: This registration form is intended for use upon completion of a replication study, as outlined by Brandt et al., \"The Replication Recipe: What Makes for a Convincing Replication?\" You will be asked to answer a series of questions about the outcomes of your replication and how they compare to the original study.",
+        "name": "Replication Recipe (Brandt et al., 2013): Post-Completion",
+        "pages": [
+          {
+            "id": "page1",
+            "questions": [
+              {
+                "format": "text",
+                "nav": "Finalized materials",
+                "qid": "item29",
+                "title": "The finalized materials, procedures, analysis plan etc of the replication are registered here",
+                "type": "string"
+              }
+            ],
+            "title": "Registering the Replication Attempt"
+          },
+          {
+            "id": "page2",
+            "questions": [
+              {
+                "format": "text",
+                "nav": "Effect size",
+                "qid": "item30",
+                "title": "The effect size of the replication is",
+                "type": "string"
+              },
+              {
+                "format": "text",
+                "nav": "Confidence interval",
+                "qid": "item31",
+                "title": "The confidence interval of the replication effect size is",
+                "type": "string"
+              },
+              {
+                "format": "singleselect",
+                "nav": "Difference in effect size",
+                "options": [
+                  "significantly different from the original effect size",
+                  "not significantly different from the original effect size"
+                ],
+                "qid": "item32",
+                "title": "The replication effect size is",
+                "type": "choose"
+              },
+              {
+                "format": "singleselect",
+                "nav": "Outcome",
+                "options": [
+                  "success",
+                  "informative failure to replicate",
+                  "practical failure to replicate",
+                  "inconclusive"
+                ],
+                "qid": "item33",
+                "title": "I judge the replication to be a(n)",
+                "type": "choose"
+              },
+              {
+                "format": "textarea",
+                "nav": "Outcome justification",
+                "qid": "item34",
+                "title": "I judge it so because",
+                "type": "string"
+              },
+              {
+                "format": "text",
+                "nav": "Expert followup",
+                "qid": "item35",
+                "title": "Interested experts can obtain my data and syntax here",
+                "type": "string"
+              },
+              {
+                "format": "text",
+                "nav": "Location of analyses",
+                "qid": "item36",
+                "title": "All of the analyses were reported in the report or are available here",
+                "type": "string"
+              },
+              {
+                "format": "textarea",
+                "nav": "Limitations",
+                "qid": "item37",
+                "title": "The limitations of my replication study are",
+                "type": "string"
+              }
+            ],
+            "title": "Reporting the Replication"
+          }
+        ],
+        "title": "Replication Recipe (Brandt et al., 2013): Post-Completion",
+        "version": 2
+      },
+      "schema_version": 2
+    },
+    "id": "564d31db8c5e4a7c9694b2c4",
+    "links": {
+      "self": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c4/"
+    },
+    "type": "metaschemas"
+  }
+}

@@ -1,0 +1,549 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_removed",
+        "date": "2016-10-13T06:08:38.107000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Bowman",
+              "full_name": "Sara Bowman",
+              "given_name": "Sara",
+              "id": "d9ehg",
+              "middle_names": "D.",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": {
+            "id": "qjbgm",
+            "title": "Workshop Use Case 3: Researcher Dashboard"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ff24e6594d9001ec621ab0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ff24e6594d9001ec621ab0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-06-08T23:18:39.289000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "nd",
+            "name": "University of Notre Dame"
+          },
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5758a7cf594d9002135d363f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5758a7cf594d9002135d363f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-05-19T20:10:30.326000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": {
+            "id": "qjbgm",
+            "title": "Workshop Use Case 3: Researcher Dashboard"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573e1db66c613b01f26323b5",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1db66c613b01f26323b5/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-19T20:09:57.777000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "s4nwc",
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": {
+            "id": "qjbgm",
+            "title": "Workshop Use Case 3: Researcher Dashboard"
+          },
+          "preprint_provider": null,
+          "version": "4"
+        }
+      },
+      "id": "573e1d956c613b01f2bd1df3",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1d956c613b01f2bd1df3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-19T19:59:52.318000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "k4ymt",
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": {
+            "id": "qjbgm",
+            "title": "Workshop Use Case 3: Researcher Dashboard"
+          },
+          "preprint_provider": null,
+          "version": "3"
+        }
+      },
+      "id": "573e1b389ad5a101fd6ff3b4",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1b389ad5a101fd6ff3b4/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-19T19:58:58.004000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "z2fbk",
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": {
+            "id": "qjbgm",
+            "title": "Workshop Use Case 3: Researcher Dashboard"
+          },
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "573e1b02594d9001fec21d5e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1b02594d9001fec21d5e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-19T19:58:24.167000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "axtrn",
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": {
+            "id": "qjbgm",
+            "title": "Workshop Use Case 3: Researcher Dashboard"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "573e1ae09ad5a101f96ff3ab",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1ae09ad5a101f96ff3ab/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-19T19:55:05.945000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573e1a196c613b01efbd1e0f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1a196c613b01efbd1e0f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-19T19:55:05.939000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Vardeman",
+              "full_name": "Charles F Vardeman II",
+              "given_name": "Charles",
+              "id": "qvba9",
+              "middle_names": "F",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573e1a196c613b01efbd1e0e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1a196c613b01efbd1e0e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-19T19:55:05.932000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Vyushkov",
+              "full_name": "Alexander Vyushkov",
+              "given_name": "Alexander",
+              "id": "kh4n3",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "e83rn",
+            "title": "Open Notes from Breakout"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573e1a196c613b01efbd1e0d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e1a196c613b01efbd1e0d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e83rn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/e83rn/logs/?page=3",
+    "next": "http://localhost:8000/v2/nodes/e83rn/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/e83rn/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 24
+  }
+}

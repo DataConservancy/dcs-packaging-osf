@@ -1,0 +1,508 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T20:46:11.076000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "92y2u",
+          "params_node": {
+            "id": "e81xl",
+            "title": "Reproducibility Project: Cancer Biology"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "92"
+        }
+      },
+      "id": "587fd4136c613b0044f2c6ce",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fd4136c613b0044f2c6ce/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T20:05:50.738000Z",
+        "params": {
+          "contributors": [],
+          "page": "Funding and Supporting Organizations",
+          "page_id": "bysvp",
+          "params_node": {
+            "id": "e81xl",
+            "title": "Reproducibility Project: Cancer Biology"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "13"
+        }
+      },
+      "id": "587fca9eb83f69004cf14c86",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fca9eb83f69004cf14c86/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/dnhrw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T19:58:05.535000Z",
+        "params": {
+          "contributors": [],
+          "page": "Studies",
+          "page_id": "n9v3h",
+          "params_node": {
+            "id": "e81xl",
+            "title": "Reproducibility Project: Cancer Biology"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "23"
+        }
+      },
+      "id": "587fc8cd6c5ee6004881682d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc8cd6c5ee6004881682d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T19:55:32.825000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "nuc55",
+          "params_node": {
+            "id": "p7ayb",
+            "title": "Replication Studies"
+          },
+          "params_project": {
+            "id": "e81xl",
+            "title": "Reproducibility Project: Cancer Biology"
+          },
+          "preprint_provider": null,
+          "version": "65"
+        }
+      },
+      "id": "587fc8359ad5a10051b83593",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc8359ad5a10051b83593/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/p7ayb/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/p7ayb/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T19:52:39.409000Z",
+        "params": {
+          "contributors": [],
+          "page": "Studies",
+          "page_id": "fgdmq",
+          "params_node": {
+            "id": "e81xl",
+            "title": "Reproducibility Project: Cancer Biology"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "22"
+        }
+      },
+      "id": "587fc787b83f69004bf14ce9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc787b83f69004bf14ce9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T19:50:00.679000Z",
+        "params": {
+          "contributors": [],
+          "page": "Frequently Asked Questions (FAQ)",
+          "page_id": "2ct5u",
+          "params_node": {
+            "id": "e81xl",
+            "title": "Reproducibility Project: Cancer Biology"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "15"
+        }
+      },
+      "id": "587fc6e8594d900042569cd9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc6e8594d900042569cd9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2017-01-18T19:45:48.346000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "yhqrb",
+          "params_node": {
+            "id": "e81xl",
+            "title": "Reproducibility Project: Cancer Biology"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "version": "91"
+        }
+      },
+      "id": "587fc5ec594d900041569cc1",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5ec594d900041569cc1/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/e81xl/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:42.667000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "evf2d",
+            "title": "Methods"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5aa6c613b0043980e45",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5aa6c613b0043980e45/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/evf2d/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/evf2d/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:42.448000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "w52c7",
+            "title": "Statistical Analyses"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5aa6c613b0043980e44",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5aa6c613b0043980e44/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/w52c7/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/w52c7/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:42.272000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "pqyks",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "anf2s",
+            "title": "Generation of tumor xenografts expressing PREX2 isoforms and evaluation of tumor free survival and tumor growth"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5aa6c613b0043980e43",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5aa6c613b0043980e43/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pqyks/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pqyks/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/e81xl/logs/?page=693",
+    "next": "http://localhost:8000/v2/nodes/e81xl/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/e81xl/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 6927
+  }
+}

@@ -19,7 +19,6 @@ package org.dataconservancy.cos.osf.client.service;
 import java.util.List;
 import java.util.Map;
 
-import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
@@ -62,7 +61,7 @@ public interface OsfService {
      * @return
      */
     @GET("nodes/")
-    Call<ResourceList<Node>> paginatedNodeList();
+    Call<List<Node>> paginatedNodeList();
 
     /**
      *
@@ -70,7 +69,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<ResourceList<Node>> paginatedNodeList(@Url String url);
+    Call<List<Node>> paginatedNodeList(@Url String url);
 
     /**
      *
@@ -78,7 +77,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<ResourceList<Log>> getLogs(@Url String url);
+    Call<List<Log>> getLogs(@Url String url);
 
     /**
      *
@@ -86,7 +85,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<ResourceList<Comment>> getComments(@Url String url);
+    Call<List<Comment>> getComments(@Url String url);
 
     /**
      *
@@ -208,7 +207,8 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<List<RegistrationId>> registrationIdList(@Query("page") int page, @QueryMap Map<String, String> params);
+    Call<List<RegistrationId>> registrationIdList(
+            @Query("page") int page, @QueryMap Map<String, String> params);
 
     /**
      *
@@ -312,7 +312,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<List<File>> files(@Url String filesUrl);
+    Call<PaginatedList<File>> files(@Url String filesUrl);
 
     /**
      *

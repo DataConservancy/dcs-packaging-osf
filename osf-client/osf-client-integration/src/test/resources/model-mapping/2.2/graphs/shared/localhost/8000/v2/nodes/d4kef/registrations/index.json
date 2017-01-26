@@ -1,0 +1,211 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "category": "communication",
+        "collection": false,
+        "current_user_can_comment": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "date_created": "2016-07-18T13:56:35.043000Z",
+        "date_modified": "2016-09-08T16:23:43.565000Z",
+        "date_registered": "2016-09-08T16:22:04.413000Z",
+        "description": "This is a review of the state of software preservation and sharing as it relates to research software. An overview of the challenges and current state of solutions is presented, while also touching on cultural heritage software, the preservation of which has many parallels to research software. Topics include technical approaches to preservation, describing and sharing software, citation/attribution, repositories, and a brief overview of issues in publishing, policy, and legal matters.\n\nNote \"The Pathways of Research Software Preservation: An Educational and Planning Resource for Service Development\" (http://doi.org/10.1045/july2016-rios) can be seen as a companion to this review.\n\nThis work was done while part of the Data Management Services group at Johns Hopkins University (JHU). Any opinions or views contained within are the author's own and are not endorsed by JHU.\n",
+        "embargo_end_date": null,
+        "fork": false,
+        "node_license": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "pending_embargo_approval": false,
+        "pending_registration_approval": false,
+        "pending_withdrawal": false,
+        "preprint": false,
+        "public": true,
+        "registered_meta": {
+          "summary": {
+            "comments": [],
+            "extra": [],
+            "value": "This is a review of the state of software preservation and sharing as it relates to research software."
+          }
+        },
+        "registration": true,
+        "registration_supplement": "Open-Ended Registration",
+        "tags": [
+          "software preservation",
+          "reproducibility",
+          "software citation",
+          "open science",
+          "research software",
+          "digital preservation",
+          "data management"
+        ],
+        "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review",
+        "withdrawal_justification": null,
+        "withdrawn": false
+      },
+      "id": "3e69d",
+      "links": {
+        "html": "http://osf.io/3e69d/",
+        "self": "http://localhost:8000/v2/registrations/3e69d/"
+      },
+      "relationships": {
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/children/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0zZTY5ZA==",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/files/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96a/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/linked_nodes/",
+              "meta": {}
+            },
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/relationships/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/8qm9w/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/3e69d/wikis/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "registrations"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/d4kef/registrations/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

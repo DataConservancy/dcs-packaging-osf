@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2012-05-31T05:28:20.477000Z",
+      "family_name": "Spies",
+      "full_name": "Jeffrey R. Spies",
+      "given_name": "Jeffrey",
+      "locale": "en_US",
+      "middle_names": "Robert",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "jk5cv",
+    "links": {
+      "html": "http://osf.io/jk5cv/",
+      "profile_image": "http://secure.gravatar.com/avatar/8ad36fcba4e0b9ee410d00136c307d52?d=identicon",
+      "self": "http://localhost:8000/v2/users/jk5cv/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/jk5cv/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/jk5cv/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/jk5cv/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

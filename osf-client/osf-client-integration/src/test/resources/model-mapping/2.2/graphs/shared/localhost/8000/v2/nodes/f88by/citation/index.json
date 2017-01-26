@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Meeting Notes",
+      "type": "webpage"
+    },
+    "id": "f88by",
+    "links": {
+      "self": "osf.io/f88by"
+    },
+    "type": "node-citation"
+  }
+}

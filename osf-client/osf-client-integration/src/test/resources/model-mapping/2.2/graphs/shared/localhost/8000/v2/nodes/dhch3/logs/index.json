@@ -1,0 +1,614 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:40.073000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a86c613b0043980e3b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a86c613b0043980e3b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "edit_title",
+        "date": "2016-12-02T19:36:48.786000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "title_new": "Plasmid quality control data",
+          "title_original": "Quality control data"
+        }
+      },
+      "id": "5841cd506c613b01fb43018c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5841cd506c613b01fb43018c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-12-02T19:36:26.928000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "dj3ys",
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "5841cd3b594d900209c9fdd2",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5841cd3b594d900209c9fdd2/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "edit_title",
+        "date": "2016-11-07T21:52:43.953000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "title_new": "Quality control data",
+          "title_original": "Cell line quality control data"
+        }
+      },
+      "id": "5820f7ab9ad5a10050cc6f15",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5820f7ab9ad5a10050cc6f15/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "edit_title",
+        "date": "2016-11-07T21:52:34.557000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "title_new": "Cell line quality control data",
+          "title_original": "Quality control data"
+        }
+      },
+      "id": "5820f7a26c613b004de44a30",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5820f7a26c613b004de44a30/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-11-03T15:36:26.693000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "wjyud",
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "581b597a9ad5a10043f37b86",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581b597a9ad5a10043f37b86/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-11-03T13:09:04.051000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Williams",
+              "full_name": "Stephen Williams",
+              "given_name": "Stephen",
+              "id": "jvz2b",
+              "middle_names": "Richardson",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "581b36f09ad5a10044f37b85",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581b36f09ad5a10044f37b85/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributors_reordered",
+        "date": "2016-11-03T13:09:04.045000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Horrigan",
+              "full_name": "Stephen Horrigan",
+              "given_name": "Stephen",
+              "id": "km7ux",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Courville",
+              "full_name": "Pascal Courville",
+              "given_name": "Pascal",
+              "id": "we9qz",
+              "middle_names": "",
+              "unregistered_name": "Pascal Courville"
+            },
+            {
+              "active": true,
+              "family_name": "Sampey",
+              "full_name": "Darryl Sampey",
+              "given_name": "Darryl",
+              "id": "wjgch",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "zhou",
+              "full_name": "faren zhou",
+              "given_name": "faren",
+              "id": "5avye",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Iorns",
+              "full_name": "Elizabeth Iorns",
+              "given_name": "Elizabeth",
+              "id": "kw6hh",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Denis",
+              "full_name": "Alex Denis",
+              "given_name": "Alex",
+              "id": "ehkgw",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Williams",
+              "full_name": "Stephen Williams",
+              "given_name": "Stephen",
+              "id": "jvz2b",
+              "middle_names": "Richardson",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Perfito",
+              "full_name": "Nicole Perfito",
+              "given_name": "Nicole",
+              "id": "etv94",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Errington",
+              "full_name": "Tim Errington",
+              "given_name": "Timothy",
+              "id": "alh38",
+              "middle_names": "M.",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": {
+            "id": "4c8tu",
+            "title": "Confirming ectopic expression of PREX2 mutant isoforms by Western blot"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "581b36f09ad5a10044f37b84",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581b36f09ad5a10044f37b84/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-11-03T13:09:04.038000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "zhou",
+              "full_name": "faren zhou",
+              "given_name": "faren",
+              "id": "5avye",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "581b36f09ad5a10044f37b83",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581b36f09ad5a10044f37b83/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-11-03T13:09:04.029000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Horrigan",
+              "full_name": "Stephen Horrigan",
+              "given_name": "Stephen",
+              "id": "km7ux",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "dhch3",
+            "title": "Plasmid quality control data"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "581b36f09ad5a10044f37b82",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581b36f09ad5a10044f37b82/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/dhch3/logs/?page=4",
+    "next": "http://localhost:8000/v2/nodes/dhch3/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/dhch3/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 37
+  }
+}

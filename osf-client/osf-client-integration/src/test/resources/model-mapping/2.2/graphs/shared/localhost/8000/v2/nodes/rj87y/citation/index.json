@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Codebook",
+      "type": "webpage"
+    },
+    "id": "rj87y",
+    "links": {
+      "self": "osf.io/rj87y"
+    },
+    "type": "node-citation"
+  }
+}

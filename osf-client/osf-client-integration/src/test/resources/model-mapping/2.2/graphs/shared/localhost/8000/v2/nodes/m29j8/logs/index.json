@@ -1,0 +1,535 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-26T15:46:19.491000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "msjpy",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "23"
+        }
+      },
+      "id": "57471a4b594d9001f0bca7cd",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57471a4b594d9001f0bca7cd/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/947ky/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-26T15:43:43.145000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "7pv68",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "22"
+        }
+      },
+      "id": "574719af9ad5a101f1dc5d2a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/574719af9ad5a101f1dc5d2a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/947ky/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-26T15:40:37.758000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "4dfkx",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "21"
+        }
+      },
+      "id": "574718f5b83f6901ea4d2464",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/574718f5b83f6901ea4d2464/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/947ky/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T19:32:37.469000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "ex3b7",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "20"
+        }
+      },
+      "id": "573f6655594d9001e9bfdc64",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f6655594d9001e9bfdc64/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T18:23:17.395000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "edmqy",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "19"
+        }
+      },
+      "id": "573f56156c613b01db5b1521",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f56156c613b01db5b1521/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T15:53:10.145000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "dx8gq",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "18"
+        }
+      },
+      "id": "573f32e69ad5a101e95b9132",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f32e69ad5a101e95b9132/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T13:52:28.647000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "csekr",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "17"
+        }
+      },
+      "id": "573f169c6c613b01df2aa3bc",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f169c6c613b01df2aa3bc/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T13:45:44.343000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "gs7bj",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "16"
+        }
+      },
+      "id": "573f1508594d9001e9ea079d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f1508594d9001e9ea079d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T13:25:09.238000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "37ghx",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "15"
+        }
+      },
+      "id": "573f10359ad5a101e55b910e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f10359ad5a101e55b910e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/7mj2q/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-19T21:05:00.822000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "at8qy",
+          "params_node": {
+            "id": "m29j8",
+            "title": "Public Notes"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "14"
+        }
+      },
+      "id": "573e2a7cb83f6901e55ae57f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573e2a7cb83f6901e55ae57f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/m29j8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/39bsp/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/m29j8/logs/?page=5",
+    "next": "http://localhost:8000/v2/nodes/m29j8/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/m29j8/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 44
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "date_created": "2016-12-08T17:47:59.495000Z",
+        "date_modified": "2016-12-08T17:52:29.528000Z",
+        "date_published": "2016-12-08T17:52:29.298000Z",
+        "doi": null,
+        "is_preprint_orphan": false,
+        "is_published": true,
+        "license_record": {
+          "copyright_holders": [
+            ""
+          ],
+          "year": "2016"
+        },
+        "subjects": [
+          [
+            {
+              "id": "584240da54be81056cecac48",
+              "text": "Social and Behavioral Sciences"
+            },
+            {
+              "id": "584240da54be81056cecac68",
+              "text": "Psychology"
+            },
+            {
+              "id": "584240da54be81056cecac1e",
+              "text": "Cognition and Perception"
+            }
+          ],
+          [
+            {
+              "id": "584240da54be81056cecac48",
+              "text": "Social and Behavioral Sciences"
+            },
+            {
+              "id": "584240da54be81056cecac68",
+              "text": "Psychology"
+            },
+            {
+              "id": "584240da54be81056cecab7e",
+              "text": "Cognitive Psychology"
+            }
+          ],
+          [
+            {
+              "id": "584240da54be81056cecac48",
+              "text": "Social and Behavioral Sciences"
+            },
+            {
+              "id": "584240da54be81056cecac68",
+              "text": "Psychology"
+            },
+            {
+              "id": "584240d954be81056ceca949",
+              "text": "Theory and Philosophy"
+            }
+          ]
+        ]
+      },
+      "id": "6fbwu",
+      "links": {
+        "html": "http://osf.io/preprints/psyarxiv/6fbwu/",
+        "self": "http://localhost:8000/v2/preprints/6fbwu/"
+      },
+      "relationships": {
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/preprints/6fbwu/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "license": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/licenses/563c1cf88c5e4a3877f9e96c/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "primary_file": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/58499cc76c613b01f23e0fb7/",
+              "meta": {}
+            }
+          }
+        },
+        "provider": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/preprint_providers/psyarxiv/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "preprints"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/5edn4/preprints/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

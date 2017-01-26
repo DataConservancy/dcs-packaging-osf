@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "O'Connell",
+          "given": "Kallie"
+        },
+        {
+          "family": "Steeves",
+          "given": "Vicky"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Transcripts",
+      "type": "webpage"
+    },
+    "id": "3dhmx",
+    "links": {
+      "self": "osf.io/3dhmx"
+    },
+    "type": "node-citation"
+  }
+}

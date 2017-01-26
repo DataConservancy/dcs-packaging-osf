@@ -1,0 +1,572 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-19T11:59:20.287000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573daa986c613b01ddba4d6d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573daa986c613b01ddba4d6d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-18T20:33:47.185000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Boehm",
+              "full_name": "Reid Boehm",
+              "given_name": "Reid",
+              "id": "39bsp",
+              "middle_names": "Isaac",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd1ab594d9001f2c30f27",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd1ab594d9001f2c30f27/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-18T20:33:47.177000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Meyers",
+              "full_name": "Natalie Meyers",
+              "given_name": "Natalie",
+              "id": "a45nu",
+              "middle_names": "K",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd1ab594d9001f2c30f26",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd1ab594d9001f2c30f26/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-18T20:33:47.169000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "O'Connell",
+              "full_name": "Kallie O'Connell",
+              "given_name": "Kallie",
+              "id": "zcdsa",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd1ab594d9001f2c30f25",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd1ab594d9001f2c30f25/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-18T20:33:25.827000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Boehm",
+              "full_name": "Reid Boehm",
+              "given_name": "Reid",
+              "id": "39bsp",
+              "middle_names": "Isaac",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd1959ad5a101ee88b625",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd1959ad5a101ee88b625/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-18T20:33:08.545000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Meyers",
+              "full_name": "Natalie Meyers",
+              "given_name": "Natalie",
+              "id": "a45nu",
+              "middle_names": "K",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd1849ad5a101ed88b630",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd1849ad5a101ed88b630/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-05-18T20:32:48.938000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Malawski",
+              "full_name": "Maciej Malawski",
+              "given_name": "Maciej",
+              "id": "d8cge",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd170b83f6901e3ec0020",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd170b83f6901e3ec0020/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-05-18T20:32:19.563000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Malawski",
+              "full_name": "Maciej Malawski",
+              "given_name": "Maciej",
+              "id": "d8cge",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd1539ad5a101f388b62a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd1539ad5a101f388b62a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "edit_title",
+        "date": "2016-05-18T20:31:35.954000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "title_new": "Maciej Malawski: Hyperflow",
+          "title_original": "Maciej Malawski"
+        }
+      },
+      "id": "573cd127b83f6902bb143590",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd127b83f6902bb143590/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "edit_description",
+        "date": "2016-05-18T20:31:35.940000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "xu39e",
+            "title": "Maciej Malawski: Hyperflow"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573cd127b83f6902bb14358f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573cd127b83f6902bb14358f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/xu39e/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/zcdsa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/xu39e/logs/?page=2",
+    "next": "http://localhost:8000/v2/nodes/xu39e/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/xu39e/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 17
+  }
+}

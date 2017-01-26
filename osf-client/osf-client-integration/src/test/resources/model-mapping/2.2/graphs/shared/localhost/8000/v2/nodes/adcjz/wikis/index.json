@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-05-05T16:19:00.921000Z",
+        "extra": {
+          "version": 4
+        },
+        "kind": "file",
+        "materialized_path": "/5qfzj",
+        "name": "home",
+        "path": "/5qfzj",
+        "size": 10260
+      },
+      "id": "5qfzj",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/5qfzj/content/",
+        "info": "http://localhost:8000/v2/wikis/5qfzj/",
+        "self": "http://localhost:8000/v2/wikis/5qfzj/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/comments/P2ZpbHRlciU1QnRhcmdldCU1RD01cWZ6ag==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/adcjz/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/adcjz/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

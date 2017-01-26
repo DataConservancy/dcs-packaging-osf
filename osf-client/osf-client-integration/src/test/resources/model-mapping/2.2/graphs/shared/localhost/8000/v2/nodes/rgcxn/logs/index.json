@@ -1,0 +1,657 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2017-01-18T19:44:41.790000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "587fc5a96c613b0043980e41",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/587fc5a96c613b0043980e41/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_updated",
+        "date": "2017-01-12T16:29:39.895000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "path": "/Study_44_Figure_1_figure_supplement_1.Rmd",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/rgcxn/files/osfstorage/57d00ea8b83f6901e16a9c2f/?action=download",
+            "view": "/project/rgcxn/files/osfstorage/57d00ea8b83f6901e16a9c2f/"
+          }
+        }
+      },
+      "id": "5877aef36c613b01fa6d108b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5877aef36c613b01fa6d108b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ehkgw/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-11-03T13:28:54.917000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "szdy6",
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null,
+          "version": "3"
+        }
+      },
+      "id": "581b3b97b83f69004de11531",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581b3b97b83f69004de11531/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-11-03T13:25:10.560000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "7z8g5",
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "581b3ab69ad5a10043f37b57",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581b3ab69ad5a10043f37b57/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_removed",
+        "date": "2016-11-02T20:26:17.993000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chroscinski",
+              "full_name": "Denise Chroscinski",
+              "given_name": "Denise",
+              "id": "jhnb4",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "581a4be96c613b004afe4f23",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581a4be96c613b004afe4f23/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-11-02T20:26:12.451000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Iorns",
+              "full_name": "Elizabeth Iorns",
+              "given_name": "Elizabeth",
+              "id": "kw6hh",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Williams",
+              "full_name": "Stephen Williams",
+              "given_name": "Stephen",
+              "id": "jvz2b",
+              "middle_names": "Richardson",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "581a4be4594d9000488b5979",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581a4be4594d9000488b5979/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributors_reordered",
+        "date": "2016-11-02T20:26:12.444000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Sampey",
+              "full_name": "Darryl Sampey",
+              "given_name": "Darryl",
+              "id": "wjgch",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Chroscinski",
+              "full_name": "Denise Chroscinski",
+              "given_name": "Denise",
+              "id": "jhnb4",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Horrigan",
+              "full_name": "Stephen Horrigan",
+              "given_name": "Stephen",
+              "id": "km7ux",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "zhou",
+              "full_name": "faren zhou",
+              "given_name": "faren",
+              "id": "5avye",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Cai",
+              "full_name": "Steve Cai",
+              "given_name": "Steve",
+              "id": "7rytw",
+              "middle_names": "",
+              "unregistered_name": "Steve Cai"
+            },
+            {
+              "active": true,
+              "family_name": "Iorns",
+              "full_name": "Elizabeth Iorns",
+              "given_name": "Elizabeth",
+              "id": "kw6hh",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Denis",
+              "full_name": "Alex Denis",
+              "given_name": "Alex",
+              "id": "ehkgw",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Williams",
+              "full_name": "Stephen Williams",
+              "given_name": "Stephen",
+              "id": "jvz2b",
+              "middle_names": "Richardson",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Perfito",
+              "full_name": "Nicole Perfito",
+              "given_name": "Nicole",
+              "id": "etv94",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Errington",
+              "full_name": "Tim Errington",
+              "given_name": "Timothy",
+              "id": "alh38",
+              "middle_names": "M.",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": {
+            "id": "r53z8",
+            "title": "Sequencing of endogenous PREX2 in NRAS-G12D melanocytes"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "581a4be4594d9000488b5978",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581a4be4594d9000488b5978/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-11-02T20:26:12.438000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Horrigan",
+              "full_name": "Stephen Horrigan",
+              "given_name": "Stephen",
+              "id": "km7ux",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "581a4be4594d9000488b5977",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581a4be4594d9000488b5977/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-11-02T20:26:12.431000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Chroscinski",
+              "full_name": "Denise Chroscinski",
+              "given_name": "Denise",
+              "id": "jhnb4",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "581a4be4594d9000488b5976",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581a4be4594d9000488b5976/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-11-02T20:26:12.423000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Sampey",
+              "full_name": "Darryl Sampey",
+              "given_name": "Darryl",
+              "id": "wjgch",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "rgcxn",
+            "title": "Figures"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "581a4be4594d9000488b5975",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/581a4be4594d9000488b5975/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/rgcxn/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/rgcxn/logs/?page=4",
+    "next": "http://localhost:8000/v2/nodes/rgcxn/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/rgcxn/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 38
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/craft_admin/",
+        "name": "craft_admin",
+        "path": "/58765cfb6c613b01ff6d0af8/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "58765cfb6c613b01ff6d0af8",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/y9mpx/providers/osfstorage/58765cfb6c613b01ff6d0af8/",
+        "info": "http://localhost:8000/v2/files/58765cfb6c613b01ff6d0af8/",
+        "move": "http://files.osf.io/v1/resources/y9mpx/providers/osfstorage/58765cfb6c613b01ff6d0af8/",
+        "new_folder": "http://files.osf.io/v1/resources/y9mpx/providers/osfstorage/58765cfb6c613b01ff6d0af8/?kind=folder",
+        "self": "http://localhost:8000/v2/files/58765cfb6c613b01ff6d0af8/",
+        "upload": "http://files.osf.io/v1/resources/y9mpx/providers/osfstorage/58765cfb6c613b01ff6d0af8/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/files/osfstorage/58765cfb6c613b01ff6d0af8/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/y9mpx/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/y9mpx/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

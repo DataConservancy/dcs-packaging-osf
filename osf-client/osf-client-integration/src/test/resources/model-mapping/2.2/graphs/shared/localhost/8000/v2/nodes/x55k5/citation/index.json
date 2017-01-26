@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Administrative Documents",
+      "type": "webpage"
+    },
+    "id": "x55k5",
+    "links": {
+      "self": "osf.io/x55k5"
+    },
+    "type": "node-citation"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-10-23T15:22:34.220000Z",
+      "family_name": "Steeves",
+      "full_name": "Vicky Steeves",
+      "given_name": "Vicky",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "America/New_York"
+    },
+    "id": "7mj2q",
+    "links": {
+      "html": "http://osf.io/7mj2q/",
+      "profile_image": "http://secure.gravatar.com/avatar/6478f492e809aa8364ac9f443e34b08e?d=identicon",
+      "self": "http://localhost:8000/v2/users/7mj2q/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/7mj2q/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/7mj2q/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/7mj2q/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

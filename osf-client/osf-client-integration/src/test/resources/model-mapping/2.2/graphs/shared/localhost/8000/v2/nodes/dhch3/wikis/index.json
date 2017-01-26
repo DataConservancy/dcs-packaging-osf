@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-12-02T19:36:26.928000Z",
+        "extra": {
+          "version": 2
+        },
+        "kind": "file",
+        "materialized_path": "/dj3ys",
+        "name": "home",
+        "path": "/dj3ys",
+        "size": 1672
+      },
+      "id": "dj3ys",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/dj3ys/content/",
+        "info": "http://localhost:8000/v2/wikis/dj3ys/",
+        "self": "http://localhost:8000/v2/wikis/dj3ys/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1kajN5cw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/dhch3/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/alh38/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/dhch3/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

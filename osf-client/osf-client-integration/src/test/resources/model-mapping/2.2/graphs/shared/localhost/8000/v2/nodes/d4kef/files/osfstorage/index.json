@@ -1,0 +1,139 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": "2016-08-16T15:51:29.249000Z",
+        "date_modified": "2016-08-16T15:51:29.249000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 9,
+          "hashes": {
+            "md5": "bcb086dc9bbb5de5cc09801ced3eaeda",
+            "sha256": "1f644826a0f608b475f2e816533317419f9ecbf7549ad2b849f5825ded88c87a"
+          }
+        },
+        "guid": "js529",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Rios2016 - [v1.2] Preserving and Sharing Research Software Review.pdf",
+        "name": "Rios2016 - [v1.2] Preserving and Sharing Research Software Review.pdf",
+        "path": "/57b336819ad5a101ed0adb92",
+        "provider": "osfstorage",
+        "size": 626144,
+        "tags": []
+      },
+      "id": "57b336819ad5a101ed0adb92",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b336819ad5a101ed0adb92",
+        "download": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b336819ad5a101ed0adb92",
+        "info": "http://localhost:8000/v2/files/57b336819ad5a101ed0adb92/",
+        "move": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b336819ad5a101ed0adb92",
+        "self": "http://localhost:8000/v2/files/57b336819ad5a101ed0adb92/",
+        "upload": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b336819ad5a101ed0adb92"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1qczUyOQ==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/57b336819ad5a101ed0adb92/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    },
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 3,
+        "date_created": "2016-08-18T12:37:47.361000Z",
+        "date_modified": "2016-08-18T12:55:21.434000Z",
+        "delete_allowed": true,
+        "extra": {
+          "downloads": 57,
+          "hashes": {
+            "md5": "244e709e3f8ef2023180a68e0bf6fd61",
+            "sha256": "ad35b77b52b2bd3f2874aa7ef337457b1815d7581d3a0d2811440152ebd18a3a"
+          }
+        },
+        "guid": "fhz27",
+        "kind": "file",
+        "last_touched": null,
+        "materialized_path": "/Rios2016 - [v1.4] Preserving and Sharing Research Software Review.pdf",
+        "name": "Rios2016 - [v1.4] Preserving and Sharing Research Software Review.pdf",
+        "path": "/57b5ac1bb83f6901ded4ffd9",
+        "provider": "osfstorage",
+        "size": 390599,
+        "tags": []
+      },
+      "id": "57b5ac1bb83f6901ded4ffd9",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b5ac1bb83f6901ded4ffd9",
+        "download": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b5ac1bb83f6901ded4ffd9",
+        "info": "http://localhost:8000/v2/files/57b5ac1bb83f6901ded4ffd9/",
+        "move": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b5ac1bb83f6901ded4ffd9",
+        "self": "http://localhost:8000/v2/files/57b5ac1bb83f6901ded4ffd9/",
+        "upload": "http://files.osf.io/v1/resources/d4kef/providers/osfstorage/57b5ac1bb83f6901ded4ffd9"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1maHoyNw==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d4kef/",
+              "meta": {}
+            }
+          }
+        },
+        "versions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/files/57b5ac1bb83f6901ded4ffd9/versions/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/d4kef/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 2
+  }
+}

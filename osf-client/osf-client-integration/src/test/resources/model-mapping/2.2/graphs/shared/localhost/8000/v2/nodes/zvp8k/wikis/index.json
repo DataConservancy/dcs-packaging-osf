@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2016-01-19T14:43:09.674000Z",
+        "extra": {
+          "version": 3
+        },
+        "kind": "file",
+        "materialized_path": "/nafs6",
+        "name": "home",
+        "path": "/nafs6",
+        "size": 792
+      },
+      "id": "nafs6",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/nafs6/content/",
+        "info": "http://localhost:8000/v2/wikis/nafs6/",
+        "self": "http://localhost:8000/v2/wikis/nafs6/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/comments/P2ZpbHRlciU1QnRhcmdldCU1RD1uYWZzNg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/zvp8k/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d9ehg/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/zvp8k/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

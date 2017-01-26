@@ -1,0 +1,520 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "addon_added",
+        "date": "2016-12-08T17:54:32.599000Z",
+        "params": {
+          "addon": "Mendeley",
+          "contributors": [],
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58499e58594d9001fe6ded61",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499e58594d9001fe6ded61/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-08T17:54:02.073000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58499e3a9ad5a102030ccc3f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499e3a9ad5a102030ccc3f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-12-08T17:53:55.130000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "jhu",
+            "name": "Johns Hopkins University"
+          },
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58499e339ad5a102030ccc3e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499e339ad5a102030ccc3e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-12-08T17:52:29.329000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58499ddd594d900207d55c5f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499ddd594d900207d55c5f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "preprint_initiated",
+        "date": "2016-12-08T17:52:29.299000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint": "6fbwu",
+          "preprint_provider": {
+            "name": "PsyArXiv",
+            "url": "http://psyarxiv.com"
+          }
+        }
+      },
+      "id": "58499ddd594d900207d55c5e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499ddd594d900207d55c5e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "permissions_updated",
+        "date": "2016-12-08T17:51:51.897000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Gross",
+              "full_name": "Steven Gross",
+              "given_name": "Steven",
+              "id": "f8fpa",
+              "middle_names": "",
+              "unregistered_name": "Steven Gross"
+            }
+          ],
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58499db7b83f6901fa1dc69b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499db7b83f6901fa1dc69b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributors_reordered",
+        "date": "2016-12-08T17:51:48.111000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Gross",
+              "full_name": "Steven Gross",
+              "given_name": "Steven",
+              "id": "f8fpa",
+              "middle_names": "",
+              "unregistered_name": "Steven Gross"
+            }
+          ],
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58499db49ad5a102020ccc10",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499db49ad5a102020ccc10/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-12-08T17:51:44.721000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "Gross",
+              "full_name": "Steven Gross",
+              "given_name": "Steven",
+              "id": "f8fpa",
+              "middle_names": "",
+              "unregistered_name": "Steven Gross"
+            }
+          ],
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58499db0b83f6901f71dc676",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499db0b83f6901f71dc676/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "preprint_license_updated",
+        "date": "2016-12-08T17:50:53.371000Z",
+        "params": {
+          "contributors": [],
+          "license": "CC0 1.0 Universal",
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint": "6fbwu",
+          "preprint_provider": {
+            "name": "PsyArXiv",
+            "url": "http://psyarxiv.com"
+          }
+        }
+      },
+      "id": "58499d7d594d900208d55c3a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499d7d594d900208d55c3a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "preprint_license_updated",
+        "date": "2016-12-08T17:50:53.360000Z",
+        "params": {
+          "contributors": [],
+          "license": "CC0 1.0 Universal",
+          "params_node": {
+            "id": "5edn4",
+            "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes"
+          },
+          "params_project": null,
+          "preprint": "6fbwu",
+          "preprint_provider": {
+            "name": "PsyArXiv",
+            "url": "http://psyarxiv.com"
+          }
+        }
+      },
+      "id": "58499d7d9ad5a102010ccc07",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58499d7d9ad5a102010ccc07/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5edn4/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/48657/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/5edn4/logs/?page=2",
+    "next": "http://localhost:8000/v2/nodes/5edn4/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/5edn4/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 20
+  }
+}

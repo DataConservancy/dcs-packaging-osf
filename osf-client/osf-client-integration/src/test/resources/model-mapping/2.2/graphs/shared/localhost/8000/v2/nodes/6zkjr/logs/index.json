@@ -1,0 +1,515 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-11-14T18:16:00.569000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "CurateND",
+              "given_name": "CurateND",
+              "id": "b5atf",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "6zkjr",
+            "title": "FileTest6Giga"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5829ff60b83f6901f88e6fc0",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829ff60b83f6901f88e6fc0/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "registration_initiated",
+        "date": "2016-11-14T15:40:03.726000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5829dad3594d9001fabd1ff2",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829dad3594d9001fabd1ff2/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-11-14T15:38:40.470000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "6zkjr",
+            "title": "FileTest6Giga"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5829da80b83f6902004e37c3",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829da80b83f6902004e37c3/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-11-14T15:38:40.265000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "6zkjr",
+            "title": "FileTest6Giga"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "5829da80b83f6902004e37c2",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829da80b83f6902004e37c2/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6zkjr/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/6zkjr/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "googledrive_folder_selected",
+        "date": "2016-11-14T15:35:02.338000Z",
+        "params": {
+          "contributors": [],
+          "folder": "/TEST",
+          "folder_name": "TEST",
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "6zkjr",
+            "title": "FileTest6Giga"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5829d9a66c613b01feadc162",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829d9a66c613b01feadc162/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "googledrive_node_authorized",
+        "date": "2016-11-14T15:34:39.214000Z",
+        "params": {
+          "contributors": [],
+          "folder": null,
+          "folder_name": null,
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "6zkjr",
+            "title": "FileTest6Giga"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5829d98f594d9001f9bd201b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829d98f594d9001f9bd201b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "updated_fields",
+        "date": "2016-11-14T15:33:50.362000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "updated_fields": {
+            "category": {
+              "new": "data",
+              "old": ""
+            }
+          }
+        }
+      },
+      "id": "5829d95e9ad5a1020bfd8938",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829d95e9ad5a1020bfd8938/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "addon_added",
+        "date": "2016-11-14T15:32:59.300000Z",
+        "params": {
+          "addon": "Google Drive",
+          "contributors": [],
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": {
+            "id": "6zkjr",
+            "title": "FileTest6Giga"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "5829d92b594d9001f9bd201a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/5829d92b594d9001f9bd201a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "affiliated_institution_added",
+        "date": "2016-11-11T19:45:35.446000Z",
+        "params": {
+          "contributors": [],
+          "institution": {
+            "id": "nd",
+            "name": "University of Notre Dame"
+          },
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58261fdf9ad5a10200d3f56e",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58261fdf9ad5a10200d3f56e/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-11-11T19:45:35.149000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "7b3t9",
+            "title": "Data"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "58261fdf6c613b0200a35f73",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/58261fdf6c613b0200a35f73/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/7b3t9/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/9qeg4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/6zkjr/logs/?page=2",
+    "next": "http://localhost:8000/v2/nodes/6zkjr/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/6zkjr/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 12
+  }
+}

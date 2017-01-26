@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Gross",
+          "given": "Steven"
+        },
+        {
+          "family": "Flombaum",
+          "given": "Jonathan I"
+        }
+      ],
+      "publisher": "PsyArXiv",
+      "title": "Does Perceptual Consciousness Overflow Cognitive Access? The Challenge from Probabilistic, Hierarchical Processes",
+      "type": "webpage"
+    },
+    "id": "6fbwu",
+    "links": {
+      "self": "osf.io/preprints/psyarxiv/6fbwu"
+    },
+    "type": "preprint-citation"
+  }
+}

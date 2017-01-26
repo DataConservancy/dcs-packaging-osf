@@ -1,0 +1,56 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Horrigan",
+          "given": "Stephen"
+        },
+        {
+          "family": "Courville",
+          "given": "Pascal"
+        },
+        {
+          "family": "Sampey",
+          "given": "Darryl"
+        },
+        {
+          "family": "zhou",
+          "given": "faren"
+        },
+        {
+          "family": "Cai",
+          "given": "Steve"
+        },
+        {
+          "family": "Iorns",
+          "given": "Elizabeth"
+        },
+        {
+          "family": "Denis",
+          "given": "Alex"
+        },
+        {
+          "family": "Williams",
+          "given": "Stephen R"
+        },
+        {
+          "family": "Perfito",
+          "given": "Nicole"
+        },
+        {
+          "family": "Errington",
+          "given": "Timothy M"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Study 44: Replication of Berger et al., 2012 (Nature)",
+      "type": "webpage"
+    },
+    "id": "jvpnw",
+    "links": {
+      "self": "osf.io/jvpnw"
+    },
+    "type": "node-citation"
+  }
+}

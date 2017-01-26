@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2012-06-15T19:55:27.446000Z",
+      "family_name": "Fiedler",
+      "full_name": "Susann Fiedler",
+      "given_name": "Susann",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Europe/Berlin"
+    },
+    "id": "acfnb",
+    "links": {
+      "html": "http://osf.io/acfnb/",
+      "profile_image": "http://secure.gravatar.com/avatar/29bce3b4bcb719b5e589db3e5405244b?d=identicon",
+      "self": "http://localhost:8000/v2/users/acfnb/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/acfnb/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/acfnb/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/acfnb/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

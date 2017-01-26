@@ -450,10 +450,21 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         final AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result =
                 new AnnotatedElementPairMap<>();
         OwlAnnotationProcessor.getAnnotationsForInstance(r, result);
+
+//        final String fmt = "Annotation Class: %s Annotated Element: %s Annotation (%s, %s)";
+//        result.entrySet().forEach(entry -> {
+//            AnnotatedElementPair aep = entry.getKey();
+//            AnnotationAttributes attrs = entry.getValue();
+//            attrs.entrySet().forEach(attr -> {
+//                System.err.println(String.format(fmt, aep.getAnnotationClass().getSimpleName(),
+//                                                 aep.getAnnotatedElement(), attr.getKey(), attr.getValue()));
+//            });
+//        });
+
         // Move of RegistrationMeta to a Map<String, RegistrationMeta> "hides" the RegistrationMeta class from
         // annotation processing.
         // TODO: https://github.com/DataConservancy/dcs-packaging-osf/issues/4
-        assertEquals(89, result.size());
+        assertEquals(93, result.size());
 
         final AnnotatedElementPair aep1 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);
         final AnnotatedElementPair aep2 = new AnnotatedElementPair(r.getClass(), OwlIndividual.class);

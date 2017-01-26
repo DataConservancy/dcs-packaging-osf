@@ -1,0 +1,401 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 0,
+        "permission": "admin",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2014-03-19T17:37:44.674000Z",
+              "family_name": "Bowman",
+              "full_name": "Sara Bowman",
+              "given_name": "Sara",
+              "locale": "en_US",
+              "middle_names": "D.",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "d9ehg",
+            "links": {
+              "html": "http://osf.io/d9ehg/",
+              "profile_image": "http://secure.gravatar.com/avatar/897cc7db063d509c2d385534d27b1a51?d=identicon",
+              "self": "http://localhost:8000/v2/users/d9ehg/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d9ehg/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/d9ehg/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/d9ehg/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "svje2-d9ehg",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/svje2/contributors/d9ehg/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/svje2/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/d9ehg/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 1,
+        "permission": "admin",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2014-03-31T02:51:26.443000Z",
+              "family_name": "Sallans",
+              "full_name": "Andrew Sallans",
+              "given_name": "Andrew",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "ruiy4",
+            "links": {
+              "html": "http://osf.io/ruiy4/",
+              "profile_image": "http://secure.gravatar.com/avatar/36a8e5c3555550bb7684b657a7f6e39d?d=identicon",
+              "self": "http://localhost:8000/v2/users/ruiy4/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/ruiy4/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/ruiy4/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/ruiy4/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "svje2-ruiy4",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/svje2/contributors/ruiy4/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/svje2/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/ruiy4/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 2,
+        "permission": "read",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2014-09-19T16:34:40.435000Z",
+              "family_name": "Cain",
+              "full_name": "Katherine Elizabeth Cain",
+              "given_name": "Katherine",
+              "locale": "en_US",
+              "middle_names": "Elizabeth",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "i2tmd",
+            "links": {
+              "html": "http://osf.io/i2tmd/",
+              "profile_image": "http://secure.gravatar.com/avatar/7078dfa1da6b089fc34969660a69b819?d=identicon",
+              "self": "http://localhost:8000/v2/users/i2tmd/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/i2tmd/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/i2tmd/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/i2tmd/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "svje2-i2tmd",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/svje2/contributors/i2tmd/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/svje2/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/i2tmd/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 3,
+        "permission": "admin",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2015-03-22T22:38:00.500000Z",
+              "family_name": "Esposito",
+              "full_name": "Jolene Esposito",
+              "given_name": "Jolene",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "Asia/Bangkok"
+            },
+            "id": "wmp4n",
+            "links": {
+              "html": "http://osf.io/wmp4n/",
+              "profile_image": "http://secure.gravatar.com/avatar/fad2bfd671bcacc58e6df431c59494ec?d=identicon",
+              "self": "http://localhost:8000/v2/users/wmp4n/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/wmp4n/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/wmp4n/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/wmp4n/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "svje2-wmp4n",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/svje2/contributors/wmp4n/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/svje2/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/wmp4n/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    },
+    {
+      "attributes": {
+        "bibliographic": true,
+        "index": 4,
+        "permission": "write",
+        "unregistered_contributor": null
+      },
+      "embeds": {
+        "users": {
+          "data": {
+            "attributes": {
+              "active": true,
+              "date_registered": "2016-04-21T01:38:39.376000Z",
+              "family_name": "Dayton",
+              "full_name": "Hunter Dayton",
+              "given_name": "Hunter",
+              "locale": "en_US",
+              "middle_names": "",
+              "suffix": "",
+              "timezone": "America/New_York"
+            },
+            "id": "bukzm",
+            "links": {
+              "html": "http://osf.io/bukzm/",
+              "profile_image": "http://secure.gravatar.com/avatar/8a02a080b88582704131bf10ff67cf48?d=identicon",
+              "self": "http://localhost:8000/v2/users/bukzm/"
+            },
+            "relationships": {
+              "institutions": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/bukzm/institutions/",
+                    "meta": {}
+                  },
+                  "self": {
+                    "href": "http://localhost:8000/v2/users/bukzm/relationships/institutions/",
+                    "meta": {}
+                  }
+                }
+              },
+              "nodes": {
+                "links": {
+                  "related": {
+                    "href": "http://localhost:8000/v2/users/bukzm/nodes/",
+                    "meta": {}
+                  }
+                }
+              }
+            },
+            "type": "users"
+          }
+        }
+      },
+      "id": "svje2-bukzm",
+      "links": {
+        "self": "http://localhost:8000/v2/nodes/svje2/contributors/bukzm/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/svje2/",
+              "meta": {}
+            }
+          }
+        },
+        "users": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/bukzm/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "contributors"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/svje2/contributors/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 5,
+    "total_bibliographic": 5
+  }
+}

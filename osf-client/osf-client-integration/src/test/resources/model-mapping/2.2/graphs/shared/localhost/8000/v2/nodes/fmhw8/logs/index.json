@@ -1,0 +1,544 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "googledrive_node_deauthorized",
+        "date": "2016-08-11T14:23:03.683000Z",
+        "params": {
+          "contributors": [],
+          "folder": null,
+          "folder_name": null,
+          "params_node": {
+            "id": "fmhw8",
+            "title": "Panel Discussion"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac8a479ad5a101fb00c1ff",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac8a479ad5a101fb00c1ff/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/fmhw8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/fmhw8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "googledrive_node_authorized",
+        "date": "2016-08-11T14:11:40.138000Z",
+        "params": {
+          "contributors": [],
+          "folder": null,
+          "folder_name": null,
+          "params_node": {
+            "id": "fmhw8",
+            "title": "Panel Discussion"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac879cb83f6901e8f72c6b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac879cb83f6901e8f72c6b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/fmhw8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/fmhw8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "addon_added",
+        "date": "2016-08-11T14:11:26.986000Z",
+        "params": {
+          "addon": "Google Drive",
+          "contributors": [],
+          "params_node": {
+            "id": "fmhw8",
+            "title": "Panel Discussion"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57ac878e6c613b01ef0dbefe",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ac878e6c613b01ef0dbefe/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/fmhw8/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/fmhw8/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T18:29:51.115000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "62y43",
+          "params_node": {
+            "id": "ch3by",
+            "title": "Pool of Questions for Panel"
+          },
+          "params_project": {
+            "id": "fmhw8",
+            "title": "Panel Discussion"
+          },
+          "preprint_provider": null,
+          "version": "2"
+        }
+      },
+      "id": "573f579fb83f6901ddd245af",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f579fb83f6901ddd245af/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-05-20T18:19:19.869000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "me2rj",
+          "params_node": {
+            "id": "ch3by",
+            "title": "Pool of Questions for Panel"
+          },
+          "params_project": {
+            "id": "fmhw8",
+            "title": "Panel Discussion"
+          },
+          "preprint_provider": null,
+          "version": "1"
+        }
+      },
+      "id": "573f5527594d9001e9bfdc54",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f5527594d9001e9bfdc54/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_public",
+        "date": "2016-05-20T18:06:44.295000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ch3by",
+            "title": "Pool of Questions for Panel"
+          },
+          "params_project": {
+            "id": "fmhw8",
+            "title": "Panel Discussion"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "573f5234594d9001f07be1e9",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f5234594d9001f07be1e9/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-20T18:02:25.603000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": false,
+              "family_name": "McHenry",
+              "full_name": "Kenton McHenry",
+              "given_name": "Kenton",
+              "id": "ujt2x",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "ch3by",
+            "title": "Pool of Questions for Panel"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573f5131594d9001e9bfdc4d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f5131594d9001e9bfdc4d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-20T18:02:25.595000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "ch3by",
+            "title": "Pool of Questions for Panel"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573f5131594d9001e9bfdc4c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f5131594d9001e9bfdc4c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-20T18:02:25.586000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "wilkie",
+              "given_name": "wilkie",
+              "id": "c7gv9",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "ch3by",
+            "title": "Pool of Questions for Panel"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573f5131594d9001e9bfdc4b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f5131594d9001e9bfdc4b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "made_contributor_invisible",
+        "date": "2016-05-20T18:02:25.578000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Gardner",
+              "full_name": "Robert Gardner",
+              "given_name": "Robert",
+              "id": "peh7j",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "ch3by",
+            "title": "Pool of Questions for Panel"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "573f5131594d9001e9bfdc4a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/573f5131594d9001e9bfdc4a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ch3by/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/fmhw8/logs/?page=3",
+    "next": "http://localhost:8000/v2/nodes/fmhw8/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/fmhw8/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 22
+  }
+}

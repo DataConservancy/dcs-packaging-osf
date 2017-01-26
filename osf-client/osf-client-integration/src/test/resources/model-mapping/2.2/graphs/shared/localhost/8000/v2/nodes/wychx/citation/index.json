@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Journal Club",
+      "type": "webpage"
+    },
+    "id": "wychx",
+    "links": {
+      "self": "osf.io/wychx"
+    },
+    "type": "node-citation"
+  }
+}

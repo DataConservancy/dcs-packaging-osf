@@ -1,0 +1,184 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "Bowman",
+          "given": "Sara D"
+        },
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "O'Connell",
+          "given": "Kallie"
+        },
+        {
+          "family": "Nabrzyski",
+          "given": "Jaroslaw"
+        },
+        {
+          "family": "Steeves",
+          "given": "Vicky"
+        },
+        {
+          "family": "Thain",
+          "given": "Douglas"
+        },
+        {
+          "family": "Taylor",
+          "given": "Ian"
+        },
+        {
+          "family": "Vyushkov",
+          "given": "Alexander"
+        },
+        {
+          "family": "Brake",
+          "given": "Daniel"
+        },
+        {
+          "family": "Bryant",
+          "given": "Lincoln"
+        },
+        {
+          "family": "Hodgson",
+          "given": "Kolin"
+        },
+        {
+          "family": "Nijim",
+          "given": "Imad"
+        },
+        {
+          "family": "Nijim",
+          "given": "Sharif"
+        },
+        {
+          "family": "Owens",
+          "given": "Derek"
+        },
+        {
+          "family": "Schrader",
+          "given": "John"
+        },
+        {
+          "family": "Smith",
+          "given": "James"
+        },
+        {
+          "family": "Minvielle",
+          "given": "Robert"
+        },
+        {
+          "family": "Summers",
+          "given": "Sean"
+        },
+        {
+          "family": "Cochrane",
+          "given": "Euan"
+        },
+        {
+          "family": "de Waard",
+          "given": "Anita"
+        },
+        {
+          "family": "Havert",
+          "given": "Mandy"
+        },
+        {
+          "family": "Hudson",
+          "given": "Cole"
+        },
+        {
+          "family": "Hudson-Vitale",
+          "given": "Cynthia"
+        },
+        {
+          "family": "Long",
+          "given": "Elisabeth"
+        },
+        {
+          "family": "Miller",
+          "given": "Chreston"
+        },
+        {
+          "family": "Shields",
+          "given": "Andrew"
+        },
+        {
+          "family": "Brower",
+          "given": "Donald"
+        },
+        {
+          "family": "Heinrich",
+          "given": "Lukas A"
+        },
+        {
+          "family": "Chamberlain",
+          "given": "Ryan"
+        },
+        {
+          "family": "Ferreira da Silva",
+          "given": "Rafael"
+        },
+        {
+          "family": "Janée",
+          "given": "Greg"
+        },
+        {
+          "family": "Malawski",
+          "given": "Maciej"
+        },
+        {
+          "family": "Malik",
+          "given": "Tanu"
+        },
+        {
+          "family": "Metsger",
+          "given": "Elliot"
+        },
+        {
+          "family": "Tao",
+          "given": "Jian"
+        },
+        {
+          "family": "Tillman",
+          "given": "Ruth K"
+        },
+        {
+          "family": "Turk",
+          "given": "Matthew J"
+        },
+        {
+          "family": "Vukotic",
+          "given": "Ilija"
+        },
+        {
+          "family": "Williams",
+          "given": "Charles L"
+        },
+        {
+          "family": "Rampin",
+          "given": "Remi"
+        },
+        {
+          "family": "Chirigati",
+          "given": "Fernando"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Presentations & Slides",
+      "type": "webpage"
+    },
+    "id": "jq2pm",
+    "links": {
+      "self": "osf.io/jq2pm"
+    },
+    "type": "node-citation"
+  }
+}

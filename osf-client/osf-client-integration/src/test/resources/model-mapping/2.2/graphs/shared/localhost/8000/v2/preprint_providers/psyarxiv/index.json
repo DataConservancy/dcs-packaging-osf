@@ -1,0 +1,389 @@
+{
+  "data": {
+    "attributes": {
+      "advisory_board": "\n                <div class=\"col-xs-12\">\n                    <h2>Steering Committee</h2>\n                    <p class=\"m-b-lg\"></p>\n                </div>\n                <div class=\"col-xs-6\">\n                    <ul>\n                        <li><b>Jack Arnal</b>, McDaniel College</li>\n                        <li><b>David Barner</b>, University of California, San Diego</li>\n                        <li><b>Benjamin Brown</b>, Georgia Gwinnett College</li>\n                        <li><b>David Condon</b>, Northwestern University</li>\n                        <li><b>Will Cross</b>, North Carolina State University Libraries</li>\n                        <li><b>Anita Eerland</b>, Utrecht University</li>\n                    </ul>\n                </div>\n                <div class=\"col-xs-6\">\n                    <ul>\n                        <li><b>Chris Hartgerink</b>, Tilburg University</li>\n                        <li><b>Alex Holcombe</b>, University of Sydney</li>\n                        <li><b>Jeff Hughes</b>, University of Waterloo</li>\n                        <li><b>Don Moore</b>, University of California, Berkeley</li>\n                        <li><b>Sean Rife</b>, Murray State University</li>\n                    </ul>\n                </div>\n            ",
+      "banner_path": "/static/img/preprint_providers/psyarxiv-logo.png",
+      "description": "A free preprint service for the psychological sciences.",
+      "email_contact": "contact+psyarxiv@osf.io",
+      "email_support": "support+psyarxiv@osf.io",
+      "example": "k9mn3",
+      "header_text": "",
+      "logo_path": "/static/img/preprint_providers/psyarxiv-logo.png",
+      "name": "PsyArXiv",
+      "social_facebook": "PsyArXiv",
+      "social_instagram": "psyarxiv",
+      "social_twitter": "psyarxiv",
+      "subjects_acceptable": [
+        [
+          [
+            "584240da54be81056cecaca9",
+            "584240d954be81056cecaa04",
+            "584240da54be81056cecaa8a"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecaab0",
+            "584240da54be81056cecabfd",
+            "584240d954be81056ceca870"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecaab0",
+            "584240da54be81056cecabfd",
+            "584240d954be81056ceca94c"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecaab0",
+            "584240da54be81056cecabfd",
+            "584240d954be81056ceca905"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecaab0",
+            "584240da54be81056cecabfd",
+            "584240d954be81056ceca92c"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecaab0",
+            "584240da54be81056cecabfd",
+            "584240da54be81056cecaaba"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecaab0",
+            "584240da54be81056cecabfd",
+            "584240da54be81056cecac66"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecaab0",
+            "584240da54be81056cecabfd",
+            "584240da54be81056cecac93"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca892"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecab47"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecab74"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca93d"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecac1e"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecab7e"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecab80"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca9f7"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecaaac"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecab05"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056cecaa43"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca9fb"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca848"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca988"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056cecaa42"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecab4e"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca9dd"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240da54be81056cecaab6"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca949"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240da54be81056cecac68",
+            "584240d954be81056ceca8ea"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240da54be81056cecaa8c"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240db54be81056cecacc4"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca8f5"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240da54be81056cecac4f"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca8cd"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca8a2"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca91d"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca9e2"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240da54be81056cecaa85"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240da54be81056cecabe1"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca9e1"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca908"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240da54be81056cecab6b"
+          ],
+          false
+        ],
+        [
+          [
+            "584240da54be81056cecac48",
+            "584240d954be81056ceca960",
+            "584240d954be81056ceca944"
+          ],
+          false
+        ]
+      ]
+    },
+    "id": "psyarxiv",
+    "links": {
+      "external_url": "http://psyarxiv.com",
+      "preprints": "http://localhost:8000/v2/preprint_providers/psyarxiv/preprints/",
+      "self": "http://localhost:8000/v2/preprint_providers/psyarxiv/"
+    },
+    "relationships": {
+      "licenses_acceptable": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/preprint_providers/psyarxiv/licenses/",
+            "meta": {}
+          }
+        }
+      },
+      "preprints": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/preprint_providers/psyarxiv/preprints/",
+            "meta": {}
+          }
+        }
+      },
+      "taxonomies": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/preprint_providers/psyarxiv/taxonomies/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "preprint_providers"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "checkout": null,
+        "current_user_can_comment": false,
+        "current_version": 1,
+        "date_created": null,
+        "date_modified": null,
+        "delete_allowed": true,
+        "extra": {
+          "hashes": {
+            "md5": null,
+            "sha256": null
+          }
+        },
+        "guid": null,
+        "kind": "folder",
+        "last_touched": null,
+        "materialized_path": "/Archive of OSF Storage/",
+        "name": "Archive of OSF Storage",
+        "path": "/57ceca076c613b01df1049ba/",
+        "provider": "osfstorage",
+        "size": null,
+        "tags": []
+      },
+      "id": "57ceca076c613b01df1049ba",
+      "links": {
+        "delete": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049ba/",
+        "info": "http://localhost:8000/v2/files/57ceca076c613b01df1049ba/",
+        "move": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049ba/",
+        "new_folder": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049ba/?kind=folder",
+        "self": "http://localhost:8000/v2/files/57ceca076c613b01df1049ba/",
+        "upload": "http://files.osf.io/v1/resources/b6psa/providers/osfstorage/57ceca076c613b01df1049ba/"
+      },
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/files/osfstorage/57ceca076c613b01df1049ba/",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "files"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/b6psa/files/osfstorage/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

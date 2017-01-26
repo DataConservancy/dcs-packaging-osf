@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "content_type": "text/markdown",
+        "current_user_can_comment": false,
+        "date_modified": "2017-01-20T22:04:39.315000Z",
+        "extra": {
+          "version": 5
+        },
+        "kind": "file",
+        "materialized_path": "/2rgub",
+        "name": "home",
+        "path": "/2rgub",
+        "size": 6084
+      },
+      "id": "2rgub",
+      "links": {
+        "download": "http://localhost:8000/v2/wikis/2rgub/content/",
+        "info": "http://localhost:8000/v2/wikis/2rgub/",
+        "self": "http://localhost:8000/v2/wikis/2rgub/"
+      },
+      "relationships": {
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d3jx7/comments/P2ZpbHRlciU1QnRhcmdldCU1RD0ycmd1Yg==",
+              "meta": {}
+            }
+          }
+        },
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d3jx7/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "wikis"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/d3jx7/wikis/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 1
+  }
+}

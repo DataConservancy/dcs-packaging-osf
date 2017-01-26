@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2015-06-08T19:41:29.098000Z",
+      "family_name": "Johnson",
+      "full_name": "Rick Johnson",
+      "given_name": "Richard",
+      "locale": "en_US",
+      "middle_names": "P.",
+      "suffix": "",
+      "timezone": "America/Indianapolis"
+    },
+    "id": "uswv3",
+    "links": {
+      "html": "http://osf.io/uswv3/",
+      "profile_image": "http://secure.gravatar.com/avatar/545797116ce4005fe1611ef585cccd82?d=identicon",
+      "self": "http://localhost:8000/v2/users/uswv3/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/uswv3/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/uswv3/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/uswv3/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

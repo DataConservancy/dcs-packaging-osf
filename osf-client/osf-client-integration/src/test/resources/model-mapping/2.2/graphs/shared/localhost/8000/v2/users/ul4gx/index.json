@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": true,
+      "date_registered": "2012-09-29T02:15:53.697000Z",
+      "family_name": "Grahe",
+      "full_name": "Jon Grahe",
+      "given_name": "Jon",
+      "locale": "en_us",
+      "middle_names": "E.",
+      "suffix": "",
+      "timezone": "America/Chicago"
+    },
+    "id": "ul4gx",
+    "links": {
+      "html": "http://osf.io/ul4gx/",
+      "profile_image": "http://secure.gravatar.com/avatar/b9c67cc5788caf24fab808408307d31d?d=identicon",
+      "self": "http://localhost:8000/v2/users/ul4gx/"
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/ul4gx/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/ul4gx/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/ul4gx/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

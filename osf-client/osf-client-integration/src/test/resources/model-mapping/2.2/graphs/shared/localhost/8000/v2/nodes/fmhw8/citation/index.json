@@ -1,0 +1,36 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Gardner",
+          "given": "Robert"
+        },
+        {
+          "family": "",
+          "given": "wilkie"
+        },
+        {
+          "family": "Steeves",
+          "given": "Vicky"
+        },
+        {
+          "family": "McHenry",
+          "given": "Kenton"
+        },
+        {
+          "family": "Nabrzyski",
+          "given": "Jaroslaw"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Panel Discussion",
+      "type": "webpage"
+    },
+    "id": "fmhw8",
+    "links": {
+      "self": "osf.io/fmhw8"
+    },
+    "type": "node-citation"
+  }
+}

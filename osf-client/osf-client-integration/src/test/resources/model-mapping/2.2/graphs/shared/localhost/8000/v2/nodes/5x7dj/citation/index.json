@@ -1,0 +1,24 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Boehm",
+          "given": "Reid I"
+        },
+        {
+          "family": "Chiu",
+          "given": "Chen"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Lab Protocols",
+      "type": "webpage"
+    },
+    "id": "5x7dj",
+    "links": {
+      "self": "osf.io/5x7dj"
+    },
+    "type": "node-citation"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "active": false,
+      "date_registered": "2016-05-05T16:22:39.640000Z",
+      "family_name": "Thain",
+      "full_name": "Douglas Thain",
+      "given_name": "Douglas",
+      "locale": "en_US",
+      "middle_names": "",
+      "suffix": "",
+      "timezone": "Etc/UTC"
+    },
+    "id": "na2rw",
+    "links": {
+      "html": "http://osf.io/na2rw/",
+      "profile_image": "http://secure.gravatar.com/avatar/bab71c85fc036e0aa68dc4a9b0d86078?d=identicon",
+      "self": null
+    },
+    "relationships": {
+      "institutions": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/na2rw/institutions/",
+            "meta": {}
+          },
+          "self": {
+            "href": "http://localhost:8000/v2/users/na2rw/relationships/institutions/",
+            "meta": {}
+          }
+        }
+      },
+      "nodes": {
+        "links": {
+          "related": {
+            "href": "http://localhost:8000/v2/users/na2rw/nodes/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "type": "users"
+  }
+}

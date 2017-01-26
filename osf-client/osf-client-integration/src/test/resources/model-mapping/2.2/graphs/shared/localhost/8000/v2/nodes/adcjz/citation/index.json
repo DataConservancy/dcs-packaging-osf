@@ -1,0 +1,28 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Meng",
+          "given": "Haiyan"
+        },
+        {
+          "family": "Vyushkov",
+          "given": "Alexander"
+        },
+        {
+          "family": "Thain",
+          "given": "Douglas"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Workshop Use Case 1: Umbrella",
+      "type": "webpage"
+    },
+    "id": "adcjz",
+    "links": {
+      "self": "osf.io/adcjz"
+    },
+    "type": "node-citation"
+  }
+}

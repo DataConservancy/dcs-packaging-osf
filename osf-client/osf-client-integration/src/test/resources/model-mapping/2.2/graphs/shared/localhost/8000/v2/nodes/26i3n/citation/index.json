@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Lake",
+          "given": "Sherry"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Dataverse COS Ambassador Presentation",
+      "type": "webpage"
+    },
+    "id": "26i3n",
+    "links": {
+      "self": "osf.io/26i3n"
+    },
+    "type": "node-citation"
+  }
+}

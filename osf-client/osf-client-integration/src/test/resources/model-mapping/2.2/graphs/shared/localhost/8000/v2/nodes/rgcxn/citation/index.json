@@ -1,0 +1,44 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "zhou",
+          "given": "faren"
+        },
+        {
+          "family": "Cai",
+          "given": "Steve"
+        },
+        {
+          "family": "Iorns",
+          "given": "Elizabeth"
+        },
+        {
+          "family": "Denis",
+          "given": "Alex"
+        },
+        {
+          "family": "Williams",
+          "given": "Stephen R"
+        },
+        {
+          "family": "Perfito",
+          "given": "Nicole"
+        },
+        {
+          "family": "Errington",
+          "given": "Timothy M"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Figures",
+      "type": "webpage"
+    },
+    "id": "rgcxn",
+    "links": {
+      "self": "osf.io/rgcxn"
+    },
+    "type": "node-citation"
+  }
+}

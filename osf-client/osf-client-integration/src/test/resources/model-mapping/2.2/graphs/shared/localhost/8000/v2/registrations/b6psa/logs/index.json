@@ -1,0 +1,163 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2016-09-06T13:45:35.726000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ymt9w",
+            "title": "OSFNonInstProj1"
+          },
+          "params_project": null,
+          "path": "/osf-cli-1.0.1-SNAPSHOT.jar",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ymt9w/files/osfstorage/57cec875b83f6901e14b477a/?action=download",
+            "view": "/project/ymt9w/files/osfstorage/57cec875b83f6901e14b477a/"
+          }
+        }
+      },
+      "id": "57ceca06b83f6901de4b4841",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ceca06b83f6901de4b4841/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ymt9w/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qpru8/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "osf_storage_file_added",
+        "date": "2016-09-06T13:44:31.874000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ymt9w",
+            "title": "OSFNonInstProj1"
+          },
+          "params_project": null,
+          "path": "/conrad_taylor2011.pdf",
+          "preprint_provider": null,
+          "urls": {
+            "download": "/project/ymt9w/files/osfstorage/57cec835594d9001ee54abe0/?action=download",
+            "view": "/project/ymt9w/files/osfstorage/57cec835594d9001ee54abe0/"
+          }
+        }
+      },
+      "id": "57ceca06b83f6901de4b4840",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ceca06b83f6901de4b4840/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ymt9w/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qpru8/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "project_created",
+        "date": "2016-09-06T13:43:55.705000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "ymt9w",
+            "title": "OSFNonInstProj1"
+          },
+          "params_project": null,
+          "preprint_provider": null
+        }
+      },
+      "id": "57ceca06b83f6901de4b483f",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ceca06b83f6901de4b483f/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/b6psa/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ymt9w/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/qpru8/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": null,
+    "next": null,
+    "prev": null,
+    "self": "http://localhost:8000/v2/registrations/b6psa/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 3
+  }
+}

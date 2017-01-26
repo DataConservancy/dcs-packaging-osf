@@ -1,0 +1,112 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Nabrzyski",
+          "given": "Jaroslaw"
+        },
+        {
+          "family": "Meyers",
+          "given": "Natalie K"
+        },
+        {
+          "family": "Batts",
+          "given": "Vincent B"
+        },
+        {
+          "family": "Malik",
+          "given": "Tanu"
+        },
+        {
+          "family": "Nüst",
+          "given": "Daniel"
+        },
+        {
+          "family": "",
+          "given": "wilkie"
+        },
+        {
+          "family": "Cochrane",
+          "given": "Euan"
+        },
+        {
+          "family": "",
+          "given": "Da Huo"
+        },
+        {
+          "family": "Metsger",
+          "given": "Elliot"
+        },
+        {
+          "family": "Thain",
+          "given": "Douglas"
+        },
+        {
+          "family": "Vyushkov",
+          "given": "Alexander"
+        },
+        {
+          "family": "Sweet",
+          "given": "James"
+        },
+        {
+          "family": "Taylor",
+          "given": "Ian"
+        },
+        {
+          "family": "Steeves",
+          "given": "Vicky"
+        },
+        {
+          "family": "Rampin",
+          "given": "Remi"
+        },
+        {
+          "family": "Hazlett",
+          "given": "Evan"
+        },
+        {
+          "family": "Tao",
+          "given": "Jian"
+        },
+        {
+          "family": "Ferreira da Silva",
+          "given": "Rafael"
+        },
+        {
+          "family": "Malawski",
+          "given": "Maciej"
+        },
+        {
+          "family": "Heinrich",
+          "given": "Lukas A"
+        },
+        {
+          "family": "de Waard",
+          "given": "Anita"
+        },
+        {
+          "family": "Johnson",
+          "given": "Richard P"
+        },
+        {
+          "family": "McHenry",
+          "given": "Kenton"
+        },
+        {
+          "family": "Gardner",
+          "given": "Robert"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Videos of Container Strategies Workshop Presentations",
+      "type": "webpage"
+    },
+    "id": "upwdj",
+    "links": {
+      "self": "osf.io/upwdj"
+    },
+    "type": "node-citation"
+  }
+}

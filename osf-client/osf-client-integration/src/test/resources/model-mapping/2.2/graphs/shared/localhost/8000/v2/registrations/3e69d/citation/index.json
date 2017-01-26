@@ -1,0 +1,20 @@
+{
+  "data": {
+    "attributes": {
+      "author": [
+        {
+          "family": "Rios",
+          "given": "Fernando"
+        }
+      ],
+      "publisher": "Open Science Framework",
+      "title": "Preserving and Sharing Software for Transparent and Reproducible Research: A Review",
+      "type": "webpage"
+    },
+    "id": "3e69d",
+    "links": {
+      "self": "osf.io/3e69d"
+    },
+    "type": "node-citation"
+  }
+}

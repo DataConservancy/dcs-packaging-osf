@@ -1,0 +1,1154 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "action": "tag_removed",
+        "date": "2016-09-28T22:14:51.736000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "Flow XYZ"
+        }
+      },
+      "id": "57ec40db6c613b01ed13c28a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ec40db6c613b01ed13c28a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/srbkj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "tag_added",
+        "date": "2016-09-28T22:13:48.445000Z",
+        "params": {
+          "contributors": [],
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": null,
+          "preprint_provider": null,
+          "tag": "Flow XYZ"
+        }
+      },
+      "id": "57ec409c6c613b01ee13c36a",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57ec409c6c613b01ee13c36a/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/srbkj/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-08-28T05:13:32.320000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "fnryq",
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "10"
+        }
+      },
+      "id": "57c272fc6c613b01f68d6a4d",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c272fc6c613b01f68d6a4d/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-08-28T05:13:10.770000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "s9nh3",
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "9"
+        }
+      },
+      "id": "57c272e66c613b01fa8d697c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c272e66c613b01fa8d697c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "wiki_updated",
+        "date": "2016-08-28T05:11:47.887000Z",
+        "params": {
+          "contributors": [],
+          "page": "home",
+          "page_id": "59ad7",
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null,
+          "version": "8"
+        }
+      },
+      "id": "57c272939ad5a102184c8fc6",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c272939ad5a102184c8fc6/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributors_reordered",
+        "date": "2016-08-28T05:08:55.097000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Nabrzyski",
+              "full_name": "Jaroslaw Nabrzyski",
+              "given_name": "Jaroslaw",
+              "id": "srbkj",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Meyers",
+              "full_name": "Natalie Meyers",
+              "given_name": "Natalie",
+              "id": "a45nu",
+              "middle_names": "K",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Batts",
+              "full_name": "vincent batts",
+              "given_name": "Vincent",
+              "id": "e6d9w",
+              "middle_names": "B",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Malik",
+              "full_name": "Tanu Malik",
+              "given_name": "Tanu",
+              "id": "kve7b",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Nüst",
+              "full_name": "Daniel Nüst",
+              "given_name": "Daniel",
+              "id": "ayx4c",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "wilkie",
+              "given_name": "wilkie",
+              "id": "c7gv9",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Cochrane",
+              "full_name": "Euan Cochrane",
+              "given_name": "Euan",
+              "id": "gq2ar",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "Da Huo",
+              "given_name": "Da Huo",
+              "id": "mc67w",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Metsger",
+              "full_name": "Elliot Metsger",
+              "given_name": "Elliot",
+              "id": "eka7g",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Thain",
+              "full_name": "Douglas Thain",
+              "given_name": "Douglas",
+              "id": "hq3ud",
+              "middle_names": "",
+              "unregistered_name": "Douglas Thain"
+            },
+            {
+              "active": true,
+              "family_name": "Vyushkov",
+              "full_name": "Alexander Vyushkov",
+              "given_name": "Alexander",
+              "id": "kh4n3",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Sweet",
+              "full_name": "James Sweet",
+              "given_name": "James",
+              "id": "5h7br",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Taylor",
+              "full_name": "Ian Taylor",
+              "given_name": "Ian",
+              "id": "ufhbc",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Rampin",
+              "full_name": "Remi Rampin",
+              "given_name": "Remi",
+              "id": "947ky",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Hazlett",
+              "full_name": "Evan Hazlett",
+              "given_name": "Evan",
+              "id": "6pwfe",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Tao",
+              "full_name": "Jian Tao",
+              "given_name": "Jian",
+              "id": "d7gr9",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Ferreira da Silva",
+              "full_name": "Rafael Ferreira da Silva",
+              "given_name": "Rafael",
+              "id": "awbdh",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Malawski",
+              "full_name": "Maciej Malawski",
+              "given_name": "Maciej",
+              "id": "d8cge",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Heinrich",
+              "full_name": "Lukas Alexander Heinrich",
+              "given_name": "Lukas",
+              "id": "xpmwu",
+              "middle_names": "Alexander",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "de Waard",
+              "full_name": "Anita de Waard",
+              "given_name": "Anita",
+              "id": "hmjbi",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Johnson",
+              "full_name": "Rick Johnson",
+              "given_name": "Richard",
+              "id": "uswv3",
+              "middle_names": "P.",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "McHenry",
+              "full_name": "Kenton McHenry",
+              "given_name": "Kenton",
+              "id": "udkyp",
+              "middle_names": "",
+              "unregistered_name": "Kenton McHenry"
+            },
+            {
+              "active": true,
+              "family_name": "Gardner",
+              "full_name": "Robert Gardner",
+              "given_name": "Robert",
+              "id": "peh7j",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57c271e76c613b01f58d692c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c271e76c613b01f58d692c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-08-28T05:08:10.631000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Sweet",
+              "full_name": "James Sweet",
+              "given_name": "James",
+              "id": "5h7br",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57c271ba6c613b01f68d6a4c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c271ba6c613b01f68d6a4c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributors_reordered",
+        "date": "2016-08-28T05:07:57.848000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Nabrzyski",
+              "full_name": "Jaroslaw Nabrzyski",
+              "given_name": "Jaroslaw",
+              "id": "srbkj",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Meyers",
+              "full_name": "Natalie Meyers",
+              "given_name": "Natalie",
+              "id": "a45nu",
+              "middle_names": "K",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Batts",
+              "full_name": "vincent batts",
+              "given_name": "Vincent",
+              "id": "e6d9w",
+              "middle_names": "B",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Malik",
+              "full_name": "Tanu Malik",
+              "given_name": "Tanu",
+              "id": "kve7b",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Nüst",
+              "full_name": "Daniel Nüst",
+              "given_name": "Daniel",
+              "id": "ayx4c",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "wilkie",
+              "given_name": "wilkie",
+              "id": "c7gv9",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Cochrane",
+              "full_name": "Euan Cochrane",
+              "given_name": "Euan",
+              "id": "gq2ar",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "Da Huo",
+              "given_name": "Da Huo",
+              "id": "mc67w",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Metsger",
+              "full_name": "Elliot Metsger",
+              "given_name": "Elliot",
+              "id": "eka7g",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Thain",
+              "full_name": "Douglas Thain",
+              "given_name": "Douglas",
+              "id": "hq3ud",
+              "middle_names": "",
+              "unregistered_name": "Douglas Thain"
+            },
+            {
+              "active": true,
+              "family_name": "Vyushkov",
+              "full_name": "Alexander Vyushkov",
+              "given_name": "Alexander",
+              "id": "kh4n3",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Taylor",
+              "full_name": "Ian Taylor",
+              "given_name": "Ian",
+              "id": "ufhbc",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Rampin",
+              "full_name": "Remi Rampin",
+              "given_name": "Remi",
+              "id": "947ky",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Hazlett",
+              "full_name": "Evan Hazlett",
+              "given_name": "Evan",
+              "id": "6pwfe",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Tao",
+              "full_name": "Jian Tao",
+              "given_name": "Jian",
+              "id": "d7gr9",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Ferreira da Silva",
+              "full_name": "Rafael Ferreira da Silva",
+              "given_name": "Rafael",
+              "id": "awbdh",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Malawski",
+              "full_name": "Maciej Malawski",
+              "given_name": "Maciej",
+              "id": "d8cge",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Heinrich",
+              "full_name": "Lukas Alexander Heinrich",
+              "given_name": "Lukas",
+              "id": "xpmwu",
+              "middle_names": "Alexander",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "de Waard",
+              "full_name": "Anita de Waard",
+              "given_name": "Anita",
+              "id": "hmjbi",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Johnson",
+              "full_name": "Rick Johnson",
+              "given_name": "Richard",
+              "id": "uswv3",
+              "middle_names": "P.",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "McHenry",
+              "full_name": "Kenton McHenry",
+              "given_name": "Kenton",
+              "id": "udkyp",
+              "middle_names": "",
+              "unregistered_name": "Kenton McHenry"
+            },
+            {
+              "active": true,
+              "family_name": "Gardner",
+              "full_name": "Robert Gardner",
+              "given_name": "Robert",
+              "id": "peh7j",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57c271ad6c613b01fa8d697b",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c271ad6c613b01fa8d697b/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributor_added",
+        "date": "2016-08-28T05:06:07.172000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "wilkie",
+              "given_name": "wilkie",
+              "id": "c7gv9",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57c2713f594d900207358d4c",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c2713f594d900207358d4c/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    },
+    {
+      "attributes": {
+        "action": "contributors_reordered",
+        "date": "2016-08-28T05:03:36.859000Z",
+        "params": {
+          "contributors": [
+            {
+              "active": true,
+              "family_name": "Nabrzyski",
+              "full_name": "Jaroslaw Nabrzyski",
+              "given_name": "Jaroslaw",
+              "id": "srbkj",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Meyers",
+              "full_name": "Natalie Meyers",
+              "given_name": "Natalie",
+              "id": "a45nu",
+              "middle_names": "K",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Batts",
+              "full_name": "vincent batts",
+              "given_name": "Vincent",
+              "id": "e6d9w",
+              "middle_names": "B",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Malik",
+              "full_name": "Tanu Malik",
+              "given_name": "Tanu",
+              "id": "kve7b",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Nüst",
+              "full_name": "Daniel Nüst",
+              "given_name": "Daniel",
+              "id": "ayx4c",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Taylor",
+              "full_name": "Ian Taylor",
+              "given_name": "Ian",
+              "id": "ufhbc",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Cochrane",
+              "full_name": "Euan Cochrane",
+              "given_name": "Euan",
+              "id": "gq2ar",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "",
+              "full_name": "Da Huo",
+              "given_name": "Da Huo",
+              "id": "mc67w",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Metsger",
+              "full_name": "Elliot Metsger",
+              "given_name": "Elliot",
+              "id": "eka7g",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Steeves",
+              "full_name": "Vicky Steeves",
+              "given_name": "Vicky",
+              "id": "7mj2q",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Rampin",
+              "full_name": "Remi Rampin",
+              "given_name": "Remi",
+              "id": "947ky",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "Thain",
+              "full_name": "Douglas Thain",
+              "given_name": "Douglas",
+              "id": "hq3ud",
+              "middle_names": "",
+              "unregistered_name": "Douglas Thain"
+            },
+            {
+              "active": true,
+              "family_name": "Vyushkov",
+              "full_name": "Alexander Vyushkov",
+              "given_name": "Alexander",
+              "id": "kh4n3",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Hazlett",
+              "full_name": "Evan Hazlett",
+              "given_name": "Evan",
+              "id": "6pwfe",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Tao",
+              "full_name": "Jian Tao",
+              "given_name": "Jian",
+              "id": "d7gr9",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Ferreira da Silva",
+              "full_name": "Rafael Ferreira da Silva",
+              "given_name": "Rafael",
+              "id": "awbdh",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Malawski",
+              "full_name": "Maciej Malawski",
+              "given_name": "Maciej",
+              "id": "d8cge",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Heinrich",
+              "full_name": "Lukas Alexander Heinrich",
+              "given_name": "Lukas",
+              "id": "xpmwu",
+              "middle_names": "Alexander",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "de Waard",
+              "full_name": "Anita de Waard",
+              "given_name": "Anita",
+              "id": "hmjbi",
+              "middle_names": "",
+              "unregistered_name": null
+            },
+            {
+              "active": true,
+              "family_name": "Johnson",
+              "full_name": "Rick Johnson",
+              "given_name": "Richard",
+              "id": "uswv3",
+              "middle_names": "P.",
+              "unregistered_name": null
+            },
+            {
+              "active": false,
+              "family_name": "McHenry",
+              "full_name": "Kenton McHenry",
+              "given_name": "Kenton",
+              "id": "udkyp",
+              "middle_names": "",
+              "unregistered_name": "Kenton McHenry"
+            },
+            {
+              "active": true,
+              "family_name": "Gardner",
+              "full_name": "Robert Gardner",
+              "given_name": "Robert",
+              "id": "peh7j",
+              "middle_names": "",
+              "unregistered_name": null
+            }
+          ],
+          "params_node": {
+            "id": "upwdj",
+            "title": "Videos of Container Strategies Workshop Presentations"
+          },
+          "params_project": {
+            "id": "y9mpx",
+            "title": "Container Strategies for Data and Software Preservation Workshop"
+          },
+          "preprint_provider": null
+        }
+      },
+      "id": "57c270a86c613b01fb8d6913",
+      "links": {
+        "self": "http://localhost:8000/v2/logs/57c270a86c613b01fb8d6913/"
+      },
+      "relationships": {
+        "node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "original_node": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/upwdj/",
+              "meta": {}
+            }
+          }
+        },
+        "user": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/a45nu/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "type": "logs"
+    }
+  ],
+  "links": {
+    "first": null,
+    "last": "http://localhost:8000/v2/nodes/upwdj/logs/?page=5",
+    "next": "http://localhost:8000/v2/nodes/upwdj/logs/?page=2",
+    "prev": null,
+    "self": "http://localhost:8000/v2/nodes/upwdj/logs/"
+  },
+  "meta": {
+    "per_page": 10,
+    "total": 43
+  }
+}
