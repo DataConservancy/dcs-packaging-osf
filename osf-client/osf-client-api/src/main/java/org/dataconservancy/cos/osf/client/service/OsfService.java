@@ -51,34 +51,27 @@ public interface OsfService {
 
     /**
      *
-     * @return
-     */
-    @GET("nodes/")
-    Call<List<Node>> nodeList();
-
-    /**
-     *
-     * @param url
+     * @param logsUrl
      * @return
      */
     @GET
-    Call<List<Log>> getLogs(@Url String url);
+    Call<List<Log>> logs(@Url String logsUrl);
 
     /**
      *
-     * @param url
+     * @param commentsUrl
      * @return
      */
     @GET
-    Call<List<Comment>> getComments(@Url String url);
+    Call<List<Comment>> getComments(@Url String commentsUrl);
 
     /**
      *
-     * @param url
+     * @param commentUrl
      * @return
      */
     @GET
-    Call<Comment> comment(@Url String url);
+    Call<Comment> comment(@Url String commentUrl);
 
     /**
      *
@@ -99,28 +92,11 @@ public interface OsfService {
 
     /**
      *
-     * @param params
-     * @return
-     */
-    @GET("nodes/")
-    Call<List<Node>> nodeList(@QueryMap Map<String, String> params);
-
-    /**
-     *
-     * @param page
-     * @param params
-     * @return
-     */
-    @GET("nodes/")
-    Call<List<Node>> nodeList(@Query("page") int page, @QueryMap Map<String, String> params);
-
-    /**
-     *
-     * @param id
+     * @param nodeId
      * @return
      */
     @GET("nodes/{id}/")
-    Call<Node> node(@Path("id") String id);
+    Call<Node> nodeById(@Path("id") String nodeId);
 
     /**
      *
@@ -128,31 +104,15 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<Node> nodeByUrl(@Url String nodeUrl);
+    Call<Node> node(@Url String nodeUrl);
 
     /**
      *
+     * @param nodesUrl
      * @return
      */
-    @GET("registrations/")
-    Call<List<Registration>> registrationList();
-
-    /**
-     *
-     * @param params
-     * @return
-     */
-    @GET("registrations/")
-    Call<List<Registration>> registrationList(@QueryMap Map<String, String> params);
-
-    /**
-     *
-     * @param page
-     * @param params
-     * @return
-     */
-    @GET("registrations/")
-    Call<List<Registration>> registrationList(@Query("page") int page, @QueryMap Map<String, String> params);
+    @GET
+    Call<List<Node>> nodes(@Url String nodesUrl);
 
     /**
      *
@@ -160,7 +120,7 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/{id}/")
-    Call<Registration> registration(@Path("id") String id);
+    Call<Registration> registrationById(@Path("id") String id);
 
     /**
      *
@@ -168,7 +128,15 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<Registration> registrationByUrl(@Url String registrationUrl);
+    Call<Registration> registration(@Url String registrationUrl);
+
+    /**
+     *
+     * @param registrationsUrl
+     * @return
+     */
+    @GET
+    Call<List<Registration>> registrations(@Url String registrationsUrl);
 
     /**
      *
@@ -192,15 +160,14 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<List<RegistrationId>> registrationIdList(
-            @Query("page") int page, @QueryMap Map<String, String> params);
+    Call<List<RegistrationId>> registrationIdList(@Query("page") int page, @QueryMap Map<String, String> params);
 
     /**
      *
      * @return
      */
-    @GET("users/")
-    Call<List<User>> userList();
+    @GET
+    Call<List<User>> users(@Url String usersUrl);
 
     /**
      *
@@ -225,7 +192,7 @@ public interface OsfService {
      * @return
      */
     @GET("users/{id}/")
-    Call<User> user(@Path("id") String id);
+    Call<User> userById(@Path("id") String id);
 
     /**
      *
@@ -233,7 +200,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<User> userByUrl(@Url String userUrl);
+    Call<User> user(@Url String userUrl);
 
     /**
      *
@@ -285,6 +252,14 @@ public interface OsfService {
 
     /**
      *
+     * @param institutionsUrl
+     * @return
+     */
+    @GET
+    Call<List<Institution>> institutions(@Url String institutionsUrl);
+
+    /**
+     *
      * @param fileUrl
      * @return
      */
@@ -314,6 +289,14 @@ public interface OsfService {
      */
     @GET
     Call<FileVersion> fileversion(@Url String fileVersionUrl);
+
+    /**
+     *
+     * @param fileVersionsUrl
+     * @return
+     */
+    @GET
+    Call<FileVersion> fileversions(@Url String fileVersionsUrl);
 
     /**
      *

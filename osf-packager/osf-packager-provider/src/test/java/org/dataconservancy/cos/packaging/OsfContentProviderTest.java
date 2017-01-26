@@ -62,12 +62,12 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, OsfContentProviderTest.class));
         final OsfService osfService = factory.getOsfService(OsfService.class);
         final String registrationId = "eq7a4";
-        final Registration registration = osfService.registration(registrationId).execute().body();
+        final Registration registration = osfService.registrationById(registrationId).execute().body();
 
         final List<User> users = registration.getContributors().stream()
                 .map(c -> {
                     try {
-                        return osfService.user(c.getId()).execute().body();
+                        return osfService.userById(c.getId()).execute().body();
                     } catch (IOException e) {
                         throw new RuntimeException(e.getMessage(), e);
                     }
@@ -116,11 +116,11 @@ public class OsfContentProviderTest extends AbstractMockServerTest {
                 System.getProperty("java.io.tmpdir"));
 
         params.addParam(GeneralParameterNames.PACKAGE_NAME, "WikiPackage");
-        final Registration registration = osfService.registration(registrationId).execute().body();
+        final Registration registration = osfService.registrationById(registrationId).execute().body();
         final List<User> users = registration.getContributors().stream()
                 .map(c -> {
                     try {
-                        return osfService.user(c.getId()).execute().body();
+                        return osfService.userById(c.getId()).execute().body();
                     } catch (IOException e) {
                         throw new RuntimeException(e.getMessage(), e);
                     }

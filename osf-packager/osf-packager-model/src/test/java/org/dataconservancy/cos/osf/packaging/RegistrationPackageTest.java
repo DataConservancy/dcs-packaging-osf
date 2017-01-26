@@ -86,7 +86,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     public void testCreateRegistrationPackage() throws Exception {
         factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class));
 
-        final Registration r = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
+        final Registration r = factory.getOsfService(OsfService.class).registrationById("y6cx7").execute().body();
         assertNotNull(r);
         final String dateRegistered = r.getDate_registered();
         final String embargoEndDate = r.getEmbargo_end_date();
@@ -166,7 +166,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
 
         //   Retrieve the registration being packaged.  Perform sanity checks on the Java fields of the registration,
         //   insuring that the JSON presented by the OSF v2 API was deserialized properly into Java objects.
-        final Registration registration = osfService.registration(registrationId).execute().body();
+        final Registration registration = osfService.registrationById(registrationId).execute().body();
         assertNotNull(registration);
         assertNotNull(registration.getLicense());
         assertNotNull(registration.getContributors());
@@ -188,7 +188,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
         final List<User> users = contributors.stream()
                 .map(c -> {
                     try {
-                        return osfService.user(c.getId()).execute().body();
+                        return osfService.userById(c.getId()).execute().body();
                     } catch (IOException e) {
                         throw new RuntimeException(e.getMessage(), e);
                     }
@@ -444,7 +444,7 @@ public class RegistrationPackageTest extends AbstractMockServerTest {
     @Test
     public void testGetAnnotations() throws Exception {
         factory.interceptors().add(new RecursiveInterceptor(TEST_HAME, RegistrationPackageTest.class));
-        final Registration r = factory.getOsfService(OsfService.class).registration("y6cx7").execute().body();
+        final Registration r = factory.getOsfService(OsfService.class).registrationById("y6cx7").execute().body();
         assertNotNull(r);
 
         final AnnotatedElementPairMap<AnnotatedElementPair, AnnotationAttributes> result =

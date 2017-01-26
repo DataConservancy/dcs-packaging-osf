@@ -45,7 +45,7 @@ public class RegistrationObjectMappingTest extends AbstractMockServerTest {
     public void testMinimalRegistration() throws Exception {
         addResponseInterceptor(baseResourcePath + "registration-minimal.json");
 
-        final Registration reg = factory.getOsfService(OsfService.class).registrationByUrl("anyurl").execute().body();
+        final Registration reg = factory.getOsfService(OsfService.class).registration("anyurl").execute().body();
 
         assertEquals("Open-Ended Registration", reg.getRegistration_supplement());
         assertEquals(false, reg.isPending_embargo_approval());

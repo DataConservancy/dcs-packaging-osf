@@ -68,7 +68,7 @@ public class NodeTest extends AbstractMockServerTest {
                 chain.request().newBuilder().addHeader(X_RESPONSE_RESOURCE, "project-node-only-ref-rels.json").build()
         ));
 
-        final Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
+        final Node n = factory.getOsfService(OsfService.class).nodeById("v8x57").execute().body();
         assertNotNull(n);
 
         // These fields are null because they are not in the json response document
@@ -112,7 +112,7 @@ public class NodeTest extends AbstractMockServerTest {
 
         factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class));
 
-        final Node n = factory.getOsfService(OsfService.class).node("v8x57").execute().body();
+        final Node n = factory.getOsfService(OsfService.class).nodeById("v8x57").execute().body();
         assertNotNull(n);
 
         // Only test the relationships that are object references; string refs and fields were tested earlier
@@ -164,7 +164,7 @@ public class NodeTest extends AbstractMockServerTest {
 
         factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class));
 
-        final Node topNode = factory.getOsfService(OsfService.class).node(topLevel).execute().body();
+        final Node topNode = factory.getOsfService(OsfService.class).nodeById(topLevel).execute().body();
         assertNotNull(topNode);
 
         // the top node has only one file, the osfstorage provider.
@@ -198,7 +198,7 @@ public class NodeTest extends AbstractMockServerTest {
         factory.interceptors().add(new RecursiveInterceptor(TEST_NAME, NodeTest.class));
 
         final OsfService osfService = factory.getOsfService(OsfService.class);
-        final Node nodeWithFile = osfService.node("pd24n").execute().body();
+        final Node nodeWithFile = osfService.nodeById("pd24n").execute().body();
         assertNotNull(nodeWithFile);
         final File osfProvider = nodeWithFile.getFiles().get(0);
         final File binary = osfProvider.getFiles().get(0);

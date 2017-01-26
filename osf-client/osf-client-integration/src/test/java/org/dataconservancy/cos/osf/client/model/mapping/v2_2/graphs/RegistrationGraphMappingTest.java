@@ -33,7 +33,7 @@ public class RegistrationGraphMappingTest extends BaseGraphMappingTest {
 
     @Test
     public void testRegistrationRelationships() throws Exception {
-        final Registration reg = osfService.registrationByUrl("http://localhost:8000/v2/registrations/tgzhk/")
+        final Registration reg = osfService.registration("http://localhost:8000/v2/registrations/tgzhk/")
                 .execute().body();
 
         assertNotNull(reg);
@@ -52,7 +52,7 @@ public class RegistrationGraphMappingTest extends BaseGraphMappingTest {
 
     @Test
     public void testRegistrationRelationshipsOfNodeBase() throws Exception {
-        final Registration reg = osfService.registrationByUrl("http://localhost:8000/v2/registrations/tgzhk/")
+        final Registration reg = osfService.registration("http://localhost:8000/v2/registrations/tgzhk/")
                 .execute().body();
 
         // Files

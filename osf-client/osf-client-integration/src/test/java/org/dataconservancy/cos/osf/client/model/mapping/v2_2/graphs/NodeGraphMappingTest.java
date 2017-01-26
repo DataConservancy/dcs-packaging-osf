@@ -34,7 +34,7 @@ public class NodeGraphMappingTest extends BaseGraphMappingTest {
 
     @Test
     public void testNodeRelationships() throws Exception {
-        final Node node = osfService.nodeByUrl("http://localhost:8000/v2/nodes/xug4a/").execute().body();
+        final Node node = osfService.node("http://localhost:8000/v2/nodes/xug4a/").execute().body();
 
         assertEquals("xug4a", node.getId());
 
@@ -57,7 +57,7 @@ public class NodeGraphMappingTest extends BaseGraphMappingTest {
     @Test
     public void testNodeRelationshipsOfNodeBase() throws Exception {
 
-        final Node node = osfService.nodeByUrl("http://localhost:8000/v2/nodes/xug4a/").execute().body();
+        final Node node = osfService.node("http://localhost:8000/v2/nodes/xug4a/").execute().body();
 
         // contributors
         assertEquals(3, node.getContributors().size());

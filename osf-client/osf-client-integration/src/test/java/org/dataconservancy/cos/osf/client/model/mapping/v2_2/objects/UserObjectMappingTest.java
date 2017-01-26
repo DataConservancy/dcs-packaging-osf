@@ -40,7 +40,7 @@ public class UserObjectMappingTest extends AbstractMockServerTest {
     public void testMinimalUser() throws Exception {
         addResponseInterceptor(baseResourcePath + "user-minimal.json");
 
-        final User user = factory.getOsfService(OsfService.class).userByUrl("anyurl").execute().body();
+        final User user = factory.getOsfService(OsfService.class).user("anyurl").execute().body();
 
         assertNotNull(user);
         assertEquals("typ46", user.getId());

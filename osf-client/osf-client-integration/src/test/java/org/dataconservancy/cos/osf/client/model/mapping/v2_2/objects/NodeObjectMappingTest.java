@@ -47,7 +47,7 @@ public class NodeObjectMappingTest extends AbstractMockServerTest {
     public void testMinimalNode() throws Exception {
         addResponseInterceptor(baseResourcePath + "node-minimal.json");
 
-        final Node node = factory.getOsfService(OsfService.class).nodeByUrl("anyurl").execute().body();
+        final Node node = factory.getOsfService(OsfService.class).node("anyurl").execute().body();
 
         assertEquals("xug4a", node.getId());
         assertEquals(Category.PROJECT, node.getCategory());
