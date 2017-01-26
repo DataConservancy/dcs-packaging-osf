@@ -29,9 +29,11 @@ import org.dataconservancy.cos.osf.client.model.Institution;
 import org.dataconservancy.cos.osf.client.model.License;
 import org.dataconservancy.cos.osf.client.model.MetaSchema;
 import org.dataconservancy.cos.osf.client.model.Node;
+import org.dataconservancy.cos.osf.client.model.NodeId;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.RegistrationId;
 import org.dataconservancy.cos.osf.client.model.User;
+import org.dataconservancy.cos.osf.client.model.UserId;
 import org.dataconservancy.cos.osf.client.model.Wiki;
 
 import retrofit.Call;
@@ -48,22 +50,6 @@ import retrofit.http.Url;
  * @author khanson
  */
 public interface OsfService {
-
-    /**
-     *
-     * @param logsUrl
-     * @return
-     */
-    @GET
-    Call<List<Log>> logs(@Url String logsUrl);
-
-    /**
-     *
-     * @param commentsUrl
-     * @return
-     */
-    @GET
-    Call<List<Comment>> getComments(@Url String commentsUrl);
 
     /**
      *
@@ -86,17 +72,112 @@ public interface OsfService {
      * @param url
      * @return
      */
-    @Streaming
     @GET
-    Call<ResponseBody> stream(@Url String url);
+    Call<Contributor> contributor(@Url String url);
 
     /**
      *
-     * @param nodeId
+     * @param url
      * @return
      */
-    @GET("nodes/{id}/")
-    Call<Node> nodeById(@Path("id") String nodeId);
+    @GET
+    Call<List<Contributor>> contributors(@Url String url);
+
+    /**
+     *
+     * @param fileUrl
+     * @return
+     */
+    @GET
+    Call<File> file(@Url String fileUrl);
+
+    /**
+     *
+     * @param filesUrl
+     * @return
+     */
+    @GET
+    Call<List<File>> files(@Url String filesUrl);
+
+    /**
+     *
+     * @param fileVersionUrl
+     * @return
+     */
+    @GET
+    Call<FileVersion> fileversion(@Url String fileVersionUrl);
+
+    /**
+     *
+     * @param fileVersionsUrl
+     * @return
+     */
+    @GET
+    Call<FileVersion> fileversions(@Url String fileVersionsUrl);
+
+    /**
+     *
+     * @param institutionUrl
+     * @return
+     */
+    @GET
+    Call<Institution> institution(@Url String institutionUrl);
+
+    /**
+     *
+     * @param institutionsUrl
+     * @return
+     */
+    @GET
+    Call<List<Institution>> institutions(@Url String institutionsUrl);
+
+    /**
+     *
+     * @param licenseUrl
+     * @return
+     */
+    @GET
+    Call<License> license(@Url String licenseUrl);
+
+    /**
+     *
+     * @param licenseUrl
+     * @return
+     */
+    @GET
+    Call<List<License>> licenses(@Url String licenseUrl);
+
+    /**
+     *
+     * @param logUrl
+     * @return
+     */
+    @GET
+    Call<Log> log(@Url String logUrl);
+
+    /**
+     *
+     * @param logsUrl
+     * @return
+     */
+    @GET
+    Call<List<Log>> logs(@Url String logsUrl);
+
+    /**
+     *
+     * @param metaSchemaUrl
+     * @return
+     */
+    @GET
+    Call<MetaSchema> metaschema(@Url String metaSchemaUrl);
+
+    /**
+     *
+     * @param metaSchemasUrl
+     * @return
+     */
+    @GET
+    Call<List<MetaSchema>> metaschemas(@Url String metaSchemasUrl);
 
     /**
      *
@@ -116,11 +197,35 @@ public interface OsfService {
 
     /**
      *
-     * @param id
+     * @param nodeId
      * @return
      */
-    @GET("registrations/{id}/")
-    Call<Registration> registrationById(@Path("id") String id);
+    @GET("nodes/{id}/")
+    Call<Node> nodeById(@Path("id") String nodeId);
+
+    /**
+     *
+     * @return
+     */
+    @GET("nodes/")
+    Call<List<NodeId>> nodeIds();
+
+    /**
+     *
+     * @param page
+     * @param params
+     * @return
+     */
+    @GET("registrations/")
+    Call<List<NodeId>> nodeIds(@Query("page") int page, @QueryMap Map<String, String> params);
+
+    /**
+     *
+     * @param params
+     * @return
+     */
+    @GET("registrations/")
+    Call<List<NodeId>> nodeIds(@QueryMap Map<String, String> params);
 
     /**
      *
@@ -140,18 +245,18 @@ public interface OsfService {
 
     /**
      *
+     * @param id
      * @return
      */
-    @GET("registrations/")
-    Call<List<RegistrationId>> registrationIdList();
+    @GET("registrations/{id}/")
+    Call<Registration> registrationById(@Path("id") String id);
 
     /**
      *
-     * @param params
      * @return
      */
     @GET("registrations/")
-    Call<List<RegistrationId>> registrationIdList(@QueryMap Map<String, String> params);
+    Call<List<RegistrationId>> registrationIds();
 
     /**
      *
@@ -160,7 +265,32 @@ public interface OsfService {
      * @return
      */
     @GET("registrations/")
-    Call<List<RegistrationId>> registrationIdList(@Query("page") int page, @QueryMap Map<String, String> params);
+    Call<List<RegistrationId>> registrationIds(@Query("page") int page, @QueryMap Map<String, String> params);
+
+    /**
+     *
+     * @param params
+     * @return
+     */
+    @GET("registrations/")
+    Call<List<RegistrationId>> registrationIds(@QueryMap Map<String, String> params);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @Streaming
+    @GET
+    Call<ResponseBody> stream(@Url String url);
+
+    /**
+     *
+     * @param userUrl
+     * @return
+     */
+    @GET
+    Call<User> user(@Url String userUrl);
 
     /**
      *
@@ -168,6 +298,38 @@ public interface OsfService {
      */
     @GET
     Call<List<User>> users(@Url String usersUrl);
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    @GET("users/{id}/")
+    Call<User> userById(@Path("id") String id);
+
+    /**
+     * 
+     * @return
+     */
+    @GET("users/")
+    Call<List<UserId>> userIds();
+
+    /**
+     *
+     * @param page
+     * @param params
+     * @return
+     */
+    @GET("users/")
+    Call<List<UserId>> userIds(@Query("page") int page, @QueryMap Map<String, String> params);
+
+    /**
+     *
+     * @param params
+     * @return
+     */
+    @GET("users/")
+    Call<List<UserId>> userIds(@QueryMap Map<String, String> params);
 
     /**
      *
@@ -188,46 +350,6 @@ public interface OsfService {
 
     /**
      *
-     * @param id
-     * @return
-     */
-    @GET("users/{id}/")
-    Call<User> userById(@Path("id") String id);
-
-    /**
-     *
-     * @param userUrl
-     * @return
-     */
-    @GET
-    Call<User> user(@Url String userUrl);
-
-    /**
-     *
-     * @param url
-     * @return
-     */
-    @GET
-    Call<List<Contributor>> contributors(@Url String url);
-
-    /**
-     *
-     * @param url
-     * @return
-     */
-    @GET
-    Call<Contributor> contributor(@Url String url);
-
-    /**
-     *
-     * @param url
-     * @return
-     */
-    @GET
-    Call<List<Wiki>> wikis(@Url String url);
-
-    /**
-     *
      * @param url
      * @return
      */
@@ -236,74 +358,10 @@ public interface OsfService {
 
     /**
      *
-     * @param licenseUrl
+     * @param url
      * @return
      */
     @GET
-    Call<License> license(@Url String licenseUrl);
-
-    /**
-     *
-     * @param institutionUrl
-     * @return
-     */
-    @GET
-    Call<Institution> institution(@Url String institutionUrl);
-
-    /**
-     *
-     * @param institutionsUrl
-     * @return
-     */
-    @GET
-    Call<List<Institution>> institutions(@Url String institutionsUrl);
-
-    /**
-     *
-     * @param fileUrl
-     * @return
-     */
-    @GET
-    Call<File> file(@Url String fileUrl);
-
-    /**
-     *
-     * @param filesUrl
-     * @return
-     */
-    @GET
-    Call<List<File>> files(@Url String filesUrl);
-
-    /**
-     *
-     * @param logUrl
-     * @return
-     */
-    @GET
-    Call<Log> log(@Url String logUrl);
-
-    /**
-     *
-     * @param fileVersionUrl
-     * @return
-     */
-    @GET
-    Call<FileVersion> fileversion(@Url String fileVersionUrl);
-
-    /**
-     *
-     * @param fileVersionsUrl
-     * @return
-     */
-    @GET
-    Call<FileVersion> fileversions(@Url String fileVersionsUrl);
-
-    /**
-     *
-     * @param metaSchemaUrl
-     * @return
-     */
-    @GET
-    Call<MetaSchema> metaschema(@Url String metaSchemaUrl);
+    Call<List<Wiki>> wikis(@Url String url);
 
 }

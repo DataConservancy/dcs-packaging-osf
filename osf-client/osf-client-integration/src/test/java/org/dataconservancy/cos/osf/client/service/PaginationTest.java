@@ -130,7 +130,7 @@ public class PaginationTest extends AbstractMockServerTest {
                 this.getClass()));
         osfService = factory.getOsfService(OsfService.class);
 
-        final List<RegistrationId> ids = osfService.registrationIdList().execute().body();
+        final List<RegistrationId> ids = osfService.registrationIds().execute().body();
 
         assertEquals(20, ids.size());
 

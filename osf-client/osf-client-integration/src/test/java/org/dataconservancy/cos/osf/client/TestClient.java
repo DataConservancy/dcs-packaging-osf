@@ -109,7 +109,7 @@ public class TestClient {
 
         final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        final Call<List<RegistrationId>> listCall = osfSvc.registrationIdList(params);
+        final Call<List<RegistrationId>> listCall = osfSvc.registrationIds(params);
         assertNotNull(listCall);
         final Response<List<RegistrationId>> res = listCall.execute();
         assertNotNull(res);

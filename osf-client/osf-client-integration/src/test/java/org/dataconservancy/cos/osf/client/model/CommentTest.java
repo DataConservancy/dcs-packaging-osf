@@ -44,7 +44,7 @@ public class CommentTest extends AbstractMockServerTest {
 
     @Test
     public void testSimpleMapping() throws Exception {
-        final List<Comment> comments = osfService.getComments("http://localhost:8000/v2/nodes/u9dc7/comments/")
+        final List<Comment> comments = osfService.comments("http://localhost:8000/v2/nodes/u9dc7/comments/")
                 .execute()
                 .body();
 
