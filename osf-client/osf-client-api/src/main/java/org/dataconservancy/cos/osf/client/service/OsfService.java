@@ -312,7 +312,7 @@ public interface OsfService {
      * @return
      */
     @GET
-    Call<PaginatedList<File>> files(@Url String filesUrl);
+    Call<List<File>> files(@Url String filesUrl);
 
     /**
      *
