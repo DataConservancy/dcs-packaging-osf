@@ -308,7 +308,7 @@ public interface OsfService {
     Call<User> userById(@Path("id") String id);
 
     /**
-     * 
+     *
      * @return
      */
     @GET("users/")

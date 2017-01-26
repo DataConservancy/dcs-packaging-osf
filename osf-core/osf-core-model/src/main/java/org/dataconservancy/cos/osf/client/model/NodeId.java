@@ -20,24 +20,42 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Type;
+import org.dataconservancy.cos.osf.client.support.JodaSupport;
+import org.joda.time.DateTime;
+
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 /**
  * Model exposes Node ID and pagination links only, so that expensive full model call is not necessary
+ *
  * @author khanson
  */
 @Type("nodes")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NodeId  {
+public class NodeId {
 
-    /**node id*/
+    /**
+     * node id
+     */
     @Id
     private String id;
 
-    /**pagination links, applies when list is returned**/
+    /**
+     * pagination links, applies when list is returned
+     */
     private PageLinks pageLinks;
 
     /**
-     *
+     * timestamp that the node was created
+     */
+    private DateTime date_created;
+
+    /**
+     * timestamp when the node was last updated
+     */
+    private DateTime date_modified;
+
+    /**
      * @return
      */
     public String getId() {
@@ -45,7 +63,6 @@ public class NodeId  {
     }
 
     /**
-     *
      * @param id
      */
     public void setId(final String id) {
@@ -53,7 +70,6 @@ public class NodeId  {
     }
 
     /**
-     *
      * @return
      */
     public PageLinks getPageLinks() {
@@ -61,7 +77,6 @@ public class NodeId  {
     }
 
     /**
-     *
      * @param pageLinks
      */
     @JsonProperty("links")
@@ -69,5 +84,41 @@ public class NodeId  {
         this.pageLinks = pageLinks;
     }
 
+    /**
+     * @return
+     */
+    public String getDate_created() {
+        if (this.date_created != null) {
+            return this.date_created.toString(DATE_TIME_FORMATTER_ALT);
+        }
+        return null;
+    }
 
+    /**
+     * @param date_created
+     */
+    public void setDate_created(final String date_created) {
+        if (date_created != null) {
+            this.date_created = JodaSupport.parseDateTime(date_created);
+        }
+    }
+
+    /**
+     * @return
+     */
+    public String getDate_modified() {
+        if (this.date_modified != null) {
+            return this.date_modified.toString(DATE_TIME_FORMATTER_ALT);
+        }
+        return null;
+    }
+
+    /**
+     * @param date_modified
+     */
+    public void setDate_modified(final String date_modified) {
+        if (date_modified != null) {
+            this.date_modified = JodaSupport.parseDateTime(date_modified);
+        }
+    }
 }
