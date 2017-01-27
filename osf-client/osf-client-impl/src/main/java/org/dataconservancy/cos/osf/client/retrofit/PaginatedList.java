@@ -18,26 +18,68 @@ package org.dataconservancy.cos.osf.client.retrofit;
 import java.util.List;
 
 /**
- * Represents a response from the {@link OsfService} that may be paginated.
+ * Represents a response from the {@link OsfService} that may be paginated.  Provides for forward sequential traversal
+ * of a collection, transparently retrieving subsequent pages from the API as needed.
  * <p>
  * Example usage:
  * </p>
  * <pre>
  *     OsfService osf = ...;
  *
- *     // retrieves the first page of results
- *     PaginatedList&lt;Comment&gt; comments = osf.comments("https://api.osf.io/v2/nodes/y9jdt/comments/")
+ *     // Stream the results starting at the first page, automatically retrieving all remaining pages
+ *     List&lt;Comment&gt; comments = osf.comments("https://api.osf.io/v2/nodes/y9jdt/comments/")
  *                                             .execute()
  *                                             .body();
- *
- *     // stream the results, automatically retrieving all remaining pages
  *     comments.stream().forEach(...);
  *
- *     // only get the next page
- *     PaginatedList&lt;Comment&gt; pageTwo = osf.comments(comments.getNext())
+ *     // Or, only process the first two pages
+ *     comments = osf.comments("https://api.osf.io/v2/nodes/y9jdt/comments/")
+ *                                             .execute()
+ *                                             .body();
+ *     comments.stream().limit(perPage()*2).forEach(...);
+ *
+ *     // Or, only process results matching some criteria (e.g. "less than 24 hours old", since the default sort order
+ *     // for the OSF JSON API is by date descending)
+ *     comments = osf.comments("https://api.osf.io/v2/nodes/y9jdt/comments/")
+ *                                             .execute()
+ *                                             .body();
+ *     // This is better than a simple filter, because iterator() does not eagerly fetch all the elements of the stream
+ *     Iterator&lt;Comment&gt; itr = comments.stream().iterator();
+ *     Comment c = null;
+ *     while(itr.hasNext() && lessThan24((c = itr.next()))) {
+ *         // process c
+ *     }
+ *
+ *     // Example anti-pattern - retrieving a specific page
+ *     PaginatedList&lt;Comment&gt; pageTwo = (PaginatedList)
+ *                                                osf.comments("https://api.osf.io/v2/nodes/y9jdt/comments/?page=2")
  *                                            .execute()
  *                                            .body();
  * </pre>
+ * <p>
+ * <em>Client considerations:</em>
+ * </p>
+ * <p>
+ * The {@code PaginatedList} interface exposes concepts that should not be used by clients of {@code OsfService}, which
+ * is why the methods of {@code OsfService} return {@code java.util.List} and not {@code PaginatedList}.  This may be
+ * viewed as a constraint, but the current state of the OSF API is aimed at forward sequential access.  It would be
+ * difficult, for example, to implement {@link java.util.ListIterator} without additional pagination metadata in OSF API
+ * responses. ({@code PaginatedList} exists to decouple pagination from the JSONAPI-converter, a core dependency of the
+ * implementation.)
+ * </p>
+ * <p>
+ * As abstractions are just that, abstractions, it would behoove clients to be wary of certain concrete implementation
+ * details. {@code PaginatedList} implementations will be required to request additional pages of results as clients
+ * stream responses, which will involve network request overhead, and potential request failures.  Clients should be
+ * coded in a defensive manner, noting that some operations (e.g. {@link List#size()}) may depend on the presence of
+ * pagination metadata in the OSF API response.  If multiple traversals of the same results are required (e.g. a sort
+ * followed by a filter), consider streaming the result into a new data structure (e.g. a new {@code Collection} or
+ * {@code Map}) before executing those operations.  Alternately, retrieve the stream once, and perform all the
+ * operations in one traversal of the stream if possible.  Finally, as implementing the full {@code List} interface can
+ * be challenging and in some cases, not possible, clients should generally assume that instances of
+ * {@code PaginatedList} are immutable.  Copy the {@code PaginatedList} instance into an {@code ArrayList}, for example,
+ * before proceeding with any mutating operations.
+ * </p>
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
