@@ -31,7 +31,7 @@ import org.apache.commons.io.IOUtils;
 
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
 import org.dataconservancy.cos.packaging.OsfContentProvider;
 import org.dataconservancy.packaging.tool.api.Package;

@@ -16,7 +16,7 @@
 package org.dataconservancy.cos.osf.client.model;
 
 import org.apache.commons.io.IOUtils;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;

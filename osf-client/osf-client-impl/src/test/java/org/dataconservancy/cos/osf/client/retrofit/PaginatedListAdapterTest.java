@@ -13,21 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.client.service;
+package org.dataconservancy.cos.osf.client.retrofit;
 
 
 import com.github.jasminb.jsonapi.ResourceConverter;
 import com.github.jasminb.jsonapi.ResourceList;
 import com.squareup.okhttp.OkHttpClient;
-import org.dataconservancy.cos.osf.client.service.PaginationTestUtils.Meta;
-import org.dataconservancy.cos.osf.client.service.PaginationTestUtils.TestResource;
+import org.dataconservancy.cos.osf.client.retrofit.PaginationTestUtils.Meta;
+import org.dataconservancy.cos.osf.client.retrofit.PaginationTestUtils.TestResource;
 import org.junit.Test;
 
 import java.util.List;
 import java.util.Spliterator;
 import java.util.stream.Collectors;
 
-import static org.dataconservancy.cos.osf.client.service.PaginationTestUtils.ofIds;
+import static org.dataconservancy.cos.osf.client.retrofit.PaginationTestUtils.ofIds;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

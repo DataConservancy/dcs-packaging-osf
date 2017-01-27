@@ -16,7 +16,7 @@
 package org.dataconservancy.cos.osf.client.model;
 
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
-import org.dataconservancy.cos.osf.client.service.TestingOsfServiceFactory;
+import org.dataconservancy.cos.osf.client.retrofit.TestingOsfServiceFactory;
 
 import java.net.URI;
 

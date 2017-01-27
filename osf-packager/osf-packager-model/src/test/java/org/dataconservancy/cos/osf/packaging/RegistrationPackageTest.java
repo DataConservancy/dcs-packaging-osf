@@ -32,7 +32,7 @@ import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.model.Wiki;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.dataconservancy.cos.rdf.support.AnnotationsProcessor;
 import org.dataconservancy.cos.rdf.support.OntologyManager;
 import org.dataconservancy.cos.rdf.support.AnnotatedElementPair;

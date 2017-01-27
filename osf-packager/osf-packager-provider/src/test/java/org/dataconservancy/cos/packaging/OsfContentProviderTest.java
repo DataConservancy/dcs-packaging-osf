@@ -23,7 +23,7 @@ import org.apache.jena.riot.RDFFormat;
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
 import org.dataconservancy.cos.rdf.support.OntologyManager;
 import org.dataconservancy.packaging.shared.IpmPackager;

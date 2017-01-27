@@ -23,7 +23,7 @@ import org.dataconservancy.cos.osf.client.model.Category;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.NodeLicense;
 import org.dataconservancy.cos.osf.client.model.Permission;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Test;
 
 import java.util.Arrays;

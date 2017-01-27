@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.dataconservancy.cos.osf.client.service;
+package org.dataconservancy.cos.osf.client.retrofit;
 
 import java.util.List;
 import java.util.Map;
