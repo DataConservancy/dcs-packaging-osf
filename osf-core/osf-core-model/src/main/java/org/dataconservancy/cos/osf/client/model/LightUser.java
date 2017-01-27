@@ -32,7 +32,7 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
  */
 @Type("users")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserId {
+public class LightUser {
 
     /**
      * user id

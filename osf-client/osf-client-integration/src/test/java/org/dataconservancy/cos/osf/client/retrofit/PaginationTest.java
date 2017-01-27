@@ -23,7 +23,7 @@ import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Log;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
-import org.dataconservancy.cos.osf.client.model.RegistrationId;
+import org.dataconservancy.cos.osf.client.model.LightRegistration;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -130,7 +130,7 @@ public class PaginationTest extends AbstractMockServerTest {
                 this.getClass()));
         osfService = factory.getOsfService(OsfService.class);
 
-        final List<RegistrationId> ids = osfService.registrationIds().execute().body();
+        final List<LightRegistration> ids = osfService.registrationIds().execute().body();
 
         assertEquals(20, ids.size());
 
@@ -151,7 +151,7 @@ public class PaginationTest extends AbstractMockServerTest {
         // 0 and index 19 in two separate calls it would be more efficient (given the nature of the streaming
         // implementation) to request one stream and filter it:
 
-        final List<RegistrationId> accumulator = new ArrayList<>();
+        final List<LightRegistration> accumulator = new ArrayList<>();
         ids.forEach(id -> {
             if (id.getId().equals("fjguy") || id.getId().equals("f4pcq")) {
                 accumulator.add(id);

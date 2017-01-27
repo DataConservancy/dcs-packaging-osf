@@ -32,7 +32,7 @@ import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_F
  */
 @Type("nodes")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NodeId {
+public class LightNode {
 
     /**
      * node id

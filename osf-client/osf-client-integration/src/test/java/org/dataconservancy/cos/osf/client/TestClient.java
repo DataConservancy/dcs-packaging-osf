@@ -22,7 +22,7 @@ import com.github.jasminb.jsonapi.retrofit.JSONAPIConverterFactory;
 import com.squareup.okhttp.OkHttpClient;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.config.OsfClientConfiguration;
-import org.dataconservancy.cos.osf.client.model.RegistrationId;
+import org.dataconservancy.cos.osf.client.model.LightRegistration;
 import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.dataconservancy.cos.osf.client.retrofit.TestingOsfServiceFactory;
 import org.junit.Before;
@@ -95,7 +95,7 @@ public class TestClient {
         final ObjectMapper objectMapper = new ObjectMapper();
         final OkHttpClient client = new OkHttpClient();
 
-        final ResourceConverter converter = new ResourceConverter(objectMapper, RegistrationId.class);
+        final ResourceConverter converter = new ResourceConverter(objectMapper, LightRegistration.class);
 
         final JSONAPIConverterFactory converterFactory = new JSONAPIConverterFactory(converter);
 
@@ -109,12 +109,12 @@ public class TestClient {
 
         final HashMap<String, String> params = new HashMap<>();
         params.put("filter[public]", "true");
-        final Call<List<RegistrationId>> listCall = osfSvc.registrationIds(params);
+        final Call<List<LightRegistration>> listCall = osfSvc.registrationIds(params);
         assertNotNull(listCall);
-        final Response<List<RegistrationId>> res = listCall.execute();
+        final Response<List<LightRegistration>> res = listCall.execute();
         assertNotNull(res);
 
-        List<RegistrationId> registrations = null;
+        List<LightRegistration> registrations = null;
         if (!res.isSuccess()) {
             assertNotNull(res.errorBody());
             System.err.println(res.errorBody().string());
