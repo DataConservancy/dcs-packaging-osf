@@ -39,6 +39,7 @@ import org.springframework.core.io.ResourceLoader;
 import java.io.IOException;
 import java.net.URI;
 
+import static org.apache.commons.io.FilenameUtils.separatorsToUnix;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockserver.model.HttpCallback.callback;
@@ -184,12 +185,14 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         }
 
         if (uri.getPort() < 0) {
-            return new java.io.File(uri.getHost(), uri.getPath()).getPath();
+            return separatorsToUnix(
+                    new java.io.File(uri.getHost(), uri.getPath()).getPath());
         }
 
         final java.io.File path = new java.io.File(uri.getHost(), String.valueOf(uri.getPort()));
 
-        return new java.io.File(path, uri.getPath()).getPath();
+        return separatorsToUnix(
+                new java.io.File(path, uri.getPath()).getPath());
     }
 
     /**
