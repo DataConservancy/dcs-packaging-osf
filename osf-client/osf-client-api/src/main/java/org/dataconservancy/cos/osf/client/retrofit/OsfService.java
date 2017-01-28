@@ -67,8 +67,10 @@ import retrofit.http.Url;
  * code defensively, recognizing that there is HTTP request overhead when traversing the elements of a stream.  It is
  * difficult to provide specific recommendations, as what is considered efficient will depend on the use case.  However,
  * here are some options to consider when working with streams:
+ * </p>
  * <ul>
- *     <li>Most {@link java.util.stream.Stream#StreamOps terminal operations} are eager, meaning that the entire
+ *     <li>Most <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html#StreamOps">
+ *         terminal operations</a> are eager, meaning that the entire
  *     stream will be processed to exhaustion.  Consider use of {@link java.util.stream.Stream#iterator()} when
  *     processing the entire stream is not necessary.</li>
  *     <li>If multiple traversals of the same collection are required, consider streaming the result into a new data
@@ -78,7 +80,6 @@ import retrofit.http.Url;
  *     <li>Understand that {@code RuntimeException} may be thrown while processing a stream if network interruptions or
  *     latency prevent the retrieval of a results page.</li>
  * </ul>
- * </p>
  * <p>
  * URL as method parameters, encoding, etc.
  * </p>
@@ -261,6 +262,22 @@ public interface OsfService {
      * @return
      */
     @GET
+    Call<LightNode> lightnode(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<List<LightNode>> lightnodes(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
     Call<Registration> registration(@Url String url);
 
     /**
@@ -293,6 +310,23 @@ public interface OsfService {
      */
     @GET("registrations/")
     Call<List<LightRegistration>> registrationIds(@QueryMap Map<String, String> params);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<LightRegistration> lightregistration(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<List<LightRegistration>> lightregistrations(@Url String url);
+
 
     /**
      *
@@ -341,6 +375,22 @@ public interface OsfService {
      */
     @GET("users/")
     Call<List<LightUser>> userIds(@QueryMap Map<String, String> params);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<LightUser> lightuser(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<List<LightUser>> lightusers(@Url String url);
 
     /**
      *

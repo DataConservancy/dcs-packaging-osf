@@ -46,7 +46,7 @@ import java.util.List;
  *     // This is better than a simple filter, because iterator() does not eagerly fetch all the elements of the stream
  *     Iterator&lt;Comment&gt; itr = comments.stream().iterator();
  *     Comment c = null;
- *     while(itr.hasNext() && lessThan24((c = itr.next()))) {
+ *     while(itr.hasNext() &amp;&amp; lessThan24((c = itr.next()))) {
  *         // process c
  *     }
  *
