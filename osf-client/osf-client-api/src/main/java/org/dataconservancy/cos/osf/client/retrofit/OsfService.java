@@ -252,7 +252,7 @@ public interface OsfService {
      * @param params
      * @return
      */
-    @GET("registrations/")
+    @GET("nodes/")
     Call<List<LightNode>> nodeIds(@QueryMap Map<String, String> params);
 
     /**
