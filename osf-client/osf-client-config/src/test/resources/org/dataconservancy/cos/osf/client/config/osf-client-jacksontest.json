@@ -5,7 +5,8 @@
       "port": "8000",
       "basePath": "/v2/",
       "authHeader": "foo",
-      "scheme": "http"
+      "scheme": "http",
+      "connect_timeout_ms": 20000
     }
   },
   "wb": {

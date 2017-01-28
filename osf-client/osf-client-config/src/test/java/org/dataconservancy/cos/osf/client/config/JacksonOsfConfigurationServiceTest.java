@@ -41,6 +41,8 @@ public class JacksonOsfConfigurationServiceTest {
         assertEquals(8000, config.getPort());
         assertEquals("/v2/", config.getBasePath());
         assertEquals("foo", config.getAuthHeader());
+        assertEquals(20 * 1000, config.connect_timeout_ms);
+        assertEquals("2.2", config.getApiVersion());
     }
 
     @Test
@@ -54,5 +56,6 @@ public class JacksonOsfConfigurationServiceTest {
         assertEquals("192.168.99.100", config.getHost());
         assertEquals(7777, config.getPort());
         assertEquals("/v1/", config.getBasePath());
+        assertEquals(10 * 1000, config.connect_timeout_ms);
     }
 }

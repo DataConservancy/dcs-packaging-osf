@@ -34,6 +34,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 /**
  * Factory which wires collaborating objects and produces a Retrofit service interface.
  * <p>
@@ -195,6 +197,9 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
             httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
         }
+        this.httpClient.setConnectTimeout(osfConfigSvc.getConfiguration().getConnect_timeout_ms(), MILLISECONDS);
+        this.httpClient.setReadTimeout(osfConfigSvc.getConfiguration().getRead_timeout_ms(), MILLISECONDS);
+        this.httpClient.setWriteTimeout(osfConfigSvc.getConfiguration().getWrite_timeout_ms(), MILLISECONDS);
 
         // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
         final List<Class<?>> domainClasses = new ArrayList<>();
@@ -262,6 +267,10 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
             httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
         }
+
+        this.httpClient.setConnectTimeout(osfConfigSvc.getConfiguration().getConnect_timeout_ms(), MILLISECONDS);
+        this.httpClient.setReadTimeout(osfConfigSvc.getConfiguration().getRead_timeout_ms(), MILLISECONDS);
+        this.httpClient.setWriteTimeout(osfConfigSvc.getConfiguration().getWrite_timeout_ms(), MILLISECONDS);
     }
 
     /**
@@ -305,6 +314,9 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
             httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
         }
+        this.httpClient.setConnectTimeout(osfConfigSvc.getConfiguration().getConnect_timeout_ms(), MILLISECONDS);
+        this.httpClient.setReadTimeout(osfConfigSvc.getConfiguration().getRead_timeout_ms(), MILLISECONDS);
+        this.httpClient.setWriteTimeout(osfConfigSvc.getConfiguration().getWrite_timeout_ms(), MILLISECONDS);
     }
 
     /**
