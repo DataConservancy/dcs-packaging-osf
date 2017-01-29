@@ -81,8 +81,43 @@ import retrofit.http.Url;
  *     latency prevent the retrieval of a results page.</li>
  * </ul>
  * <p>
- * URL as method parameters, encoding, etc.
+ * Methods which accept a {@link Url} as a method parameter may be optionally encoded.  Retrofit will automatically
+ * encode as appropriate.  For example, the following two URLs will result in the same results despite the difference
+ * in encoding:
  * </p>
+ * <pre>
+ * List&lt;Comment&gt; comments;
+ *
+ * comments = osfService.comments("https://api.osf.io/v2/nodes/y9jdt/comments/?filter[target]=2eg28wm3x3c9")
+ *              .execute().body();
+ *
+ * assertEquals(1, comments.size());
+ * assertEquals("chdpxqekghpk", comments.get(0).getId());
+ *
+ * comments = osfService.comments("https://api.osf.io/v2/nodes/y9jdt/comments/?filter%5Btarget%5D=2eg28wm3x3c9")
+ *              .execute().body();
+ *
+ * assertEquals(1, comments.size());
+ * assertEquals("chdpxqekghpk", comments.get(0).getId());
+ * </pre>
+ * <p>
+ * However, methods which accept a {@link retrofit.http.Query} or {@link QueryMap} require their parameters to <em>not
+ * </em> be encoded.  Retrofit will encode the parameters as a rule (unless {@code encoded = true} is present).  For
+ * example, the following two method calls are not equivalent: the call which is <em>not encoded</em> returns the
+ * correct value:
+ * </p>
+ * <pre>
+ * List&lt;LightNode&gt; publicNodes;
+ *
+ * publicNodes = osfService.nodeIds(params("filter[public]", "true")).execute().body();
+ *
+ * final int count = publicNodes.size();  // 18499; correct count, the filter is applied and only public nodes returned
+ * assertTrue(publicNodes.size() &gt; 1);
+ *
+ * publicNodes = osfService.nodeIds(params("filter%5Bpublic%5d", "true")).execute().body();
+ *
+ * assertNotEquals(count, publicNodes.size()); // 18508; the filter is ignored, public and private nodes are returned
+ * </pre>
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  * @author Karen Hanson (karen.hanson@jhu.edu)
