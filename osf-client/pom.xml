@@ -23,7 +23,7 @@
     <packaging>pom</packaging>
     <name>osf-client :: Parent</name>
     <description>Client for the Center for Open Science Open Science Framework</description>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
 
     <parent>
         <groupId>org.dataconservancy.cos</groupId>
@@ -336,4 +336,8 @@
 
     </dependencyManagement>
 
+
+  <scm>
+    <tag>osf-client-1.1.0</tag>
+  </scm>
 </project>
