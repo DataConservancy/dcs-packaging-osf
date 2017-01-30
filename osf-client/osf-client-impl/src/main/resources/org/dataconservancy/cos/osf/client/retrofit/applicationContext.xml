@@ -38,7 +38,7 @@
     </property>
     <property name="connectTimeout" value="10000"/>
     <property name="writeTimeout" value="10000"/>
-    <property name="readTimeout" value="20000"/>
+    <property name="readTimeout" value="30000"/>
   </bean>
 
   <!--

@@ -28,7 +28,7 @@ abstract class BaseConfiguration {
 
     String basePath;
 
-    int read_timeout_ms = 20 * 1000; // 20 seconds
+    int read_timeout_ms = 30 * 1000; // 30 seconds
 
     int write_timeout_ms = 10 * 1000; // 10 seconds
 
