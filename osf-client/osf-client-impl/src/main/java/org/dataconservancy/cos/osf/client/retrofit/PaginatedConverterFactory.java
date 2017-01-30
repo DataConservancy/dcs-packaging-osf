@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.client.service;
+package org.dataconservancy.cos.osf.client.retrofit;
 
 import com.github.jasminb.jsonapi.ResourceConverter;
 import com.github.jasminb.jsonapi.retrofit.JSONAPIConverterFactory;

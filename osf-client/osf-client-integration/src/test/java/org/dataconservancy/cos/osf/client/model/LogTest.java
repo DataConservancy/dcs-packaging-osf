@@ -15,7 +15,7 @@
  */
 package org.dataconservancy.cos.osf.client.model;
 
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -50,11 +50,11 @@ public class LogTest extends AbstractMockServerTest {
     public void testLogMapping() throws Exception {
         final String registrationId = "eq7a4";
 
-        final Registration registration = osfService.registration(registrationId).execute().body();
+        final Registration registration = osfService.registrationById(registrationId).execute().body();
         assertNotNull(registration);
         assertNotNull(registration.getLogs());
 
-        final List<Log> logs = osfService.getLogs(registration.getLogs()).execute().body();
+        final List<Log> logs = osfService.logs(registration.getLogs()).execute().body();
 
         final String eventId = "57570a06c7950c0045ac803e";
 

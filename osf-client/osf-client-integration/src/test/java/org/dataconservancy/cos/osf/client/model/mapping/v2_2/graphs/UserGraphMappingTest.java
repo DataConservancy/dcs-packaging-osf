@@ -28,7 +28,7 @@ public class UserGraphMappingTest extends BaseGraphMappingTest {
 
     @Test
     public void testUserRelationships() throws Exception {
-        final User user = osfService.userByUrl("http://localhost:8000/v2/users/9vw8x/").execute().body();
+        final User user = osfService.user("http://localhost:8000/v2/users/9vw8x/").execute().body();
 
         assertEquals("http://localhost:8000/v2/users/9vw8x/nodes/", user.getNodes());
         assertEquals(emptyList(), user.getInstitutions());

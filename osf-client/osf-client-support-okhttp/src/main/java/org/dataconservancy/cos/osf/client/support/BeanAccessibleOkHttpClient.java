@@ -21,6 +21,8 @@ import com.squareup.okhttp.OkHttpClient;
 import java.util.Collections;
 import java.util.List;
 
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+
 /**
  * Wraps an OkHttpClient providing getters and setters for Spring and any other frameworks that follow the JavaBean
  * standard.
@@ -50,5 +52,29 @@ public class BeanAccessibleOkHttpClient extends OkHttpClient {
         for (Interceptor toAdd : interceptors) {
             this.interceptors().add(toAdd);
         }
+    }
+
+    /**
+     *
+     * @param timeoutMs
+     */
+    public void setReadTimeout(final int timeoutMs) {
+        setReadTimeout(timeoutMs, MILLISECONDS);
+    }
+
+    /**
+     *
+     * @param timeoutMs
+     */
+    public void setWriteTimeout(final int timeoutMs) {
+        setWriteTimeout(timeoutMs, MILLISECONDS);
+    }
+
+    /**
+     *
+     * @param timeoutMs
+     */
+    public void setConnectTimeout(final int timeoutMs) {
+        setConnectTimeout(timeoutMs, MILLISECONDS);
     }
 }

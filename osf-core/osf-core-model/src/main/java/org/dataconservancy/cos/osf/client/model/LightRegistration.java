@@ -25,7 +25,7 @@ import com.github.jasminb.jsonapi.annotations.Type;
  */
 @Type("registrations")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RegistrationId extends NodeId {
+public class LightRegistration extends LightNode {
 
     //all in NodeId
 

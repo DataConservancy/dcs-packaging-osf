@@ -20,40 +20,38 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.jasminb.jsonapi.annotations.Id;
 import com.github.jasminb.jsonapi.annotations.Type;
+import org.dataconservancy.cos.osf.client.support.JodaSupport;
+import org.joda.time.DateTime;
+
+import static org.dataconservancy.cos.osf.client.support.JodaSupport.DATE_TIME_FORMATTER_ALT;
 
 /**
- * Model exposes Node ID and pagination links only, so that expensive full model call is not necessary
+ * Model exposes User ID only, so that expensive full model call is not necessary
+ *
  * @author khanson
  */
-@Type("nodes")
+@Type("users")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class NodeId  {
+public class LightUser {
 
-    /**node id*/
+    /**
+     * user id
+     */
     @Id
     private String id;
 
-    /**pagination links, applies when list is returned**/
+    /**
+     * pagination links, applies when list is returned
+     **/
     private PageLinks pageLinks;
 
-    /**
-     *
-     * @return
-     */
-    public String getId() {
-        return id;
-    }
 
     /**
-     *
-     * @param id
+     * timestamp when the user's account was created
      */
-    public void setId(final String id) {
-        this.id = id;
-    }
+    private DateTime date_registered;
 
     /**
-     *
      * @return
      */
     public PageLinks getPageLinks() {
@@ -61,7 +59,6 @@ public class NodeId  {
     }
 
     /**
-     *
      * @param pageLinks
      */
     @JsonProperty("links")
@@ -69,5 +66,25 @@ public class NodeId  {
         this.pageLinks = pageLinks;
     }
 
+    /**
+     *
+     * @return
+     */
+    public String getDate_registered() {
+        if (date_registered != null) {
+            return date_registered.toString(DATE_TIME_FORMATTER_ALT);
+        }
+        return null;
+    }
+
+    /**
+     *
+     * @param date_registered
+     */
+    public void setDate_registered(final String date_registered) {
+        if (date_registered != null) {
+            this.date_registered = JodaSupport.parseDateTime(date_registered);
+        }
+    }
 
 }

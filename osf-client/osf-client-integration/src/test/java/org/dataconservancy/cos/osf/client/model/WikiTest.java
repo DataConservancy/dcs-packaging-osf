@@ -18,7 +18,7 @@
 
 package org.dataconservancy.cos.osf.client.model;
 
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -49,7 +49,7 @@ public class WikiTest extends AbstractMockServerTest {
     @Test
     public void testWikiMapping() throws Exception {
         final String registrationId = "ng9em";
-        final Registration registration = osfService.registration(registrationId).execute().body();
+        final Registration registration = osfService.registrationById(registrationId).execute().body();
         assertNotNull(registration);
 
         final List<Wiki> wikis = registration.getWikis();

@@ -17,7 +17,7 @@ package org.dataconservancy.cos.osf.client.model.mapping.v2_2.objects;
 
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.Wiki;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Test;
 
 import java.util.List;

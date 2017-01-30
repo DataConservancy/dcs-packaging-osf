@@ -22,12 +22,10 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.net.URL;
-import java.nio.file.Paths;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
 /**
  * A series of tests insuring that configuring the location of the OSF client using a System property will work, and
@@ -85,8 +83,10 @@ public class TestSpringClientConfiguration {
     @Test
     public void testFileUrlResource() throws Exception {
         final URL fileUrlResource = this.getClass().getResource(TEST_FILE_CONFIGURATION_RESOURCE);
-        assertTrue(Paths.get(fileUrlResource.getPath()).toFile().exists());
-        System.setProperty("osf.client.conf", fileUrlResource.toString());
+        assertNotNull("Missing expected classpath resource: " + TEST_FILE_CONFIGURATION_RESOURCE, fileUrlResource);
+        final URL fileUrl = new URL("file", null, -1, fileUrlResource.getPath());
+        System.err.println(fileUrl);
+        System.setProperty("osf.client.conf", fileUrl.toString());
         final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
                 "classpath:/org/dataconservancy/cos/osf/client/config/applicationContext.xml",
                 "classpath:/org/dataconservancy/cos/osf/client/config/applicationContext-test.xml");

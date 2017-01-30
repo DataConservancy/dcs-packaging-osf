@@ -31,7 +31,7 @@ import org.apache.commons.io.IOUtils;
 
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
 import org.dataconservancy.cos.packaging.OsfContentProvider;
 import org.dataconservancy.packaging.tool.api.Package;
@@ -193,7 +193,7 @@ public class PackageGenerationApp {
 
         // Prepare the OSF registration and users information
         final OsfService osfService = cxt.getBean("osfService", OsfService.class);
-        final Registration registration = osfService.registrationByUrl(registrationUrl).execute().body();
+        final Registration registration = osfService.registration(registrationUrl).execute().body();
 
         if (registration == null) {
             System.err.println("Failed to obtain registration " + registrationUrl + " from endpoint. " +
@@ -205,13 +205,13 @@ public class PackageGenerationApp {
                 .map(c -> {
                     try {
                         if (c.getUserRel() != null) {
-                            return osfService.userByUrl(c.getUserRel()).execute().body();
+                            return osfService.user(c.getUserRel()).execute().body();
                         } else {
                             String contributorId = c.getId();
                             if (contributorId.contains("-")) {
                                 contributorId = contributorId.split("-")[1];
                             }
-                            return osfService.user(contributorId).execute().body();
+                            return osfService.userById(contributorId).execute().body();
                         }
                     } catch (IOException e) {
                         throw new RuntimeException(e.getMessage(), e);

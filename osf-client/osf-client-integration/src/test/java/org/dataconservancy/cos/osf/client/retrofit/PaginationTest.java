@@ -16,22 +16,26 @@
  *
  */
 
-package org.dataconservancy.cos.osf.client.service;
+package org.dataconservancy.cos.osf.client.retrofit;
 
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Log;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
+import org.dataconservancy.cos.osf.client.model.LightRegistration;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 /**
+ *
+ *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
 public class PaginationTest extends AbstractMockServerTest {
@@ -52,11 +56,11 @@ public class PaginationTest extends AbstractMockServerTest {
      */
     @Test
     public void testPaginationOfRel() throws Exception {
-        final Registration r = osfService.registrationByUrl("http://localhost:8000/v2/registrations/tgzhk/")
+        final Registration r = osfService.registration("http://localhost:8000/v2/registrations/tgzhk/")
                 .execute().body();
 
         final String logsRel = r.getLogs();
-        final List<Log> resultsPage = osfService.getLogs(logsRel).execute().body();
+        final List<Log> resultsPage = osfService.logs(logsRel).execute().body();
 
         // A stream will automatically retrieve pages of results transparently in the background
         assertEquals(20, resultsPage.stream().count());
@@ -82,7 +86,7 @@ public class PaginationTest extends AbstractMockServerTest {
      */
     @Test
     public void testPaginationOfResolvedRelationship() throws IOException {
-        final Node n = osfService.nodeByUrl("http://localhost:8000/v2/nodes/xmnkz/").execute().body();
+        final Node n = osfService.node("http://localhost:8000/v2/nodes/xmnkz/").execute().body();
 
         // xmnkz node has a single file provider
         assertEquals(1, n.getFiles().size());
@@ -114,5 +118,45 @@ public class PaginationTest extends AbstractMockServerTest {
 
         // in the absence of a 'meta' section with size() information, should
         // the size of the wrapped resourcelist be returned?
+    }
+
+    @Test
+    public void testPagingOfRegistrationIds() throws Exception {
+        // Reset the interceptors so we can use some crafted JSON based off of the API 2.2 JSON.  Instead of ~8000
+        // registrations, we only use the first two pages of results for a total of 20 registrations, and manually
+        // craft the 'links' objects to match
+        factory.interceptors().clear();
+        factory.interceptors().add(new RecursiveInterceptor("/json/PaginationTest/testPagingOfRegistrationIds/",
+                this.getClass()));
+        osfService = factory.getOsfService(OsfService.class);
+
+        final List<LightRegistration> ids = osfService.registrationIds().execute().body();
+
+        assertEquals(20, ids.size());
+
+        // Behind the scenes, each call to get() will result in the creation of Stream, and retrieval of the first page
+        // of results.  The stream is traversed sequentially element by element until the desired index is reached.
+        // Therefore, if the index lies within the first page of results, no additional pages are requested.
+        assertEquals("fjguy", ids.get(0).getId());
+
+        // A second call to get() will initiate the creation of a new Stream, and re-retrieval of the first page of
+        // results.  The stream traverses the first page of results, and not reaching index 19, retrieves the second
+        // page, traverses the second page, and returns the element at index 19.
+        assertEquals("f4pcq", ids.get(19).getId());
+
+        // This implementation is highly inefficient.  A more efficient, but complex algorithm could be implemented, but
+        // it would involve the parsing and crafting of a URL in order to retrieve a specific page of results.
+        //
+        // For now, it would behoove callers to reduce the number calls to the remote api.  Instead of getting index
+        // 0 and index 19 in two separate calls it would be more efficient (given the nature of the streaming
+        // implementation) to request one stream and filter it:
+
+        final List<LightRegistration> accumulator = new ArrayList<>();
+        ids.forEach(id -> {
+            if (id.getId().equals("fjguy") || id.getId().equals("f4pcq")) {
+                accumulator.add(id);
+            }
+        });
+        assertEquals(2, accumulator.size());
     }
 }

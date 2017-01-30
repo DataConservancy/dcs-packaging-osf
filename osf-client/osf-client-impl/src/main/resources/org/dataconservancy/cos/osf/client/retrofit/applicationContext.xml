@@ -36,6 +36,9 @@
         </bean>
       </list>
     </property>
+    <property name="connectTimeout" value="10000"/>
+    <property name="writeTimeout" value="10000"/>
+    <property name="readTimeout" value="30000"/>
   </bean>
 
   <!--
@@ -84,12 +87,12 @@
     Uses Retrofit to generate instances of OsfService, the interface used to access the OSF and Waterbutler JSON API.
       May *not* be shared as a singleton, because it uses the resourceConverter bean.
   -->
-  <bean id="osfServiceFactory" class="org.dataconservancy.cos.osf.client.service.RetrofitOsfServiceFactory" scope="prototype">
+  <bean id="osfServiceFactory" class="org.dataconservancy.cos.osf.client.retrofit.RetrofitOsfServiceFactory" scope="prototype">
     <constructor-arg ref="osfConfigurationSvc"/>
     <constructor-arg ref="wbConfigurationSvc"/>
     <constructor-arg ref="okHttpClient"/>
     <constructor-arg>
-      <bean class="org.dataconservancy.cos.osf.client.service.PaginatedConverterFactory">
+      <bean class="org.dataconservancy.cos.osf.client.retrofit.PaginatedConverterFactory">
         <constructor-arg ref="okHttpClient"/>
         <constructor-arg ref="resourceConverter"/>
       </bean>
@@ -101,7 +104,7 @@
       May *not* be shared as a singleton.
   -->
   <bean id="osfService" factory-bean="osfServiceFactory" factory-method="getOsfService" scope="prototype">
-    <constructor-arg value="org.dataconservancy.cos.osf.client.service.OsfService"/>
+    <constructor-arg value="org.dataconservancy.cos.osf.client.retrofit.OsfService"/>
   </bean>
 
   <!--

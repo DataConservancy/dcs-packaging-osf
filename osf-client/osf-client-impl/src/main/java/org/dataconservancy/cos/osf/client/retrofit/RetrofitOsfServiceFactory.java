@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.client.service;
+package org.dataconservancy.cos.osf.client.retrofit;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.jasminb.jsonapi.ResourceConverter;
@@ -33,6 +33,8 @@ import retrofit.Retrofit;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 /**
  * Factory which wires collaborating objects and produces a Retrofit service interface.
@@ -195,6 +197,9 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
             httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
         }
+        this.httpClient.setConnectTimeout(osfConfigSvc.getConfiguration().getConnect_timeout_ms(), MILLISECONDS);
+        this.httpClient.setReadTimeout(osfConfigSvc.getConfiguration().getRead_timeout_ms(), MILLISECONDS);
+        this.httpClient.setWriteTimeout(osfConfigSvc.getConfiguration().getWrite_timeout_ms(), MILLISECONDS);
 
         // ... the JSON-API converter used by Retrofit to map JSON documents to Java objects
         final List<Class<?>> domainClasses = new ArrayList<>();
@@ -262,6 +267,10 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
             httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
         }
+
+        this.httpClient.setConnectTimeout(osfConfigSvc.getConfiguration().getConnect_timeout_ms(), MILLISECONDS);
+        this.httpClient.setReadTimeout(osfConfigSvc.getConfiguration().getRead_timeout_ms(), MILLISECONDS);
+        this.httpClient.setWriteTimeout(osfConfigSvc.getConfiguration().getWrite_timeout_ms(), MILLISECONDS);
     }
 
     /**
@@ -305,6 +314,9 @@ public class RetrofitOsfServiceFactory {
         if (osfConfigSvc.getConfiguration().getApiVersion() != null) {
             httpClient.interceptors().add(new ApiVersionInterceptor(osfConfigSvc.getConfiguration().getApiVersion()));
         }
+        this.httpClient.setConnectTimeout(osfConfigSvc.getConfiguration().getConnect_timeout_ms(), MILLISECONDS);
+        this.httpClient.setReadTimeout(osfConfigSvc.getConfiguration().getRead_timeout_ms(), MILLISECONDS);
+        this.httpClient.setWriteTimeout(osfConfigSvc.getConfiguration().getWrite_timeout_ms(), MILLISECONDS);
     }
 
     /**

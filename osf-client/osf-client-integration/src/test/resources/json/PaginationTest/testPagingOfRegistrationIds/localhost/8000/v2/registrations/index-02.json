@@ -1,0 +1,1760 @@
+{
+  "data": [
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c0/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/comments/?filter%5Btarget%5D=akqpg",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/ekg24/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/akqpg/children/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/akqpg/",
+        "html": "https://osf.io/akqpg/"
+      },
+      "attributes": {
+        "registration_supplement": "OSF-Standard Pre-Data Collection Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "project",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Demonstration Project",
+        "registered_meta": {
+          "looked": {
+            "value": "No"
+          },
+          "datacompletion": {
+            "value": "No"
+          },
+          "comments": {
+            "value": "Data collection will begin on the 17th"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": "",
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2012-11-24T16:44:29.419000Z",
+        "date_registered": "2012-11-24T17:00:56.338000Z",
+        "date_created": "2012-11-22T01:34:29.332000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "akqpg"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/pxr93/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/pxr93/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/comments/?filter%5Btarget%5D=ad49c",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/z7c5i/",
+              "meta": {}
+            }
+          }
+        },
+        "registered_by": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/users/edb8y/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/ad49c/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/ad49c/",
+        "html": "https://osf.io/ad49c/"
+      },
+      "attributes": {
+        "registration_supplement": "Open-Ended Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "methods and measures",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Study Materials",
+        "registered_meta": {
+          "embargoEndDate": {
+            "value": "Mon%2C 13 Jul 2015 17%3A57%3A33 GMT"
+          },
+          "registrationChoice": {
+            "value": "immediate"
+          },
+          "summary": {
+            "value": "Registered prior to RPP publication"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": null,
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2012-12-03T12:28:04.165000Z",
+        "date_registered": "2015-07-13T17:57:46.472000Z",
+        "date_created": "2012-10-25T06:09:19.884000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "ad49c"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c0/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/y6az5/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/y6az5/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/comments/?filter%5Btarget%5D=i4mbz",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pq6sx/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/i4mbz/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/i4mbz/",
+        "html": "https://osf.io/i4mbz/"
+      },
+      "attributes": {
+        "registration_supplement": "OSF-Standard Pre-Data Collection Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "methods and measures",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Materials",
+        "registered_meta": {
+          "looked": {
+            "value": "No"
+          },
+          "datacompletion": {
+            "value": "No"
+          },
+          "comments": {
+            "value": "Soon"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": null,
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2012-12-03T18:06:02.540000Z",
+        "date_registered": "2012-12-03T19:10:46.203000Z",
+        "date_created": "2012-12-03T18:03:37.007000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "i4mbz"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c0/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/qnydv/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/qnydv/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/comments/?filter%5Btarget%5D=tbubw",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/pq6sx/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/tbubw/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/tbubw/",
+        "html": "https://osf.io/tbubw/"
+      },
+      "attributes": {
+        "registration_supplement": "OSF-Standard Pre-Data Collection Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "methods and measures",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Materials",
+        "registered_meta": {
+          "looked": {
+            "value": "No"
+          },
+          "datacompletion": {
+            "value": "No"
+          },
+          "comments": {
+            "value": "Will start soon"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": null,
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2012-12-03T18:06:02.540000Z",
+        "date_registered": "2012-12-03T18:08:58.022000Z",
+        "date_created": "2012-12-03T18:03:37.007000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "tbubw"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c0/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/comments/?filter%5Btarget%5D=wsfhw",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/yzr5e/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/wsfhw/children/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/wsfhw/",
+        "html": "https://osf.io/wsfhw/"
+      },
+      "attributes": {
+        "registration_supplement": "OSF-Standard Pre-Data Collection Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "project",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Demonstration Project",
+        "registered_meta": {
+          "looked": {
+            "value": "No"
+          },
+          "datacompletion": {
+            "value": "No"
+          },
+          "comments": {
+            "value": "I'll start collection on the 20th"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": "",
+        "tags": [
+          "demo",
+          "dissertation"
+        ],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2012-12-17T16:16:39.130000Z",
+        "date_registered": "2012-12-17T16:31:35.359000Z",
+        "date_created": "2012-12-17T15:54:01.322000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "wsfhw"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2c0/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/comments/?filter%5Btarget%5D=nydrb",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/qsnvb/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/nydrb/children/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/nydrb/",
+        "html": "https://osf.io/nydrb/"
+      },
+      "attributes": {
+        "registration_supplement": "OSF-Standard Pre-Data Collection Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "project",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Independent Direct Replication of Vess (2012, PS, Study 1)",
+        "registered_meta": {
+          "looked": {
+            "value": "No"
+          },
+          "datacompletion": {
+            "value": "No"
+          },
+          "comments": {
+            "value": "pre-registration for independent direct replication"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": "The main goal of the current project is to execute an independent (direct) replication of Vess’ (2012, PS) main finding from his Study 1. Consistent with an embodiment account, he found that more anxiously attached individuals reported more desire for warm food and drinks, but only when such individuals had recalled a past romantic breakup (vs. recalling an ordinary event).\r\n\r\nWe will execute a high-powered (estimated power of .95) independent replication using exactly the same measures, manipulations, instructions (exact instructions and manipulation acquired from Vess), and sampling approach (online sample using Amazon’s Mechanical Turk website). The primary goal is to determine whether Vess’ finding generalizes to a new sample of individuals, hence contributing to the question of whether Vess' original finding reflects reproducible knowledge.",
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2013-01-10T16:35:03.910000Z",
+        "date_registered": "2013-01-10T16:37:45.125000Z",
+        "date_created": "2013-01-10T15:28:42.904000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "nydrb"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/logs/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/comments/?filter%5Btarget%5D=dvms5",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/5elsr/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/children/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/dvms5/",
+        "html": "https://osf.io/dvms5/"
+      },
+      "attributes": {
+        "registration_supplement": "Open-Ended Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "project",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Journal Best Practices",
+        "registered_meta": {
+          "summary": {
+            "value": "The first registration of the Journal Best Practices project"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": "An initiative to define best practices for scientific publishing and to evaluate journals by those standards.",
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2013-01-15T23:44:40.622000Z",
+        "date_registered": "2013-01-24T23:36:48.025000Z",
+        "date_created": "2013-01-07T04:32:02.285000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "dvms5"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/dvms5/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/comments/?filter%5Btarget%5D=kzfel",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/d5j2d/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/kzfel/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/kzfel/",
+        "html": "https://osf.io/kzfel/"
+      },
+      "attributes": {
+        "registration_supplement": "Open-Ended Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "project",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Journal Practice Inventory",
+        "registered_meta": {
+          "summary": {
+            "value": "The first registration of the Journal Best Practices project"
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": null,
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2013-01-24T23:37:56.822000Z",
+        "date_registered": "2013-01-24T23:36:48.025000Z",
+        "date_created": "2013-01-24T23:26:41.040000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "kzfel"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/s8yud/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/s8yud/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/comments/?filter%5Btarget%5D=hy3wz",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/z3snt/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/hy3wz/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/hy3wz/",
+        "html": "https://osf.io/hy3wz/"
+      },
+      "attributes": {
+        "registration_supplement": "Open-Ended Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "hypothesis",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Hypotheses",
+        "registered_meta": {
+          "summary": {
+            "value": "This replication attempt includes all the files necessary for the 2004 replicaition of Shackelford et al (which includes a 1999 study  by Buss). Both Buss and Shackelford have approved this study. "
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": null,
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2013-01-25T21:01:07.570000Z",
+        "date_registered": "2013-01-27T20:03:01.315000Z",
+        "date_created": "2013-01-17T12:30:57.467000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "hy3wz"
+    },
+    {
+      "relationships": {
+        "files": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/files/",
+              "meta": {}
+            }
+          }
+        },
+        "view_only_links": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/view_only_links/",
+              "meta": {}
+            }
+          }
+        },
+        "citation": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/citation/",
+              "meta": {}
+            }
+          }
+        },
+        "registration_schema": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/metaschemas/564d31db8c5e4a7c9694b2be/",
+              "meta": {}
+            }
+          }
+        },
+        "parent": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/s8yud/",
+              "meta": {}
+            }
+          }
+        },
+        "contributors": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/contributors/",
+              "meta": {}
+            }
+          }
+        },
+        "forks": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/forks/",
+              "meta": {}
+            }
+          }
+        },
+        "root": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/s8yud/",
+              "meta": {}
+            }
+          }
+        },
+        "identifiers": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/identifiers/",
+              "meta": {}
+            }
+          }
+        },
+        "comments": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/comments/?filter%5Btarget%5D=f4pcq",
+              "meta": {}
+            }
+          }
+        },
+        "registered_from": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/nodes/byzex/",
+              "meta": {}
+            }
+          }
+        },
+        "linked_nodes": {
+          "links": {
+            "self": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/relationships/linked_nodes/",
+              "meta": {}
+            },
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/linked_nodes/",
+              "meta": {}
+            }
+          }
+        },
+        "wikis": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/wikis/",
+              "meta": {}
+            }
+          }
+        },
+        "affiliated_institutions": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/institutions/",
+              "meta": {}
+            }
+          }
+        },
+        "children": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/children/",
+              "meta": {}
+            }
+          }
+        },
+        "logs": {
+          "links": {
+            "related": {
+              "href": "http://localhost:8000/v2/registrations/f4pcq/logs/",
+              "meta": {}
+            }
+          }
+        }
+      },
+      "links": {
+        "self": "http://localhost:8000/v2/registrations/f4pcq/",
+        "html": "https://osf.io/f4pcq/"
+      },
+      "attributes": {
+        "registration_supplement": "Open-Ended Registration",
+        "pending_embargo_approval": false,
+        "registration": true,
+        "embargo_end_date": null,
+        "withdrawn": false,
+        "withdrawal_justification": null,
+        "category": "methods and measures",
+        "preprint": false,
+        "current_user_permissions": [
+          "read"
+        ],
+        "title": "Methods",
+        "registered_meta": {
+          "summary": {
+            "value": "This replication attempt includes all the files necessary for the 2004 replicaition of Shackelford et al (which includes a 1999 study  by Buss). Both Buss and Shackelford have approved this study. "
+          }
+        },
+        "public": true,
+        "fork": false,
+        "description": null,
+        "tags": [],
+        "collection": false,
+        "current_user_can_comment": false,
+        "pending_registration_approval": false,
+        "date_modified": "2013-01-25T21:01:13.450000Z",
+        "date_registered": "2013-01-27T20:03:01.315000Z",
+        "date_created": "2013-01-18T09:18:49.438000Z",
+        "pending_withdrawal": false,
+        "node_license": null
+      },
+      "type": "registrations",
+      "id": "f4pcq"
+    }
+  ],
+  "meta": {
+    "total": 20,
+    "per_page": 10
+  },
+  "links": {
+    "self": "http://localhost:8000/v2/registrations/?page=2",
+    "first": "http://localhost:8000/v2/registrations/",
+    "last": "http://localhost:8000/v2/registrations/?page=2",
+    "prev": "http://localhost:8000/v2/registrations/",
+    "next": null
+  }
+}

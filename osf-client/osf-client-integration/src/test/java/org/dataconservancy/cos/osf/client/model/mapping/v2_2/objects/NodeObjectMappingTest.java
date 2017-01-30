@@ -23,7 +23,7 @@ import org.dataconservancy.cos.osf.client.model.Category;
 import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.NodeLicense;
 import org.dataconservancy.cos.osf.client.model.Permission;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -47,7 +47,7 @@ public class NodeObjectMappingTest extends AbstractMockServerTest {
     public void testMinimalNode() throws Exception {
         addResponseInterceptor(baseResourcePath + "node-minimal.json");
 
-        final Node node = factory.getOsfService(OsfService.class).nodeByUrl("anyurl").execute().body();
+        final Node node = factory.getOsfService(OsfService.class).node("anyurl").execute().body();
 
         assertEquals("xug4a", node.getId());
         assertEquals(Category.PROJECT, node.getCategory());

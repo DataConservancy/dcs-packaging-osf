@@ -30,9 +30,9 @@ public class LogGraphMappingTest extends BaseGraphMappingTest {
     public void testLogRelationships() throws Exception {
         // We don't have the individual log json at /v2/logs/579b8a35594d9001fa2fccfb, so we access it through the
         // registration
-        final Registration registration = osfService.registrationByUrl("http://localhost:8000/v2/registrations/tgzhk/")
+        final Registration registration = osfService.registration("http://localhost:8000/v2/registrations/tgzhk/")
                 .execute().body();
-        final Log log = osfService.getLogs(registration.getLogs()).execute().body()
+        final Log log = osfService.logs(registration.getLogs()).execute().body()
                 .stream()
                 .filter(l -> l.getId().equals("579b8a35594d9001fa2fccfb"))
                 .findFirst().orElseThrow(() ->

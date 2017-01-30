@@ -39,6 +39,7 @@ import org.springframework.core.io.ResourceLoader;
 import java.io.IOException;
 import java.net.URI;
 
+import static org.apache.commons.io.FilenameUtils.separatorsToUnix;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockserver.model.HttpCallback.callback;
@@ -184,12 +185,14 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
         }
 
         if (uri.getPort() < 0) {
-            return new java.io.File(uri.getHost(), uri.getPath()).getPath();
+            return separatorsToUnix(
+                    new java.io.File(uri.getHost(), uri.getPath()).getPath());
         }
 
         final java.io.File path = new java.io.File(uri.getHost(), String.valueOf(uri.getPort()));
 
-        return new java.io.File(path, uri.getPath()).getPath();
+        return separatorsToUnix(
+                new java.io.File(path, uri.getPath()).getPath());
     }
 
     /**
@@ -212,16 +215,16 @@ public abstract class AbstractMockServerTest extends AbstractOsfClientTest {
      * <p>
      * For example, the {@link com.github.jasminb.jsonapi.ResolutionStrategy} for {@code Node}
      * {@link Node#contributors contributors} says that when a {@code Node} is retrieved using the
-     * {@link org.dataconservancy.cos.osf.client.service.OsfService}, the "contributors" relationship should be
+     * {@link org.dataconservancy.cos.osf.client.retrofit.OsfService}, the "contributors" relationship should be
      * recursively retrieved in the same API call, and deserialized into a {@code List} of {@code Contributor} objects.
      * Once the {@code Node} is retrieved, the caller can iterate over the {@code Contributor} objects without issuing
-     * subsequent calls to {@link org.dataconservancy.cos.osf.client.service.OsfService}.  This behavior is governed by
+     * subsequent calls to {@link org.dataconservancy.cos.osf.client.retrofit.OsfService}.  This behavior is governed by
      * the {@code ResolutionStrategy} annotations on the model classes.
      * </p>
      * <p>
      * This interceptor will map a response based on attributes of the request (and test name).  This insures that
-     * {@link org.dataconservancy.cos.osf.client.service.OsfService} API calls which are recursive will result in proper
-     * responses.
+     * {@link org.dataconservancy.cos.osf.client.retrofit.OsfService} API calls which are recursive will result in
+     * proper responses.
      * </p>
      */
     public static class RecursiveInterceptor implements Interceptor {

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.dataconservancy.cos.osf.client.service;
+package org.dataconservancy.cos.osf.client.retrofit;
 
 import com.github.jasminb.jsonapi.ResourceConverter;
 import com.github.jasminb.jsonapi.ResourceList;
@@ -50,6 +50,8 @@ import java.util.stream.StreamSupport;
  *         {@code UnsupportedOperationException}</li>
  *     <li>List methods that would be complex or difficult to implement efficiently when limited to
  *         sequential access of the OSF API also throw {@code UnsupportedOperationException}</li>
+ *     <li>{@link #total()} and {@link #perPage()} rely on the presence of pagination metadata in a top-level
+ *         JSONAPI 'links' object.</li>
  * </ul>
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
@@ -132,6 +134,21 @@ public class PaginatedListAdapter<E> implements PaginatedList<E> {
         return resources.getLast();
     }
 
+    /**
+     * <p>
+     * <em>Implementation notes:</em>
+     * </p>
+     * <p>
+     * Returns the total size of the collection.  If 'links.next' is present, then the results are pageable.  If
+     * pageable results have a 'links.meta.total', that value is returned.  If pagable results are missing
+     * 'links.meta.total', the total size of the collection is unknown, and {@code -1} will be returned.  If the results
+     * are not pageable, then the size of the underlying list is returned.
+     * </p>
+     * <p>
+     * {@inheritDoc}
+     * </p>
+     * @return the total size of the collection, or {@code -1} if unknown
+     */
     @Override
     public int total() {
         if (resources.getMeta() != null && resources.getMeta().get("total") != null) {

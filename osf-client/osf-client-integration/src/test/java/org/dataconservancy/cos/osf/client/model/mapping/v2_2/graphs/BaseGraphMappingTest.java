@@ -16,7 +16,7 @@
 package org.dataconservancy.cos.osf.client.model.mapping.v2_2.graphs;
 
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Before;
 
 /**

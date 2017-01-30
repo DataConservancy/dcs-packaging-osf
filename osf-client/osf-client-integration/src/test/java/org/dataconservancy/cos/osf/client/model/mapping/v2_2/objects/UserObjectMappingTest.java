@@ -17,7 +17,7 @@ package org.dataconservancy.cos.osf.client.model.mapping.v2_2.objects;
 
 import org.dataconservancy.cos.osf.client.model.AbstractMockServerTest;
 import org.dataconservancy.cos.osf.client.model.User;
-import org.dataconservancy.cos.osf.client.service.OsfService;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -40,7 +40,7 @@ public class UserObjectMappingTest extends AbstractMockServerTest {
     public void testMinimalUser() throws Exception {
         addResponseInterceptor(baseResourcePath + "user-minimal.json");
 
-        final User user = factory.getOsfService(OsfService.class).userByUrl("anyurl").execute().body();
+        final User user = factory.getOsfService(OsfService.class).user("anyurl").execute().body();
 
         assertNotNull(user);
         assertEquals("typ46", user.getId());

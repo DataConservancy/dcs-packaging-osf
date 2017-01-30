@@ -23,75 +23,13 @@ import java.net.URISyntaxException;
  *
  * @author Elliot Metsger (emetsger@jhu.edu)
  */
-public class OsfClientConfiguration {
+public class OsfClientConfiguration extends BaseConfiguration {
 
     private static final String DEFAULT_API_VERSION = "2.2";
-
-    private String host;
-
-    private int port;
-
-    private String scheme;
-
-    private String basePath;
 
     private String authHeader;
 
     private String apiVersion = DEFAULT_API_VERSION;
-
-    /**
-     * The host of the OSF v2 API; may be a DNS name or a dotted-quad IP.
-     *
-     * @return the v2 API host
-     */
-    public String getHost() {
-        return host;
-    }
-
-    /**
-     * The host of the API; may be a DNS name or a dotted-quad IP.
-     *
-     * @param host the v2 API host
-     */
-    public void setHost(final String host) {
-        this.host = host;
-    }
-
-    /**
-     * The port of the OSF v2 API.
-     *
-     * @return the v2 API port
-     */
-    public int getPort() {
-        return port;
-    }
-
-    /**
-     * The port of the OSF v2 API.
-     *
-     * @param port the v2 API port
-     */
-    public void setPort(final int port) {
-        this.port = port;
-    }
-
-    /**
-     * The base path of the v2 API, e.g. {@code "/v2/"}.
-     *
-     * @return the base path of the v2 API
-     */
-    public String getBasePath() {
-        return basePath;
-    }
-
-    /**
-     * The base path of the v2 API, e.g. {@code "/v2/"}.
-     *
-     * @param basePath the base path of the v2 API
-     */
-    public void setBasePath(final String basePath) {
-        this.basePath = basePath;
-    }
 
     /**
      * The Basic authentication header that should be sent on every HTTP request, e.g.

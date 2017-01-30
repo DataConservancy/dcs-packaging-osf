@@ -94,15 +94,21 @@
             </dependency>
 
             <dependency>
-              <groupId>org.dataconservancy.packaging.shared</groupId>
-              <artifactId>dcs-packaging-shared</artifactId>
-              <version>${dcs-packaging-shared.version}</version>
+                <groupId>org.dataconservancy.packaging.shared</groupId>
+                <artifactId>dcs-packaging-shared</artifactId>
+                <version>${dcs-packaging-shared.version}</version>
             </dependency>
            
             <dependency>
-              <groupId>org.dataconservancy.jasminb</groupId>
-              <artifactId>jsonapi-converter</artifactId>
-              <version>${jsonapi-converter.version}</version>
+                <groupId>org.dataconservancy.jasminb</groupId>
+                <artifactId>jsonapi-converter</artifactId>
+                <version>${jsonapi-converter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.1.9</version>
             </dependency>
 
         </dependencies>
