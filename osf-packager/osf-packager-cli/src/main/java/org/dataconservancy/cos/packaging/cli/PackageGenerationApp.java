@@ -80,7 +80,7 @@ public class PackageGenerationApp {
     /**
      * the package name
      **/
-    @Option(name = "-n", aliases = {"-name", "--name"}, required = true, usage = "the name for the package")
+    @Option(name = "-n", aliases = {"-name", "--name"}, required = false, usage = "the name for the package")
     private static String packageName;
 
     /**
@@ -129,28 +129,6 @@ public class PackageGenerationApp {
                 System.exit(1);
             }
 
-            if (!(packageName.length() > 0)) {
-                System.err.println("Bag name must have positive length.");
-                System.exit(1);
-            }
-
-            if (outputLocation == null) {
-                outputLocation = new File(packageName);
-            }
-
-            if (!outputLocation.exists()) {
-                FileUtils.forceMkdir(outputLocation);
-            } else if (!outputLocation.isDirectory()) {
-                System.err.println("Output location " + outputLocation.getCanonicalPath() + " must be a directory.");
-                System.exit(1);
-            }
-
-            if (bagMetadataFile != null && (!bagMetadataFile.exists() || !bagMetadataFile.isFile())) {
-                System.err.println("Supplied bag metadata file " + bagMetadataFile.getCanonicalPath() +
-                        " does not exist or is not a file.");
-                System.exit(1);
-            }
-
             final Response response = new OkHttpClient().newCall(
                     new Request.Builder()
                             .head()
@@ -170,6 +148,32 @@ public class PackageGenerationApp {
                 System.err.println("Provided URL '" + registrationUrl + "' does not return JSON (Content-Type was '" +
                         response.header("Content-Type") + "')");
                 System.err.println("Please be sure you are using a valid API URL to a node or registration.");
+                System.exit(1);
+            }
+
+            final String guid = parseGuid(registrationUrl);
+
+            if (packageName == null) {
+                packageName = guid;
+            } else if (!(packageName.length() > 0)) {
+                System.err.println("Bag name must have positive length.");
+                System.exit(1);
+            }
+
+            if (outputLocation == null) {
+                outputLocation = new File(packageName);
+            }
+
+            if (!outputLocation.exists()) {
+                FileUtils.forceMkdir(outputLocation);
+            } else if (!outputLocation.isDirectory()) {
+                System.err.println("Output location " + outputLocation.getCanonicalPath() + " must be a directory.");
+                System.exit(1);
+            }
+
+            if (bagMetadataFile != null && (!bagMetadataFile.exists() || !bagMetadataFile.isFile())) {
+                System.err.println("Supplied bag metadata file " + bagMetadataFile.getCanonicalPath() +
+                        " does not exist or is not a file.");
                 System.exit(1);
             }
 
@@ -273,6 +277,16 @@ public class PackageGenerationApp {
         }
 
         pkg.cleanupPackage();
+    }
+
+    private static String parseGuid(final String registrationUrl) {
+        String mutableUrl = registrationUrl.trim();
+
+        if (mutableUrl.endsWith("/")) {
+            mutableUrl = mutableUrl.substring(0, mutableUrl.length() - 1);
+        }
+
+        return mutableUrl.substring(mutableUrl.lastIndexOf("/") + 1);
     }
 
 }
