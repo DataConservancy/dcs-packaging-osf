@@ -57,7 +57,9 @@ public enum OwlClasses {
 
     OSF_COMMENT (Rdf.Ns.OSF, "Comment"),
 
-    OSF_COMMENT_TARGET (Rdf.Ns.OSF, "CommentTarget");
+    OSF_COMMENT_TARGET (Rdf.Ns.OSF, "CommentTarget"),
+
+    OSF_IDENTIFIER (Rdf.Ns.OSF, "Identifier");
 
     private final String ns;
 

@@ -210,6 +210,13 @@
         <rdfs:range rdf:resource="&osfbom;Comment"/>
     </owl:ObjectProperty>
 
+    <owl:ObjectProperty rdf:about="&osfbom;hasIdentifier">
+        <rdfs:label xml:lang="en">hasIdentifier</rdfs:label>
+        <rdfs:comment xml:lang="en">References an alternate identifier for a Registration</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Registration"/>
+        <rdfs:range rdf:resource="&osfbom;Identifier"/>
+    </owl:ObjectProperty>
+
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -849,6 +856,27 @@
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
 
+    <owl:DatatypeProperty rdf:about="&osfbom;hasIdentifierValue">
+        <rdfs:label xml:lang="en">hasIdentifierValue</rdfs:label>
+        <rdfs:comment xml:lang="en">The value of an Identifier for a Registration (e.g. "c7605/osf.io/tgzhk", "10.17605/OSF.IO/TGZHK")</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Identifier"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasIdentifierCategory">
+        <rdfs:label xml:lang="en">hasIdentifierCategory</rdfs:label>
+        <rdfs:comment xml:lang="en">The category, or scheme, of an Identifier for a Registration (e.g. "ark", "doi")</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Identifier"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="&osfbom;hasIdentifierReferent">
+        <rdfs:label xml:lang="en">hasIdentifierReferent</rdfs:label>
+        <rdfs:comment xml:lang="en">The OSF Registration being identified.</rdfs:comment>
+        <rdfs:domain rdf:resource="&osfbom;Identifier"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1054,4 +1082,10 @@
         </owl:Class>
       </rdfs:subClassOf>
     </owl:Class>
+
+    <owl:Class rdf:about="&osfbom;Identifier">
+        <rdfs:label xml:lang="en">Identifier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&osfbom;OSFBusinessObject"/>
+    </owl:Class>
+
 </rdf:RDF>

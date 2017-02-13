@@ -105,6 +105,10 @@ public class Registration extends NodeBase  {
     @Relationship(value = "registration_schema", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String registration_schema;
 
+    @Relationship(value = "identifiers", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.OBJECT)
+    @OwlProperty(OwlProperties.OSF_HAS_IDENTIFIER)
+    private List<Identifier> identifiers;
+
     /**
      *
      * @return
@@ -367,5 +371,21 @@ public class Registration extends NodeBase  {
      */
     public void setRegistration_schema(final String registration_schema) {
         this.registration_schema = registration_schema;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public List<Identifier> getIdentifiers() {
+        return identifiers;
+    }
+
+    /**
+     *
+     * @param identifiers
+     */
+    public void setIdentifiers(final List<Identifier> identifiers) {
+        this.identifiers = identifiers;
     }
 }

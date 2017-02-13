@@ -64,6 +64,12 @@ public class RegistrationGraphMappingTest extends BaseGraphMappingTest {
         assertTrue(provider.getFiles().stream().anyMatch(f -> f.getId().equals("56eacb02b83f6901b9e90fbd")));
         assertTrue(provider.getFiles().stream().anyMatch(f -> f.getId().equals("56eaca949ad5a101b13fe6ed")));
 
+        // Identifiers 579b8a35594d9001fa2fccf9, a doi; 579b8a35594d9001fa2fccfa, an ark
+        assertTrue(reg.getIdentifiers().stream().anyMatch(id -> id.getId().equals("579b8a35594d9001fa2fccf9")
+                && id.getCategory().equals("doi")));
+        assertTrue(reg.getIdentifiers().stream().anyMatch(id -> id.getId().equals("579b8a35594d9001fa2fccfa")
+                && id.getCategory().equals("ark")));
+
         // Contributors
         assertEquals("tgzhk-gb6f3", reg.getContributors().get(0).getId());
 
@@ -93,9 +99,6 @@ public class RegistrationGraphMappingTest extends BaseGraphMappingTest {
 
         // Citation
         assertEquals("http://localhost:8000/v2/registrations/tgzhk/citation/", reg.getCitation());
-
-        // Identifiers
-        assertEquals("http://localhost:8000/v2/registrations/tgzhk/identifiers/", reg.getIdentifiers());
 
         // Comments
         assertEquals("http://localhost:8000/v2/registrations/tgzhk/comments/P2ZpbHRlciU1QnRhcmdldCU1RD10Z3poaw==",

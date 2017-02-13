@@ -99,9 +99,6 @@ public class NodeGraphMappingTest extends BaseGraphMappingTest {
         // citation (currently support retrieving the relationship, but citation support is not present in v2.2?)
         assertEquals("http://localhost:8000/v2/registrations/tgzhk/citation/", node.getCitation());
 
-        // identifiers
-        assertEquals("http://localhost:8000/v2/nodes/xug4a/identifiers/", node.getIdentifiers());
-
         // comments
         assertEquals("http://localhost:8000/v2/nodes/xug4a/comments/P2ZpbHRlciU1QnRhcmdldCU1RD14dWc0YQ==",
                 node.getComments());

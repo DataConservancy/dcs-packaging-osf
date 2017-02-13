@@ -100,9 +100,6 @@ public abstract class NodeBase {
     @Relationship(value = "citation", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String citation;
 
-    @Relationship(value = "identifiers", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
-    private String identifiers;
-
     @Relationship(value = "comments", resolve = true, relType = RelType.RELATED, strategy = ResolutionStrategy.REF)
     private String comments;
 
@@ -616,22 +613,6 @@ public abstract class NodeBase {
      */
     public void setCitation(final String citation) {
         this.citation = citation;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public String getIdentifiers() {
-        return identifiers;
-    }
-
-    /**
-     *
-     * @param identifiers
-     */
-    public void setIdentifiers(final String identifiers) {
-        this.identifiers = identifiers;
     }
 
     /**

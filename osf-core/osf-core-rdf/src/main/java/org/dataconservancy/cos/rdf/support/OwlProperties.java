@@ -67,6 +67,8 @@ public enum OwlProperties {
 
     OSF_HAS_COMMENT ("hasComment", true),
 
+    OSF_HAS_IDENTIFIER ("hasIdentifier", true),
+
     DCTERMS_DESCRIPTION (Rdf.Ns.DCTERMS, "description"),
 
     DCTERMS_IDENTIFIER (Rdf.Ns.DCTERMS, "identifier"),
@@ -209,7 +211,13 @@ public enum OwlProperties {
 
     OSF_VERSION ("version"),
 
-    OSF_IN_REPLY_TO ("inReplyTo");
+    OSF_IN_REPLY_TO ("inReplyTo"),
+
+    OSF_HAS_IDENTIFIER_CATEGORY ("hasIdentifierCategory"),
+
+    OSF_HAS_IDENTIFIER_VALUE ("hasIdentifierValue"),
+
+    OSF_HAS_IDENTIFIER_REFERENT ("hasIdentifierReferent");
 
     private String ns = Rdf.Ns.OSF;
 

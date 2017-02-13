@@ -1,0 +1,23 @@
+{
+  "data": {
+    "relationships": {
+      "referent": {
+        "links": {
+          "related": {
+            "href": "https://localhost:8000/v2/registrations/nmbwq/",
+            "meta": {}
+          }
+        }
+      }
+    },
+    "links": {
+      "self": "https://localhost:8000/v2/identifiers/564366998c5e4a74a2e66147/"
+    },
+    "attributes": {
+      "category": "ark",
+      "value": "c7605/osf.io/nmbwq"
+    },
+    "type": "identifiers",
+    "id": "564366998c5e4a74a2e66147"
+  }
+}

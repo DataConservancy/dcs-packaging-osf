@@ -23,6 +23,7 @@ import com.squareup.okhttp.ResponseBody;
 import org.dataconservancy.cos.osf.client.model.Comment;
 import org.dataconservancy.cos.osf.client.model.Contributor;
 import org.dataconservancy.cos.osf.client.model.FileVersion;
+import org.dataconservancy.cos.osf.client.model.Identifier;
 import org.dataconservancy.cos.osf.client.model.Log;
 import org.dataconservancy.cos.osf.client.model.File;
 import org.dataconservancy.cos.osf.client.model.Institution;
@@ -187,6 +188,22 @@ public interface OsfService {
      */
     @GET
     Call<FileVersion> fileversions(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<Identifier> identifier(@Url String url);
+
+    /**
+     *
+     * @param url
+     * @return
+     */
+    @GET
+    Call<List<Identifier>> identifiers(@Url String url);
 
     /**
      *
