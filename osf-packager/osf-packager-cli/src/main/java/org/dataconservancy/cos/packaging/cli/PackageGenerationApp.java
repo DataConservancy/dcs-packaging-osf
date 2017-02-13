@@ -19,6 +19,7 @@ package org.dataconservancy.cos.packaging.cli;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
@@ -73,7 +74,7 @@ public class PackageGenerationApp {
     /**
      * the output directory for the package
      */
-    @Option(name = "-o", aliases = {"-output", "--output"}, required = true, usage = "path to the directory where the package will be written")
+    @Option(name = "-o", aliases = {"-output", "--output"}, required = false, usage = "path to the directory where the package will be written")
     private static File outputLocation;
 
     /**
@@ -128,14 +129,19 @@ public class PackageGenerationApp {
                 System.exit(1);
             }
 
-            if (!outputLocation.exists() || !outputLocation.isDirectory()) {
-                System.err.println("Supplied output file directory " + outputLocation.getCanonicalPath() +
-                        " does not exist or is not a directory.");
+            if (!(packageName.length() > 0)) {
+                System.err.println("Bag name must have positive length.");
                 System.exit(1);
             }
 
-            if (!(packageName.length() > 0)) {
-                System.err.println("Bag name must have positive length.");
+            if (outputLocation == null) {
+                outputLocation = new File(packageName);
+            }
+
+            if (!outputLocation.exists()) {
+                FileUtils.forceMkdir(outputLocation);
+            } else if (!outputLocation.isDirectory()) {
+                System.err.println("Output location " + outputLocation.getCanonicalPath() + " must be a directory.");
                 System.exit(1);
             }
 
