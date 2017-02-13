@@ -16,6 +16,23 @@
 
 package org.dataconservancy.cos.packaging.cli;
 
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.Response;
+import org.apache.commons.io.IOUtils;
+import org.dataconservancy.cos.osf.client.model.Registration;
+import org.dataconservancy.cos.osf.client.model.User;
+import org.dataconservancy.cos.osf.client.retrofit.OsfService;
+import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
+import org.dataconservancy.cos.packaging.OsfContentProvider;
+import org.dataconservancy.packaging.shared.IpmPackager;
+import org.dataconservancy.packaging.tool.api.Package;
+import org.kohsuke.args4j.Argument;
+import org.kohsuke.args4j.CmdLineException;
+import org.kohsuke.args4j.CmdLineParser;
+import org.kohsuke.args4j.Option;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -24,68 +41,60 @@ import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-import com.squareup.okhttp.OkHttpClient;
-import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
-import org.apache.commons.io.IOUtils;
-
-import org.dataconservancy.cos.osf.client.model.Registration;
-import org.dataconservancy.cos.osf.client.model.User;
-import org.dataconservancy.cos.osf.client.retrofit.OsfService;
-import org.dataconservancy.cos.osf.packaging.OsfPackageGraph;
-import org.dataconservancy.cos.packaging.OsfContentProvider;
-import org.dataconservancy.packaging.tool.api.Package;
-import org.dataconservancy.packaging.shared.IpmPackager;
-
-import org.kohsuke.args4j.Argument;
-import org.kohsuke.args4j.CmdLineException;
-import org.kohsuke.args4j.CmdLineParser;
-import org.kohsuke.args4j.Option;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 /**
  * Application for generating packages from package descriptions.
  * <p>
  * Required arguments are the URL to the OSF registration,
- *  the path to the  OSF java client configuration file,
- *  the output file/directory that will contain the generated package,
- *  and the required BagIt metadata: the bag name on the command line, and the other metadata
- *      in a properties file
+ * the path to the  OSF java client configuration file,
+ * the output file/directory that will contain the generated package,
+ * and the required BagIt metadata: the bag name on the command line, and the other metadata
+ * in a properties file
  * </p>
  *
  * @author jrm
  */
 public class PackageGenerationApp {
 
-    @Argument(multiValued = false, usage = "URL to the registration to be packaged" )
+    @Argument(multiValued = false, usage = "URL to the registration to be packaged")
     private static String registrationUrl;
 
-     /** Request for help/usage documentation */
+    /**
+     * Request for help/usage documentation
+     */
     @Option(name = "-h", aliases = {"-help", "--help"}, usage = "print help message")
     private boolean help = false;
 
-    /** the path to the OSF Java client configuration */
+    /**
+     * the path to the OSF Java client configuration
+     */
     @Option(name = "-c", aliases = {"-configuration", "--configuration"}, required = true, usage = "path to the OSF Java client configuration")
     private static File confFile;
 
-    /** the output directory for the package */
+    /**
+     * the output directory for the package
+     */
     @Option(name = "-o", aliases = {"-output", "--output"}, required = true, usage = "path to the directory where the package will be written")
     private static File outputLocation;
 
-    /** the package name  **/
+    /**
+     * the package name
+     **/
     @Option(name = "-n", aliases = {"-name", "--name"}, required = true, usage = "the name for the package")
     private static String packageName;
 
-   /** other bag metadata properties file location */
+    /**
+     * other bag metadata properties file location
+     */
     @Option(name = "-m", aliases = {"-metadata", "--metadata"}, usage = "the path to the metadata properties file for additional bag metadata")
     private static File bagMetadataFile;
 
-    /** Requests the current version number of the cli application. */
-    @Option(name = "-v", aliases = { "-version", "--version" }, usage = "print version information")
+    /**
+     * Requests the current version number of the cli application.
+     */
+    @Option(name = "-v", aliases = {"-version", "--version"}, usage = "print version information")
     private boolean version = false;
 
     /**
-     *
      * @param args
      */
     public static void main(final String[] args) {
@@ -137,13 +146,13 @@ public class PackageGenerationApp {
             }
 
             final Response response = new OkHttpClient().newCall(
-                                                            new Request.Builder()
-                                                                    .head()
-                                                                        .url(registrationUrl)
-                                                                            .build()
-                                                          ).execute();
+                    new Request.Builder()
+                            .head()
+                            .url(registrationUrl)
+                            .build()
+            ).execute();
 
-            if (response.code() != 200 ) {
+            if (response.code() != 200) {
                 System.err.println("There was an error executing '" + registrationUrl + "', response code " +
                         response.code() + " reason: '" + response.message() + "'");
                 System.err.print("Please be sure you are using a valid API URL to a node or registration, ");
@@ -184,12 +193,12 @@ public class PackageGenerationApp {
     }
 
 
-       private void run() throws Exception {
+    private void run() throws Exception {
         final ClassPathXmlApplicationContext cxt =
                 new ClassPathXmlApplicationContext(
-                    "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
-                    "classpath*:org/dataconservancy/cos/osf/client/retrofit/applicationContext.xml",
-                    "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
+                        "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
+                        "classpath*:org/dataconservancy/cos/osf/client/retrofit/applicationContext.xml",
+                        "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
 
         // Prepare the OSF registration and users information
         final OsfService osfService = cxt.getBean("osfService", OsfService.class);
