@@ -164,12 +164,13 @@ public class PackageGenerationApp {
                 outputLocation = new File(packageName);
             }
 
-            if (!outputLocation.exists()) {
-                FileUtils.forceMkdir(outputLocation);
-            } else if (!outputLocation.isDirectory()) {
-                System.err.println("Output location " + outputLocation.getCanonicalPath() + " must be a directory.");
+            if (outputLocation.exists()) {
+                System.err.println("Destination directory " + outputLocation.getCanonicalPath() + " already exists!  " +
+                        "Either (re)move the directory, or choose a different output location.");
                 System.exit(1);
             }
+
+            FileUtils.forceMkdir(outputLocation);
 
             if (bagMetadataFile != null && (!bagMetadataFile.exists() || !bagMetadataFile.isFile())) {
                 System.err.println("Supplied bag metadata file " + bagMetadataFile.getCanonicalPath() +
