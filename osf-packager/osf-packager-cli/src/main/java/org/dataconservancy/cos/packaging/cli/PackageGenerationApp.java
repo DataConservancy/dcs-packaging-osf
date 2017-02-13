@@ -56,6 +56,9 @@ import java.util.stream.Collectors;
  */
 public class PackageGenerationApp {
 
+    private static ClassPathXmlApplicationContext CTX;
+
+
     @Argument(multiValued = false, usage = "URL to the registration to be packaged")
     private static String registrationUrl;
 
@@ -129,7 +132,12 @@ public class PackageGenerationApp {
                 System.exit(1);
             }
 
-            final Response response = new OkHttpClient().newCall(
+            CTX = new ClassPathXmlApplicationContext(
+                    "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
+                    "classpath*:org/dataconservancy/cos/osf/client/retrofit/applicationContext.xml",
+                    "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
+
+            final Response response = CTX.getBean("okHttpClient", OkHttpClient.class).newCall(
                     new Request.Builder()
                             .head()
                             .url(registrationUrl)
@@ -205,14 +213,8 @@ public class PackageGenerationApp {
 
 
     private void run() throws Exception {
-        final ClassPathXmlApplicationContext cxt =
-                new ClassPathXmlApplicationContext(
-                        "classpath*:org/dataconservancy/cos/osf/client/config/applicationContext.xml",
-                        "classpath*:org/dataconservancy/cos/osf/client/retrofit/applicationContext.xml",
-                        "classpath:/org/dataconservancy/cos/packaging/config/applicationContext.xml");
-
         // Prepare the OSF registration and users information
-        final OsfService osfService = cxt.getBean("osfService", OsfService.class);
+        final OsfService osfService = CTX.getBean("osfService", OsfService.class);
         final Registration registration = osfService.registration(registrationUrl).execute().body();
 
         if (registration == null) {
@@ -240,14 +242,14 @@ public class PackageGenerationApp {
                 .collect(Collectors.toList());
 
         // Prepare package graph
-        final OsfPackageGraph packageGraph = cxt.getBean("packageGraph", OsfPackageGraph.class);
+        final OsfPackageGraph packageGraph = CTX.getBean("packageGraph", OsfPackageGraph.class);
         packageGraph.add(registration);
         users.forEach(packageGraph::add);
 
         // Prepare content provider using package graph
         // TODO - Does this work without the lambda-specified resolver used in OsfContentProviderTest?
         final OsfContentProvider contentProvider = new OsfContentProvider(packageGraph,
-                cxt.getBean("okHttpClient", OkHttpClient.class));
+                CTX.getBean("okHttpClient", OkHttpClient.class));
 
         // Create the package in the default location with the supplied name.
         // No package generation parameters are supplied.
