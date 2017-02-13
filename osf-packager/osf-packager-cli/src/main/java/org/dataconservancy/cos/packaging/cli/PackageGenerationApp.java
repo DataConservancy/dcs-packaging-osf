@@ -255,7 +255,8 @@ public class PackageGenerationApp {
         // Now just write the package out to a file in the output location
         // this must agree with the package root directory name according to our
         // dataconservancy bagit profile
-        final File packageFile = new File(outputLocation.getAbsolutePath(), packageName + ".tar.gz");
+        // TODO: can the user specify the kind of archive?  tar vs tar.gz?
+        final File packageFile = new File(outputLocation.getAbsolutePath(), packageName + ".tar");
         final FileOutputStream out;
         try {
             out = new FileOutputStream(packageFile);
