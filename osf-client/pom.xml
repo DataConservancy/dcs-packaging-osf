@@ -45,7 +45,7 @@
     <!-- Build properties  ========================================== -->
 
     <properties>
-        <osf-core.version>1.1.0</osf-core.version>
+        <osf-core.version>${project.version}</osf-core.version>
         <github.global.server>github</github.global.server>
         <github.site.path>${project.version}</github.site.path>
     </properties>

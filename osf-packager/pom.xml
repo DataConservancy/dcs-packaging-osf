@@ -44,8 +44,8 @@
   <!-- Build  ===================================================== -->
 
   <properties>
-    <osf-client.version>1.1.0</osf-client.version>
-    <osf-core.version>1.1.0</osf-core.version>
+    <osf-client.version>${project.version}</osf-client.version>
+    <osf-core.version>${project.version}</osf-core.version>
   </properties>
 
   <build>
