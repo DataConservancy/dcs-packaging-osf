@@ -60,6 +60,13 @@ public class LightUser {
     }
     
     /**
+     * @param id
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
+    
+    /**
      * @return
      */
     public PageLinks getPageLinks() {
