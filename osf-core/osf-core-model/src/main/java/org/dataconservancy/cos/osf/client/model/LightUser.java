@@ -51,6 +51,14 @@ public class LightUser {
      */
     private DateTime date_registered;
 
+    
+    /**
+     * @return
+     */
+    public String getId() {
+        return id;
+    }
+    
     /**
      * @return
      */
