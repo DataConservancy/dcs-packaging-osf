@@ -51,8 +51,7 @@ public class LightUser {
      */
     private DateTime date_registered;
 
-    
-    /**
+     /**
      * @return
      */
     public String getId() {
@@ -60,19 +59,19 @@ public class LightUser {
     }
     
     /**
-     * @param id
-     */
+    * @param id
+    */
     public void setId(final String id) {
         this.id = id;
     }
     
     /**
-     * @return
-     */
+    * @return
+    */
     public PageLinks getPageLinks() {
         return pageLinks;
     }
-
+    
     /**
      * @param pageLinks
      */
