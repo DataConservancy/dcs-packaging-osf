@@ -135,7 +135,7 @@
           "summary": {
             "value": "This is a registration of Project Two!",
             "comments": [],
-            "extra": {}
+            "extra": [] 
           }
         },
         "title": "Project Two",
@@ -297,7 +297,7 @@
           "summary": {
             "value": "Registration of Project 2.",
             "comments": [],
-            "extra": {}
+            "extra": [] 
           }
         },
         "title": "Project Two",

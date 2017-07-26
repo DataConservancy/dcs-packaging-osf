@@ -29,7 +29,7 @@
         "registered_meta": {
           "summary": {
             "comments": [],
-            "extra": {},
+            "extra": [],
             "value": "Test registration."
           }
         },
@@ -226,7 +226,7 @@
         "registered_meta": {
           "summary": {
             "comments": [],
-            "extra": {},
+            "extra": [],
             "value": "Test registration."
           }
         },
@@ -423,7 +423,7 @@
         "registered_meta": {
           "summary": {
             "comments": [],
-            "extra": {},
+            "extra": [],
             "value": "Test registration."
           }
         },

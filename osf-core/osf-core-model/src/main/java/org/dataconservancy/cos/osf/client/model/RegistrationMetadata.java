@@ -18,7 +18,6 @@ package org.dataconservancy.cos.osf.client.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Model for extra OSF Registration metadata
@@ -63,7 +62,7 @@ public class RegistrationMetadata {
 
     private List<String> comments;
 
-    private Map<String, ?> extra;
+    private List<String> extra;
 
     /**
      *
@@ -101,7 +100,7 @@ public class RegistrationMetadata {
      *
      * @return
      */
-    public Map<String, ?> getExtra() {
+    public List<String> getExtra() {
         return extra;
     }
 
@@ -109,7 +108,7 @@ public class RegistrationMetadata {
      *
      * @param extra
      */
-    public void setExtra(final Map<String, ?> extra) {
+    public void setExtra(final List<String> extra) {
         this.extra = extra;
     }
 }

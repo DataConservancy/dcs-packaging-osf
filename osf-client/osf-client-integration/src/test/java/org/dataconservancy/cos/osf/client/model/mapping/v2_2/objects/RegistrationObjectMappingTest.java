@@ -25,7 +25,6 @@ import org.junit.Test;
 import java.util.Arrays;
 
 import static java.util.Collections.emptyList;
-import static java.util.Collections.emptyMap;
 import static java.util.Collections.singletonList;
 import static org.junit.Assert.assertEquals;
 
@@ -59,7 +58,7 @@ public class RegistrationObjectMappingTest extends AbstractMockServerTest {
         assertEquals("Test Project", reg.getTitle());
         assertEquals("test", reg.getRegistrationMetadataSummary().getValue());
         assertEquals(emptyList(), reg.getRegistrationMetadataSummary().getComments());
-        assertEquals(emptyMap(), reg.getRegistrationMetadataSummary().getExtra());
+        assertEquals(emptyList(), reg.getRegistrationMetadataSummary().getExtra());
         assertEquals(true, reg.isPublic());
         assertEquals(false, reg.isFork());
         assertEquals("foo project description.", reg.getDescription());

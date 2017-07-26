@@ -163,7 +163,7 @@
         "summary": {
           "value": "test",
           "comments": [],
-          "extra": {}
+          "extra": []
         }
       },
       "public": true,

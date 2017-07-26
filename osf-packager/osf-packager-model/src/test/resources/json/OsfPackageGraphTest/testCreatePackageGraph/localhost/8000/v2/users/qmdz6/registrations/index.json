@@ -135,7 +135,7 @@
           "summary": {
             "value": "This is a registration of Project Two!",
             "comments": [],
-            "extra": {}
+            "extra": []
           }
         },
         "title": "Project Two",
@@ -305,7 +305,7 @@
           "summary": {
             "value": "This is a registration of Project Two!",
             "comments": [],
-            "extra": {}
+            "extra": []
           }
         },
         "title": "Raw Experimental Data",
@@ -473,7 +473,7 @@
           "summary": {
             "value": "Registration of Project 2.",
             "comments": [],
-            "extra": {}
+            "extra": []
           }
         },
         "title": "Raw Experimental Data",
@@ -641,7 +641,7 @@
           "summary": {
             "value": "Registration of Project 2.",
             "comments": [],
-            "extra": {}
+            "extra": []
           }
         },
         "title": "Workflow Execution",
@@ -801,7 +801,7 @@
           "summary": {
             "value": "Registration of Project 2.",
             "comments": [],
-            "extra": {}
+            "extra": []
           }
         },
         "title": "Project Two",

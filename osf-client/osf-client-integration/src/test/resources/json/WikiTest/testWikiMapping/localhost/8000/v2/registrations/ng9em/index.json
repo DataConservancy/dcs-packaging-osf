@@ -165,7 +165,7 @@
                 "summary": {
                     "value": "This registration is for testing wiki packaging.",
                     "comments": [],
-                    "extra": {}
+                    "extra": []
                 }
             },
             "public": true,
