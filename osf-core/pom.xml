@@ -23,7 +23,7 @@
     <packaging>pom</packaging>
     <name>osf-core :: Parent</name>
     <description>Model for the OSF JSON API</description>
-    <version>1.1.2</version>
+    <version>1.1.3-SNAPSHOT</version>
 
     <parent>
         <groupId>org.dataconservancy.cos</groupId>
@@ -327,8 +327,4 @@
             </snapshots>
         </repository>
     </repositories>
-
-  <scm>
-    <tag>osf-core-1.1.2</tag>
-  </scm>
 </project>
