@@ -25,7 +25,7 @@
   <description>Supporting models and code for importing and exporting content from
     the Center for Open Science Open Science Framework
   </description>
-  <version>1.1.2-SNAPSHOT</version>
+  <version>1.1.2</version>
 
   <parent>
     <groupId>org.dataconservancy.cos</groupId>
@@ -148,25 +148,25 @@
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client-api</artifactId>
-        <version>${osf-client.version}</version>
+        <version>1.1.2</version>
       </dependency>
 
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client-impl</artifactId>
-        <version>${osf-client.version}</version>
+        <version>1.1.2</version>
       </dependency>
 
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-core-model</artifactId>
-        <version>${osf-core.version}</version>
+        <version>1.1.2</version>
       </dependency>
 
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client-integration</artifactId>
-        <version>${osf-client.version}</version>
+        <version>1.1.2</version>
         <type>test-jar</type>
         <classifier>tests</classifier>
       </dependency>
@@ -174,7 +174,7 @@
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-client-config</artifactId>
-        <version>${osf-client.version}</version>
+        <version>1.1.2</version>
         <type>test-jar</type>
         <classifier>tests</classifier>
       </dependency>
@@ -212,7 +212,7 @@
       <dependency>
         <groupId>org.dataconservancy.cos</groupId>
         <artifactId>osf-core-rdf</artifactId>
-        <version>${osf-core.version}</version>
+        <version>1.1.2</version>
       </dependency>
 
       <dependency>
@@ -300,4 +300,8 @@
     </repository>
 
   </repositories>
+
+  <scm>
+    <tag>osf-packager-1.1.2</tag>
+  </scm>
 </project>
