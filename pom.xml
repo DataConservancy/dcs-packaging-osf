@@ -42,7 +42,7 @@
     <!-- Build Properties =========================================== -->
 
     <properties>
-        <okhttp.version>2.5.0</okhttp.version>
+        <okhttp.version>2.7.5</okhttp.version>
         <spring.version>4.2.0.RELEASE</spring.version>
         <jsonapi-converter.version>0.5</jsonapi-converter.version>
         <dcs-packaging-shared.version>1.0.0</dcs-packaging-shared.version>
