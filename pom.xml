@@ -44,6 +44,7 @@
     <properties>
         <okhttp.version>2.5.0</okhttp.version>
         <spring.version>4.2.0.RELEASE</spring.version>
+        <jackson.version>2.9.10.1</jackson.version>
         <jsonapi-converter.version>0.5</jsonapi-converter.version>
         <dcs-packaging-shared.version>1.0.0</dcs-packaging-shared.version>
     </properties>
@@ -68,6 +69,12 @@
     <dependencyManagement>
 
         <dependencies>
+	
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+		<version>${jackson.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.squareup.okhttp</groupId>
