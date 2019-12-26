@@ -194,7 +194,7 @@
       <dependency>
         <groupId>org.dataconservancy.pkgtool</groupId>
         <artifactId>dcs-packaging-tool-impl</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.7</version>
       </dependency>
 
       <dependency>
