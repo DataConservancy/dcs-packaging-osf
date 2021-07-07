@@ -45,11 +45,26 @@ public class LightUser {
      **/
     private PageLinks pageLinks;
 
-
     /**
      * timestamp when the user's account was created
      */
     private DateTime date_registered;
+
+    /**
+     *
+     * @return
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     *
+     * @param id
+     */
+    public void setId(final String id) {
+        this.id = id;
+    }
 
     /**
      * @return
