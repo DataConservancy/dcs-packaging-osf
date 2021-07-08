@@ -22,6 +22,8 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Selector;
 import org.apache.jena.rdf.model.Statement;
+
+import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.rdf.support.AnnotationsProcessor;
@@ -133,6 +135,15 @@ public class OsfPackageGraph extends ManagedGraph {
      */
     public Map<String, Individual> add(final Registration registration) {
         return processor.process(registration);
+    }
+
+    /** Adds an OSF node to the graph.
+     * 
+     * @param node OSF node
+     * @return a {@code Map} containing the URIs and OWL individuals added to the graph
+     */
+    public Map<String, Individual> add(final Node node) {
+        return processor.process(node);
     }
 
     /**

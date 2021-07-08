@@ -237,6 +237,7 @@ public class OsfContentProvider extends AbstractContentProvider {
         final File outFile;
         try {
             outFile = new File(temporaryDirectory, filename);
+            outFile.getParentFile().mkdirs();
             IOUtils.copy(contentResolver.resolve(contentUrl), new FileOutputStream(outFile));
         } catch (Exception e) {
             throw new RuntimeException(e.getMessage(), e);

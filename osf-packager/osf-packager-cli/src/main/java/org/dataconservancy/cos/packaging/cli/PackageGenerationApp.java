@@ -21,6 +21,8 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
+
+import org.dataconservancy.cos.osf.client.model.Node;
 import org.dataconservancy.cos.osf.client.model.Registration;
 import org.dataconservancy.cos.osf.client.model.User;
 import org.dataconservancy.cos.osf.client.retrofit.OsfService;
@@ -215,7 +217,7 @@ public class PackageGenerationApp {
     private void run() throws Exception {
         // Prepare the OSF registration and users information
         final OsfService osfService = CTX.getBean("osfService", OsfService.class);
-        final Registration registration = osfService.registration(registrationUrl).execute().body();
+        final Node registration = osfService.node(registrationUrl).execute().body();
 
         if (registration == null) {
             System.err.println("Failed to obtain registration " + registrationUrl + " from endpoint. " +

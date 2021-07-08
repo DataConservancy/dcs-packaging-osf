@@ -13,6 +13,8 @@ target/
 .svn/
 *.project
 *.classpath
+*.settings
+*.checkstyle
 osf-client.json
 osf-client-test.json
 osf-client-test.json
